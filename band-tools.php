@@ -31,14 +31,14 @@ $band_tools_updater = new WP_Package_Updater(
 );
 
 if(is_admin()) {
-  require_once __DIR__ . '/admin/init.php';
-  // require_once __DIR__ . '/admin/wp-dependencies.php';
+	require_once __DIR__ . '/admin/init.php';
+	// require_once __DIR__ . '/admin/wp-dependencies.php';
 }
 
 function bndtls_load_plugin_css() {
-    // $plugin_url = plugin_dir_url( __FILE__ );
-    wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css' );
-    // dev only
-    // wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css', array(), time() , 'all' );
+	// $plugin_url = plugin_dir_url( __FILE__ );
+	wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css' );
+	// dev only
+	// wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css', array(), time() , 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'bndtls_load_plugin_css' );
