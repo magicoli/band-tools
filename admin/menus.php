@@ -22,7 +22,7 @@ function bndtls_register_settings_pages() {
     'bndtls_display_settings_page', // callable function
     // plugin_dir_path(__FILE__) . 'options.php', // slug
     // null,	// callable function
-    'dashicons-microphone', // plugin_dir_url(__FILE__) . '../assets/icon-24x24.jpg', // icon url
+    plugin_dir_url(__FILE__) . '../assets/svg-microphone-stand-20x20.svg', // plugin_dir_url(__FILE__) . '../assets/icon-24x24.jpg', // icon url
     2 // position
   );
   // add_submenu_page(
