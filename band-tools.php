@@ -10,6 +10,10 @@
  * Version:         0.1.0
  *
  * @package         Band_Tools
+ * Icon1x: https://git.magiiic.com/wordpress/band-tools/-/raw/master/assets/icon-128x128.jpg
+ * Icon2x: https://git.magiiic.com/wordpress/band-tools/-/raw/master/assets/icon-256x256.jpg
+ * BannerHigh: https://git.magiiic.com/wordpress/band-tools/-/raw/master/assets/banner-1544x500.jpg
+ * BannerLow: https://git.magiiic.com/wordpress/band-tools/-/raw/master/assets/banner-772x250.jpg
  */
 
 // If this file is called directly, abort.
@@ -23,3 +27,16 @@ $band_tools_updater = new WP_Package_Updater(
 	wp_normalize_path( plugin_dir_path( __FILE__ ) ),
 	// true
 );
+
+if(is_admin()) {
+  require_once __DIR__ . '/admin/init.php';
+  // require_once __DIR__ . '/admin/wp-dependencies.php';
+}
+
+function bndtls_load_plugin_css() {
+    // $plugin_url = plugin_dir_url( __FILE__ );
+    wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css' );
+    // dev only
+    // wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css', array(), time() , 'all' );
+}
+add_action( 'wp_enqueue_scripts', 'bndtls_load_plugin_css' );
