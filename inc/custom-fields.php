@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/custom-fields-definitions.php';
+
 ### Bi-directional relations sync
 // If this file is called directly, abort.
 if (!defined('WPINC')) {die;}
@@ -265,172 +267,47 @@ class acf_post2post {
 // 	}
 // }
 
-### Fields definitions
+//Add the columns for the "page" post type
+add_filter('manage_edit-songs_columns', 'tessa_add_songs_columns');
+function tessa_add_songs_columns($columns) {
+  $columns = array(
+         'cb' => '<input type="checkbox" />',
+         'title' => 'Title',
+         'band' => 'Band',
+         'tracks' => 'Albums',
+         'date' => 'Date',
+     );
+  return $columns;
+}
 
-if( function_exists('acf_add_local_field_group') ):
+add_filter('manage_edit-albums_columns', 'tessa_add_albums_columns');
+function tessa_add_albums_columns($columns) {
+  $columns = array(
+         'cb' => '<input type="checkbox" />',
+         'title' => 'Title',
+         'band' => 'Band',
+         'date' => 'Date',
+     );
+  return $columns;
+}
 
-acf_add_local_field_group(array(
-	'key' => 'group_6036ca9f301ee',
-	'title' => 'Album info',
-	'fields' => array(
-		array(
-			'key' => 'field_6036cc804521a',
-			'label' => 'Band',
-			'name' => 'band',
-			'type' => 'post_object',
-			'instructions' => '',
-			'required' => 1,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'post_type' => array(
-				0 => 'bands',
-			),
-			'taxonomy' => '',
-			'allow_null' => 0,
-			'multiple' => 0,
-			'return_format' => 'object',
-			'ui' => 1,
-		),
-		array(
-			'key' => 'field_6036cdea22a7b',
-			'label' => 'Release date',
-			'name' => 'release_date',
-			'type' => 'date_picker',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'display_format' => 'd/m/Y',
-			'return_format' => 'd/m/Y',
-			'first_day' => 1,
-		),
-		array(
-			'key' => 'field_6036caa495dc2',
-			'label' => 'Tracks',
-			'name' => 'tracks',
-			'type' => 'relationship',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'post_type' => array(
-				0 => 'songs',
-			),
-			'taxonomy' => '',
-			'filters' => array(
-				0 => 'search',
-			),
-			'elements' => '',
-			'min' => '',
-			'max' => '',
-			'return_format' => 'object',
-		),
-	),
-	'location' => array(
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'albums',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'left',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => true,
-	'description' => '',
-));
-
-acf_add_local_field_group(array(
-	'key' => 'group_6036c84abbd81',
-	'title' => 'Song info',
-	'fields' => array(
-		array(
-			'key' => 'field_6036d3caa9666',
-			'label' => 'Tracks',
-			'name' => 'tracks',
-			'type' => 'relationship',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'post_type' => array(
-				0 => 'albums',
-			),
-			'taxonomy' => '',
-			'filters' => array(
-				0 => 'search',
-			),
-			'elements' => '',
-			'min' => '',
-			'max' => '',
-			'return_format' => 'object',
-		),
-		array(
-			'key' => 'field_6036d7b066e19',
-			'label' => 'Band',
-			'name' => 'band',
-			'type' => 'relationship',
-			'instructions' => '',
-			'required' => 1,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'post_type' => array(
-				0 => 'bands',
-			),
-			'taxonomy' => '',
-			'filters' => array(
-				0 => 'search',
-			),
-			'elements' => array(
-				0 => 'featured_image',
-			),
-			'min' => '',
-			'max' => '',
-			'return_format' => 'object',
-		),
-	),
-	'location' => array(
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'songs',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'left',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => true,
-	'description' => '',
-));
-
-endif;
+// Render the custom columns for the "albums" and "songs" post types
+add_action('manage_albums_posts_custom_column', 'tessa_render_acf_columns', 10, 2);
+add_action('manage_songs_posts_custom_column', 'tessa_render_acf_columns', 10, 2);
+function tessa_render_acf_columns($column_name) {
+  global $post;
+  switch ($column_name) {
+    case 'band':
+    case 'tracks':
+    $band = get_field($column_name, $post->ID);
+    // print_r($band);
+    if(is_array($band)) $bands=$band;
+    else $bands[] = $band;
+    $out = array();
+    foreach($bands as $foo) {
+      $out[] = sprintf( '<a href="%s" class="acf-field %s" data-id="%s">%s</span>', get_permalink($foo->ID), $column_name, $foo->ID, $foo->post_title );
+    }
+    echo( join('<br>', $out) );
+    break;
+  }
+}
