@@ -268,8 +268,8 @@ class acf_post2post {
 // }
 
 //Add the columns for the "page" post type
-add_filter('manage_edit-songs_columns', 'tessa_add_songs_columns');
-function tessa_add_songs_columns($columns) {
+add_filter('manage_edit-songs_columns', 'bndtls_add_songs_columns');
+function bndtls_add_songs_columns($columns) {
   $columns = array(
          'cb' => '<input type="checkbox" />',
          'title' => 'Title',
@@ -280,8 +280,8 @@ function tessa_add_songs_columns($columns) {
   return $columns;
 }
 
-add_filter('manage_edit-albums_columns', 'tessa_add_albums_columns');
-function tessa_add_albums_columns($columns) {
+add_filter('manage_edit-albums_columns', 'bndtls_add_albums_columns');
+function bndtls_add_albums_columns($columns) {
   $columns = array(
          'cb' => '<input type="checkbox" />',
          'title' => 'Title',
@@ -292,9 +292,9 @@ function tessa_add_albums_columns($columns) {
 }
 
 // Render the custom columns for the "albums" and "songs" post types
-add_action('manage_albums_posts_custom_column', 'tessa_render_acf_columns', 10, 2);
-add_action('manage_songs_posts_custom_column', 'tessa_render_acf_columns', 10, 2);
-function tessa_render_acf_columns($column_name) {
+add_action('manage_albums_posts_custom_column', 'bndtls_render_acf_columns', 10, 2);
+add_action('manage_songs_posts_custom_column', 'bndtls_render_acf_columns', 10, 2);
+function bndtls_render_acf_columns($column_name) {
   global $post;
   switch ($column_name) {
     case 'band':

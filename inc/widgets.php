@@ -14,11 +14,11 @@
 // );
 
 // Bands widget
-class wpb_widget_bands extends WP_Widget {
+class bndtls_widget_bands extends WP_Widget {
 
   function __construct() {
     parent::__construct(
-      'wpb_widget_bands',
+      'bndtls_widget_bands',
       __('Band Tools (band)', 'band-tools'),
       array( 'description' => __( 'Display related bands', 'band-tools' ), )
     );
@@ -41,6 +41,7 @@ class wpb_widget_bands extends WP_Widget {
       $result=get_post_meta($queried_object->ID, 'album_band', true);
       if(is_array($result)) $results=$result;
       else $results[]=$result;
+      if(empty($results)) return;
       $title = _n($labels->singular_name, $labels->name, count($results), 'band-tools');
       // $title = (count($results) > 1) ? $labels->name : $labels->singular_name;
       foreach($results as $id) {
@@ -110,6 +111,7 @@ class wpb_widget_albums extends WP_Widget {
       $results=get_post_meta($queried_object->ID, 'album_band', true);
       else
       $results=get_post_meta($queried_object->ID, 'tracks', true);
+      if(empty($results)) return;
       $title = _n($labels->singular_name, $labels->name, count($results), 'band-tools');
       if(is_array($results)) {
         foreach($results as $id) {
@@ -180,6 +182,7 @@ class wpb_widget_songs extends WP_Widget {
       $results=get_post_meta($queried_object->ID, 'tracks', true);
       else
       $results=get_post_meta($queried_object->ID, 'band', true);
+      if(empty($results)) return;
       $title = _n($labels->singular_name, $labels->name, count($results), 'band-tools');
       if(is_array($results)) {
         foreach($results as $id) {
@@ -227,7 +230,7 @@ class wpb_widget_songs extends WP_Widget {
 
 // Register and load the widget
 function wpb_load_widgets() {
-  register_widget( 'wpb_widget_bands' );
+  register_widget( 'bndtls_widget_bands' );
   register_widget( 'wpb_widget_albums' );
   register_widget( 'wpb_widget_songs' );
 }
