@@ -33,7 +33,7 @@ function bndtls_register_post_types() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "bands", "with_front" => true ],
 		"query_var" => true,
-		"menu_icon" => "/w/wp-content/plugins/band-tools/assets/svg-user-music-20x20.svg",
+		"menu_icon" => plugin_dir_url(__FILE__) . "../assets/svg-user-music-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt" ],
 	];
 
@@ -68,7 +68,7 @@ function bndtls_register_post_types() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "albums", "with_front" => true ],
 		"query_var" => true,
-		"menu_icon" => "/w/wp-content/plugins/band-tools/assets/svg-album-20x20.svg",
+		"menu_icon" => plugin_dir_url(__FILE__) . "../assets/svg-album-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt" ],
 		"taxonomies" => [ "post_tag" ],
 	];
@@ -104,7 +104,7 @@ function bndtls_register_post_types() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "songs", "with_front" => true ],
 		"query_var" => true,
-		"menu_icon" => "/w/wp-content/plugins/band-tools/assets/svg-comment-music-20x20.svg",
+		"menu_icon" => plugin_dir_url(__FILE__) . "../assets/svg-comment-music-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt" ],
 		"taxonomies" => [ "post_tag" ],
 	];
