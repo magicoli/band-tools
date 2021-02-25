@@ -1,6 +1,6 @@
 <?php
 
-function cptui_register_my_cpts() {
+function bndtls_register_my_cpts() {
 
 	/**
 	 * Post Type: Bands.
@@ -110,4 +110,4 @@ function cptui_register_my_cpts() {
 	register_post_type( "songs", $args );
 }
 
-add_action( 'init', 'cptui_register_my_cpts' );
+add_action( 'init', 'bndtls_register_my_cpts' );
