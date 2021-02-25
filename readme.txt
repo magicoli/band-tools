@@ -1,6 +1,6 @@
 === Bands Tools ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: https://example.com/
+Contributors: magicoli69
+Donate link: https://paypal.me/magicoli
 Tags: comments, spam
 Requires at least: 4.5
 Tested up to: 5.6.2
@@ -9,11 +9,18 @@ Stable tag: 0.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+Basic post types and tools for a simple band website.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+Basic post types and tools for bands. Allow publishing of albums with songs
+list.
+
+Future plans include:
+
+* WooCommerce integration, to sell digital and physical albums.
+* Audio playlists for albums and songs, uploaded locally
+* Video playlists for songs from YouTube, Vimeo etc.
 
 == Installation ==
 
@@ -28,12 +35,19 @@ An answer to that question.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
+1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif).
+Note that the screenshot is taken from the /assets directory or the directory
+that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
+directory take precedence. For example, `/assets/screenshot-1.png` would win
+over `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif).
 
 == Changelog ==
+
+= 0.2.0 =
+Basicly functional
+* Band, Album and Song post types
+* Relations between Bands, Albums and songs
+* Widgets with links to related objects
 
 = 0.1.1 =
 Initial, useless version

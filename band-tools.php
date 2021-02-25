@@ -7,7 +7,7 @@
  * Author URI:      https://magiiic.com/
  * Text Domain:     band-tools
  * Domain Path:     /languages
- * Version:         0.1.4
+ * Version:         0.2.0
  *
  * @package         Band_Tools
  *
@@ -21,6 +21,7 @@
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) die;
 
+require_once __DIR__ . '/inc/widgets.php';
 require_once __DIR__ . '/inc/custom-types.php';
 require_once __DIR__ . '/inc/custom-fields.php';
 
