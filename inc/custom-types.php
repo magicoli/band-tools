@@ -1,6 +1,8 @@
 <?php
+// If this file is called directly, abort.
+if (!defined('WPINC')) {die;}
 
-function bndtls_register_my_cpts() {
+function bndtls_register_post_types() {
 
 	/**
 	 * Post Type: Bands.
@@ -110,4 +112,4 @@ function bndtls_register_my_cpts() {
 	register_post_type( "songs", $args );
 }
 
-add_action( 'init', 'bndtls_register_my_cpts' );
+add_action( 'init', 'bndtls_register_post_types' );
