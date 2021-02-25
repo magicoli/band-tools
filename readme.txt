@@ -43,6 +43,12 @@ over `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif).
 
 == Changelog ==
 
+= 0.2.4 =
+* added: dependency check
+* fix: flush permalinks on activate
+* updated: widget titles in singular or plural form
+* cleanup cupstom types, objects and functions names
+
 = 0.2.0 =
 Basicly functional
 * Band, Album and Song post types
