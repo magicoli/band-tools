@@ -290,23 +290,25 @@ function bndtls_add_albums_columns($columns) {
   return $columns;
 }
 
-// Render the custom columns for the "albums" and "songs" post types
-add_action('manage_albums_posts_custom_column', 'bndtls_render_acf_columns', 10, 2);
-add_action('manage_songs_posts_custom_column', 'bndtls_render_acf_columns', 10, 2);
-function bndtls_render_acf_columns($column_name) {
-  global $post;
-  switch ($column_name) {
-    case 'band':
-    case 'tracks':
-    $band = get_field($column_name, $post->ID);
-    // print_r($band);
-    if(is_array($band)) $bands=$band;
-    else $bands[] = $band;
-    $out = array();
-    foreach($bands as $foo) {
-      $out[] = sprintf( '<a href="%s" class="acf-field %s" data-id="%s">%s</span>', get_permalink($foo->ID), $column_name, $foo->ID, $foo->post_title );
+if( function_exists('get_field') ) {
+  // Render the custom columns for the "albums" and "songs" post types
+  add_action('manage_albums_posts_custom_column', 'bndtls_render_acf_columns', 10, 2);
+  add_action('manage_songs_posts_custom_column', 'bndtls_render_acf_columns', 10, 2);
+  function bndtls_render_acf_columns($column_name) {
+    global $post;
+    switch ($column_name) {
+      case 'band':
+      case 'tracks':
+      $band = get_field($column_name, $post->ID);
+      // print_r($band);
+      if(is_array($band)) $bands=$band;
+      else $bands[] = $band;
+      $out = array();
+      foreach($bands as $foo) {
+        $out[] = sprintf( '<a href="%s" class="acf-field %s" data-id="%s">%s</span>', get_permalink($foo->ID), $column_name, $foo->ID, $foo->post_title );
+      }
+      echo( join('<br>', $out) );
+      break;
     }
-    echo( join('<br>', $out) );
-    break;
   }
 }
