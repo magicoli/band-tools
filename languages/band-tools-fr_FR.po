@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-02-26 00:48-0400\n"
+"POT-Creation-Date: 2021-02-26 01:46-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -64,36 +64,356 @@ msgstr ""
 "passe. Si elle est modifiée, toute automatisation existante doit être "
 "reconfigurée avec la nouvelle URL de téléchargement."
 
-#: inc/custom-types.php:12 inc/custom-types.php:17 inc/widgets.php:22
-#: inc/widgets.php:69
+#: inc/custom-fields.php:174
+msgid "Song info"
+msgstr "Informations sur la chanson"
+
+#: inc/custom-types.php:12 inc/custom-types.php:14 inc/custom-types.php:47
+#: inc/widgets.php:22 inc/widgets.php:69
 msgid "Bands"
 msgstr "Artistes"
 
-#: inc/custom-types.php:13
+#: inc/custom-types.php:13 inc/custom-types.php:37
 msgid "Band"
 msgstr "Artiste"
 
-#: inc/custom-types.php:47 inc/custom-types.php:52 inc/widgets.php:94
-#: inc/widgets.php:140
+#: inc/custom-types.php:15
+msgid "All Bands"
+msgstr "Tous les artistes"
+
+#: inc/custom-types.php:16 inc/custom-types.php:81 inc/custom-types.php:147
+msgid "Add new"
+msgstr "Ajouter"
+
+#: inc/custom-types.php:17
+msgid "Add new Band"
+msgstr "Ajouter un nouveau artiste"
+
+#: inc/custom-types.php:18
+msgid "Edit Band"
+msgstr "Modifier l'artiste"
+
+#: inc/custom-types.php:19
+msgid "New Band"
+msgstr "Nouvel artiste"
+
+#: inc/custom-types.php:20
+msgid "View Band"
+msgstr "Voir l'artiste"
+
+#: inc/custom-types.php:21
+msgid "View Bands"
+msgstr "Voir les artistes"
+
+#: inc/custom-types.php:22
+msgid "Search Bands"
+msgstr "Rechercher dans les artistes"
+
+#: inc/custom-types.php:23
+msgid "No Bands found"
+msgstr "Aucun artiste trouvé"
+
+#: inc/custom-types.php:24
+msgid "No Bands found in trash"
+msgstr "Aucun artiste trouvé dans la corbeille"
+
+#: inc/custom-types.php:25 inc/custom-types.php:43
+msgid "Parent Band:"
+msgstr "Artiste parent:"
+
+#: inc/custom-types.php:26
+msgid "Featured image for this Band"
+msgstr "Image mise en avant"
+
+#: inc/custom-types.php:27
+msgid "Set featured image for this Band"
+msgstr "Définir l'image mise en avant"
+
+#: inc/custom-types.php:28
+msgid "Remove featured image for this Band"
+msgstr "Supprimer l'image mise en avant"
+
+#: inc/custom-types.php:29
+msgid "Use as featured image for this Band"
+msgstr "Définir l'image mise en avant"
+
+#: inc/custom-types.php:30
+msgid "Band archives"
+msgstr "Archives des artistes"
+
+#: inc/custom-types.php:31
+msgid "Insert into Band"
+msgstr "Insérer dans le artiste"
+
+#: inc/custom-types.php:32
+msgid "Upload to this Band"
+msgstr "Téléverser"
+
+#: inc/custom-types.php:33
+msgid "Filter Bands list"
+msgstr "Filtrer la liste des artistes"
+
+#: inc/custom-types.php:34
+msgid "Bands list navigation"
+msgstr "Navigation liste de artistes"
+
+#: inc/custom-types.php:35
+msgid "Bands list"
+msgstr "Liste des artistes"
+
+#: inc/custom-types.php:36
+msgid "Bands attributes"
+msgstr "Attributs du artiste"
+
+#: inc/custom-types.php:38
+msgid "Band published"
+msgstr "Artiste publié"
+
+#: inc/custom-types.php:39
+msgid "Band published privately."
+msgstr "Artiste publié en privé."
+
+#: inc/custom-types.php:40
+msgid "Band reverted to draft."
+msgstr "Artiste remis en brouillon."
+
+#: inc/custom-types.php:41
+msgid "Band scheduled"
+msgstr "Artiste programmé"
+
+#: inc/custom-types.php:42
+msgid "Band updated."
+msgstr "Artiste mis à jour."
+
+#: inc/custom-types.php:77 inc/custom-types.php:79 inc/custom-types.php:112
+#: inc/widgets.php:94 inc/widgets.php:140
 msgid "Albums"
 msgstr "Disques"
 
-#: inc/custom-types.php:48
+#: inc/custom-types.php:78 inc/custom-types.php:102
 msgid "Album"
 msgstr "Disque"
 
-#: inc/custom-types.php:83 inc/custom-types.php:88 inc/widgets.php:165
-#: inc/widgets.php:212
+#: inc/custom-types.php:80
+msgid "All Albums"
+msgstr "Tous les disques"
+
+#: inc/custom-types.php:82
+msgid "Add new Album"
+msgstr "Ajouter un album"
+
+#: inc/custom-types.php:83
+msgid "Edit Album"
+msgstr "Modifier le disque"
+
+#: inc/custom-types.php:84
+msgid "New Album"
+msgstr "Nouveau disque"
+
+#: inc/custom-types.php:85
+msgid "View Album"
+msgstr "Voir le disque"
+
+#: inc/custom-types.php:86
+msgid "View Albums"
+msgstr "Voir les disques"
+
+#: inc/custom-types.php:87
+msgid "Search Albums"
+msgstr "Rechercher dans les disques"
+
+#: inc/custom-types.php:88
+msgid "No Albums found"
+msgstr "Aucun album trouvé"
+
+#: inc/custom-types.php:89
+msgid "No Albums found in trash"
+msgstr "Aucun album trouvé dans la corbeille"
+
+#: inc/custom-types.php:90 inc/custom-types.php:108
+msgid "Parent Album:"
+msgstr "Album parent:"
+
+#: inc/custom-types.php:91
+msgid "Featured image for this Album"
+msgstr "Image mise en avant"
+
+#: inc/custom-types.php:92
+msgid "Set featured image for this Album"
+msgstr "Définir l'image mise en avant"
+
+#: inc/custom-types.php:93
+msgid "Remove featured image for this Album"
+msgstr "Supprimer l'image mise en avant"
+
+#: inc/custom-types.php:94
+msgid "Use as featured image for this Album"
+msgstr "Définir l'image mise en avant"
+
+#: inc/custom-types.php:95
+msgid "Album archives"
+msgstr "Archives des disques"
+
+#: inc/custom-types.php:96
+msgid "Insert into Album"
+msgstr "Insérer dans l'album"
+
+#: inc/custom-types.php:97
+msgid "Upload to this Album"
+msgstr "Téléverser"
+
+#: inc/custom-types.php:98
+msgid "Filter Albums list"
+msgstr "Filtrer la liste d'albums"
+
+#: inc/custom-types.php:99
+msgid "Albums list navigation"
+msgstr "Navigation liste d'albums"
+
+#: inc/custom-types.php:100
+msgid "Albums list"
+msgstr "Liste des disques"
+
+#: inc/custom-types.php:101
+msgid "Albums attributes"
+msgstr "Attributs d'album"
+
+#: inc/custom-types.php:103
+msgid "Album published"
+msgstr "Album publié"
+
+#: inc/custom-types.php:104
+msgid "Album published privately."
+msgstr "Album publié en privé."
+
+#: inc/custom-types.php:105
+msgid "Album reverted to draft."
+msgstr "Album remis en brouillon."
+
+#: inc/custom-types.php:106
+msgid "Album scheduled"
+msgstr "Album programmé"
+
+#: inc/custom-types.php:107
+msgid "Album updated."
+msgstr "Album mis à jour."
+
+#: inc/custom-types.php:143 inc/custom-types.php:145 inc/custom-types.php:178
+#: inc/widgets.php:165 inc/widgets.php:212
 msgid "Songs"
 msgstr "Chansons"
 
-#: inc/custom-types.php:84
+#: inc/custom-types.php:144 inc/custom-types.php:168
 msgid "Song"
 msgstr "Chanson"
 
+#: inc/custom-types.php:146
+msgid "All Songs"
+msgstr "Toutes les chansons"
+
+#: inc/custom-types.php:148
+msgid "Add new Song"
+msgstr "Ajouter une chanson"
+
+#: inc/custom-types.php:149
+msgid "Edit Song"
+msgstr "Modifier la chanson"
+
+#: inc/custom-types.php:150
+msgid "New Song"
+msgstr "Nouvelle chanson"
+
+#: inc/custom-types.php:151
+msgid "View Song"
+msgstr "Voir la chanson"
+
+#: inc/custom-types.php:152
+msgid "View Songs"
+msgstr "Voir les chansons"
+
+#: inc/custom-types.php:153
+msgid "Search Songs"
+msgstr "Chercher dans les chansons"
+
+#: inc/custom-types.php:154
+msgid "No Songs found"
+msgstr "Aucune chanson trouvée"
+
+#: inc/custom-types.php:155
+msgid "No Songs found in trash"
+msgstr "Aucune chanson trouvée dans la corbeille"
+
+#: inc/custom-types.php:156 inc/custom-types.php:174
+msgid "Parent Song:"
+msgstr "Chanson parente:"
+
+#: inc/custom-types.php:157
+msgid "Featured image for this Song"
+msgstr "Image mise en avant"
+
+#: inc/custom-types.php:158
+msgid "Set featured image for this Song"
+msgstr "Définir l'image mise en avant"
+
+#: inc/custom-types.php:159
+msgid "Remove featured image for this Song"
+msgstr "Supprimer l'image mise en avant"
+
+#: inc/custom-types.php:160
+msgid "Use as featured image for this Song"
+msgstr "Définir l'image mise en avant"
+
+#: inc/custom-types.php:161
+msgid "Song archives"
+msgstr "Archives des chansons"
+
+#: inc/custom-types.php:162
+msgid "Insert into Song"
+msgstr "Insérer dans la chanson"
+
+#: inc/custom-types.php:163
+msgid "Upload to this Song"
+msgstr "Téléverser"
+
+#: inc/custom-types.php:164
+msgid "Filter Songs list"
+msgstr "Filtrer la liste de chansons"
+
+#: inc/custom-types.php:165
+msgid "Songs list navigation"
+msgstr "Navigation liste de chansons"
+
+#: inc/custom-types.php:166
+msgid "Songs list"
+msgstr "Liste des chansons"
+
+#: inc/custom-types.php:167
+msgid "Songs attributes"
+msgstr "Attributs des chansons"
+
+#: inc/custom-types.php:169
+msgid "Song published"
+msgstr "Chanson publiée"
+
+#: inc/custom-types.php:170
+msgid "Song published privately."
+msgstr "Chanson publiée en privé."
+
+#: inc/custom-types.php:171
+msgid "Song reverted to draft."
+msgstr "Chanson remise en brouillon."
+
+#: inc/custom-types.php:172
+msgid "Song scheduled"
+msgstr "Chanson programmée"
+
+#: inc/custom-types.php:173
+msgid "Song updated."
+msgstr "Chanson mise à jour."
+
 #: inc/widgets.php:23
 msgid "Display related bands"
-msgstr "Affiche les groupes liés"
+msgstr "Affiche les artistes liés"
 
 #: inc/widgets.php:74 inc/widgets.php:145 inc/widgets.php:217
 #: inc/widgets.php:287
@@ -124,8 +444,11 @@ msgstr "Commander en ligne"
 msgid "Products"
 msgstr "Produits"
 
+#~ msgid "Upload"
+#~ msgstr "Téléverser"
+
 #~ msgid "band"
-#~ msgstr "groupe"
+#~ msgstr "artiste"
 
 #~ msgid "albums"
 #~ msgstr "albums"
