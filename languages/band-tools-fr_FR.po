@@ -1,0 +1,143 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Band Tools\n"
+"POT-Creation-Date: 2021-02-26 00:48-0400\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
+"Language-Team: Magiiic\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: admin/dependencies.php:43
+msgid "Activate"
+msgstr "Activer la licence"
+
+#: admin/dependencies.php:55
+msgid "Install"
+msgstr "Installer des pages"
+
+#: admin/dependencies.php:57
+msgid " (recommended) "
+msgstr " (recommandé) "
+
+#: admin/dependencies.php:58
+msgid " (required) "
+msgstr " (requis) "
+
+#: admin/dependencies.php:66
+#, php-format
+msgid "%s requires these plugins:"
+msgstr "%s requiert ces extensions:"
+
+#: admin/inc/settings-page.php:2 admin/settings.php:50
+msgid "Settings"
+msgstr "Paramètres"
+
+#: admin/settings.php:16
+msgid "Make coffee after login"
+msgstr "Faire le café après le démarrage"
+
+#: admin/settings.php:21
+msgid "Licence key"
+msgstr "Clé de licence"
+
+#: admin/settings.php:22
+msgid "Licence key will unlock automatic updates and future features."
+msgstr ""
+"La clé de licence débloquera les mises à jour automatiques et des fonctions "
+"futures."
+
+#: admin/settings.php:26
+msgid "Token"
+msgstr "Jeton"
+
+#: admin/settings.php:27
+msgid ""
+"Random string, used to authenticate passwordless exports. If changed, any "
+"existing automation must be reconfigured with the new download url."
+msgstr ""
+"Chaîne aléatoire, utilisée pour authentifier les exportations sans mot de "
+"passe. Si elle est modifiée, toute automatisation existante doit être "
+"reconfigurée avec la nouvelle URL de téléchargement."
+
+#: inc/custom-types.php:12 inc/custom-types.php:17 inc/widgets.php:22
+#: inc/widgets.php:69
+msgid "Bands"
+msgstr "Artistes"
+
+#: inc/custom-types.php:13
+msgid "Band"
+msgstr "Artiste"
+
+#: inc/custom-types.php:47 inc/custom-types.php:52 inc/widgets.php:94
+#: inc/widgets.php:140
+msgid "Albums"
+msgstr "Disques"
+
+#: inc/custom-types.php:48
+msgid "Album"
+msgstr "Disque"
+
+#: inc/custom-types.php:83 inc/custom-types.php:88 inc/widgets.php:165
+#: inc/widgets.php:212
+msgid "Songs"
+msgstr "Chansons"
+
+#: inc/custom-types.php:84
+msgid "Song"
+msgstr "Chanson"
+
+#: inc/widgets.php:23
+msgid "Display related bands"
+msgstr "Affiche les groupes liés"
+
+#: inc/widgets.php:74 inc/widgets.php:145 inc/widgets.php:217
+#: inc/widgets.php:287
+msgid "Title:"
+msgstr "Titre :"
+
+#: inc/widgets.php:95
+msgid "Display related albums"
+msgstr "Affiche les albums liés"
+
+#: inc/widgets.php:166
+msgid "Display related songs"
+msgstr "Affiche les chansons liées"
+
+#: inc/widgets.php:237
+msgid "WC Products"
+msgstr "Produits WooCommerce"
+
+#: inc/widgets.php:238
+msgid "Display related WooCommerce products"
+msgstr "Affiche les produits WooCommerce liés"
+
+#: inc/widgets.php:256
+msgid "Order online"
+msgstr "Commander en ligne"
+
+#: inc/widgets.php:282
+msgid "Products"
+msgstr "Produits"
+
+#~ msgid "band"
+#~ msgstr "groupe"
+
+#~ msgid "albums"
+#~ msgstr "albums"
+
+#~ msgid "songs"
+#~ msgstr "songs"
+
+#~ msgid "View details"
+#~ msgstr "Voir les détails"
+
+#~ msgid "More information about %s"
+#~ msgstr "Plus d'information sur %s"
+
+#~ msgid "Check for updates"
+#~ msgstr "Vérifier les mises à jour"

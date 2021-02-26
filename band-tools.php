@@ -21,6 +21,12 @@
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) die;
 
+function bndtls_load_textdomain() {
+	$textdomain = "band-tools";
+	load_plugin_textdomain( $textdomain, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+add_action( 'init', 'bndtls_load_textdomain' );
+
 require_once __DIR__ . '/inc/post-types.php';
 require_once __DIR__ . '/inc/widgets.php';
 

@@ -19,7 +19,7 @@ class bndtls_widget_bands extends WP_Widget {
   function __construct() {
     parent::__construct(
       'bndtls_widget_bands',
-      __('Band Tools (band)', 'band-tools'),
+      sprintf('Band Tools (%s)', __('Bands', 'band-tools')),
       array( 'description' => __( 'Display related bands', 'band-tools' ), )
     );
   }
@@ -91,7 +91,7 @@ class wpb_widget_albums extends WP_Widget {
   function __construct() {
     parent::__construct(
       'wpb_widget_albums',
-      __('Band Tools (albums)', 'band-tools'),
+      sprintf('Band Tools (%s)', __('Albums', 'band-tools')),
       array( 'description' => __( 'Display related albums', 'band-tools' ), )
     );
   }
@@ -112,7 +112,7 @@ class wpb_widget_albums extends WP_Widget {
       else
       $results=get_post_meta($queried_object->ID, 'tracks', true);
       if(empty($results)) return;
-      $title = _n($labels->singular_name, $labels->name, count($results), 'band-tools');
+      $title = __(_n($labels->singular_name, $labels->name, count($results)), 'band-tools');
       if(is_array($results)) {
         foreach($results as $id) {
           if(get_post_type($id)=="albums")
@@ -162,7 +162,7 @@ class wpb_widget_songs extends WP_Widget {
   function __construct() {
     parent::__construct(
       'wpb_widget_songs',
-      __('Band Tools (songs)', 'band-tools'),
+      sprintf('Band Tools (%s)', __('Songs', 'band-tools')),
       array( 'description' => __( 'Display related songs', 'band-tools' ), )
     );
   }
@@ -183,7 +183,7 @@ class wpb_widget_songs extends WP_Widget {
       else
       $results=get_post_meta($queried_object->ID, 'band', true);
       if(empty($results)) return;
-      $title = _n($labels->singular_name, $labels->name, count($results), 'band-tools');
+      $title = __(_n($labels->singular_name, $labels->name, count($results)), 'band-tools');
       if(is_array($results)) {
         foreach($results as $id) {
           // if(get_post_type($id)=="albums")
@@ -234,7 +234,7 @@ class wpb_widget_wc_products extends WP_Widget {
   function __construct() {
     parent::__construct(
       'wpb_widget_wc_products',
-      __('Band Tools (WC Products)', 'band-tools'),
+      sprintf('Band Tools (%s)', __('WC Products', 'band-tools')),
       array( 'description' => __( 'Display related WooCommerce products', 'band-tools' ), )
     );
   }

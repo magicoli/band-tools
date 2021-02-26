@@ -1,0 +1,125 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Band Tools\n"
+"POT-Creation-Date: 2021-02-26 00:48-0400\n"
+"PO-Revision-Date: 2021-02-25 23:31-0400\n"
+"Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
+"Language-Team: magiiic\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;_n\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: lib\n"
+
+#: admin/dependencies.php:43
+msgid "Activate"
+msgstr ""
+
+#: admin/dependencies.php:55
+msgid "Install"
+msgstr ""
+
+#: admin/dependencies.php:57
+msgid " (recommended) "
+msgstr ""
+
+#: admin/dependencies.php:58
+msgid " (required) "
+msgstr ""
+
+#: admin/dependencies.php:66
+#, php-format
+msgid "%s requires these plugins:"
+msgstr ""
+
+#: admin/inc/settings-page.php:2 admin/settings.php:50
+msgid "Settings"
+msgstr ""
+
+#: admin/settings.php:16
+msgid "Make coffee after login"
+msgstr ""
+
+#: admin/settings.php:21
+msgid "Licence key"
+msgstr ""
+
+#: admin/settings.php:22
+msgid "Licence key will unlock automatic updates and future features."
+msgstr ""
+
+#: admin/settings.php:26
+msgid "Token"
+msgstr ""
+
+#: admin/settings.php:27
+msgid ""
+"Random string, used to authenticate passwordless exports. If changed, any "
+"existing automation must be reconfigured with the new download url."
+msgstr ""
+
+#: inc/custom-types.php:12 inc/custom-types.php:17 inc/widgets.php:22
+#: inc/widgets.php:69
+msgid "Bands"
+msgstr ""
+
+#: inc/custom-types.php:13
+msgid "Band"
+msgstr ""
+
+#: inc/custom-types.php:47 inc/custom-types.php:52 inc/widgets.php:94
+#: inc/widgets.php:140
+msgid "Albums"
+msgstr ""
+
+#: inc/custom-types.php:48
+msgid "Album"
+msgstr ""
+
+#: inc/custom-types.php:83 inc/custom-types.php:88 inc/widgets.php:165
+#: inc/widgets.php:212
+msgid "Songs"
+msgstr ""
+
+#: inc/custom-types.php:84
+msgid "Song"
+msgstr ""
+
+#: inc/widgets.php:23
+msgid "Display related bands"
+msgstr ""
+
+#: inc/widgets.php:74 inc/widgets.php:145 inc/widgets.php:217
+#: inc/widgets.php:287
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets.php:95
+msgid "Display related albums"
+msgstr ""
+
+#: inc/widgets.php:166
+msgid "Display related songs"
+msgstr ""
+
+#: inc/widgets.php:237
+msgid "WC Products"
+msgstr ""
+
+#: inc/widgets.php:238
+msgid "Display related WooCommerce products"
+msgstr ""
+
+#: inc/widgets.php:256
+msgid "Order online"
+msgstr ""
+
+#: inc/widgets.php:282
+msgid "Products"
+msgstr ""

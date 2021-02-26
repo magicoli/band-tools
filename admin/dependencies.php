@@ -22,7 +22,7 @@ add_action( 'admin_init', 'bndtls_dependencies_check' );
 
 function bndtls_dependencies_check() {
   global $bndtls_dependencies;
-  global $message, $required, $recommanded;
+  global $message, $required, $recommended;
   if(empty($bndtls_dependencies)) return;
   // $unmet=array();
   $installed_plugins = get_plugins();
@@ -54,17 +54,18 @@ function bndtls_dependencies_check() {
         );
         $actions[]="<a href='$install_url'>" . __("Install") . "</a>";
       }
-      if($dependency['optional']) $recommanded[]=$dependency['name'] . _(' (recommanded) ') . join(' ', $actions);
+      if($dependency['optional']) $recommended[]=$dependency['name'] . __(' (recommended) ', 'band-tools') . join(' ', $actions);
       else $required[]=$dependency['name'] . __(' (required) ') . join(' ', $actions);
       // $unmet[]="$plugin " . $dependency['name'] . ' ' . join(' ', $actions);
     }
   }
   if(!empty($required)) {
     add_action( 'admin_notices', function() {
-      global $required, $recommanded;
+      global $required, $recommended;
       echo '<div class="notice notice-error is-dismissible">';
-      if(!empty($required)) echo "<h2>" . __("band-tools requires these extensions:") . "</h2><ul><li><strong>" . join("</li><li>", $required) . "</strong></li></ul>";
-      if(!empty($recommanded)) echo "<ul><li>" . join("</li><li>", $recommanded) . "</li></ul></p>";
+      if(!empty($required)) echo "<h2>" . sprintf( __("%s requires these plugins:", 'band-tools') , 'Band Tools' ) . "</h2>"
+      . "<ul><li><strong>" . join("</li><li>", $required) . "</strong></li></ul>";
+      if(!empty($recommended)) echo "<ul><li>" . join("</li><li>", $recommended) . "</li></ul></p>";
       echo '</div>';
     } );
   }

@@ -9,12 +9,12 @@ function bndtls_register_post_types() {
 	 */
 
 	$labels = [
-		"name" => __( "Bands", "twentytwentyone" ),
-		"singular_name" => __( "Band", "twentytwentyone" ),
+		"name" => __("Bands", "band-tools"),
+		"singular_name" => __("Band", "band-tools"),
 	];
 
 	$args = [
-		"label" => __( "Bands", "twentytwentyone" ),
+		"label" => __("Bands", "band-tools"),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -44,12 +44,12 @@ function bndtls_register_post_types() {
 	 */
 
 	$labels = [
-		"name" => __( "Albums", "twentytwentyone" ),
-		"singular_name" => __( "Album", "twentytwentyone" ),
+		"name" => __("Albums", "band-tools"),
+		"singular_name" => __("Album", "band-tools"),
 	];
 
 	$args = [
-		"label" => __( "Albums", "twentytwentyone" ),
+		"label" => __("Albums", "band-tools"),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -80,12 +80,12 @@ function bndtls_register_post_types() {
 	 */
 
 	$labels = [
-		"name" => __( "Songs", "twentytwentyone" ),
-		"singular_name" => __( "Song", "twentytwentyone" ),
+		"name" => __("Songs", "band-tools"),
+		"singular_name" => __("Song", "band-tools"),
 	];
 
 	$args = [
-		"label" => __( "Songs", "twentytwentyone" ),
+		"label" => __("Songs", "band-tools"),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
