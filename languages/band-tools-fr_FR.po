@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-02-26 01:46-0400\n"
+"POT-Creation-Date: 2021-02-26 02:09-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -63,10 +63,6 @@ msgstr ""
 "Chaîne aléatoire, utilisée pour authentifier les exportations sans mot de "
 "passe. Si elle est modifiée, toute automatisation existante doit être "
 "reconfigurée avec la nouvelle URL de téléchargement."
-
-#: inc/custom-fields.php:174
-msgid "Song info"
-msgstr "Informations sur la chanson"
 
 #: inc/custom-types.php:12 inc/custom-types.php:14 inc/custom-types.php:47
 #: inc/widgets.php:22 inc/widgets.php:69
@@ -139,7 +135,7 @@ msgstr "Définir l'image mise en avant"
 
 #: inc/custom-types.php:30
 msgid "Band archives"
-msgstr "Archives des artistes"
+msgstr "Artistes"
 
 #: inc/custom-types.php:31
 msgid "Insert into Band"
@@ -252,7 +248,7 @@ msgstr "Définir l'image mise en avant"
 
 #: inc/custom-types.php:95
 msgid "Album archives"
-msgstr "Archives des disques"
+msgstr "Disques"
 
 #: inc/custom-types.php:96
 msgid "Insert into Album"
@@ -365,7 +361,7 @@ msgstr "Définir l'image mise en avant"
 
 #: inc/custom-types.php:161
 msgid "Song archives"
-msgstr "Archives des chansons"
+msgstr "Chansons"
 
 #: inc/custom-types.php:162
 msgid "Insert into Song"
@@ -443,6 +439,9 @@ msgstr "Commander en ligne"
 #: inc/widgets.php:282
 msgid "Products"
 msgstr "Produits"
+
+#~ msgid "Song info"
+#~ msgstr "Informations sur la chanson"
 
 #~ msgid "Upload"
 #~ msgstr "Téléverser"
