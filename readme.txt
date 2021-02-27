@@ -43,6 +43,10 @@ over `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif).
 
 == Changelog ==
 
+= (unreleased) = 
+* load WooCommerce fields only if WC is active
+* fix textdomain in settings pages
+
 = 0.3.5 =
 * added clean titles option fo Categories, Archives, Taxonomies, Authors, Taxes
 * added translation template and French localisation
