@@ -27,6 +27,10 @@ function bndtls_load_textdomain() {
 }
 add_action( 'init', 'bndtls_load_textdomain' );
 
+if(is_admin()) {
+	require_once __DIR__ . '/admin/init.php';
+	// require_once __DIR__ . '/admin/wp-dependencies.php';
+}
 require_once __DIR__ . '/inc/post-types.php';
 require_once __DIR__ . '/inc/widgets.php';
 
@@ -39,11 +43,6 @@ $band_tools_updater = new WP_Package_Updater(
 	// true
 );
 
-if(is_admin()) {
-	require_once __DIR__ . '/admin/init.php';
-	// require_once __DIR__ . '/admin/wp-dependencies.php';
-}
-
 function bndtls_load_plugin_css() {
 	// $plugin_url = plugin_dir_url( __FILE__ );
 	wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css' );
@@ -53,7 +52,7 @@ function bndtls_load_plugin_css() {
 add_action( 'wp_enqueue_scripts', 'bndtls_load_plugin_css' );
 
 if(get_option('bndtls_clean_titles')) {
-	function cendryn_prefix_category_title( $title ) {
+	function bndtls__prefix_category_title( $title ) {
 		if ( is_category() ) {
 			$title = single_cat_title( '', false );
 		} elseif ( is_tag() ) {
@@ -67,5 +66,5 @@ if(get_option('bndtls_clean_titles')) {
 		}
 		return $title;
 	}
-	add_filter( 'get_the_archive_title', 'cendryn_prefix_category_title',20 );
+	add_filter( 'get_the_archive_title', 'bndtls__prefix_category_title',20 );
 }
