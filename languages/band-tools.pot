@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-02-26 02:09-0400\n"
+"POT-Creation-Date: 2021-02-26 21:09-0400\n"
 "PO-Revision-Date: 2021-02-25 23:31-0400\n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: magiiic\n"
@@ -117,24 +117,24 @@ msgstr ""
 msgid "Parent Band:"
 msgstr ""
 
-#: inc/custom-types.php:26
-msgid "Featured image for this Band"
+#: inc/custom-types.php:26 inc/custom-types.php:91 inc/custom-types.php:157
+msgid "Featured image"
 msgstr ""
 
-#: inc/custom-types.php:27
-msgid "Set featured image for this Band"
+#: inc/custom-types.php:27 inc/custom-types.php:92 inc/custom-types.php:158
+msgid "Set featured image"
 msgstr ""
 
-#: inc/custom-types.php:28
-msgid "Remove featured image for this Band"
+#: inc/custom-types.php:28 inc/custom-types.php:93 inc/custom-types.php:159
+msgid "Remove featured image"
 msgstr ""
 
-#: inc/custom-types.php:29
-msgid "Use as featured image for this Band"
+#: inc/custom-types.php:29 inc/custom-types.php:94 inc/custom-types.php:160
+msgid "Use as featured image"
 msgstr ""
 
 #: inc/custom-types.php:30
-msgid "Band archives"
+msgid "All bands"
 msgstr ""
 
 #: inc/custom-types.php:31
@@ -190,7 +190,7 @@ msgstr ""
 msgid "Album"
 msgstr ""
 
-#: inc/custom-types.php:80
+#: inc/custom-types.php:80 inc/custom-types.php:95
 msgid "All Albums"
 msgstr ""
 
@@ -228,26 +228,6 @@ msgstr ""
 
 #: inc/custom-types.php:90 inc/custom-types.php:108
 msgid "Parent Album:"
-msgstr ""
-
-#: inc/custom-types.php:91
-msgid "Featured image for this Album"
-msgstr ""
-
-#: inc/custom-types.php:92
-msgid "Set featured image for this Album"
-msgstr ""
-
-#: inc/custom-types.php:93
-msgid "Remove featured image for this Album"
-msgstr ""
-
-#: inc/custom-types.php:94
-msgid "Use as featured image for this Album"
-msgstr ""
-
-#: inc/custom-types.php:95
-msgid "Album archives"
 msgstr ""
 
 #: inc/custom-types.php:96
@@ -303,7 +283,7 @@ msgstr ""
 msgid "Song"
 msgstr ""
 
-#: inc/custom-types.php:146
+#: inc/custom-types.php:146 inc/custom-types.php:161
 msgid "All Songs"
 msgstr ""
 
@@ -341,26 +321,6 @@ msgstr ""
 
 #: inc/custom-types.php:156 inc/custom-types.php:174
 msgid "Parent Song:"
-msgstr ""
-
-#: inc/custom-types.php:157
-msgid "Featured image for this Song"
-msgstr ""
-
-#: inc/custom-types.php:158
-msgid "Set featured image for this Song"
-msgstr ""
-
-#: inc/custom-types.php:159
-msgid "Remove featured image for this Song"
-msgstr ""
-
-#: inc/custom-types.php:160
-msgid "Use as featured image for this Song"
-msgstr ""
-
-#: inc/custom-types.php:161
-msgid "Song archives"
 msgstr ""
 
 #: inc/custom-types.php:162
