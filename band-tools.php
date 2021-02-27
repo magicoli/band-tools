@@ -41,7 +41,7 @@ if ( is_plugin_active( 'woocommerce/woocommerce.php') ) {
 
 /** Enable plugin updates with license check **/
 require_once plugin_dir_path( __FILE__ ) . 'lib/wp-package-updater/class-wp-package-updater.php';
-$band_tools_updater = new WP_Package_Updater(
+$bndtls_updater = new WP_Package_Updater(
 	'https://magiiic.com',
 	wp_normalize_path( __FILE__ ),
 	wp_normalize_path( plugin_dir_path( __FILE__ ) ),

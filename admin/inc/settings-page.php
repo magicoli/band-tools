@@ -13,28 +13,7 @@
 				update_option('bndtls_token', substr(md5(openssl_random_pseudo_bytes(20)),-20));
 			}
 
-			if(get_option('bndtls_licence_key') !="" && get_option('bndtls_token') !="") {
-				$export_url_csv = esc_url( add_query_arg(
-					array(
-						'page' => 'band-tools-talents',
-						'hash' => hash("md5", get_option('bndtls_licence_key').get_option('bndtls_token')),
-						'export' => 'csv',
-					),
-					get_admin_url() . "admin.php"
-				));
-				$export_url_vcf = esc_url( add_query_arg(
-					array(
-						'page' => 'band-tools-talents',
-						'hash' => hash("md5", get_option('bndtls_licence_key').get_option('bndtls_token')),
-						'export' => 'vcf',
-					),
-					get_admin_url() . "admin.php"
-				));
-				update_option('bndtls_export_vcf', $export_url_vcf);
-			}
-			update_option('bndtls_export_url', $export_url_csv);
-
-			foreach ($CastingDirectorOptions as $category => $options) {
+			foreach ($bndtls_options as $category => $options) {
 				do_settings_sections( 'bndtls_sections' );
 ?>
       <!-- Menu Categories section -->

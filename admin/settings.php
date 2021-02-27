@@ -43,7 +43,7 @@ add_action( 'admin_init', 'bndtls_register_settings' );
 
 function bndtls_display_settings_page()
 {
-  global $CastingDirectorOptions;
+  global $bndtls_options;
 	// if ( ! current_user_can( 'manage_options' ) ) {
 	// 		return;
 	// }
@@ -69,14 +69,14 @@ function bndtls_settings_link( $links ) {
 add_filter( 'plugin_action_links_band-tools/band-tools.php', 'bndtls_settings_link' );
 
 function bndtls_settings_add_option($option, $default=NULL, $args) {
-    global $CastingDirectorOptions;
+    global $bndtls_options;
     if(empty($option)) return;
 
     if(empty($args['category'])) $args['category'] = 'default';
     if(empty($args['type'])) $args['type'] = 'string';
     if(empty($args['name'])) $args['name'] = $option;
 
-    $CastingDirectorOptions[$args['category']][$option]=$args;
+    $bndtls_options[$args['category']][$option]=$args;
     add_option( $option, $default);
     register_setting( 'band_tools', $option, $args);
 }

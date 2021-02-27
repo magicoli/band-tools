@@ -8,7 +8,7 @@
 
 if ( ! defined( 'WPINC' ) ) die;
 
-global $CastingDirectorOptions;
+global $bndtls_options;
 function bndtls_register_settings_pages() {
   // default Settings submenu
   // add_options_page(Band Tools, Band Tools, 'manage_options', band-tools, 'bndtls_display_settings_page');
