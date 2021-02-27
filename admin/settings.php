@@ -12,19 +12,30 @@ function bndtls_register_settings() {
   if ( ! current_user_can( 'manage_options' ) ) {
     $readonly=true;
   }
-  bndtls_settings_add_option('bndtls_coffee', "", array(
-    'name' => __('Make coffee after login'),
+
+  // bndtls_settings_add_option( 'bndtls_licence_key', "", array(
+  //   'name' => __('Licence key'),
+  //   'description' => __('Licence key will unlock automatic updates and future features.'),
+  //   'readonly' => $readonly,
+  // ));
+  // bndtls_settings_add_option( 'bndtls_token', "", array(
+  //   'name' => __('Token'),
+  //   'description' => __('Random string, used to authenticate passwordless exports. If changed, any existing automation must be reconfigured with the new download url.'),
+  //   'readonly' => $readonly,
+  // ));
+
+  bndtls_settings_add_option('bndtls_clean_titles', "", array(
+    'category' => __('Tweaks'),
+    'name' => __('Clean titles'),
+    'description' => __('Remove "Category", "Archives" from page titles'),
     'type'=>'boolean',
     'readonly' => $readonly,
+    'default' => true,
   ));
-  bndtls_settings_add_option( 'bndtls_licence_key', "", array(
-    'name' => __('Licence key'),
-    'description' => __('Licence key will unlock automatic updates and future features.'),
-    'readonly' => $readonly,
-  ));
-  bndtls_settings_add_option( 'bndtls_token', "", array(
-    'name' => __('Token'),
-    'description' => __('Random string, used to authenticate passwordless exports. If changed, any existing automation must be reconfigured with the new download url.'),
+  bndtls_settings_add_option('bndtls_coffee', "", array(
+    'category' => __('Tweaks'),
+    'name' => __('Make coffee after login'),
+    'type'=>'boolean',
     'readonly' => $readonly,
   ));
 }
@@ -67,5 +78,5 @@ function bndtls_settings_add_option($option, $default=NULL, $args) {
 
     $CastingDirectorOptions[$args['category']][$option]=$args;
     add_option( $option, $default);
-    register_setting( 'band_tools', $option);
+    register_setting( 'band_tools', $option, $args);
 }

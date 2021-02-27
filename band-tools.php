@@ -2,7 +2,7 @@
 /**
  * Plugin Name:     Bands Tools
  * Plugin URI:      https://git.magiiic.com/wordpress/band-tools
- * Description:     Tools for bands, artists, musicians
+ * Description:     Tools for artists, bands, musicians, ...
  * Author:          Olivier van Helden
  * Author URI:      https://magiiic.com/
  * Text Domain:     band-tools
@@ -51,3 +51,21 @@ function bndtls_load_plugin_css() {
 	// wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css', array(), time() , 'all' );
 }
 add_action( 'wp_enqueue_scripts', 'bndtls_load_plugin_css' );
+
+if(get_option('bndtls_clean_titles')) {
+	function cendryn_prefix_category_title( $title ) {
+		if ( is_category() ) {
+			$title = single_cat_title( '', false );
+		} elseif ( is_tag() ) {
+			$title = single_tag_title( '', false );
+		} elseif ( is_author() ) {
+			$title = '<span class="vcard">' . get_the_author() . '</span>' ;
+		} elseif ( is_tax() ) { //for custom post types
+			$title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+		} elseif (is_post_type_archive()) {
+			$title = post_type_archive_title( '', false );
+		}
+		return $title;
+	}
+	add_filter( 'get_the_archive_title', 'cendryn_prefix_category_title',20 );
+}
