@@ -27,7 +27,7 @@ function bndtls_register_settings() {
   bndtls_settings_add_option('bndtls_clean_titles', "", array(
     'category' => __('Tweaks'),
     'name' => __('Clean titles'),
-    'description' => __('Remove "Category", "Archives" from page titles'),
+    'description' => __('Remove prefixes from titles for Categories, Taxonomies, Archives, Authors, Taxes'),
     'type'=>'boolean',
     'readonly' => $readonly,
     'default' => true,

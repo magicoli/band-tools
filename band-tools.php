@@ -7,7 +7,7 @@
  * Author URI:      https://magiiic.com/
  * Text Domain:     band-tools
  * Domain Path:     /languages
- * Version:         0.3.4
+ * Version:         0.3.5
  *
  * @package         Band_Tools
  *
@@ -61,7 +61,7 @@ if(get_option('bndtls_clean_titles')) {
 		} elseif ( is_author() ) {
 			$title = '<span class="vcard">' . get_the_author() . '</span>' ;
 		} elseif ( is_tax() ) { //for custom post types
-			$title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+			$title = sprintf( '%1$s', __( single_term_title( '', false ) ) );
 		} elseif (is_post_type_archive()) {
 			$title = post_type_archive_title( '', false );
 		}

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-02-26 21:24-0400\n"
+"POT-Creation-Date: 2021-02-27 16:04-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -33,36 +33,29 @@ msgstr " (requis) "
 msgid "%s requires these plugins:"
 msgstr "%s requiert ces extensions:"
 
-#: admin/inc/settings-page.php:2 admin/settings.php:50
+#: admin/inc/settings-page.php:2 admin/settings.php:61
 msgid "Settings"
 msgstr "Paramètres"
 
-#: admin/settings.php:16
-msgid "Make coffee after login"
-msgstr "Faire le café après le démarrage"
+#: admin/settings.php:28 admin/settings.php:36
+msgid "Tweaks"
+msgstr "Ajustements"
 
-#: admin/settings.php:21
-msgid "Licence key"
-msgstr "Clé de licence"
+#: admin/settings.php:29
+msgid "Clean titles"
+msgstr "Nettoyer les titres"
 
-#: admin/settings.php:22
-msgid "Licence key will unlock automatic updates and future features."
-msgstr ""
-"La clé de licence débloquera les mises à jour automatiques et des fonctions "
-"futures."
-
-#: admin/settings.php:26
-msgid "Token"
-msgstr "Jeton"
-
-#: admin/settings.php:27
+#: admin/settings.php:30
 msgid ""
-"Random string, used to authenticate passwordless exports. If changed, any "
-"existing automation must be reconfigured with the new download url."
+"Remove prefixes from titles for Categories, Taxonomies, Archives, Authors, "
+"Taxes"
 msgstr ""
-"Chaîne aléatoire, utilisée pour authentifier les exportations sans mot de "
-"passe. Si elle est modifiée, toute automatisation existante doit être "
-"reconfigurée avec la nouvelle URL de téléchargement."
+"Supprimer les préfixes des titres pour les catégories, taxonomies, archives, "
+"auteurs, taxes"
+
+#: admin/settings.php:37
+msgid "Make coffee after login"
+msgstr "Faire le café après la connexion"
 
 #: inc/custom-types.php:12 inc/custom-types.php:14 inc/custom-types.php:47
 #: inc/widgets.php:22 inc/widgets.php:69
@@ -399,6 +392,25 @@ msgstr "Commander en ligne"
 #: inc/widgets.php:282
 msgid "Products"
 msgstr "Produits"
+
+#~ msgid "Licence key"
+#~ msgstr "Clé de licence"
+
+#~ msgid "Licence key will unlock automatic updates and future features."
+#~ msgstr ""
+#~ "La clé de licence débloquera les mises à jour automatiques et des "
+#~ "fonctions futures."
+
+#~ msgid "Token"
+#~ msgstr "Jeton"
+
+#~ msgid ""
+#~ "Random string, used to authenticate passwordless exports. If changed, any "
+#~ "existing automation must be reconfigured with the new download url."
+#~ msgstr ""
+#~ "Chaîne aléatoire, utilisée pour authentifier les exportations sans mot de "
+#~ "passe. Si elle est modifiée, toute automatisation existante doit être "
+#~ "reconfigurée avec la nouvelle URL de téléchargement."
 
 #~ msgid "Band archives"
 #~ msgstr "Groupes"
