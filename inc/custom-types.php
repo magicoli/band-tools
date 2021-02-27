@@ -63,7 +63,7 @@ function bndtls_register_my_cpts() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "bands", "with_front" => true ],
 		"query_var" => true,
-		"menu_icon" => plugin_dir_url( __FILE__ ) . "../assets/svg-user-music-20x20.svg",
+		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/svg-user-music-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields" ],
 	];
 
@@ -128,7 +128,7 @@ function bndtls_register_my_cpts() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "albums", "with_front" => true ],
 		"query_var" => true,
-		"menu_icon" => plugin_dir_url( __FILE__ ) . "../assets/svg-album-20x20.svg",
+		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/svg-album-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields" ],
 		"taxonomies" => [ "post_tag" ],
 	];
@@ -194,12 +194,129 @@ function bndtls_register_my_cpts() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "songs", "with_front" => true ],
 		"query_var" => true,
-		"menu_icon" => plugin_dir_url( __FILE__ ) . "../assets/svg-comment-music-20x20.svg",
+		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/svg-comment-music-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields" ],
 		"taxonomies" => [ "post_tag" ],
 	];
 
 	register_post_type( "songs", $args );
+
+	/**
+	 * Post Type: Videos.
+	 */
+
+	$labels = [
+		"name" => __( "Videos", "band-tools" ),
+		"singular_name" => __( "Video", "band-tools" ),
+		"menu_name" => __( "Videos", "band-tools" ),
+		"all_items" => __( "All Videos", "band-tools" ),
+		"add_new" => __( "Add new", "band-tools" ),
+		"add_new_item" => __( "Add new Video", "band-tools" ),
+		"edit_item" => __( "Edit Video", "band-tools" ),
+		"new_item" => __( "New Video", "band-tools" ),
+		"view_item" => __( "View Video", "band-tools" ),
+		"view_items" => __( "View Videos", "band-tools" ),
+		"search_items" => __( "Search Videos", "band-tools" ),
+		"not_found" => __( "No Videos found", "band-tools" ),
+		"not_found_in_trash" => __( "No Videos found in trash", "band-tools" ),
+		"parent" => __( "Parent Video:", "band-tools" ),
+		"featured_image" => __( "Featured image", "band-tools" ),
+		"set_featured_image" => __( "Set featured image", "band-tools" ),
+		"remove_featured_image" => __( "Remove featured image", "band-tools" ),
+		"use_featured_image" => __( "Use as featured image", "band-tools" ),
+		"archives" => __( "Video archives", "band-tools" ),
+		"insert_into_item" => __( "Insert into Video", "band-tools" ),
+		"uploaded_to_this_item" => __( "Upload to this Video", "band-tools" ),
+		"filter_items_list" => __( "Filter Videos list", "band-tools" ),
+		"items_list_navigation" => __( "Videos list navigation", "band-tools" ),
+		"items_list" => __( "Videos list", "band-tools" ),
+		"attributes" => __( "Videos attributes", "band-tools" ),
+		"name_admin_bar" => __( "Video", "band-tools" ),
+		"item_published" => __( "Video published", "band-tools" ),
+		"item_published_privately" => __( "Video published privately.", "band-tools" ),
+		"item_reverted_to_draft" => __( "Video reverted to draft.", "band-tools" ),
+		"item_scheduled" => __( "Video scheduled", "band-tools" ),
+		"item_updated" => __( "Video updated.", "band-tools" ),
+		"parent_item_colon" => __( "Parent Video:", "band-tools" ),
+	];
+
+	$args = [
+		"label" => __( "Videos", "band-tools" ),
+		"labels" => $labels,
+		"description" => "",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => false,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => [ "slug" => "videos", "with_front" => true ],
+		"query_var" => true,
+		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/tv-music-20x20.svg",
+		"supports" => [ "title", "editor", "thumbnail", "excerpt" ],
+		"taxonomies" => [ "video_tag" ],
+	];
+
+	register_post_type( "videos", $args );
 }
 
 add_action( 'init', 'bndtls_register_my_cpts' );
+
+function bndtls_register_my_taxes() {
+
+	/**
+	 * Taxonomy: Video tags.
+	 */
+
+	$labels = [
+		"name" => __( "Video tags", "band-tools" ),
+		"singular_name" => __( "Video tag", "band-tools" ),
+		"menu_name" => __( "Video tags", "band-tools" ),
+		"all_items" => __( "All Video tags", "band-tools" ),
+		"edit_item" => __( "Edit Video tag", "band-tools" ),
+		"view_item" => __( "View Video tag", "band-tools" ),
+		"update_item" => __( "Update tag", "band-tools" ),
+		"add_new_item" => __( "Add new Video tag", "band-tools" ),
+		"new_item_name" => __( "New Video tag", "band-tools" ),
+		"parent_item" => __( "Parent Video tag", "band-tools" ),
+		"parent_item_colon" => __( "Parent Video tag:", "band-tools" ),
+		"search_items" => __( "Search Video tags", "band-tools" ),
+		"popular_items" => __( "Popular Video tags", "band-tools" ),
+		"separate_items_with_commas" => __( "Separate Video tags with commas", "band-tools" ),
+		"add_or_remove_items" => __( "Add or remove Video tags", "band-tools" ),
+		"choose_from_most_used" => __( "Choose from the most used Video tags", "band-tools" ),
+		"not_found" => __( "No Video tags found", "band-tools" ),
+		"no_terms" => __( "No Video tags", "band-tools" ),
+		"items_list_navigation" => __( "Video tags list navigation", "band-tools" ),
+		"items_list" => __( "Video tags list", "band-tools" ),
+		"back_to_items" => __( "Back to Video tags", "band-tools" ),
+	];
+
+	$args = [
+		"label" => __( "Video tags", "band-tools" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => false,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'video_tag', 'with_front' => true, ],
+		"show_admin_column" => true,
+		"show_in_rest" => true,
+		"rest_base" => "video_tag",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => true,
+			];
+	register_taxonomy( "video_tag", [ "videos" ], $args );
+}
+add_action( 'init', 'bndtls_register_my_taxes' );

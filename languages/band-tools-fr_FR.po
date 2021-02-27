@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-02-27 16:17-0400\n"
+"POT-Creation-Date: 2021-02-27 19:48-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -76,6 +76,7 @@ msgid "All Bands"
 msgstr "Tous les groupes"
 
 #: inc/custom-types.php:16 inc/custom-types.php:81 inc/custom-types.php:147
+#: inc/custom-types.php:213
 msgid "Add new"
 msgstr "Ajouter"
 
@@ -116,18 +117,22 @@ msgid "Parent Band:"
 msgstr "Groupe parent:"
 
 #: inc/custom-types.php:26 inc/custom-types.php:91 inc/custom-types.php:157
+#: inc/custom-types.php:223
 msgid "Featured image"
 msgstr "Image mise en avant"
 
 #: inc/custom-types.php:27 inc/custom-types.php:92 inc/custom-types.php:158
+#: inc/custom-types.php:224
 msgid "Set featured image"
 msgstr "Définir l'image mise en avant"
 
 #: inc/custom-types.php:28 inc/custom-types.php:93 inc/custom-types.php:159
+#: inc/custom-types.php:225
 msgid "Remove featured image"
 msgstr "Supprimer l'image mise en avant"
 
 #: inc/custom-types.php:29 inc/custom-types.php:94 inc/custom-types.php:160
+#: inc/custom-types.php:226
 msgid "Use as featured image"
 msgstr "Définir l'image mise en avant"
 
@@ -365,6 +370,182 @@ msgstr "Chanson programmée"
 msgid "Song updated."
 msgstr "Chanson mise à jour."
 
+#: inc/custom-types.php:209 inc/custom-types.php:211 inc/custom-types.php:244
+msgid "Videos"
+msgstr "Vidéos"
+
+#: inc/custom-types.php:210 inc/custom-types.php:234
+msgid "Video"
+msgstr "Vidéo"
+
+#: inc/custom-types.php:212
+msgid "All Videos"
+msgstr "Toutes les vidéos"
+
+#: inc/custom-types.php:214
+msgid "Add new Video"
+msgstr "Ajouter une vidéo"
+
+#: inc/custom-types.php:215
+msgid "Edit Video"
+msgstr "Modifier la vidéo"
+
+#: inc/custom-types.php:216
+msgid "New Video"
+msgstr "Nouvelle vidéo"
+
+#: inc/custom-types.php:217
+msgid "View Video"
+msgstr "Voir la vidéo"
+
+#: inc/custom-types.php:218
+msgid "View Videos"
+msgstr "Voir les vidéos"
+
+#: inc/custom-types.php:219
+msgid "Search Videos"
+msgstr "Rechercher dans les vidéos"
+
+#: inc/custom-types.php:220
+msgid "No Videos found"
+msgstr "Aucune vidéo trouvée"
+
+#: inc/custom-types.php:221
+msgid "No Videos found in trash"
+msgstr "Aucune vidéo trouvée dans la corbeille"
+
+#: inc/custom-types.php:222 inc/custom-types.php:240
+msgid "Parent Video:"
+msgstr "Vidéo parente:"
+
+#: inc/custom-types.php:227
+msgid "Video archives"
+msgstr "Toutes les vidéos"
+
+#: inc/custom-types.php:228
+msgid "Insert into Video"
+msgstr "Insérer dans la vidéo"
+
+#: inc/custom-types.php:229
+msgid "Upload to this Video"
+msgstr "Téléverser dans la vidéo"
+
+#: inc/custom-types.php:230
+msgid "Filter Videos list"
+msgstr "Filtrer la liste des vidéos"
+
+#: inc/custom-types.php:231
+msgid "Videos list navigation"
+msgstr "Navigation liste de vidéos"
+
+#: inc/custom-types.php:232
+msgid "Videos list"
+msgstr "Liste des vidéos"
+
+#: inc/custom-types.php:233
+msgid "Videos attributes"
+msgstr "Attributs de la vidéo"
+
+#: inc/custom-types.php:235
+msgid "Video published"
+msgstr "Vidéo publiée"
+
+#: inc/custom-types.php:236
+msgid "Video published privately."
+msgstr "Vidéo publiée en privé."
+
+#: inc/custom-types.php:237
+msgid "Video reverted to draft."
+msgstr "Vidéo remise en brouillon."
+
+#: inc/custom-types.php:238
+msgid "Video scheduled"
+msgstr "Vidéo programmée"
+
+#: inc/custom-types.php:239
+msgid "Video updated."
+msgstr "Vidéo mise à jour."
+
+#: inc/custom-types.php:280 inc/custom-types.php:282 inc/custom-types.php:304
+msgid "Video tags"
+msgstr "Étiquettes vidéo"
+
+#: inc/custom-types.php:281
+msgid "Video tag"
+msgstr "Étiquette vidéo"
+
+#: inc/custom-types.php:283
+msgid "All Video tags"
+msgstr "Toutes les étiquettes vidéo"
+
+#: inc/custom-types.php:284
+msgid "Edit Video tag"
+msgstr "Modifier l'étiquette vidéo"
+
+#: inc/custom-types.php:285
+msgid "View Video tag"
+msgstr "Voir l'étiquette vidéo"
+
+#: inc/custom-types.php:286
+msgid "Update tag"
+msgstr "Mettre à jour l'étiquette"
+
+#: inc/custom-types.php:287
+msgid "Add new Video tag"
+msgstr "Ajouter une étiquette vidéo"
+
+#: inc/custom-types.php:288
+msgid "New Video tag"
+msgstr "Nouvelle étiquette vidéo"
+
+#: inc/custom-types.php:289
+msgid "Parent Video tag"
+msgstr "Étiquette vidéo parente"
+
+#: inc/custom-types.php:290
+msgid "Parent Video tag:"
+msgstr "Étiquette video parente:"
+
+#: inc/custom-types.php:291
+msgid "Search Video tags"
+msgstr "Chercher dans les étiquettes vidéo"
+
+#: inc/custom-types.php:292
+msgid "Popular Video tags"
+msgstr "Étiquettes vidéo populaires"
+
+#: inc/custom-types.php:293
+msgid "Separate Video tags with commas"
+msgstr "Séparer les étiquettes avec une virgule"
+
+#: inc/custom-types.php:294
+msgid "Add or remove Video tags"
+msgstr "Ajouter ou supprimer des étiquettes vidéo"
+
+#: inc/custom-types.php:295
+msgid "Choose from the most used Video tags"
+msgstr "Choisir parmi les étiquettes les plus utilisées"
+
+#: inc/custom-types.php:296
+msgid "No Video tags found"
+msgstr "Aucune étiquette vidéo trouvée"
+
+#: inc/custom-types.php:297
+msgid "No Video tags"
+msgstr "Aucune d'étiquette trouvée"
+
+#: inc/custom-types.php:298
+msgid "Video tags list navigation"
+msgstr "Navigation liste des étiquettes vidéo"
+
+#: inc/custom-types.php:299
+msgid "Video tags list"
+msgstr "Liste des étiquettes vidéo"
+
+#: inc/custom-types.php:300
+msgid "Back to Video tags"
+msgstr "Retour aux étiquettes"
+
 #: inc/widgets.php:23
 msgid "Display related bands"
 msgstr "Affiche les groupes liés"
@@ -417,9 +598,6 @@ msgstr "Produits"
 #~ "passe. Si elle est modifiée, toute automatisation existante doit être "
 #~ "reconfigurée avec la nouvelle URL de téléchargement."
 
-#~ msgid "Band archives"
-#~ msgstr "Groupes"
-
 #~ msgid "Featured image for this Album"
 #~ msgstr "Image mise en avant"
 
@@ -464,9 +642,6 @@ msgstr "Produits"
 
 #~ msgid "songs"
 #~ msgstr "songs"
-
-#~ msgid "View details"
-#~ msgstr "Voir les détails"
 
 #~ msgid "More information about %s"
 #~ msgstr "Plus d'information sur %s"
