@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-02-26 21:09-0400\n"
+"POT-Creation-Date: 2021-02-26 21:24-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -67,15 +67,15 @@ msgstr ""
 #: inc/custom-types.php:12 inc/custom-types.php:14 inc/custom-types.php:47
 #: inc/widgets.php:22 inc/widgets.php:69
 msgid "Bands"
-msgstr "Artistes"
+msgstr "Groupes"
 
 #: inc/custom-types.php:13 inc/custom-types.php:37
 msgid "Band"
-msgstr "Artiste"
+msgstr "Groupe"
 
 #: inc/custom-types.php:15
 msgid "All Bands"
-msgstr "Tous les artistes"
+msgstr "Tous les groupes"
 
 #: inc/custom-types.php:16 inc/custom-types.php:81 inc/custom-types.php:147
 msgid "Add new"
@@ -83,39 +83,39 @@ msgstr "Ajouter"
 
 #: inc/custom-types.php:17
 msgid "Add new Band"
-msgstr "Ajouter un nouveau artiste"
+msgstr "Ajouter un nouveau groupe"
 
 #: inc/custom-types.php:18
 msgid "Edit Band"
-msgstr "Modifier l'artiste"
+msgstr "Modifier le groupe"
 
 #: inc/custom-types.php:19
 msgid "New Band"
-msgstr "Nouvel artiste"
+msgstr "Nouvel groupe"
 
 #: inc/custom-types.php:20
 msgid "View Band"
-msgstr "Voir l'artiste"
+msgstr "Voir le groupe"
 
 #: inc/custom-types.php:21
 msgid "View Bands"
-msgstr "Voir les artistes"
+msgstr "Voir les groupes"
 
 #: inc/custom-types.php:22
 msgid "Search Bands"
-msgstr "Rechercher dans les artistes"
+msgstr "Rechercher dans les groupes"
 
 #: inc/custom-types.php:23
 msgid "No Bands found"
-msgstr "Aucun artiste trouvé"
+msgstr "Aucun groupe trouvé"
 
 #: inc/custom-types.php:24
 msgid "No Bands found in trash"
-msgstr "Aucun artiste trouvé dans la corbeille"
+msgstr "Aucun groupe trouvé dans la corbeille"
 
 #: inc/custom-types.php:25 inc/custom-types.php:43
 msgid "Parent Band:"
-msgstr "Artiste parent:"
+msgstr "Groupe parent:"
 
 #: inc/custom-types.php:26 inc/custom-types.php:91 inc/custom-types.php:157
 msgid "Featured image"
@@ -135,11 +135,11 @@ msgstr "Définir l'image mise en avant"
 
 #: inc/custom-types.php:30
 msgid "All bands"
-msgstr "Tous les artistes"
+msgstr "Tous les groupes"
 
 #: inc/custom-types.php:31
 msgid "Insert into Band"
-msgstr "Insérer dans le artiste"
+msgstr "Insérer dans le groupe"
 
 #: inc/custom-types.php:32
 msgid "Upload to this Band"
@@ -147,39 +147,39 @@ msgstr "Téléverser"
 
 #: inc/custom-types.php:33
 msgid "Filter Bands list"
-msgstr "Filtrer la liste des artistes"
+msgstr "Filtrer la liste des groupes"
 
 #: inc/custom-types.php:34
 msgid "Bands list navigation"
-msgstr "Navigation liste de artistes"
+msgstr "Navigation liste de groupes"
 
 #: inc/custom-types.php:35
 msgid "Bands list"
-msgstr "Liste des artistes"
+msgstr "Liste des groupes"
 
 #: inc/custom-types.php:36
 msgid "Bands attributes"
-msgstr "Attributs du artiste"
+msgstr "Attributs du groupe"
 
 #: inc/custom-types.php:38
 msgid "Band published"
-msgstr "Artiste publié"
+msgstr "Groupe publié"
 
 #: inc/custom-types.php:39
 msgid "Band published privately."
-msgstr "Artiste publié en privé."
+msgstr "Groupe publié en privé."
 
 #: inc/custom-types.php:40
 msgid "Band reverted to draft."
-msgstr "Artiste remis en brouillon."
+msgstr "Groupe remis en brouillon."
 
 #: inc/custom-types.php:41
 msgid "Band scheduled"
-msgstr "Artiste programmé"
+msgstr "Groupe programmé"
 
 #: inc/custom-types.php:42
 msgid "Band updated."
-msgstr "Artiste mis à jour."
+msgstr "Groupe mis à jour."
 
 #: inc/custom-types.php:77 inc/custom-types.php:79 inc/custom-types.php:112
 #: inc/widgets.php:94 inc/widgets.php:140
@@ -369,7 +369,7 @@ msgstr "Chanson mise à jour."
 
 #: inc/widgets.php:23
 msgid "Display related bands"
-msgstr "Affiche les artistes liés"
+msgstr "Affiche les groupes liés"
 
 #: inc/widgets.php:74 inc/widgets.php:145 inc/widgets.php:217
 #: inc/widgets.php:287
@@ -401,7 +401,7 @@ msgid "Products"
 msgstr "Produits"
 
 #~ msgid "Band archives"
-#~ msgstr "Artistes"
+#~ msgstr "Groupes"
 
 #~ msgid "Featured image for this Album"
 #~ msgstr "Image mise en avant"
@@ -440,7 +440,7 @@ msgstr "Produits"
 #~ msgstr "Téléverser"
 
 #~ msgid "band"
-#~ msgstr "artiste"
+#~ msgstr "groupe"
 
 #~ msgid "albums"
 #~ msgstr "albums"
