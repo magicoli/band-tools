@@ -63,7 +63,7 @@ function bndtls_register_my_cpts() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "bands", "with_front" => true ],
 		"query_var" => true,
-		"menu_icon" => plugin_dir_path( __FILE__ ) . "../assets/svg-user-music-20x20.svg",
+		"menu_icon" => plugin_dir_url( __FILE__ ) . "../assets/svg-user-music-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields" ],
 	];
 
@@ -128,7 +128,7 @@ function bndtls_register_my_cpts() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "albums", "with_front" => true ],
 		"query_var" => true,
-		"menu_icon" => plugin_dir_path( __FILE__ ) . "../assets/svg-album-20x20.svg",
+		"menu_icon" => plugin_dir_url( __FILE__ ) . "../assets/svg-album-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields" ],
 		"taxonomies" => [ "post_tag" ],
 	];
@@ -194,7 +194,7 @@ function bndtls_register_my_cpts() {
 		"hierarchical" => false,
 		"rewrite" => [ "slug" => "songs", "with_front" => true ],
 		"query_var" => true,
-		"menu_icon" => plugin_dir_path( __FILE__ ) . "../assets/svg-comment-music-20x20.svg",
+		"menu_icon" => plugin_dir_url( __FILE__ ) . "../assets/svg-comment-music-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields" ],
 		"taxonomies" => [ "post_tag" ],
 	];
