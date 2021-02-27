@@ -1,5 +1,5 @@
 <div class="wrap">
-	<h1><?php _e("Settings"); ?></h1>
+	<h1><?php echo sprintf(__('%s settings', 'band-tools'), 'Band Tools'); ?></h1>
 	<!-- <h1>OpenSimulator</h1> -->
   <?php screen_icon(); ?>
 	<form method="post" action="options.php">
@@ -55,7 +55,7 @@
 					$value=get_option($option);
 					$value=$value ? $value : $default;
 					$label=($args['label']) ? $args['label'] : $name;
-					$label="<label for='$option'>" . __("$label") . "</label>";
+					$label="<label for='$option'>" . __("$label", 'band-tools') . "</label>";
 					$type=$args['type'];
 					$description=($args['description']) ? "<p id='$option-description' class=description>{$args['description']}</p>" : "";
 					$readonly=($args['readonly']) ? "readonly" : "";

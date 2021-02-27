@@ -14,27 +14,27 @@ function bndtls_register_settings() {
   }
 
   // bndtls_settings_add_option( 'bndtls_licence_key', "", array(
-  //   'name' => __('Licence key'),
-  //   'description' => __('Licence key will unlock automatic updates and future features.'),
+  //   'name' => __('Licence key', 'band-tools'),
+  //   'description' => __('Licence key will unlock automatic updates and future features.', 'band-tools'),
   //   'readonly' => $readonly,
   // ));
   // bndtls_settings_add_option( 'bndtls_token', "", array(
-  //   'name' => __('Token'),
-  //   'description' => __('Random string, used to authenticate passwordless exports. If changed, any existing automation must be reconfigured with the new download url.'),
+  //   'name' => __('Token', 'band-tools'),
+  //   'description' => __('Random string, used to authenticate passwordless exports. If changed, any existing automation must be reconfigured with the new download url.', 'band-tools'),
   //   'readonly' => $readonly,
   // ));
 
   bndtls_settings_add_option('bndtls_clean_titles', "", array(
-    'category' => __('Tweaks'),
-    'name' => __('Clean titles'),
-    'description' => __('Remove prefixes from titles for Categories, Taxonomies, Archives, Authors, Taxes'),
+    'category' => __('Tweaks', 'band-tools'),
+    'name' => __('Clean titles', 'band-tools'),
+    'description' => __('Remove prefixes from titles for Categories, Taxonomies, Archives, Authors, Taxes', 'band-tools'),
     'type'=>'boolean',
     'readonly' => $readonly,
     'default' => true,
   ));
   bndtls_settings_add_option('bndtls_coffee', "", array(
-    'category' => __('Tweaks'),
-    'name' => __('Make coffee after login'),
+    'category' => __('Tweaks', 'band-tools'),
+    'name' => __('Make coffee after login', 'band-tools'),
     'type'=>'boolean',
     'readonly' => $readonly,
   ));
@@ -58,7 +58,7 @@ function bndtls_settings_link( $links ) {
 		get_admin_url() . 'options-general.php'
 	) );
 	// Create the link.
-	$settings_link = "<a href='$url'>" . __( 'Settings' ) . '</a>';
+	$settings_link = "<a href='$url'>" . __( 'Settings', 'band-tools') . '</a>';
 	// Adds the link to the end of the array.
 	array_push(
 		$links,
