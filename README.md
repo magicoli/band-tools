@@ -75,6 +75,10 @@ to show
 
 ## Changelog
 
+### 0.3.7
+* updated readme
+* updated readme
+
 ### 0.3.6
 * added video post type
 * added video widget
