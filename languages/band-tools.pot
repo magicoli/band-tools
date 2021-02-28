@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-02-27 21:26-0400\n"
+"POT-Creation-Date: 2021-02-28 15:33-0400\n"
 "PO-Revision-Date: 2021-02-25 23:31-0400\n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: magiiic\n"
@@ -17,30 +17,34 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: lib\n"
 
-#: admin/dependencies.php:43
+#: admin/dependencies.php:52
 msgid "Activate"
 msgstr ""
 
-#: admin/dependencies.php:55
+#: admin/dependencies.php:64
 msgid "Install"
 msgstr ""
 
-#: admin/dependencies.php:57
+#: admin/dependencies.php:66
 msgid " (recommended) "
 msgstr ""
 
-#: admin/dependencies.php:58
+#: admin/dependencies.php:67
 msgid " (required) "
 msgstr ""
 
-#: admin/dependencies.php:66
+#: admin/dependencies.php:76
 #, php-format
 msgid "%s requires these plugins:"
 msgstr ""
 
-#: admin/inc/settings-page.php:2
+#: admin/inc/settings-page.php:4
 #, php-format
 msgid "%s settings"
+msgstr ""
+
+#: admin/inc/settings-page.php:93
+msgid "Recommended plugins"
 msgstr ""
 
 #: admin/settings.php:28 admin/settings.php:36
@@ -117,10 +121,6 @@ msgstr ""
 
 #: inc/custom-fields.php:278
 msgid "Related posts"
-msgstr ""
-
-#: inc/custom-fields.php:326
-msgid "WooCommerce"
 msgstr ""
 
 #: inc/custom-fields.php:330
