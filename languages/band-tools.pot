@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-02-27 19:48-0400\n"
+"POT-Creation-Date: 2021-02-27 21:17-0400\n"
 "PO-Revision-Date: 2021-02-25 23:31-0400\n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: magiiic\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_attr_e;_n\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;_n;'label' =>\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: lib\n"
 
@@ -63,13 +63,77 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
+#: inc/custom-fields.php:9
+msgid "Album info"
+msgstr ""
+
+#: inc/custom-fields.php:13
+msgid "Album band"
+msgstr ""
+
+#: inc/custom-fields.php:35
+msgid "Release date"
+msgstr ""
+
+#: inc/custom-fields.php:52
+msgid "Tracks"
+msgstr ""
+
+#: inc/custom-fields.php:97
+msgid "Band info"
+msgstr ""
+
+#: inc/custom-fields.php:101
+msgid "Album Band"
+msgstr ""
+
+#: inc/custom-fields.php:128 inc/custom-types.php:143 inc/custom-types.php:145
+#: inc/custom-types.php:178 inc/widgets.php:165 inc/widgets.php:212
+#: inc/widgets.php:329
+msgid "Songs"
+msgstr ""
+
+#: inc/custom-fields.php:173
+msgid "Song info"
+msgstr ""
+
+#: inc/custom-fields.php:177 inc/custom-types.php:13 inc/custom-types.php:37
+msgid "Band"
+msgstr ""
+
+#: inc/custom-fields.php:199 inc/custom-types.php:77 inc/custom-types.php:79
+#: inc/custom-types.php:112 inc/widgets.php:94 inc/widgets.php:140
+msgid "Albums"
+msgstr ""
+
+#: inc/custom-fields.php:226 inc/custom-types.php:209 inc/custom-types.php:211
+#: inc/custom-types.php:244 inc/widgets.php:308 inc/widgets.php:327
+msgid "Videos"
+msgstr ""
+
+#: inc/custom-fields.php:274
+msgid "Video info"
+msgstr ""
+
+#: inc/custom-fields.php:278
+msgid "Related posts"
+msgstr ""
+
+#: inc/custom-fields.php:326
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/custom-fields.php:330
+msgid "Product"
+msgstr ""
+
+#: inc/custom-fields.php:359
+msgid "Categories"
+msgstr ""
+
 #: inc/custom-types.php:12 inc/custom-types.php:14 inc/custom-types.php:47
 #: inc/widgets.php:22 inc/widgets.php:69
 msgid "Bands"
-msgstr ""
-
-#: inc/custom-types.php:13 inc/custom-types.php:37
-msgid "Band"
 msgstr ""
 
 #: inc/custom-types.php:15
@@ -185,11 +249,6 @@ msgstr ""
 msgid "Band updated."
 msgstr ""
 
-#: inc/custom-types.php:77 inc/custom-types.php:79 inc/custom-types.php:112
-#: inc/widgets.php:94 inc/widgets.php:140
-msgid "Albums"
-msgstr ""
-
 #: inc/custom-types.php:78 inc/custom-types.php:102
 msgid "Album"
 msgstr ""
@@ -278,11 +337,6 @@ msgstr ""
 msgid "Album updated."
 msgstr ""
 
-#: inc/custom-types.php:143 inc/custom-types.php:145 inc/custom-types.php:178
-#: inc/widgets.php:165 inc/widgets.php:212
-msgid "Songs"
-msgstr ""
-
 #: inc/custom-types.php:144 inc/custom-types.php:168
 msgid "Song"
 msgstr ""
@@ -369,10 +423,6 @@ msgstr ""
 
 #: inc/custom-types.php:173
 msgid "Song updated."
-msgstr ""
-
-#: inc/custom-types.php:209 inc/custom-types.php:211 inc/custom-types.php:244
-msgid "Videos"
 msgstr ""
 
 #: inc/custom-types.php:210 inc/custom-types.php:234
@@ -552,7 +602,7 @@ msgid "Display related bands"
 msgstr ""
 
 #: inc/widgets.php:74 inc/widgets.php:145 inc/widgets.php:217
-#: inc/widgets.php:287
+#: inc/widgets.php:287 inc/widgets.php:360
 msgid "Title:"
 msgstr ""
 
@@ -576,6 +626,10 @@ msgstr ""
 msgid "Order online"
 msgstr ""
 
-#: inc/widgets.php:282
+#: inc/widgets.php:282 inc/widgets.php:355
 msgid "Products"
+msgstr ""
+
+#: inc/widgets.php:309
+msgid "Display related videos"
 msgstr ""

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-02-27 19:48-0400\n"
+"POT-Creation-Date: 2021-02-27 21:17-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -62,14 +62,78 @@ msgstr "Faire le café après la connexion"
 msgid "Settings"
 msgstr "Paramètres"
 
+#: inc/custom-fields.php:9
+msgid "Album info"
+msgstr "Informations du disque"
+
+#: inc/custom-fields.php:13
+msgid "Album band"
+msgstr "Groupe du disque"
+
+#: inc/custom-fields.php:35
+msgid "Release date"
+msgstr "Date de sortie"
+
+#: inc/custom-fields.php:52
+msgid "Tracks"
+msgstr "Pistes"
+
+#: inc/custom-fields.php:97
+msgid "Band info"
+msgstr "Informations du groupe"
+
+#: inc/custom-fields.php:101
+msgid "Album Band"
+msgstr "Groupe du disque"
+
+#: inc/custom-fields.php:128 inc/custom-types.php:143 inc/custom-types.php:145
+#: inc/custom-types.php:178 inc/widgets.php:165 inc/widgets.php:212
+#: inc/widgets.php:329
+msgid "Songs"
+msgstr "Chansons"
+
+#: inc/custom-fields.php:173
+msgid "Song info"
+msgstr "Informations sur la chanson"
+
+#: inc/custom-fields.php:177 inc/custom-types.php:13 inc/custom-types.php:37
+msgid "Band"
+msgstr "Groupe"
+
+#: inc/custom-fields.php:199 inc/custom-types.php:77 inc/custom-types.php:79
+#: inc/custom-types.php:112 inc/widgets.php:94 inc/widgets.php:140
+msgid "Albums"
+msgstr "Disques"
+
+#: inc/custom-fields.php:226 inc/custom-types.php:209 inc/custom-types.php:211
+#: inc/custom-types.php:244 inc/widgets.php:308 inc/widgets.php:327
+msgid "Videos"
+msgstr "Vidéos"
+
+#: inc/custom-fields.php:274
+msgid "Video info"
+msgstr "Informations de la vidéo"
+
+#: inc/custom-fields.php:278
+msgid "Related posts"
+msgstr "Articles liés"
+
+#: inc/custom-fields.php:326
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/custom-fields.php:330
+msgid "Product"
+msgstr "Produit"
+
+#: inc/custom-fields.php:359
+msgid "Categories"
+msgstr "Catégories"
+
 #: inc/custom-types.php:12 inc/custom-types.php:14 inc/custom-types.php:47
 #: inc/widgets.php:22 inc/widgets.php:69
 msgid "Bands"
 msgstr "Groupes"
-
-#: inc/custom-types.php:13 inc/custom-types.php:37
-msgid "Band"
-msgstr "Groupe"
 
 #: inc/custom-types.php:15
 msgid "All Bands"
@@ -184,11 +248,6 @@ msgstr "Groupe programmé"
 msgid "Band updated."
 msgstr "Groupe mis à jour."
 
-#: inc/custom-types.php:77 inc/custom-types.php:79 inc/custom-types.php:112
-#: inc/widgets.php:94 inc/widgets.php:140
-msgid "Albums"
-msgstr "Disques"
-
 #: inc/custom-types.php:78 inc/custom-types.php:102
 msgid "Album"
 msgstr "Disque"
@@ -277,11 +336,6 @@ msgstr "Album programmé"
 msgid "Album updated."
 msgstr "Album mis à jour."
 
-#: inc/custom-types.php:143 inc/custom-types.php:145 inc/custom-types.php:178
-#: inc/widgets.php:165 inc/widgets.php:212
-msgid "Songs"
-msgstr "Chansons"
-
 #: inc/custom-types.php:144 inc/custom-types.php:168
 msgid "Song"
 msgstr "Chanson"
@@ -369,10 +423,6 @@ msgstr "Chanson programmée"
 #: inc/custom-types.php:173
 msgid "Song updated."
 msgstr "Chanson mise à jour."
-
-#: inc/custom-types.php:209 inc/custom-types.php:211 inc/custom-types.php:244
-msgid "Videos"
-msgstr "Vidéos"
 
 #: inc/custom-types.php:210 inc/custom-types.php:234
 msgid "Video"
@@ -551,7 +601,7 @@ msgid "Display related bands"
 msgstr "Affiche les groupes liés"
 
 #: inc/widgets.php:74 inc/widgets.php:145 inc/widgets.php:217
-#: inc/widgets.php:287
+#: inc/widgets.php:287 inc/widgets.php:360
 msgid "Title:"
 msgstr "Titre :"
 
@@ -575,9 +625,13 @@ msgstr "Affiche les produits WooCommerce liés"
 msgid "Order online"
 msgstr "Commander en ligne"
 
-#: inc/widgets.php:282
+#: inc/widgets.php:282 inc/widgets.php:355
 msgid "Products"
 msgstr "Produits"
+
+#: inc/widgets.php:309
+msgid "Display related videos"
+msgstr "Affiche les vidéos liées"
 
 #~ msgid "Licence key"
 #~ msgstr "Clé de licence"
@@ -627,9 +681,6 @@ msgstr "Produits"
 
 #~ msgid "Song archives"
 #~ msgstr "Chansons"
-
-#~ msgid "Song info"
-#~ msgstr "Informations sur la chanson"
 
 #~ msgid "Upload"
 #~ msgstr "Téléverser"
