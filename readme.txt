@@ -13,14 +13,14 @@ Basic post types and tools for a simple band website.
 
 == Description ==
 
-Basic post types and tools for bands. Allow publishing of albums with songs
+A basic post types and tools for bands. Allow publishing of albums with songs
 list. Easy enough for a single band. Complete enough for several ones.
 
 = Goals =
 
 I am a singer, and a web designer. There are many plugins and themes for bands
-out there, but I found none suiting my needs. Either too complicate, or lacking
-essential features.
+out there, but I found none suiting my needs. Either way too complicate, either
+lacking essential features for me.
 
 I want something:
 
@@ -67,6 +67,11 @@ I want something:
 = Who are you? =
 
 I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
+
+== Screenshot ==
+
+1. This is not an actual screenshot, I'll add one when there is something cool
+to show
 
 == Changelog ==
 
