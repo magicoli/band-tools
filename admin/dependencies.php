@@ -1,5 +1,6 @@
 <?php
 
+// global $bndtls_recommended;
 
 $bndtls_dependencies = [
   [
@@ -10,18 +11,26 @@ $bndtls_dependencies = [
     "optional" =>  false
   ],
   [
-    "name" =>  "Custom Post Type UI",
+    "name" =>  "Mesk Video Importer",
     "host" =>  "wordpress",
-    "slug" =>  "custom-post-type-ui/custom-post-type-ui.php",
-    "uri" =>  "https://wordpress.org/plugins/custom-post-type-ui/",
+    "slug" =>  "meks-video-importer/meks-video-importer.php",
+    "uri" =>  "https://wordpress.org/plugins/meks-video-importer/",
     "optional" =>  true
   ],
+  // [
+  //   "name" =>  "Custom Post Type UI",
+  //   "host" =>  "wordpress",
+  //   "slug" =>  "custom-post-type-ui/custom-post-type-ui.php",
+  //   "uri" =>  "https://wordpress.org/plugins/custom-post-type-ui/",
+  //   "optional" =>  true
+  // ],
 ];
 
 add_action( 'admin_init', 'bndtls_dependencies_check' );
 
 function bndtls_dependencies_check() {
   global $bndtls_dependencies;
+  global $bndtls_recommended;
   global $message, $required, $recommended;
   if(empty($bndtls_dependencies)) return;
   // $unmet=array();
@@ -31,7 +40,7 @@ function bndtls_dependencies_check() {
     $plugin_file=$dependency['slug'];
     $plugin = basename(dirname($plugin_file));
     if(is_plugin_active($plugin_file)) {
-      $actions[]="Active";
+      $actions[]="<em>(active)</em>";
     } else {
       $action = 'install-plugin';
       if ( array_key_exists( $plugin_file, $installed_plugins )
@@ -58,6 +67,7 @@ function bndtls_dependencies_check() {
       else $required[]=$dependency['name'] . __(' (required) ') . join(' ', $actions);
       // $unmet[]="$plugin " . $dependency['name'] . ' ' . join(' ', $actions);
     }
+    $bndtls_recommended[$dependency['name']]=$dependency['name'] . " " . join(' ', $actions);
   }
   if(!empty($required)) {
     add_action( 'admin_notices', function() {

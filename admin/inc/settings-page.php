@@ -1,4 +1,6 @@
-<div class="wrap">
+<?php
+global $bndtls_dependencies, $bndtls_recommended, $bndtls_required;
+?><div class="wrap">
 	<h1><?php echo sprintf(__('%s settings', 'band-tools'), 'Band Tools'); ?></h1>
 	<!-- <h1>OpenSimulator</h1> -->
   <?php screen_icon(); ?>
@@ -86,6 +88,16 @@
  				};
 			};
 ?>
+		<!-- Dependencies section -->
+		<tr><th colspan=2>
+			<h2><?php _e("Recommended plugins");?></h2>
+		</th></tr>
+		<?php
+		foreach ($bndtls_recommended as $plugin => $action) {
+			echo "<tr valign='top'><th scope='row'></th><td>";
+			echo $action;
+			echo "</td></tr>";
+		} ?>
 		</table>
 		<?php
 		if ( current_user_can( 'manage_options' ) ) {
