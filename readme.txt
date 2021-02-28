@@ -14,32 +14,59 @@ Basic post types and tools for a simple band website.
 == Description ==
 
 Basic post types and tools for bands. Allow publishing of albums with songs
-list.
+list. Easy enough for a single band. Complete enough for several ones.
 
-Future plans include:
+= Goals =
 
-* WooCommerce integration, to sell digital and physical albums.
+I am a singer, and a web designer. There are many plugins and themes for bands
+out there, but I found none suiting my needs. Either too complicate, or lacking
+essential features.
+
+I want something:
+
+* very simple. Let's talk about bands, albums and songs and link them together
+* opened to my other needs: sell my albums
+* theme-agnostic
+* e-commerce agnostic (although I focus first on WooCommerce integration)
+
+= Features =
+
+* Linked post types for bands, albums, themes and videos
+* Links to WooCommerce products
+* Widget to show related items. On a song page, it display the band, the albums
+  it appears on, related videos. On the band page it displays the albums and the
+  songs. Etc.
+* The album pages also display link to shop product page
+* Post types available for navigation menus
+
+= Next moves =
+
+* Better widgets: cleaner and more complete display (thumbnails for albums and bands, direct buy or link, player...)
+* Video player
+* Guttenberg Blocks
+* Shortcodes for integration anywhere
+* Specific post-types templates
+* Extended WooCommerce integration (add to cart buttons)
+
+= Future plans =
+
 * Audio playlists for albums and songs, uploaded locally
 * Video playlists for songs from YouTube, Vimeo etc.
+* Crowdfunding based on WC sales (might be in a separate plugin)
 
 == Installation ==
 
 1. Unzip `band-tools.zip` into the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
+2. Activate the plugin through the 'Plugins' menu in WordPress
+3. Head to "Band Tools" admin menu and check settings
+4. Create at least one Band, then songs and albums at will
+5. Enjoy
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= Who are you? =
 
-An answer to that question.
-
-== Screenshots ==
-
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif).
-Note that the screenshot is taken from the /assets directory or the directory
-that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win
-over `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif).
+I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 
 == Changelog ==
 
