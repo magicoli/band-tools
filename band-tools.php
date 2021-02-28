@@ -25,7 +25,10 @@ function bndtls_load_textdomain() {
 	$textdomain = "band-tools";
 	load_plugin_textdomain( $textdomain, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
-add_action( 'init', 'bndtls_load_textdomain' );
+// add_action( 'init', 'bndtls_load_textdomain' );
+//   some translations are missing when using add_action,
+//   must be triggered before acf fields definitions in inc/post-fields.php
+bndtls_load_textdomain();
 
 if(is_admin()) {
 	require_once __DIR__ . '/admin/init.php';
