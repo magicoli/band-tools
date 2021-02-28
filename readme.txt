@@ -43,8 +43,12 @@ over `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif).
 
 == Changelog ==
 
-= (unreleased) = 
-* load WooCommerce fields only if WC is active
+= 0.3.6 =
+* added video post type
+* added video widget
+* added recommended plugins to settings page
+* fix load WooCommerce fields only if WC is active
+* fix force translations load before acf fields definition, otherwise some are lost
 * fix textdomain in settings pages
 
 = 0.3.5 =
