@@ -75,21 +75,21 @@ to show
 
 == Changelog ==
 
-= 0.3.8 =
-* added video categories
+= 0.3.9 =
+* added band, album, song, video categories
+* added standard tags to all types without custom tags
+* added post-formats support
 
 = 0.3.6 =
 * added video post type
 * added video widget
 * added recommended plugins to settings page
-* fix load WooCommerce fields only if WC is active
-* fix force translations load before acf fields definition, otherwise some are lost
-* fix textdomain in settings pages
+* udpate load WooCommerce fields only if WC is active
+* fix settings pages translations: load textdomain before acf fields definition
 
 = 0.3.5 =
 * added clean titles option fo Categories, Archives, Taxonomies, Authors, Taxes
 * added translation template and French localisation
-* fix hardcoded menu icon directories
 
 = 0.2.4 =
 * added: dependency check
@@ -102,6 +102,3 @@ Basicly functional
 * Band, Album and Song post types
 * Relations between Bands, Albums and songs
 * Widgets with links to related objects
-
-= 0.1.1 =
-Initial, useless version
