@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-01 10:22-0400\n"
+"POT-Creation-Date: 2021-03-01 11:16-0400\n"
 "PO-Revision-Date: 2021-02-25 23:31-0400\n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: magiiic\n"
@@ -47,23 +47,82 @@ msgstr ""
 msgid "Recommended plugins"
 msgstr ""
 
-#: admin/settings.php:28 admin/settings.php:36
+#: admin/settings.php:17 admin/settings.php:22 admin/settings.php:27
+#: admin/settings.php:32 admin/settings.php:37 admin/settings.php:42
+msgid "Naming"
+msgstr ""
+
+#: admin/settings.php:18
+msgid "Bands (plural)"
+msgstr ""
+
+#: admin/settings.php:19 inc/custom-types.php:12 inc/custom-types.php:14
+#: inc/custom-types.php:47 inc/widgets.php:22 inc/widgets.php:69
+msgid "Bands"
+msgstr ""
+
+#: admin/settings.php:23
+msgid "Band (singular)"
+msgstr ""
+
+#: admin/settings.php:24 inc/custom-fields.php:177 inc/custom-types.php:13
+#: inc/custom-types.php:37
+msgid "Band"
+msgstr ""
+
+#: admin/settings.php:28
+msgid "Albums (plural)"
+msgstr ""
+
+#: admin/settings.php:29 inc/custom-fields.php:199 inc/custom-types.php:78
+#: inc/custom-types.php:80 inc/custom-types.php:113 inc/widgets.php:94
+#: inc/widgets.php:140
+msgid "Albums"
+msgstr ""
+
+#: admin/settings.php:33
+msgid "Album (singular)"
+msgstr ""
+
+#: admin/settings.php:34 inc/custom-types.php:79 inc/custom-types.php:103
+msgid "Album"
+msgstr ""
+
+#: admin/settings.php:38
+msgid "Songs (plural)"
+msgstr ""
+
+#: admin/settings.php:39 inc/custom-fields.php:128 inc/custom-types.php:144
+#: inc/custom-types.php:146 inc/custom-types.php:179 inc/widgets.php:165
+#: inc/widgets.php:212 inc/widgets.php:329
+msgid "Songs"
+msgstr ""
+
+#: admin/settings.php:43
+msgid "Song (singular)"
+msgstr ""
+
+#: admin/settings.php:44 inc/custom-types.php:145 inc/custom-types.php:169
+msgid "Song"
+msgstr ""
+
+#: admin/settings.php:59 admin/settings.php:67
 msgid "Tweaks"
 msgstr ""
 
-#: admin/settings.php:29
+#: admin/settings.php:60
 msgid "Clean titles"
 msgstr ""
 
-#: admin/settings.php:30
+#: admin/settings.php:61
 msgid "Remove prefixes from titles for Categories, Taxonomies, Archives, Authors, Taxes"
 msgstr ""
 
-#: admin/settings.php:37
+#: admin/settings.php:68
 msgid "Make coffee after login"
 msgstr ""
 
-#: admin/settings.php:61
+#: admin/settings.php:92
 msgid "Settings"
 msgstr ""
 
@@ -100,23 +159,8 @@ msgstr ""
 msgid "Album Band"
 msgstr ""
 
-#: inc/custom-fields.php:128 inc/custom-types.php:144 inc/custom-types.php:146
-#: inc/custom-types.php:179 inc/widgets.php:165 inc/widgets.php:212
-#: inc/widgets.php:329
-msgid "Songs"
-msgstr ""
-
 #: inc/custom-fields.php:173
 msgid "Song info"
-msgstr ""
-
-#: inc/custom-fields.php:177 inc/custom-types.php:13 inc/custom-types.php:37
-msgid "Band"
-msgstr ""
-
-#: inc/custom-fields.php:199 inc/custom-types.php:78 inc/custom-types.php:80
-#: inc/custom-types.php:113 inc/widgets.php:94 inc/widgets.php:140
-msgid "Albums"
 msgstr ""
 
 #: inc/custom-fields.php:226 inc/custom-types.php:210 inc/custom-types.php:212
@@ -130,11 +174,6 @@ msgstr ""
 
 #: inc/custom-fields.php:278
 msgid "Related posts"
-msgstr ""
-
-#: inc/custom-types.php:12 inc/custom-types.php:14 inc/custom-types.php:47
-#: inc/widgets.php:22 inc/widgets.php:69
-msgid "Bands"
 msgstr ""
 
 #: inc/custom-types.php:15
@@ -250,10 +289,6 @@ msgstr ""
 msgid "Band updated."
 msgstr ""
 
-#: inc/custom-types.php:79 inc/custom-types.php:103
-msgid "Album"
-msgstr ""
-
 #: inc/custom-types.php:81 inc/custom-types.php:96
 msgid "All Albums"
 msgstr ""
@@ -336,10 +371,6 @@ msgstr ""
 
 #: inc/custom-types.php:108
 msgid "Album updated."
-msgstr ""
-
-#: inc/custom-types.php:145 inc/custom-types.php:169
-msgid "Song"
 msgstr ""
 
 #: inc/custom-types.php:147 inc/custom-types.php:162

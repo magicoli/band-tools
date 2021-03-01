@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-01 10:22-0400\n"
+"POT-Creation-Date: 2021-03-01 11:16-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -42,15 +42,78 @@ msgstr "Réglages %s"
 msgid "Recommended plugins"
 msgstr "Extensions recommandées"
 
-#: admin/settings.php:28 admin/settings.php:36
+#: admin/settings.php:17 admin/settings.php:22 admin/settings.php:27
+#: admin/settings.php:32 admin/settings.php:37 admin/settings.php:42
+msgid "Naming"
+msgstr "Nommage"
+
+#: admin/settings.php:18
+msgid "Bands (plural)"
+msgstr "Groupes (pluriel)"
+
+#: admin/settings.php:19 inc/custom-types.php:12 inc/custom-types.php:14
+#: inc/custom-types.php:47 inc/widgets.php:22 inc/widgets.php:69
+msgid "Bands"
+msgstr "Groupes"
+
+#: admin/settings.php:23
+msgid "Band (singular)"
+msgstr "Groupe (singuler)"
+
+#: admin/settings.php:24 inc/custom-fields.php:177 inc/custom-types.php:13
+#: inc/custom-types.php:37
+msgid "Band"
+msgstr "Groupe"
+
+#: admin/settings.php:28
+#, fuzzy
+#| msgid "Albums list"
+msgid "Albums (plural)"
+msgstr "Liste des albums"
+
+#: admin/settings.php:29 inc/custom-fields.php:199 inc/custom-types.php:78
+#: inc/custom-types.php:80 inc/custom-types.php:113 inc/widgets.php:94
+#: inc/widgets.php:140
+msgid "Albums"
+msgstr "Albums"
+
+#: admin/settings.php:33
+#, fuzzy
+#| msgid "Album info"
+msgid "Album (singular)"
+msgstr "Informations de l'album"
+
+#: admin/settings.php:34 inc/custom-types.php:79 inc/custom-types.php:103
+msgid "Album"
+msgstr "Album"
+
+#: admin/settings.php:38
+msgid "Songs (plural)"
+msgstr ""
+
+#: admin/settings.php:39 inc/custom-fields.php:128 inc/custom-types.php:144
+#: inc/custom-types.php:146 inc/custom-types.php:179 inc/widgets.php:165
+#: inc/widgets.php:212 inc/widgets.php:329
+msgid "Songs"
+msgstr "Chansons"
+
+#: admin/settings.php:43
+msgid "Song (singular)"
+msgstr ""
+
+#: admin/settings.php:44 inc/custom-types.php:145 inc/custom-types.php:169
+msgid "Song"
+msgstr "Chanson"
+
+#: admin/settings.php:59 admin/settings.php:67
 msgid "Tweaks"
 msgstr "Ajustements"
 
-#: admin/settings.php:29
+#: admin/settings.php:60
 msgid "Clean titles"
 msgstr "Nettoyer les titres"
 
-#: admin/settings.php:30
+#: admin/settings.php:61
 msgid ""
 "Remove prefixes from titles for Categories, Taxonomies, Archives, Authors, "
 "Taxes"
@@ -58,11 +121,11 @@ msgstr ""
 "Supprimer les préfixes des titres pour les catégories, taxonomies, archives, "
 "auteurs, taxes"
 
-#: admin/settings.php:37
+#: admin/settings.php:68
 msgid "Make coffee after login"
 msgstr "Faire le café après la connexion"
 
-#: admin/settings.php:61
+#: admin/settings.php:92
 msgid "Settings"
 msgstr "Paramètres"
 
@@ -77,11 +140,11 @@ msgstr "Catégories"
 
 #: inc/custom-fields.php:9
 msgid "Album info"
-msgstr "Informations du disque"
+msgstr "Informations de l'album"
 
 #: inc/custom-fields.php:13
 msgid "Album band"
-msgstr "Groupe du disque"
+msgstr "Groupe de l'album"
 
 #: inc/custom-fields.php:35
 msgid "Release date"
@@ -97,26 +160,11 @@ msgstr "Informations du groupe"
 
 #: inc/custom-fields.php:101
 msgid "Album Band"
-msgstr "Groupe du disque"
-
-#: inc/custom-fields.php:128 inc/custom-types.php:144 inc/custom-types.php:146
-#: inc/custom-types.php:179 inc/widgets.php:165 inc/widgets.php:212
-#: inc/widgets.php:329
-msgid "Songs"
-msgstr "Chansons"
+msgstr "Groupe de l'album"
 
 #: inc/custom-fields.php:173
 msgid "Song info"
 msgstr "Informations sur la chanson"
-
-#: inc/custom-fields.php:177 inc/custom-types.php:13 inc/custom-types.php:37
-msgid "Band"
-msgstr "Groupe"
-
-#: inc/custom-fields.php:199 inc/custom-types.php:78 inc/custom-types.php:80
-#: inc/custom-types.php:113 inc/widgets.php:94 inc/widgets.php:140
-msgid "Albums"
-msgstr "Disques"
 
 #: inc/custom-fields.php:226 inc/custom-types.php:210 inc/custom-types.php:212
 #: inc/custom-types.php:245 inc/widgets.php:308 inc/widgets.php:327
@@ -130,11 +178,6 @@ msgstr "Informations de la vidéo"
 #: inc/custom-fields.php:278
 msgid "Related posts"
 msgstr "Articles liés"
-
-#: inc/custom-types.php:12 inc/custom-types.php:14 inc/custom-types.php:47
-#: inc/widgets.php:22 inc/widgets.php:69
-msgid "Bands"
-msgstr "Groupes"
 
 #: inc/custom-types.php:15
 msgid "All Bands"
@@ -249,13 +292,9 @@ msgstr "Groupe programmé"
 msgid "Band updated."
 msgstr "Groupe mis à jour."
 
-#: inc/custom-types.php:79 inc/custom-types.php:103
-msgid "Album"
-msgstr "Disque"
-
 #: inc/custom-types.php:81 inc/custom-types.php:96
 msgid "All Albums"
-msgstr "Tous les disques"
+msgstr "Tous les albums"
 
 #: inc/custom-types.php:83
 msgid "Add new Album"
@@ -263,23 +302,23 @@ msgstr "Ajouter un album"
 
 #: inc/custom-types.php:84
 msgid "Edit Album"
-msgstr "Modifier le disque"
+msgstr "Modifier l'album"
 
 #: inc/custom-types.php:85
 msgid "New Album"
-msgstr "Nouveau disque"
+msgstr "Nouveau album"
 
 #: inc/custom-types.php:86
 msgid "View Album"
-msgstr "Voir le disque"
+msgstr "Voir l'album"
 
 #: inc/custom-types.php:87
 msgid "View Albums"
-msgstr "Voir les disques"
+msgstr "Voir les albums"
 
 #: inc/custom-types.php:88
 msgid "Search Albums"
-msgstr "Rechercher dans les disques"
+msgstr "Rechercher dans les albums"
 
 #: inc/custom-types.php:89
 msgid "No Albums found"
@@ -311,7 +350,7 @@ msgstr "Navigation liste d'albums"
 
 #: inc/custom-types.php:101
 msgid "Albums list"
-msgstr "Liste des disques"
+msgstr "Liste des albums"
 
 #: inc/custom-types.php:102
 msgid "Albums attributes"
@@ -336,10 +375,6 @@ msgstr "Album programmé"
 #: inc/custom-types.php:108
 msgid "Album updated."
 msgstr "Album mis à jour."
-
-#: inc/custom-types.php:145 inc/custom-types.php:169
-msgid "Song"
-msgstr "Chanson"
 
 #: inc/custom-types.php:147 inc/custom-types.php:162
 msgid "All Songs"
@@ -831,7 +866,7 @@ msgstr "Affiche les vidéos liées"
 #~ msgstr "Définir l'image mise en avant"
 
 #~ msgid "Album archives"
-#~ msgstr "Disques"
+#~ msgstr "Albums"
 
 #~ msgid "Featured image for this Song"
 #~ msgstr "Image mise en avant"
