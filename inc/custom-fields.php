@@ -6,11 +6,11 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_6036ca9f301ee',
-	'title' => __('Album info', 'band-tools'),
+	'title' => 'Album info',
 	'fields' => array(
 		array(
 			'key' => 'field_60370454ae3d1',
-			'label' => __('Album band', 'band-tools'),
+			'label' => 'Album band',
 			'name' => 'album_band',
 			'type' => 'post_object',
 			'instructions' => '',
@@ -32,7 +32,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_6036cdea22a7b',
-			'label' => __('Release date', 'band-tools'),
+			'label' => 'Release date',
 			'name' => 'release_date',
 			'type' => 'date_picker',
 			'instructions' => '',
@@ -49,7 +49,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_6036caa495dc2',
-			'label' => __('Tracks', 'band-tools'),
+			'label' => 'Tracks',
 			'name' => 'tracks',
 			'type' => 'relationship',
 			'instructions' => '',
@@ -94,11 +94,11 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
 	'key' => 'group_6036da015238e',
-	'title' => __('Band info', 'band-tools'),
+	'title' => 'Band info',
 	'fields' => array(
 		array(
 			'key' => 'field_6037040409e52',
-			'label' => __('Album Band', 'band-tools'),
+			'label' => 'Album Band',
 			'name' => 'album_band',
 			'type' => 'relationship',
 			'instructions' => '',
@@ -125,7 +125,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_6036da45bee9d',
-			'label' => __('Songs', 'band-tools'),
+			'label' => 'Songs',
 			'name' => 'band',
 			'type' => 'relationship',
 			'instructions' => '',
@@ -170,11 +170,11 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
 	'key' => 'group_6036c84abbd81',
-	'title' => __('Song info', 'band-tools'),
+	'title' => 'Song info',
 	'fields' => array(
 		array(
 			'key' => 'field_6036d7b066e19',
-			'label' => __('Band', 'band-tools'),
+			'label' => 'Band',
 			'name' => 'band',
 			'type' => 'post_object',
 			'instructions' => '',
@@ -196,7 +196,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_6036d3caa9666',
-			'label' => __('Albums', 'band-tools'),
+			'label' => 'Albums',
 			'name' => 'tracks',
 			'type' => 'relationship',
 			'instructions' => '',
@@ -223,7 +223,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_603addac395f3',
-			'label' => __('Videos', 'band-tools'),
+			'label' => 'Videos',
 			'name' => 'video_posts',
 			'type' => 'relationship',
 			'instructions' => '',
@@ -271,11 +271,11 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
 	'key' => 'group_603adf0d77972',
-	'title' => __('Video info', 'band-tools'),
+	'title' => 'Video info',
 	'fields' => array(
 		array(
 			'key' => 'field_603adf4871553',
-			'label' => __('Related posts', 'band-tools'),
+			'label' => 'Related posts',
 			'name' => 'video_posts',
 			'type' => 'relationship',
 			'instructions' => '',
@@ -315,88 +315,6 @@ acf_add_local_field_group(array(
 	'position' => 'normal',
 	'style' => 'default',
 	'label_placement' => 'left',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => true,
-	'description' => '',
-));
-
-acf_add_local_field_group(array(
-	'key' => 'group_603855c7af062',
-	'title' => 'WooCommerce',
-	'fields' => array(
-		array(
-			'key' => 'field_6038543ae14e5',
-			'label' => __('Product', 'band-tools'),
-			'name' => 'wc_product',
-			'type' => 'post_object',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => array(
-				array(
-					array(
-						'field' => 'field_603856ffbc3ce',
-						'operator' => '==empty',
-					),
-				),
-			),
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'post_type' => array(
-				0 => 'product',
-			),
-			'taxonomy' => '',
-			'allow_null' => 1,
-			'multiple' => 0,
-			'return_format' => 'object',
-			'ui' => 1,
-		),
-		array(
-			'key' => 'field_603856ffbc3ce',
-			'label' => __('Categories', 'band-tools'),
-			'name' => 'wc_categories',
-			'type' => 'taxonomy',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => array(
-				array(
-					array(
-						'field' => 'field_6038543ae14e5',
-						'operator' => '==empty',
-					),
-				),
-			),
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'taxonomy' => 'product_cat',
-			'field_type' => 'checkbox',
-			'add_term' => 1,
-			'save_terms' => 0,
-			'load_terms' => 0,
-			'return_format' => 'object',
-			'multiple' => 0,
-			'allow_null' => 0,
-		),
-	),
-	'location' => array(
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'albums',
-			),
-		),
-	),
-	'menu_order' => 1,
-	'position' => 'side',
-	'style' => 'default',
-	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => '',
 	'active' => true,
