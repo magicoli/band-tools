@@ -516,41 +516,19 @@ function bndtls_register_my_taxes() {
 }
 add_action( 'init', 'bndtls_register_my_taxes' );
 
-// function bndtls_rewrite_my_cpts($args, $post_type) {
-// 	$num = wp_count_posts($post_type)->publish;
-// 	// if (wp_count_posts($post_type)->publish <= 1 ) {
-// 		$singular = "$post_type sing";
-// 		$args['labels']['name'] = __( $singular, "band-tools" ) . " ($num)";
-// 		$args['labels']['menu_name'] = __( $singular, "band-tools" ) . " ($num)";
-// 		$args['labels']['archives'] = __( $singular, "band-tools" ) . " ($num)";
-// 		$args['label'] = __( $singular, "band-tools" ) . " ($num)";
-//
-// 		$args['rewrite'] = array(
-// 			"name" => __( $singular, "band-tools" ),
-// 			"menu_name" => __( $singular, "band-tools" ),
-// 			"archives" => __( $singular, "band-tools" ),
-// 			"label" => __( $singular, "band-tools" ),
-// 		);
-// 	// }
-// 	return $args;
-// }
-// add_filter( 'register_post_type', 'bndtls_rewrite_my_cpts', 20, 2 );
-
-function yourprefix_change_cpt_service_to_specialty_labels() {
-	$types=array('bands', 'albums', 'songs');
+function bndtls_change_cpt_service_to_specialty_labels() {
+	$types=array('bands', 'albums', 'songs', 'videos');
 	foreach ($types as $type) {
-		// if ( post_type_exists( 'bands' ) ) {
-			if (wp_count_posts($type)->publish <= 1 ) {
-				$get_post_type = get_post_type_object($type);
-				$singular=get_post_type_labels($get_post_type)->singular_name;
-				$labels = $get_post_type->labels;
-				$labels->name               = $singular;
-				// $labels->all_items          = $singular;
-				$labels->menu_name          = $singular;
-				$labels->archives	          = $singular;
-				// $labels->name_admin_bar     = 'Specialty Page';
-			}
+		if (wp_count_posts($type)->publish <= 1 ) {
+			$get_post_type = get_post_type_object($type);
+			$singular=get_post_type_labels($get_post_type)->singular_name;
+			$labels = $get_post_type->labels;
+			$labels->name               = $singular;
+			$labels->menu_name          = $singular;
+			$labels->archives	          = $singular;
+			// $labels->all_items          = $singular;
+			// $labels->name_admin_bar     = $singular;
 		}
-	// }
+	}
 }
-add_action( 'init', 'yourprefix_change_cpt_service_to_specialty_labels' );
+add_action( 'init', 'bndtls_change_cpt_service_to_specialty_labels' );
