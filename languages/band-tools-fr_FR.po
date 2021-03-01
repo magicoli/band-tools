@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-02-28 15:33-0400\n"
+"POT-Creation-Date: 2021-03-01 09:15-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -121,14 +121,6 @@ msgstr "Informations de la vidéo"
 #: inc/custom-fields.php:278
 msgid "Related posts"
 msgstr "Articles liés"
-
-#: inc/custom-fields.php:330
-msgid "Product"
-msgstr "Produit"
-
-#: inc/custom-fields.php:359
-msgid "Categories"
-msgstr "Catégories"
 
 #: inc/custom-types.php:12 inc/custom-types.php:14 inc/custom-types.php:47
 #: inc/widgets.php:22 inc/widgets.php:69
@@ -428,7 +420,7 @@ msgstr "Chanson mise à jour."
 msgid "Video"
 msgstr "Vidéo"
 
-#: inc/custom-types.php:212
+#: inc/custom-types.php:212 inc/custom-types.php:227
 msgid "All Videos"
 msgstr "Toutes les vidéos"
 
@@ -467,10 +459,6 @@ msgstr "Aucune vidéo trouvée dans la corbeille"
 #: inc/custom-types.php:222 inc/custom-types.php:240
 msgid "Parent Video:"
 msgstr "Vidéo parente:"
-
-#: inc/custom-types.php:227
-msgid "Video archives"
-msgstr "Toutes les vidéos"
 
 #: inc/custom-types.php:228
 msgid "Insert into Video"
@@ -516,83 +504,171 @@ msgstr "Vidéo programmée"
 msgid "Video updated."
 msgstr "Vidéo mise à jour."
 
-#: inc/custom-types.php:280 inc/custom-types.php:282 inc/custom-types.php:304
+#: inc/custom-types.php:280 inc/custom-types.php:304
+msgid "Video categories"
+msgstr "Catégories vidéo"
+
+#: inc/custom-types.php:281
+msgid "Video category"
+msgstr "Catégorie video"
+
+#: inc/custom-types.php:282
+msgid "Categories"
+msgstr "Catégories"
+
+#: inc/custom-types.php:283
+msgid "All Categories"
+msgstr "Toutes les catégories"
+
+#: inc/custom-types.php:284
+msgid "Edit Category"
+msgstr "Modifier la catégorie"
+
+#: inc/custom-types.php:285
+msgid "View Category"
+msgstr "Voir la catégorie"
+
+#: inc/custom-types.php:286
+msgid "Update Category"
+msgstr "Mettre à jour la catégorie"
+
+#: inc/custom-types.php:287
+msgid "Add new Video Category"
+msgstr "Ajouter une catégorie vidéo"
+
+#: inc/custom-types.php:288
+msgid "New Video Category"
+msgstr "Nouvelle catégorie vidéo"
+
+#: inc/custom-types.php:289
+msgid "Parent Category"
+msgstr "Catégorie parente"
+
+#: inc/custom-types.php:290
+msgid "Parent Category:"
+msgstr "Catégorie parente:"
+
+#: inc/custom-types.php:291
+msgid "Search Categories"
+msgstr "Chércher les catégories"
+
+#: inc/custom-types.php:292
+msgid "Popular Categories"
+msgstr "Catégories populaires"
+
+#: inc/custom-types.php:293
+msgid "Separate categories with commas"
+msgstr "Séparer les catégories avec une virgule"
+
+#: inc/custom-types.php:294
+msgid "Add or remove Categories"
+msgstr "Ajouter ou supprimer des catégories vidéo"
+
+#: inc/custom-types.php:295
+msgid "Choose from the most used categories"
+msgstr "Choisir parmi les catégories les plus utilisées"
+
+#: inc/custom-types.php:296
+msgid "No Categories found"
+msgstr "Aucune catégorie trouvée"
+
+#: inc/custom-types.php:297
+msgid "No Categories"
+msgstr "Aucune catégorie"
+
+#: inc/custom-types.php:298
+msgid "Categories list navigation"
+msgstr "Navigation liste de catégories"
+
+#: inc/custom-types.php:299
+msgid "Categories list"
+msgstr "Liste des catégories"
+
+#: inc/custom-types.php:300
+msgid "Back to Video Categories"
+msgstr "Retour aux catégories"
+
+#: inc/custom-types.php:331 inc/custom-types.php:355
 msgid "Video tags"
 msgstr "Étiquettes vidéo"
 
-#: inc/custom-types.php:281
+#: inc/custom-types.php:332
 msgid "Video tag"
 msgstr "Étiquette vidéo"
 
-#: inc/custom-types.php:283
-msgid "All Video tags"
-msgstr "Toutes les étiquettes vidéo"
+#: inc/custom-types.php:333
+msgid "Tags"
+msgstr "Étiquettes"
 
-#: inc/custom-types.php:284
-msgid "Edit Video tag"
-msgstr "Modifier l'étiquette vidéo"
+#: inc/custom-types.php:334
+msgid "All tags"
+msgstr "Toutes les étiquettes"
 
-#: inc/custom-types.php:285
-msgid "View Video tag"
-msgstr "Voir l'étiquette vidéo"
+#: inc/custom-types.php:335
+msgid "Edit tag"
+msgstr "Modifier l'étiquette"
 
-#: inc/custom-types.php:286
+#: inc/custom-types.php:336
+msgid "View tag"
+msgstr "Voir l'étiquette"
+
+#: inc/custom-types.php:337
 msgid "Update tag"
 msgstr "Mettre à jour l'étiquette"
 
-#: inc/custom-types.php:287
+#: inc/custom-types.php:338
 msgid "Add new Video tag"
 msgstr "Ajouter une étiquette vidéo"
 
-#: inc/custom-types.php:288
+#: inc/custom-types.php:339
 msgid "New Video tag"
 msgstr "Nouvelle étiquette vidéo"
 
-#: inc/custom-types.php:289
-msgid "Parent Video tag"
-msgstr "Étiquette vidéo parente"
+#: inc/custom-types.php:340
+msgid "Parent tag"
+msgstr "Étiquette parente"
 
-#: inc/custom-types.php:290
-msgid "Parent Video tag:"
-msgstr "Étiquette video parente:"
+#: inc/custom-types.php:341
+msgid "Parent tag:"
+msgstr "Étiquette parente:"
 
-#: inc/custom-types.php:291
-msgid "Search Video tags"
-msgstr "Chercher dans les étiquettes vidéo"
+#: inc/custom-types.php:342
+msgid "Search tags"
+msgstr "Chercher dans les étiquettes"
 
-#: inc/custom-types.php:292
-msgid "Popular Video tags"
-msgstr "Étiquettes vidéo populaires"
+#: inc/custom-types.php:343
+msgid "Popular tags"
+msgstr "Étiquettes populaires"
 
-#: inc/custom-types.php:293
-msgid "Separate Video tags with commas"
+#: inc/custom-types.php:344
+msgid "Separate tags with commas"
 msgstr "Séparer les étiquettes avec une virgule"
 
-#: inc/custom-types.php:294
-msgid "Add or remove Video tags"
-msgstr "Ajouter ou supprimer des étiquettes vidéo"
+#: inc/custom-types.php:345
+msgid "Add or remove tags"
+msgstr "Ajouter ou supprimer des étiquettes"
 
-#: inc/custom-types.php:295
-msgid "Choose from the most used Video tags"
+#: inc/custom-types.php:346
+msgid "Choose from the most used tags"
 msgstr "Choisir parmi les étiquettes les plus utilisées"
 
-#: inc/custom-types.php:296
-msgid "No Video tags found"
-msgstr "Aucune étiquette vidéo trouvée"
+#: inc/custom-types.php:347
+msgid "No tags found"
+msgstr "Aucune étiquette trouvée"
 
-#: inc/custom-types.php:297
-msgid "No Video tags"
-msgstr "Aucune d'étiquette trouvée"
+#: inc/custom-types.php:348
+msgid "No tags"
+msgstr "Aucune étiquette"
 
-#: inc/custom-types.php:298
+#: inc/custom-types.php:349
 msgid "Video tags list navigation"
 msgstr "Navigation liste des étiquettes vidéo"
 
-#: inc/custom-types.php:299
+#: inc/custom-types.php:350
 msgid "Video tags list"
 msgstr "Liste des étiquettes vidéo"
 
-#: inc/custom-types.php:300
+#: inc/custom-types.php:351
 msgid "Back to Video tags"
 msgstr "Retour aux étiquettes"
 
@@ -632,6 +708,18 @@ msgstr "Produits"
 #: inc/widgets.php:309
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
+
+#~ msgid "Product"
+#~ msgstr "Produit"
+
+#~ msgid "View Video tag"
+#~ msgstr "Voir l'étiquette vidéo"
+
+#~ msgid "No Video tags found"
+#~ msgstr "Aucune étiquette vidéo trouvée"
+
+#~ msgid "No Video tags"
+#~ msgstr "Aucune d'étiquette trouvée"
 
 #~ msgid "Licence key"
 #~ msgstr "Clé de licence"

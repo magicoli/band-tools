@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-02-28 15:33-0400\n"
+"POT-Creation-Date: 2021-03-01 09:15-0400\n"
 "PO-Revision-Date: 2021-02-25 23:31-0400\n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: magiiic\n"
@@ -121,14 +121,6 @@ msgstr ""
 
 #: inc/custom-fields.php:278
 msgid "Related posts"
-msgstr ""
-
-#: inc/custom-fields.php:330
-msgid "Product"
-msgstr ""
-
-#: inc/custom-fields.php:359
-msgid "Categories"
 msgstr ""
 
 #: inc/custom-types.php:12 inc/custom-types.php:14 inc/custom-types.php:47
@@ -429,7 +421,7 @@ msgstr ""
 msgid "Video"
 msgstr ""
 
-#: inc/custom-types.php:212
+#: inc/custom-types.php:212 inc/custom-types.php:227
 msgid "All Videos"
 msgstr ""
 
@@ -467,10 +459,6 @@ msgstr ""
 
 #: inc/custom-types.php:222 inc/custom-types.php:240
 msgid "Parent Video:"
-msgstr ""
-
-#: inc/custom-types.php:227
-msgid "Video archives"
 msgstr ""
 
 #: inc/custom-types.php:228
@@ -517,83 +505,171 @@ msgstr ""
 msgid "Video updated."
 msgstr ""
 
-#: inc/custom-types.php:280 inc/custom-types.php:282 inc/custom-types.php:304
-msgid "Video tags"
+#: inc/custom-types.php:280 inc/custom-types.php:304
+msgid "Video categories"
 msgstr ""
 
 #: inc/custom-types.php:281
-msgid "Video tag"
+msgid "Video category"
+msgstr ""
+
+#: inc/custom-types.php:282
+msgid "Categories"
 msgstr ""
 
 #: inc/custom-types.php:283
-msgid "All Video tags"
+msgid "All Categories"
 msgstr ""
 
 #: inc/custom-types.php:284
-msgid "Edit Video tag"
+msgid "Edit Category"
 msgstr ""
 
 #: inc/custom-types.php:285
-msgid "View Video tag"
+msgid "View Category"
 msgstr ""
 
 #: inc/custom-types.php:286
-msgid "Update tag"
+msgid "Update Category"
 msgstr ""
 
 #: inc/custom-types.php:287
-msgid "Add new Video tag"
+msgid "Add new Video Category"
 msgstr ""
 
 #: inc/custom-types.php:288
-msgid "New Video tag"
+msgid "New Video Category"
 msgstr ""
 
 #: inc/custom-types.php:289
-msgid "Parent Video tag"
+msgid "Parent Category"
 msgstr ""
 
 #: inc/custom-types.php:290
-msgid "Parent Video tag:"
+msgid "Parent Category:"
 msgstr ""
 
 #: inc/custom-types.php:291
-msgid "Search Video tags"
+msgid "Search Categories"
 msgstr ""
 
 #: inc/custom-types.php:292
-msgid "Popular Video tags"
+msgid "Popular Categories"
 msgstr ""
 
 #: inc/custom-types.php:293
-msgid "Separate Video tags with commas"
+msgid "Separate categories with commas"
 msgstr ""
 
 #: inc/custom-types.php:294
-msgid "Add or remove Video tags"
+msgid "Add or remove Categories"
 msgstr ""
 
 #: inc/custom-types.php:295
-msgid "Choose from the most used Video tags"
+msgid "Choose from the most used categories"
 msgstr ""
 
 #: inc/custom-types.php:296
-msgid "No Video tags found"
+msgid "No Categories found"
 msgstr ""
 
 #: inc/custom-types.php:297
-msgid "No Video tags"
+msgid "No Categories"
 msgstr ""
 
 #: inc/custom-types.php:298
-msgid "Video tags list navigation"
+msgid "Categories list navigation"
 msgstr ""
 
 #: inc/custom-types.php:299
-msgid "Video tags list"
+msgid "Categories list"
 msgstr ""
 
 #: inc/custom-types.php:300
+msgid "Back to Video Categories"
+msgstr ""
+
+#: inc/custom-types.php:331 inc/custom-types.php:355
+msgid "Video tags"
+msgstr ""
+
+#: inc/custom-types.php:332
+msgid "Video tag"
+msgstr ""
+
+#: inc/custom-types.php:333
+msgid "Tags"
+msgstr ""
+
+#: inc/custom-types.php:334
+msgid "All tags"
+msgstr ""
+
+#: inc/custom-types.php:335
+msgid "Edit tag"
+msgstr ""
+
+#: inc/custom-types.php:336
+msgid "View tag"
+msgstr ""
+
+#: inc/custom-types.php:337
+msgid "Update tag"
+msgstr ""
+
+#: inc/custom-types.php:338
+msgid "Add new Video tag"
+msgstr ""
+
+#: inc/custom-types.php:339
+msgid "New Video tag"
+msgstr ""
+
+#: inc/custom-types.php:340
+msgid "Parent tag"
+msgstr ""
+
+#: inc/custom-types.php:341
+msgid "Parent tag:"
+msgstr ""
+
+#: inc/custom-types.php:342
+msgid "Search tags"
+msgstr ""
+
+#: inc/custom-types.php:343
+msgid "Popular tags"
+msgstr ""
+
+#: inc/custom-types.php:344
+msgid "Separate tags with commas"
+msgstr ""
+
+#: inc/custom-types.php:345
+msgid "Add or remove tags"
+msgstr ""
+
+#: inc/custom-types.php:346
+msgid "Choose from the most used tags"
+msgstr ""
+
+#: inc/custom-types.php:347
+msgid "No tags found"
+msgstr ""
+
+#: inc/custom-types.php:348
+msgid "No tags"
+msgstr ""
+
+#: inc/custom-types.php:349
+msgid "Video tags list navigation"
+msgstr ""
+
+#: inc/custom-types.php:350
+msgid "Video tags list"
+msgstr ""
+
+#: inc/custom-types.php:351
 msgid "Back to Video tags"
 msgstr ""
 

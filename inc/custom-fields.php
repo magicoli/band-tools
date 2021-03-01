@@ -6,11 +6,11 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_6036ca9f301ee',
-	'title' => 'Album info',
+	'title' => __('Album info', 'band-tools'),
 	'fields' => array(
 		array(
 			'key' => 'field_60370454ae3d1',
-			'label' => 'Album band',
+			'label' => __('Album band', 'band-tools'),
 			'name' => 'album_band',
 			'type' => 'post_object',
 			'instructions' => '',
@@ -32,7 +32,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_6036cdea22a7b',
-			'label' => 'Release date',
+			'label' => __('Release date', 'band-tools'),
 			'name' => 'release_date',
 			'type' => 'date_picker',
 			'instructions' => '',
@@ -49,7 +49,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_6036caa495dc2',
-			'label' => 'Tracks',
+			'label' => __('Tracks', 'band-tools'),
 			'name' => 'tracks',
 			'type' => 'relationship',
 			'instructions' => '',
@@ -94,11 +94,11 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
 	'key' => 'group_6036da015238e',
-	'title' => 'Band info',
+	'title' => __('Band info', 'band-tools'),
 	'fields' => array(
 		array(
 			'key' => 'field_6037040409e52',
-			'label' => 'Album Band',
+			'label' => __('Album Band', 'band-tools'),
 			'name' => 'album_band',
 			'type' => 'relationship',
 			'instructions' => '',
@@ -125,7 +125,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_6036da45bee9d',
-			'label' => 'Songs',
+			'label' => __('Songs', 'band-tools'),
 			'name' => 'band',
 			'type' => 'relationship',
 			'instructions' => '',
@@ -170,11 +170,11 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
 	'key' => 'group_6036c84abbd81',
-	'title' => 'Song info',
+	'title' => __('Song info', 'band-tools'),
 	'fields' => array(
 		array(
 			'key' => 'field_6036d7b066e19',
-			'label' => 'Band',
+			'label' => __('Band', 'band-tools'),
 			'name' => 'band',
 			'type' => 'post_object',
 			'instructions' => '',
@@ -196,7 +196,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_6036d3caa9666',
-			'label' => 'Albums',
+			'label' => __('Albums', 'band-tools'),
 			'name' => 'tracks',
 			'type' => 'relationship',
 			'instructions' => '',
@@ -223,7 +223,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_603addac395f3',
-			'label' => 'Videos',
+			'label' => __('Videos', 'band-tools'),
 			'name' => 'video_posts',
 			'type' => 'relationship',
 			'instructions' => '',
@@ -271,11 +271,11 @@ acf_add_local_field_group(array(
 
 acf_add_local_field_group(array(
 	'key' => 'group_603adf0d77972',
-	'title' => 'Video info',
+	'title' => __('Video info', 'band-tools'),
 	'fields' => array(
 		array(
 			'key' => 'field_603adf4871553',
-			'label' => 'Related posts',
+			'label' => __('Related posts', 'band-tools'),
 			'name' => 'video_posts',
 			'type' => 'relationship',
 			'instructions' => '',
