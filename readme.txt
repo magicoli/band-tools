@@ -75,6 +75,9 @@ to show
 
 == Changelog ==
 
+= 0.3.8 =
+* added video categories
+
 = 0.3.7 =
 * updated readme
 * updated readme
