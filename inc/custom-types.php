@@ -65,6 +65,7 @@ function bndtls_register_my_cpts() {
 		"query_var" => true,
 		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/svg-user-music-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "post-formats" ],
+		"taxonomies" => [ "post_tag", "band_categories" ],
 	];
 
 	register_post_type( "bands", $args );
@@ -130,7 +131,7 @@ function bndtls_register_my_cpts() {
 		"query_var" => true,
 		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/svg-album-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "post-formats" ],
-		"taxonomies" => [ "post_tag" ],
+		"taxonomies" => [ "post_tag", "album_categories" ],
 	];
 
 	register_post_type( "albums", $args );
@@ -196,7 +197,7 @@ function bndtls_register_my_cpts() {
 		"query_var" => true,
 		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/svg-comment-music-20x20.svg",
 		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields" ],
-		"taxonomies" => [ "post_tag" ],
+		"taxonomies" => [ "post_tag", "song_categories" ],
 	];
 
 	register_post_type( "songs", $args );
@@ -270,58 +271,7 @@ function bndtls_register_my_cpts() {
 
 add_action( 'init', 'bndtls_register_my_cpts' );
 
-function bndtls_register_my_taxes_video_categories() {
-
-	/**
-	 * Taxonomy: Video categories.
-	 */
-
-	$labels = [
-		"name" => __( "Video categories", "band-tools" ),
-		"singular_name" => __( "Video category", "band-tools" ),
-		"menu_name" => __( "Categories", "band-tools" ),
-		"all_items" => __( "All Categories", "band-tools" ),
-		"edit_item" => __( "Edit Category", "band-tools" ),
-		"view_item" => __( "View Category", "band-tools" ),
-		"update_item" => __( "Update Category", "band-tools" ),
-		"add_new_item" => __( "Add new Video Category", "band-tools" ),
-		"new_item_name" => __( "New Video Category", "band-tools" ),
-		"parent_item" => __( "Parent Category", "band-tools" ),
-		"parent_item_colon" => __( "Parent Category:", "band-tools" ),
-		"search_items" => __( "Search Categories", "band-tools" ),
-		"popular_items" => __( "Popular Categories", "band-tools" ),
-		"separate_items_with_commas" => __( "Separate categories with commas", "band-tools" ),
-		"add_or_remove_items" => __( "Add or remove Categories", "band-tools" ),
-		"choose_from_most_used" => __( "Choose from the most used categories", "band-tools" ),
-		"not_found" => __( "No Categories found", "band-tools" ),
-		"no_terms" => __( "No Categories", "band-tools" ),
-		"items_list_navigation" => __( "Categories list navigation", "band-tools" ),
-		"items_list" => __( "Categories list", "band-tools" ),
-		"back_to_items" => __( "Back to Video Categories", "band-tools" ),
-	];
-
-	$args = [
-		"label" => __( "Video categories", "band-tools" ),
-		"labels" => $labels,
-		"public" => true,
-		"publicly_queryable" => true,
-		"hierarchical" => true,
-		"show_ui" => true,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"query_var" => true,
-		"rewrite" => [ 'slug' => 'video_categories', 'with_front' => true,  'hierarchical' => true, ],
-		"show_admin_column" => true,
-		"show_in_rest" => true,
-		"rest_base" => "video_categories",
-		"rest_controller_class" => "WP_REST_Terms_Controller",
-		"show_in_quick_edit" => false,
-			];
-	register_taxonomy( "video_categories", [ "videos" ], $args );
-}
-add_action( 'init', 'bndtls_register_my_taxes_video_categories' );
-
-function bndtls_register_my_taxes_video_tag() {
+function bndtls_register_my_taxes() {
 
 	/**
 	 * Taxonomy: Video tags.
@@ -369,5 +319,194 @@ function bndtls_register_my_taxes_video_tag() {
 		"show_in_quick_edit" => true,
 			];
 	register_taxonomy( "video_tag", [ "videos" ], $args );
+
+	/**
+	 * Taxonomy: Video categories.
+	 */
+
+	$labels = [
+		"name" => __( "Video categories", "band-tools" ),
+		"singular_name" => __( "Video category", "band-tools" ),
+		"menu_name" => __( "Categories", "band-tools" ),
+		"all_items" => __( "All Categories", "band-tools" ),
+		"edit_item" => __( "Edit Category", "band-tools" ),
+		"view_item" => __( "View Category", "band-tools" ),
+		"update_item" => __( "Update Category", "band-tools" ),
+		"add_new_item" => __( "Add new Video Category", "band-tools" ),
+		"new_item_name" => __( "New Video Category", "band-tools" ),
+		"parent_item" => __( "Parent Category", "band-tools" ),
+		"parent_item_colon" => __( "Parent Category:", "band-tools" ),
+		"search_items" => __( "Search Categories", "band-tools" ),
+		"popular_items" => __( "Popular Categories", "band-tools" ),
+		"separate_items_with_commas" => __( "Separate categories with commas", "band-tools" ),
+		"add_or_remove_items" => __( "Add or remove Categories", "band-tools" ),
+		"choose_from_most_used" => __( "Choose from the most used categories", "band-tools" ),
+		"not_found" => __( "No Categories found", "band-tools" ),
+		"no_terms" => __( "No Categories", "band-tools" ),
+		"items_list_navigation" => __( "Categories list navigation", "band-tools" ),
+		"items_list" => __( "Categories list", "band-tools" ),
+		"back_to_items" => __( "Back to Video Categories", "band-tools" ),
+	];
+
+	$args = [
+		"label" => __( "Video categories", "band-tools" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'video_categories', 'with_front' => true,  'hierarchical' => true, ],
+		"show_admin_column" => true,
+		"show_in_rest" => true,
+		"rest_base" => "video_categories",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => false,
+			];
+	register_taxonomy( "video_categories", [ "videos" ], $args );
+
+	/**
+	 * Taxonomy: Album Categories.
+	 */
+
+	$labels = [
+		"name" => __( "Album Categories", "band-tools" ),
+		"singular_name" => __( "Album Category", "band-tools" ),
+		"menu_name" => __( "Categories", "band-tools" ),
+		"all_items" => __( "All Categories", "band-tools" ),
+		"edit_item" => __( "Edit Category", "band-tools" ),
+		"view_item" => __( "View Category", "band-tools" ),
+		"update_item" => __( "Update Category Name", "band-tools" ),
+		"add_new_item" => __( "Add new Category", "band-tools" ),
+		"new_item_name" => __( "New Category Name", "band-tools" ),
+		"parent_item" => __( "Parent Category", "band-tools" ),
+		"parent_item_colon" => __( "Parent Category:", "band-tools" ),
+		"search_items" => __( "Search Categories", "band-tools" ),
+		"popular_items" => __( "Popular Categories", "band-tools" ),
+		"separate_items_with_commas" => __( "Separate Categories with commas", "band-tools" ),
+		"add_or_remove_items" => __( "Add or remove Categories", "band-tools" ),
+		"choose_from_most_used" => __( "Choose from the most used Categories", "band-tools" ),
+		"not_found" => __( "No Categories found", "band-tools" ),
+		"no_terms" => __( "No Categories", "band-tools" ),
+		"items_list_navigation" => __( "Categories list navigation", "band-tools" ),
+		"items_list" => __( "Categories list", "band-tools" ),
+		"back_to_items" => __( "Back to Album Categories", "band-tools" ),
+	];
+
+	$args = [
+		"label" => __( "Album Categories", "band-tools" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'album_categories', 'with_front' => true,  'hierarchical' => true, ],
+		"show_admin_column" => true,
+		"show_in_rest" => true,
+		"rest_base" => "album_categories",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => false,
+			];
+	register_taxonomy( "album_categories", [ "albums" ], $args );
+
+	/**
+	 * Taxonomy: Band Categories.
+	 */
+
+	$labels = [
+		"name" => __( "Band Categories", "band-tools" ),
+		"singular_name" => __( "Band Category", "band-tools" ),
+		"menu_name" => __( "Categories", "band-tools" ),
+		"all_items" => __( "All Categories", "band-tools" ),
+		"edit_item" => __( "Edit Category", "band-tools" ),
+		"view_item" => __( "View Category", "band-tools" ),
+		"update_item" => __( "Update Category name", "band-tools" ),
+		"add_new_item" => __( "Add new Category", "band-tools" ),
+		"new_item_name" => __( "New Category name", "band-tools" ),
+		"parent_item" => __( "Parent Category", "band-tools" ),
+		"parent_item_colon" => __( "Parent Category:", "band-tools" ),
+		"search_items" => __( "Search Categories", "band-tools" ),
+		"popular_items" => __( "Popular Categories", "band-tools" ),
+		"separate_items_with_commas" => __( "Separate Categories with commas", "band-tools" ),
+		"add_or_remove_items" => __( "Add or remove Categories", "band-tools" ),
+		"choose_from_most_used" => __( "Choose from the most used Categories", "band-tools" ),
+		"not_found" => __( "No Categories found", "band-tools" ),
+		"no_terms" => __( "No Categories", "band-tools" ),
+		"items_list_navigation" => __( "Categories list navigation", "band-tools" ),
+		"items_list" => __( "Categories list", "band-tools" ),
+		"back_to_items" => __( "Back to Band Categories", "band-tools" ),
+	];
+
+	$args = [
+		"label" => __( "Band Categories", "band-tools" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => true,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'band_categories', 'with_front' => true,  'hierarchical' => true, ],
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"rest_base" => "band_categories",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => false,
+			"default_term" => ['name' => 'Singer', 'slug' => 'singer'],
+		];
+	register_taxonomy( "band_categories", [ "bands" ], $args );
+
+	/**
+	 * Taxonomy: Song Categories.
+	 */
+
+	$labels = [
+		"name" => __( "Song Categories", "band-tools" ),
+		"singular_name" => __( "Song Category", "band-tools" ),
+		"menu_name" => __( "Categories", "band-tools" ),
+		"all_items" => __( "All Categories", "band-tools" ),
+		"edit_item" => __( "Edit Category", "band-tools" ),
+		"view_item" => __( "View Category", "band-tools" ),
+		"update_item" => __( "Update Category name", "band-tools" ),
+		"add_new_item" => __( "Add new Category", "band-tools" ),
+		"new_item_name" => __( "New Category name", "band-tools" ),
+		"parent_item" => __( "Parent Category", "band-tools" ),
+		"parent_item_colon" => __( "Parent Category:", "band-tools" ),
+		"search_items" => __( "Search Categories", "band-tools" ),
+		"popular_items" => __( "Popular Categories", "band-tools" ),
+		"separate_items_with_commas" => __( "Separate Categories with commas", "band-tools" ),
+		"add_or_remove_items" => __( "Add or remove Categories", "band-tools" ),
+		"choose_from_most_used" => __( "Choose from the most used Categories", "band-tools" ),
+		"not_found" => __( "No Categories found", "band-tools" ),
+		"no_terms" => __( "No Categories", "band-tools" ),
+		"items_list_navigation" => __( "Categories list navigation", "band-tools" ),
+		"items_list" => __( "Categories list", "band-tools" ),
+		"back_to_items" => __( "Back to Song Categories", "band-tools" ),
+	];
+
+	$args = [
+		"label" => __( "Song Categories", "band-tools" ),
+		"labels" => $labels,
+		"public" => true,
+		"publicly_queryable" => true,
+		"hierarchical" => false,
+		"show_ui" => true,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"query_var" => true,
+		"rewrite" => [ 'slug' => 'song_categories', 'with_front' => true,  'hierarchical' => true, ],
+		"show_admin_column" => false,
+		"show_in_rest" => true,
+		"rest_base" => "song_categories",
+		"rest_controller_class" => "WP_REST_Terms_Controller",
+		"show_in_quick_edit" => false,
+			];
+	register_taxonomy( "song_categories", [ "songs" ], $args );
 }
-add_action( 'init', 'bndtls_register_my_taxes_video_tag' );
+add_action( 'init', 'bndtls_register_my_taxes' );
