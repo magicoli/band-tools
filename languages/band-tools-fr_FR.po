@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-01 11:43-0400\n"
+"POT-Creation-Date: 2021-03-01 12:55-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -47,8 +47,7 @@ msgstr "Extensions recommandées"
 msgid "Naming"
 msgstr "Nommage"
 
-#: admin/settings.php:18 admin/settings.php:19 inc/widgets.php:22
-#: inc/widgets.php:69
+#: admin/settings.php:18 admin/settings.php:19
 msgid "Bands"
 msgstr "Groupes"
 
@@ -65,7 +64,6 @@ msgid "singular"
 msgstr "singulier"
 
 #: admin/settings.php:28 admin/settings.php:29 inc/custom-fields.php:199
-#: inc/widgets.php:94 inc/widgets.php:140
 msgid "Albums"
 msgstr "Albums"
 
@@ -74,7 +72,6 @@ msgid "Album"
 msgstr "Album"
 
 #: admin/settings.php:38 admin/settings.php:39 inc/custom-fields.php:128
-#: inc/widgets.php:165 inc/widgets.php:212 inc/widgets.php:329
 msgid "Songs"
 msgstr "Chansons"
 
@@ -144,7 +141,8 @@ msgid "Song info"
 msgstr "Informations sur la chanson"
 
 #: inc/custom-fields.php:226 inc/custom-types.php:215 inc/custom-types.php:217
-#: inc/custom-types.php:250 inc/widgets.php:308 inc/widgets.php:327
+#: inc/custom-types.php:233 inc/custom-types.php:250 inc/widgets.php:308
+#: inc/widgets.php:327
 msgid "Videos"
 msgstr "Vidéos"
 
@@ -156,9 +154,10 @@ msgstr "Informations de la vidéo"
 msgid "Related posts"
 msgstr "Articles liés"
 
-#: inc/custom-types.php:16
-msgid "All Bands"
-msgstr "Tous les groupes"
+#: inc/custom-types.php:16 inc/custom-types.php:84 inc/custom-types.php:152
+#: inc/custom-types.php:218
+msgid "All"
+msgstr "Tous"
 
 #: inc/custom-types.php:17 inc/custom-types.php:85 inc/custom-types.php:153
 #: inc/custom-types.php:219
@@ -221,10 +220,6 @@ msgstr "Supprimer l'image mise en avant"
 msgid "Use as featured image"
 msgstr "Définir l'image mise en avant"
 
-#: inc/custom-types.php:31
-msgid "All bands"
-msgstr "Tous les groupes"
-
 #: inc/custom-types.php:32
 msgid "Insert into Band"
 msgstr "Insérer dans le groupe"
@@ -268,10 +263,6 @@ msgstr "Groupe programmé"
 #: inc/custom-types.php:43
 msgid "Band updated."
 msgstr "Groupe mis à jour."
-
-#: inc/custom-types.php:84 inc/custom-types.php:99
-msgid "All Albums"
-msgstr "Tous les albums"
 
 #: inc/custom-types.php:86
 msgid "Add new Album"
@@ -352,10 +343,6 @@ msgstr "Album programmé"
 #: inc/custom-types.php:111
 msgid "Album updated."
 msgstr "Album mis à jour."
-
-#: inc/custom-types.php:152 inc/custom-types.php:167
-msgid "All Songs"
-msgstr "Toutes les chansons"
 
 #: inc/custom-types.php:154
 msgid "Add new Song"
@@ -440,10 +427,6 @@ msgstr "Chanson mise à jour."
 #: inc/custom-types.php:216 inc/custom-types.php:240
 msgid "Video"
 msgstr "Vidéo"
-
-#: inc/custom-types.php:218 inc/custom-types.php:233
-msgid "All Videos"
-msgstr "Toutes les vidéos"
 
 #: inc/custom-types.php:220
 msgid "Add new Video"
@@ -801,6 +784,21 @@ msgstr "Produits"
 #: inc/widgets.php:309
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
+
+#~ msgid "All Bands"
+#~ msgstr "Tous les groupes"
+
+#~ msgid "All bands"
+#~ msgstr "Tous les groupes"
+
+#~ msgid "All Albums"
+#~ msgstr "Tous les albums"
+
+#~ msgid "All Songs"
+#~ msgstr "Toutes les chansons"
+
+#~ msgid "All Videos"
+#~ msgstr "Toutes les vidéos"
 
 #, fuzzy
 #~| msgid "Albums list"
