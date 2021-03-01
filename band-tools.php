@@ -76,3 +76,15 @@ if(get_option('bndtls_clean_titles')) {
 	}
 	add_filter( 'get_the_archive_title', 'bndtls__prefix_category_title',20 );
 }
+
+if(get_option('bndtls_redirect_single_post_archives')) {
+	function bndtls_redirect_cpt_archive() {
+		$type=get_queried_object()->name;
+		if(wp_count_posts($type)->publish == 1) {
+			$post=get_posts(array('post_type' => $type))[0];
+			wp_redirect( get_permalink($post), 301 );
+			exit();
+		}
+	}
+	add_action( 'template_redirect', 'bndtls_redirect_cpt_archive' );
+}

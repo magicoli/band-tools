@@ -30,7 +30,7 @@ function bndtls_register_settings() {
   ));
   bndtls_settings_add_option( 'bndtls_naming_album', "", array(
     'category' => __('Naming', 'band-tools'),
-    'name' => sprintf("%s (%s)", __('Album', 'band-tools'), __('singular', 'band-tools')), 
+    'name' => sprintf("%s (%s)", __('Album', 'band-tools'), __('singular', 'band-tools')),
     'default' => __('Album', 'band-tools'),
   ));
   bndtls_settings_add_option( 'bndtls_naming_songs', "", array(
@@ -62,6 +62,11 @@ function bndtls_register_settings() {
     'type'=>'boolean',
     'readonly' => $readonly,
     'default' => true,
+  ));
+  bndtls_settings_add_option('bndtls_redirect_single_post_archives', "", array(
+    'category' => __('Tweaks', 'band-tools'),
+    'name' => __('Redirect archives containing only one post', 'band-tools'),
+    'type'=>'boolean',
   ));
   bndtls_settings_add_option('bndtls_coffee', "", array(
     'category' => __('Tweaks', 'band-tools'),
