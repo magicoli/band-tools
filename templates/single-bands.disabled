@@ -1,4 +1,8 @@
 <?php
+/*
+ * Template Name: Band
+ * Template Post Type: bands
+ */
 
 get_header();
 the_post();
@@ -10,7 +14,6 @@ $thumbnail = get_field('thumbnail');
 ?>
 
 <div class="wrap">
-  C'est ma template à moa!
 	<div id="event-hero">
 
 		<?php if( $location ): ?>
@@ -32,7 +35,8 @@ $thumbnail = get_field('thumbnail');
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<?php the_content(); ?>
+      C'est ma template à moa!
+			<?php #the_content(); ?>
 		</main>
 	</div>
 

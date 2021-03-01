@@ -34,6 +34,7 @@ if(is_admin()) {
 	require_once __DIR__ . '/admin/init.php';
 	// require_once __DIR__ . '/admin/wp-dependencies.php';
 }
+require_once __DIR__ . '/templates.php';
 require_once __DIR__ . '/inc/post-types.php';
 require_once __DIR__ . '/inc/widgets.php';
 
