@@ -75,6 +75,9 @@ to show
 
 == Changelog ==
 
+= 0.4.1 =
+* added videos to singular/plural names
+
 = 0.4 =
 * new settings custom post naming
 * new automatic singular or plural post names for archives and menus
