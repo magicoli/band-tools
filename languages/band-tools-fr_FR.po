@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-01 09:15-0400\n"
+"POT-Creation-Date: 2021-03-01 09:47-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -65,6 +65,18 @@ msgstr "Faire le café après la connexion"
 #: admin/settings.php:61
 msgid "Settings"
 msgstr "Paramètres"
+
+#: inc/custom-fields-woocommerce.php:9
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/custom-fields-woocommerce.php:13
+msgid "Product"
+msgstr "Produit"
+
+#: inc/custom-fields-woocommerce.php:42 inc/custom-types.php:282
+msgid "Categories"
+msgstr "Catégories"
 
 #: inc/custom-fields.php:9
 msgid "Album info"
@@ -512,10 +524,6 @@ msgstr "Catégories vidéo"
 msgid "Video category"
 msgstr "Catégorie video"
 
-#: inc/custom-types.php:282
-msgid "Categories"
-msgstr "Catégories"
-
 #: inc/custom-types.php:283
 msgid "All Categories"
 msgstr "Toutes les catégories"
@@ -708,9 +716,6 @@ msgstr "Produits"
 #: inc/widgets.php:309
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
-
-#~ msgid "Product"
-#~ msgstr "Produit"
 
 #~ msgid "View Video tag"
 #~ msgstr "Voir l'étiquette vidéo"
