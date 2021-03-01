@@ -34,7 +34,7 @@ function bndtls_register_my_cpts() {
 		"filter_items_list" => __( "Filter Bands list", "band-tools" ),
 		"items_list_navigation" => __( "Bands list navigation", "band-tools" ),
 		"items_list" => __( "Bands list", "band-tools" ),
-		"attributes" => __( "Bands attributes", "band-tools" ),
+		"attributes" => __( "Band attributes", "band-tools" ),
 		"name_admin_bar" => __( $singular, "band-tools" ),
 		"item_published" => __( "Band published", "band-tools" ),
 		"item_published_privately" => __( "Band published privately.", "band-tools" ),
@@ -65,7 +65,7 @@ function bndtls_register_my_cpts() {
 		"rewrite" => [ "slug" => "bands", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/svg-user-music-20x20.svg",
-		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "post-formats" ],
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "comments", "page-attributes", "post-formats" ],
 		"taxonomies" => [ "post_tag", "band_categories" ],
 	];
 
@@ -102,7 +102,7 @@ function bndtls_register_my_cpts() {
 		"filter_items_list" => __( "Filter Albums list", "band-tools" ),
 		"items_list_navigation" => __( "Albums list navigation", "band-tools" ),
 		"items_list" => __( "Albums list", "band-tools" ),
-		"attributes" => __( "Albums attributes", "band-tools" ),
+		"attributes" => __( "Album attributes", "band-tools" ),
 		"name_admin_bar" => __( $singular, "band-tools" ),
 		"item_published" => __( "Album published", "band-tools" ),
 		"item_published_privately" => __( "Album published privately.", "band-tools" ),
@@ -133,7 +133,7 @@ function bndtls_register_my_cpts() {
 		"rewrite" => [ "slug" => "albums", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/svg-album-20x20.svg",
-		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "post-formats" ],
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "comments", "page-attributes", "post-formats" ],
 		"taxonomies" => [ "post_tag", "album_categories" ],
 	];
 
@@ -170,7 +170,7 @@ function bndtls_register_my_cpts() {
 		"filter_items_list" => __( "Filter Songs list", "band-tools" ),
 		"items_list_navigation" => __( "Songs list navigation", "band-tools" ),
 		"items_list" => __( "Songs list", "band-tools" ),
-		"attributes" => __( "Songs attributes", "band-tools" ),
+		"attributes" => __( "Song attributes", "band-tools" ),
 		"name_admin_bar" => __( $singular, "band-tools" ),
 		"item_published" => __( "Song published", "band-tools" ),
 		"item_published_privately" => __( "Song published privately.", "band-tools" ),
@@ -201,7 +201,7 @@ function bndtls_register_my_cpts() {
 		"rewrite" => [ "slug" => "songs", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/svg-comment-music-20x20.svg",
-		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields" ],
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "comments", "page-attributes", "post-formats" ],
 		"taxonomies" => [ "post_tag", "song_categories" ],
 	];
 
@@ -236,7 +236,7 @@ function bndtls_register_my_cpts() {
 		"filter_items_list" => __( "Filter Videos list", "band-tools" ),
 		"items_list_navigation" => __( "Videos list navigation", "band-tools" ),
 		"items_list" => __( "Videos list", "band-tools" ),
-		"attributes" => __( "Videos attributes", "band-tools" ),
+		"attributes" => __( "Video attributes", "band-tools" ),
 		"name_admin_bar" => __( "Video", "band-tools" ),
 		"item_published" => __( "Video published", "band-tools" ),
 		"item_published_privately" => __( "Video published privately.", "band-tools" ),
@@ -267,7 +267,7 @@ function bndtls_register_my_cpts() {
 		"rewrite" => [ "slug" => "videos", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/tv-music-20x20.svg",
-		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "post-formats" ],
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "comments", "page-attributes", "post-formats" ],
 		"taxonomies" => [ "video_tag" ],
 	];
 
