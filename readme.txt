@@ -75,6 +75,9 @@ to show
 
 == Changelog ==
 
+= 0.4.2 =
+* added redirection for archives containing a single post
+
 = 0.4.1 =
 * added videos to singular/plural names
 
