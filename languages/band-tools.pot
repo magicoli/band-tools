@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-01 11:16-0400\n"
+"POT-Creation-Date: 2021-03-01 11:22-0400\n"
 "PO-Revision-Date: 2021-02-25 23:31-0400\n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: magiiic\n"
@@ -52,57 +52,44 @@ msgstr ""
 msgid "Naming"
 msgstr ""
 
-#: admin/settings.php:18
-msgid "Bands (plural)"
-msgstr ""
-
-#: admin/settings.php:19 inc/custom-types.php:12 inc/custom-types.php:14
-#: inc/custom-types.php:47 inc/widgets.php:22 inc/widgets.php:69
+#: admin/settings.php:18 admin/settings.php:19 inc/custom-types.php:12
+#: inc/custom-types.php:14 inc/custom-types.php:47 inc/widgets.php:22
+#: inc/widgets.php:69
 msgid "Bands"
 msgstr ""
 
-#: admin/settings.php:23
-msgid "Band (singular)"
+#: admin/settings.php:18 admin/settings.php:28 admin/settings.php:38
+msgid "plural"
 msgstr ""
 
-#: admin/settings.php:24 inc/custom-fields.php:177 inc/custom-types.php:13
-#: inc/custom-types.php:37
+#: admin/settings.php:23 admin/settings.php:24 inc/custom-fields.php:177
+#: inc/custom-types.php:13 inc/custom-types.php:37
 msgid "Band"
 msgstr ""
 
-#: admin/settings.php:28
-msgid "Albums (plural)"
+#: admin/settings.php:23 admin/settings.php:33 admin/settings.php:43
+msgid "singular"
 msgstr ""
 
-#: admin/settings.php:29 inc/custom-fields.php:199 inc/custom-types.php:78
-#: inc/custom-types.php:80 inc/custom-types.php:113 inc/widgets.php:94
-#: inc/widgets.php:140
+#: admin/settings.php:28 admin/settings.php:29 inc/custom-fields.php:199
+#: inc/custom-types.php:78 inc/custom-types.php:80 inc/custom-types.php:113
+#: inc/widgets.php:94 inc/widgets.php:140
 msgid "Albums"
 msgstr ""
 
-#: admin/settings.php:33
-msgid "Album (singular)"
-msgstr ""
-
-#: admin/settings.php:34 inc/custom-types.php:79 inc/custom-types.php:103
+#: admin/settings.php:33 admin/settings.php:34 inc/custom-types.php:79
+#: inc/custom-types.php:103
 msgid "Album"
 msgstr ""
 
-#: admin/settings.php:38
-msgid "Songs (plural)"
-msgstr ""
-
-#: admin/settings.php:39 inc/custom-fields.php:128 inc/custom-types.php:144
-#: inc/custom-types.php:146 inc/custom-types.php:179 inc/widgets.php:165
-#: inc/widgets.php:212 inc/widgets.php:329
+#: admin/settings.php:38 admin/settings.php:39 inc/custom-fields.php:128
+#: inc/custom-types.php:144 inc/custom-types.php:146 inc/custom-types.php:179
+#: inc/widgets.php:165 inc/widgets.php:212 inc/widgets.php:329
 msgid "Songs"
 msgstr ""
 
-#: admin/settings.php:43
-msgid "Song (singular)"
-msgstr ""
-
-#: admin/settings.php:44 inc/custom-types.php:145 inc/custom-types.php:169
+#: admin/settings.php:43 admin/settings.php:44 inc/custom-types.php:145
+#: inc/custom-types.php:169
 msgid "Song"
 msgstr ""
 
