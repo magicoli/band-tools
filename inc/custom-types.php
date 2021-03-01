@@ -64,7 +64,7 @@ function bndtls_register_my_cpts() {
 		"rewrite" => [ "slug" => "bands", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/svg-user-music-20x20.svg",
-		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields" ],
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "post-formats" ],
 	];
 
 	register_post_type( "bands", $args );
@@ -129,7 +129,7 @@ function bndtls_register_my_cpts() {
 		"rewrite" => [ "slug" => "albums", "with_front" => true ],
 		"query_var" => true,
 		"menu_icon" => dirname(plugin_dir_url( __FILE__ )) . "/assets/svg-album-20x20.svg",
-		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields" ],
+		"supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "post-formats" ],
 		"taxonomies" => [ "post_tag" ],
 	];
 
