@@ -75,6 +75,10 @@ to show
 
 ## Changelog
 
+### 0.4
+* new settings custom post naming
+* new automatic singular or plural post names for archives and menus
+
 ### 0.3.9
 * added band, album, song, video categories
 * added standard tags to all types without custom tags
