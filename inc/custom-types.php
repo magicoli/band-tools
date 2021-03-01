@@ -270,7 +270,7 @@ function bndtls_register_my_cpts() {
 
 add_action( 'init', 'bndtls_register_my_cpts' );
 
-function bndtls_register_my_taxes() {
+function bndtls_register_my_taxes_video_categories() {
 
 	/**
 	 * Taxonomy: Video categories.
@@ -310,14 +310,18 @@ function bndtls_register_my_taxes() {
 		"show_in_menu" => true,
 		"show_in_nav_menus" => true,
 		"query_var" => true,
-		"rewrite" => [ 'slug' => 'video_category', 'with_front' => true,  'hierarchical' => true, ],
+		"rewrite" => [ 'slug' => 'video_categories', 'with_front' => true,  'hierarchical' => true, ],
 		"show_admin_column" => true,
 		"show_in_rest" => true,
-		"rest_base" => "video_category",
+		"rest_base" => "video_categories",
 		"rest_controller_class" => "WP_REST_Terms_Controller",
 		"show_in_quick_edit" => false,
 			];
-	register_taxonomy( "video_category", [ "videos" ], $args );
+	register_taxonomy( "video_categories", [ "videos" ], $args );
+}
+add_action( 'init', 'bndtls_register_my_taxes_video_categories' );
+
+function bndtls_register_my_taxes_video_tag() {
 
 	/**
 	 * Taxonomy: Video tags.
@@ -366,4 +370,4 @@ function bndtls_register_my_taxes() {
 			];
 	register_taxonomy( "video_tag", [ "videos" ], $args );
 }
-add_action( 'init', 'bndtls_register_my_taxes' );
+add_action( 'init', 'bndtls_register_my_taxes_video_tag' );
