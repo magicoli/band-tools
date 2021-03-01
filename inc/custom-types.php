@@ -5,14 +5,15 @@ if (!defined('WPINC')) {die;}
 function bndtls_register_my_cpts() {
 
 	/**
-	 * Post Type: Bands.
-	 */
-
+	* Post Type: Bands.
+	*/
+	$plural = get_option( 'bndtls_naming_bands', 'Bands');
+	$singular = get_option( 'bndtls_naming_band', 'Band');
 	$labels = [
-		"name" => __( "Bands", "band-tools" ),
-		"singular_name" => __( "Band", "band-tools" ),
-		"menu_name" => __( "Bands", "band-tools" ),
-		"all_items" => __( "All Bands", "band-tools" ),
+		"name" => __( $plural, "band-tools" ),
+		"singular_name" => __( $singular, "band-tools" ),
+		"menu_name" => __( $plural, "band-tools" ),
+		"all_items" => __( "All", "band-tools" ),
 		"add_new" => __( "Add new", "band-tools" ),
 		"add_new_item" => __( "Add new Band", "band-tools" ),
 		"edit_item" => __( "Edit Band", "band-tools" ),
@@ -27,14 +28,14 @@ function bndtls_register_my_cpts() {
 		"set_featured_image" => __( "Set featured image", "band-tools" ),
 		"remove_featured_image" => __( "Remove featured image", "band-tools" ),
 		"use_featured_image" => __( "Use as featured image", "band-tools" ),
-		"archives" => __( "All bands", "band-tools" ),
+		"archives" => __( $plural, "band-tools" ),
 		"insert_into_item" => __( "Insert into Band", "band-tools" ),
 		"uploaded_to_this_item" => __( "Upload to this Band", "band-tools" ),
 		"filter_items_list" => __( "Filter Bands list", "band-tools" ),
 		"items_list_navigation" => __( "Bands list navigation", "band-tools" ),
 		"items_list" => __( "Bands list", "band-tools" ),
 		"attributes" => __( "Bands attributes", "band-tools" ),
-		"name_admin_bar" => __( "Band", "band-tools" ),
+		"name_admin_bar" => __( $singular, "band-tools" ),
 		"item_published" => __( "Band published", "band-tools" ),
 		"item_published_privately" => __( "Band published privately.", "band-tools" ),
 		"item_reverted_to_draft" => __( "Band reverted to draft.", "band-tools" ),
@@ -44,7 +45,7 @@ function bndtls_register_my_cpts() {
 	];
 
 	$args = [
-		"label" => __( "Bands", "band-tools" ),
+		"label" => __( $plural, "band-tools" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -74,11 +75,13 @@ function bndtls_register_my_cpts() {
 	 * Post Type: Albums.
 	 */
 
+	$plural = get_option( 'bndtls_naming_albums', 'Albums');
+	$singular = get_option( 'bndtls_naming_album', 'Album');
 	$labels = [
-		"name" => __( "Albums", "band-tools" ),
-		"singular_name" => __( "Album", "band-tools" ),
-		"menu_name" => __( "Albums", "band-tools" ),
-		"all_items" => __( "All Albums", "band-tools" ),
+		"name" => __( $plural, "band-tools" ),
+		"singular_name" => __( $singular, "band-tools" ),
+		"menu_name" => __( $plural, "band-tools" ),
+		"all_items" => __( "All", "band-tools" ),
 		"add_new" => __( "Add new", "band-tools" ),
 		"add_new_item" => __( "Add new Album", "band-tools" ),
 		"edit_item" => __( "Edit Album", "band-tools" ),
@@ -93,14 +96,14 @@ function bndtls_register_my_cpts() {
 		"set_featured_image" => __( "Set featured image", "band-tools" ),
 		"remove_featured_image" => __( "Remove featured image", "band-tools" ),
 		"use_featured_image" => __( "Use as featured image", "band-tools" ),
-		"archives" => __( "All Albums", "band-tools" ),
+		"archives" => __( $plural, "band-tools" ),
 		"insert_into_item" => __( "Insert into Album", "band-tools" ),
 		"uploaded_to_this_item" => __( "Upload to this Album", "band-tools" ),
 		"filter_items_list" => __( "Filter Albums list", "band-tools" ),
 		"items_list_navigation" => __( "Albums list navigation", "band-tools" ),
 		"items_list" => __( "Albums list", "band-tools" ),
 		"attributes" => __( "Albums attributes", "band-tools" ),
-		"name_admin_bar" => __( "Album", "band-tools" ),
+		"name_admin_bar" => __( $singular, "band-tools" ),
 		"item_published" => __( "Album published", "band-tools" ),
 		"item_published_privately" => __( "Album published privately.", "band-tools" ),
 		"item_reverted_to_draft" => __( "Album reverted to draft.", "band-tools" ),
@@ -110,7 +113,7 @@ function bndtls_register_my_cpts() {
 	];
 
 	$args = [
-		"label" => __( "Albums", "band-tools" ),
+		"label" => __( $plural, "band-tools" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -140,11 +143,13 @@ function bndtls_register_my_cpts() {
 	 * Post Type: Songs.
 	 */
 
+ 	$plural = get_option( 'bndtls_naming_songs', 'Songs');
+	$singular = get_option( 'bndtls_naming_song', 'Song');
 	$labels = [
-		"name" => __( "Songs", "band-tools" ),
-		"singular_name" => __( "Song", "band-tools" ),
-		"menu_name" => __( "Songs", "band-tools" ),
-		"all_items" => __( "All Songs", "band-tools" ),
+		"name" => __( $plural, "band-tools" ),
+		"singular_name" => __( $singular, "band-tools" ),
+		"menu_name" => __( $plural, "band-tools" ),
+		"all_items" => __( "All", "band-tools" ),
 		"add_new" => __( "Add new", "band-tools" ),
 		"add_new_item" => __( "Add new Song", "band-tools" ),
 		"edit_item" => __( "Edit Song", "band-tools" ),
@@ -159,14 +164,14 @@ function bndtls_register_my_cpts() {
 		"set_featured_image" => __( "Set featured image", "band-tools" ),
 		"remove_featured_image" => __( "Remove featured image", "band-tools" ),
 		"use_featured_image" => __( "Use as featured image", "band-tools" ),
-		"archives" => __( "All Songs", "band-tools" ),
+		"archives" => __( $plural, "band-tools" ),
 		"insert_into_item" => __( "Insert into Song", "band-tools" ),
 		"uploaded_to_this_item" => __( "Upload to this Song", "band-tools" ),
 		"filter_items_list" => __( "Filter Songs list", "band-tools" ),
 		"items_list_navigation" => __( "Songs list navigation", "band-tools" ),
 		"items_list" => __( "Songs list", "band-tools" ),
 		"attributes" => __( "Songs attributes", "band-tools" ),
-		"name_admin_bar" => __( "Song", "band-tools" ),
+		"name_admin_bar" => __( $singular, "band-tools" ),
 		"item_published" => __( "Song published", "band-tools" ),
 		"item_published_privately" => __( "Song published privately.", "band-tools" ),
 		"item_reverted_to_draft" => __( "Song reverted to draft.", "band-tools" ),
@@ -176,7 +181,7 @@ function bndtls_register_my_cpts() {
 	];
 
 	$args = [
-		"label" => __( "Songs", "band-tools" ),
+		"label" => __( $plural, "band-tools" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
@@ -210,7 +215,7 @@ function bndtls_register_my_cpts() {
 		"name" => __( "Videos", "band-tools" ),
 		"singular_name" => __( "Video", "band-tools" ),
 		"menu_name" => __( "Videos", "band-tools" ),
-		"all_items" => __( "All Videos", "band-tools" ),
+		"all_items" => __( "All", "band-tools" ),
 		"add_new" => __( "Add new", "band-tools" ),
 		"add_new_item" => __( "Add new Video", "band-tools" ),
 		"edit_item" => __( "Edit Video", "band-tools" ),
@@ -225,7 +230,7 @@ function bndtls_register_my_cpts() {
 		"set_featured_image" => __( "Set featured image", "band-tools" ),
 		"remove_featured_image" => __( "Remove featured image", "band-tools" ),
 		"use_featured_image" => __( "Use as featured image", "band-tools" ),
-		"archives" => __( "All Videos", "band-tools" ),
+		"archives" => __( "Videos", "band-tools" ),
 		"insert_into_item" => __( "Insert into Video", "band-tools" ),
 		"uploaded_to_this_item" => __( "Upload to this Video", "band-tools" ),
 		"filter_items_list" => __( "Filter Videos list", "band-tools" ),
@@ -510,3 +515,42 @@ function bndtls_register_my_taxes() {
 	register_taxonomy( "song_categories", [ "songs" ], $args );
 }
 add_action( 'init', 'bndtls_register_my_taxes' );
+
+// function bndtls_rewrite_my_cpts($args, $post_type) {
+// 	$num = wp_count_posts($post_type)->publish;
+// 	// if (wp_count_posts($post_type)->publish <= 1 ) {
+// 		$singular = "$post_type sing";
+// 		$args['labels']['name'] = __( $singular, "band-tools" ) . " ($num)";
+// 		$args['labels']['menu_name'] = __( $singular, "band-tools" ) . " ($num)";
+// 		$args['labels']['archives'] = __( $singular, "band-tools" ) . " ($num)";
+// 		$args['label'] = __( $singular, "band-tools" ) . " ($num)";
+//
+// 		$args['rewrite'] = array(
+// 			"name" => __( $singular, "band-tools" ),
+// 			"menu_name" => __( $singular, "band-tools" ),
+// 			"archives" => __( $singular, "band-tools" ),
+// 			"label" => __( $singular, "band-tools" ),
+// 		);
+// 	// }
+// 	return $args;
+// }
+// add_filter( 'register_post_type', 'bndtls_rewrite_my_cpts', 20, 2 );
+
+function yourprefix_change_cpt_service_to_specialty_labels() {
+	$types=array('bands', 'albums', 'songs');
+	foreach ($types as $type) {
+		// if ( post_type_exists( 'bands' ) ) {
+			if (wp_count_posts($type)->publish <= 1 ) {
+				$get_post_type = get_post_type_object($type);
+				$singular=get_post_type_labels($get_post_type)->singular_name;
+				$labels = $get_post_type->labels;
+				$labels->name               = $singular;
+				// $labels->all_items          = $singular;
+				$labels->menu_name          = $singular;
+				$labels->archives	          = $singular;
+				// $labels->name_admin_bar     = 'Specialty Page';
+			}
+		}
+	// }
+}
+add_action( 'init', 'yourprefix_change_cpt_service_to_specialty_labels' );

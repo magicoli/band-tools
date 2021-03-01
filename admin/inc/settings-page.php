@@ -90,7 +90,7 @@ global $bndtls_dependencies, $bndtls_recommended, $bndtls_required;
 ?>
 		<!-- Dependencies section -->
 		<tr><th colspan=2>
-			<h2><?php _e("Recommended plugins");?></h2>
+			<h2><?php _e("Recommended plugins", "band-tools");?></h2>
 		</th></tr>
 		<?php
 		foreach ($bndtls_recommended as $plugin => $action) {

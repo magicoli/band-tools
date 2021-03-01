@@ -13,6 +13,37 @@ function bndtls_register_settings() {
     $readonly=true;
   }
 
+  bndtls_settings_add_option( 'bndtls_naming_bands', "", array(
+    'category' => __('Naming', 'band-tools'),
+    'name' => sprintf("%s (%s)", __('Bands', 'band-tools'), __('plural', 'band-tools')),
+    'default' => __('Bands', 'band-tools'),
+  ));
+  bndtls_settings_add_option( 'bndtls_naming_band', "", array(
+    'category' => __('Naming', 'band-tools'),
+    'name' => sprintf("%s (%s)", __('Band', 'band-tools'), __('singular', 'band-tools')),
+    'default' => __('Band', 'band-tools'),
+  ));
+  bndtls_settings_add_option( 'bndtls_naming_albums', "", array(
+    'category' => __('Naming', 'band-tools'),
+    'name' => sprintf("%s (%s)", __('Albums', 'band-tools'), __('plural', 'band-tools')),
+    'default' => __('Albums', 'band-tools'),
+  ));
+  bndtls_settings_add_option( 'bndtls_naming_album', "", array(
+    'category' => __('Naming', 'band-tools'),
+    'name' => sprintf("%s (%s)", __('Album', 'band-tools'), __('singular', 'band-tools')), 
+    'default' => __('Album', 'band-tools'),
+  ));
+  bndtls_settings_add_option( 'bndtls_naming_songs', "", array(
+    'category' => __('Naming', 'band-tools'),
+    'name' => sprintf("%s (%s)", __('Songs', 'band-tools'), __('plural', 'band-tools')),
+    'default' => __('Songs', 'band-tools'),
+  ));
+  bndtls_settings_add_option( 'bndtls_naming_song', "", array(
+    'category' => __('Naming', 'band-tools'),
+    'name' => sprintf("%s (%s)", __('Song', 'band-tools'), __('singular', 'band-tools')),
+    'default' => __('Song', 'band-tools'),
+  ));
+
   // bndtls_settings_add_option( 'bndtls_licence_key', "", array(
   //   'name' => __('Licence key', 'band-tools'),
   //   'description' => __('Licence key will unlock automatic updates and future features.', 'band-tools'),
