@@ -6,11 +6,11 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
 	'key' => 'group_603855c7af062',
-	'title' => __('WooCommerce', 'band-tools'),
+	'title' => 'WooCommerce',
 	'fields' => array(
 		array(
 			'key' => 'field_6038543ae14e5',
-			'label' => __('Product', 'band-tools'),
+			'label' => __('Product', "band-tools"),
 			'name' => 'wc_product',
 			'type' => 'post_object',
 			'instructions' => '',
@@ -39,7 +39,7 @@ acf_add_local_field_group(array(
 		),
 		array(
 			'key' => 'field_603856ffbc3ce',
-			'label' => __('Categories', 'band-tools'),
+			'label' => __('Categories', "band-tools"),
 			'name' => 'wc_categories',
 			'type' => 'taxonomy',
 			'instructions' => '',
