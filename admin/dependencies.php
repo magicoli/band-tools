@@ -69,11 +69,11 @@ function bndtls_dependencies_check() {
           ),
           $action.'_'.$plugin
         );
-        $actions[]="<span class=$action><a href='$activate_url'>" . __("Install") . "</a></span>";
-        // $actions[]="<a href='$action_url'>" . __("Install") . "</a>";
+        // $actions[]="<span class=$action><a href='$activate_url'>" . __("Install") . "</a></span>";
+        $actions[]="<a href='$action_url'>" . __("Install") . "</a>";
       }
-      if($dependency['optional']) $recommended[]=$dependency['name'] . __(' (recommended) ', 'band-tools') . join(' ', $actions);
-      else $required[]=$dependency['name'] . __(' (required) ') . join(' ', $actions);
+      if($dependency['optional']) $recommended[]=$dependency['name'] . sprintf(' (%s) ', __('recommended', 'band-tools')) . join(' ', $actions);
+      else $required[]=$dependency['name'] . sprintf(' (%s) ', __('required', 'band-tools')) . join(' ', $actions);
       // $unmet[]="$plugin " . $dependency['name'] . ' ' . join(' ', $actions);
     }
     $bndtls_recommended[$dependency['name']]=$dependency['name'] . " <span class=actions>" . join(' ', $actions) . "</span>";
