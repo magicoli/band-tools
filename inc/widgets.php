@@ -4,9 +4,9 @@
 if(get_option('bndtls_widget_area')) {
   register_sidebar(
     array (
-      'name' => 'Band Sidebar',
+      'name' => 'Band Tools Sidebar',
       'id' => 'bndtls-sidebar',
-      'description' => __('Show only on bands pages'),
+      'description' => sprint(__('Add widgets here to appear on %s pages'), 'Band Tools'),
       'before_widget' => '<div class="widget">',
       'after_widget' => '</div>',
       'before_title' => '<h3>',

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-02 14:41-0400\n"
+"POT-Creation-Date: 2021-03-02 14:44-0400\n"
 "PO-Revision-Date: 2021-02-25 23:31-0400\n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: magiiic\n"
@@ -761,7 +761,7 @@ msgstr ""
 
 #: inc/widgets.php:9
 #, php-format
-msgid "Add widgets here to appear on your %s pages"
+msgid "Add widgets here to appear on %s pages"
 msgstr ""
 
 #: inc/widgets.php:25
