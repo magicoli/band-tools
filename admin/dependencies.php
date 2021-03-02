@@ -11,6 +11,14 @@ $bndtls_dependencies = [
     "optional" =>  false
   ],
   [
+    "name" =>  "Custom Sidebars",
+    "host" =>  "wordpress",
+    "slug" =>  "custom-sidebars/customsidebars.php",
+    "uri" =>  "https://wordpress.org/plugins/custom-sidebars/",
+    "optional" =>  true
+  ],
+
+  [
     "name" =>  "Mesk Video Importer",
     "host" =>  "wordpress",
     "slug" =>  "meks-video-importer/meks-video-importer.php",
@@ -49,9 +57,9 @@ function bndtls_dependencies_check() {
           admin_url('plugins.php?action=activate&plugin='.$plugin_file),
           'activate-plugin_'.$plugin_file
         );
-        $actions[]="<a href='$activate_url'>" . __("Activate") . "</a>";
+        $actions[]="<span class=$action><a href='$activate_url'>" . __("Activate") . "</a></span>";
       } else {
-        $install_url=wp_nonce_url(
+        $action_url=wp_nonce_url(
           add_query_arg(
             array(
               'action' => 'install-plugin',
@@ -61,13 +69,14 @@ function bndtls_dependencies_check() {
           ),
           $action.'_'.$plugin
         );
-        $actions[]="<a href='$install_url'>" . __("Install") . "</a>";
+        $actions[]="<span class=$action><a href='$activate_url'>" . __("Install") . "</a></span>";
+        // $actions[]="<a href='$action_url'>" . __("Install") . "</a>";
       }
       if($dependency['optional']) $recommended[]=$dependency['name'] . __(' (recommended) ', 'band-tools') . join(' ', $actions);
       else $required[]=$dependency['name'] . __(' (required) ') . join(' ', $actions);
       // $unmet[]="$plugin " . $dependency['name'] . ' ' . join(' ', $actions);
     }
-    $bndtls_recommended[$dependency['name']]=$dependency['name'] . " " . join(' ', $actions);
+    $bndtls_recommended[$dependency['name']]=$dependency['name'] . " <span class=actions>" . join(' ', $actions) . "</span>";
   }
   if(!empty($required)) {
     add_action( 'admin_notices', function() {
