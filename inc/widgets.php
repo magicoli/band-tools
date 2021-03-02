@@ -1,17 +1,17 @@
 <?php
 
-// // Register Widget Area
-// register_sidebar(
-//     array (
-//         'name' => 'Band Tools Sidebar',
-//         'id' => 'sidebar-band-tools',
-//         'description' => __('Band Tools sidebar widget area'),
-//         'before_widget' => '<div class="widget">',
-//         'after_widget' => '</div>',
-//         'before_title' => '<h3>',
-//         'after_title' => '</h3>',
-//     )
-// );
+// Register Widget Area
+register_sidebar(
+    array (
+        'name' => 'Band Sidebar',
+        'id' => 'bndtls-sidebar',
+        'description' => __('Show only on bands pages'),
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3>',
+        'after_title' => '</h3>',
+    )
+);
 
 // Bands widget
 class bndtls_widget_bands extends WP_Widget {
@@ -86,11 +86,11 @@ class bndtls_widget_bands extends WP_Widget {
 }
 
 // albums widget
-class wpb_widget_albums extends WP_Widget {
+class bndtsl_widget_albums extends WP_Widget {
 
   function __construct() {
     parent::__construct(
-      'wpb_widget_albums',
+      'bndtsl_widget_albums',
       sprintf('Band Tools (%s)', __(get_option( 'bndtls_naming_Albums', 'Songs'), 'band-tools')),
       array( 'description' => __( 'Display related albums', 'band-tools' ), )
     );
@@ -157,11 +157,11 @@ class wpb_widget_albums extends WP_Widget {
 }
 
 // songs widget
-class wpb_widget_songs extends WP_Widget {
+class bndtsl_widget_songs extends WP_Widget {
 
   function __construct() {
     parent::__construct(
-      'wpb_widget_songs',
+      'bndtsl_widget_songs',
       sprintf('Band Tools (%s)', __(get_option( 'bndtls_naming_songs', 'Songs'), 'band-tools')),
       array( 'description' => __( 'Display related songs', 'band-tools' ), )
     );
@@ -229,11 +229,11 @@ class wpb_widget_songs extends WP_Widget {
 }
 
 // wc_products widget
-class wpb_widget_wc_products extends WP_Widget {
+class bndtsl_widget_wc_products extends WP_Widget {
 
   function __construct() {
     parent::__construct(
-      'wpb_widget_wc_products',
+      'bndtsl_widget_wc_products',
       sprintf('Band Tools (%s)', __('WC Products', 'band-tools')),
       array( 'description' => __( 'Display related WooCommerce products', 'band-tools' ), )
     );
@@ -300,11 +300,11 @@ class wpb_widget_wc_products extends WP_Widget {
 
 
 // video_posts widget
-class wpb_widget_video_posts extends WP_Widget {
+class bndtsl_widget_video_posts extends WP_Widget {
 
   function __construct() {
     parent::__construct(
-      'wpb_widget_video_posts',
+      'bndtsl_widget_video_posts',
       sprintf('Band Tools (%s)', __('Videos', 'band-tools')),
       array( 'description' => __( 'Display related videos', 'band-tools' ), )
     );
@@ -372,10 +372,10 @@ class wpb_widget_video_posts extends WP_Widget {
 }
 
 // Register and load the widget
-function wpb_load_widgets() {
+function bndtsl_load_widgets() {
   register_widget( 'bndtls_widget_bands' );
-  register_widget( 'wpb_widget_albums' );
-  register_widget( 'wpb_widget_songs' );
-  register_widget( 'wpb_widget_video_posts' );
+  register_widget( 'bndtsl_widget_albums' );
+  register_widget( 'bndtsl_widget_songs' );
+  register_widget( 'bndtsl_widget_video_posts' );
 }
-add_action( 'widgets_init', 'wpb_load_widgets' );
+add_action( 'widgets_init', 'bndtsl_load_widgets' );
