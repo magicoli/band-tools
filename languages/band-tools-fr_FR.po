@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-02 14:44-0400\n"
+"POT-Creation-Date: 2021-03-02 15:04-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -16,17 +16,17 @@ msgstr ""
 msgid "Activate"
 msgstr "Activer la licence"
 
-#: admin/dependencies.php:72
+#: admin/dependencies.php:73
 msgid "Install"
 msgstr "Installer des pages"
 
 #: admin/dependencies.php:75
-msgid " (recommended) "
-msgstr " (recommandé) "
+msgid "recommended"
+msgstr "recommandé"
 
 #: admin/dependencies.php:76
-msgid " (required) "
-msgstr " (requis) "
+msgid "required"
+msgstr "requis"
 
 #: admin/dependencies.php:85
 #, php-format
@@ -758,8 +758,7 @@ msgid "Back to Song Categories"
 msgstr "Retour aux catégories de chanson"
 
 #: inc/widgets.php:9
-#, fuzzy, php-format
-#| msgid "Add widgets here to appear on your %s pages"
+#, php-format
 msgid "Add widgets here to appear on %s pages"
 msgstr "Ajoutez ici des widgets qui apparaîtront sur les pages %s"
 
