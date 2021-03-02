@@ -1,17 +1,19 @@
 <?php
 
 // Register Widget Area
-register_sidebar(
+if(get_option('bndtls_widget_area')) {
+  register_sidebar(
     array (
-        'name' => 'Band Sidebar',
-        'id' => 'bndtls-sidebar',
-        'description' => __('Show only on bands pages'),
-        'before_widget' => '<div class="widget">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3>',
-        'after_title' => '</h3>',
+      'name' => 'Band Sidebar',
+      'id' => 'bndtls-sidebar',
+      'description' => __('Show only on bands pages'),
+      'before_widget' => '<div class="widget">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>',
     )
-);
+  );
+}
 
 // Bands widget
 class bndtls_widget_bands extends WP_Widget {

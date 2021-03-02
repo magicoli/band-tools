@@ -55,10 +55,17 @@ function bndtls_register_settings() {
   //   'readonly' => $readonly,
   // ));
 
+  bndtls_settings_add_option('bndtls_widget_area', "", array(
+    'category' => __('Tweaks', 'band-tools'),
+    'name' => __('Band Tools widget area', 'band-tools'),
+    'type'=>'boolean',
+    'default' => false,
+  ));
+
   bndtls_settings_add_option('bndtls_clean_titles', "", array(
     'category' => __('Tweaks', 'band-tools'),
     'name' => __('Clean titles', 'band-tools'),
-    'description' => __('Remove prefixes from titles for Categories, Taxonomies, Archives, Authors, Taxes', 'band-tools'),
+    'description' => __('Remove prefixes from titles for Categories, Taxonomies, Archives, Authors', 'band-tools'),
     'type'=>'boolean',
     'readonly' => $readonly,
     'default' => true,
