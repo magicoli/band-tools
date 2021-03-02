@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-01 12:55-0400\n"
+"POT-Creation-Date: 2021-03-02 14:32-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -12,23 +12,23 @@ msgstr ""
 "X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: admin/dependencies.php:52
+#: admin/dependencies.php:60
 msgid "Activate"
 msgstr "Activer la licence"
 
-#: admin/dependencies.php:64
+#: admin/dependencies.php:72
 msgid "Install"
 msgstr "Installer des pages"
 
-#: admin/dependencies.php:66
+#: admin/dependencies.php:75
 msgid " (recommended) "
 msgstr " (recommandé) "
 
-#: admin/dependencies.php:67
+#: admin/dependencies.php:76
 msgid " (required) "
 msgstr " (requis) "
 
-#: admin/dependencies.php:76
+#: admin/dependencies.php:85
 #, php-format
 msgid "%s requires these plugins:"
 msgstr "%s requiert ces extensions:"
@@ -79,27 +79,35 @@ msgstr "Chansons"
 msgid "Song"
 msgstr "Chanson"
 
-#: admin/settings.php:59 admin/settings.php:67
+#: admin/settings.php:59 admin/settings.php:66 admin/settings.php:74
+#: admin/settings.php:79
 msgid "Tweaks"
 msgstr "Ajustements"
 
 #: admin/settings.php:60
+msgid "Band Tools widget area"
+msgstr "Zone de widgets Band Tools"
+
+#: admin/settings.php:67
 msgid "Clean titles"
 msgstr "Nettoyer les titres"
 
-#: admin/settings.php:61
+#: admin/settings.php:68
 msgid ""
-"Remove prefixes from titles for Categories, Taxonomies, Archives, Authors, "
-"Taxes"
+"Remove prefixes from titles for Categories, Taxonomies, Archives, Authors"
 msgstr ""
 "Supprimer les préfixes des titres pour les catégories, taxonomies, archives, "
-"auteurs, taxes"
+"auteurs"
 
-#: admin/settings.php:68
+#: admin/settings.php:75
+msgid "Redirect archives containing only one post"
+msgstr "Rediriger les pages d'archives contenant un seul élément"
+
+#: admin/settings.php:80
 msgid "Make coffee after login"
 msgstr "Faire le café après la connexion"
 
-#: admin/settings.php:92
+#: admin/settings.php:104
 msgid "Settings"
 msgstr "Paramètres"
 
@@ -141,8 +149,8 @@ msgid "Song info"
 msgstr "Informations sur la chanson"
 
 #: inc/custom-fields.php:226 inc/custom-types.php:215 inc/custom-types.php:217
-#: inc/custom-types.php:233 inc/custom-types.php:250 inc/widgets.php:308
-#: inc/widgets.php:327
+#: inc/custom-types.php:233 inc/custom-types.php:250 inc/widgets.php:310
+#: inc/widgets.php:329
 msgid "Videos"
 msgstr "Vidéos"
 
@@ -241,7 +249,7 @@ msgid "Bands list"
 msgstr "Liste des groupes"
 
 #: inc/custom-types.php:37
-msgid "Bands attributes"
+msgid "Band attributes"
 msgstr "Attributs du groupe"
 
 #: inc/custom-types.php:39
@@ -321,8 +329,8 @@ msgid "Albums list"
 msgstr "Liste des albums"
 
 #: inc/custom-types.php:105
-msgid "Albums attributes"
-msgstr "Attributs d'album"
+msgid "Album attributes"
+msgstr "Attributs de l'album"
 
 #: inc/custom-types.php:107
 msgid "Album published"
@@ -401,8 +409,8 @@ msgid "Songs list"
 msgstr "Liste des chansons"
 
 #: inc/custom-types.php:173
-msgid "Songs attributes"
-msgstr "Attributs des chansons"
+msgid "Song attributes"
+msgstr "Attributs de la chanson"
 
 #: inc/custom-types.php:175
 msgid "Song published"
@@ -485,7 +493,7 @@ msgid "Videos list"
 msgstr "Liste des vidéos"
 
 #: inc/custom-types.php:239
-msgid "Videos attributes"
+msgid "Video attributes"
 msgstr "Attributs de la vidéo"
 
 #: inc/custom-types.php:241
@@ -748,42 +756,55 @@ msgstr "Catégorie de chanson"
 msgid "Back to Song Categories"
 msgstr "Retour aux catégories de chanson"
 
-#: inc/widgets.php:23
+#: inc/widgets.php:9
+msgid "Show only on bands pages"
+msgstr ""
+
+#: inc/widgets.php:25
 msgid "Display related bands"
 msgstr "Affiche les groupes liés"
 
-#: inc/widgets.php:74 inc/widgets.php:145 inc/widgets.php:217
-#: inc/widgets.php:287 inc/widgets.php:360
+#: inc/widgets.php:76 inc/widgets.php:147 inc/widgets.php:219
+#: inc/widgets.php:289 inc/widgets.php:362
 msgid "Title:"
 msgstr "Titre :"
 
-#: inc/widgets.php:95
+#: inc/widgets.php:97
 msgid "Display related albums"
 msgstr "Affiche les albums liés"
 
-#: inc/widgets.php:166
+#: inc/widgets.php:168
 msgid "Display related songs"
 msgstr "Affiche les chansons liées"
 
-#: inc/widgets.php:237
+#: inc/widgets.php:239
 msgid "WC Products"
 msgstr "Produits WooCommerce"
 
-#: inc/widgets.php:238
+#: inc/widgets.php:240
 msgid "Display related WooCommerce products"
 msgstr "Affiche les produits WooCommerce liés"
 
-#: inc/widgets.php:256
+#: inc/widgets.php:258
 msgid "Order online"
 msgstr "Commander en ligne"
 
-#: inc/widgets.php:282 inc/widgets.php:355
+#: inc/widgets.php:284 inc/widgets.php:357
 msgid "Products"
 msgstr "Produits"
 
-#: inc/widgets.php:309
+#: inc/widgets.php:311
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
+
+#: templates/content-bands.php:36
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: templates/content-bands.php:49
+msgid "Pages:"
+msgstr "Pages:"
 
 #~ msgid "All Bands"
 #~ msgstr "Tous les groupes"

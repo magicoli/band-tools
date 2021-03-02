@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-01 12:55-0400\n"
+"POT-Creation-Date: 2021-03-02 14:32-0400\n"
 "PO-Revision-Date: 2021-02-25 23:31-0400\n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: magiiic\n"
@@ -17,23 +17,23 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: lib\n"
 
-#: admin/dependencies.php:52
+#: admin/dependencies.php:60
 msgid "Activate"
 msgstr ""
 
-#: admin/dependencies.php:64
+#: admin/dependencies.php:72
 msgid "Install"
 msgstr ""
 
-#: admin/dependencies.php:66
+#: admin/dependencies.php:75
 msgid " (recommended) "
 msgstr ""
 
-#: admin/dependencies.php:67
+#: admin/dependencies.php:76
 msgid " (required) "
 msgstr ""
 
-#: admin/dependencies.php:76
+#: admin/dependencies.php:85
 #, php-format
 msgid "%s requires these plugins:"
 msgstr ""
@@ -84,23 +84,32 @@ msgstr ""
 msgid "Song"
 msgstr ""
 
-#: admin/settings.php:59 admin/settings.php:67
+#: admin/settings.php:59 admin/settings.php:66 admin/settings.php:74
+#: admin/settings.php:79
 msgid "Tweaks"
 msgstr ""
 
 #: admin/settings.php:60
+msgid "Band Tools widget area"
+msgstr ""
+
+#: admin/settings.php:67
 msgid "Clean titles"
 msgstr ""
 
-#: admin/settings.php:61
-msgid "Remove prefixes from titles for Categories, Taxonomies, Archives, Authors, Taxes"
+#: admin/settings.php:68
+msgid "Remove prefixes from titles for Categories, Taxonomies, Archives, Authors"
 msgstr ""
 
-#: admin/settings.php:68
+#: admin/settings.php:75
+msgid "Redirect archives containing only one post"
+msgstr ""
+
+#: admin/settings.php:80
 msgid "Make coffee after login"
 msgstr ""
 
-#: admin/settings.php:92
+#: admin/settings.php:104
 msgid "Settings"
 msgstr ""
 
@@ -142,8 +151,8 @@ msgid "Song info"
 msgstr ""
 
 #: inc/custom-fields.php:226 inc/custom-types.php:215 inc/custom-types.php:217
-#: inc/custom-types.php:233 inc/custom-types.php:250 inc/widgets.php:308
-#: inc/widgets.php:327
+#: inc/custom-types.php:233 inc/custom-types.php:250 inc/widgets.php:310
+#: inc/widgets.php:329
 msgid "Videos"
 msgstr ""
 
@@ -242,7 +251,7 @@ msgid "Bands list"
 msgstr ""
 
 #: inc/custom-types.php:37
-msgid "Bands attributes"
+msgid "Band attributes"
 msgstr ""
 
 #: inc/custom-types.php:39
@@ -322,7 +331,7 @@ msgid "Albums list"
 msgstr ""
 
 #: inc/custom-types.php:105
-msgid "Albums attributes"
+msgid "Album attributes"
 msgstr ""
 
 #: inc/custom-types.php:107
@@ -402,7 +411,7 @@ msgid "Songs list"
 msgstr ""
 
 #: inc/custom-types.php:173
-msgid "Songs attributes"
+msgid "Song attributes"
 msgstr ""
 
 #: inc/custom-types.php:175
@@ -486,7 +495,7 @@ msgid "Videos list"
 msgstr ""
 
 #: inc/custom-types.php:239
-msgid "Videos attributes"
+msgid "Video attributes"
 msgstr ""
 
 #: inc/custom-types.php:241
@@ -749,39 +758,52 @@ msgstr ""
 msgid "Back to Song Categories"
 msgstr ""
 
-#: inc/widgets.php:23
+#: inc/widgets.php:9
+msgid "Show only on bands pages"
+msgstr ""
+
+#: inc/widgets.php:25
 msgid "Display related bands"
 msgstr ""
 
-#: inc/widgets.php:74 inc/widgets.php:145 inc/widgets.php:217
-#: inc/widgets.php:287 inc/widgets.php:360
+#: inc/widgets.php:76 inc/widgets.php:147 inc/widgets.php:219
+#: inc/widgets.php:289 inc/widgets.php:362
 msgid "Title:"
 msgstr ""
 
-#: inc/widgets.php:95
+#: inc/widgets.php:97
 msgid "Display related albums"
 msgstr ""
 
-#: inc/widgets.php:166
+#: inc/widgets.php:168
 msgid "Display related songs"
 msgstr ""
 
-#: inc/widgets.php:237
+#: inc/widgets.php:239
 msgid "WC Products"
 msgstr ""
 
-#: inc/widgets.php:238
+#: inc/widgets.php:240
 msgid "Display related WooCommerce products"
 msgstr ""
 
-#: inc/widgets.php:256
+#: inc/widgets.php:258
 msgid "Order online"
 msgstr ""
 
-#: inc/widgets.php:282 inc/widgets.php:355
+#: inc/widgets.php:284 inc/widgets.php:357
 msgid "Products"
 msgstr ""
 
-#: inc/widgets.php:309
+#: inc/widgets.php:311
 msgid "Display related videos"
+msgstr ""
+
+#: templates/content-bands.php:36
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: templates/content-bands.php:49
+msgid "Pages:"
 msgstr ""
