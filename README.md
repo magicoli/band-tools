@@ -75,11 +75,14 @@ to show
 
 ## Changelog
 
+### 0.4.4
+* fix missing install link for recommended plugins
+
 ### 0.4.3
 * added "Custom sidebars" to recommended plugins
 * added page-attributes support
+* added widget area (currently depends on theme customizaton or external plugin)
 * disabled templates until they're ready
-* Added widget area (currently depends on theme customizaton or external plugin)
 
 ### 0.4.2
 * added redirection for archives containing a single post

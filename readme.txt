@@ -75,6 +75,9 @@ to show
 
 == Changelog ==
 
+= 0.4.4 =
+* fix missing install link for recommended plugins
+
 = 0.4.3 =
 * added "Custom sidebars" to recommended plugins
 * added page-attributes support
