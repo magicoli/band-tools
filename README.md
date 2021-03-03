@@ -75,6 +75,12 @@ to show
 
 ## Changelog
 
+### 0.5
+* new shortcode to display related objects
+* new catch-all widget with all relations
+* new function to build shortcode and widget content
+* added songs per album view
+
 ### 0.4.4
 * fix missing install link for recommended plugins
 
