@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-02 15:04-0400\n"
+"POT-Creation-Date: 2021-03-03 02:35-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -150,8 +150,8 @@ msgid "Song info"
 msgstr "Informations sur la chanson"
 
 #: inc/custom-fields.php:226 inc/custom-types.php:215 inc/custom-types.php:217
-#: inc/custom-types.php:233 inc/custom-types.php:250 inc/widgets.php:310
-#: inc/widgets.php:329
+#: inc/custom-types.php:233 inc/custom-types.php:250 inc/widgets.php:288
+#: inc/widgets.php:307
 msgid "Videos"
 msgstr "Vidéos"
 
@@ -762,40 +762,44 @@ msgstr "Retour aux catégories de chanson"
 msgid "Add widgets here to appear on %s pages"
 msgstr "Ajoutez ici des widgets qui apparaîtront sur les pages %s"
 
-#: inc/widgets.php:25
-msgid "Display related bands"
-msgstr "Affiche les groupes liés"
+#: inc/widgets.php:24
+msgid "all relations"
+msgstr "tous les liens"
 
-#: inc/widgets.php:76 inc/widgets.php:147 inc/widgets.php:219
-#: inc/widgets.php:289 inc/widgets.php:362
-msgid "Title:"
-msgstr "Titre :"
-
-#: inc/widgets.php:97
-msgid "Display related albums"
-msgstr "Affiche les albums liés"
-
-#: inc/widgets.php:168
+#: inc/widgets.php:25 inc/widgets.php:171
 msgid "Display related songs"
 msgstr "Affiche les chansons liées"
 
-#: inc/widgets.php:239
+#: inc/widgets.php:55 inc/widgets.php:102 inc/widgets.php:150
+#: inc/widgets.php:197 inc/widgets.php:267 inc/widgets.php:340
+msgid "Title:"
+msgstr "Titre :"
+
+#: inc/widgets.php:76
+msgid "Display related bands"
+msgstr "Affiche les groupes liés"
+
+#: inc/widgets.php:123
+msgid "Display related albums"
+msgstr "Affiche les albums liés"
+
+#: inc/widgets.php:217
 msgid "WC Products"
 msgstr "Produits WooCommerce"
 
-#: inc/widgets.php:240
+#: inc/widgets.php:218
 msgid "Display related WooCommerce products"
 msgstr "Affiche les produits WooCommerce liés"
 
-#: inc/widgets.php:258
+#: inc/widgets.php:236
 msgid "Order online"
 msgstr "Commander en ligne"
 
-#: inc/widgets.php:284 inc/widgets.php:357
+#: inc/widgets.php:262 inc/widgets.php:335
 msgid "Products"
 msgstr "Produits"
 
-#: inc/widgets.php:311
+#: inc/widgets.php:289
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
 
