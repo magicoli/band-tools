@@ -13,6 +13,11 @@ function bndtls_register_settings() {
     $readonly=true;
   }
 
+  bndtls_settings_add_option( 'license_key_band-tools', "", array(
+  	'name' => __('License key', 'band-tools'),
+  	'description' => sprintf(__('Register on %s to get a license key', 'band-tools'), '<a href=https://magiiic.com/wordpress/plugins/band-tools-by-magiiic/>Magiiic.com</a>'),
+  ));
+
   bndtls_settings_add_option( 'bndtls_naming_bands', "", array(
     'category' => __('Naming', 'band-tools'),
     'name' => sprintf("%s (%s)", __('Bands', 'band-tools'), __('plural', 'band-tools')),
