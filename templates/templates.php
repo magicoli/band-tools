@@ -140,10 +140,7 @@ class BandTools_Template {
 add_action( 'plugins_loaded', array( 'BandTools_Template', 'get_instance' ) );
 
 function pippin_filter_content_sample($content) {
-  $side = the_widget( 'bndtls_widget_bands' )
-    . the_widget( 'wpb_widget_albums' )
-    . the_widget( 'wpb_widget_songs' )
-    . the_widget( 'wpb_widget_video_posts' );
+  $side = the_widget( 'bndtls_widget' );
   if(empty($side)) return $content;
 
 	$content = '<div class="content_left">' . $content . '<div><div class="content_right">' . $side . "</div>";

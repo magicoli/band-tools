@@ -36,6 +36,8 @@ if(is_admin()) {
 }
 // require_once __DIR__ . '/templates/templates.php';
 require_once __DIR__ . '/inc/post-types.php';
+require_once __DIR__ . '/inc/blocks.php';
+require_once __DIR__ . '/inc/shortcodes.php';
 require_once __DIR__ . '/inc/widgets.php';
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
