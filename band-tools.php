@@ -34,6 +34,13 @@ if(is_admin()) {
 	require_once __DIR__ . '/admin/init.php';
 	// require_once __DIR__ . '/admin/wp-dependencies.php';
 }
+function band_tools_activation_redirect( $plugin ) {
+    if( $plugin == plugin_basename( __FILE__ ) ) {
+        exit( wp_redirect( admin_url( 'admin.php?page=band-tools' ) ) );
+    }
+}
+add_action( 'activated_plugin', 'band_tools_activation_redirect' );
+
 // require_once __DIR__ . '/templates/templates.php';
 require_once __DIR__ . '/inc/post-types.php';
 require_once __DIR__ . '/inc/blocks.php';
@@ -51,8 +58,12 @@ $bndtls_updater = new WP_Package_Updater(
 	'https://magiiic.com',
 	wp_normalize_path( __FILE__ ),
 	wp_normalize_path( plugin_dir_path( __FILE__ ) ),
-	// true
+	true
 );
+bndtls_settings_add_option( 'license_key_band-tools', "", array(
+	'name' => __('License key', 'band-tools'),
+	'description' => sprintf(__('Register on %s to get a license key', 'band-tools'), '<a href=https://magiiic.com/wordpress/plugins/band-tools-by-magiiic/>Magiiic.com</a>'),
+));
 
 function bndtls_load_plugin_css() {
 	// $plugin_url = plugin_dir_url( __FILE__ );

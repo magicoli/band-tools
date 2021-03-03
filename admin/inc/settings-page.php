@@ -87,22 +87,22 @@ global $bndtls_dependencies, $bndtls_recommended, $bndtls_required;
 					</tr>";
  				};
 			};
-?>
-		<!-- Dependencies section -->
-		<tr><th colspan=2>
-			<h2><?php _e("Recommended plugins", "band-tools");?></h2>
-		</th></tr>
+
+		# Dependencies section
+		if(!empty($bndtls_recommended)) {
+		?>
+			<tr><th colspan=2>
+				<h2><?php _e("Recommended plugins", "band-tools");?></h2>
+			</th></tr>
 		<?php
-		foreach ($bndtls_recommended as $plugin => $action) {
-			echo "<tr valign='top'><th scope='row'></th><td>";
-			echo $action;
-			echo "</td></tr>";
-		} ?>
-		</table>
-		<?php
-		if ( current_user_can( 'manage_options' ) ) {
-			submit_button();
+			foreach ($bndtls_recommended as $plugin => $action) {
+				echo "<tr valign='top'><th scope='row'></th><td>";
+				echo $action;
+				echo "</td></tr>";
+			}
 		}
 		?>
+		</table>
+		<?php if ( current_user_can( 'manage_options' ) ) submit_button(); ?>
 	</form>
 </div>
