@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-03 02:35-0400\n"
+"POT-Creation-Date: 2021-03-03 16:31-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -14,11 +14,11 @@ msgstr ""
 
 #: admin/dependencies.php:60
 msgid "Activate"
-msgstr "Activer la licence"
+msgstr "Activer"
 
 #: admin/dependencies.php:73
 msgid "Install"
-msgstr "Installer des pages"
+msgstr "Installer"
 
 #: admin/dependencies.php:75
 msgid "recommended"
@@ -38,7 +38,7 @@ msgstr "%s requiert ces extensions:"
 msgid "%s settings"
 msgstr "Réglages %s"
 
-#: admin/inc/settings-page.php:93
+#: admin/inc/settings-page.php:95
 msgid "Recommended plugins"
 msgstr "Extensions recommandées"
 
@@ -111,6 +111,15 @@ msgstr "Faire le café après la connexion"
 #: admin/settings.php:104
 msgid "Settings"
 msgstr "Paramètres"
+
+#: band-tools.php:64
+msgid "License key"
+msgstr "Clé de licence"
+
+#: band-tools.php:65
+#, php-format
+msgid "Register on %s to get a license key"
+msgstr "Enregistrez-vous sur %s pour obtenir une clé de licence"
 
 #: inc/custom-fields-woocommerce.php:13
 msgid "Product"
@@ -845,9 +854,6 @@ msgstr "Pages:"
 
 #~ msgid "No Video tags"
 #~ msgstr "Aucune d'étiquette trouvée"
-
-#~ msgid "Licence key"
-#~ msgstr "Clé de licence"
 
 #~ msgid "Licence key will unlock automatic updates and future features."
 #~ msgstr ""
