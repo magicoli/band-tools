@@ -1,13 +1,13 @@
 # Bands Tools
-Contributors: magicoli69
-Donate link: https://paypal.me/magicoli
-Tags: comments, spam
-Requires at least: 4.5
-Tested up to: 5.6.2
-Requires PHP: 5.6
+* Contributors: magicoli69
+* Donate link: https://paypal.me/magicoli
+* Tags: comments, spam
+* Requires at least: 4.5
+* Tested up to: 5.6.2
+* Requires PHP: 5.6
 Stable tag: 0.1.0
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+* License: GPLv2 or later
+* License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Basic post types and tools for a simple band website.
 
@@ -74,6 +74,10 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 to show
 
 ## Changelog
+
+### 0.5.1
+* added license key support
+* fixed Recommended plugins shown when no recommendations
 
 ### 0.5
 * new shortcode to display related objects

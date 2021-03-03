@@ -75,6 +75,10 @@ to show
 
 == Changelog ==
 
+= 0.5.1 =
+* added license key support
+* fixed "Recommended plugins" title shown when no recommendations
+
 = 0.5 =
 * new shortcode to display related objects
 * new catch-all widget with all relations
