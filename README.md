@@ -75,9 +75,12 @@ to show
 
 ## Changelog
 
+### 0.5.2
+* fix add_option fired too early and causing crash
+
 ### 0.5.1
 * added license key support
-* fixed Recommended plugins shown when no recommendations
+* fixed "Recommended plugins" title shown when no recommendations
 
 ### 0.5
 * new shortcode to display related objects
