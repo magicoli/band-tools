@@ -2,6 +2,16 @@
 // If this file is called directly, abort.
 if (!defined('WPINC')) {die;}
 
+function bndtls_rel_link($relid, $args=[]) {
+  if(!$relid) return;
+  return sprintf(
+    '<a href="%s" class="acf-field %s" data-id="%s">%s</a>',
+    get_permalink($relid),
+    get_post_type($relid),
+    $relid,
+    get_the_title($relid) );
+}
+
 function bndtls_block_relations_list($type='', $args) {
   global $wp_post_types;
   $labels = $wp_post_types[$type]->labels;
@@ -13,34 +23,77 @@ function bndtls_block_relations_list($type='', $args) {
   $out=array();
   if(is_object($queried_object) && $queried_object->ID)
   {
-    if( $type=="bands" && $thistype=="songs" )
-      $result=get_post_meta($queried_object->ID, 'band', true);
-    else if ( $type=="bands" )
-      $result=get_post_meta($queried_object->ID, 'album_band', true);
-    else if( $type == "albums" && $thistype == "bands" )
-      $result=get_post_meta($queried_object->ID, 'album_band', true);
-    else if( $type == "albums" )
-      $result=get_post_meta($queried_object->ID, 'tracks', true);
-    else if( $type == "songs" && $thistype == "albums" )
-      $result=get_post_meta($queried_object->ID, 'tracks', true);
-    else if( $type == "songs" )
-      $result=get_post_meta($queried_object->ID, 'band', true);
-    else
-      $result=get_post_meta($queried_object->ID, $type, true);
+    switch ($type) {
+      case 'bands':
+        if( $thistype=="songs" )
+        $result=get_post_meta($queried_object->ID, 'band', true);
+        else
+        $result=get_post_meta($queried_object->ID, 'album_band', true);
+        break;
 
-    if(empty($result)) return;
+      case 'albums':
+        if( $thistype == "bands" ) {
+          // $result=get_post_meta($queried_object->ID, 'album_band', true);
+          $queryargs = array(
+            // 'posts_per_page'   => -1,
+            'post_type'        => 'albums',
+            'meta_key'         => 'album_band',
+            'meta_value'       => $queried_object->ID
+          );
+          $query = new WP_Query($queryargs);
+          // echo "<pre>Albums: ";
+          foreach($query->posts as $album) {
+            $result[]=$album->ID;
+            $albumout = ($args['before_widget']) ? $args['before_widget'] : '<div class="bnttls list flex">';
+
+            $albumout .= ($args['before_title']) ? $args['before_title'] : "<h3>";
+            $albumout .= bndtls_rel_link($album->ID);
+            $albumout .= ($args['before_title']) ? $args['after_title'] : "</h3>";
+
+            $albumout .= "<ul>";
+            $songs=get_post_meta($album->ID, 'tracks', true);
+            foreach ($songs as $songid) $albumout .= "<li>" . bndtls_rel_link($songid) . "</li>";
+            $albumout .= "</ul>";
+
+            $albumout .= ($args['before_widget']) ? $args['after_widget'] : "</div>";
+            $out[] = $albumout;
+          }
+          // echo "\n";
+          // echo print_r($query->posts, true) . " (end posts)</pre>"; die;
+
+        }
+        else
+        $result=get_post_meta($queried_object->ID, 'tracks', true);
+        break;
+
+      case 'songs':
+        if( $thistype == "bands" ) {
+        }
+        else
+        $result=get_post_meta($queried_object->ID, 'tracks', true);
+        break;
+
+      default:
+        $result=get_post_meta($queried_object->ID, $type, true);
+        break;
+    }
+    if(empty($result) && empty($out)) return;
     if(is_array($result)) $results=$result;
     else $results[]=$result;
 
-    if(isset($args['title']))
-    $title = $args['title'];
-    else $title = _n($labels->singular_name, $labels->name, count($results), 'band-tools');
+      if(isset($args['title']))
+      $title = $args['title'];
+      else $title = _n($labels->singular_name, $labels->name, count($results), 'band-tools');
     // $title = (count($results) > 1) ? $labels->name : $labels->singular_name;
-    foreach($results as $id) {
-      if(is_numeric($id) && get_post_type($id)==$type)
-      $out[] = sprintf( '<a href="%s" class="acf-field %s" data-id="%s">%s</span>', get_permalink($id), $column_name, $id, get_the_title($id) ) . "</a>";
+    if(empty($out)) {
+      $out[]="<ul>";
+      foreach($results as $id) {
+        if(is_numeric($id) && get_post_type($id)==$type)
+        $out[] = "<li>" . bndtls_rel_link($id) . "</li>";
+      }
+      $out[]="</ul>";
     }
-    $content.=join('<br>', $out);
+    $content.=join('', $out);
   }
 
   if(empty($content)) return;
