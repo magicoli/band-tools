@@ -3,7 +3,7 @@
  * Plugin Name:     Band Tools
  * Plugin URI:      https://git.magiiic.com/wordpress/band-tools
  * Description:     Tools for artists, bands, musicians, ...
- * Author:          Olivier van Helden
+ * Author:          Magiiic
  * Author URI:      https://magiiic.com/
  * Text Domain:     band-tools
  * Domain Path:     /languages
