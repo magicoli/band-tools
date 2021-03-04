@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
-"POT-Creation-Date: 2021-03-03 16:31-0400\n"
+"POT-Creation-Date: 2021-03-03 21:38-0400\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
@@ -42,84 +42,84 @@ msgstr "Réglages %s"
 msgid "Recommended plugins"
 msgstr "Extensions recommandées"
 
-#: admin/settings.php:17 admin/settings.php:22 admin/settings.php:27
-#: admin/settings.php:32 admin/settings.php:37 admin/settings.php:42
+#: admin/settings.php:17
+msgid "License key"
+msgstr "Clé de licence"
+
+#: admin/settings.php:18
+#, php-format
+msgid "Register on %s to get a license key"
+msgstr "Enregistrez-vous sur %s pour obtenir une clé de licence"
+
+#: admin/settings.php:22 admin/settings.php:27 admin/settings.php:32
+#: admin/settings.php:37 admin/settings.php:42 admin/settings.php:47
 msgid "Naming"
 msgstr "Nommage"
 
-#: admin/settings.php:18 admin/settings.php:19
+#: admin/settings.php:23 admin/settings.php:24
 msgid "Bands"
 msgstr "Groupes"
 
-#: admin/settings.php:18 admin/settings.php:28 admin/settings.php:38
+#: admin/settings.php:23 admin/settings.php:33 admin/settings.php:43
 msgid "plural"
 msgstr "pluriel"
 
-#: admin/settings.php:23 admin/settings.php:24 inc/custom-fields.php:177
+#: admin/settings.php:28 admin/settings.php:29 inc/custom-fields.php:177
 msgid "Band"
 msgstr "Groupe"
 
-#: admin/settings.php:23 admin/settings.php:33 admin/settings.php:43
+#: admin/settings.php:28 admin/settings.php:38 admin/settings.php:48
 msgid "singular"
 msgstr "singulier"
 
-#: admin/settings.php:28 admin/settings.php:29 inc/custom-fields.php:199
+#: admin/settings.php:33 admin/settings.php:34 inc/custom-fields.php:199
 msgid "Albums"
 msgstr "Albums"
 
-#: admin/settings.php:33 admin/settings.php:34
+#: admin/settings.php:38 admin/settings.php:39
 msgid "Album"
 msgstr "Album"
 
-#: admin/settings.php:38 admin/settings.php:39 inc/custom-fields.php:128
+#: admin/settings.php:43 admin/settings.php:44 inc/custom-fields.php:128
 msgid "Songs"
 msgstr "Chansons"
 
-#: admin/settings.php:43 admin/settings.php:44
+#: admin/settings.php:48 admin/settings.php:49
 msgid "Song"
 msgstr "Chanson"
 
-#: admin/settings.php:59 admin/settings.php:66 admin/settings.php:74
-#: admin/settings.php:79
+#: admin/settings.php:64 admin/settings.php:71 admin/settings.php:79
+#: admin/settings.php:84
 msgid "Tweaks"
 msgstr "Ajustements"
 
-#: admin/settings.php:60
+#: admin/settings.php:65
 #, php-format
 msgid "%s widget area"
 msgstr "Zone de widgets %s"
 
-#: admin/settings.php:67
+#: admin/settings.php:72
 msgid "Clean titles"
 msgstr "Nettoyer les titres"
 
-#: admin/settings.php:68
+#: admin/settings.php:73
 msgid ""
 "Remove prefixes from titles for Categories, Taxonomies, Archives, Authors"
 msgstr ""
 "Supprimer les préfixes des titres pour les catégories, taxonomies, archives, "
 "auteurs"
 
-#: admin/settings.php:75
+#: admin/settings.php:80
 msgid "Redirect archives containing only one post"
 msgstr "Rediriger les pages d'archives contenant un seul élément"
 
-#: admin/settings.php:80
+#: admin/settings.php:85
 msgid "Make coffee after login"
 msgstr "Faire le café après la connexion"
 
-#: admin/settings.php:104
+#: admin/settings.php:109
 msgid "Settings"
 msgstr "Paramètres"
-
-#: band-tools.php:64
-msgid "License key"
-msgstr "Clé de licence"
-
-#: band-tools.php:65
-#, php-format
-msgid "Register on %s to get a license key"
-msgstr "Enregistrez-vous sur %s pour obtenir une clé de licence"
 
 #: inc/custom-fields-woocommerce.php:13
 msgid "Product"
