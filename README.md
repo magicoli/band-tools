@@ -75,6 +75,10 @@ to show
 
 ## Changelog
 
+### 0.5.3
+* added hide action link for license key in Plugins list, hidden if
+* changed Plugin Name to "Band Tools" as written everywhere else, instead of "Bands Tools"
+
 ### 0.5.2
 * fix add_option fired too early and causing crash
 
