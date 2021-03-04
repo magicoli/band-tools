@@ -75,6 +75,10 @@ to show
 
 ## Changelog
 
+### 0.5.4
+* added Registration link to license activation row
+* fix installRow and licenseRow inversion
+
 ### 0.5.3
 * added hide action link for license key in Plugins list, hidden if
 * changed Plugin Name to "Band Tools", instead of "Bands Tools", to match slug
