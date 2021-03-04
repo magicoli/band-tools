@@ -29,9 +29,9 @@ function bndtls_alter_license_notice() {
         return;
       }
 
-      var installRow = $( ".plugin-update-tr:has([data-package_slug='band-tools'])" );
-      var licenseRow = $( "[data-slug='band-tools']");
-      if(! licenseRow) return;
+      var licenseRow = $( ".plugin-update-tr:has([data-package_slug='band-tools'])" );
+      var installRow = $( "[data-slug='band-tools']");
+      if(! installRow) return;
 
       $(".wrap-license[data-package_slug='band-tools']").each( function( index, element ) {
         element = $(element);
@@ -39,17 +39,18 @@ function bndtls_alter_license_notice() {
         if (element.find('.current-license').html().length) {
           var buttonText = "<?php echo esc_html_e( 'License key', 'band-tools' ); ?>";
 
-          installRow.hide();
-          licenseRow.find('div.row-actions').append(' <span> | <a class="wppus-license-switch band-tools" href="#">' + buttonText + '</a></span>');
+          licenseRow.hide();
+          installRow.find('div.row-actions').append(' <span> | <a class="wppus-license-switch band-tools" href="#">' + buttonText + '</a></span>');
         } else {
-          installRow.show();
-          // element.find('p:last').show();
+          licenseRow.show();
+          var RegisterText = "<?php echo sprintf(__('Register on %s to get a license key', 'band-tools'), '<a href=https://magiiic.com/wordpress/plugins/band-tools-by-magiiic/>Magiiic.com</a>'); ?>";
+          licenseRow.find('.wrap-license').append( "<p class='getlicense'>" + RegisterText + "</p>" );
         }
       });
 
       $('.wppus-license-switch.band-tools').on('click', function(e) {
         e.preventDefault();
-        installRow.toggle();
+        licenseRow.toggle();
       });
 
       $('body').addClass('wppus-license-form-alter-done-band-tools');

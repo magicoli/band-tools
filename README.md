@@ -1,4 +1,4 @@
-# Bands Tools
+# Band Tools
 * Contributors: magicoli69
 * Donate link: https://paypal.me/magicoli
 * Tags: comments, spam
@@ -77,7 +77,7 @@ to show
 
 ### 0.5.3
 * added hide action link for license key in Plugins list, hidden if
-* changed Plugin Name to "Band Tools" as written everywhere else, instead of "Bands Tools"
+* changed Plugin Name to "Band Tools", instead of "Bands Tools", to match slug
 
 ### 0.5.2
 * fix add_option fired too early and causing crash
