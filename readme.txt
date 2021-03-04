@@ -75,6 +75,9 @@ to show
 
 == Changelog ==
 
+= 0.5.5 =
+* updated author
+
 = 0.5.4 =
 * added Registration link to license activation row
 * fix installRow and licenseRow inversion
