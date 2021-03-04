@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     Bands Tools
+ * Plugin Name:     Band Tools
  * Plugin URI:      https://git.magiiic.com/wordpress/band-tools
  * Description:     Tools for artists, bands, musicians, ...
  * Author:          Olivier van Helden
