@@ -75,6 +75,10 @@ to show
 
 == Changelog ==
 
+= 0.5.6 =
+* changed plugin url
+* license key read only in settings
+
 = 0.5.5 =
 * updated author
 

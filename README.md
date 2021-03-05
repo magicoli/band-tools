@@ -5,7 +5,7 @@
 * Requires at least: 4.5
 * Tested up to: 5.6.2
 * Requires PHP: 5.6
-Stable tag: 0.1.0
+* Requires PHP: 0.1.0
 * License: GPLv2 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -74,6 +74,10 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 to show
 
 ## Changelog
+
+### 0.5.6
+* changed plugin url
+* license key read only in settings
 
 ### 0.5.5
 * updated author
