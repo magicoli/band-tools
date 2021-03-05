@@ -75,6 +75,9 @@ to show
 
 == Changelog ==
 
+= 0.5.7 =
+* updated registration notice URL
+
 = 0.5.6 =
 * changed plugin url
 * license key read only in settings
