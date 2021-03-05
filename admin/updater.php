@@ -43,7 +43,7 @@ function bndtls_alter_license_notice() {
           installRow.find('div.row-actions').append(' <span> | <a class="wppus-license-switch band-tools" href="#">' + buttonText + '</a></span>');
         } else {
           licenseRow.show();
-          var RegisterText = "<?php echo sprintf(__('Register on %s to get a license key', 'band-tools'), '<a href=https://magiiic.com/wordpress/plugins/band-tools-by-magiiic/>Magiiic.com</a>'); ?>";
+          var RegisterText = "<?php echo sprintf(__('Register on %s to get a license key', 'band-tools'), '<a href=https://magiiic.com/wordpress/plugins/band-tools/>Magiiic.com</a>'); ?>";
           licenseRow.find('.wrap-license').append( "<p class='getlicense'>" + RegisterText + "</p>" );
         }
       });
