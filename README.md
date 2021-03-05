@@ -75,6 +75,9 @@ to show
 
 ## Changelog
 
+### 0.5.8
+* exclude development and source files from .zip release
+
 ### 0.5.7
 * updated registration notice URL
 
