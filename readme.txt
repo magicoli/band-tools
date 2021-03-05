@@ -75,6 +75,9 @@ to show
 
 == Changelog ==
 
+= 0.5.9 =
+* lighter assets
+
 = 0.5.8 =
 * exclude development and source files from .zip release
 

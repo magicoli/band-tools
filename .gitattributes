@@ -41,3 +41,4 @@ node_modules export-ignore
 *.tar.gz export-ignore
 *.zip export-ignore
 .gitattributes export-ignore
+sources export-ignore
