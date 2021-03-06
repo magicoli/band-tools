@@ -82,6 +82,7 @@ function bndtls_dependencies_check() {
     add_action( 'admin_notices', function() {
       global $required, $recommended;
       echo '<div class="notice notice-error is-dismissible">';
+      /* translators: %s is replaced by the name of the plugin, untranslated */
       if(!empty($required)) echo "<h2>" . sprintf( __("%s requires these plugins:", 'band-tools') , 'Band Tools' ) . "</h2>"
       . "<ul><li><strong>" . join("</li><li>", $required) . "</strong></li></ul>";
       if(!empty($recommended)) echo "<ul><li>" . join("</li><li>", $recommended) . "</li></ul></p>";

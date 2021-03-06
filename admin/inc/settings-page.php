@@ -1,7 +1,10 @@
 <?php
 global $bndtls_dependencies, $bndtls_recommended, $bndtls_required;
 ?><div class="wrap">
-	<h1><?php echo sprintf(__('%s settings', 'band-tools'), 'Band Tools'); ?></h1>
+	<h1><?php
+	/* translators: %s is replaced by the name of the plugin, untranslated */
+	echo sprintf(__('%s settings', 'band-tools'), 'Band Tools');
+	?></h1>
 	<!-- <h1>OpenSimulator</h1> -->
   <?php screen_icon(); ?>
 	<form method="post" action="options.php">

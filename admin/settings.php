@@ -63,6 +63,7 @@ function bndtls_register_settings() {
 
   bndtls_settings_add_option('bndtls_widget_area', "", array(
     'category' => __('Tweaks', 'band-tools'),
+    /* translators: %s is replaced by the name of the plugin, untranslated */
     'name' => sprintf(__('%s widget area', 'band-tools'), 'Band Tools'),
     'type'=>'boolean',
     'default' => false,
