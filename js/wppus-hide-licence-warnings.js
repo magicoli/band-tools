@@ -1,9 +1,10 @@
 const { __, _x, _n, _nx } = wp.i18n;
 
 jQuery(function($) {
+  // Set same values as PHP constants defined in admin/init.php
   var BNDTLS_SLUG = 'band-tools';
   var BNDTLS_DATA_SLUG = BNDTLS_SLUG; // calculated from plugin name, might be different from slug
-  var BNDTLS_TXDOM = BNDTLS_SLUG; // translation text domain, might be different
+  var BNDTLS_TXDOM = BNDTLS_SLUG; // translation text domain, might be different from slug
 
   var buttonText = __( 'Show/Hide License key', BNDTLS_TXDOM );
 

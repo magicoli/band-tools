@@ -1,6 +1,8 @@
 <?php
 if ( ! defined( 'WPINC' ) ) die;
 
+// Set constants. Only BNDTLS_SLUG should be changed, other values are fetched from plugin file
+// Some of these might also need to be defined in js files
 if ( ! defined( 'BNDTLS_SLUG' ) ) define('BNDTLS_SLUG', 'band-tools' );
 
 $plugin_data = get_file_data(WP_PLUGIN_DIR . "/" . BNDTLS_SLUG .'/' . BNDTLS_SLUG .'.php', array(
@@ -27,5 +29,18 @@ if ( ! defined( 'BNDTLS_REGISTER_TEXT' ) ) define('BNDTLS_REGISTER_TEXT', sprint
 require(plugin_dir_path(__FILE__) . 'dependencies.php');
 require(plugin_dir_path(__FILE__) . 'menus.php');
 require(plugin_dir_path(__FILE__) . 'settings.php');
-require(plugin_dir_path(__FILE__) . 'updater.php');
 // require(plugin_dir_path(__FILE__) . 'woocommerce.php');
+
+// Fix license key warning on plugins page if there is a license key
+add_action( 'admin_head', 'bndtls_alter_license_notice', 99, 0 );
+function bndtls_alter_license_notice() {
+  // global $bndtls_alter_license_form;
+  // if ( $bndtls_alter_license_form ) return;
+  // plugin_dir_path( MY_PLUGIN )
+  $handle = BNDTLS_SLUG . '/js/wppus-hide-licence-warnings.js';
+  $js = plugins_url($handle);
+  wp_register_script( $handle, $js, array( 'wp-i18n', 'jquery' ) );
+  wp_set_script_translations( $handle, BNDTLS_TXDOM );
+  wp_enqueue_script( $handle, $js );
+  // $bndtls_alter_license_form = true;
+}
