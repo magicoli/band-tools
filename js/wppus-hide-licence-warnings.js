@@ -1,22 +1,16 @@
-// var BNDTLS_SLUG = 'band-tools';
-// var BNDTLS_DATA_SLUG = BNDTLS_SLUG; // calculated from plugin name, might be different from slug
-// var BNDTLS_DATA_PLUGIN = 'band-tools/band-tools.php';
-// var BNDTLS_TXDOM = BNDTLS_SLUG; // translation text domain, might be different from slug
-// var BNDTLS_REGISTER_TEXT = 'Register'; // translation text domain, might be different from slug
-
-// var today = new Date();
-// alert('BNDTLS_SLUG = ' + BNDTLS_SLUG + "\n" + today);
-
-const { __, _x, _n, _nx } = wp.i18n;
-
 jQuery(function($) {
-  // Set same values as PHP constants defined in admin/init.php
-  if ($('body').hasClass('wppus-license-form-alter-done-' + BNDTLS_SLUG )) return;
+  // Constants must be defined before via php or here
+  //
+  // BNDTLS_SLUG  your plugin slug (aka directory name)
+  // BNDTLS_DATA_PLUGIN the plugin file, usually BNDTLS_SLUG/BNDTLS_SLUG.php
+  // BNDTLS_SHOW_HIDE the show/hide link text, eg "Show/Hide License Key"
+  // BNDTLS_REGISTER_TEXT the line added below empty license field, eg "Register your plugin at https://example.com"
 
-  // var buttonText = __( 'Show/Hide License key', BNDTLS_TXDOM );
+  if ($('body').hasClass('wppus-license-form-alter-done-' + BNDTLS_SLUG )) return;
 
   var installRow = $( "[data-plugin='" + BNDTLS_DATA_PLUGIN + "']");
   var licenseRow = $( ".plugin-update-tr:has([data-package_slug='" + BNDTLS_SLUG + "'])" );
+  var switchClass = BNDTLS_SLUG + '-license-switch';
 
   if(! installRow) return;
 
@@ -25,14 +19,14 @@ jQuery(function($) {
 
     if (element.find('.current-license').html().length) {
       licenseRow.hide();
-      installRow.find('div.row-actions').append('<span> | <a class="wppus-license-switch ' + BNDTLS_SLUG + '" href="#">' + BNDTLS_SHOW_HIDE + '</a></span>');
+      installRow.find('div.row-actions').append('<span> | <a class="'  + switchClass + '" href="#">' + BNDTLS_SHOW_HIDE + '</a></span>');
     } else {
       licenseRow.show();
       licenseRow.find('.wrap-license').append( "<p class='getlicense'>" + BNDTLS_REGISTER_TEXT + "</p>" );
     }
   });
 
-  $('.wppus-license-switch.' + BNDTLS_SLUG).on('click', function(e) {
+  $( '.' + switchClass ).on('click', function(e) {
     e.preventDefault();
     licenseRow.toggle();
   });
