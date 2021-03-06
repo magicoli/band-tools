@@ -22,6 +22,8 @@ if ( ! defined( 'BNDTLS_PLUGIN_URI' ) ) define('BNDTLS_PLUGIN_URI', $plugin_data
 if ( ! defined( 'BNDTLS_AUTHOR_NAME' ) ) define('BNDTLS_AUTHOR_NAME', $plugin_data['Author'] );
 if ( ! defined( 'BNDTLS_TXDOM' ) ) define('BNDTLS_TXDOM', ($plugin_data['TextDomain']) ? $plugin_data['TextDomain'] : BNDTLS_SLUG );
 if ( ! defined( 'BNDTLS_DATA_SLUG' ) ) define('BNDTLS_DATA_SLUG', sanitize_title(BNDTLS_PLUGIN_NAME) );
+if ( ! defined( 'BNDTLS_DATA_PLUGIN' ) ) define('BNDTLS_DATA_PLUGIN', BNDTLS_SLUG . "/" . BNDTLS_SLUG . ".php" );
+// var BNDTLS_DATA_PLUGIN = 'band-tools/band-tools.php';
 if ( ! defined( 'BNDTLS_STORE_LINK' ) ) define('BNDTLS_STORE_LINK', "<a href=" . BNDTLS_PLUGIN_URI . " target=_blank>" . BNDTLS_SHORTNAME . "</a>");
 /* translators: %s is replaced by the name of the plugin, untranslated */
 if ( ! defined( 'BNDTLS_REGISTER_TEXT' ) ) define('BNDTLS_REGISTER_TEXT', sprintf(__('Get a license key on %s website', BNDTLS_TXDOM), BNDTLS_STORE_LINK) );
@@ -36,11 +38,14 @@ add_action( 'admin_head', 'bndtls_alter_license_notice', 99, 0 );
 function bndtls_alter_license_notice() {
   // global $bndtls_alter_license_form;
   // if ( $bndtls_alter_license_form ) return;
-  // plugin_dir_path( MY_PLUGIN )
-  $handle = BNDTLS_SLUG . '/js/wppus-hide-licence-warnings.js';
-  $js = plugins_url($handle);
+  $handle = BNDTLS_SLUG . '-wppus-hide-licence-warnings';
+  $js = plugins_url(BNDTLS_SLUG . '/js/wppus-hide-licence-warnings.js');
   wp_register_script( $handle, $js, array( 'wp-i18n', 'jquery' ) );
-  wp_set_script_translations( $handle, BNDTLS_TXDOM );
+  // wp_set_script_translations( $handle, BNDTLS_TXDOM );
   wp_enqueue_script( $handle, $js );
-  // $bndtls_alter_license_form = true;
+  foreach ( [ 'BNDTLS_SLUG', 'BNDTLS_DATA_SLUG', 'BNDTLS_DATA_PLUGIN', 'BNDTLS_TXDOM', 'BNDTLS_REGISTER_TEXT' ] as $CONST ) {
+    // echo "";
+    wp_add_inline_script( $handle, "const $CONST = '" . constant($CONST) . "';", 'before' );
+  }
+  wp_add_inline_script( $handle, "const BNDTLS_SHOW_HIDE = '" . __( 'Show/Hide License key', BNDTLS_TXDOM ) . "';", 'before' );
 }
