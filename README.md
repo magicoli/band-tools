@@ -75,6 +75,11 @@ to show
 
 ## Changelog
 
+### 0.5.10
+* fix wppus-hide-licence-warnings.js conflict with other plugins using it
+* queued js script instead of hardcoded
+* constants for common values
+
 ### 0.5.9
 * lighter assets
 
