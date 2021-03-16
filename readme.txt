@@ -76,6 +76,10 @@ to show
 
 == Changelog ==
 
+= 0.5.12 =
+* fix widget duplicate ids
+* fix widget nested id
+
 = 0.5.11 =
 * added widget styling
 
