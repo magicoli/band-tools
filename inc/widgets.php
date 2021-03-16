@@ -31,8 +31,11 @@ class bndtls_widget_all extends WP_Widget {
   public function widget( $args, $instance ) {
     foreach(['videos','bands','albums','songs','products'] as $type) {
       $content = bndtls_block_relations_list($type, $args) ;
-      if (!empty($content))
-      echo $args['before_widget'] . "<div>" . $content . "</div>" . $args['after_widget'];
+      if (!empty($content)) {
+        $before_widget=preg_replace('/(id=.)bndtls_widget_all/', '$1bndtls_widget_' . $type, $args['before_widget'] );
+        echo $before_widget . "<div>" . $content . "</div>" ;;
+        echo $args['after_widget'];
+      }
     }
 
     // if(empty($content)) return;
