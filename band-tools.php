@@ -63,7 +63,7 @@ $bndtls_updater = new WP_Package_Updater(
 
 function bndtls_load_plugin_css() {
 	// $plugin_url = plugin_dir_url( __FILE__ );
-	wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css' );
+	wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'css/band-tools.css' );
 	// dev only
 	// wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css', array(), time() , 'all' );
 }
@@ -98,3 +98,20 @@ if(get_option('bndtls_redirect_single_post_archives')) {
 	}
 	add_action( 'template_redirect', 'bndtls_redirect_cpt_archive' );
 }
+
+function display_post_type_nav_box(){
+
+    $hidden_nav_boxes = get_user_option( 'metaboxhidden_nav-menus' );
+
+    $post_type = 'foobar'; //Can also be a taxonomy slug
+    $post_type_nav_box = 'add-'.$post_type;
+
+    if(in_array($post_type_nav_box, $hidden_nav_boxes)):
+        foreach ($hidden_nav_boxes as $i => $nav_box):
+            if($nav_box == $post_type_nav_box)
+                unset($hidden_nav_boxes[$i]);
+        endforeach;
+        update_user_option(get_current_user_id(), 'metaboxhidden_nav-menus', $hidden_nav_boxes);
+    endif;
+}
+add_action('admin_init', 'display_post_type_nav_box');

@@ -7,7 +7,7 @@ if(get_option('bndtls_widget_area')) {
       'name' => 'Band Tools Sidebar',
       'id' => 'bndtls-sidebar',
       /* translators: %s is replaced by the name of the plugin, untranslated */
-      'description' => sprint(__('Add widgets here to appear on %s pages'), 'Band Tools'),
+      'description' => sprintf(__('Add widgets here to appear on %s pages'), 'Band Tools'),
       'before_widget' => '<div class="widget">',
       'after_widget' => '</div>',
       'before_title' => '<h3>',

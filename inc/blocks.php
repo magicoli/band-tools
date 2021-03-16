@@ -46,14 +46,17 @@ function bndtls_block_relations_list($type='', $args) {
             $result[]=$album->ID;
             $albumout = ($args['before_widget']) ? $args['before_widget'] : '<div class="bnttls list flex">';
 
-            $albumout .= ($args['before_title']) ? $args['before_title'] : "<h3>";
+            // $albumout .= ($args['before_title']) ? $args['before_title'] : "<h3>";
+            $albumout .= "<ul class=album><li><h5>";
             $albumout .= bndtls_rel_link($album->ID);
-            $albumout .= ($args['before_title']) ? $args['after_title'] : "</h3>";
+            $albumout .= "</h5>";
+            // $albumout .= ($args['before_title']) ? $args['after_title'] : "</h3>";
 
             $albumout .= "<ul>";
             $songs=get_post_meta($album->ID, 'tracks', true);
             foreach ($songs as $songid) $albumout .= "<li>" . bndtls_rel_link($songid) . "</li>";
             $albumout .= "</ul>";
+            $albumout .= "</li></ul>";
 
             $albumout .= ($args['before_widget']) ? $args['after_widget'] : "</div>";
             $out[] = $albumout;
