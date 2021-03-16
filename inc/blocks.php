@@ -44,7 +44,8 @@ function bndtls_block_relations_list($type='', $args) {
           // echo "<pre>Albums: ";
           foreach($query->posts as $album) {
             $result[]=$album->ID;
-            $albumout = ($args['before_widget']) ? $args['before_widget'] : '<div class="bnttls list flex">';
+            // $albumout = ($args['before_widget']) ? $args['before_widget'] : '<div class="bnttls list flex">';
+            $albumout = '<div class="bnttls list flex">';
 
             // $albumout .= ($args['before_title']) ? $args['before_title'] : "<h3>";
             $albumout .= "<ul class=album><li><h5>";
@@ -58,7 +59,8 @@ function bndtls_block_relations_list($type='', $args) {
             $albumout .= "</ul>";
             $albumout .= "</li></ul>";
 
-            $albumout .= ($args['before_widget']) ? $args['after_widget'] : "</div>";
+            $albumout .= '</div>';
+            // $albumout .= ($args['before_widget']) ? $args['after_widget'] : "</div>";
             $out[] = $albumout;
           }
           // echo "\n";
