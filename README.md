@@ -3,11 +3,12 @@
 * Donate link: https://paypal.me/magicoli
 * Tags: comments, spam
 * Requires at least: 4.5
-* Tested up to: 5.7
+* Tested up to: 5.6.2
 * Requires PHP: 5.6
 * Requires PHP: 0.1.0
 * License: GPLv2 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Disclaimer: This plugin is in an early stage. Although you can get it for free if you search a little bit, buying it will fund development and help providing future features.
 
 Basic post types and tools for a simple band website.
 
@@ -74,6 +75,9 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 to show
 
 ## Changelog
+
+### 0.5.11
+* added widget styling
 
 ### 0.5.10
 * fix wppus-hide-licence-warnings.js conflict with other plugins using it
