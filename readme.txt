@@ -76,6 +76,9 @@ to show
 
 == Changelog ==
 
+= 0.5.14 =
+* tested up to 5.7
+
 = 0.5.13 =
 * fix dependencies check conflict with other plugins
 * fix unset array php warning
