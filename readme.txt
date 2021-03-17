@@ -76,6 +76,10 @@ to show
 
 == Changelog ==
 
+= 0.5.13 =
+* fix dependencies check conflict with other plugins
+* fix unset array php warning
+
 = 0.5.12 =
 * fix widget duplicate ids
 * fix widget nested id
