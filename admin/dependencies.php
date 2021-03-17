@@ -35,11 +35,9 @@ $bndtls_dependencies = [
 ];
 
 add_action( 'admin_init', 'bndtls_dependencies_check' );
-
 function bndtls_dependencies_check() {
-  global $bndtls_dependencies;
-  global $bndtls_recommended;
-  global $message, $required, $recommended;
+  global $bndtls_dependencies, $bndtls_recommended, $bndtls_required;
+  // global $message, $recommended;
   if(empty($bndtls_dependencies)) return;
   // $unmet=array();
   $installed_plugins = get_plugins();
@@ -73,18 +71,18 @@ function bndtls_dependencies_check() {
         $actions[]="<a href='$action_url'>" . __("Install") . "</a>";
       }
       if($dependency['optional']) $recommended[]=$dependency['name'] . sprintf(' (%s) ', __('recommended', 'band-tools')) . join(' ', $actions);
-      else $required[]=$dependency['name'] . sprintf(' (%s) ', __('required', 'band-tools')) . join(' ', $actions);
+      else $bndtls_required[]=$dependency['name'] . sprintf(' (%s) ', __('required', 'band-tools')) . join(' ', $actions);
       // $unmet[]="$plugin " . $dependency['name'] . ' ' . join(' ', $actions);
     }
     $bndtls_recommended[$dependency['name']]=$dependency['name'] . " <span class=actions>" . join(' ', $actions) . "</span>";
   }
-  if(!empty($required)) {
+  if(!empty($bndtls_required)) {
     add_action( 'admin_notices', function() {
-      global $required, $recommended;
+      global $bndtls_required, $recommended;
       echo '<div class="notice notice-error is-dismissible">';
       /* translators: %s is replaced by the name of the plugin, untranslated */
-      if(!empty($required)) echo "<h2>" . sprintf( __("%s requires these plugins:", 'band-tools') , 'Band Tools' ) . "</h2>"
-      . "<ul><li><strong>" . join("</li><li>", $required) . "</strong></li></ul>";
+      if(!empty($bndtls_required)) echo "<h2>" . sprintf( __("%s requires these plugins:", 'band-tools') , 'Band Tools' ) . "</h2>"
+      . "<ul><li><strong>" . join("</li><li>", $bndtls_required) . "</strong></li></ul>";
       if(!empty($recommended)) echo "<ul><li>" . join("</li><li>", $recommended) . "</li></ul></p>";
       echo '</div>';
     } );
