@@ -106,7 +106,7 @@ function display_post_type_nav_box(){
     $post_type = 'foobar'; //Can also be a taxonomy slug
     $post_type_nav_box = 'add-'.$post_type;
 
-    if(in_array($post_type_nav_box, $hidden_nav_boxes)):
+    if(is_array($hidden_nav_boxes) && in_array($post_type_nav_box, $hidden_nav_boxes)):
         foreach ($hidden_nav_boxes as $i => $nav_box):
             if($nav_box == $post_type_nav_box)
                 unset($hidden_nav_boxes[$i]);
