@@ -312,3 +312,20 @@ if( function_exists('get_field') ) {
     }
   }
 }
+
+function add_bands_to_dropdown( $pages ){
+    $args = array(
+        'post_type' => 'bands'
+    );
+    $items = get_posts($args);
+    $pages = array_merge($pages, $items);
+
+    return $pages;
+}
+add_filter( 'get_pages', 'add_bands_to_dropdown' );
+
+function enable_front_page_bands( $query ){
+    if('' == $query->query_vars['post_type'] && 0 != $query->query_vars['page_id'])
+        $query->query_vars['post_type'] = array( 'page', 'bands' );
+}
+add_action( 'pre_get_posts', 'enable_front_page_bands' );
