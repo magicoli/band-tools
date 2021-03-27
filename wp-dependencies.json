@@ -1,0 +1,21 @@
+[
+  {
+    "name"  : "Advanced Custom Fields",
+    "host": "wordpress",
+    "slug"  : "advanced-custom-fields/acf.php",
+    "uri": "https://wordpress.org/plugins/advanced-custom-fields/",
+    "required" : true
+  },
+  {
+    "name"  : "Custom Sidebars",
+    "host": "wordpress",
+    "slug"  : "custom-sidebars/customsidebars.php",
+    "uri": "https://wordpress.org/plugins/custom-sidebars/"
+  },
+  {
+    "name" : "Mesk Video Importer",
+    "host": "wordpress",
+    "slug" : "meks-video-importer/meks-video-importer.php",
+    "uri": "https://wordpress.org/plugins/meks-video-importer/"
+  }
+]

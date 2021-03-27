@@ -28,7 +28,7 @@ if ( ! defined( 'BNDTLS_STORE_LINK' ) ) define('BNDTLS_STORE_LINK', "<a href=" .
 /* translators: %s is replaced by the name of the plugin, untranslated */
 if ( ! defined( 'BNDTLS_REGISTER_TEXT' ) ) define('BNDTLS_REGISTER_TEXT', sprintf(__('Get a license key on %s website', BNDTLS_TXDOM), BNDTLS_STORE_LINK) );
 
-require(plugin_dir_path(__FILE__) . 'dependencies.php');
+// require(plugin_dir_path(__FILE__) . 'dependencies.php');
 require(plugin_dir_path(__FILE__) . 'menus.php');
 require(plugin_dir_path(__FILE__) . 'settings.php');
 // require(plugin_dir_path(__FILE__) . 'woocommerce.php');

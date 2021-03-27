@@ -1,0 +1,10 @@
+{
+  "require": {
+    "afragen/wp-dependency-installer": "^3.1"
+  },
+  "autoload": {
+    "files": [
+      "vendor/afragen/wp-dependency-installer/wp-dependency-installer.php"
+    ]
+  }
+}
