@@ -7,13 +7,15 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-03-16T12:47:17-04:00\n"
+"POT-Creation-Date: 2021-03-28T19:06:19-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Plugin Name of the plugin
+#: admin/menus.php:29
+#: admin/menus.php:30
 msgid "Band Tools"
 msgstr "Band Tools"
 
@@ -33,134 +35,192 @@ msgstr "Magiiic"
 msgid "https://magiiic.com/"
 msgstr "https://magiiic.com/"
 
-#: admin/dependencies.php:60
-msgid "Activate"
-msgstr "Activer"
-
-#: admin/dependencies.php:73
-msgid "Install"
-msgstr "Installer"
-
-#: admin/dependencies.php:75
-msgid "recommended"
-msgstr "recommandé"
-
-#: admin/dependencies.php:76
-msgid "required"
-msgstr "requis"
-
-#. translators: %s is replaced by the name of the plugin, untranslated
-#: admin/dependencies.php:86
-msgid "%s requires these plugins:"
-msgstr "%s requiert ces extensions:"
-
-#. translators: %s is replaced by the name of the plugin, untranslated
-#: admin/includes/settings-page.php:6
-msgid "%s settings"
-msgstr "Réglages %s"
-
-#: admin/includes/settings-page.php:98
-msgid "Recommended plugins"
-msgstr "Extensions recommandées"
-
-#. translators: %s is replaced by the name of the plugin, untranslated
-#: admin/init.php:29
-msgid "Get a license key on %s website"
-msgstr "Obtenir une clé de licence sur le site %s"
-
-#: admin/init.php:50
+#: admin/admin-init.php:37
 msgid "Show/Hide License key"
 msgstr "Afficher/Masquer Clé de licence"
 
-#: admin/settings.php:17
+#. translators: %s is replaced by the name of the plugin, untranslated
+#: admin/includes/settings-page.php:7
+msgid "%s settings"
+msgstr "Réglages %s"
+
+#: admin/includes/settings-page.php:99
+msgid "Recommended plugins"
+msgstr "Extensions recommandées"
+
+#: admin/menus.php:47
+msgid "Plugin info"
+msgstr "Informations de l'extension"
+
+#: admin/menus.php:52
 msgid "License key"
 msgstr "Clé de licence"
 
-#: admin/settings.php:23
-#: admin/settings.php:28
-#: admin/settings.php:33
-#: admin/settings.php:38
-#: admin/settings.php:43
-#: admin/settings.php:48
+#: admin/settings.php:10
+msgid "Settings"
+msgstr "Paramètres"
+
+#: admin/settings.php:31
 msgid "Naming"
 msgstr "Nommage"
 
-#: admin/settings.php:24
-#: admin/settings.php:25
-msgid "Bands"
-msgstr "Groupes"
-
-#: admin/settings.php:24
-#: admin/settings.php:34
-#: admin/settings.php:44
-msgid "plural"
-msgstr "pluriel"
-
-#: admin/settings.php:29
-#: admin/settings.php:30
+#: admin/settings.php:36
+#: admin/settings.php:45
+#: admin/settings.php:52
 #: includes/custom-fields.php:177
 msgid "Band"
 msgstr "Groupe"
 
-#: admin/settings.php:29
-#: admin/settings.php:39
-#: admin/settings.php:49
-msgid "singular"
-msgstr "singulier"
+#: admin/settings.php:44
+#: admin/settings.php:46
+#: admin/settings.php:90
+#: admin/settings.php:92
+#: admin/settings.php:132
+#: admin/settings.php:134
+msgid "Singular"
+msgstr "Singulier"
 
-#: admin/settings.php:34
-#: admin/settings.php:35
+#: admin/settings.php:51
+msgid "Artist"
+msgstr "Artiste"
+
+#: admin/settings.php:53
+msgid "DJ"
+msgstr "DJ"
+
+#: admin/settings.php:54
+msgid "Musician"
+msgstr "Musicien"
+
+#: admin/settings.php:55
+msgid "Performer"
+msgstr "Performeur"
+
+#: admin/settings.php:56
+msgid "Singer"
+msgstr "Chanteur"
+
+#: admin/settings.php:63
+#: admin/settings.php:65
+#: admin/settings.php:107
+#: admin/settings.php:109
+#: admin/settings.php:148
+#: admin/settings.php:150
+msgid "Plural"
+msgstr "Pluriel"
+
+#: admin/settings.php:64
+#: admin/settings.php:71
+msgid "Bands"
+msgstr "Groupes"
+
+#: admin/settings.php:70
+msgid "Artists"
+msgstr "Artistes"
+
+#: admin/settings.php:72
+msgid "DJs"
+msgstr "DJs"
+
+#: admin/settings.php:73
+msgid "Musicians"
+msgstr "Musiciens"
+
+#: admin/settings.php:74
+msgid "Performers"
+msgstr "Performeurs"
+
+#: admin/settings.php:75
+msgid "Singers"
+msgstr "Chanteurs"
+
+#: admin/settings.php:82
+#: admin/settings.php:91
+#: admin/settings.php:97
+msgid "Album"
+msgstr "Album"
+
+#: admin/settings.php:98
+msgid "Disc"
+msgstr "Disque"
+
+#: admin/settings.php:99
+msgid "Record"
+msgstr "Disque"
+
+#: admin/settings.php:100
+msgid "Set"
+msgstr "Set"
+
+#: admin/settings.php:108
+#: admin/settings.php:114
 #: includes/custom-fields.php:199
 msgid "Albums"
 msgstr "Albums"
 
-#: admin/settings.php:39
-#: admin/settings.php:40
-msgid "Album"
-msgstr "Album"
+#: admin/settings.php:115
+msgid "Discs"
+msgstr "Disques"
 
-#: admin/settings.php:44
-#: admin/settings.php:45
+#: admin/settings.php:116
+msgid "Records"
+msgstr "Disques"
+
+#: admin/settings.php:117
+msgid "Sets"
+msgstr "Sets"
+
+#: admin/settings.php:124
+#: admin/settings.php:133
+#: admin/settings.php:139
+msgid "Song"
+msgstr "Chanson"
+
+#: admin/settings.php:140
+msgid "Mix"
+msgstr "Mix"
+
+#: admin/settings.php:141
+msgid "Piece"
+msgstr "Morceau"
+
+#: admin/settings.php:149
+#: admin/settings.php:155
 #: includes/custom-fields.php:128
 msgid "Songs"
 msgstr "Chansons"
 
-#: admin/settings.php:49
-#: admin/settings.php:50
-msgid "Song"
-msgstr "Chanson"
+#: admin/settings.php:156
+msgid "Mixes"
+msgstr "Mixes"
 
-#: admin/settings.php:65
-#: admin/settings.php:73
-#: admin/settings.php:81
-#: admin/settings.php:86
+#: admin/settings.php:157
+msgid "Pieces"
+msgstr "Morceaux"
+
+#: admin/settings.php:175
 msgid "Tweaks"
 msgstr "Ajustements"
 
-#. translators: %s is replaced by the name of the plugin, untranslated
-#: admin/settings.php:67
-msgid "%s widget area"
-msgstr "Zone de widgets %s"
+#: admin/settings.php:186
+msgid "Redirect archives containing only one post to this post"
+msgstr "Rediriger les pages d'archives contenant un seul élément"
 
-#: admin/settings.php:74
-msgid "Clean titles"
-msgstr "Nettoyer les titres"
-
-#: admin/settings.php:75
+#: admin/settings.php:192
 msgid "Remove prefixes from titles for Categories, Taxonomies, Archives, Authors"
 msgstr "Supprimer les préfixes des titres pour les catégories, taxonomies, archives, auteurs"
 
-#: admin/settings.php:82
-msgid "Redirect archives containing only one post"
-msgstr "Rediriger les pages d'archives contenant un seul élément"
+#: admin/settings.php:198
+msgid "Add a custom widget area (must be activated in your theme)"
+msgstr "Ajouter un widget (doit être activé dans votre thème)"
 
-#: admin/settings.php:87
-msgid "Make coffee after login"
-msgstr "Faire le café après la connexion"
+#: admin/settings.php:203
+msgid "Make coffee after boot"
+msgstr "Faire le café après le démarrage"
 
-#: admin/settings.php:111
-msgid "Settings"
-msgstr "Paramètres"
+#: admin/settings.php:209
+msgid "Developer mode"
+msgstr "Mode développeur"
 
 #: includes/custom-fields-woocommerce.php:13
 msgid "Product"
@@ -207,8 +267,8 @@ msgstr "Informations sur la chanson"
 #: includes/custom-types.php:217
 #: includes/custom-types.php:233
 #: includes/custom-types.php:250
-#: includes/widgets.php:289
-#: includes/widgets.php:308
+#: includes/widgets.php:292
+#: includes/widgets.php:311
 msgid "Videos"
 msgstr "Vidéos"
 
@@ -869,6 +929,11 @@ msgid "Back to Song Categories"
 msgstr "Retour aux catégories de chanson"
 
 #. translators: %s is replaced by the name of the plugin, untranslated
+#: includes/init.php:42
+msgid "Get a license key on %s website"
+msgstr "Obtenir une clé de licence sur le site %s"
+
+#. translators: %s is replaced by the name of the plugin, untranslated
 #: includes/widgets.php:10
 msgid "Add widgets here to appear on %s pages"
 msgstr "Ajoutez ici des widgets qui apparaîtront sur les pages %s"
@@ -878,45 +943,45 @@ msgid "all relations"
 msgstr "tous les liens"
 
 #: includes/widgets.php:26
-#: includes/widgets.php:172
+#: includes/widgets.php:175
 msgid "Display related songs"
 msgstr "Affiche les chansons liées"
 
-#: includes/widgets.php:56
-#: includes/widgets.php:103
-#: includes/widgets.php:151
-#: includes/widgets.php:198
-#: includes/widgets.php:268
-#: includes/widgets.php:341
+#: includes/widgets.php:59
+#: includes/widgets.php:106
+#: includes/widgets.php:154
+#: includes/widgets.php:201
+#: includes/widgets.php:271
+#: includes/widgets.php:344
 msgid "Title:"
 msgstr "Titre :"
 
-#: includes/widgets.php:77
+#: includes/widgets.php:80
 msgid "Display related bands"
 msgstr "Affiche les groupes liés"
 
-#: includes/widgets.php:124
+#: includes/widgets.php:127
 msgid "Display related albums"
 msgstr "Affiche les albums liés"
 
-#: includes/widgets.php:218
+#: includes/widgets.php:221
 msgid "WC Products"
 msgstr "Produits WooCommerce"
 
-#: includes/widgets.php:219
+#: includes/widgets.php:222
 msgid "Display related WooCommerce products"
 msgstr "Affiche les produits WooCommerce liés"
 
-#: includes/widgets.php:237
+#: includes/widgets.php:240
 msgid "Order online"
 msgstr "Commander en ligne"
 
-#: includes/widgets.php:263
-#: includes/widgets.php:336
+#: includes/widgets.php:266
+#: includes/widgets.php:339
 msgid "Products"
 msgstr "Produits"
 
-#: includes/widgets.php:290
+#: includes/widgets.php:293
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
 
@@ -933,3 +998,24 @@ msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
 #: templates/content-bands.php:49
 msgid "Pages:"
 msgstr "Pages :"
+
+#~ msgid "Activate"
+#~ msgstr "Activer"
+
+#~ msgid "Install"
+#~ msgstr "Installer"
+
+#~ msgid "recommended"
+#~ msgstr "recommandé"
+
+#~ msgid "required"
+#~ msgstr "requis"
+
+#~ msgid "%s requires these plugins:"
+#~ msgstr "%s requiert ces extensions:"
+
+#~ msgid "%s widget area"
+#~ msgstr "Zone de widgets %s"
+
+#~ msgid "Clean titles"
+#~ msgstr "Nettoyer les titres"
