@@ -76,8 +76,16 @@ to show
 
 == Changelog ==
 
+= 0.6 =
+* intermediate version: partially migrated to meta-box, but acf is still needed for some stuff
+* spring cleaning
+* new allow to select group as home page
+* added meta-box, meta-box-group and mb-settings-page libraries
+* added afragen/wp-dependency-installer library
+* migrated dependencies check to afragen library
+
 = 0.5.14 =
-* tested up to 5.7
+* tested up to WP 5.7
 
 = 0.5.13 =
 * fix dependencies check conflict with other plugins
