@@ -31,7 +31,8 @@ function bndtls_dashboard( $settings_pages ) {
         'position'    => 2,
         'capability'  => 'manage_options',
         'class'       => 'no-submit',
-        'icon_url'    => 'dashicons-microphone',
+        'icon_url'    => plugin_dir_url(__DIR__) . 'assets/svg-microphone-stand-20x20.svg',
+
     ];
 
 	return $settings_pages;
