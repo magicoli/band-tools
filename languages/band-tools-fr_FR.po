@@ -14,8 +14,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Plugin Name of the plugin
-#: admin/menus.php:29
-#: admin/menus.php:30
+#: admin/dashboard.php:29
+#: admin/dashboard.php:30
 msgid "Band Tools"
 msgstr "Band Tools"
 
@@ -48,11 +48,11 @@ msgstr "Réglages %s"
 msgid "Recommended plugins"
 msgstr "Extensions recommandées"
 
-#: admin/menus.php:47
+#: admin/dashboard.php:47
 msgid "Plugin info"
 msgstr "Informations de l'extension"
 
-#: admin/menus.php:52
+#: admin/dashboard.php:52
 msgid "License key"
 msgstr "Clé de licence"
 

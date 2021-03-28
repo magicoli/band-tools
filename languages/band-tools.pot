@@ -14,8 +14,8 @@ msgstr ""
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 
 #. Plugin Name of the plugin
-#: admin/menus.php:29
-#: admin/menus.php:30
+#: admin/dashboard.php:29
+#: admin/dashboard.php:30
 msgid "Band Tools"
 msgstr ""
 
@@ -48,11 +48,11 @@ msgstr ""
 msgid "Recommended plugins"
 msgstr ""
 
-#: admin/menus.php:47
+#: admin/dashboard.php:47
 msgid "Plugin info"
 msgstr ""
 
-#: admin/menus.php:52
+#: admin/dashboard.php:52
 msgid "License key"
 msgstr ""
 

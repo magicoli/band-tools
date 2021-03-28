@@ -10,7 +10,7 @@ add_action( 'activated_plugin', 'band_tools_activation_redirect' );
 
 // require(plugin_dir_path(__FILE__) . 'dependencies.php');
 // require(plugin_dir_path(__FILE__) . 'activation.php');
-require(plugin_dir_path(__FILE__) . 'menus.php');
+require(plugin_dir_path(__FILE__) . 'dashboard.php');
 require(plugin_dir_path(__FILE__) . 'settings.php');
 // require(plugin_dir_path(__FILE__) . 'woocommerce.php');
 
