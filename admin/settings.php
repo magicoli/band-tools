@@ -8,6 +8,17 @@
 
 if ( ! defined( 'WPINC' ) ) die;
 
+function bndtls_get_option( $option, $default = false ) {
+  $options=get_option('bndtls-settings');
+  if ( $options[$option] ) return $options[$option];
+  else return $default;
+}
+// echo "<pre>";
+// print_r(bndtls_get_option('developer_mode'));
+// die;
+
+if ( ! is_plugin_active('mb-core/mb-core.php' ) || ! bndtls_get_option( 'developer_mode') ):
+
 function bndtls_register_settings() {
   if ( ! current_user_can( 'manage_options' ) ) {
     $readonly=true;
@@ -130,3 +141,5 @@ function bndtls_settings_add_option($option, $default=NULL, $args) {
     add_option( $option, $default);
     register_setting( 'band_tools', $option, $args);
 }
+
+endif;

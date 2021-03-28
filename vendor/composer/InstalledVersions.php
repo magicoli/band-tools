@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '57b7cf4d98363e4db10af6a936cad8561382e84f',
+    'reference' => 'd3985bef8ddb2b0b01f48c98f3a0d73de07c358a',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '57b7cf4d98363e4db10af6a936cad8561382e84f',
+      'reference' => 'd3985bef8ddb2b0b01f48c98f3a0d73de07c358a',
     ),
     'afragen/wp-dependency-installer' => 
     array (
@@ -61,6 +61,47 @@ private static $installed = array (
       array (
       ),
       'reference' => '900739eb6b0ec0210465f5983a6d4e0e420289e4',
+    ),
+    'composer/installers' => 
+    array (
+      'pretty_version' => 'v1.10.0',
+      'version' => '1.10.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d',
+    ),
+    'meta-box/mb-settings-page' => 
+    array (
+      'pretty_version' => 'master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+      ),
+      'reference' => NULL,
+    ),
+    'roundcube/plugin-installer' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '*',
+      ),
+    ),
+    'shama/baton' => 
+    array (
+      'replaced' => 
+      array (
+        0 => '*',
+      ),
+    ),
+    'wpackagist-plugin/meta-box' => 
+    array (
+      'pretty_version' => 'dev-trunk',
+      'version' => 'dev-trunk',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'trunk',
     ),
   ),
 );
