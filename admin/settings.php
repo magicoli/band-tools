@@ -1,145 +1,218 @@
 <?php if ( ! is_admin() ) die;
-/**
- * Settings
- *
- * Author: Olivier van Helden
- * Version: 0.0.1
- */
-
-if ( ! defined( 'WPINC' ) ) die;
-
-function bndtls_get_option( $option, $default = false ) {
-  $options=get_option('bndtls-settings');
-  if ( $options[$option] ) return $options[$option];
-  else return $default;
-}
-// echo "<pre>";
-// print_r(bndtls_get_option('developer_mode'));
-// die;
 
 if ( ! is_plugin_active('mb-core/mb-core.php' ) || ! bndtls_get_option( 'developer_mode') ):
 
-function bndtls_register_settings() {
-  if ( ! current_user_can( 'manage_options' ) ) {
-    $readonly=true;
-  }
+add_filter( 'mb_settings_pages', 'bndtls_settings' );
 
-  bndtls_settings_add_option( 'license_key_band-tools', "", array(
-  	'name' => __('License key', 'band-tools'),
-  	'description' => BNDTLS_REGISTER_TEXT,
-    'readonly' => true,
-  ));
+function bndtls_settings( $settings_pages ) {
+  $settings_pages[] = [
+    'id' => 'band-tools-settings',
+    'menu_title'  => __( 'Settings', 'band-tools' ),
+    'option_name' => 'bndtls-settings',
+    'position'    => 25,
+    'parent'      => 'band-tools',
+    'capability'  => 'manage_options',
+    'columns'     => 1,
+    'icon_url'    => 'dashicons-admin-generic',
+  ];
 
-  bndtls_settings_add_option( 'bndtls_naming_bands', "", array(
-    'category' => __('Naming', 'band-tools'),
-    'name' => sprintf("%s (%s)", __('Bands', 'band-tools'), __('plural', 'band-tools')),
-    'default' => __('Bands', 'band-tools'),
-  ));
-  bndtls_settings_add_option( 'bndtls_naming_band', "", array(
-    'category' => __('Naming', 'band-tools'),
-    'name' => sprintf("%s (%s)", __('Band', 'band-tools'), __('singular', 'band-tools')),
-    'default' => __('Band', 'band-tools'),
-  ));
-  bndtls_settings_add_option( 'bndtls_naming_albums', "", array(
-    'category' => __('Naming', 'band-tools'),
-    'name' => sprintf("%s (%s)", __('Albums', 'band-tools'), __('plural', 'band-tools')),
-    'default' => __('Albums', 'band-tools'),
-  ));
-  bndtls_settings_add_option( 'bndtls_naming_album', "", array(
-    'category' => __('Naming', 'band-tools'),
-    'name' => sprintf("%s (%s)", __('Album', 'band-tools'), __('singular', 'band-tools')),
-    'default' => __('Album', 'band-tools'),
-  ));
-  bndtls_settings_add_option( 'bndtls_naming_songs', "", array(
-    'category' => __('Naming', 'band-tools'),
-    'name' => sprintf("%s (%s)", __('Songs', 'band-tools'), __('plural', 'band-tools')),
-    'default' => __('Songs', 'band-tools'),
-  ));
-  bndtls_settings_add_option( 'bndtls_naming_song', "", array(
-    'category' => __('Naming', 'band-tools'),
-    'name' => sprintf("%s (%s)", __('Song', 'band-tools'), __('singular', 'band-tools')),
-    'default' => __('Song', 'band-tools'),
-  ));
-
-  // bndtls_settings_add_option( 'bndtls_licence_key', "", array(
-  //   'name' => __('Licence key', 'band-tools'),
-  //   'description' => __('Licence key will unlock automatic updates and future features.', 'band-tools'),
-  //   'readonly' => $readonly,
-  // ));
-  // bndtls_settings_add_option( 'bndtls_token', "", array(
-  //   'name' => __('Token', 'band-tools'),
-  //   'description' => __('Random string, used to authenticate passwordless exports. If changed, any existing automation must be reconfigured with the new download url.', 'band-tools'),
-  //   'readonly' => $readonly,
-  // ));
-
-  bndtls_settings_add_option('bndtls_widget_area', "", array(
-    'category' => __('Tweaks', 'band-tools'),
-    /* translators: %s is replaced by the name of the plugin, untranslated */
-    'name' => sprintf(__('%s widget area', 'band-tools'), 'Band Tools'),
-    'type'=>'boolean',
-    'default' => false,
-  ));
-
-  bndtls_settings_add_option('bndtls_clean_titles', "", array(
-    'category' => __('Tweaks', 'band-tools'),
-    'name' => __('Clean titles', 'band-tools'),
-    'description' => __('Remove prefixes from titles for Categories, Taxonomies, Archives, Authors', 'band-tools'),
-    'type'=>'boolean',
-    'readonly' => $readonly,
-    'default' => true,
-  ));
-  bndtls_settings_add_option('bndtls_redirect_single_post_archives', "", array(
-    'category' => __('Tweaks', 'band-tools'),
-    'name' => __('Redirect archives containing only one post', 'band-tools'),
-    'type'=>'boolean',
-  ));
-  bndtls_settings_add_option('bndtls_coffee', "", array(
-    'category' => __('Tweaks', 'band-tools'),
-    'name' => __('Make coffee after login', 'band-tools'),
-    'type'=>'boolean',
-    'readonly' => $readonly,
-  ));
-}
-add_action( 'admin_init', 'bndtls_register_settings' );
-
-function bndtls_display_settings_page()
-{
-  global $bndtls_options;
-	// if ( ! current_user_can( 'manage_options' ) ) {
-	// 		return;
-	// }
-	require(plugin_dir_path(__FILE__) . 'includes/settings-page.php');
+  return $settings_pages;
 }
 
-function bndtls_settings_link( $links ) {
-	// Build and escape the URL.
-	$url = esc_url( add_query_arg(
-		'page',
-		'band-tools',
-		get_admin_url() . 'options-general.php'
-	) );
-	// Create the link.
-	$settings_link = "<a href='$url'>" . __( 'Settings', 'band-tools') . '</a>';
-	// Adds the link to the end of the array.
-	array_push(
-		$links,
-		$settings_link
-	);
-	return $links;
-} //end bndtls_settings_link()
-add_filter( 'plugin_action_links_band-tools/band-tools.php', 'bndtls_settings_link' );
 
-function bndtls_settings_add_option($option, $default=NULL, $args) {
-    global $bndtls_options;
-    if(empty($option)) return;
+add_filter( 'rwmb_meta_boxes', 'bndtls_settings_naming' );
 
-    if(empty($args['category'])) $args['category'] = 'default';
-    if(empty($args['type'])) $args['type'] = 'string';
-    if(empty($args['name'])) $args['name'] = $option;
+function bndtls_settings_naming( $meta_boxes ) {
+  bndtls_load_textdomain();
 
-    $bndtls_options[$args['category']][$option]=$args;
-    add_option( $option, $default);
-    register_setting( 'band_tools', $option, $args);
+  $prefix = '';
+
+  $meta_boxes[] = [
+    'title'          => __( 'Naming', 'band-tools' ),
+    'id'             => 'naming',
+    'settings_pages' => ['band-tools-settings'],
+    'fields'         => [
+      [
+        'name'   => __( 'Band', 'band-tools' ),
+        'id'     => $prefix . 'naming_band',
+        'type'   => 'group',
+        'class'  => 'inline',
+        'fields' => [
+          [
+            'id'          => $prefix . 'singular',
+            'type'        => 'text',
+            'desc'        => __( 'Singular', 'band-tools' ),
+            'default'         => __('Band', 'band-tools' ),
+            'placeholder' => __( 'Singular', 'band-tools' ),
+            'class'       => 'inline',
+            'datalist'    => [
+              'id'      => '6060ef87d6b26',
+              'options' => [
+                __('Artist', 'band-tools'),
+                __('Band', 'band-tools'),
+                __('DJ', 'band-tools'),
+                __('Musician', 'band-tools'),
+                __('Performer', 'band-tools'),
+                __('Singer', 'band-tools'),
+              ],
+            ],
+          ],
+          [
+            'id'          => $prefix . 'plural',
+            'type'        => 'text',
+            'desc'        => __( 'Plural', 'band-tools' ),
+            'std'         => __( 'Bands', 'band-tools' ),
+            'placeholder' => __( 'Plural', 'band-tools' ),
+            'class'       => 'inline',
+            'datalist'    => [
+              'id'      => '6060ef87d6b45',
+              'options' => [
+                __('Artists', 'band-tools'),
+                __('Bands', 'band-tools'),
+                __('DJs', 'band-tools'),
+                __('Musicians', 'band-tools'),
+                __('Performers', 'band-tools'),
+                __('Singers', 'band-tools'),
+              ],
+            ],
+          ],
+        ],
+      ],
+      [
+        'name'   => __( 'Album', 'band-tools' ),
+        'id'     => $prefix . 'naming_album',
+        'type'   => 'group',
+        'class'  => 'inline',
+        'fields' => [
+          [
+            'id'          => $prefix . 'singular',
+            'type'        => 'text',
+            'desc'        => __( 'Singular', 'band-tools' ),
+            'std'         => __( 'Album', 'band-tools' ),
+            'placeholder' => __( 'Singular', 'band-tools' ),
+            'class'       => 'inline',
+            'datalist'    => [
+              'id'      => '6060ef87d6b88',
+              'options' => [
+                __('Album', 'band-tools'),
+                __('Disc', 'band-tools'),
+                __('Record', 'band-tools'),
+                __('Set', 'band-tools'),
+              ],
+            ],
+          ],
+          [
+            'id'          => $prefix . 'plural',
+            'type'        => 'text',
+            'desc'        => __( 'Plural', 'band-tools' ),
+            'std'         => __( 'Albums', 'band-tools' ),
+            'placeholder' => __( 'Plural', 'band-tools' ),
+            'class'       => 'inline',
+            'datalist'    => [
+              'id'      => '6060ef87d6b9e',
+              'options' => [
+                __('Albums', 'band-tools'),
+                __('Discs', 'band-tools'),
+                __('Records', 'band-tools'),
+                __('Sets', 'band-tools'),
+              ],
+            ],
+          ],
+        ],
+      ],
+      [
+        'name'   => __( 'Song', 'band-tools' ),
+        'id'     => $prefix . 'naming_song',
+        'type'   => 'group',
+        'class'  => 'inline',
+        'fields' => [
+          [
+            'id'          => $prefix . 'singular',
+            'type'        => 'text',
+            'desc'        => __( 'Singular', 'band-tools' ),
+            'std'         => __( 'Song', 'band-tools' ),
+            'placeholder' => __( 'Singular', 'band-tools' ),
+            'class'       => 'inline',
+            'datalist'    => [
+              'id'      => '6060ef87d6bda',
+              'options' => [
+                __('Song', 'band-tools'),
+                __('Mix', 'band-tools'),
+                __('Piece', 'band-tools'),
+              ],
+            ],
+          ],
+          [
+            'id'          => $prefix . 'plural',
+            'type'        => 'text',
+            'desc'        => __( 'Plural', 'band-tools' ),
+            'std'         => __( 'Songs', 'band-tools' ),
+            'placeholder' => __( 'Plural', 'band-tools' ),
+            'class'       => 'inline',
+            'datalist'    => [
+              'id'      => '6060ef87d6bef',
+              'options' => [
+                __('Songs', 'band-tools'),
+                __('Mixes', 'band-tools'),
+                __('Pieces', 'band-tools'),
+              ],
+            ],
+          ],
+        ],
+      ],
+    ],
+  ];
+
+  return $meta_boxes;
+}
+
+add_filter( 'rwmb_meta_boxes', 'bndtls_settings_tweaks' );
+
+function bndtls_settings_tweaks( $meta_boxes ) {
+  $prefix = '';
+
+  $meta_boxes[] = [
+    'title'          => __( 'Tweaks', 'band-tools' ),
+    'id'             => 'tweaks',
+    'settings_pages' => ['band-tools-settings'],
+    'visible'        => [
+      'when'     => [['', '=', '']],
+      'relation' => 'or',
+    ],
+    'fields'         => [
+      [
+        'id'   => $prefix . 'redirect_single_post_archives',
+        'type' => 'checkbox',
+        'desc' => __( 'Redirect archives containing only one post to this post', 'band-tools' ),
+        'std'  => true,
+      ],
+      [
+        'id'   => $prefix . 'clean_titles',
+        'type' => 'checkbox',
+        'desc' => __( 'Remove prefixes from titles for Categories, Taxonomies, Archives, Authors', 'band-tools' ),
+        'std'  => true,
+      ],
+      [
+        'id'   => $prefix . 'widget_area',
+        'type' => 'checkbox',
+        'desc' => __( 'Add a custom widget area (must be activated in your theme)', 'band-tools' ),
+      ],
+      [
+        'id'   => $prefix . 'make_coffee_after_boot',
+        'type' => 'checkbox',
+        'desc' => __( 'Make coffee after boot', 'band-tools' ),
+        'std'  => true,
+      ],
+      [
+        'id'   => $prefix . 'developer_mode',
+        'type' => 'checkbox',
+        'desc' => __( 'Developer mode', 'band-tools' ),
+        'std'  => true,
+      ],
+    ],
+  ];
+
+  return $meta_boxes;
 }
 
 endif;

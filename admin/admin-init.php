@@ -14,6 +14,11 @@ require(plugin_dir_path(__FILE__) . 'menus.php');
 require(plugin_dir_path(__FILE__) . 'settings.php');
 // require(plugin_dir_path(__FILE__) . 'woocommerce.php');
 
+function bndtls_load_admin_css() {
+	wp_enqueue_style( BNDTLS_SLUG . '-admin', plugin_dir_url( __FILE__ ) . 'admin.css' );
+  add_editor_style('custom-editor-style.css');
+}
+add_action( 'admin_enqueue_scripts', 'bndtls_load_admin_css' );
 
 // Fix license key warning on plugins page if there is a license key
 //

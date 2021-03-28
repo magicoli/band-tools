@@ -7,8 +7,8 @@ function bndtls_register_my_cpts() {
 	/**
 	* Post Type: Bands.
 	*/
-	$plural = get_option( 'bndtls_naming_bands', 'Bands');
-	$singular = get_option( 'bndtls_naming_band', 'Band');
+	$plural = bndtls_get_option( 'naming_band', 'Bands', 'plural' );
+	$singular = bndtls_get_option( 'naming_band', 'Band', 'singular' );
 	$labels = [
 		"name" => __( $plural, "band-tools" ),
 		"singular_name" => __( $singular, "band-tools" ),
@@ -75,8 +75,8 @@ function bndtls_register_my_cpts() {
 	 * Post Type: Albums.
 	 */
 
-	$plural = get_option( 'bndtls_naming_albums', 'Albums');
-	$singular = get_option( 'bndtls_naming_album', 'Album');
+	$plural = bndtls_get_option( 'naming_album', 'Albums', 'plural' );
+	$singular = bndtls_get_option( 'naming_album', 'Album', 'singular' );
 	$labels = [
 		"name" => __( $plural, "band-tools" ),
 		"singular_name" => __( $singular, "band-tools" ),
@@ -143,8 +143,8 @@ function bndtls_register_my_cpts() {
 	 * Post Type: Songs.
 	 */
 
- 	$plural = get_option( 'bndtls_naming_songs', 'Songs');
-	$singular = get_option( 'bndtls_naming_song', 'Song');
+ 	$plural = bndtls_get_option( 'naming_song', 'Songs', 'plural' );
+	$singular = bndtls_get_option( 'naming_song', 'Song', 'singular' );
 	$labels = [
 		"name" => __( $plural, "band-tools" ),
 		"singular_name" => __( $singular, "band-tools" ),

@@ -1,47 +1,62 @@
 <?php if ( ! is_admin() ) die;
-/**
- * Settings
- *
- * Author: Olivier van Helden
- * Version: 0.0.1
- */
 
-if ( ! defined( 'WPINC' ) ) die;
-
-global $bndtls_options;
+if ( is_plugin_active('mb-core/mb-core.php' ) ) {
+add_action('admin_menu', 'bndtls_register_settings_pages');
 function bndtls_register_settings_pages() {
-  // default Settings submenu
-  // add_options_page(Band Tools, Band Tools, 'manage_options', band-tools, 'bndtls_display_settings_page');
-
   // Own menu
   add_menu_page(
     'Band Tools', // page title
     'Band Tools', // menu title
     'list_users', // capability
     'band-tools', // slug
-    'bndtls_display_settings_page', // callable function
-    // plugin_dir_path(__FILE__) . 'options.php', // slug
-    // null,	// callable function
-    plugin_dir_url(__FILE__) . '../assets/svg-microphone-stand-20x20.svg', // plugin_dir_url(__FILE__) . '../assets/icon-24x24.jpg', // icon url
-    2 // position
+    '', // callable function
+  //   // plugin_dir_path(__FILE__) . 'options.php', // slug
+  //   // null,	// callable function
+  //   plugin_dir_url(__DIR__) . 'assets/svg-microphone-stand-20x20.svg', // plugin_dir_url(__FILE__) . '../assets/icon-24x24.jpg', // icon url
+  //   2 // position
   );
-  // add_submenu_page(
-  //   'band-tools',  // parent_slug
-  //   __('Band Tools Settings', "band-tools"), // $page_title
-  //   __('Settings'), // menu_title
-  //   'list_users',
-  //   // 'manage_options', // capability
-  //   'band-tools-settings', // menu_slug
-  //   'bndtls_display_settings_page', // callable function
-  // );
-  // add_submenu_page(
-  //   '', // parent_slug
-  //   '', // $page_title
-  //   '', // menu_title
-  //   '', // capability
-  //   '', // menu_slug
-  //   '', // callable function
-  //   '', // position
-  // );
 }
-add_action('admin_menu', 'bndtls_register_settings_pages');
+}
+
+if ( ! is_plugin_active('mb-core/mb-core.php' ) || ! bndtls_get_option( 'developer_mode') ):
+
+add_filter( 'mb_settings_pages', 'bndtls_dashboard' );
+
+function bndtls_dashboard( $settings_pages ) {
+	$settings_pages[] = [
+      'id' => 'band-tools',
+        'menu_title'  => __( 'Band Tools', 'band-tools' ),
+        'title' =>  __( 'Dashboard', 'band-tools' ),
+        'option_name' => 'bndtls-settings',
+        'position'    => 2,
+        'capability'  => 'manage_options',
+        'class'       => 'no-submit',
+        'icon_url'    => 'dashicons-microphone',
+    ];
+
+	return $settings_pages;
+}
+
+add_filter( 'rwmb_meta_boxes', 'bndtls_dashboard_plugin_info' );
+
+function bndtls_dashboard_plugin_info( $meta_boxes ) {
+    $prefix = '';
+
+    $meta_boxes[] = [
+        'title'          => __( 'Plugin info', 'band-tools' ),
+        'id'             => 'plugin-info',
+        'settings_pages' => ['band-tools'],
+        'fields'         => [
+            [
+                'name'     => __( 'License key', 'band-tools' ),
+                'id'       => $prefix . 'license_key',
+                'type'     => 'custom_html',
+                'callback' => 'bndtls_license_key',
+            ],
+        ],
+    ];
+
+    return $meta_boxes;
+}
+
+endif;

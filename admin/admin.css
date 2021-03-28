@@ -1,0 +1,15 @@
+.wrap.no-submit .submit {
+  display: none !important;
+}
+
+.rwmb-field.rwmb-text-wrapper.inline {
+  display: inline-block;
+  margin: 0;
+}
+.rwmb-field.rwmb-text-wrapper.inline:not(:last-of-type) {
+  margin-right: 10px;
+}
+.rwmb-field.rwmb-text-wrapper.inline::after {
+  display: none !important;
+  clear: none !important;
+}

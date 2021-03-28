@@ -51,7 +51,7 @@ class bndtls_widget_all extends WP_Widget {
     //   $title = $instance[ 'title' ];
     // }
     // else {
-    //   $title = __( get_option( 'bndtls_naming_songs', 'Songs'), 'band-tools' );
+    //   $title = __( bndtls_get_option( 'naming_song', 'Songs', 'plural' ), 'band-tools' );
     // }
     // Widget admin form
     ?>
@@ -76,7 +76,7 @@ class bndtls_widget_bands extends WP_Widget {
   function __construct() {
     parent::__construct(
       'bndtls_widget_bands',
-      sprintf('Band Tools (%s)', __(get_option( 'bndtls_naming_bands', 'Bands'), 'band-tools')),
+      sprintf('Band Tools (%s)', __(bndtls_get_option( 'naming_band', 'Bands', 'plural' ), 'band-tools')),
       array( 'description' => __( 'Display related bands', 'band-tools' ), )
     );
   }
@@ -98,7 +98,7 @@ class bndtls_widget_bands extends WP_Widget {
       $title = $instance[ 'title' ];
     }
     else {
-      $title = __( get_option( 'bndtls_naming_bands', 'Bands'), 'band-tools' );
+      $title = __( bndtls_get_option( 'naming_band', 'Bands', 'plural' ), 'band-tools' );
     }
     // Widget admin form
     ?>
@@ -123,7 +123,7 @@ class bndtls_widget_albums extends WP_Widget {
   function __construct() {
     parent::__construct(
       'bndtls_widget_albums',
-      sprintf('Band Tools (%s)', __(get_option( 'bndtls_naming_Albums', 'Songs'), 'band-tools')),
+      sprintf('Band Tools (%s)', __(bndtls_get_option( 'naming_Album', 'Songs', 'plural' ), 'band-tools')),
       array( 'description' => __( 'Display related albums', 'band-tools' ), )
     );
   }
@@ -146,7 +146,7 @@ class bndtls_widget_albums extends WP_Widget {
       $title = $instance[ 'title' ];
     }
     else {
-      $title = __( get_option( 'bndtls_naming_Albums', 'Songs'), 'band-tools' );
+      $title = __( bndtls_get_option( 'naming_Album', 'Songs', 'plural' ), 'band-tools' );
     }
     // Widget admin form
     ?>
@@ -171,7 +171,7 @@ class bndtls_widget_songs extends WP_Widget {
   function __construct() {
     parent::__construct(
       'bndtls_widget_songs',
-      sprintf('Band Tools (%s)', __(get_option( 'bndtls_naming_songs', 'Songs'), 'band-tools')),
+      sprintf('Band Tools (%s)', __(bndtls_get_option( 'naming_song', 'Songs', 'plural' ), 'band-tools')),
       array( 'description' => __( 'Display related songs', 'band-tools' ), )
     );
   }
@@ -193,7 +193,7 @@ class bndtls_widget_songs extends WP_Widget {
       $title = $instance[ 'title' ];
     }
     else {
-      $title = __( get_option( 'bndtls_naming_songs', 'Songs'), 'band-tools' );
+      $title = __( bndtls_get_option( 'naming_song', 'Songs', 'plural' ), 'band-tools' );
     }
     // Widget admin form
     ?>
@@ -310,7 +310,7 @@ class bndtls_widget_video_posts extends WP_Widget {
       if(get_post_type($queried_object->ID)=="songs")
       $title = __('Videos', 'band-tools');
       else
-      $title = __(get_option( 'bndtls_naming_songs', 'Songs'), 'band-tools');
+      $title = __(bndtls_get_option( 'naming_song', 'Songs', 'plural' ), 'band-tools');
       if(is_array($results)) {
         foreach($results as $id) {
           // if(get_post_type($id)=="albums")
