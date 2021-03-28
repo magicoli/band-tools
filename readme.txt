@@ -76,6 +76,9 @@ to show
 
 == Changelog ==
 
+= 0.6.1 =
+* fix bad location for includes/woocommerce.php
+
 = 0.6 =
 * intermediate version: partially migrated to meta-box, but acf is still needed for some stuff
 * spring cleaning
