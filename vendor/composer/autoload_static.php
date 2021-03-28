@@ -9,6 +9,8 @@ class ComposerStaticInit434d04b486e83c37897daad953df1be9
     public static $files = array (
         '50e7b3f86bffe096b1d2c3244a6855fd' => __DIR__ . '/..' . '/meta-box/meta-box/meta-box.php',
         'efcccce94091def99574319633dff18c' => __DIR__ . '/..' . '/meta-box/meta-box-group/meta-box-group.php',
+        '0216681714809d61e27be74991f05bef' => __DIR__ . '/..' . '/meta-box/mb-custom-post-type/mb-custom-post-type.php',
+        '7ac91bf81f57110551ebe8edde3cbe26' => __DIR__ . '/..' . '/meta-box/mb-relationships/mb-relationships.php',
         '8f06d35e329fad24db0fe1eb28e40e20' => __DIR__ . '/..' . '/meta-box/mb-settings-page/mb-settings-page.php',
         '55a4684682f43b6251b1cc0e408ec2c1' => __DIR__ . '/..' . '/afragen/wp-dependency-installer/wp-dependency-installer.php',
     );

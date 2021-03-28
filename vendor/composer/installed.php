@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '57d14e5c42b7e425c14510897c06c46e7bc53ba4',
+    'reference' => 'de3769cf8b52f32425a39c99d6ab045442ca4637',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '57d14e5c42b7e425c14510897c06c46e7bc53ba4',
+      'reference' => 'de3769cf8b52f32425a39c99d6ab045442ca4637',
     ),
     'afragen/wp-dependency-installer' => 
     array (
@@ -78,6 +78,24 @@
       array (
         0 => '*',
       ),
+    ),
+    'wpackagist-plugin/mb-custom-post-type' => 
+    array (
+      'pretty_version' => 'dev-trunk',
+      'version' => 'dev-trunk',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'trunk',
+    ),
+    'wpackagist-plugin/mb-relationships' => 
+    array (
+      'pretty_version' => '1.10.5',
+      'version' => '1.10.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'tags/1.10.5',
     ),
     'wpackagist-plugin/meta-box' => 
     array (
