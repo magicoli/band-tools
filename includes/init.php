@@ -50,7 +50,7 @@ require_once __DIR__ . '/widgets.php';
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if ( is_plugin_active( 'woocommerce/woocommerce.php') ) {
-	require_once __DIR__ . '/includes/woocommerce.php';
+	require_once __DIR__ . '/woocommerce.php';
 }
 
 /** Enable plugin updates with license check **/
