@@ -55,11 +55,11 @@ msgid "%s requires these plugins:"
 msgstr "%s requiert ces extensions:"
 
 #. translators: %s is replaced by the name of the plugin, untranslated
-#: admin/inc/settings-page.php:6
+#: admin/includes/settings-page.php:6
 msgid "%s settings"
 msgstr "Réglages %s"
 
-#: admin/inc/settings-page.php:98
+#: admin/includes/settings-page.php:98
 msgid "Recommended plugins"
 msgstr "Extensions recommandées"
 
@@ -98,7 +98,7 @@ msgstr "pluriel"
 
 #: admin/settings.php:29
 #: admin/settings.php:30
-#: inc/custom-fields.php:177
+#: includes/custom-fields.php:177
 msgid "Band"
 msgstr "Groupe"
 
@@ -110,7 +110,7 @@ msgstr "singulier"
 
 #: admin/settings.php:34
 #: admin/settings.php:35
-#: inc/custom-fields.php:199
+#: includes/custom-fields.php:199
 msgid "Albums"
 msgstr "Albums"
 
@@ -121,7 +121,7 @@ msgstr "Album"
 
 #: admin/settings.php:44
 #: admin/settings.php:45
-#: inc/custom-fields.php:128
+#: includes/custom-fields.php:128
 msgid "Songs"
 msgstr "Chansons"
 
@@ -162,761 +162,761 @@ msgstr "Faire le café après la connexion"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: inc/custom-fields-woocommerce.php:13
+#: includes/custom-fields-woocommerce.php:13
 msgid "Product"
 msgstr "Produit"
 
-#: inc/custom-fields-woocommerce.php:42
-#: inc/custom-types.php:335
-#: inc/custom-types.php:382
-#: inc/custom-types.php:429
-#: inc/custom-types.php:477
+#: includes/custom-fields-woocommerce.php:42
+#: includes/custom-types.php:335
+#: includes/custom-types.php:382
+#: includes/custom-types.php:429
+#: includes/custom-types.php:477
 msgid "Categories"
 msgstr "Catégories"
 
-#: inc/custom-fields.php:9
+#: includes/custom-fields.php:9
 msgid "Album info"
 msgstr "Informations de l'album"
 
-#: inc/custom-fields.php:13
+#: includes/custom-fields.php:13
 msgid "Album band"
 msgstr "Groupe de l'album"
 
-#: inc/custom-fields.php:35
+#: includes/custom-fields.php:35
 msgid "Release date"
 msgstr "Date de sortie"
 
-#: inc/custom-fields.php:52
+#: includes/custom-fields.php:52
 msgid "Tracks"
 msgstr "Pistes"
 
-#: inc/custom-fields.php:97
+#: includes/custom-fields.php:97
 msgid "Band info"
 msgstr "Informations du groupe"
 
-#: inc/custom-fields.php:101
+#: includes/custom-fields.php:101
 msgid "Album Band"
 msgstr "Groupe de l'album"
 
-#: inc/custom-fields.php:173
+#: includes/custom-fields.php:173
 msgid "Song info"
 msgstr "Informations sur la chanson"
 
-#: inc/custom-fields.php:226
-#: inc/custom-types.php:215
-#: inc/custom-types.php:217
-#: inc/custom-types.php:233
-#: inc/custom-types.php:250
-#: inc/widgets.php:289
-#: inc/widgets.php:308
+#: includes/custom-fields.php:226
+#: includes/custom-types.php:215
+#: includes/custom-types.php:217
+#: includes/custom-types.php:233
+#: includes/custom-types.php:250
+#: includes/widgets.php:289
+#: includes/widgets.php:308
 msgid "Videos"
 msgstr "Vidéos"
 
-#: inc/custom-fields.php:274
+#: includes/custom-fields.php:274
 msgid "Video info"
 msgstr "Informations de la vidéo"
 
-#: inc/custom-fields.php:278
+#: includes/custom-fields.php:278
 msgid "Related posts"
 msgstr "Articles liés"
 
-#: inc/custom-types.php:16
-#: inc/custom-types.php:84
-#: inc/custom-types.php:152
-#: inc/custom-types.php:218
+#: includes/custom-types.php:16
+#: includes/custom-types.php:84
+#: includes/custom-types.php:152
+#: includes/custom-types.php:218
 msgid "All"
 msgstr "Tous"
 
-#: inc/custom-types.php:17
-#: inc/custom-types.php:85
-#: inc/custom-types.php:153
-#: inc/custom-types.php:219
+#: includes/custom-types.php:17
+#: includes/custom-types.php:85
+#: includes/custom-types.php:153
+#: includes/custom-types.php:219
 msgid "Add new"
 msgstr "Ajouter"
 
-#: inc/custom-types.php:18
+#: includes/custom-types.php:18
 msgid "Add new Band"
 msgstr "Ajouter un nouveau groupe"
 
-#: inc/custom-types.php:19
+#: includes/custom-types.php:19
 msgid "Edit Band"
 msgstr "Modifier le groupe"
 
-#: inc/custom-types.php:20
+#: includes/custom-types.php:20
 msgid "New Band"
 msgstr "Nouvel groupe"
 
-#: inc/custom-types.php:21
+#: includes/custom-types.php:21
 msgid "View Band"
 msgstr "Voir le groupe"
 
-#: inc/custom-types.php:22
+#: includes/custom-types.php:22
 msgid "View Bands"
 msgstr "Voir les groupes"
 
-#: inc/custom-types.php:23
+#: includes/custom-types.php:23
 msgid "Search Bands"
 msgstr "Rechercher dans les groupes"
 
-#: inc/custom-types.php:24
+#: includes/custom-types.php:24
 msgid "No Bands found"
 msgstr "Aucun groupe trouvé"
 
-#: inc/custom-types.php:25
+#: includes/custom-types.php:25
 msgid "No Bands found in trash"
 msgstr "Aucun groupe trouvé dans la corbeille"
 
-#: inc/custom-types.php:26
-#: inc/custom-types.php:44
+#: includes/custom-types.php:26
+#: includes/custom-types.php:44
 msgid "Parent Band:"
 msgstr "Groupe parent:"
 
-#: inc/custom-types.php:27
-#: inc/custom-types.php:95
-#: inc/custom-types.php:163
-#: inc/custom-types.php:229
+#: includes/custom-types.php:27
+#: includes/custom-types.php:95
+#: includes/custom-types.php:163
+#: includes/custom-types.php:229
 msgid "Featured image"
 msgstr "Image mise en avant"
 
-#: inc/custom-types.php:28
-#: inc/custom-types.php:96
-#: inc/custom-types.php:164
-#: inc/custom-types.php:230
+#: includes/custom-types.php:28
+#: includes/custom-types.php:96
+#: includes/custom-types.php:164
+#: includes/custom-types.php:230
 msgid "Set featured image"
 msgstr "Définir l'image mise en avant"
 
-#: inc/custom-types.php:29
-#: inc/custom-types.php:97
-#: inc/custom-types.php:165
-#: inc/custom-types.php:231
+#: includes/custom-types.php:29
+#: includes/custom-types.php:97
+#: includes/custom-types.php:165
+#: includes/custom-types.php:231
 msgid "Remove featured image"
 msgstr "Supprimer l'image mise en avant"
 
-#: inc/custom-types.php:30
-#: inc/custom-types.php:98
-#: inc/custom-types.php:166
-#: inc/custom-types.php:232
+#: includes/custom-types.php:30
+#: includes/custom-types.php:98
+#: includes/custom-types.php:166
+#: includes/custom-types.php:232
 msgid "Use as featured image"
 msgstr "Définir l'image mise en avant"
 
-#: inc/custom-types.php:32
+#: includes/custom-types.php:32
 msgid "Insert into Band"
 msgstr "Insérer dans le groupe"
 
-#: inc/custom-types.php:33
+#: includes/custom-types.php:33
 msgid "Upload to this Band"
 msgstr "Téléverser"
 
-#: inc/custom-types.php:34
+#: includes/custom-types.php:34
 msgid "Filter Bands list"
 msgstr "Filtrer la liste des groupes"
 
-#: inc/custom-types.php:35
+#: includes/custom-types.php:35
 msgid "Bands list navigation"
 msgstr "Navigation liste de groupes"
 
-#: inc/custom-types.php:36
+#: includes/custom-types.php:36
 msgid "Bands list"
 msgstr "Liste des groupes"
 
-#: inc/custom-types.php:37
+#: includes/custom-types.php:37
 msgid "Band attributes"
 msgstr "Attributs du groupe"
 
-#: inc/custom-types.php:39
+#: includes/custom-types.php:39
 msgid "Band published"
 msgstr "Groupe publié"
 
-#: inc/custom-types.php:40
+#: includes/custom-types.php:40
 msgid "Band published privately."
 msgstr "Groupe publié en privé."
 
-#: inc/custom-types.php:41
+#: includes/custom-types.php:41
 msgid "Band reverted to draft."
 msgstr "Groupe remis en brouillon."
 
-#: inc/custom-types.php:42
+#: includes/custom-types.php:42
 msgid "Band scheduled"
 msgstr "Groupe programmé"
 
-#: inc/custom-types.php:43
+#: includes/custom-types.php:43
 msgid "Band updated."
 msgstr "Groupe mis à jour."
 
-#: inc/custom-types.php:86
+#: includes/custom-types.php:86
 msgid "Add new Album"
 msgstr "Ajouter un album"
 
-#: inc/custom-types.php:87
+#: includes/custom-types.php:87
 msgid "Edit Album"
 msgstr "Modifier l'album"
 
-#: inc/custom-types.php:88
+#: includes/custom-types.php:88
 msgid "New Album"
 msgstr "Nouveau album"
 
-#: inc/custom-types.php:89
+#: includes/custom-types.php:89
 msgid "View Album"
 msgstr "Voir l'album"
 
-#: inc/custom-types.php:90
+#: includes/custom-types.php:90
 msgid "View Albums"
 msgstr "Voir les albums"
 
-#: inc/custom-types.php:91
+#: includes/custom-types.php:91
 msgid "Search Albums"
 msgstr "Rechercher dans les albums"
 
-#: inc/custom-types.php:92
+#: includes/custom-types.php:92
 msgid "No Albums found"
 msgstr "Aucun album trouvé"
 
-#: inc/custom-types.php:93
+#: includes/custom-types.php:93
 msgid "No Albums found in trash"
 msgstr "Aucun album trouvé dans la corbeille"
 
-#: inc/custom-types.php:94
-#: inc/custom-types.php:112
+#: includes/custom-types.php:94
+#: includes/custom-types.php:112
 msgid "Parent Album:"
 msgstr "Album parent:"
 
-#: inc/custom-types.php:100
+#: includes/custom-types.php:100
 msgid "Insert into Album"
 msgstr "Insérer dans l'album"
 
-#: inc/custom-types.php:101
+#: includes/custom-types.php:101
 msgid "Upload to this Album"
 msgstr "Téléverser"
 
-#: inc/custom-types.php:102
+#: includes/custom-types.php:102
 msgid "Filter Albums list"
 msgstr "Filtrer la liste d'albums"
 
-#: inc/custom-types.php:103
+#: includes/custom-types.php:103
 msgid "Albums list navigation"
 msgstr "Navigation liste d'albums"
 
-#: inc/custom-types.php:104
+#: includes/custom-types.php:104
 msgid "Albums list"
 msgstr "Liste des albums"
 
-#: inc/custom-types.php:105
+#: includes/custom-types.php:105
 msgid "Album attributes"
 msgstr "Attributs de l'album"
 
-#: inc/custom-types.php:107
+#: includes/custom-types.php:107
 msgid "Album published"
 msgstr "Album publié"
 
-#: inc/custom-types.php:108
+#: includes/custom-types.php:108
 msgid "Album published privately."
 msgstr "Album publié en privé."
 
-#: inc/custom-types.php:109
+#: includes/custom-types.php:109
 msgid "Album reverted to draft."
 msgstr "Album remis en brouillon."
 
-#: inc/custom-types.php:110
+#: includes/custom-types.php:110
 msgid "Album scheduled"
 msgstr "Album programmé"
 
-#: inc/custom-types.php:111
+#: includes/custom-types.php:111
 msgid "Album updated."
 msgstr "Album mis à jour."
 
-#: inc/custom-types.php:154
+#: includes/custom-types.php:154
 msgid "Add new Song"
 msgstr "Ajouter une chanson"
 
-#: inc/custom-types.php:155
+#: includes/custom-types.php:155
 msgid "Edit Song"
 msgstr "Modifier la chanson"
 
-#: inc/custom-types.php:156
+#: includes/custom-types.php:156
 msgid "New Song"
 msgstr "Nouvelle chanson"
 
-#: inc/custom-types.php:157
+#: includes/custom-types.php:157
 msgid "View Song"
 msgstr "Voir la chanson"
 
-#: inc/custom-types.php:158
+#: includes/custom-types.php:158
 msgid "View Songs"
 msgstr "Voir les chansons"
 
-#: inc/custom-types.php:159
+#: includes/custom-types.php:159
 msgid "Search Songs"
 msgstr "Chercher dans les chansons"
 
-#: inc/custom-types.php:160
+#: includes/custom-types.php:160
 msgid "No Songs found"
 msgstr "Aucune chanson trouvée"
 
-#: inc/custom-types.php:161
+#: includes/custom-types.php:161
 msgid "No Songs found in trash"
 msgstr "Aucune chanson trouvée dans la corbeille"
 
-#: inc/custom-types.php:162
-#: inc/custom-types.php:180
+#: includes/custom-types.php:162
+#: includes/custom-types.php:180
 msgid "Parent Song:"
 msgstr "Chanson parente:"
 
-#: inc/custom-types.php:168
+#: includes/custom-types.php:168
 msgid "Insert into Song"
 msgstr "Insérer dans la chanson"
 
-#: inc/custom-types.php:169
+#: includes/custom-types.php:169
 msgid "Upload to this Song"
 msgstr "Téléverser"
 
-#: inc/custom-types.php:170
+#: includes/custom-types.php:170
 msgid "Filter Songs list"
 msgstr "Filtrer la liste de chansons"
 
-#: inc/custom-types.php:171
+#: includes/custom-types.php:171
 msgid "Songs list navigation"
 msgstr "Navigation liste de chansons"
 
-#: inc/custom-types.php:172
+#: includes/custom-types.php:172
 msgid "Songs list"
 msgstr "Liste des chansons"
 
-#: inc/custom-types.php:173
+#: includes/custom-types.php:173
 msgid "Song attributes"
 msgstr "Attributs de la chanson"
 
-#: inc/custom-types.php:175
+#: includes/custom-types.php:175
 msgid "Song published"
 msgstr "Chanson publiée"
 
-#: inc/custom-types.php:176
+#: includes/custom-types.php:176
 msgid "Song published privately."
 msgstr "Chanson publiée en privé."
 
-#: inc/custom-types.php:177
+#: includes/custom-types.php:177
 msgid "Song reverted to draft."
 msgstr "Chanson remise en brouillon."
 
-#: inc/custom-types.php:178
+#: includes/custom-types.php:178
 msgid "Song scheduled"
 msgstr "Chanson programmée"
 
-#: inc/custom-types.php:179
+#: includes/custom-types.php:179
 msgid "Song updated."
 msgstr "Chanson mise à jour."
 
-#: inc/custom-types.php:216
-#: inc/custom-types.php:240
+#: includes/custom-types.php:216
+#: includes/custom-types.php:240
 msgid "Video"
 msgstr "Vidéo"
 
-#: inc/custom-types.php:220
+#: includes/custom-types.php:220
 msgid "Add new Video"
 msgstr "Ajouter une vidéo"
 
-#: inc/custom-types.php:221
+#: includes/custom-types.php:221
 msgid "Edit Video"
 msgstr "Modifier la vidéo"
 
-#: inc/custom-types.php:222
+#: includes/custom-types.php:222
 msgid "New Video"
 msgstr "Nouvelle vidéo"
 
-#: inc/custom-types.php:223
+#: includes/custom-types.php:223
 msgid "View Video"
 msgstr "Voir la vidéo"
 
-#: inc/custom-types.php:224
+#: includes/custom-types.php:224
 msgid "View Videos"
 msgstr "Voir les vidéos"
 
-#: inc/custom-types.php:225
+#: includes/custom-types.php:225
 msgid "Search Videos"
 msgstr "Rechercher dans les vidéos"
 
-#: inc/custom-types.php:226
+#: includes/custom-types.php:226
 msgid "No Videos found"
 msgstr "Aucune vidéo trouvée"
 
-#: inc/custom-types.php:227
+#: includes/custom-types.php:227
 msgid "No Videos found in trash"
 msgstr "Aucune vidéo trouvée dans la corbeille"
 
-#: inc/custom-types.php:228
-#: inc/custom-types.php:246
+#: includes/custom-types.php:228
+#: includes/custom-types.php:246
 msgid "Parent Video:"
 msgstr "Vidéo parente:"
 
-#: inc/custom-types.php:234
+#: includes/custom-types.php:234
 msgid "Insert into Video"
 msgstr "Insérer dans la vidéo"
 
-#: inc/custom-types.php:235
+#: includes/custom-types.php:235
 msgid "Upload to this Video"
 msgstr "Téléverser dans la vidéo"
 
-#: inc/custom-types.php:236
+#: includes/custom-types.php:236
 msgid "Filter Videos list"
 msgstr "Filtrer la liste des vidéos"
 
-#: inc/custom-types.php:237
+#: includes/custom-types.php:237
 msgid "Videos list navigation"
 msgstr "Navigation liste de vidéos"
 
-#: inc/custom-types.php:238
+#: includes/custom-types.php:238
 msgid "Videos list"
 msgstr "Liste des vidéos"
 
-#: inc/custom-types.php:239
+#: includes/custom-types.php:239
 msgid "Video attributes"
 msgstr "Attributs de la vidéo"
 
-#: inc/custom-types.php:241
+#: includes/custom-types.php:241
 msgid "Video published"
 msgstr "Vidéo publiée"
 
-#: inc/custom-types.php:242
+#: includes/custom-types.php:242
 msgid "Video published privately."
 msgstr "Vidéo publiée en privé."
 
-#: inc/custom-types.php:243
+#: includes/custom-types.php:243
 msgid "Video reverted to draft."
 msgstr "Vidéo remise en brouillon."
 
-#: inc/custom-types.php:244
+#: includes/custom-types.php:244
 msgid "Video scheduled"
 msgstr "Vidéo programmée"
 
-#: inc/custom-types.php:245
+#: includes/custom-types.php:245
 msgid "Video updated."
 msgstr "Vidéo mise à jour."
 
-#: inc/custom-types.php:286
-#: inc/custom-types.php:310
+#: includes/custom-types.php:286
+#: includes/custom-types.php:310
 msgid "Video tags"
 msgstr "Étiquettes vidéo"
 
-#: inc/custom-types.php:287
+#: includes/custom-types.php:287
 msgid "Video tag"
 msgstr "Étiquette vidéo"
 
-#: inc/custom-types.php:288
+#: includes/custom-types.php:288
 msgid "Tags"
 msgstr "Étiquettes"
 
-#: inc/custom-types.php:289
+#: includes/custom-types.php:289
 msgid "All tags"
 msgstr "Toutes les étiquettes"
 
-#: inc/custom-types.php:290
+#: includes/custom-types.php:290
 msgid "Edit tag"
 msgstr "Modifier l'étiquette"
 
-#: inc/custom-types.php:291
+#: includes/custom-types.php:291
 msgid "View tag"
 msgstr "Voir l'étiquette"
 
-#: inc/custom-types.php:292
+#: includes/custom-types.php:292
 msgid "Update tag"
 msgstr "Mettre à jour l'étiquette"
 
-#: inc/custom-types.php:293
+#: includes/custom-types.php:293
 msgid "Add new Video tag"
 msgstr "Ajouter une étiquette vidéo"
 
-#: inc/custom-types.php:294
+#: includes/custom-types.php:294
 msgid "New Video tag"
 msgstr "Nouvelle étiquette vidéo"
 
-#: inc/custom-types.php:295
+#: includes/custom-types.php:295
 msgid "Parent tag"
 msgstr "Étiquette parente"
 
-#: inc/custom-types.php:296
+#: includes/custom-types.php:296
 msgid "Parent tag:"
 msgstr "Étiquette parente:"
 
-#: inc/custom-types.php:297
+#: includes/custom-types.php:297
 msgid "Search tags"
 msgstr "Chercher dans les étiquettes"
 
-#: inc/custom-types.php:298
+#: includes/custom-types.php:298
 msgid "Popular tags"
 msgstr "Étiquettes populaires"
 
-#: inc/custom-types.php:299
+#: includes/custom-types.php:299
 msgid "Separate tags with commas"
 msgstr "Séparer les étiquettes avec une virgule"
 
-#: inc/custom-types.php:300
+#: includes/custom-types.php:300
 msgid "Add or remove tags"
 msgstr "Ajouter ou supprimer des étiquettes"
 
-#: inc/custom-types.php:301
+#: includes/custom-types.php:301
 msgid "Choose from the most used tags"
 msgstr "Choisir parmi les étiquettes les plus utilisées"
 
-#: inc/custom-types.php:302
+#: includes/custom-types.php:302
 msgid "No tags found"
 msgstr "Aucune étiquette trouvée"
 
-#: inc/custom-types.php:303
+#: includes/custom-types.php:303
 msgid "No tags"
 msgstr "Aucune étiquette"
 
-#: inc/custom-types.php:304
+#: includes/custom-types.php:304
 msgid "Video tags list navigation"
 msgstr "Navigation liste des étiquettes vidéo"
 
-#: inc/custom-types.php:305
+#: includes/custom-types.php:305
 msgid "Video tags list"
 msgstr "Liste des étiquettes vidéo"
 
-#: inc/custom-types.php:306
+#: includes/custom-types.php:306
 msgid "Back to Video tags"
 msgstr "Retour aux étiquettes"
 
-#: inc/custom-types.php:333
-#: inc/custom-types.php:357
+#: includes/custom-types.php:333
+#: includes/custom-types.php:357
 msgid "Video categories"
 msgstr "Catégories vidéo"
 
-#: inc/custom-types.php:334
+#: includes/custom-types.php:334
 msgid "Video category"
 msgstr "Catégorie video"
 
-#: inc/custom-types.php:336
-#: inc/custom-types.php:383
-#: inc/custom-types.php:430
-#: inc/custom-types.php:478
+#: includes/custom-types.php:336
+#: includes/custom-types.php:383
+#: includes/custom-types.php:430
+#: includes/custom-types.php:478
 msgid "All Categories"
 msgstr "Toutes les catégories"
 
-#: inc/custom-types.php:337
-#: inc/custom-types.php:384
-#: inc/custom-types.php:431
-#: inc/custom-types.php:479
+#: includes/custom-types.php:337
+#: includes/custom-types.php:384
+#: includes/custom-types.php:431
+#: includes/custom-types.php:479
 msgid "Edit Category"
 msgstr "Modifier la catégorie"
 
-#: inc/custom-types.php:338
-#: inc/custom-types.php:385
-#: inc/custom-types.php:432
-#: inc/custom-types.php:480
+#: includes/custom-types.php:338
+#: includes/custom-types.php:385
+#: includes/custom-types.php:432
+#: includes/custom-types.php:480
 msgid "View Category"
 msgstr "Voir la catégorie"
 
-#: inc/custom-types.php:339
+#: includes/custom-types.php:339
 msgid "Update Category"
 msgstr "Mettre à jour la catégorie"
 
-#: inc/custom-types.php:340
+#: includes/custom-types.php:340
 msgid "Add new Video Category"
 msgstr "Ajouter une catégorie vidéo"
 
-#: inc/custom-types.php:341
+#: includes/custom-types.php:341
 msgid "New Video Category"
 msgstr "Nouvelle catégorie vidéo"
 
-#: inc/custom-types.php:342
-#: inc/custom-types.php:389
-#: inc/custom-types.php:436
-#: inc/custom-types.php:484
+#: includes/custom-types.php:342
+#: includes/custom-types.php:389
+#: includes/custom-types.php:436
+#: includes/custom-types.php:484
 msgid "Parent Category"
 msgstr "Catégorie parente"
 
-#: inc/custom-types.php:343
-#: inc/custom-types.php:390
-#: inc/custom-types.php:437
-#: inc/custom-types.php:485
+#: includes/custom-types.php:343
+#: includes/custom-types.php:390
+#: includes/custom-types.php:437
+#: includes/custom-types.php:485
 msgid "Parent Category:"
 msgstr "Catégorie parente:"
 
-#: inc/custom-types.php:344
-#: inc/custom-types.php:391
-#: inc/custom-types.php:438
-#: inc/custom-types.php:486
+#: includes/custom-types.php:344
+#: includes/custom-types.php:391
+#: includes/custom-types.php:438
+#: includes/custom-types.php:486
 msgid "Search Categories"
 msgstr "Chércher les catégories"
 
-#: inc/custom-types.php:345
-#: inc/custom-types.php:392
-#: inc/custom-types.php:439
-#: inc/custom-types.php:487
+#: includes/custom-types.php:345
+#: includes/custom-types.php:392
+#: includes/custom-types.php:439
+#: includes/custom-types.php:487
 msgid "Popular Categories"
 msgstr "Catégories populaires"
 
-#: inc/custom-types.php:346
+#: includes/custom-types.php:346
 msgid "Separate categories with commas"
 msgstr "Séparer les catégories avec une virgule"
 
-#: inc/custom-types.php:347
-#: inc/custom-types.php:394
-#: inc/custom-types.php:441
-#: inc/custom-types.php:489
+#: includes/custom-types.php:347
+#: includes/custom-types.php:394
+#: includes/custom-types.php:441
+#: includes/custom-types.php:489
 msgid "Add or remove Categories"
 msgstr "Ajouter ou supprimer des catégories vidéo"
 
-#: inc/custom-types.php:348
+#: includes/custom-types.php:348
 msgid "Choose from the most used categories"
 msgstr "Choisir parmi les catégories les plus utilisées"
 
-#: inc/custom-types.php:349
-#: inc/custom-types.php:396
-#: inc/custom-types.php:443
-#: inc/custom-types.php:491
+#: includes/custom-types.php:349
+#: includes/custom-types.php:396
+#: includes/custom-types.php:443
+#: includes/custom-types.php:491
 msgid "No Categories found"
 msgstr "Aucune catégorie trouvée"
 
-#: inc/custom-types.php:350
-#: inc/custom-types.php:397
-#: inc/custom-types.php:444
-#: inc/custom-types.php:492
+#: includes/custom-types.php:350
+#: includes/custom-types.php:397
+#: includes/custom-types.php:444
+#: includes/custom-types.php:492
 msgid "No Categories"
 msgstr "Aucune catégorie"
 
-#: inc/custom-types.php:351
-#: inc/custom-types.php:398
-#: inc/custom-types.php:445
-#: inc/custom-types.php:493
+#: includes/custom-types.php:351
+#: includes/custom-types.php:398
+#: includes/custom-types.php:445
+#: includes/custom-types.php:493
 msgid "Categories list navigation"
 msgstr "Navigation liste de catégories"
 
-#: inc/custom-types.php:352
-#: inc/custom-types.php:399
-#: inc/custom-types.php:446
-#: inc/custom-types.php:494
+#: includes/custom-types.php:352
+#: includes/custom-types.php:399
+#: includes/custom-types.php:446
+#: includes/custom-types.php:494
 msgid "Categories list"
 msgstr "Liste des catégories"
 
-#: inc/custom-types.php:353
+#: includes/custom-types.php:353
 msgid "Back to Video Categories"
 msgstr "Retour aux catégories"
 
-#: inc/custom-types.php:380
-#: inc/custom-types.php:404
+#: includes/custom-types.php:380
+#: includes/custom-types.php:404
 msgid "Album Categories"
 msgstr "Catégories d'albums"
 
-#: inc/custom-types.php:381
+#: includes/custom-types.php:381
 msgid "Album Category"
 msgstr "Catégorie d'album"
 
-#: inc/custom-types.php:386
+#: includes/custom-types.php:386
 msgid "Update Category Name"
 msgstr "Mettre à jour la catégorie"
 
-#: inc/custom-types.php:387
-#: inc/custom-types.php:434
-#: inc/custom-types.php:482
+#: includes/custom-types.php:387
+#: includes/custom-types.php:434
+#: includes/custom-types.php:482
 msgid "Add new Category"
 msgstr "Ajouter une catégorie"
 
-#: inc/custom-types.php:388
+#: includes/custom-types.php:388
 msgid "New Category Name"
 msgstr "Nom de la nouvelle catégorie"
 
-#: inc/custom-types.php:393
-#: inc/custom-types.php:440
-#: inc/custom-types.php:488
+#: includes/custom-types.php:393
+#: includes/custom-types.php:440
+#: includes/custom-types.php:488
 msgid "Separate Categories with commas"
 msgstr "Séparer les catégories avec une virgule"
 
-#: inc/custom-types.php:395
-#: inc/custom-types.php:442
-#: inc/custom-types.php:490
+#: includes/custom-types.php:395
+#: includes/custom-types.php:442
+#: includes/custom-types.php:490
 msgid "Choose from the most used Categories"
 msgstr "Choisir parmi les catégories les plus utilisées"
 
-#: inc/custom-types.php:400
+#: includes/custom-types.php:400
 msgid "Back to Album Categories"
 msgstr "Retour aux catégories d'album"
 
-#: inc/custom-types.php:427
-#: inc/custom-types.php:451
+#: includes/custom-types.php:427
+#: includes/custom-types.php:451
 msgid "Band Categories"
 msgstr "Catégories de groupes"
 
-#: inc/custom-types.php:428
+#: includes/custom-types.php:428
 msgid "Band Category"
 msgstr "Catégorie parente"
 
-#: inc/custom-types.php:433
-#: inc/custom-types.php:481
+#: includes/custom-types.php:433
+#: includes/custom-types.php:481
 msgid "Update Category name"
 msgstr "Mettre à jour le nom de la catégorie"
 
-#: inc/custom-types.php:435
-#: inc/custom-types.php:483
+#: includes/custom-types.php:435
+#: includes/custom-types.php:483
 msgid "New Category name"
 msgstr "Nom de la nouvelle catégorie"
 
-#: inc/custom-types.php:447
+#: includes/custom-types.php:447
 msgid "Back to Band Categories"
 msgstr "Retour aux catégories de groupe"
 
-#: inc/custom-types.php:475
-#: inc/custom-types.php:499
+#: includes/custom-types.php:475
+#: includes/custom-types.php:499
 msgid "Song Categories"
 msgstr "Catégories de chanson"
 
-#: inc/custom-types.php:476
+#: includes/custom-types.php:476
 msgid "Song Category"
 msgstr "Catégorie de chanson"
 
-#: inc/custom-types.php:495
+#: includes/custom-types.php:495
 msgid "Back to Song Categories"
 msgstr "Retour aux catégories de chanson"
 
 #. translators: %s is replaced by the name of the plugin, untranslated
-#: inc/widgets.php:10
+#: includes/widgets.php:10
 msgid "Add widgets here to appear on %s pages"
 msgstr "Ajoutez ici des widgets qui apparaîtront sur les pages %s"
 
-#: inc/widgets.php:25
+#: includes/widgets.php:25
 msgid "all relations"
 msgstr "tous les liens"
 
-#: inc/widgets.php:26
-#: inc/widgets.php:172
+#: includes/widgets.php:26
+#: includes/widgets.php:172
 msgid "Display related songs"
 msgstr "Affiche les chansons liées"
 
-#: inc/widgets.php:56
-#: inc/widgets.php:103
-#: inc/widgets.php:151
-#: inc/widgets.php:198
-#: inc/widgets.php:268
-#: inc/widgets.php:341
+#: includes/widgets.php:56
+#: includes/widgets.php:103
+#: includes/widgets.php:151
+#: includes/widgets.php:198
+#: includes/widgets.php:268
+#: includes/widgets.php:341
 msgid "Title:"
 msgstr "Titre :"
 
-#: inc/widgets.php:77
+#: includes/widgets.php:77
 msgid "Display related bands"
 msgstr "Affiche les groupes liés"
 
-#: inc/widgets.php:124
+#: includes/widgets.php:124
 msgid "Display related albums"
 msgstr "Affiche les albums liés"
 
-#: inc/widgets.php:218
+#: includes/widgets.php:218
 msgid "WC Products"
 msgstr "Produits WooCommerce"
 
-#: inc/widgets.php:219
+#: includes/widgets.php:219
 msgid "Display related WooCommerce products"
 msgstr "Affiche les produits WooCommerce liés"
 
-#: inc/widgets.php:237
+#: includes/widgets.php:237
 msgid "Order online"
 msgstr "Commander en ligne"
 
-#: inc/widgets.php:263
-#: inc/widgets.php:336
+#: includes/widgets.php:263
+#: includes/widgets.php:336
 msgid "Products"
 msgstr "Produits"
 
-#: inc/widgets.php:290
+#: includes/widgets.php:290
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
 

@@ -97,7 +97,7 @@ function bndtls_display_settings_page()
 	// if ( ! current_user_can( 'manage_options' ) ) {
 	// 		return;
 	// }
-	require(plugin_dir_path(__FILE__) . 'inc/settings-page.php');
+	require(plugin_dir_path(__FILE__) . 'includes/settings-page.php');
 }
 
 function bndtls_settings_link( $links ) {

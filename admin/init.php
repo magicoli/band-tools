@@ -40,7 +40,7 @@ function bndtls_alter_license_notice() {
   // global $bndtls_alter_license_form;
   // if ( $bndtls_alter_license_form ) return;
   $handle = BNDTLS_SLUG . '-wppus-hide-licence-warnings';
-  $js = plugins_url(BNDTLS_SLUG . '/js/wppus-hide-licence-warnings.js');
+  $js = plugins_url(BNDTLS_SLUG . '/includes/js/wppus-hide-licence-warnings.js');
   wp_register_script( $handle, $js, array( 'wp-i18n', 'jquery' ) );
   // wp_set_script_translations( $handle, 'band-tools' );
   wp_enqueue_script( $handle, $js );

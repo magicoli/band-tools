@@ -42,14 +42,14 @@ function band_tools_activation_redirect( $plugin ) {
 add_action( 'activated_plugin', 'band_tools_activation_redirect' );
 
 // require_once __DIR__ . '/templates/templates.php';
-require_once __DIR__ . '/inc/post-types.php';
-require_once __DIR__ . '/inc/blocks.php';
-require_once __DIR__ . '/inc/shortcodes.php';
-require_once __DIR__ . '/inc/widgets.php';
+require_once __DIR__ . '/includes/post-types.php';
+require_once __DIR__ . '/includes/blocks.php';
+require_once __DIR__ . '/includes/shortcodes.php';
+require_once __DIR__ . '/includes/widgets.php';
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 if ( is_plugin_active( 'woocommerce/woocommerce.php') ) {
-	require_once __DIR__ . '/inc/woocommerce.php';
+	require_once __DIR__ . '/includes/woocommerce.php';
 }
 
 /** Enable plugin updates with license check **/
@@ -63,7 +63,7 @@ $bndtls_updater = new WP_Package_Updater(
 
 function bndtls_load_plugin_css() {
 	// $plugin_url = plugin_dir_url( __FILE__ );
-	wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'css/band-tools.css' );
+	wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'includes/css/band-tools.css' );
 	// dev only
 	// wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css', array(), time() , 'all' );
 }
