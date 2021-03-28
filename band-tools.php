@@ -20,54 +20,23 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) die;
+if ( ! defined( 'BNDTLS_PLUGIN' ) ) define('BNDTLS_PLUGIN', 'band-tools/band-tools.php' );
 
-function bndtls_load_textdomain() {
-	$textdomain = "band-tools";
-	load_plugin_textdomain( $textdomain, false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-}
-bndtls_load_textdomain();
-
-require_once __DIR__ . '/vendor/autoload.php';
-WP_Dependency_Installer::instance( __DIR__ )->run();
-
+require_once __DIR__ . '/includes/init.php';
 if(is_admin()) {
-	require_once __DIR__ . '/admin/init.php';
+	require_once __DIR__ . '/admin/admin-init.php';
 	// require_once __DIR__ . '/admin/wp-dependencies.php';
 }
-function band_tools_activation_redirect( $plugin ) {
-    if( $plugin == plugin_basename( __FILE__ ) ) {
-        exit( wp_redirect( admin_url( 'admin.php?page=band-tools' ) ) );
-    }
-}
-add_action( 'activated_plugin', 'band_tools_activation_redirect' );
 
-// require_once __DIR__ . '/templates/templates.php';
-require_once __DIR__ . '/includes/post-types.php';
-require_once __DIR__ . '/includes/blocks.php';
-require_once __DIR__ . '/includes/shortcodes.php';
-require_once __DIR__ . '/includes/widgets.php';
-
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-if ( is_plugin_active( 'woocommerce/woocommerce.php') ) {
-	require_once __DIR__ . '/includes/woocommerce.php';
-}
-
-/** Enable plugin updates with license check **/
-require_once plugin_dir_path( __FILE__ ) . 'lib/wp-package-updater/class-wp-package-updater.php';
-$bndtls_updater = new WP_Package_Updater(
-	'https://magiiic.com',
-	wp_normalize_path( __FILE__ ),
-	wp_normalize_path( plugin_dir_path( __FILE__ ) ),
-	true
-);
-
-function bndtls_load_plugin_css() {
-	// $plugin_url = plugin_dir_url( __FILE__ );
-	wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'includes/css/band-tools.css' );
-	// dev only
-	// wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css', array(), time() , 'all' );
-}
-add_action( 'wp_enqueue_scripts', 'bndtls_load_plugin_css' );
+//
+// /** Enable plugin updates with license check **/
+// require_once plugin_dir_path( __FILE__ ) . 'lib/wp-package-updater/class-wp-package-updater.php';
+// $bndtls_updater = new WP_Package_Updater(
+// 	'https://magiiic.com',
+// 	wp_normalize_path( __FILE__ ),
+// 	wp_normalize_path( plugin_dir_path( __FILE__ ) ),
+// 	true
+// );
 
 if(get_option('bndtls_clean_titles')) {
 	function bndtls__prefix_category_title( $title ) {
@@ -99,19 +68,19 @@ if(get_option('bndtls_redirect_single_post_archives')) {
 	add_action( 'template_redirect', 'bndtls_redirect_cpt_archive' );
 }
 
-function display_post_type_nav_box(){
-
-    $hidden_nav_boxes = get_user_option( 'metaboxhidden_nav-menus' );
-
-    $post_type = 'foobar'; //Can also be a taxonomy slug
-    $post_type_nav_box = 'add-'.$post_type;
-
-    if(is_array($hidden_nav_boxes) && in_array($post_type_nav_box, $hidden_nav_boxes)):
-        foreach ($hidden_nav_boxes as $i => $nav_box):
-            if($nav_box == $post_type_nav_box)
-                unset($hidden_nav_boxes[$i]);
-        endforeach;
-        update_user_option(get_current_user_id(), 'metaboxhidden_nav-menus', $hidden_nav_boxes);
-    endif;
-}
-add_action('admin_init', 'display_post_type_nav_box');
+// function display_post_type_nav_box(){
+//
+//     $hidden_nav_boxes = get_user_option( 'metaboxhidden_nav-menus' );
+//
+//     $post_type = 'foobar'; //Can also be a taxonomy slug
+//     $post_type_nav_box = 'add-'.$post_type;
+//
+//     if(is_array($hidden_nav_boxes) && in_array($post_type_nav_box, $hidden_nav_boxes)):
+//         foreach ($hidden_nav_boxes as $i => $nav_box):
+//             if($nav_box == $post_type_nav_box)
+//                 unset($hidden_nav_boxes[$i]);
+//         endforeach;
+//         update_user_option(get_current_user_id(), 'metaboxhidden_nav-menus', $hidden_nav_boxes);
+//     endif;
+// }
+// add_action('admin_init', 'display_post_type_nav_box');

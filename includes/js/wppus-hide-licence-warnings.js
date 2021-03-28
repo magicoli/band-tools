@@ -2,13 +2,13 @@ jQuery(function($) {
   // Constants must be defined before via php or here
   //
   // BNDTLS_SLUG  your plugin slug (aka directory name)
-  // BNDTLS_DATA_PLUGIN the plugin file, usually BNDTLS_SLUG/BNDTLS_SLUG.php
+  // BNDTLS_PLUGIN the plugin file, usually BNDTLS_SLUG/BNDTLS_SLUG.php
   // BNDTLS_SHOW_HIDE the show/hide link text, eg "Show/Hide License Key"
   // BNDTLS_REGISTER_TEXT the line added below empty license field, eg "Register your plugin at https://example.com"
 
   if ($('body').hasClass('wppus-license-form-alter-done-' + BNDTLS_SLUG )) return;
 
-  var installRow = $( "[data-plugin='" + BNDTLS_DATA_PLUGIN + "']");
+  var installRow = $( "[data-plugin='" + BNDTLS_PLUGIN + "']");
   var licenseRow = $( ".plugin-update-tr:has([data-package_slug='" + BNDTLS_SLUG + "'])" );
   var switchClass = BNDTLS_SLUG + '-license-switch';
 

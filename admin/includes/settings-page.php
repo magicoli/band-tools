@@ -1,4 +1,5 @@
-<?php
+<?php if ( ! is_admin() ) die;
+
 global $bndtls_dependencies, $bndtls_recommended, $bndtls_required;
 ?><div class="wrap">
 	<h1><?php

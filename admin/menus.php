@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! is_admin() ) die;
 /**
  * Settings
  *
