@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     '50e7b3f86bffe096b1d2c3244a6855fd' => $vendorDir . '/meta-box/meta-box/meta-box.php',
+    'efcccce94091def99574319633dff18c' => $vendorDir . '/meta-box/meta-box-group/meta-box-group.php',
     '8f06d35e329fad24db0fe1eb28e40e20' => $vendorDir . '/meta-box/mb-settings-page/mb-settings-page.php',
     '55a4684682f43b6251b1cc0e408ec2c1' => $vendorDir . '/afragen/wp-dependency-installer/wp-dependency-installer.php',
 );

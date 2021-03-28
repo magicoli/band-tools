@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'd3985bef8ddb2b0b01f48c98f3a0d73de07c358a',
+    'reference' => '57d14e5c42b7e425c14510897c06c46e7bc53ba4',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'd3985bef8ddb2b0b01f48c98f3a0d73de07c358a',
+      'reference' => '57d14e5c42b7e425c14510897c06c46e7bc53ba4',
     ),
     'afragen/wp-dependency-installer' => 
     array (
@@ -48,6 +48,15 @@
       'reference' => '1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d',
     ),
     'meta-box/mb-settings-page' => 
+    array (
+      'pretty_version' => 'master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+      ),
+      'reference' => NULL,
+    ),
+    'meta-box/meta-box-group' => 
     array (
       'pretty_version' => 'master',
       'version' => 'dev-master',
