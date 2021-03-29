@@ -27,6 +27,7 @@ if(is_admin()) {
 	require_once __DIR__ . '/admin/admin-init.php';
 	// require_once __DIR__ . '/admin/wp-dependencies.php';
 }
+require_once __DIR__ . '/templates/templates.php';
 
 if(get_option('bndtls_clean_titles')) {
 	function bndtls__prefix_category_title( $title ) {
