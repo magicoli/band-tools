@@ -1,3 +1,6 @@
+/*
+Version: 0.6.1-1
+*/
 .widget_bndtls_widget_all h4 {
     border-bottom: solid 1px;
 }
@@ -7,4 +10,9 @@
 #sidebar .widget_bndtls_widget_all ul:not(.album) li {
     list-style: disc;
     margin-left: 1.2em;
+}
+.comment {
+  font-size: 70%;
+  font-style: italic;
+  background: lightgrey;
 }

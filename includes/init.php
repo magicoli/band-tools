@@ -34,6 +34,7 @@ $plugin_data = get_file_data(WP_PLUGIN_DIR . "/" . BNDTLS_PLUGIN, array(
 if ( ! defined( 'BNDTLS_PLUGIN_NAME' ) ) define('BNDTLS_PLUGIN_NAME', $plugin_data['Name'] );
 if ( ! defined( 'BNDTLS_SHORTNAME' ) ) define('BNDTLS_SHORTNAME', preg_replace('/ - .*/', '', BNDTLS_PLUGIN_NAME ) );
 if ( ! defined( 'BNDTLS_PLUGIN_URI' ) ) define('BNDTLS_PLUGIN_URI', $plugin_data['PluginURI'] );
+if ( ! defined( 'BNDTLS_VERSION' ) ) define('BNDTLS_VERSION', $plugin_data['Version'] );
 if ( ! defined( 'BNDTLS_AUTHOR_NAME' ) ) define('BNDTLS_AUTHOR_NAME', $plugin_data['Author'] );
 if ( ! defined( 'BNDTLS_TXDOM' ) ) define('BNDTLS_TXDOM', ($plugin_data['TextDomain']) ? $plugin_data['TextDomain'] : BNDTLS_SLUG );
 if ( ! defined( 'BNDTLS_DATA_SLUG' ) ) define('BNDTLS_DATA_SLUG', sanitize_title(BNDTLS_PLUGIN_NAME) );
@@ -63,9 +64,8 @@ $bndtls_updater = new WP_Package_Updater(
 );
 
 function bndtls_load_plugin_css() {
-	// $plugin_url = plugin_dir_url( __FILE__ );
-	wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'css/band-tools.css' );
-	// dev only
-	// wp_enqueue_style( 'cdt', plugin_dir_url( __FILE__ ) . 'style.css', array(), time() , 'all' );
+  // dev (force no cache)
+  // wp_enqueue_style( 'band-tools-main', plugin_dir_url( __FILE__ ) . 'css/main.css', array(), BNDTLS_VERSION . '.' . time() );
+  wp_enqueue_style( BNDTLS_SLUG . '-main', plugin_dir_url( __FILE__ ) . 'css/main.css', array(), BNDTLS_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'bndtls_load_plugin_css' );
