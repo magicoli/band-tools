@@ -1,5 +1,12 @@
 <?php if ( ! is_admin() ) die;
 
+add_action( 'admin_init', 'remove_meta_box_menu' );
+function remove_meta_box_menu() {
+	if(is_plugin_active('meta-box/meta-box.php')) return;
+	if(is_plugin_active('mb-core/mb-core.php')) return;
+	remove_menu_page( 'meta-box' );
+}
+
 if ( ! is_plugin_active('mb-core/mb-core.php' ) || ! bndtls_get_option( 'developer_mode') ):
 
 add_filter( 'mb_settings_pages', 'bndtls_settings' );
