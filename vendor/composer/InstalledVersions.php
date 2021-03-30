@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '07d578a3a7a5577b87681224d9a68620a8104bf7',
+    'reference' => 'c4a3a761342337045f052b94896f26f13371f98d',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '07d578a3a7a5577b87681224d9a68620a8104bf7',
+      'reference' => 'c4a3a761342337045f052b94896f26f13371f98d',
     ),
     'afragen/wp-dependency-installer' => 
     array (
@@ -99,6 +99,15 @@ private static $installed = array (
       'reference' => NULL,
     ),
     'meta-box/meta-box-group' => 
+    array (
+      'pretty_version' => 'master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+      ),
+      'reference' => NULL,
+    ),
+    'meta-box/meta-box-show-hide' => 
     array (
       'pretty_version' => 'master',
       'version' => 'dev-master',
