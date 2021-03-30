@@ -76,7 +76,7 @@ to show
 
 == Changelog ==
 
-= 0.7.1 =
+= 0.7.2 =
 * added front page settings
 * added template for band when selected as home page
 * fix current page display in infoboxes
