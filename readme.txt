@@ -76,107 +76,66 @@ to show
 
 == Changelog ==
 
-= 0.6.1 =
+= 0.7 =
+* new custom content template: show parent and child related items band/albums, band/songs, albums/songs
+* new plugin templates: single-[slug].php content-single-[slug].php content-archive-[slug].php ([slug] is bands, albums or songs)
+* added mb-custom-post-type and mb-relationships libraries
+* added relations in list view
+* enhancement css refresh after update (use plugin version for css enqueue)
+* disable metabox menu if only bundled (when actual plugin is not active)
+* fix special characters display in custom post strings translations (removed esc_html filter)
+* fix PHP warning (remove_menu_page invoked with admin_init instead of admin_menu)
 * fix bad location for includes/woocommerce.php
 
 = 0.6 =
 * intermediate version: partially migrated to meta-box, but acf is still needed for some stuff
-* spring cleaning
 * new allow to select group as home page
 * added meta-box, meta-box-group and mb-settings-page libraries
 * added afragen/wp-dependency-installer library
 * migrated dependencies check to afragen library
+* spring cleaning
 
 = 0.5.14 =
 * tested up to WP 5.7
-
-= 0.5.13 =
-* fix dependencies check conflict with other plugins
-* fix unset array php warning
-
-= 0.5.12 =
-* fix widget duplicate ids
-* fix widget nested id
-
-= 0.5.11 =
-* added widget styling
-
-= 0.5.10 =
-* fix wppus-hide-licence-warnings.js conflict with other plugins using it
-* queued js script instead of hardcoded
-* constants for common values
-
-= 0.5.9 =
-* lighter assets
-
-= 0.5.8 =
-* exclude development and source files from .zip release
-
-= 0.5.7 =
-* updated registration notice URL
-
-= 0.5.6 =
-* changed plugin url
-* license key read only in settings
-
-= 0.5.5 =
-* updated author
-
-= 0.5.4 =
-* added Registration link to license activation row
-* fix installRow and licenseRow inversion
-
-= 0.5.3 =
-* added hide action link for license key in Plugins list, hidden if
-* changed Plugin Name to "Band Tools", instead of "Bands Tools", to match slug
-
-= 0.5.2 =
-* fix add_option fired too early and causing crash
-
-= 0.5.1 =
-* added license key support
-* fixed "Recommended plugins" title shown when no recommendations
-
-= 0.5 =
 * new shortcode to display related objects
 * new catch-all widget with all relations
 * new function to build shortcode and widget content
+* changed Plugin Name to "Band Tools", instead of "Bands Tools", to match slug
+* added license key support
+* added widget styling
+* exclude development and source files from .zip release
+* lighter assets
+* fix dependencies check conflict with other plugins
+* fix unset array php warning
+* fix widget duplicate ids
+* fix widget nested id
+* fix wppus-hide-licence-warnings.js conflict with other plugins using it
+* fix installRow and licenseRow inversion
+* fix add_option fired too early and causing crash
+* constants for common values
 * added songs per album view
 
 = 0.4.4 =
-* fix missing install link for recommended plugins
-
-= 0.4.3 =
+* new automatic singular or plural post names for archives and menus
+* new settings custom post naming
+* added redirection for archives containing a single post
 * added "Custom sidebars" to recommended plugins
 * added page-attributes support
 * added widget area (currently depends on theme customizaton or external plugin)
-* disabled templates until they're ready
-
-= 0.4.2 =
-* added redirection for archives containing a single post
-
-= 0.4.1 =
+* fix missing install link for recommended plugins
 * added videos to singular/plural names
 
-= 0.4 =
-* new settings custom post naming
-* new automatic singular or plural post names for archives and menus
-
-= 0.3.9 =
+= 0.3 - 0.3.9 =
 * added band, album, song, video categories
 * added standard tags to all types without custom tags
 * added post-formats support
-
-= 0.3.6 =
 * added video post type
 * added video widget
 * added recommended plugins to settings page
-* udpate load WooCommerce fields only if WC is active
-* fix settings pages translations: load textdomain before acf fields definition
-
-= 0.3.5 =
 * added clean titles option fo Categories, Archives, Taxonomies, Authors, Taxes
 * added translation template and French localisation
+* udpate load WooCommerce fields only if WC is active
+* fix settings pages translations: load textdomain before acf fields definition
 
 = 0.2.4 =
 * added: dependency check
