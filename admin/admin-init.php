@@ -22,6 +22,16 @@ function bndtls_load_admin_css() {
 }
 add_action( 'admin_enqueue_scripts', 'bndtls_load_admin_css' );
 
+add_action( 'admin_head', 'bndtls_load_admin_js' );
+function bndtls_load_admin_js() {
+  $handle = BNDTLS_SLUG . '-admin';
+  $js = plugin_dir_url(__FILE__) . 'admin.js';
+  // wp_register_script( $handle, $js, array( 'wp-i18n', 'jquery' ) );
+  // $ver=BNDTLS_VERSION;
+  wp_enqueue_script( $handle, $js, array(), BNDTLS_VERSION );
+  // wp_enqueue_script( $handle, $js );
+}
+
 // Fix license key warning on plugins page if there is a license key
 //
 add_action( 'admin_head', 'bndtls_alter_license_notice', 99, 0 );

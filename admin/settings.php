@@ -222,4 +222,44 @@ function bndtls_settings_tweaks( $meta_boxes ) {
   return $meta_boxes;
 }
 
+add_filter( 'rwmb_meta_boxes', 'bndtls_settings_frontpage' );
+function bndtls_settings_frontpage( $meta_boxes ) {
+	$prefix = '';
+
+	$meta_boxes[] = [
+		'title'          => __( 'Front page', 'band-tools' ),
+		'id'             => 'front-page',
+		'settings_pages' => ['band-tools-settings'],
+		'fields'         => [
+			[
+				'name'            => __( 'Allow as Front Page', 'band-tools' ),
+				'id'              => $prefix . 'front_page_allow',
+				'type'            => 'select_advanced',
+				'desc'            => __( 'Allow to select these as front page in Appearance > Customize menu', 'band-tools' ),
+				'options'         => [
+					'bands'  => __( 'Bands', 'band-tools' ),
+					'albums' => __( 'Albums', 'band-tools' ),
+					'songs'  => __( 'Songs', 'band-tools' ),
+				],
+				'std'             => ['bands'],
+				'multiple'        => true,
+				'select_all_none' => true,
+			],
+			[
+				'name'    => __( 'Show full content', 'band-tools' ),
+				'id'      => $prefix . 'frontpage_full_content',
+				'type'    => 'checkbox',
+				'desc'    => __( 'Show full content when item is selected as home page', 'band-tools' ),
+				'std'     => true,
+				'visible' => [
+					'when'     => [['front_page_allow', '!=', '']],
+					'relation' => 'or',
+				],
+			],
+		],
+	];
+
+	return $meta_boxes;
+}
+
 endif;

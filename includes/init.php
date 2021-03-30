@@ -44,7 +44,7 @@ if ( ! defined( 'BNDTLS_REGISTER_TEXT' ) ) define('BNDTLS_REGISTER_TEXT', sprint
 
 // require_once __DIR__ . '/templates/templates.php';
 require_once __DIR__ . '/functions.php';
-// require_once __DIR__ . '/post-types.php';
+require_once __DIR__ . '/post-types.php';
 require_once __DIR__ . '/blocks.php';
 require_once __DIR__ . '/shortcodes.php';
 require_once __DIR__ . '/widgets.php';

@@ -5,27 +5,29 @@ if (!defined('WPINC')) {die;}
 // require_once __DIR__ . '/custom-types.php';
 require_once __DIR__ . '/custom-fields.php';
 
-function add_bands_to_dropdown( $pages ){
-	$args = array(
-		'post_type' => 'bands'
-	);
-	$items = get_posts($args);
-	$pages = array_merge($pages, $items);
+function bndtls_frontpage_add_types_to_dropdown( $pages ){
+	$types = bndtls_get_option('front_page_allow');
+	foreach($types as $type) {
+		// echo "been there " . __FILE__; die;
+		$args = array(
+			'post_type' => $type,
+		);
+		$items = get_posts($args);
+		$pages = array_merge($pages, $items);
+	}
 
 	return $pages;
 }
-add_filter( 'get_pages', 'add_bands_to_dropdown' );
+add_filter( 'get_pages', 'bndtls_frontpage_add_types_to_dropdown' );
 
-function enable_front_page_bands( $query ){
-	if('' == $query->query_vars['post_type'] && 0 != $query->query_vars['page_id'])
-	$query->query_vars['post_type'] = array( 'page', 'bands' );
+function bndtls_frontpage_enable_types( $query ){
+	$types = bndtls_get_option('front_page_allow');
+	foreach($types as $type) {
+		if('' == $query->query_vars['post_type'] && 0 != $query->query_vars['page_id'])
+		$query->query_vars['post_type'] = array( 'page', $type );
+	}
 }
-add_action( 'pre_get_posts', 'enable_front_page_bands' );
-
-// 		'menu_icon' => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-user-music-20x20.svg',
-// 		'menu_icon' => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-album-20x20.svg',
-// 		'menu_icon' => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-comment-music-20x20.svg',
-// 		'menu_icon' => dirname(plugin_dir_url( __FILE__ )) . '/assets/tv-music-20x20.svg',
+add_action( 'pre_get_posts', 'bndtls_frontpage_enable_types' );
 
 add_action( 'init', 'bndtls_register_post_types' );
 function bndtls_register_post_types() {
