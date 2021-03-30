@@ -24,11 +24,13 @@ function bndtls_the_content ( $more_link_text = null, $strip_teaser = false ) {
     include $custom;
     $custom_content = ob_get_clean();
     $content = "<div class='" . BNDTLS_SLUG . " content $template_slug $post_type_slug'>$custom_content</div>";
-    # Uncomment below to allow html in archive content
+    // ## Uncomment below to allow html in archive content
+    // # (probably a bad idea)
     // if($template_slug == "archive") {
     //   echo $content;
     //   return;
     // }
+    // ##
   } else {
     $content = get_the_content( $more_link_text, $strip_teaser );
   }
