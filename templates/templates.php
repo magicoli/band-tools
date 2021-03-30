@@ -19,10 +19,11 @@ function bndtls_the_content ( $more_link_text = null, $strip_teaser = false ) {
   $custom_slug = "content-$template_slug-$post_type_slug";
   $custom = "$plugindir/templates/$custom_slug.php";
   if(file_exists($custom)) {
+    // $content=include $custom;
     ob_start();
     include $custom;
-    $content = ob_get_clean();
-    $content = "<div class='" . BNDTLS_SLUG . " content $template_slug $post_type_slug'>$content</div>";
+    $custom_content = ob_get_clean();
+    $content = "<div class='" . BNDTLS_SLUG . " content $template_slug $post_type_slug'>$custom_content</div>";
     # Uncomment below to allow html in archive content
     // if($template_slug == "archive") {
     //   echo $content;

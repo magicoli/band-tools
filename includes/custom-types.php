@@ -203,12 +203,12 @@ add_action( 'mb_relationships_init', 'bndtls_register_relationships' );
 
 function bndtls_register_relationships() {
 	MB_Relationships_API::register( [
-		'id'   => 'rel-band-album',
+		'id'   => 'rel-bands-albums',
 		'from' => [
 			'object_type' => 'post',
 			'post_type'   => 'bands',
 			'meta_box'    => [
-				'title'    => 'Albums',
+				'title'    => 'This Band Albums',
 				'context'  => 'normal',
 				'priority' => 'high',
 			],
@@ -225,7 +225,7 @@ function bndtls_register_relationships() {
 	] );
 
 	MB_Relationships_API::register( [
-		'id'   => 'rel-band-song',
+		'id'   => 'rel-bands-songs',
 		'from' => [
 			'object_type'  => 'post',
 			'post_type'    => 'bands',
@@ -235,7 +235,7 @@ function bndtls_register_relationships() {
 				'link'     => 'view',
 			],
 			'meta_box'     => [
-				'title'    => 'Songs',
+				'title'    => 'This Band Songs',
 				'context'  => 'normal',
 				'priority' => 'high',
 			],
@@ -249,7 +249,7 @@ function bndtls_register_relationships() {
 				'link'     => 'view',
 			],
 			'meta_box'     => [
-				'title'    => 'Bands',
+				'title'    => 'By Bands',
 				'context'  => 'normal',
 				'priority' => 'high',
 			],
@@ -257,7 +257,7 @@ function bndtls_register_relationships() {
 	] );
 
 	MB_Relationships_API::register( [
-		'id'   => 'rel-album-song',
+		'id'   => 'rel-albums-songs',
 		'from' => [
 			'object_type'  => 'post',
 			'post_type'    => 'albums',
@@ -266,7 +266,7 @@ function bndtls_register_relationships() {
 				'link'     => 'view',
 			],
 			'meta_box'     => [
-				'title'   => 'Songs',
+				'title'   => 'Included Songs',
 				'context' => 'normal',
 			],
 		],
@@ -274,7 +274,7 @@ function bndtls_register_relationships() {
 			'object_type' => 'post',
 			'post_type'   => 'songs',
 			'meta_box'    => [
-				'title'   => 'Albums',
+				'title'   => 'In Albums',
 				'context' => 'normal',
 			],
 		],
