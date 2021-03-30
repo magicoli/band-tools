@@ -207,6 +207,11 @@ function bndtls_register_relationships() {
 		'from' => [
 			'object_type' => 'post',
 			'post_type'   => 'bands',
+			'admin_column' => [
+				'position' => 'after title',
+				'title'    => 'Albums',
+				'link'     => 'view',
+			],
 			'meta_box'    => [
 				'title'    => 'This Band Albums',
 				'context'  => 'normal',
@@ -216,6 +221,11 @@ function bndtls_register_relationships() {
 		'to'   => [
 			'object_type' => 'post',
 			'post_type'   => 'albums',
+			'admin_column' => [
+				'position' => 'after title',
+				'title'    => 'Bands',
+				'link'     => 'view',
+			],
 			'meta_box'    => [
 				'title'    => 'Bands',
 				'context'  => 'normal',
@@ -262,7 +272,8 @@ function bndtls_register_relationships() {
 			'object_type'  => 'post',
 			'post_type'    => 'albums',
 			'admin_column' => [
-				'position' => 'after',
+				'position' => 'after title',
+				'title'    => 'Songs',
 				'link'     => 'view',
 			],
 			'meta_box'     => [
@@ -273,6 +284,11 @@ function bndtls_register_relationships() {
 		'to'   => [
 			'object_type' => 'post',
 			'post_type'   => 'songs',
+			'admin_column' => [
+				'position' => 'after title',
+				'title'    => 'Album',
+				'link'     => 'view',
+			],
 			'meta_box'    => [
 				'title'   => 'In Albums',
 				'context' => 'normal',
