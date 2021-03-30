@@ -63,13 +63,17 @@ function build_relationship($post, $slugs, $args = array() ) {
   $output .= "<div class='$rel'>";
   $output .= "<ul class='$rel list'>";
   foreach($childs as $child) {
+    $li_classes=array($child->post_type);
     if(get_queried_object_id() == $child->ID) {
-      $activeclass=' active';
+      $li_classes[]='current-page';
+      $before = "<span>";
+      $after  = "</span>";
     } else {
+      unset($current_page);
       $before = "<a href='" . get_permalink($child) . "'>";
       $after  = "</a>";
     }
-    $output .= "<li class=" . $child->post_type . "$activeclass>";
+    $output .= "<li class='" . join(' ', $li_classes) . "'>";
     $output .= $before . $child->post_title . $after;
     if(!empty($grand_child_slug)) {
       $output .= build_relationship($child, $grand_child_slug );
