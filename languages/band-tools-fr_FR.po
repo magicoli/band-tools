@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-03-30T15:24:44-04:00\n"
+"POT-Creation-Date: 2021-03-30T15:25:50-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -38,15 +38,19 @@ msgstr "https://magiiic.com/"
 msgid "Show/Hide License key"
 msgstr "Afficher/Masquer Clé de licence"
 
+#: admin/dashboard.php:30
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
 #: admin/dashboard.php:31
 msgid "%s Dashboard"
 msgstr "Tableau de bord %s"
 
-#: admin/dashboard.php:58
+#: admin/dashboard.php:48
 msgid "Plugin info"
 msgstr "Informations de l'extension"
 
-#: admin/dashboard.php:63
+#: admin/dashboard.php:53
 msgid "License key"
 msgstr "Clé de licence"
 
@@ -338,7 +342,7 @@ msgstr "Groupe publié en privé"
 
 #: includes/custom-types.php:38
 msgid "Band reverted to draft"
-msgstr "Groupe remis en "
+msgstr "Groupe remis en brouillon"
 
 #: includes/custom-types.php:39
 msgid "Band scheduled"
