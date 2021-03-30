@@ -5,19 +5,8 @@ if (!defined('WPINC')) {die;}
 require_once __DIR__ . '/custom-types.php';
 require_once __DIR__ . '/custom-fields.php';
 
-register_activation_hook( __FILE__, 'bndtls_rewrite_flush' );
-function bndtls_rewrite_flush() {
-    // First, we "add" the custom post type via the above written function.
-    // Note: "add" is written with quotes, as CPTs don't get added to the DB,
-    // They are only referenced in the post_type column with a post entry,
-    // when you add a post of this CPT.
-    bndtls_register_post_types();
-
-    // ATTENTION: This is *only* done during plugin activation hook in this example!
-    // You should *NEVER EVER* do this on every page load!!
-    flush_rewrite_rules();
-}
-
+### Will be deprecated (related to acf)
+###
 ### Bi-directional relations sync
 
 new acf_post2post();
