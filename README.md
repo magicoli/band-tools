@@ -76,6 +76,14 @@ to show
 
 ## Changelog
 
+### 0.7.1
+* added front page settings
+* added template for band when selected as home page
+* fix current page display in infoboxes
+* fix regression singular/plural bands, albums, groups
+* fix regression: preferences not read for clean titles, single-archive redirect, widget area
+* fix Dashboard submenu name
+
 ### 0.7
 * new custom content template: show parent and child related items band/albums, band/songs, albums/songs
 * new plugin templates: single-[slug].php content-single-[slug].php content-archive-[slug].php ([slug] is bands, albums or songs)
