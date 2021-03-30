@@ -25,14 +25,15 @@ add_filter( 'mb_settings_pages', 'bndtls_dashboard' );
 function bndtls_dashboard( $settings_pages ) {
   $settings_pages[] = [
     'id' => 'band-tools',
-    'title' => 'Dashboard',
-    'menu_title'  => __( 'Band Tools', 'band-tools' ),
-    'title' =>  __( 'Band Tools', 'band-tools' ),
     'option_name' => 'bndtls-settings',
-    'position'    => 2,
-    'capability'  => 'manage_options',
-    'class'       => 'no-submit',
+    'menu_title'  => __( 'Band Tools', 'band-tools' ),
+    'submenu_title' => __( 'Dashboard', 'band-tools' ),
+    'page_title'  => sprintf(__( '%s Dashboard', 'band-tools' ), 'Band Tools'),
     'icon_url'    => plugin_dir_url(__DIR__) . 'assets/svg-microphone-stand-20x20.svg',
+    // 'style'       => 'no-boxes',
+    'position'    => 2,
+    // 'capability'  => 'manage_options',
+    'class'       => 'no-submit',
   ];
 
 	return $settings_pages;

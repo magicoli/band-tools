@@ -14,13 +14,13 @@ add_filter( 'mb_settings_pages', 'bndtls_settings' );
 function bndtls_settings( $settings_pages ) {
   $settings_pages[] = [
     'id' => 'band-tools-settings',
+		'option_name' => 'bndtls-settings',
     'menu_title'  => __( 'Settings', 'band-tools' ),
-    'option_name' => 'bndtls-settings',
+		'icon_url'    => 'dashicons-admin-generic',
     'position'    => 25,
     'parent'      => 'band-tools',
     'capability'  => 'manage_options',
     'columns'     => 1,
-    'icon_url'    => 'dashicons-admin-generic',
   ];
 
   return $settings_pages;
