@@ -29,7 +29,7 @@ if(is_admin()) {
 }
 require_once __DIR__ . '/templates/templates.php';
 
-if(get_option('bndtls_clean_titles')) {
+if(bndtls_get_option('clean_titles')) {
 	function bndtls__prefix_category_title( $title ) {
 		if ( is_category() ) {
 			$title = single_cat_title( '', false );
@@ -47,7 +47,7 @@ if(get_option('bndtls_clean_titles')) {
 	add_filter( 'get_the_archive_title', 'bndtls__prefix_category_title',20 );
 }
 
-if(get_option('bndtls_redirect_single_post_archives')) {
+if(bndtls_get_option('redirect_single_post_archives')) {
 	function bndtls_redirect_cpt_archive() {
 		$type=get_queried_object()->name;
 		if(wp_count_posts($type)->publish == 1) {

@@ -1,7 +1,7 @@
 <?php
 
 // Register Widget Area
-if(get_option('bndtls_widget_area')) {
+if(bndtls_get_option('widget_area')) {
   register_sidebar(
     array (
       'name' => 'Band Tools Sidebar',
