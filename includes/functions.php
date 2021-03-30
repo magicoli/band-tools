@@ -11,7 +11,13 @@ function bndtls_license_key($string = '') {
   return get_option('license_key_band-tools');
 }
 
-function build_relationship($post, $slugs, $title=NULL, $class=NULL) {
+function build_relationship($post, $slugs, $args = array() ) {
+  if(is_array($args)) {
+    if($args['title']) $title=$args['title'];
+    if($args['class']) $class=$args['class'];
+    if($args['parent']) $parent=$args['parent'];
+  }
+
   if(!is_object($post)) return "not a post";
   if(is_array($slugs)) {
     $child_slug = array_shift($slugs);
@@ -20,21 +26,51 @@ function build_relationship($post, $slugs, $title=NULL, $class=NULL) {
     $child_slug = $slugs;
   }
   $parent_slug = $post->post_type;
-  $rel="$parent_slug-$child_slug";
+  if($parent) {
+    $parent=$args['parent'];
+    $rel="$child_slug-$parent_slug";
+    $direction="to";
+  } else {
+    $rel="$parent_slug-$child_slug";
+    $direction="from";
+  }
+  if($parent) $rel_slug="rel-$child_slug-$parent_slug";
+  else $rel_slug="rel-$rel";
   $childs = MB_Relationships_API::get_connected( [
       'id'   => "rel-$rel",
-      'from' => $post->ID,
+      $direction => $post->ID,
   ] );
-  if(empty($childs)) return;
+  if(empty($childs)) return "<p>rel-$rel $direction empty</p>";
+
+  // ## Query method
+  //
+  // $connected = new WP_Query( [
+  //     'relationship' => [
+  //         'id'   => "rel-$rel",
+  //         'from' => get_the_ID(), // You can pass object ID or full object
+  //     ],
+  //     'nopaging'     => true,
+  // ] );
+  // if(! $connected->have_posts() ) return;
+  // while ( $connected->have_posts() ) : $connected->the_post();
+  // echo "<a href='". the_permalink() . "'>". the_title() . "</a>
+  // endwhile;
+  // wp_reset_postdata();
+  //
+  // ## /QueryMethod
 
   if($title) $output.="<h3>$title</h3>";
   $output .= "<div class='$rel'>";
   $output .= "<ul class='$rel list'>";
   foreach($childs as $child) {
-    $output .= "<li class=" . $child->post_type . ">";
-    $output .= "<a href='" . get_permalink($child) . "'>";
-    $output .= $child->post_title;
-    $output .= "</a>";
+    if(get_queried_object_id() == $child->ID) {
+      $activeclass=' active';
+    } else {
+      $before = "<a href='" . get_permalink($child) . "'>";
+      $after  = "</a>";
+    }
+    $output .= "<li class=" . $child->post_type . "$activeclass>";
+    $output .= $before . $child->post_title . $after;
     if(!empty($grand_child_slug)) {
       $output .= build_relationship($child, $grand_child_slug );
     }
