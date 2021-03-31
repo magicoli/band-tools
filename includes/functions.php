@@ -105,7 +105,7 @@ function build_relationship($post, $slugs, $args = array() ) {
     $output .= "<li class='" . join(' ', $li_classes) . "'>";
     $output .= $before . $child->post_title . $after;
     if(!empty($grand_child_slug)) {
-      $output .= build_relationship($child, $grand_child_slug );
+      $output .= build_relationship($child, $grand_child_slug, [ 'title' => '' ] );
     }
     //
     // $output .= "<p>Link: " . get_permalink($child) . "</p>";
