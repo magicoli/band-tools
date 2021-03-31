@@ -57,7 +57,7 @@ function build_relationship($post, $slugs, $args = array() ) {
       'id'   => "rel-$rel",
       $direction => $post->ID,
   ] );
-  if(empty($childs)) return "<p>rel-$rel $direction empty</p>";
+  if(empty($childs)) return;
 
   if(! isset($args['title'])) {
     $relation = MB_Relationships_API::get_relationship( "rel-$rel" );
