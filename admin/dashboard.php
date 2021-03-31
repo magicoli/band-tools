@@ -58,6 +58,46 @@ function bndtls_dashboard_plugin_info( $meta_boxes ) {
         ],
     ];
 
+    $prefix = 'shortcodes_';
+
+    $meta_boxes[] = [
+      'title'          => __( 'Shortcodes', 'band-tools' ),
+      'id'             => 'shortcodes',
+      'settings_pages' => ['band-tools', 'band-tools-settings'],
+      'fields'         => [
+        [
+          'name' => sprintf('<code>[band-tools]</code> %s <code>[bt-all]</code>', __('or', 'band-tools')),
+          'id'   => $prefix . 'bt-auto',
+          'type' => 'custom_html',
+          'std'  => 'All bands, albums, songs',
+        ],
+        [
+          'name' => sprintf('<code>[bt-auto]</code>', __('or', 'band-tools')),
+          'id'   => $prefix . 'bt-auto',
+          'type' => 'custom_html',
+          'std'  => 'Most relevant details for current post',
+        ],
+        [
+          'name' => '<code>[bt-bands]</code>',
+          'id'   => $prefix . 'bt-bands',
+          'type' => 'custom_html',
+          'std'  => 'Bands of current post',
+        ],
+        [
+          'name' => '<code>[bt-albums]</code>',
+          'id'   => $prefix . 'bt-albums',
+          'type' => 'custom_html',
+          'std'  => 'Albums of current post',
+        ],
+        [
+          'name' => '<code>[bt-songs]</code>',
+          'id'   => $prefix . 'bt-songs',
+          'type' => 'custom_html',
+          'std'  => 'Songs of current post',
+        ],
+      ],
+    ];
+
     return $meta_boxes;
 }
 
