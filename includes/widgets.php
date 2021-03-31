@@ -29,14 +29,14 @@ class bndtls_widget_all extends WP_Widget {
 
   // Widget front-end
   public function widget( $args, $instance ) {
-    foreach(['videos','bands','albums','songs','products'] as $type) {
-      $content = bndtls_block_relations_list($type, $args) ;
+    // foreach(['videos','bands','albums','songs','products'] as $type) {
+      $content = do_shortcode("[bt-auto]") ;
       if (!empty($content)) {
         $before_widget=preg_replace('/(id=.)bndtls_widget_all/', '$1bndtls_widget_' . $type, $args['before_widget'] );
         echo $before_widget . "<div>" . $content . "</div>" ;;
         echo $args['after_widget'];
       }
-    }
+    // }
 
     // if(empty($content)) return;
     // $content="<div>$content</div>";
@@ -83,13 +83,15 @@ class bndtls_widget_bands extends WP_Widget {
 
   // Widget front-end
   public function widget( $args, $instance ) {
-    $content=bndtls_block_relations_list("bands", $args);
-
-    if(empty($content)) return;
-    $content="<div>$content</div>";
-    echo $args['before_widget'];
-    echo $content;
-    echo $args['after_widget'];
+    $type='bands';
+    $shortcode="[bt-$type]";
+    $content = do_shortcode($shortcode) ;
+    if (!empty($content)) {
+      $before_widget=preg_replace('/(id=.)bndtls_widget_' . $type . '/', '$1bndtls_widget_' . $type, $args['before_widget'] );
+      echo $before_widget . "<div>" . $content . "</div>" ;;
+      echo $args['after_widget'];
+    }
+    return;
   }
 
   // Widget Backend
@@ -123,20 +125,21 @@ class bndtls_widget_albums extends WP_Widget {
   function __construct() {
     parent::__construct(
       'bndtls_widget_albums',
-      sprintf('Band Tools (%s)', __(bndtls_get_option( 'naming_Album', 'Songs', 'plural' ), 'band-tools')),
+      sprintf('Band Tools (%s)', __(bndtls_get_option( 'naming_album', 'Albums', 'plural' ), 'band-tools')),
       array( 'description' => __( 'Display related albums', 'band-tools' ), )
     );
   }
 
   // Widget front-end
   public function widget( $args, $instance ) {
-    $content=bndtls_block_relations_list("albums", $args);
-
-    if(empty($content)) return;
-    $content="<div>$content</div>";
-    echo $args['before_widget'];
-    echo $content;
-    echo $args['after_widget'];
+    $type='albums';
+    $shortcode="[bt-$type]";
+    $content = do_shortcode($shortcode) ;
+    if (!empty($content)) {
+      $before_widget=preg_replace('/(id=.)bndtls_widget_' . $type . '/', '$1bndtls_widget_' . $type, $args['before_widget'] );
+      echo $before_widget . "<div>" . $content . "</div>" ;;
+      echo $args['after_widget'];
+    }
     return;
   }
 
@@ -146,7 +149,7 @@ class bndtls_widget_albums extends WP_Widget {
       $title = $instance[ 'title' ];
     }
     else {
-      $title = __( bndtls_get_option( 'naming_Album', 'Songs', 'plural' ), 'band-tools' );
+      $title = __( bndtls_get_option( 'naming_album', 'Albums', 'plural' ), 'band-tools' );
     }
     // Widget admin form
     ?>
@@ -178,13 +181,15 @@ class bndtls_widget_songs extends WP_Widget {
 
   // Widget front-end
   public function widget( $args, $instance ) {
-    $content = bndtls_block_relations_list("songs", $args) ;
-
-    if(empty($content)) return;
-    $content="<div>$content</div>";
-    echo $args['before_widget'];
-    echo $content;
-    echo $args['after_widget'];
+    $type='songs';
+    $shortcode="[bt-$type]";
+    $content = do_shortcode($shortcode) ;
+    if (!empty($content)) {
+      $before_widget=preg_replace('/(id=.)bndtls_widget_' . $type . '/', '$1bndtls_widget_' . $type, $args['before_widget'] );
+      echo $before_widget . "<div>" . $content . "</div>" ;;
+      echo $args['after_widget'];
+    }
+    return;
   }
 
   // Widget Backend
@@ -225,36 +230,15 @@ class bndtls_widget_wc_products extends WP_Widget {
 
   // Widget front-end
   public function widget( $args, $instance ) {
-    global $wp_post_types;
-    $queried_object = get_queried_object();
-
-    // if(get_post_type($queried_object->ID)=="wc_products") return;
-
-    $out=array();
-
-    if(is_object($queried_object) && $queried_object->ID)
-    {
-      $results=get_post_meta($queried_object->ID, 'wc_product', true);
-      if(!is_array($results) &! empty($results)) $results=array($results);
-      // if(empty($results)) return;
-      $title = __('Order online', 'band-tools');
-      if(is_array($results)) {
-        foreach($results as $id) {
-          // if(get_post_type($id)=="albums")
-          $out[] = sprintf( '<a href="%s" class="acf-field %s" data-id="%s">%s</span>', get_permalink($id), $column_name, $id, get_the_title($id) ) . "</a>";
-        }
-      }
+    $type='products';
+    $shortcode="[bt-$type]";
+    $content = do_shortcode($shortcode) ;
+    if (!empty($content)) {
+      $before_widget=preg_replace('/(id=.)bndtls_widget_' . $type . '/', '$1bndtls_widget_' . $type, $args['before_widget'] );
+      echo $before_widget . "<div>" . $content . "</div>" ;;
+      echo $args['after_widget'];
     }
-    $content=join('<br/>', $out);
-
-    if(empty($content)) return;
-    $content="<div>$content</div>";
-
-    echo $args['before_widget'];
-    if ( ! empty( $title ) )
-    echo $args['before_title'] . $title . $args['after_title'];
-    echo $content;
-    echo $args['after_widget'];
+    return;
   }
 
   // Widget Backend
@@ -296,38 +280,16 @@ class bndtls_widget_video_posts extends WP_Widget {
 
   // Widget front-end
   public function widget( $args, $instance ) {
-    global $wp_post_types;
-    $queried_object = get_queried_object();
-
-    // if(get_post_type($queried_object->ID)=="video_posts") return;
-
-    $out=array();
-    if(is_object($queried_object) && $queried_object->ID)
-    {
-      $results=get_post_meta($queried_object->ID, 'video_posts', true);
-      if(!is_array($results) &! empty($results)) $results=array($results);
-      // if(empty($results)) return;
-      if(get_post_type($queried_object->ID)=="songs")
-      $title = __('Videos', 'band-tools');
-      else
-      $title = __(bndtls_get_option( 'naming_song', 'Songs', 'plural' ), 'band-tools');
-      if(is_array($results)) {
-        foreach($results as $id) {
-          // if(get_post_type($id)=="albums")
-          $out[] = sprintf( '<a href="%s" class="acf-field %s" data-id="%s">%s</span>', get_permalink($id), $column_name, $id, get_the_title($id) ) . "</a>";
-        }
-      }
+    $type='videos';
+    $shortcode="[bt-$type]";
+    $content = do_shortcode($shortcode) ;
+    if (!empty($content)) {
+      $before_widget=preg_replace('/(id=.)bndtls_widget_' . $type . '/', '$1bndtls_widget_' . $type, $args['before_widget'] );
+      echo $before_widget . "<div>" . $content . "</div>" ;;
+      echo $args['after_widget'];
     }
-    $content=join('<br/>', $out);
+    return;
 
-    if(empty($content)) return;
-    $content="<div>$content</div>";
-
-    echo $args['before_widget'];
-    if ( ! empty( $title ) )
-    echo $args['before_title'] . $title . $args['after_title'];
-    echo $content;
-    echo $args['after_widget'];
   }
 
   // Widget Backend

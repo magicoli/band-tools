@@ -47,7 +47,8 @@ function bndtls_shortcodes_init()
 				break;
 
 				case 'songs':
-				$output = build_relationship($post, [ 'bands' ] ) . build_relationship($post, [ 'songs' ] );
+				$output = build_relationship($post, [ 'bands' ], [ 'direction' => 'to', 'mode' => 'inline' ] )
+				. build_relationship($post, [ 'albums', 'songs' ], [ 'direction' => 'to', 'mode' => 'inline' ] );
 				break;
 
 				default:
