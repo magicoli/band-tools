@@ -77,17 +77,17 @@ to show
 ## Changelog
 
 ### 0.7.6
+* updated shortcodes for mb framework
+* updated 'all' widget for mb framework (not all, only the one called 'all'). Other ones are updated but not functional yet
 * added style hierarchy to nested infobox
 * added shorcodes memo to dashboard
 * added option to disable plugin templates
-* updated 'all' widget to mb framework (not all, only the one called 'all'). Other one are adapted but not functional yet
-* updated shortcodes to mb library
 
 ### 0.7.5
 * fix function remove_meta_box_menu redeclared
 
 ### 0.7.4
-* removed debug code from output
+* fix debug code left on output
 
 ### 0.7.3
 * added single/plural form to relationships
