@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined( 'WPINC' ) ) die;
 
 add_action( 'template_include', 'bndtls_template_include' );
 function bndtls_template_include( $template ) {
