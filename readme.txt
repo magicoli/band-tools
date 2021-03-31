@@ -76,6 +76,13 @@ to show
 
 == Changelog ==
 
+= 0.7.6 =
+* added style hierarchy to nested infobox
+* added shorcodes memo to dashboard
+* added option to disable plugin templates
+* updated 'all' widget to mb framework (not all, only the one called 'all'). Other one are adapted but not functional yet
+* updated shortcodes to mb library
+
 = 0.7.5 =
 * fix function remove_meta_box_menu redeclared
 
