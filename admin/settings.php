@@ -1,7 +1,7 @@
 <?php if ( ! is_admin() ) die;
 
-add_action( 'admin_menu', 'remove_meta_box_menu', 20 );
-function remove_meta_box_menu() {
+add_action( 'admin_menu', 'bndtls_remove_meta_box_menu', 20 );
+function bndtls_remove_meta_box_menu() {
 	if(is_plugin_active('meta-box/meta-box.php')) return;
 	if(is_plugin_active('mb-core/mb-core.php')) return;
 	remove_menu_page( 'meta-box' );
