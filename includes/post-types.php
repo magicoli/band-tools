@@ -20,11 +20,13 @@ function bndtls_frontpage_add_types_to_dropdown( $pages ){
 add_filter( 'get_pages', 'bndtls_frontpage_add_types_to_dropdown' );
 
 function bndtls_frontpage_enable_types( $query ){
-	$types = bndtls_get_option('front_page_allow');
-	foreach($types as $type) {
+	$frontpage_id = get_option( 'page_on_front' );
+	$type = get_post_type($frontpage_id);
+	// $types = bndtls_get_option('front_page_allow');
+	// foreach([ 'albums' ] as $type) {
 		if('' == $query->query_vars['post_type'] && 0 != $query->query_vars['page_id'])
 		$query->query_vars['post_type'] = array( 'page', $type );
-	}
+	// }
 }
 add_action( 'pre_get_posts', 'bndtls_frontpage_enable_types' );
 
