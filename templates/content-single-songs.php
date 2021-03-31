@@ -18,8 +18,8 @@ $content = get_the_content( $more_link_text, $strip_teaser );
 //     'from' => get_the_ID(),
 // ] );
 ?>
-<?= build_relationship(get_post(), [ 'bands' ], [ 'parent' => true, 'title' => __('Bands', BNDTLS_TXDOM) ] ) ?>
-<?= build_relationship(get_post(), [ 'albums', 'songs' ], [ 'parent' => true, 'title' => __('Albums', BNDTLS_TXDOM) ] ) ?>
+<?= build_relationship(get_post(), [ 'bands' ], [ 'direction' => 'to' ] ) ?>
 <div class='<?=$post_type_slug?>-content'>
   <?=$content?>
 </div>
+<?= build_relationship(get_post(), [ 'albums', 'songs' ], [ 'direction' => 'to' ] ) ?>

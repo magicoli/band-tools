@@ -21,4 +21,4 @@ $content = get_the_content( $more_link_text, $strip_teaser );
 <div class='<?=$post_type_slug?>-content'>
   <?=$content?>
 </div>
-<?= build_relationship(get_post(), [ 'albums', 'songs' ], __('Albums', BNDTLS_TXDOM), 'albums') ?>
+<?= build_relationship(get_post(), [ 'albums', 'songs' ] ) ?>

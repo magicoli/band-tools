@@ -33,7 +33,8 @@ function build_relationship($post, $slugs, $args = array() ) {
   if(is_array($args)) {
     if($args['title']) $title=$args['title'];
     if($args['class']) $class=$args['class'];
-    if($args['parent']) $parent=$args['parent'];
+    if($args['direction']) $direction=$args['direction'];
+    else $direction='from';
   }
 
   if(!is_object($post)) return "not a post";
@@ -44,13 +45,11 @@ function build_relationship($post, $slugs, $args = array() ) {
     $child_slug = $slugs;
   }
   $parent_slug = $post->post_type;
-  if($parent) {
+  if($direction == 'to') {
     $parent=$args['parent'];
     $rel="$child_slug-$parent_slug";
-    $direction="to";
   } else {
     $rel="$parent_slug-$child_slug";
-    $direction="from";
   }
   if($parent) $rel_slug="rel-$child_slug-$parent_slug";
   else $rel_slug="rel-$rel";
@@ -60,6 +59,17 @@ function build_relationship($post, $slugs, $args = array() ) {
   ] );
   if(empty($childs)) return "<p>rel-$rel $direction empty</p>";
 
+  if(! isset($args['title'])) {
+    $relation = MB_Relationships_API::get_relationship( "rel-$rel" );
+    $title = _n(
+      $relation->$direction['meta_box']['singular'],
+      $relation->$direction['meta_box']['title'],
+      count($childs),
+      'band-tools'
+    );
+  }
+
+  // $title="Boo";
   // ## Query method
   //
   // $connected = new WP_Query( [
@@ -79,6 +89,7 @@ function build_relationship($post, $slugs, $args = array() ) {
 
   if($title) $output.="<h3>$title</h3>";
   $output .= "<div class='$rel'>";
+  // $output .= "[mb_relationships id='rel-$rel' direction='$direction' mode='ul']";
   $output .= "<ul class='$rel list'>";
   foreach($childs as $child) {
     $li_classes=array($child->post_type);

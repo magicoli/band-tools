@@ -75,4 +75,7 @@ if(false) {
   $cache = _n('Band', 'Bands', $n, 'band-tools');
   $cache = _n('Album', 'Albums', $n, 'band-tools');
   $cache = _n('Song', 'Songs', $n, 'band-tools');
+  $cache = _n('Track', 'Tracks', $n, 'band-tools');
+  $cache = __('Track', 'band-tools');
+  $cache = __('Tracks', 'band-tools');
 }
