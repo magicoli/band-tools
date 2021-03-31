@@ -6,6 +6,7 @@ require_once __DIR__ . '/custom-fields.php';
 
 function bndtls_frontpage_add_types_to_dropdown( $pages ){
 	$types = bndtls_get_option('front_page_allow');
+	if(!is_array($types)) return;
 	foreach($types as $type) {
 		// echo "been there " . __FILE__; die;
 		$args = array(

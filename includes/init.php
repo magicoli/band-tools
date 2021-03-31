@@ -42,7 +42,6 @@ if ( ! defined( 'BNDTLS_STORE_LINK' ) ) define('BNDTLS_STORE_LINK', "<a href=" .
 /* translators: %s is replaced by the name of the plugin, untranslated */
 if ( ! defined( 'BNDTLS_REGISTER_TEXT' ) ) define('BNDTLS_REGISTER_TEXT', sprintf(__('Get a license key on %s website', BNDTLS_TXDOM), BNDTLS_STORE_LINK) );
 
-// require_once __DIR__ . '/templates/templates.php';
 require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/post-types.php';
 require_once __DIR__ . '/blocks.php';
