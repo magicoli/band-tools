@@ -227,6 +227,11 @@ function bndtls_register_post_types() {
 add_action( 'mb_relationships_init', 'bndtls_register_relationships' );
 
 function bndtls_register_relationships() {
+	$adaptive['bands'] = get_type_name_n('band', 'Band', 'Bands', wp_count_posts('bands')->publish);
+	$adaptive['albums'] = get_type_name_n('album', 'Album', 'Albums', wp_count_posts('albums')->publish);
+	$adaptive['songs'] = get_type_name_n('song', 'Song', 'Songs', wp_count_posts('songs')->publish);
+	$adaptive['tracks'] = get_type_name_n('track', 'Track', 'Tracks', wp_count_posts('songs')->publish);
+
 	MB_Relationships_API::register( [
 		'id'   => 'rel-bands-albums',
 		'from' => [
@@ -234,11 +239,11 @@ function bndtls_register_relationships() {
 			'post_type'   => 'bands',
 			'admin_column' => [
 				'position' => 'after title',
-				'title'    => 'Albums',
+				'title'    => $adaptive['albums'],
 				'link'     => 'view',
 			],
 			'meta_box'    => [
-				'title'    => 'This Band Albums',
+				'title'    => $adaptive['albums'],
 				'context'  => 'normal',
 				'priority' => 'high',
 			],
@@ -248,11 +253,11 @@ function bndtls_register_relationships() {
 			'post_type'   => 'albums',
 			'admin_column' => [
 				'position' => 'after title',
-				'title'    => 'Bands',
+				'title'    => $adaptive['bands'],
 				'link'     => 'view',
 			],
 			'meta_box'    => [
-				'title'    => 'Bands',
+				'title'    => $adaptive['bands'],
 				'context'  => 'normal',
 				'priority' => 'high',
 			],
@@ -266,11 +271,11 @@ function bndtls_register_relationships() {
 			'post_type'    => 'bands',
 			'admin_column' => [
 				'position' => 'after title',
-				'title'    => 'Songs',
+				'title'    => $adaptive['songs'],
 				'link'     => 'view',
 			],
 			'meta_box'     => [
-				'title'    => 'This Band Songs',
+				'title'    => $adaptive['songs'],
 				'context'  => 'normal',
 				'priority' => 'high',
 			],
@@ -280,11 +285,11 @@ function bndtls_register_relationships() {
 			'post_type'    => 'songs',
 			'admin_column' => [
 				'position' => 'after title',
-				'title'    => 'Bands',
+				'title'    => $adaptive['bands'],
 				'link'     => 'view',
 			],
 			'meta_box'     => [
-				'title'    => 'By Bands',
+				'title'    => $adaptive['bands'],
 				'context'  => 'normal',
 				'priority' => 'high',
 			],
@@ -298,11 +303,11 @@ function bndtls_register_relationships() {
 			'post_type'    => 'albums',
 			'admin_column' => [
 				'position' => 'after title',
-				'title'    => 'Songs',
+				'title'    => $adaptive['tracks'],
 				'link'     => 'view',
 			],
 			'meta_box'     => [
-				'title'   => 'Included Songs',
+				'title'   => $adaptive['tracks'],
 				'context' => 'normal',
 			],
 		],
@@ -311,11 +316,11 @@ function bndtls_register_relationships() {
 			'post_type'   => 'songs',
 			'admin_column' => [
 				'position' => 'after title',
-				'title'    => 'Album',
+				'title'    => $adaptive['albums'],
 				'link'     => 'view',
 			],
 			'meta_box'    => [
-				'title'   => 'In Albums',
+				'title'   => $adaptive['albums'],
 				'context' => 'normal',
 			],
 		],
