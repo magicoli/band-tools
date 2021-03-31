@@ -76,6 +76,9 @@ to show
 
 ## Changelog
 
+### 0.7.4
+* removed debug code from output
+
 ### 0.7.3
 * added single/plural form to relationships
 * improved get title from relationship instead of post type
