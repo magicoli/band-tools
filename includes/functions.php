@@ -61,12 +61,10 @@ function build_relationship($post, $slugs, $args = array() ) {
 
   if(! isset($args['title'])) {
     $relation = MB_Relationships_API::get_relationship( "rel-$rel" );
-    $title = _n(
-      $relation->$direction['meta_box']['singular'],
-      $relation->$direction['meta_box']['title'],
-      count($childs),
-      'band-tools'
-    );
+    if(count($childs)==1)
+    $title=$relation->$direction['meta_box']['singular'];
+    else
+    $title = $relation->$direction['meta_box']['title'];
   }
 
   // $title="Boo";
