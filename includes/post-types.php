@@ -30,12 +30,14 @@ add_action( 'pre_get_posts', 'bndtls_frontpage_enable_types' );
 
 add_action( 'init', 'bndtls_register_post_types' );
 function bndtls_register_post_types() {
+	$adaptive['bands'] = get_type_name_n('band', 'Band', 'Bands', wp_count_posts('bands')->publish);
+	$adaptive['albums'] = get_type_name_n('album', 'Album', 'Albums', wp_count_posts('albums')->publish);
+	$adaptive['songs'] = get_type_name_n('song', 'Song', 'Songs', wp_count_posts('songs')->publish);
 
-	$n = wp_count_posts('bands')->publish;
 	$labels = [
-		'name'                     => _n( 'Band', 'Bands', $n, 'band-tools' ),
-		'menu_name'                => _n( 'Band', 'Bands', $n, 'band-tools' ),
-		'archives'                 => _n( 'Band', 'Bands', $n, 'band-tools' ),
+		'name'                     => $adaptive['bands'],
+		'menu_name'                => $adaptive['bands'],
+		'archives'                 => $adaptive['bands'],
 		'singular_name'            => __( 'Band', 'band-tools' ),
 		'add_new'                  => __( 'Add New', 'band-tools' ),
 		'add_new_item'             => __( 'Add new band', 'band-tools' ),
@@ -51,7 +53,7 @@ function bndtls_register_post_types() {
 		'attributes'               => __( 'Band Attributes', 'band-tools' ),
 		'insert_into_item'         => __( 'Insert into band', 'band-tools' ),
 		'uploaded_to_this_item'    => __( 'Uploaded to this band', 'band-tools' ),
-		'featured_image'           => __( 'Featured image', 'band-tools' ),
+		'featured_image'       	   => __( 'Featured image', 'band-tools' ),
 		'set_featured_image'       => __( 'Set featured image', 'band-tools' ),
 		'remove_featured_image'    => __( 'Remove featured image', 'band-tools' ),
 		'use_featured_image'       => __( 'Use as featured image', 'band-tools' ),
@@ -66,7 +68,7 @@ function bndtls_register_post_types() {
 		'text_domain'              => __( 'band-tools', 'band-tools' ),
 	];
 	$args = [
-		'label'               => __( 'Bands', 'band-tools' ),
+		'label'               => __( 'Label Bands', 'band-tools' ),
 		'labels'              => $labels,
 		'description'         => '',
 		'public'              => true,
@@ -94,11 +96,10 @@ function bndtls_register_post_types() {
 	];
 	register_post_type( 'bands', $args );
 
-	$n = wp_count_posts('albums')->publish;
 	$labels = [
-		'name'                     => _n( 'Album', 'Albums', $n, 'band-tools' ),
-		'menu_name'                => _n( 'Album', 'Albums', $n, 'band-tools' ),
-		'archives'                 => _n( 'Album', 'Albums', $n, 'band-tools' ),
+		'name'                     => $adaptive['albums'],
+		'menu_name'                => $adaptive['albums'],
+		'archives'                 => $adaptive['albums'],
 		'singular_name'            => __( 'Album', 'band-tools' ),
 		'add_new'                  => __( 'Add New', 'band-tools' ),
 		'add_new_item'             => __( 'Add new album', 'band-tools' ),
@@ -158,11 +159,10 @@ function bndtls_register_post_types() {
 	];
 	register_post_type( 'albums', $args );
 
-	$n = wp_count_posts('songs')->publish;
 	$labels = [
-		'name'                     => _n( 'Song', 'Songs', $n, 'band-tools' ),
-		'menu_name'                => _n( 'Song', 'Songs', $n, 'band-tools' ),
-		'archives'                 => _n( 'Song', 'Songs', $n, 'band-tools' ),
+		'name'                     => $adaptive['songs'],
+		'menu_name'                => $adaptive['songs'],
+		'archives'                 => $adaptive['songs'],
 		'singular_name'            => __( 'Song', 'band-tools' ),
 		'add_new'                  => __( 'Add New', 'band-tools' ),
 		'add_new_item'             => __( 'Add new song', 'band-tools' ),

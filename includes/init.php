@@ -69,3 +69,10 @@ function bndtls_load_plugin_css() {
   wp_enqueue_style( BNDTLS_SLUG . '-main', plugin_dir_url( __FILE__ ) . 'css/main.css', array(), BNDTLS_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'bndtls_load_plugin_css' );
+
+// dirty fix to include singular/plural forms in .pot
+if(false) {
+  $cache = _n('Band', 'Bands', $n, 'band-tools');
+  $cache = _n('Album', 'Albums', $n, 'band-tools');
+  $cache = _n('Song', 'Songs', $n, 'band-tools');
+}

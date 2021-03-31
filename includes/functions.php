@@ -13,6 +13,18 @@ function bndtls_get_option( $option, $default = false, $sub_option='' ) {
   else return $default;
 }
 
+function get_type_name_n($type, $default, $default_plural=NULL, $count=NULL) {
+  if( ! $default_plural ) $default_plural = $default;
+  if( ! $count ) $count = wp_count_posts($type)->publish;
+
+  if($count == 1)
+  return __(bndtls_get_option( 'naming_' . $type, "$default", 'singular' ), 'band-tools');
+
+  return __(bndtls_get_option( 'naming_' . $type, "$default_plural", 'plural' ), 'band-tools');
+
+  return "$name ($count)";
+}
+
 function bndtls_license_key($string = '') {
   return get_option('license_key_band-tools');
 }
