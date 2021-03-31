@@ -66,7 +66,6 @@ msgstr "Nommage"
 #: admin/settings.php:52
 #: admin/settings.php:59
 #: includes/post-types.php:42
-#, fuzzy
 msgid "Band"
 msgstr "Groupe"
 
@@ -141,7 +140,6 @@ msgstr "Chanteurs"
 #: admin/settings.php:98
 #: admin/settings.php:104
 #: includes/post-types.php:105
-#, fuzzy
 msgid "Album"
 msgstr "Album"
 
@@ -183,7 +181,6 @@ msgstr "Sets"
 #: admin/settings.php:140
 #: admin/settings.php:146
 #: includes/post-types.php:169
-#, fuzzy
 msgid "Song"
 msgstr "Chanson"
 

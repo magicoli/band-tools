@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-03-31T08:43:19-04:00\n"
+"POT-Creation-Date: 2021-03-31T08:51:39-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 
@@ -65,9 +65,12 @@ msgstr ""
 #: admin/settings.php:43
 #: admin/settings.php:52
 #: admin/settings.php:59
+#: includes/init.php:73
 #: includes/post-types.php:42
 msgid "Band"
-msgstr ""
+msgid_plural "Bands"
+msgstr[0] ""
+msgstr[1] ""
 
 #: admin/settings.php:51
 #: admin/settings.php:53
@@ -139,9 +142,12 @@ msgstr ""
 #: admin/settings.php:89
 #: admin/settings.php:98
 #: admin/settings.php:104
+#: includes/init.php:74
 #: includes/post-types.php:105
 msgid "Album"
-msgstr ""
+msgid_plural "Albums"
+msgstr[0] ""
+msgstr[1] ""
 
 #: admin/settings.php:105
 msgid "Disc"
@@ -180,9 +186,12 @@ msgstr ""
 #: admin/settings.php:131
 #: admin/settings.php:140
 #: admin/settings.php:146
+#: includes/init.php:75
 #: includes/post-types.php:169
 msgid "Song"
-msgstr ""
+msgid_plural "Songs"
+msgstr[0] ""
+msgstr[1] ""
 
 #: admin/settings.php:147
 msgid "Mix"
