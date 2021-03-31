@@ -187,7 +187,13 @@ function bndtls_settings_tweaks( $meta_boxes ) {
       'relation' => 'or',
     ],
     'fields'         => [
-      [
+			[
+        'id'   => $prefix . 'disable_templates',
+        'type' => 'checkbox',
+        'desc' => __( 'Disable plugin templates (customize with theme, widgets and shortcodes)', 'band-tools' ),
+        'std'  => false,
+      ],
+			[
         'id'   => $prefix . 'redirect_single_post_archives',
         'type' => 'checkbox',
         'desc' => __( 'Redirect archives containing only one post to this post', 'band-tools' ),
