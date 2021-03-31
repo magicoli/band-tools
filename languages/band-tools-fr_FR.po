@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-03-31T11:15:23-04:00\n"
+"POT-Creation-Date: 2021-03-31T17:40:39-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -54,6 +54,15 @@ msgstr "Informations de l'extension"
 msgid "License key"
 msgstr "Clé de licence"
 
+#: admin/dashboard.php:64
+msgid "Shortcodes"
+msgstr "Codes courts"
+
+#: admin/dashboard.php:69
+#: admin/dashboard.php:75
+msgid "or"
+msgstr "ou"
+
 #: admin/settings.php:18
 msgid "Settings"
 msgstr "Paramètres"
@@ -65,8 +74,8 @@ msgstr "Nommage"
 #: admin/settings.php:43
 #: admin/settings.php:52
 #: admin/settings.php:59
-#: includes/init.php:75
-#: includes/post-types.php:43
+#: includes/init.php:74
+#: includes/post-types.php:44
 msgid "Band"
 msgid_plural "Bands"
 msgstr[0] "Groupe"
@@ -112,8 +121,8 @@ msgstr "Pluriel"
 
 #: admin/settings.php:71
 #: admin/settings.php:78
-#: admin/settings.php:240
-#: includes/post-types.php:73
+#: admin/settings.php:246
+#: includes/post-types.php:74
 msgid "Bands"
 msgstr "Groupes"
 
@@ -140,8 +149,8 @@ msgstr "Chanteurs"
 #: admin/settings.php:89
 #: admin/settings.php:98
 #: admin/settings.php:104
-#: includes/init.php:76
-#: includes/post-types.php:105
+#: includes/init.php:75
+#: includes/post-types.php:106
 msgid "Album"
 msgid_plural "Albums"
 msgstr[0] "Album"
@@ -161,8 +170,8 @@ msgstr "Set"
 
 #: admin/settings.php:115
 #: admin/settings.php:121
-#: admin/settings.php:241
-#: includes/post-types.php:135
+#: admin/settings.php:247
+#: includes/post-types.php:136
 msgid "Albums"
 msgstr "Albums"
 
@@ -181,8 +190,8 @@ msgstr "Sets"
 #: admin/settings.php:131
 #: admin/settings.php:140
 #: admin/settings.php:146
-#: includes/init.php:77
-#: includes/post-types.php:168
+#: includes/init.php:76
+#: includes/post-types.php:169
 msgid "Song"
 msgid_plural "Songs"
 msgstr[0] "Chanson"
@@ -198,8 +207,8 @@ msgstr "Morceau"
 
 #: admin/settings.php:156
 #: admin/settings.php:162
-#: admin/settings.php:242
-#: includes/post-types.php:198
+#: admin/settings.php:248
+#: includes/post-types.php:199
 msgid "Songs"
 msgstr "Chansons"
 
@@ -216,42 +225,46 @@ msgid "Tweaks"
 msgstr "Ajustements"
 
 #: admin/settings.php:193
+msgid "Disable plugin templates (customize with theme, widgets and shortcodes)"
+msgstr "Désactiver les modèles (\"templates\") de l'extension (personnaliser avec le thème, les widgets et les codes courts)"
+
+#: admin/settings.php:199
 msgid "Redirect archives containing only one post to this post"
 msgstr "Rediriger les pages d'archives contenant un seul élément"
 
-#: admin/settings.php:199
+#: admin/settings.php:205
 msgid "Remove prefixes from titles for Categories, Taxonomies, Archives, Authors"
 msgstr "Supprimer les préfixes des titres pour les catégories, taxonomies, archives, auteurs"
 
-#: admin/settings.php:205
+#: admin/settings.php:211
 msgid "Add a custom widget area (must be activated in your theme)"
 msgstr "Ajouter un widget (doit être activé dans votre thème)"
 
-#: admin/settings.php:210
+#: admin/settings.php:216
 msgid "Make coffee after boot"
 msgstr "Faire le café après le démarrage"
 
-#: admin/settings.php:216
+#: admin/settings.php:222
 msgid "Developer mode"
 msgstr "Mode développeur"
 
-#: admin/settings.php:230
+#: admin/settings.php:236
 msgid "Front page"
 msgstr "Page d'accueil"
 
-#: admin/settings.php:235
+#: admin/settings.php:241
 msgid "Allow as Front Page"
 msgstr "Autoriser comme page d'accueil"
 
-#: admin/settings.php:238
+#: admin/settings.php:244
 msgid "Allow to select these as front page in Appearance > Customize menu"
 msgstr "Autoriser à sélectionner ces types comme page d'accueil dans Apparence > Personnaliser"
 
-#: admin/settings.php:249
+#: admin/settings.php:255
 msgid "Show full content"
 msgstr "Montrer le contenu complet"
 
-#: admin/settings.php:252
+#: admin/settings.php:258
 msgid "Show full content when item is selected as home page"
 msgstr "Montrer le contenu complet quand l'élément est affiché comme page d'accueil"
 
@@ -260,302 +273,302 @@ msgstr "Montrer le contenu complet quand l'élément est affiché comme page d'a
 msgid "Get a license key on %s website"
 msgstr "Obtenir une clé de licence sur le site %s"
 
+#: includes/init.php:77
 #: includes/init.php:78
-#: includes/init.php:79
 msgid "Track"
 msgid_plural "Tracks"
 msgstr[0] "Piste"
 msgstr[1] "Pistes"
 
-#: includes/init.php:80
+#: includes/init.php:79
 msgid "Tracks"
 msgstr "Pistes"
 
-#: includes/post-types.php:44
-#: includes/post-types.php:106
-#: includes/post-types.php:169
+#: includes/post-types.php:45
+#: includes/post-types.php:107
+#: includes/post-types.php:170
 msgid "Add New"
 msgstr "Ajouter"
 
-#: includes/post-types.php:45
+#: includes/post-types.php:46
 msgid "Add new band"
 msgstr "Ajouter un nouveau groupe"
 
-#: includes/post-types.php:46
+#: includes/post-types.php:47
 msgid "Edit Band"
 msgstr "Modifier le groupe"
 
-#: includes/post-types.php:47
+#: includes/post-types.php:48
 msgid "New Band"
 msgstr "Nouvel groupe"
 
-#: includes/post-types.php:48
+#: includes/post-types.php:49
 msgid "View Band"
 msgstr "Voir le groupe"
 
-#: includes/post-types.php:49
+#: includes/post-types.php:50
 msgid "View Bands"
 msgstr "Voir les groupes"
 
-#: includes/post-types.php:50
+#: includes/post-types.php:51
 msgid "Search Bands"
 msgstr "Rechercher dans les groupes"
 
-#: includes/post-types.php:51
+#: includes/post-types.php:52
 msgid "No bands found"
 msgstr "Aucun groupe trouvé"
 
-#: includes/post-types.php:52
+#: includes/post-types.php:53
 msgid "No bands found in Trash"
 msgstr "Aucun groupe trouvé dans la corbeille"
 
-#: includes/post-types.php:53
+#: includes/post-types.php:54
 msgid "Parent Band:"
 msgstr "Groupe parent:"
 
-#: includes/post-types.php:54
+#: includes/post-types.php:55
 msgid "All Bands"
 msgstr "Tous les groupes"
 
-#: includes/post-types.php:55
+#: includes/post-types.php:56
 msgid "Band Attributes"
 msgstr "Attributs du groupe"
 
-#: includes/post-types.php:56
+#: includes/post-types.php:57
 msgid "Insert into band"
 msgstr "Insérer dans le groupe"
 
-#: includes/post-types.php:57
+#: includes/post-types.php:58
 msgid "Uploaded to this band"
 msgstr "Téléverser"
-
-#: includes/post-types.php:58
-#: includes/post-types.php:120
-#: includes/post-types.php:183
-msgid "Featured image"
-msgstr "Image mise en avant"
 
 #: includes/post-types.php:59
 #: includes/post-types.php:121
 #: includes/post-types.php:184
-msgid "Set featured image"
-msgstr "Définir l'image mise en avant"
+msgid "Featured image"
+msgstr "Image mise en avant"
 
 #: includes/post-types.php:60
 #: includes/post-types.php:122
 #: includes/post-types.php:185
-msgid "Remove featured image"
-msgstr "Supprimer l'image mise en avant"
+msgid "Set featured image"
+msgstr "Définir l'image mise en avant"
 
 #: includes/post-types.php:61
 #: includes/post-types.php:123
 #: includes/post-types.php:186
+msgid "Remove featured image"
+msgstr "Supprimer l'image mise en avant"
+
+#: includes/post-types.php:62
+#: includes/post-types.php:124
+#: includes/post-types.php:187
 msgid "Use as featured image"
 msgstr "Définir l'image mise en avant"
 
-#: includes/post-types.php:62
+#: includes/post-types.php:63
 msgid "Filter bands list"
 msgstr "Filtrer la liste des groupes"
 
-#: includes/post-types.php:63
+#: includes/post-types.php:64
 msgid "Bands list navigation"
 msgstr "Navigation liste de groupes"
 
-#: includes/post-types.php:64
+#: includes/post-types.php:65
 msgid "Bands list"
 msgstr "Liste des groupes"
 
-#: includes/post-types.php:65
+#: includes/post-types.php:66
 msgid "Band published"
 msgstr "Groupe publié"
 
-#: includes/post-types.php:66
+#: includes/post-types.php:67
 msgid "Band published privately"
 msgstr "Groupe publié en privé"
 
-#: includes/post-types.php:67
+#: includes/post-types.php:68
 msgid "Band reverted to draft"
 msgstr "Groupe remis en brouillon"
 
-#: includes/post-types.php:68
+#: includes/post-types.php:69
 msgid "Band scheduled"
 msgstr "Groupe programmé"
 
-#: includes/post-types.php:69
+#: includes/post-types.php:70
 msgid "Band updated"
 msgstr "Groupe mis à jour"
 
-#: includes/post-types.php:70
-#: includes/post-types.php:132
-#: includes/post-types.php:195
+#: includes/post-types.php:71
+#: includes/post-types.php:133
+#: includes/post-types.php:196
 msgid "band-tools"
 msgstr "band-tools"
 
-#: includes/post-types.php:107
+#: includes/post-types.php:108
 msgid "Add new album"
 msgstr "Ajouter un album"
 
-#: includes/post-types.php:108
+#: includes/post-types.php:109
 msgid "Edit Album"
 msgstr "Modifier l'album"
 
-#: includes/post-types.php:109
+#: includes/post-types.php:110
 msgid "New Album"
 msgstr "Nouveau album"
 
-#: includes/post-types.php:110
+#: includes/post-types.php:111
 msgid "View Album"
 msgstr "Voir l'album"
 
-#: includes/post-types.php:111
+#: includes/post-types.php:112
 msgid "View Albums"
 msgstr "Voir les albums"
 
-#: includes/post-types.php:112
+#: includes/post-types.php:113
 msgid "Search Albums"
 msgstr "Rechercher dans les albums"
 
-#: includes/post-types.php:113
+#: includes/post-types.php:114
 msgid "No albums found"
 msgstr "Aucun album trouvé"
 
-#: includes/post-types.php:114
+#: includes/post-types.php:115
 msgid "No albums found in Trash"
 msgstr "Aucun album trouvé dans la corbeille"
 
-#: includes/post-types.php:115
+#: includes/post-types.php:116
 msgid "Parent Album:"
 msgstr "Album parent:"
 
-#: includes/post-types.php:116
+#: includes/post-types.php:117
 msgid "All Albums"
 msgstr "Albums"
 
-#: includes/post-types.php:117
+#: includes/post-types.php:118
 msgid "Album Attributes"
 msgstr "Attributs de l'album"
 
-#: includes/post-types.php:118
+#: includes/post-types.php:119
 msgid "Insert into album"
 msgstr "Insérer dans l'album"
 
-#: includes/post-types.php:119
+#: includes/post-types.php:120
 msgid "Uploaded to this album"
 msgstr "Téléverser"
 
-#: includes/post-types.php:124
+#: includes/post-types.php:125
 msgid "Filter albums list"
 msgstr "Filtrer la liste d'albums"
 
-#: includes/post-types.php:125
+#: includes/post-types.php:126
 msgid "Albums list navigation"
 msgstr "Navigation liste d'albums"
 
-#: includes/post-types.php:126
+#: includes/post-types.php:127
 msgid "Albums list"
 msgstr "Liste des albums"
 
-#: includes/post-types.php:127
+#: includes/post-types.php:128
 msgid "Album published"
 msgstr "Album publié"
 
-#: includes/post-types.php:128
+#: includes/post-types.php:129
 msgid "Album published privately"
 msgstr "Album publié en privé"
 
-#: includes/post-types.php:129
+#: includes/post-types.php:130
 msgid "Album reverted to draft"
 msgstr "Album remis en brouillon"
 
-#: includes/post-types.php:130
+#: includes/post-types.php:131
 msgid "Album scheduled"
 msgstr "Album programmé"
 
-#: includes/post-types.php:131
+#: includes/post-types.php:132
 msgid "Album updated"
 msgstr "Album mis à jour"
 
-#: includes/post-types.php:170
+#: includes/post-types.php:171
 msgid "Add new song"
 msgstr "Ajouter une chanson"
 
-#: includes/post-types.php:171
+#: includes/post-types.php:172
 msgid "Edit Song"
 msgstr "Modifier la chanson"
 
-#: includes/post-types.php:172
+#: includes/post-types.php:173
 msgid "New Song"
 msgstr "Nouvelle chanson"
 
-#: includes/post-types.php:173
+#: includes/post-types.php:174
 msgid "View Song"
 msgstr "Voir la chanson"
 
-#: includes/post-types.php:174
+#: includes/post-types.php:175
 msgid "View Songs"
 msgstr "Voir les chansons"
 
-#: includes/post-types.php:175
+#: includes/post-types.php:176
 msgid "Search Songs"
 msgstr "Chercher dans les chansons"
 
-#: includes/post-types.php:176
+#: includes/post-types.php:177
 msgid "No songs found"
 msgstr "Aucune chanson trouvée"
 
-#: includes/post-types.php:177
+#: includes/post-types.php:178
 msgid "No songs found in Trash"
 msgstr "Aucune chanson trouvée dans la corbeille"
 
-#: includes/post-types.php:178
+#: includes/post-types.php:179
 msgid "Parent Song:"
 msgstr "Chanson parente:"
 
-#: includes/post-types.php:179
+#: includes/post-types.php:180
 msgid "All Songs"
 msgstr "Chansons"
 
-#: includes/post-types.php:180
+#: includes/post-types.php:181
 msgid "Song Attributes"
 msgstr "Attributs de la chanson"
 
-#: includes/post-types.php:181
+#: includes/post-types.php:182
 msgid "Insert into song"
 msgstr "Insérer dans la chanson"
 
-#: includes/post-types.php:182
+#: includes/post-types.php:183
 msgid "Uploaded to this song"
 msgstr "Téléverser"
 
-#: includes/post-types.php:187
+#: includes/post-types.php:188
 msgid "Filter songs list"
 msgstr "Filtrer la liste de chansons"
 
-#: includes/post-types.php:188
+#: includes/post-types.php:189
 msgid "Songs list navigation"
 msgstr "Navigation liste de chansons"
 
-#: includes/post-types.php:189
+#: includes/post-types.php:190
 msgid "Songs list"
 msgstr "Liste des chansons"
 
-#: includes/post-types.php:190
+#: includes/post-types.php:191
 msgid "Song published"
 msgstr "Chanson publiée"
 
-#: includes/post-types.php:191
+#: includes/post-types.php:192
 msgid "Song published privately"
 msgstr "Chanson publiée en privé"
 
-#: includes/post-types.php:192
+#: includes/post-types.php:193
 msgid "Song reverted to draft"
 msgstr "Chanson remise en brouillon"
 
-#: includes/post-types.php:193
+#: includes/post-types.php:194
 msgid "Song scheduled"
 msgstr "Chanson programmée"
 
-#: includes/post-types.php:194
+#: includes/post-types.php:195
 msgid "Song updated"
 msgstr "Chanson mise à jour"
 
@@ -569,16 +582,16 @@ msgid "all relations"
 msgstr "tous les liens"
 
 #: includes/widgets.php:26
-#: includes/widgets.php:175
+#: includes/widgets.php:178
 msgid "Display related songs"
 msgstr "Affiche les chansons liées"
 
 #: includes/widgets.php:59
-#: includes/widgets.php:106
-#: includes/widgets.php:154
-#: includes/widgets.php:201
-#: includes/widgets.php:271
-#: includes/widgets.php:344
+#: includes/widgets.php:108
+#: includes/widgets.php:157
+#: includes/widgets.php:206
+#: includes/widgets.php:255
+#: includes/widgets.php:306
 msgid "Title:"
 msgstr "Titre :"
 
@@ -586,35 +599,33 @@ msgstr "Titre :"
 msgid "Display related bands"
 msgstr "Affiche les groupes liés"
 
-#: includes/widgets.php:127
+#: includes/widgets.php:129
 msgid "Display related albums"
 msgstr "Affiche les albums liés"
 
-#: includes/widgets.php:221
+#: includes/widgets.php:226
 msgid "WC Products"
 msgstr "Produits WooCommerce"
 
-#: includes/widgets.php:222
+#: includes/widgets.php:227
 msgid "Display related WooCommerce products"
 msgstr "Affiche les produits WooCommerce liés"
 
-#: includes/widgets.php:240
-msgid "Order online"
-msgstr "Commander en ligne"
-
-#: includes/widgets.php:266
-#: includes/widgets.php:339
+#: includes/widgets.php:250
+#: includes/widgets.php:301
 msgid "Products"
 msgstr "Produits"
 
-#: includes/widgets.php:292
-#: includes/widgets.php:311
+#: includes/widgets.php:276
 msgid "Videos"
 msgstr "Vidéos"
 
-#: includes/widgets.php:293
+#: includes/widgets.php:277
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
+
+#~ msgid "Order online"
+#~ msgstr "Commander en ligne"
 
 #~ msgid "Band Archives"
 #~ msgstr "Archives des groupes"
