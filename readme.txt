@@ -76,6 +76,9 @@ to show
 
 == Changelog ==
 
+= 0.7.5 =
+* fix function remove_meta_box_menu redeclared
+
 = 0.7.4 =
 * removed debug code from output
 
