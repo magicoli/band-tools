@@ -63,7 +63,7 @@ function bndtls_dashboard_plugin_info( $meta_boxes ) {
     $meta_boxes[] = [
       'title'          => __( 'Shortcodes', 'band-tools' ),
       'id'             => 'shortcodes',
-      'settings_pages' => ['band-tools', 'band-tools-settings'],
+      'settings_pages' => ['band-tools'],
       'fields'         => [
         [
           'name' => sprintf('<code>[band-tools]</code> %s <code>[bt-all]</code>', __('or', 'band-tools')),
