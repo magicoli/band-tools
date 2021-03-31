@@ -35,12 +35,17 @@ function build_relationship($post, $slugs, $args = array() ) {
     if($args['class']) $class=$args['class'];
     if($args['direction']) $direction=$args['direction'];
     else $direction='from';
+    if($args['level']) $l=$args['level'];
+    else $l='4';
   }
 
   if(!is_object($post)) return "not a post";
   if(is_array($slugs)) {
     $child_slug = array_shift($slugs);
     $grand_child_slug = $slugs;
+    // $grand_child_args = $args;
+    $grand_child_args['level']=$l + 1;
+    $grand_child_args['title']='';
   } else {
     $child_slug = $slugs;
   }
@@ -67,6 +72,40 @@ function build_relationship($post, $slugs, $args = array() ) {
     $title = $relation->$direction['meta_box']['title'];
   }
 
+  if($title) $output.="<h$l>$title</h$l>";
+  $output .= "<div class='$rel'>";
+  // $output .= "[mb_relationships id='rel-$rel' direction='$direction' mode='ul']";
+  $output .= "<ul class='$rel list'>";
+  foreach($childs as $child) {
+    $li_classes=array($child->post_type);
+    if(get_queried_object_id() == $child->ID) {
+      $li_classes[]='current-page';
+      $before = "<span>";
+      $after  = "</span>";
+    } else {
+      unset($current_page);
+      $before = "<a href='" . get_permalink($child) . "'>";
+      $after  = "</a>";
+    }
+    if(!empty($grand_child_slug)) {
+      $before="<h" . ($l + 1) . ">$before";
+      $after="</h" . ($l + 1) . ">$after";
+    }
+    $output .= "<li class='" . join(' ', $li_classes) . "'>";
+    $output .= $before . $child->post_title . $after;
+    if(!empty($grand_child_slug)) {
+      $output .= build_relationship($child, $grand_child_slug, [ 'title' => '' ] );
+    }
+    //
+    // $output .= "<p>Link: " . get_permalink($child) . "</p>";
+    // $output .= "<pre>" . print_r($child, true) . "</pre>";
+    $output .= '</li>';
+  }
+  $output .= '</ul>';
+  $output .= "</div>";
+  return $output;
+
+  // ## For future reference
   // $title="Boo";
   // ## Query method
   //
@@ -85,32 +124,5 @@ function build_relationship($post, $slugs, $args = array() ) {
   //
   // ## /QueryMethod
 
-  if($title) $output.="<h3>$title</h3>";
-  $output .= "<div class='$rel'>";
-  // $output .= "[mb_relationships id='rel-$rel' direction='$direction' mode='ul']";
-  $output .= "<ul class='$rel list'>";
-  foreach($childs as $child) {
-    $li_classes=array($child->post_type);
-    if(get_queried_object_id() == $child->ID) {
-      $li_classes[]='current-page';
-      $before = "<span>";
-      $after  = "</span>";
-    } else {
-      unset($current_page);
-      $before = "<a href='" . get_permalink($child) . "'>";
-      $after  = "</a>";
-    }
-    $output .= "<li class='" . join(' ', $li_classes) . "'>";
-    $output .= $before . $child->post_title . $after;
-    if(!empty($grand_child_slug)) {
-      $output .= build_relationship($child, $grand_child_slug, [ 'title' => '' ] );
-    }
-    //
-    // $output .= "<p>Link: " . get_permalink($child) . "</p>";
-    // $output .= "<pre>" . print_r($child, true) . "</pre>";
-    $output .= '</li>';
-  }
-  $output .= '</ul>';
-  $output .= "</div>";
-  return $output;
+
 }
