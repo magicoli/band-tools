@@ -76,6 +76,14 @@ to show
 
 == Changelog ==
 
+= 0.7.3 =
+* added single/plural form to relationships
+* improved get title from relationship instead of post type
+* fix wrong result when asking a sub option and none set
+* fix front page display for custom types
+* fix plural in translations
+* don't show title in nested infoboxes
+
 = 0.7.2 =
 * added front page settings
 * added template for band when selected as home page
