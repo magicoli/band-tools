@@ -2,7 +2,13 @@
 
 function bndtls_get_option( $option, $default = false, $sub_option='' ) {
   $options=get_option('bndtls-settings');
-  if ( $sub_option && $options[$option][$sub_option] ) return $options[$option][$sub_option];
+  if (!$options) return $default;
+  if ( $sub_option ) {
+    if(is_array($options[$option]) && $options[$option])
+    return $options[$option][$sub_option];
+    else;
+    return $default;
+  }
   else if ( $options[$option] ) return $options[$option];
   else return $default;
 }
