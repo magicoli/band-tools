@@ -18,9 +18,17 @@ function bndtls_load_admin_css() {
   // dev (force no cache)
   // wp_enqueue_style( BNDTLS_SLUG . '-admin', plugin_dir_url( __FILE__ ) . 'admin.css', array(), BNDTLS_VERSION . '.' . time() );
   wp_enqueue_style( BNDTLS_SLUG . '-admin', plugin_dir_url( __FILE__ ) . 'admin.css', array(), BNDTLS_VERSION );
-  add_editor_style('custom-editor-style.css');
+  // add_editor_style('custom-editor-style.css');
 }
 add_action( 'admin_enqueue_scripts', 'bndtls_load_admin_css' );
+
+// function bndtls_mce_css( $mce_css ) {
+//   if ( !empty( $mce_css ) )
+//     $mce_css .= ',';
+//     $mce_css .= plugins_url( 'admin-editor.css', __FILE__ );
+//     return $mce_css;
+//   }
+// add_filter( 'mce_css', 'bndtls_mce_css' );
 
 add_action( 'admin_head', 'bndtls_load_admin_js' );
 function bndtls_load_admin_js() {
