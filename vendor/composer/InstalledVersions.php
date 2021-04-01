@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '2946d9be9c44cb5e2630fae6ceb3e682b0a35618',
+    'reference' => '28197d65179fd01625598db4e8c0a2a09e3585ed',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '2946d9be9c44cb5e2630fae6ceb3e682b0a35618',
+      'reference' => '28197d65179fd01625598db4e8c0a2a09e3585ed',
     ),
     'composer/installers' => 
     array (
@@ -97,6 +97,15 @@ private static $installed = array (
       array (
       ),
       'reference' => NULL,
+    ),
+    'nass600/get-id3' => 
+    array (
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'd3e82b04acad494e9cc3e1b73ec67748690d5474',
     ),
     'roundcube/plugin-installer' => 
     array (

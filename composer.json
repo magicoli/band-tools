@@ -20,7 +20,8 @@
     "wpackagist-plugin/mb-custom-post-type": "dev-trunk",
     "wpackagist-plugin/mb-relationships": "^1.3",
     "meta-box/mb-settings-page": "dev-master",
-    "wapmorgan/mp3info": "^0.0.5"
+    "wapmorgan/mp3info": "^0.0.5",
+    "nass600/get-id3": "^1.0"
   },
   "extra": {
     "installer-paths": {
