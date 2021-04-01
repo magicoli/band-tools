@@ -4,6 +4,8 @@ if (!defined('WPINC')) {die;}
 
 require_once __DIR__ . '/custom-fields.php';
 
+if ( ! is_plugin_active('mb-core/mb-core.php' ) || ! bndtls_get_option( 'developer_mode') ):
+
 function bndtls_frontpage_add_types_to_dropdown( $pages ){
 	$types = bndtls_get_option('front_page_allow');
 	if(!is_array($types)) return;
@@ -345,3 +347,5 @@ function bndtls_register_relationships() {
 		],
 	] );
 }
+
+endif;
