@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'c4a3a761342337045f052b94896f26f13371f98d',
+    'reference' => '1c6f5a64c9aebd5d689694349913020c4190e8b3',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,25 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'c4a3a761342337045f052b94896f26f13371f98d',
-    ),
-    'afragen/wp-dependency-installer' => 
-    array (
-      'pretty_version' => '3.1.0',
-      'version' => '3.1.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '65570a1eb966bb9adfc9d9e521357da080fbdc5a',
-    ),
-    'collizo4sky/persist-admin-notices-dismissal' => 
-    array (
-      'pretty_version' => '1.4.4',
-      'version' => '1.4.4.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '900739eb6b0ec0210465f5983a6d4e0e420289e4',
+      'reference' => '1c6f5a64c9aebd5d689694349913020c4190e8b3',
     ),
     'composer/installers' => 
     array (
