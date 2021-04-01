@@ -76,6 +76,10 @@ to show
 
 == Changelog ==
 
+= 0.7.8 =
+* fix oops, I disabled autoload when I removed afragen...
+* removed afragen libraries, including own deps (previously it was just disabled)
+
 = 0.7.7 =
 * fix chatty error log when no bands, albums or songs exist yet
 * removed afragen dependency installer, too resource hungry
