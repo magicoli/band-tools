@@ -49,7 +49,7 @@ function bndtls_settings_naming( $meta_boxes ) {
             'id'          => $prefix . 'singular',
             'type'        => 'text',
             'desc'        => __( 'Singular', 'band-tools' ),
-            'default'         => __('Band', 'band-tools' ),
+            'std'         => __('Band', 'band-tools' ),
             'placeholder' => __( 'Singular', 'band-tools' ),
             'class'       => 'inline',
             'datalist'    => [
