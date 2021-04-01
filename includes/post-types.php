@@ -33,9 +33,9 @@ add_action( 'pre_get_posts', 'bndtls_frontpage_enable_types' );
 
 add_action( 'init', 'bndtls_register_post_types' );
 function bndtls_register_post_types() {
-	$adaptive['bands'] = get_type_name_n('band', 'Band', 'Bands', wp_count_posts('bands')->publish);
-	$adaptive['albums'] = get_type_name_n('album', 'Album', 'Albums', wp_count_posts('albums')->publish);
-	$adaptive['songs'] = get_type_name_n('song', 'Song', 'Songs', wp_count_posts('songs')->publish);
+	$adaptive['bands'] = get_type_name_n('band', 'Band', 'Bands', bndtls_count_posts('bands'));
+	$adaptive['albums'] = get_type_name_n('album', 'Album', 'Albums', bndtls_count_posts('albums'));
+	$adaptive['songs'] = get_type_name_n('song', 'Song', 'Songs', bndtls_count_posts('songs'));
 
 	$labels = [
 		'name'                     => $adaptive['bands'],
@@ -234,10 +234,10 @@ function bndtls_register_relationships() {
 	$singular['albums'] = __(bndtls_get_option( 'naming_' . 'album', 'Album', 'singular' ), 'band-tools');
 	$singular['songs'] = __(bndtls_get_option( 'naming_' . 'song', 'Song', 'singular' ), 'band-tools');
 	$singular['tracks'] = __(bndtls_get_option( 'naming_' . 'track', 'Track', 'singular' ), 'band-tools');
-	$adaptive['bands'] = get_type_name_n('band', 'Band', 'Bands', wp_count_posts('bands')->publish);
-	$adaptive['albums'] = get_type_name_n('album', 'Album', 'Albums', wp_count_posts('albums')->publish);
-	$adaptive['songs'] = get_type_name_n('song', 'Song', 'Songs', wp_count_posts('songs')->publish);
-	$adaptive['tracks'] = get_type_name_n('track', 'Track', 'Tracks', wp_count_posts('songs')->publish);
+	$adaptive['bands'] = get_type_name_n('band', 'Band', 'Bands', bndtls_count_posts('bands'));
+	$adaptive['albums'] = get_type_name_n('album', 'Album', 'Albums', bndtls_count_posts('albums'));
+	$adaptive['songs'] = get_type_name_n('song', 'Song', 'Songs', bndtls_count_posts('songs'));
+	$adaptive['tracks'] = get_type_name_n('track', 'Track', 'Tracks', bndtls_count_posts('songs'));
 
 	MB_Relationships_API::register( [
 		'id'   => 'rel-bands-albums',

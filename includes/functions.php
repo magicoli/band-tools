@@ -15,7 +15,7 @@ function bndtls_get_option( $option, $default = false, $sub_option='' ) {
 
 function get_type_name_n($type, $default, $default_plural=NULL, $count=NULL) {
   if( ! $default_plural ) $default_plural = $default;
-  if( ! $count ) $count = wp_count_posts($type)->publish;
+  if( ! $count ) $count = bndtls_count_posts($type);
 
   if($count == 1)
   return __(bndtls_get_option( 'naming_' . $type, "$default", 'singular' ), 'band-tools');
@@ -125,4 +125,8 @@ function build_relationship($post, $slugs, $args = array() ) {
   // ## /QueryMethod
 
 
+}
+
+function bndtls_count_posts( $type = 'post', $perm = '', $status='publish' ) {
+	return (isset(wp_count_posts($type)->$status)) ? wp_count_posts($type)->$status : 0;
 }
