@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '1c6f5a64c9aebd5d689694349913020c4190e8b3',
+    'reference' => '2946d9be9c44cb5e2630fae6ceb3e682b0a35618',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '1c6f5a64c9aebd5d689694349913020c4190e8b3',
+      'reference' => '2946d9be9c44cb5e2630fae6ceb3e682b0a35618',
     ),
     'composer/installers' => 
     array (
@@ -87,6 +87,15 @@
       array (
         0 => '*',
       ),
+    ),
+    'wapmorgan/mp3info' => 
+    array (
+      'pretty_version' => '0.0.5',
+      'version' => '0.0.5.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '0dc3d62d155d6b7c25bc0568fd8a93924449020c',
     ),
     'wpackagist-plugin/mb-custom-post-type' => 
     array (

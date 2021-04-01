@@ -18,6 +18,10 @@ class ComposerStaticInit434d04b486e83c37897daad953df1be9
     );
 
     public static $prefixLengthsPsr4 = array (
+        'w' => 
+        array (
+            'wapmorgan\\Mp3Info\\' => 18,
+        ),
         'C' => 
         array (
             'Composer\\Installers\\' => 20,
@@ -25,6 +29,10 @@ class ComposerStaticInit434d04b486e83c37897daad953df1be9
     );
 
     public static $prefixDirsPsr4 = array (
+        'wapmorgan\\Mp3Info\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wapmorgan/mp3info/src',
+        ),
         'Composer\\Installers\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
