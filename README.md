@@ -76,6 +76,10 @@ to show
 
 ## Changelog
 
+### 0.7.7
+* fix chatty error log when no bands, albums or songs exist yet
+* removed afragen dependency installer, too resource hungry
+
 ### 0.7.6
 * updated shortcodes for mb framework
 * updated 'all' widget for mb framework (not all, only the one called 'all'). Other ones are updated but not functional yet
