@@ -16,8 +16,8 @@ function bndtls_load_textdomain() {
 }
 bndtls_load_textdomain();
 
-require_once dirname(__DIR__) . '/vendor/autoload.php';
-WP_Dependency_Installer::instance( dirname(__DIR__) )->run();
+// require_once dirname(__DIR__) . '/vendor/autoload.php';
+// WP_Dependency_Installer::instance( dirname(__DIR__) )->run();
 
 $plugin_data = get_file_data(WP_PLUGIN_DIR . "/" . BNDTLS_PLUGIN, array(
   'Name' => 'Plugin Name',
