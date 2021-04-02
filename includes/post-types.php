@@ -3,6 +3,7 @@
 if (!defined('WPINC')) {die;}
 
 require_once __DIR__ . '/custom-fields.php';
+require_once __DIR__ . '/taxonomies.php';
 
 if ( ! is_plugin_active('mb-core/mb-core.php' ) || ! bndtls_get_option( 'developer_mode') ):
 

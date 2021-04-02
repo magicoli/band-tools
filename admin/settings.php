@@ -35,7 +35,7 @@ function bndtls_settings_naming( $meta_boxes ) {
   $prefix = '';
 
   $meta_boxes[] = [
-    'title'          => __( 'Naming', 'band-tools' ),
+    'title'          => __( 'Nomenclature', 'band-tools' ),
     'id'             => 'naming',
     'settings_pages' => ['band-tools-settings'],
     'fields'         => [

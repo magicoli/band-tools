@@ -6,105 +6,90 @@ if ( ! is_plugin_active('mb-core/mb-core.php' ) || ! bndtls_get_option( 'develop
 
 add_filter( 'rwmb_meta_boxes', 'bndtls_fields_bands' );
 function bndtls_fields_bands( $meta_boxes ) {
-    // $prefix = 'band';
+  // $prefix = 'band';
 
-    $meta_boxes[] = [
-        'title'      => __( 'Info', 'band-tools' ),
-        'id'         => 'fields-band-info',
-        'post_types' => ['bands'],
-        'fields'     => [
-            [
-                'name' => __( 'Creation', 'band-tools' ),
-                'id'   => $prefix . 'creation',
-                'type' => 'date',
-            ],
-            [
-                'name'  => __( 'Members', 'band-tools' ),
-                'id'    => $prefix . 'members',
-                'type'  => 'text',
-                'clone' => true,
-            ],
-            [
-                'name'            => __( 'Genre', 'band-tools' ),
-                'id'              => $prefix . 'genre',
-                'type'            => 'select_advanced',
-                'options'         => bndtls_id3_genres(),
-                'multiple'        => true,
-                // 'select_all_none' => true,
-                'admin_columns'   => [
-                    'position'   => 'after title',
-                    'sort'       => true,
-                    'searchable' => true,
-                    'filterable' => true,
-                ],
-            ],
-        ],
-    ];
+  $meta_boxes[] = [
+    'title'      => __( 'Info', 'band-tools' ),
+    'id'         => 'fields-band-info',
+    'post_types' => ['bands'],
+    'fields'     => [
+      [
+        'name' => __( 'Creation', 'band-tools' ),
+        'id'   => $prefix . 'creation',
+        'type' => 'date',
+      ],
+      [
+        'name'  => __( 'Members', 'band-tools' ),
+        'id'    => $prefix . 'members',
+        'type'  => 'text',
+        'clone' => true,
+      ],
+      [
+        'name'       => __( 'Genres (tax)', 'band-tools' ),
+        'id'         => $prefix . 'tax_genre',
+        'type'       => 'taxonomy',
+        'taxonomy'   => ['genre'],
+        'field_type' => 'select_advanced',
+        'add_new'    => true,
+        'multiple'   => true,
+      ],
+    ],
+  ];
 
-    return $meta_boxes;
+  return $meta_boxes;
 }
 
 add_filter( 'rwmb_meta_boxes', 'bndtls_fields_albums' );
 function bndtls_fields_albums( $meta_boxes ) {
-    // $prefix = 'band';
+  // $prefix = 'band';
 
-    $meta_boxes[] = [
-        'title'      => __( 'Info', 'band-tools' ),
-        'id'         => 'fields-album-info',
-        'post_types' => ['albums'],
-        'fields'     => [
-            [
-                'name' => __( 'Release', 'band-tools' ),
-                'id'   => $prefix . 'release',
-                'type' => 'date',
-            ],
-            [
-                'name'            => __( 'Genre', 'band-tools' ),
-                'id'              => $prefix . 'genre',
-                'type'            => 'select_advanced',
-                'options'         => bndtls_id3_genres(),
-                'multiple'        => true,
-                // 'select_all_none' => true,
-                'admin_columns'   => [
-                    'position'   => 'after title',
-                    'sort'       => true,
-                    'searchable' => true,
-                    'filterable' => true,
-                ],
-            ],
-        ],
-    ];
+  $meta_boxes[] = [
+    'title'      => __( 'Info', 'band-tools' ),
+    'id'         => 'fields-album-info',
+    'post_types' => ['albums'],
+    'fields'     => [
+      [
+        'name' => __( 'Release', 'band-tools' ),
+        'id'   => $prefix . 'release',
+        'type' => 'date',
+      ],
+      [
+      'name'       => __( 'Genres (tax)', 'band-tools' ),
+      'id'         => $prefix . 'tax_genre',
+      'type'       => 'taxonomy',
+      'taxonomy'   => ['genre'],
+      'field_type' => 'select_advanced',
+      'add_new'    => true,
+      'multiple'   => true,
+      ],
+    ],
+  ];
 
-    return $meta_boxes;
+  return $meta_boxes;
 }
 
 add_filter( 'rwmb_meta_boxes', 'bndtls_fields_songs' );
 function bndtls_fields_songs( $meta_boxes ) {
-    // $prefix = 'band';
+  // $prefix = 'band';
 
-    $meta_boxes[] = [
-        'title'      => __( 'Info', 'band-tools' ),
-        'id'         => 'fields-song-info',
-        'post_types' => ['songs'],
-        'fields'     => [
-            [
-                'name'            => __( 'Genre', 'band-tools' ),
-                'id'              => $prefix . 'genre',
-                'type'            => 'select_advanced',
-                'options'         => bndtls_id3_genres(),
-                'multiple'        => true,
-                // 'select_all_none' => true,
-                'admin_columns'   => [
-                    'position'   => 'after title',
-                    'sort'       => true,
-                    'searchable' => true,
-                    'filterable' => true,
-                ],
-            ],
-        ],
-    ];
+  $meta_boxes[] = [
+    'title'      => __( 'Info', 'band-tools' ),
+    'id'         => 'fields-song-info',
+    'post_types' => ['songs'],
+    'fields'     => [
+      [
+        'name'       => __( 'Genres (tax)', 'band-tools' ),
+        'id'         => $prefix . 'tax_genre',
+        'type'       => 'taxonomy',
+        'taxonomy'   => ['genre'],
+        'field_type' => 'select_advanced',
+        'add_new'    => true,
+        'multiple'   => true,
+      ],
+    ],
+  ];
 
-    return $meta_boxes;
+  return $meta_boxes;
 }
 
 endif;

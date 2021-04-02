@@ -45,19 +45,19 @@ function bndtls_add_after_title($title, $id) {
     if ( $post instanceof WP_Post ) {
       switch($post->post_type) {
         case 'bands':
-        $title_after= bndtls_get_meta([ 'genre', 'members' ], $post_id) . bndtls_get_meta('members', $post_id);;
+        $title_after= bndtls_get_meta([ 'tax_genres', 'members' ], $post_id) . bndtls_get_meta('members', $post_id);;
         break;
 
         case 'albums':
         $by = build_relationship($post, 'bands', [ 'direction' => 'to', 'title' => '' ]);
         if($by) $by="<div class='by'>" . sprintf(__('by %s', 'band-tools'), $by ) . "</div>";
-        $title_after=bndtls_get_meta([ 'release' ], $post_id) . $by . bndtls_get_meta([ 'genre' ], $post_id);
+        $title_after=bndtls_get_meta([ 'release' ], $post_id) . $by . bndtls_get_meta([ 'tax_genres' ], $post_id);
         break;
 
         case 'songs':
         $by = build_relationship($post, 'bands', [ 'direction' => 'to', 'title' => '' ]);
         if($by) $by="<div class='by'>" . sprintf(__('by %s', 'band-tools'), $by ) . "</div>";
-        $title_after=$by . bndtls_get_meta([ 'genre' ], $post_id);
+        $title_after=$by . bndtls_get_meta([ 'tax_genres' ], $post_id);
         break;
       }
     }

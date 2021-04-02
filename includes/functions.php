@@ -144,14 +144,18 @@ function bndtls_genres_names($genre_ids, $separator = ', ') {
   return $genres;
 }
 
-function bndtls_get_meta($metas, $post_id = NULL) {
+function bndtls_get_meta($metas, $post_id = NULL, $link = false) {
   if(!$post_id) $post_id = get_post()->ID;
-
   if(!is_array($metas)) $metas = [ $meta ];
   foreach ( $metas as $meta ) {
     switch($meta) {
-      case 'genre':
-      $values = bndtls_genres_names(rwmb_meta( 'genre', array(), $post_id ), ', ');
+      case 'tax_genres':
+      $terms = get_the_terms( $post_id, 'genre' );
+      if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+          foreach ( $terms as $term ) {
+            $values[] = ($link) ? sprintf( '<a href="%s">%s</a>', get_term_link( $term ), $term->name ) : $term->name;
+          }
+      }
       break;
 
       default:
