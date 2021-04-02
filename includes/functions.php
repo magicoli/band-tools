@@ -41,22 +41,22 @@ function build_relationship($post, $slugs, $args = array() ) {
 
   if(!is_object($post)) return "not a post";
   if(is_array($slugs)) {
-    $child_slug = array_shift($slugs);
+    $childs_slug = array_shift($slugs);
     $grand_child_slug = $slugs;
     // $grand_child_args = $args;
     $grand_child_args['level']=$l + 1;
     $grand_child_args['title']='';
   } else {
-    $child_slug = $slugs;
+    $childs_slug = $slugs;
   }
   $parent_slug = $post->post_type;
   if($direction == 'to') {
     $parent=$args['parent'];
-    $rel="$child_slug-$parent_slug";
+    $rel="$childs_slug-$parent_slug";
   } else {
-    $rel="$parent_slug-$child_slug";
+    $rel="$parent_slug-$childs_slug";
   }
-  if($parent) $rel_slug="rel-$child_slug-$parent_slug";
+  if($parent) $rel_slug="rel-$childs_slug-$parent_slug";
   else $rel_slug="rel-$rel";
   $childs = MB_Relationships_API::get_connected( [
       'id'   => "rel-$rel",
@@ -75,9 +75,10 @@ function build_relationship($post, $slugs, $args = array() ) {
   if($title) $output.="<h$l>$title</h$l>";
   $output .= "<div class='$rel'>";
   // $output .= "[mb_relationships id='rel-$rel' direction='$direction' mode='ul']";
-  $output .= "<ul class='$rel list'>";
+  $output .= "<ul class='childs $rel childs-$childs_slug list'>";
+  $child_slug=preg_replace('/s$/', '', $childs_slug);
   foreach($childs as $child) {
-    $li_classes=array($child->post_type);
+    $li_classes=array("child-$child_slug", $child->post_type);
     if(get_queried_object_id() == $child->ID) {
       $li_classes[]='current-page';
       $before = "<span>";
