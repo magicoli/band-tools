@@ -33,8 +33,8 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   if(is_array($args)) {
     if($args['title']) $title=$args['title'];
     if($args['class']) $class=$args['class'];
-    if($args['before']) $block_before=$args['before'];
-    if($args['after']) $block_after=$args['after'];
+    if(!empty($args['before'])) $block_before="<span class='before'>" . $args['before'] . "</span>";
+    if(!empty($args['after'])) $block_after= "<span class='after'>" . $args['after'] . "</span>";
     if($args['direction']) $direction=$args['direction'];
     else $direction='from';
     if($args['level']) $l=$args['level'];
