@@ -63,12 +63,19 @@ $bndtls_updater = new WP_Package_Updater(
 	true
 );
 
-function bndtls_load_plugin_css() {
+add_action( 'wp_enqueue_scripts', function() {
   // dev (force no cache)
   // wp_enqueue_style( 'band-tools-main', plugin_dir_url( __FILE__ ) . 'css/main.css', array(), BNDTLS_VERSION . '.' . time() );
   wp_enqueue_style( BNDTLS_SLUG . '-main', plugin_dir_url( __FILE__ ) . 'css/main.css', array(), BNDTLS_VERSION );
-}
-add_action( 'wp_enqueue_scripts', 'bndtls_load_plugin_css' );
+} );
+
+add_action( 'rwmb_enqueue_scripts', function() {
+    wp_enqueue_style( BNDTLS_SLUG . '-metabox', plugin_dir_url( __FILE__ ) . 'css/metabox.css', array(), BNDTLS_VERSION );
+} );
+
+add_action( 'enqueue_block_editor_assets', function() {
+  wp_enqueue_style( BNDTLS_SLUG . '-metabox', plugin_dir_url( __FILE__ ) . 'css/metabox.css', array(), BNDTLS_VERSION );
+} );
 
 // dirty fix to include singular/plural forms in .pot
 if(false) {

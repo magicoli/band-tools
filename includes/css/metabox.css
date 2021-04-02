@@ -1,0 +1,13 @@
+#poststuff .postbox-container > * {
+  display: flex;
+  column-gap: 20px;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.block-editor-page #poststuff .postbox-container > * {
+  gap: 10px;
+}
+#poststuff .postbox-container > * > * {
+  flex: 1 1 auto;
+  /* flex-basis: 30%; */
+}

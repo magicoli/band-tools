@@ -188,28 +188,28 @@ function bndtls_settings_tweaks( $meta_boxes ) {
     ],
     'fields'         => [
 			[
-				'name' => 'Disable plugin templates',
+				'name' => __( 'Disable plugin templates', 'band-tools' ),
         'id'   => $prefix . 'disable_templates',
         'type' => 'switch',
         'desc' => __( 'Customize with theme, widgets and shortcodes', 'band-tools' ),
         'std'  => false,
       ],
 			[
-				'name' => 'Redirect single post archives',
+				'name' => __( 'Redirect single post archives', 'band-tools' ),
         'id'   => $prefix . 'redirect_single_post_archives',
         'type' => 'switch',
         'desc' => __( 'Redirect archives containing only one post', 'band-tools' ),
         'std'  => true,
       ],
       [
-				'name' => 'Clean titles',
+				'name' => __( 'Clean titles', 'band-tools' ),
         'id'   => $prefix . 'clean_titles',
         'type' => 'switch',
         'desc' => __( 'Remove prefixes from titles for Categories, Taxonomies, Archives, Authors', 'band-tools' ),
         'std'  => true,
       ],
       [
-				'name' => 'Widget Area',
+				'name' => __( 'Widget Area', 'band-tools' ),
         'id'   => $prefix . 'widget_area',
         'type' => 'switch',
         'desc' => __( 'Add a custom widget area (must be activated in your theme)', 'band-tools' ),
