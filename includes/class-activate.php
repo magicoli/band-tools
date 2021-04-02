@@ -30,8 +30,6 @@ class Band_Tools_Activate {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-		flush_rewrite_rules();
-		wp_cache_flush();
+		update_option('bndtls_rewrite_rules', true);
 	}
-
 }

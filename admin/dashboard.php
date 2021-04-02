@@ -28,6 +28,7 @@ function bndtls_dashboard( $settings_pages ) {
     'option_name' => 'bndtls-settings',
     'menu_title'  => __( 'Band Tools', 'band-tools' ),
     'submenu_title' => __( 'Dashboard', 'band-tools' ),
+    // translators: '%s' is replaced by the plugin name, it should not be localized
     'page_title'  => sprintf(__( '%s Dashboard', 'band-tools' ), 'Band Tools'),
     'icon_url'    => plugin_dir_url(__DIR__) . 'assets/svg-microphone-stand-20x20.svg',
     // 'style'       => 'no-boxes',

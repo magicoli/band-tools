@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Band Tools plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Band Tools 0.7.9\n"
+"Project-Id-Version: Band Tools 0.7.12.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/band-tools\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-02T09:33:48-04:00\n"
+"POT-Creation-Date: 2021-04-02T16:46:45-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 
@@ -42,24 +42,25 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: admin/dashboard.php:31
+#. translators: '%s' is replaced by the plugin name, it should not be localized
+#: admin/dashboard.php:32
 msgid "%s Dashboard"
 msgstr ""
 
-#: admin/dashboard.php:48
+#: admin/dashboard.php:49
 msgid "Plugin info"
 msgstr ""
 
-#: admin/dashboard.php:53
+#: admin/dashboard.php:54
 msgid "License key"
 msgstr ""
 
-#: admin/dashboard.php:64
+#: admin/dashboard.php:65
 msgid "Shortcodes"
 msgstr ""
 
-#: admin/dashboard.php:69
-#: admin/dashboard.php:75
+#: admin/dashboard.php:70
+#: admin/dashboard.php:76
 msgid "or"
 msgstr ""
 
@@ -74,7 +75,7 @@ msgstr ""
 #: admin/settings.php:43
 #: admin/settings.php:52
 #: admin/settings.php:59
-#: includes/init.php:82
+#: includes/init.php:90
 #: includes/post-types.php:47
 msgid "Band"
 msgid_plural "Bands"
@@ -149,7 +150,7 @@ msgstr ""
 #: admin/settings.php:89
 #: admin/settings.php:98
 #: admin/settings.php:104
-#: includes/init.php:83
+#: includes/init.php:91
 #: includes/post-types.php:109
 msgid "Album"
 msgid_plural "Albums"
@@ -190,7 +191,7 @@ msgstr ""
 #: admin/settings.php:131
 #: admin/settings.php:140
 #: admin/settings.php:146
-#: includes/init.php:84
+#: includes/init.php:92
 #: includes/post-types.php:172
 msgid "Song"
 msgid_plural "Songs"
@@ -316,14 +317,14 @@ msgstr ""
 msgid "Get a license key on %s website"
 msgstr ""
 
-#: includes/init.php:85
-#: includes/init.php:86
+#: includes/init.php:93
+#: includes/init.php:94
 msgid "Track"
 msgid_plural "Tracks"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/init.php:87
+#: includes/init.php:95
 msgid "Tracks"
 msgstr ""
 
