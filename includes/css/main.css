@@ -41,8 +41,8 @@ li.child-album ul.childs-songs {
   /* padding: 0; */
   /* margin: 0; */
 }
-ul.childs-songs.albums-songs,
-li.child-album ul.childs-songs {
+ul.childs-songs.albums-songs > li,
+li.child-album ul.childs-songs > li {
   list-style: decimal;
 }
 .childs.list > li.current-page {
