@@ -18,7 +18,6 @@ $content = get_the_content( $more_link_text, $strip_teaser );
 //     'from' => get_the_ID(),
 // ] );
 ?>
-<?= build_relationship(get_post(), [ 'bands' ], [ 'direction' => 'to', 'mode' => 'inline' ] ) ?>
 <div class='<?=$post_type_slug?>-content'>
   <?=$content?>
 </div>
