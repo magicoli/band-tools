@@ -76,6 +76,10 @@ to show
 
 ## Changelog
 
+### 0.7.10
+* added prefix and suffix for bndtls_get_meta and bndtls_get_relations
+* renamed build_relationships to bndtls_get_relations
+
 ### 0.7.9
 * added genre under title for bands, albums, songs
 * added band under title for albums and songs
