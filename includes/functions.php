@@ -131,3 +131,34 @@ function build_relationship($post, $slugs, $args = array() ) {
 function bndtls_count_posts( $type = 'post', $perm = '', $status='publish' ) {
 	return (isset(wp_count_posts($type)->$status)) ? wp_count_posts($type)->$status : 0;
 }
+
+function bndtls_genres_names($genre_ids, $separator = ', ') {
+  if(empty($genre_ids)) return;
+  $bndtls_id3_genres=bndtls_id3_genres();
+
+  if(!is_array($genre_ids)) $genre_ids = [ $genre_ids ];
+  // $genres = array_fill_keys($genre_ids, $bndtls_id3_genres);
+  $genres = array_intersect_key($bndtls_id3_genres, array_flip($genre_ids));
+
+  if($separator) return join($separator, $genres);
+  return $genres;
+}
+
+function bndtls_get_meta($metas, $post_id = NULL) {
+  if(!$post_id) $post_id = get_post()->ID;
+
+  if(!is_array($metas)) $metas = [ $meta ];
+  foreach ( $metas as $meta ) {
+    switch($meta) {
+      case 'genre':
+      $values = bndtls_genres_names(rwmb_meta( 'genre', array(), $post_id ), ', ');
+      break;
+
+      default:
+      $values = rwmb_meta( $meta, array(), $post_id );
+    }
+    if(is_array($values)) $values = join(', ', $values);
+    if(!empty($values)) $output .= "<div class='$meta'>$values</div>";
+  }
+  return $output;
+}

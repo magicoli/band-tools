@@ -37,18 +37,6 @@ function bndtls_the_content ( $more_link_text = null, $strip_teaser = false ) {
   return $content;
 }
 
-function bndtls_genres_names($genre_ids, $separator = ', ') {
-  if(empty($genre_ids)) return;
-  $bndtls_id3_genres=bndtls_id3_genres();
-
-  if(!is_array($genre_ids)) $genre_ids = [ $genre_ids ];
-  // $genres = array_fill_keys($genre_ids, $bndtls_id3_genres);
-  $genres = array_intersect_key($bndtls_id3_genres, array_flip($genre_ids));
-
-  if($separator) return join($separator, $genres);
-  return $genres;
-}
-
 ### Interesting 1
 add_filter('the_title', 'bndtls_add_after_title', 10, 2);
 function bndtls_add_after_title($title, $id) {
@@ -57,24 +45,19 @@ function bndtls_add_after_title($title, $id) {
     if ( $post instanceof WP_Post ) {
       switch($post->post_type) {
         case 'bands':
-        $genres = bndtls_genres_names(rwmb_meta( 'genre', array(), $post_id ), ', ');
-        $title_after=$genres;
+        $title_after= bndtls_get_meta([ 'genre', 'members' ], $post_id) . bndtls_get_meta('members', $post_id);;
         break;
 
         case 'albums':
-        $genres = bndtls_genres_names(rwmb_meta( 'genre', array(), $post_id ), ', ');
-        if($genres) $genres = "<div class=genres>$genres</div>";
         $by = build_relationship($post, 'bands', [ 'direction' => 'to', 'title' => '' ]);
         if($by) $by="<div class='by'>" . sprintf(__('by %s', 'band-tools'), $by ) . "</div>";
-        $title_after=$by . $genres;
+        $title_after=bndtls_get_meta([ 'release' ], $post_id) . $by . bndtls_get_meta([ 'genre' ], $post_id);
         break;
 
         case 'songs':
-        $genres = bndtls_genres_names(rwmb_meta( 'genre', array(), $post_id ), ', ');
-        if($genres) $genres = "<div class=genres>$genres</div>";
         $by = build_relationship($post, 'bands', [ 'direction' => 'to', 'title' => '' ]);
         if($by) $by="<div class='by'>" . sprintf(__('by %s', 'band-tools'), $by ) . "</div>";
-        $title_after=$by . $genres;
+        $title_after=$by . bndtls_get_meta([ 'genre' ], $post_id);
         break;
       }
     }
