@@ -76,6 +76,13 @@ to show
 
 == Changelog ==
 
+= 0.7.9 =
+* added genre under title for bands, albums, songs
+* added band under title for albums and songs
+* added band info fields
+* show infoboxes as grid on frontend
+* show custom fields blocks as grid
+
 = 0.7.8 =
 * fix oops, I disabled autoload when I removed afragen...
 * removed afragen libraries, including own deps (previously it was just disabled)
