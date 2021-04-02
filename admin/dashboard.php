@@ -66,7 +66,7 @@ function bndtls_dashboard_plugin_info( $meta_boxes ) {
       'settings_pages' => ['band-tools'],
       'fields'         => [
         [
-          'name' => sprintf('<code>[band-tools]</code> %s <code>[bt-all]</code>', __('or', 'band-tools')),
+          'name' => sprintf('<code>[bt-all]</code> %s <nobr><code>[band-tools]</code></nobr>', __('or', 'band-tools')),
           'id'   => $prefix . 'bt-auto',
           'type' => 'custom_html',
           'std'  => 'All bands, albums, songs',
