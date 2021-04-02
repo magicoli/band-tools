@@ -54,6 +54,22 @@ if ( is_plugin_active( 'woocommerce/woocommerce.php') ) {
 	require_once __DIR__ . '/woocommerce.php';
 }
 
+if(get_option('bndtls_rewrite_rules') || get_option('bndtls_rewrite_version') != BNDTLS_VERSION) {
+  wp_cache_flush();
+  add_action('init', 'flush_rewrite_rules');
+  // flush_rewrite_rules();
+	update_option('bndtls_rewrite_rules', false);
+  update_option('bndtls_rewrite_version', BNDTLS_VERSION);
+  add_action( 'admin_notices', function() {
+    ?>
+    <div class="notice notice-success is-dismissible">
+      <p><?php _e( 'Rewrite rules flushed', 'band-tools' ); ?></p>
+    </div>
+    <?php
+  } );
+
+}
+
 /** Enable plugin updates with license check **/
 require_once plugin_dir_path( WP_PLUGIN_DIR . "/" . BNDTLS_PLUGIN ) . 'lib/wp-package-updater/class-wp-package-updater.php';
 $bndtls_updater = new WP_Package_Updater(
