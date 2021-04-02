@@ -29,10 +29,12 @@ function bndtls_license_key($string = '') {
   return get_option('license_key_band-tools');
 }
 
-function build_relationship($post, $slugs, $args = array() ) {
+function bndtls_get_relations($post, $slugs, $args = array() ) {
   if(is_array($args)) {
     if($args['title']) $title=$args['title'];
     if($args['class']) $class=$args['class'];
+    if($args['before']) $before=$args['before'];
+    if($args['after']) $after=$args['after'];
     if($args['direction']) $direction=$args['direction'];
     else $direction='from';
     if($args['level']) $l=$args['level'];
@@ -72,8 +74,9 @@ function build_relationship($post, $slugs, $args = array() ) {
     $title = $relation->$direction['meta_box']['title'];
   }
 
-  if($title) $output.="<h$l>$title</h$l>";
   $output .= "<div class='$rel'>";
+  $output .= $before;
+  if($title) $output.="<h$l>$title</h$l>";
   // $output .= "[mb_relationships id='rel-$rel' direction='$direction' mode='ul']";
   $output .= "<ul class='childs $rel childs-$childs_slug list'>";
   $child_slug=preg_replace('/s$/', '', $childs_slug);
@@ -95,7 +98,7 @@ function build_relationship($post, $slugs, $args = array() ) {
     $output .= "<li class='" . join(' ', $li_classes) . "'>";
     $output .= $before . $child->post_title . $after;
     if(!empty($grand_child_slug)) {
-      $output .= build_relationship($child, $grand_child_slug, [ 'title' => '' ] );
+      $output .= bndtls_get_relations($child, $grand_child_slug, [ 'title' => '' ] );
     }
     //
     // $output .= "<p>Link: " . get_permalink($child) . "</p>";
@@ -103,6 +106,7 @@ function build_relationship($post, $slugs, $args = array() ) {
     $output .= '</li>';
   }
   $output .= '</ul>';
+  $output .= $after;
   $output .= "</div>";
   return $output;
 
@@ -132,19 +136,25 @@ function bndtls_count_posts( $type = 'post', $perm = '', $status='publish' ) {
 	return (isset(wp_count_posts($type)->$status)) ? wp_count_posts($type)->$status : 0;
 }
 
-function bndtls_genres_names($genre_ids, $separator = ', ') {
-  if(empty($genre_ids)) return;
-  $bndtls_id3_genres=bndtls_id3_genres();
+// function bndtls_genres_names($genre_ids, $separator = ', ') {
+//   if(empty($genre_ids)) return;
+//   $bndtls_id3_genres=bndtls_id3_genres();
+//
+//   if(!is_array($genre_ids)) $genre_ids = [ $genre_ids ];
+//   // $genres = array_fill_keys($genre_ids, $bndtls_id3_genres);
+//   $genres = array_intersect_key($bndtls_id3_genres, array_flip($genre_ids));
+//
+//   if($separator) return join($separator, $genres);
+//   return $genres;
+// }
 
-  if(!is_array($genre_ids)) $genre_ids = [ $genre_ids ];
-  // $genres = array_fill_keys($genre_ids, $bndtls_id3_genres);
-  $genres = array_intersect_key($bndtls_id3_genres, array_flip($genre_ids));
+function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
+  if(is_array($args)) {
+    $link = $args['link'];
+    $before = $args['before'];
+    $after = $args['after'];
+  }
 
-  if($separator) return join($separator, $genres);
-  return $genres;
-}
-
-function bndtls_get_meta($metas, $post_id = NULL, $link = false) {
   if(!$post_id) $post_id = get_post()->ID;
   if(!is_array($metas)) $metas = [ $meta ];
   foreach ( $metas as $meta ) {
@@ -162,7 +172,7 @@ function bndtls_get_meta($metas, $post_id = NULL, $link = false) {
       $values = rwmb_meta( $meta, array(), $post_id );
     }
     if(is_array($values)) $values = join(', ', $values);
-    if(!empty($values)) $output .= "<div class='$meta'>$values</div>";
+    if(!empty($values)) $output .= "<div class='$meta'>$before$values$after</div>";
   }
   return $output;
 }

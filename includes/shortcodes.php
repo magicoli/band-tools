@@ -38,30 +38,30 @@ function bndtls_shortcodes_init()
 		if($type == "band-tools" || $type == "bndtls" || $type=="auto" ) {
 			switch($post->post_type) {
 				case 'bands':
-				$output = build_relationship($post, [ 'albums', 'songs' ] );
+				$output = bndtls_get_relations($post, [ 'albums', 'songs' ] );
 				break;
 
 				case 'albums':
-				$output = build_relationship($post, [ 'bands' ], [ 'direction' => 'to', 'mode' => 'inline' ] )
-				 . build_relationship($post, [ 'songs' ], [ 'mode' => 'ol' ] );
+				$output = bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'to', 'mode' => 'inline' ] )
+				 . bndtls_get_relations($post, [ 'songs' ], [ 'mode' => 'ol' ] );
 				break;
 
 				case 'songs':
-				$output = build_relationship($post, [ 'bands' ], [ 'direction' => 'to', 'mode' => 'inline' ] )
-				. build_relationship($post, [ 'albums', 'songs' ], [ 'direction' => 'to', 'mode' => 'inline' ] );
+				$output = bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'to', 'mode' => 'inline' ] )
+				. bndtls_get_relations($post, [ 'albums', 'songs' ], [ 'direction' => 'to', 'mode' => 'inline' ] );
 				break;
 
 				default:
 				$output .= "<code>been there " . basename(__DIR__) . "/" . basename(__FILE__) . " " . __METHOD__ . "() $tag $type for $post_type</code>";
 			}
 		} else if($type) {
-			$output .= build_relationship($post, [ $tag ], $args );
+			$output .= bndtls_get_relations($post, [ $tag ], $args );
 		} else {
 			$output .= "no tag (should not happen, should it?)";
 		}
 		// $output = bndtls_block_relations_list($tag, $args );
 		// $output = "<pre>" . print_r($tag, true) . "</pre>";
-		// $output = build_relationship($post, [ $tag ] );
+		// $output = bndtls_get_relations($post, [ $tag ] );
 
     if(!empty($output))
     return "<div class='bndtls-relations bndtls-relations-$tag'>$output</div>";

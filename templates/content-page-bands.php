@@ -24,5 +24,5 @@ $content = get_the_content( $more_link_text, $strip_teaser );
 </div>
 <?php
 if(bndtls_get_option('frontpage_full_content')) :
-  echo build_relationship(get_post(), [ 'albums' ] );
+  echo bndtls_get_relations(get_post(), [ 'albums' ] );
 endif;
