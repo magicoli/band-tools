@@ -37,6 +37,17 @@ function bndtls_the_content ( $more_link_text = null, $strip_teaser = false ) {
   return $content;
 }
 
+function bndtls_genres_names($genre_ids, $separator = ', ') {
+  if(empty($genre_ids)) return;
+  $bndtls_id3_genres=bndtls_id3_genres();
+
+  if(!is_array($genre_ids)) $genre_ids = [ $genre_ids ];
+  // $genres = array_fill_keys($genre_ids, $bndtls_id3_genres);
+  $genres = array_intersect_key($bndtls_id3_genres, array_flip($genre_ids));
+
+  if($separator) return join($separator, $genres);
+  return $genres;
+}
 
 ### Interesting 1
 add_filter('the_title', 'bndtls_add_after_title', 10, 2);
@@ -46,15 +57,24 @@ function bndtls_add_after_title($title, $id) {
     if ( $post instanceof WP_Post ) {
       switch($post->post_type) {
         case 'bands':
-        // $title_after="band info";
+        $genres = bndtls_genres_names(rwmb_meta( 'genre', array(), $post_id ), ', ');
+        $title_after=$genres;
         break;
 
         case 'albums':
-        $title_after=sprintf(__('by %s', 'band-tools'), build_relationship($post, 'bands', [ 'direction' => 'to', 'title' => '' ]));
+        $genres = bndtls_genres_names(rwmb_meta( 'genre', array(), $post_id ), ', ');
+        if($genres) $genres = "<div class=genres>$genres</div>";
+        $by = build_relationship($post, 'bands', [ 'direction' => 'to', 'title' => '' ]);
+        if($by) $by="<div class='by'>" . sprintf(__('by %s', 'band-tools'), $by ) . "</div>";
+        $title_after=$by . $genres;
         break;
 
         case 'songs':
-        $title_after=sprintf(__('by %s', 'band-tools'), build_relationship($post, 'bands', [ 'direction' => 'to', 'title' => '' ]));
+        $genres = bndtls_genres_names(rwmb_meta( 'genre', array(), $post_id ), ', ');
+        if($genres) $genres = "<div class=genres>$genres</div>";
+        $by = build_relationship($post, 'bands', [ 'direction' => 'to', 'title' => '' ]);
+        if($by) $by="<div class='by'>" . sprintf(__('by %s', 'band-tools'), $by ) . "</div>";
+        $title_after=$by . $genres;
         break;
       }
     }
