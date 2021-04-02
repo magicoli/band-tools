@@ -30,6 +30,25 @@ if(is_admin()) {
 if(!bndtls_get_option('disable_templates'))
 require_once __DIR__ . '/templates/templates.php';
 
+/**
+ * The code that runs during plugin activation.
+ */
+register_activation_hook( __FILE__, 'activate_band_tools' );
+function activate_band_tools() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-activate.php';
+	Band_Tools_Activate::activate();
+}
+
+/**
+ * The code that runs during plugin deactivation.
+ */
+register_deactivation_hook( __FILE__, 'deactivate_band_tools' );
+function deactivate_band_tools() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-deactivate.php';
+	Band_Tools_Deactivate::deactivate();
+}
+
+
 if(bndtls_get_option('clean_titles')) {
 	function bndtls__prefix_category_title( $title ) {
 		if ( is_category() ) {
@@ -59,22 +78,3 @@ if(bndtls_get_option('redirect_single_post_archives')) {
 	}
 	add_action( 'template_redirect', 'bndtls_redirect_cpt_archive' );
 }
-
-/**
- * The code that runs during plugin activation.
- */
-function activate_band_tools() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-activate.php';
-	Band_Tools_Activate::activate();
-}
-
-/**
- * The code that runs during plugin deactivation.
- */
-function deactivate_band_tools() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-deactivate.php';
-	Band_Tools_Deactivate::deactivate();
-}
-
-register_activation_hook( __FILE__, 'activate_band_tools' );
-register_deactivation_hook( __FILE__, 'deactivate_band_tools' );
