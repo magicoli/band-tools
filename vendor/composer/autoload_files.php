@@ -6,8 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '2ce9fb4f015ef9d1272e86425d4d7181' => $vendorDir . '/nass600/get-id3/getid3/getid3.php',
-    '2a1d435e4c89b89127643829cbea18d9' => $vendorDir . '/nass600/get-id3/getid3/write.php',
     '50e7b3f86bffe096b1d2c3244a6855fd' => $vendorDir . '/meta-box/meta-box/meta-box.php',
     '514eda2c640e6307db8a8dbe4999d401' => $vendorDir . '/meta-box/meta-box-columns/meta-box-columns.php',
     'dbe7dd22dcd88d3d532ea2805bcfecc3' => $vendorDir . '/meta-box/meta-box-conditional-logic/meta-box-conditional-logic.php',
