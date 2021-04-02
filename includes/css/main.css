@@ -7,10 +7,12 @@ Version: 0.6.1-1
 .widget_bndtls_widget_all {
     line-height: 1.5em;
 }
-#sidebar .widget_bndtls_widget_all ul:not(.album) li {
+/*
+#sidebar .widget_bndtls_widget_all ul:not(.albums-songs) li {
     list-style: disc;
     margin-left: 1.2em;
 }
+*/
 .comment {
   font-size: 70%;
   font-style: italic;
@@ -34,10 +36,14 @@ li.child .childs-title {
 }
 ul.childs-songs.albums-songs,
 li.child-album ul.childs-songs {
-  list-style: decimal;
+  /* list-style: decimal; */
   padding-left: 1.8em;
   /* padding: 0; */
   /* margin: 0; */
+}
+ul.childs-songs.albums-songs,
+li.child-album ul.childs-songs {
+  list-style: decimal;
 }
 .childs.list > li.current-page {
   font-style: italic;
