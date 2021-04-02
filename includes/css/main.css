@@ -24,20 +24,28 @@ ul.list.childs-albums {
   flex-direction: row;
   flex-wrap: wrap;
   list-style: none;
+  margin: 0;
   padding: 0;
   gap: 20px;
 }
+.subtitle :is(ul, ul li, li) {
+  list-style: none;
+  margin-left: 0;
+}
 li.child-album {
+  list-style: none;
+  padding: 0;
   flex: 1 0 auto;
   flex-basis: 200px;
 }
 li.child .childs-title {
   /* min-height: 2.5em; */
 }
+#sidebar .albums-songs li.child-song,
 ul.childs-songs.albums-songs,
 li.child-album ul.childs-songs {
-  /* list-style: decimal; */
-  padding-left: 1.8em;
+  list-style: decimal;
+  margin-left: 2em;
   /* padding: 0; */
   /* margin: 0; */
 }
