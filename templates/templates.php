@@ -46,7 +46,7 @@ function bndtls_add_after_title($title, $id) {
       switch($post->post_type) {
         case 'bands':
         $title_after =
-        bndtls_get_meta([ 'tax_genres', 'members', [] ], $post_id)
+        bndtls_get_meta([ 'tax_genres', 'members' ], $post_id)
         . bndtls_get_meta('members', $post_id);;
         break;
 

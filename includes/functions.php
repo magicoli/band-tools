@@ -149,15 +149,18 @@ function bndtls_count_posts( $type = 'post', $perm = '', $status='publish' ) {
 // }
 
 function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
+  if(empty($metas)) return;
+
   if(is_array($args)) {
     $link = $args['link'];
     $before = $args['before'];
     $after = $args['after'];
   }
-
   if(!$post_id) $post_id = get_post()->ID;
   if(!is_array($metas)) $metas = [ $meta ];
   foreach ( $metas as $meta ) {
+    if(is_array($meta)) continue; // should not happen
+    $values = array();
     switch($meta) {
       case 'tax_genres':
       $terms = get_the_terms( $post_id, 'genre' );
