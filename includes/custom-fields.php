@@ -25,7 +25,7 @@ function bndtls_fields_bands( $meta_boxes ) {
         'clone' => true,
       ],
       [
-        'name'       => __( 'Genres (tax)', 'band-tools' ),
+        'name'       => __( 'Genres', 'band-tools' ),
         'id'         => $prefix . 'tax_genre',
         'type'       => 'taxonomy',
         'taxonomy'   => ['genre'],
@@ -54,7 +54,7 @@ function bndtls_fields_albums( $meta_boxes ) {
         'type' => 'date',
       ],
       [
-      'name'       => __( 'Genres (tax)', 'band-tools' ),
+      'name'       => __( 'Genres', 'band-tools' ),
       'id'         => $prefix . 'tax_genre',
       'type'       => 'taxonomy',
       'taxonomy'   => ['genre'],
@@ -78,7 +78,7 @@ function bndtls_fields_songs( $meta_boxes ) {
     'post_types' => ['songs'],
     'fields'     => [
       [
-        'name'       => __( 'Genres (tax)', 'band-tools' ),
+        'name'       => __( 'Genres', 'band-tools' ),
         'id'         => $prefix . 'tax_genre',
         'type'       => 'taxonomy',
         'taxonomy'   => ['genre'],
