@@ -36,3 +36,50 @@ function bndtls_the_content ( $more_link_text = null, $strip_teaser = false ) {
   }
   return $content;
 }
+
+
+### Interesting 1
+add_filter('the_title', 'bndtls_add_after_title', 10, 2);
+function bndtls_add_after_title($title, $id) {
+  if ( ! is_admin() && ! is_null( $id ) ) {
+    $post = get_post( $id );
+    if ( $post instanceof WP_Post ) {
+      switch($post->post_type) {
+        case 'bands':
+        // $title_after="band info";
+        break;
+
+        case 'albums':
+        $title_after=sprintf(__('by %s', 'band-tools'), build_relationship($post, 'bands', [ 'direction' => 'to', 'title' => '' ]));
+        break;
+
+        case 'songs':
+        $title_after=sprintf(__('by %s', 'band-tools'), build_relationship($post, 'bands', [ 'direction' => 'to', 'title' => '' ]));
+        break;
+      }
+    }
+    // if ( is_single() )
+    // if (is_singular(array('bands')))
+    // $title= $title . "</h1>-after<h1>";
+  }
+  if(!empty($title_after)) $title_after="</h1><div class='subtitle'>$title_after</div>";
+  if(!empty($title_before)) $title_before="</h1><div class='surtitle'>$title_before</div>";
+  return $title_before . $title . $title_after;
+}
+
+// this filter fires just before the nav menu item creation process
+add_filter( 'pre_wp_nav_menu', 'bndtls_remove_title_filter_nav_menu', 10, 2 );
+function bndtls_remove_title_filter_nav_menu( $nav_menu, $args ) {
+    // we are working with menu, so remove the title filter
+    remove_filter( 'the_title', 'bndtls_add_after_title', 10, 2 );
+    return $nav_menu;
+}
+
+// this filter fires after nav menu item creation is done
+add_filter( 'wp_nav_menu_items', 'bndtls_add_title_filter_non_menu', 10, 2 );
+function bndtls_add_title_filter_non_menu( $items, $args ) {
+    // we are done working with menu, so add the title filter back
+    add_filter( 'the_title', 'bndtls_add_after_title', 10, 2 );
+    return $items;
+}
+### /Interesting 1
