@@ -76,6 +76,8 @@ to show
 
 ## Changelog
 
+### 0.7.11
+
 ### 0.7.10
 * added prefix and suffix for bndtls_get_meta and bndtls_get_relations
 * renamed build_relationships to bndtls_get_relations
