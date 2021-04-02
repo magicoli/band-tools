@@ -60,19 +60,21 @@ if(bndtls_get_option('redirect_single_post_archives')) {
 	add_action( 'template_redirect', 'bndtls_redirect_cpt_archive' );
 }
 
-// function display_post_type_nav_box(){
-//
-//     $hidden_nav_boxes = get_user_option( 'metaboxhidden_nav-menus' );
-//
-//     $post_type = 'foobar'; //Can also be a taxonomy slug
-//     $post_type_nav_box = 'add-'.$post_type;
-//
-//     if(is_array($hidden_nav_boxes) && in_array($post_type_nav_box, $hidden_nav_boxes)):
-//         foreach ($hidden_nav_boxes as $i => $nav_box):
-//             if($nav_box == $post_type_nav_box)
-//                 unset($hidden_nav_boxes[$i]);
-//         endforeach;
-//         update_user_option(get_current_user_id(), 'metaboxhidden_nav-menus', $hidden_nav_boxes);
-//     endif;
-// }
-// add_action('admin_init', 'display_post_type_nav_box');
+/**
+ * The code that runs during plugin activation.
+ */
+function activate_band_tools() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-activate.php';
+	Band_Tools_Activate::activate();
+}
+
+/**
+ * The code that runs during plugin deactivation.
+ */
+function deactivate_band_tools() {
+	require_once plugin_dir_path( __FILE__ ) . 'includes/class-deactivate.php';
+	Band_Tools_Deactivate::deactivate();
+}
+
+register_activation_hook( __FILE__, 'activate_band_tools' );
+register_deactivation_hook( __FILE__, 'deactivate_band_tools' );
