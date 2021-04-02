@@ -76,6 +76,9 @@ to show
 
 == Changelog ==
 
+= 0.7.12 =
+* fix numbered list stype
+
 = 0.7.11 =
 
 = 0.7.10 =
