@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Band Tools\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/band-tools\n"
+"POT-Creation-Date: 2021-04-01T22:22:04-04:00\n"
+"PO-Revision-Date: \n"
 "Last-Translator: Olivier van Helden <olivier@van-helden.net>\n"
 "Language-Team: Magiiic\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-01T21:01:30-04:00\n"
-"PO-Revision-Date: \n"
-"Language: fr\n"
 "X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
@@ -58,8 +58,7 @@ msgstr "Clé de licence"
 msgid "Shortcodes"
 msgstr "Codes courts"
 
-#: admin/dashboard.php:69
-#: admin/dashboard.php:75
+#: admin/dashboard.php:69 admin/dashboard.php:75
 msgid "or"
 msgstr "ou"
 
@@ -71,22 +70,15 @@ msgstr "Paramètres"
 msgid "Naming"
 msgstr "Nommage"
 
-#: admin/settings.php:43
-#: admin/settings.php:52
-#: admin/settings.php:59
-#: includes/init.php:82
-#: includes/post-types.php:46
+#: admin/settings.php:43 admin/settings.php:52 admin/settings.php:59
+#: includes/init.php:82 includes/post-types.php:46
 msgid "Band"
 msgid_plural "Bands"
 msgstr[0] "Groupe"
 msgstr[1] "Groupe"
 
-#: admin/settings.php:51
-#: admin/settings.php:53
-#: admin/settings.php:97
-#: admin/settings.php:99
-#: admin/settings.php:139
-#: admin/settings.php:141
+#: admin/settings.php:51 admin/settings.php:53 admin/settings.php:97
+#: admin/settings.php:99 admin/settings.php:139 admin/settings.php:141
 msgid "Singular"
 msgstr "Singulier"
 
@@ -110,18 +102,12 @@ msgstr "Performeur"
 msgid "Singer"
 msgstr "Chanteur"
 
-#: admin/settings.php:70
-#: admin/settings.php:72
-#: admin/settings.php:114
-#: admin/settings.php:116
-#: admin/settings.php:155
-#: admin/settings.php:157
+#: admin/settings.php:70 admin/settings.php:72 admin/settings.php:114
+#: admin/settings.php:116 admin/settings.php:155 admin/settings.php:157
 msgid "Plural"
 msgstr "Pluriel"
 
-#: admin/settings.php:71
-#: admin/settings.php:78
-#: admin/settings.php:252
+#: admin/settings.php:71 admin/settings.php:78 admin/settings.php:252
 #: includes/post-types.php:76
 msgid "Bands"
 msgstr "Groupes"
@@ -146,11 +132,8 @@ msgstr "Performeurs"
 msgid "Singers"
 msgstr "Chanteurs"
 
-#: admin/settings.php:89
-#: admin/settings.php:98
-#: admin/settings.php:104
-#: includes/init.php:83
-#: includes/post-types.php:108
+#: admin/settings.php:89 admin/settings.php:98 admin/settings.php:104
+#: includes/init.php:83 includes/post-types.php:108
 msgid "Album"
 msgid_plural "Albums"
 msgstr[0] "Album"
@@ -168,9 +151,7 @@ msgstr "Disque"
 msgid "Set"
 msgstr "Set"
 
-#: admin/settings.php:115
-#: admin/settings.php:121
-#: admin/settings.php:253
+#: admin/settings.php:115 admin/settings.php:121 admin/settings.php:253
 #: includes/post-types.php:138
 msgid "Albums"
 msgstr "Albums"
@@ -187,11 +168,8 @@ msgstr "Disques"
 msgid "Sets"
 msgstr "Sets"
 
-#: admin/settings.php:131
-#: admin/settings.php:140
-#: admin/settings.php:146
-#: includes/init.php:84
-#: includes/post-types.php:171
+#: admin/settings.php:131 admin/settings.php:140 admin/settings.php:146
+#: includes/init.php:84 includes/post-types.php:171
 msgid "Song"
 msgid_plural "Songs"
 msgstr[0] "Chanson"
@@ -205,9 +183,7 @@ msgstr "Mix"
 msgid "Piece"
 msgstr "Morceau"
 
-#: admin/settings.php:156
-#: admin/settings.php:162
-#: admin/settings.php:254
+#: admin/settings.php:156 admin/settings.php:162 admin/settings.php:254
 #: includes/post-types.php:201
 msgid "Songs"
 msgstr "Chansons"
@@ -245,8 +221,11 @@ msgid "Clean titles"
 msgstr "Nettoyer les titres"
 
 #: admin/settings.php:208
-msgid "Remove prefixes from titles for Categories, Taxonomies, Archives, Authors"
-msgstr "Supprimer les préfixes des titres pour les catégories, taxonomies, archives, auteurs"
+msgid ""
+"Remove prefixes from titles for Categories, Taxonomies, Archives, Authors"
+msgstr ""
+"Supprimer les préfixes des titres pour les catégories, taxonomies, archives, "
+"auteurs"
 
 #: admin/settings.php:212
 msgid "Widget Area"
@@ -284,7 +263,8 @@ msgstr "Montrer le contenu complet"
 msgid "Show full content when item is selected as home page"
 msgstr "Montrer le contenu complet quand l'élément est affiché comme page d'accueil"
 
-#: includes/custom-fields.php:12
+#: includes/custom-fields.php:12 includes/custom-fields.php:52
+#: includes/custom-fields.php:86
 msgid "Info"
 msgstr "Informations"
 
@@ -296,17 +276,21 @@ msgstr "Création"
 msgid "Members"
 msgstr "Membres"
 
-#: includes/custom-fields.php:28
+#: includes/custom-fields.php:28 includes/custom-fields.php:62
+#: includes/custom-fields.php:91
 msgid "Genre"
 msgstr "Genre"
+
+#: includes/custom-fields.php:57
+msgid "Release"
+msgstr "Date de sortie"
 
 #. translators: %s is replaced by the name of the plugin, untranslated
 #: includes/init.php:43
 msgid "Get a license key on %s website"
 msgstr "Obtenir une clé de licence sur le site %s"
 
-#: includes/init.php:85
-#: includes/init.php:86
+#: includes/init.php:85 includes/init.php:86
 msgid "Track"
 msgid_plural "Tracks"
 msgstr[0] "Piste"
@@ -316,8 +300,7 @@ msgstr[1] "Pistes"
 msgid "Tracks"
 msgstr "Pistes"
 
-#: includes/post-types.php:47
-#: includes/post-types.php:109
+#: includes/post-types.php:47 includes/post-types.php:109
 #: includes/post-types.php:172
 msgid "Add New"
 msgstr "Ajouter"
@@ -374,26 +357,22 @@ msgstr "Insérer dans le groupe"
 msgid "Uploaded to this band"
 msgstr "Téléverser"
 
-#: includes/post-types.php:61
-#: includes/post-types.php:123
+#: includes/post-types.php:61 includes/post-types.php:123
 #: includes/post-types.php:186
 msgid "Featured image"
 msgstr "Image mise en avant"
 
-#: includes/post-types.php:62
-#: includes/post-types.php:124
+#: includes/post-types.php:62 includes/post-types.php:124
 #: includes/post-types.php:187
 msgid "Set featured image"
 msgstr "Définir l'image mise en avant"
 
-#: includes/post-types.php:63
-#: includes/post-types.php:125
+#: includes/post-types.php:63 includes/post-types.php:125
 #: includes/post-types.php:188
 msgid "Remove featured image"
 msgstr "Supprimer l'image mise en avant"
 
-#: includes/post-types.php:64
-#: includes/post-types.php:126
+#: includes/post-types.php:64 includes/post-types.php:126
 #: includes/post-types.php:189
 msgid "Use as featured image"
 msgstr "Définir l'image mise en avant"
@@ -430,8 +409,7 @@ msgstr "Groupe programmé"
 msgid "Band updated"
 msgstr "Groupe mis à jour"
 
-#: includes/post-types.php:73
-#: includes/post-types.php:135
+#: includes/post-types.php:73 includes/post-types.php:135
 #: includes/post-types.php:198
 msgid "band-tools"
 msgstr "band-tools"
@@ -613,17 +591,12 @@ msgstr "Ajoutez ici des widgets qui apparaîtront sur les pages %s"
 msgid "all relations"
 msgstr "tous les liens"
 
-#: includes/widgets.php:26
-#: includes/widgets.php:178
+#: includes/widgets.php:26 includes/widgets.php:178
 msgid "Display related songs"
 msgstr "Affiche les chansons liées"
 
-#: includes/widgets.php:59
-#: includes/widgets.php:108
-#: includes/widgets.php:157
-#: includes/widgets.php:206
-#: includes/widgets.php:255
-#: includes/widgets.php:306
+#: includes/widgets.php:59 includes/widgets.php:108 includes/widgets.php:157
+#: includes/widgets.php:206 includes/widgets.php:255 includes/widgets.php:306
 msgid "Title:"
 msgstr "Titre :"
 
@@ -643,8 +616,7 @@ msgstr "Produits WooCommerce"
 msgid "Display related WooCommerce products"
 msgstr "Affiche les produits WooCommerce liés"
 
-#: includes/widgets.php:250
-#: includes/widgets.php:301
+#: includes/widgets.php:250 includes/widgets.php:301
 msgid "Products"
 msgstr "Produits"
 
@@ -656,8 +628,7 @@ msgstr "Vidéos"
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
 
-#: templates/templates.php:53
-#: templates/templates.php:57
+#: templates/templates.php:53 templates/templates.php:59
 msgid "by %s"
 msgstr "par %s"
 
@@ -697,9 +668,6 @@ msgstr "par %s"
 
 #~ msgid "Album band"
 #~ msgstr "Groupe de l'album"
-
-#~ msgid "Release date"
-#~ msgstr "Date de sortie"
 
 #~ msgid "Band info"
 #~ msgstr "Informations du groupe"
