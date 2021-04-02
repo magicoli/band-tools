@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '28197d65179fd01625598db4e8c0a2a09e3585ed',
+    'reference' => '33e3f7fca61df457541ebe0d97c851c9effa49c8',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '28197d65179fd01625598db4e8c0a2a09e3585ed',
+      'reference' => '33e3f7fca61df457541ebe0d97c851c9effa49c8',
     ),
     'composer/installers' => 
     array (
@@ -98,15 +98,6 @@ private static $installed = array (
       ),
       'reference' => NULL,
     ),
-    'nass600/get-id3' => 
-    array (
-      'pretty_version' => '1.0.0',
-      'version' => '1.0.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'd3e82b04acad494e9cc3e1b73ec67748690d5474',
-    ),
     'roundcube/plugin-installer' => 
     array (
       'replaced' => 
@@ -120,15 +111,6 @@ private static $installed = array (
       array (
         0 => '*',
       ),
-    ),
-    'wapmorgan/mp3info' => 
-    array (
-      'pretty_version' => '0.0.5',
-      'version' => '0.0.5.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '0dc3d62d155d6b7c25bc0568fd8a93924449020c',
     ),
     'wpackagist-plugin/mb-custom-post-type' => 
     array (

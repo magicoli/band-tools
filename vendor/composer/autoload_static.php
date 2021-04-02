@@ -7,8 +7,6 @@ namespace Composer\Autoload;
 class ComposerStaticInit434d04b486e83c37897daad953df1be9
 {
     public static $files = array (
-        '2ce9fb4f015ef9d1272e86425d4d7181' => __DIR__ . '/..' . '/nass600/get-id3/getid3/getid3.php',
-        '2a1d435e4c89b89127643829cbea18d9' => __DIR__ . '/..' . '/nass600/get-id3/getid3/write.php',
         '50e7b3f86bffe096b1d2c3244a6855fd' => __DIR__ . '/..' . '/meta-box/meta-box/meta-box.php',
         '514eda2c640e6307db8a8dbe4999d401' => __DIR__ . '/..' . '/meta-box/meta-box-columns/meta-box-columns.php',
         'dbe7dd22dcd88d3d532ea2805bcfecc3' => __DIR__ . '/..' . '/meta-box/meta-box-conditional-logic/meta-box-conditional-logic.php',
@@ -20,10 +18,6 @@ class ComposerStaticInit434d04b486e83c37897daad953df1be9
     );
 
     public static $prefixLengthsPsr4 = array (
-        'w' => 
-        array (
-            'wapmorgan\\Mp3Info\\' => 18,
-        ),
         'C' => 
         array (
             'Composer\\Installers\\' => 20,
@@ -31,10 +25,6 @@ class ComposerStaticInit434d04b486e83c37897daad953df1be9
     );
 
     public static $prefixDirsPsr4 = array (
-        'wapmorgan\\Mp3Info\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/wapmorgan/mp3info/src',
-        ),
         'Composer\\Installers\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
