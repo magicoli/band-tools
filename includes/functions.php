@@ -190,3 +190,16 @@ function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
   }
   return $output;
 }
+
+function bndtls_admin_notice($notice, $class='info', $dismissible=true ) {
+  if(empty($notice)) return;
+  // $class="success";
+  if($dismissible) $is_dismissible = 'is-dismissible';
+  add_action( 'admin_notices', function() use ($notice, $class, $is_dismissible) {
+    ?>
+    <div class="notice notice-<?=$class?> <?=$is_dismissible?>">
+        <p><strong><?=BNDTLS_PLUGIN_NAME?></strong>: <?php _e( $notice, 'band-tools' ); ?></p>
+    </div>
+    <?php
+  } );
+}
