@@ -53,7 +53,7 @@ function bndtls_add_after_title($title, $id) {
         case 'albums':
         $title_after =
         bndtls_get_relations($post, 'bands', [ 'direction' => 'to', 'title' => '', 'before' => __('by', 'band-tools') ] )
-        . bndtls_get_meta([ 'release' ], $post_id)
+        . bndtls_get_meta([ 'release' ], $post_id )
         . bndtls_get_meta([ 'tax_genres' ], $post_id);
         break;
 

@@ -33,8 +33,8 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   if(is_array($args)) {
     if($args['title']) $title=$args['title'];
     if($args['class']) $class=$args['class'];
-    if($args['before']) $before=$args['before'];
-    if($args['after']) $after=$args['after'];
+    if($args['before']) $block_before=$args['before'];
+    if($args['after']) $block_after=$args['after'];
     if($args['direction']) $direction=$args['direction'];
     else $direction='from';
     if($args['level']) $l=$args['level'];
@@ -75,7 +75,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   }
 
   $output .= "<div class='$rel'>";
-  $output .= $before;
+  $output .= $block_before;
   if($title) $output.="<h$l>$title</h$l>";
   // $output .= "[mb_relationships id='rel-$rel' direction='$direction' mode='ul']";
   $output .= "<ul class='childs $rel childs-$childs_slug list'>";
@@ -106,7 +106,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
     $output .= '</li>';
   }
   $output .= '</ul>';
-  $output .= $after;
+  $output .= $block_after;
   $output .= "</div>";
   return $output;
 
@@ -148,6 +148,12 @@ function bndtls_count_posts( $type = 'post', $perm = '', $status='publish' ) {
 //   return $genres;
 // }
 
+function bndtls_date_format($format, $date_string) {
+  $dateTime = DateTime::createFromFormat("Y-m-d", $date_string );
+  if($dateTime) return $dateTime->format($format);
+  return false;
+}
+
 function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
   if(empty($metas)) return;
 
@@ -171,11 +177,16 @@ function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
       }
       break;
 
+      case 'release':
+      // $date = DateTime::createFromFormat("Y-m-d", );
+      $values = bndtls_date_format('Y', rwmb_meta( $meta, array(), $post_id ) );
+      break;
+
       default:
       $values = rwmb_meta( $meta, array(), $post_id );
     }
     if(is_array($values)) $values = join(', ', $values);
-    if(!empty($values)) $output .= "<div class='$meta'>$before$values$after</div>";
+    if(!empty($values)) $output .= "<div class='$meta'>$before $values $after</div>";
   }
   return $output;
 }
