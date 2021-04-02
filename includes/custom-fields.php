@@ -6,8 +6,6 @@ if ( ! is_plugin_active('mb-core/mb-core.php' ) || ! bndtls_get_option( 'develop
 
 add_filter( 'rwmb_meta_boxes', 'bndtls_fields_bands' );
 function bndtls_fields_bands( $meta_boxes ) {
-  // $prefix = 'band';
-
   $meta_boxes[] = [
     'title'      => __( 'Info', 'band-tools' ),
     'id'         => 'fields-band-info',
@@ -15,18 +13,18 @@ function bndtls_fields_bands( $meta_boxes ) {
     'fields'     => [
       [
         'name' => __( 'Creation', 'band-tools' ),
-        'id'   => $prefix . 'creation',
+        'id'   => 'creation',
         'type' => 'date',
       ],
       [
         'name'  => __( 'Members', 'band-tools' ),
-        'id'    => $prefix . 'members',
+        'id'    => 'members',
         'type'  => 'text',
         'clone' => true,
       ],
       [
         'name'       => __( 'Genres', 'band-tools' ),
-        'id'         => $prefix . 'tax_genre',
+        'id'         => 'tax_genre',
         'type'       => 'taxonomy',
         'taxonomy'   => ['genre'],
         'field_type' => 'select_advanced',
@@ -41,8 +39,6 @@ function bndtls_fields_bands( $meta_boxes ) {
 
 add_filter( 'rwmb_meta_boxes', 'bndtls_fields_albums' );
 function bndtls_fields_albums( $meta_boxes ) {
-  // $prefix = 'band';
-
   $meta_boxes[] = [
     'title'      => __( 'Info', 'band-tools' ),
     'id'         => 'fields-album-info',
@@ -50,12 +46,12 @@ function bndtls_fields_albums( $meta_boxes ) {
     'fields'     => [
       [
         'name' => __( 'Release', 'band-tools' ),
-        'id'   => $prefix . 'release',
+        'id'   => 'release',
         'type' => 'date',
       ],
       [
       'name'       => __( 'Genres', 'band-tools' ),
-      'id'         => $prefix . 'tax_genre',
+      'id'         => 'tax_genre',
       'type'       => 'taxonomy',
       'taxonomy'   => ['genre'],
       'field_type' => 'select_advanced',
@@ -70,8 +66,6 @@ function bndtls_fields_albums( $meta_boxes ) {
 
 add_filter( 'rwmb_meta_boxes', 'bndtls_fields_songs' );
 function bndtls_fields_songs( $meta_boxes ) {
-  // $prefix = 'band';
-
   $meta_boxes[] = [
     'title'      => __( 'Info', 'band-tools' ),
     'id'         => 'fields-song-info',
@@ -79,7 +73,7 @@ function bndtls_fields_songs( $meta_boxes ) {
     'fields'     => [
       [
         'name'       => __( 'Genres', 'band-tools' ),
-        'id'         => $prefix . 'tax_genre',
+        'id'         => 'tax_genre',
         'type'       => 'taxonomy',
         'taxonomy'   => ['genre'],
         'field_type' => 'select_advanced',

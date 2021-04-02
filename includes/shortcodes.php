@@ -27,6 +27,7 @@ function bndtls_shortcodes_init()
 
 	function bndtls_shortcode_list($atts, $content = null, $tag = '' )
 	{
+		$output = '';
 		$type=preg_replace('/^bt-/', '', $tag);
 		$post=get_post();
 		// $post_type=$post->post_type;

@@ -30,17 +30,19 @@ function bndtls_license_key($string = '') {
 }
 
 function bndtls_get_relations($post, $slugs, $args = array() ) {
+  $output='';
+  $block_before='';
+  $block_after='';
   if(is_array($args)) {
-    if($args['title']) $title=$args['title'];
-    if($args['class']) $class=$args['class'];
-    if($args['before']) $block_before=$args['before'];
-    if($args['after']) $block_after=$args['after'];
-    if($args['direction']) $direction=$args['direction'];
+    if(isset($args['title'])) $title=$args['title'];
+    if(isset($args['class'])) $class=$args['class'];
+    if(isset($args['before'])) $block_before=$args['before'];
+    if(isset($args['after'])) $block_after=$args['after'];
+    if(isset($args['direction'])) $direction=$args['direction'];
     else $direction='from';
-    if($args['level']) $l=$args['level'];
+    if(isset($args['level'])) $l=$args['level'];
     else $l='4';
   }
-
   if(!is_object($post)) return "not a post";
   if(is_array($slugs)) {
     $childs_slug = array_shift($slugs);
@@ -53,12 +55,12 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   }
   $parent_slug = $post->post_type;
   if($direction == 'to') {
-    $parent=$args['parent'];
+    if(isset($args['parent'])) $parent=$args['parent'];
     $rel="$childs_slug-$parent_slug";
   } else {
     $rel="$parent_slug-$childs_slug";
   }
-  if($parent) $rel_slug="rel-$childs_slug-$parent_slug";
+  if(isset($parent)) $rel_slug="rel-$childs_slug-$parent_slug";
   else $rel_slug="rel-$rel";
   $childs = MB_Relationships_API::get_connected( [
       'id'   => "rel-$rel",
@@ -156,11 +158,12 @@ function bndtls_date_format($format, $date_string) {
 
 function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
   if(empty($metas)) return;
+  $output = '';
 
   if(is_array($args)) {
-    $link = $args['link'];
-    $before = $args['before'];
-    $after = $args['after'];
+    $link = (isset($args['link'])) ? $args['link'] : false;
+    $before = (isset($args['before'])) ? $args['before'] : false;
+    $after = (isset($args['before'])) ? $args['after'] : false;
   }
   if(!$post_id) $post_id = get_post()->ID;
   if(!is_array($metas)) $metas = [ $meta ];
