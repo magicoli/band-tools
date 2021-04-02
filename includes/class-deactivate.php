@@ -30,7 +30,7 @@ class Band_Tools_Deactivate {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
-		wp_cache_flush();
+		update_option('bndtls_rewrite_rules', true);
 	}
 
 }
