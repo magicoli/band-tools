@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-02T16:44:35-04:00\n"
+"POT-Creation-Date: 2021-04-02T19:57:24-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -42,24 +42,25 @@ msgstr "Afficher/Masquer Clé de licence"
 msgid "Dashboard"
 msgstr "Tableau de bord"
 
-#: admin/dashboard.php:31
+#. translators: '%s' is replaced by the plugin name, it should not be localized
+#: admin/dashboard.php:32
 msgid "%s Dashboard"
 msgstr "Tableau de bord %s"
 
-#: admin/dashboard.php:48
+#: admin/dashboard.php:49
 msgid "Plugin info"
 msgstr "Informations de l'extension"
 
-#: admin/dashboard.php:53
+#: admin/dashboard.php:54
 msgid "License key"
 msgstr "Clé de licence"
 
-#: admin/dashboard.php:64
+#: admin/dashboard.php:65
 msgid "Shortcodes"
 msgstr "Codes courts"
 
-#: admin/dashboard.php:69
-#: admin/dashboard.php:75
+#: admin/dashboard.php:70
+#: admin/dashboard.php:76
 msgid "or"
 msgstr "ou"
 
