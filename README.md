@@ -76,6 +76,11 @@ to show
 
 ## Changelog
 
+### 0.7.13
+* added styling to infobox prefixes and suffixes
+* fix show subtitle only under main page title
+* also rewrite rules on deactivate
+
 ### 0.7.12
 * fix numbered list stype
 
