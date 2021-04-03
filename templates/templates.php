@@ -40,7 +40,7 @@ function bndtls_the_content ( $more_link_text = null, $strip_teaser = false ) {
 ### Interesting 1
 add_filter('the_title', 'bndtls_add_after_title', 10, 2);
 function bndtls_add_after_title($title, $post_id) {
-  if ( ! is_admin() && ! is_null( $post_id ) ) {
+  if ( is_single() && is_main_query() && ! is_admin() && ! is_null( $post_id ) ) {
     $post = get_post( $post_id );
     if ( $post instanceof WP_Post ) {
       switch($post->post_type) {
