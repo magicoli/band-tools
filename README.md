@@ -77,14 +77,12 @@ to show
 ## Changelog
 
 ### 0.7.13
-* added styling to infobox prefixes and suffixes
+* fix permalinks and css refresh on activation, update and deactivation
 * fix show subtitle only under main page title
-* also rewrite rules on deactivate
+* added styling to infobox prefixes and suffixes
 
 ### 0.7.12
 * fix numbered list stype
-
-### 0.7.11
 
 ### 0.7.10
 * added prefix and suffix for bndtls_get_meta and bndtls_get_relations
