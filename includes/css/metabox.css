@@ -1,13 +1,16 @@
-#poststuff .postbox-container > * {
+ /* * div:has('#fields-song-info', '#rel-bands-songs_relationships_from', '#rel-albums-songs_relationships_from') */
+:is(.toplevel_page_band-tools, .band-tools_page_band-tools-settings, .post-type-albums, .post-type-songs, .post-type-bands) #poststuff .postbox-container > * {
   display: flex;
   column-gap: 20px;
   flex-direction: row;
   flex-wrap: wrap;
 }
-.block-editor-page #poststuff .postbox-container > * {
+:is(.post-type-albums, .post-type-songs, .post-type-bands) #poststuff .postbox-container > * {
   gap: 10px;
 }
-#poststuff .postbox-container > * > * {
+/* :is(.post-type-albums, .post-type-songs, .post-type-bands) #poststuff .postbox-container > * { */
+:is(.toplevel_page_band-tools, .band-tools_page_band-tools-settings, .post-type-albums, .post-type-songs, .post-type-bands) #poststuff .postbox-container > * > * {
   flex: 1 1 auto;
-  /* flex-basis: 30%; */
+  flex-basis: 30%;
+  /* min-width: 40ch; */
 }

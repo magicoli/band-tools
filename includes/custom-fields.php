@@ -10,6 +10,7 @@ function bndtls_fields_bands( $meta_boxes ) {
     'title'      => __( 'Info', 'band-tools' ),
     'id'         => 'fields-band-info',
     'post_types' => ['bands'],
+    'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-bands',
     'fields'     => [
       [
         'name' => __( 'Creation', 'band-tools' ),
@@ -43,6 +44,7 @@ function bndtls_fields_albums( $meta_boxes ) {
     'title'      => __( 'Info', 'band-tools' ),
     'id'         => 'fields-album-info',
     'post_types' => ['albums'],
+    'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-albums',
     'fields'     => [
       [
         'name' => __( 'Release', 'band-tools' ),
@@ -70,6 +72,7 @@ function bndtls_fields_songs( $meta_boxes ) {
     'title'      => __( 'Info', 'band-tools' ),
     'id'         => 'fields-song-info',
     'post_types' => ['songs'],
+    'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-songs',
     'fields'     => [
       [
         'name'       => __( 'Genres', 'band-tools' ),

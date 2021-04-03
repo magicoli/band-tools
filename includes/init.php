@@ -71,18 +71,20 @@ $bndtls_updater = new WP_Package_Updater(
 	true
 );
 
+if ( ! defined( 'BNDTLS_DEBUG_CSS' ) ) define('BNDTLS_DEBUG_CSS', '.' . time() );
+
 add_action( 'wp_enqueue_scripts', function() {
   // dev (force no cache)
   // wp_enqueue_style( 'band-tools-main', plugin_dir_url( __FILE__ ) . 'css/main.css', array(), BNDTLS_VERSION . '.' . time() );
-  wp_enqueue_style( BNDTLS_SLUG . '-main', plugin_dir_url( __FILE__ ) . 'css/main.css', array(), BNDTLS_VERSION );
+  wp_enqueue_style( BNDTLS_SLUG . '-main', plugin_dir_url( __FILE__ ) . 'css/main.css', array(), BNDTLS_VERSION . BNDTLS_DEBUG_CSS );
 } );
 
 add_action( 'rwmb_enqueue_scripts', function() {
-    wp_enqueue_style( BNDTLS_SLUG . '-metabox', plugin_dir_url( __FILE__ ) . 'css/metabox.css', array(), BNDTLS_VERSION );
+    wp_enqueue_style( BNDTLS_SLUG . '-metabox', plugin_dir_url( __FILE__ ) . 'css/metabox.css', array(), BNDTLS_VERSION .BNDTLS_DEBUG_CSS );
 } );
 
 add_action( 'enqueue_block_editor_assets', function() {
-  wp_enqueue_style( BNDTLS_SLUG . '-metabox', plugin_dir_url( __FILE__ ) . 'css/metabox.css', array(), BNDTLS_VERSION );
+  wp_enqueue_style( BNDTLS_SLUG . '-metabox', plugin_dir_url( __FILE__ ) . 'css/metabox.css', array(), BNDTLS_VERSION . BNDTLS_DEBUG_CSS );
 } );
 
 // dirty fix to include singular/plural forms in .pot
