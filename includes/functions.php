@@ -1,15 +1,19 @@
 <?php if ( ! defined( 'WPINC' ) ) die;
 
-function bndtls_get_option( $option, $default = false, $sub_option='' ) {
-  $options=get_option('bndtls-settings');
-  if (!$options) return $default;
+function bndtls_get_option( $param, $default = false, $sub_option='' ) {
+  $explode=explode(':',$param);
+  $option=$explode[0];
+  isset($explode[1]) && $sub_option = $explode['1'];
+  $settings=get_option('bndtls-settings');
+  if (!$settings) return $default;
   if ( $sub_option ) {
-    if(is_array($options[$option]) && $options[$option])
-    return $options[$option][$sub_option];
-    else;
+    if(isset($settings[$option]) && is_array($settings[$option]) && in_array($sub_option, $settings[$option]))
+    return true;
+    if(isset($settings[$option]) && is_array($settings[$option]) && $settings[$option])
+    return $settings[$option][$sub_option];
     return $default;
   }
-  else if ( $options[$option] ) return $options[$option];
+  else if ( $settings[$option] ) return $settings[$option];
   else return $default;
 }
 
