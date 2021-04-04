@@ -5,12 +5,15 @@ function bndtls_get_option( $param, $default = false, $sub_option='' ) {
   $option=$explode[0];
   isset($explode[1]) && $sub_option = $explode['1'];
   $settings=get_option('bndtls-settings');
-  if (!$settings) return $default;
+  if ( ! $settings ) return $default;
   if ( $sub_option ) {
-    if(isset($settings[$option]) && is_array($settings[$option]) && in_array($sub_option, $settings[$option]))
-    return true;
-    if(isset($settings[$option]) && is_array($settings[$option]) && $settings[$option])
+    if(isset($settings[$option])) {
+      if (is_array($settings[$option]) && in_array($sub_option, $settings[$option]))
+      return true;
+    }
+    if(is_array($settings[$option]) &! empty ($settings[$option]))
     return $settings[$option][$sub_option];
+
     return $default;
   }
   else if ( $settings[$option] ) return $settings[$option];
