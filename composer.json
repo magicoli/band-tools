@@ -13,6 +13,7 @@
   },
   "require": {
     "wpackagist-plugin/meta-box": "dev-trunk",
+    "meta-box/meta-box-builder": "dev-master",
     "meta-box/meta-box-columns": "dev-master",
     "meta-box/meta-box-conditional-logic": "dev-master",
     "meta-box/meta-box-group": "dev-master",
@@ -24,6 +25,7 @@
   "extra": {
     "installer-paths": {
       "vendor/meta-box/meta-box": "wpackagist-plugin/meta-box",
+      "vendor/meta-box/meta-box-builder": "meta-box/meta-box-builder",
       "vendor/meta-box/meta-box-columns": "meta-box/meta-box-columns",
       "vendor/meta-box/meta-box-conditional-logic": "meta-box/meta-box-conditional-logic",
       "vendor/meta-box/meta-box-group": "meta-box/meta-box-group",

@@ -25,32 +25,32 @@ function bndtls_settings_layout( $settings_pages ) {
 add_filter( 'rwmb_meta_boxes', 'bndtls_settings_layout_title' );
 
 function bndtls_settings_layout_title( $meta_boxes ) {
-    $prefix = 'layout_';
+	$prefix = 'layout_';
 
-    $meta_boxes[] = [
-        'title'          => __( 'Page Title', 'band-tools' ),
-        'id'             => 'band_tools_layout_page_title',
-        'settings_pages' => ['band_tools_layout'],
-        'class'          => 'band-tools-layout band-tools-layout-title',
-        'fields'         => [
-            [
-                'name'              => __( 'Page title', 'band-tools' ),
-                'id'                => $prefix . 'page_title',
-                'type'              => 'checkbox_list',
-                'label_description' => __( 'Add details under the title in page header', 'band-tools' ),
-                'options'           => [
-                    'band_members' => __( 'Add band Members', 'band-tools' ),
-                    'band'         => __( 'Add album/song Band', 'band-tools' ),
-                    'release'      => __( 'Add album/song Release year', 'band-tools' ),
-                    'genre'        => __( 'Add Genre', 'band-tools' ),
-                ],
-                'std'               => ['true', 'true', 'true', 'true'],
-                'select_all_none'   => true,
-            ],
-        ],
-    ];
+	$meta_boxes[] = [
+		'title'          => __( 'Page Title', 'band-tools' ),
+		'id'             => 'band_tools_layout_page_titlez',
+		'settings_pages' => ['band_tools_layout'],
+		'class'          => 'band-tools-layout band-tools-layout-title',
+		'fields'         => [
+			[
+				'name'              => __( 'Page title', 'band-tools' ),
+				'id'                => $prefix . 'page_title',
+				'type'              => 'checkbox_list',
+				'label_description' => __( 'Add details under the title in page header', 'band-tools' ),
+				'options'           => [
+					'band_members' => __( 'Add band Members', 'band-tools' ),
+					'band'         => __( 'Add album/song Band', 'band-tools' ),
+					'release'      => __( 'Add album/song Release year', 'band-tools' ),
+					'genre'        => __( 'Add Genre', 'band-tools' ),
+				],
+				'std'               => ['true', 'true', 'true', 'true'],
+				'select_all_none'   => true,
+			],
+		],
+	];
 
-    return $meta_boxes;
+	return $meta_boxes;
 }
 
 endif;
