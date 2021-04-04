@@ -42,25 +42,19 @@ add_filter('the_title', 'bndtls_add_after_title', 10, 2);
 function bndtls_add_after_title($title, $post_id) {
   if ( is_single() && is_main_query() && ! is_admin() && ! is_null( $post_id ) ) {
     $post = get_post( $post_id );
+    $title_after = '';
     if ( $post instanceof WP_Post ) {
       switch($post->post_type) {
         case 'bands':
-        $title_after =
-        bndtls_get_meta([ 'tax_genres', 'members' ], $post_id)
-        . bndtls_get_meta('members', $post_id);;
+        $title_after .= (bndtls_get_option('layout_page_title:genre')) ? bndtls_get_meta([ 'tax_genres' ], $post_id) : '';
+        $title_after .= (bndtls_get_option('layout_page_title:band_members')) ? bndtls_get_meta([ 'members' ], $post_id) : '';
         break;
 
         case 'albums':
-        $title_after =
-        bndtls_get_relations($post, 'bands', [ 'direction' => 'to', 'title' => '', 'before' => __('by', 'band-tools') ] )
-        . bndtls_get_meta([ 'release' ], $post_id )
-        . bndtls_get_meta([ 'tax_genres' ], $post_id);
-        break;
-
         case 'songs':
-        $title_after =
-        bndtls_get_relations($post, 'bands', [ 'direction' => 'to', 'title' => '', 'before' => __('by', 'band-tools') ] )
-        . bndtls_get_meta([ 'tax_genres' ], $post_id);
+        $title_after .= (bndtls_get_option('layout_page_title:band')) ? bndtls_get_relations($post, 'bands', [ 'direction' => 'to', 'title' => '', 'before' => __('by', 'band-tools') ] ) : '';
+        $title_after .= (bndtls_get_option('layout_page_title:release')) ? bndtls_get_meta([ 'release' ], $post_id ) : '';
+        $title_after .= (bndtls_get_option('layout_page_title:genre')) ? bndtls_get_meta([ 'tax_genres' ], $post_id) : '';
         break;
       }
     }

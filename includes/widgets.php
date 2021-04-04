@@ -32,6 +32,8 @@ class bndtls_widget_all extends WP_Widget {
     // foreach(['videos','bands','albums','songs','products'] as $type) {
       $content = do_shortcode("[bt-auto]") ;
       if (!empty($content)) {
+        $before_widget='';
+        if(isset($type))
         $before_widget=preg_replace('/(id=.)bndtls_widget_all/', '$1bndtls_widget_' . $type, $args['before_widget'] );
         echo $before_widget . "<div>" . $content . "</div>" ;;
         echo $args['after_widget'];
