@@ -29,7 +29,7 @@ function bndtls_settings_layout_title( $meta_boxes ) {
 
 	$meta_boxes[] = [
 		'title'          => __( 'Page Title', 'band-tools' ),
-		'id'             => 'band_tools_layout_page_titlez',
+		'id'             => 'band_tools_layout_page_title',
 		'settings_pages' => ['band_tools_layout'],
 		'class'          => 'band-tools-layout band-tools-layout-title',
 		'fields'         => [
@@ -43,6 +43,37 @@ function bndtls_settings_layout_title( $meta_boxes ) {
 					'band'         => __( 'Add album/song Band', 'band-tools' ),
 					'release'      => __( 'Add album/song Release year', 'band-tools' ),
 					'genre'        => __( 'Add Genre', 'band-tools' ),
+				],
+				'std'               => ['true', 'true', 'true', 'true'],
+				'select_all_none'   => true,
+			],
+		],
+	];
+
+	return $meta_boxes;
+}
+
+add_filter( 'rwmb_meta_boxes', 'bndtls_settings_layout_content' );
+
+function bndtls_settings_layout_content( $meta_boxes ) {
+	$prefix = 'layout_';
+
+	$meta_boxes[] = [
+		'title'          => __( 'Page Content', 'band-tools' ),
+		'id'             => 'band_tools_layout_page_content',
+		'settings_pages' => ['band_tools_layout'],
+		'class'          => 'band-tools-layout band-tools-layout-content',
+		'fields'         => [
+			[
+				'name'              => __( 'Page content', 'band-tools' ),
+				'id'                => $prefix . 'page_content',
+				'type'              => 'checkbox_list',
+				'label_description' => __( 'Add details under the main content', 'band-tools' ),
+				'options'           => [
+					'bands' => __( 'Add Bands', 'band-tools' ),
+					'albums'         => __( 'Add Albums', 'band-tools' ),
+					'albums_songs'      => __( 'Add Albums and Tracks', 'band-tools' ),
+					'songs'        => __( 'Add Songs', 'band-tools' ),
 				],
 				'std'               => ['true', 'true', 'true', 'true'],
 				'select_all_none'   => true,

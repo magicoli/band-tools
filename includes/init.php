@@ -21,8 +21,7 @@ require_once dirname(__DIR__) . '/vendor/autoload.php';
 # Customizer dirty fix. Load meta-box-builder library to avoid Layout
 # auto-hiding, but only when in customizer to avoid duplicate settings pages
 # when working on the dev site
-if(basename($_SERVER['SCRIPT_NAME']=='customize.php'))
-require_once dirname(__DIR__) . '/vendor/meta-box/meta-box-builder/meta-box-builder.php';
+// require_once dirname(__DIR__) . '/vendor/meta-box/meta-box-builder/meta-box-builder.php';
 
 $plugin_data = get_file_data(WP_PLUGIN_DIR . "/" . BNDTLS_PLUGIN, array(
   'Name' => 'Plugin Name',
