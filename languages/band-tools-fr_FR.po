@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-07T08:49:24-04:00\n"
+"POT-Creation-Date: 2021-04-07T09:02:09-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -120,24 +120,38 @@ msgid "Add details under main content"
 msgstr "Ajouter des détails sous le contenu principal"
 
 #: admin/layout.php:73
+#: admin/layout.php:87
 msgctxt "layout-settings"
 msgid "Add Bands"
 msgstr "Ajouter les groupes"
 
 #: admin/layout.php:74
+#: admin/layout.php:88
 msgctxt "layout-settings"
 msgid "Add Albums"
 msgstr "Ajouter les albums"
 
 #: admin/layout.php:75
+#: admin/layout.php:89
 msgctxt "layout-settings"
 msgid "Add Albums and Tracks"
 msgstr "Ajouter les albums et les pistes"
 
 #: admin/layout.php:76
+#: admin/layout.php:90
 msgctxt "layout-settings"
 msgid "Add Songs"
 msgstr "Ajouter les chansons"
+
+#: admin/layout.php:82
+msgctxt "layout-settings"
+msgid "Content Sidebar"
+msgstr "Barre latérale du contenu"
+
+#: admin/layout.php:85
+msgctxt "layout-settings"
+msgid "(to be implemented)"
+msgstr "(à implémenter)"
 
 #: admin/settings.php:25
 msgid "Settings"
