@@ -14,7 +14,7 @@ function bndtls_settings_layout( $settings_pages ) {
 		'parent'      => 'band-tools',
 		'class'       => 'band-tools-settings-layout',
 		'columns'     => 1,
-		'message'     => __( 'Layout saved', 'band-tools' ),
+		'message'     => _x( 'Layout saved', 'layout-settings', 'band-tools' ),
 		'customizer'  => true,
 		'icon_url'    => 'dashicons-admin-generic',
 	];
@@ -28,21 +28,21 @@ function bndtls_settings_layout_title( $meta_boxes ) {
 	$prefix = 'layout_';
 
 	$meta_boxes[] = [
-		'title'          => __( 'Page Title', 'band-tools' ),
+		'title'          => _x( 'Page Header', 'layout-settings', 'band-tools' ),
 		'id'             => 'band_tools_layout_page_title',
 		'settings_pages' => ['band_tools_layout'],
 		'class'          => 'band-tools-layout band-tools-layout-title',
 		'fields'         => [
 			[
-				'name'              => __( 'Page title', 'band-tools' ),
+				'name'              => _x( 'Title', 'layout-settings', 'band-tools' ),
 				'id'                => $prefix . 'page_title',
 				'type'              => 'checkbox_list',
-				'label_description' => __( 'Add details under the title in page header', 'band-tools' ),
+				'label_description' => _x( 'Add details under the title', 'layout-settings', 'band-tools' ),
 				'options'           => [
-					'band_members' => __( 'Add band Members', 'band-tools' ),
-					'band'         => __( 'Add album/song Band', 'band-tools' ),
-					'release'      => __( 'Add album/song Release year', 'band-tools' ),
-					'genre'        => __( 'Add Genre', 'band-tools' ),
+					'band_members' => _x( 'Add band Members', 'layout-settings', 'band-tools' ),
+					'band'         => _x( 'Add album/song Band', 'layout-settings', 'band-tools' ),
+					'release'      => _x( 'Add album/song Release year', 'layout-settings', 'band-tools' ),
+					'genre'        => _x( 'Add Genre', 'layout-settings', 'band-tools' ),
 				],
 				'std'               => ['true', 'true', 'true', 'true'],
 				'select_all_none'   => true,
@@ -59,25 +59,39 @@ function bndtls_settings_layout_content( $meta_boxes ) {
 	$prefix = 'layout_';
 
 	$meta_boxes[] = [
-		'title'          => __( 'Page Content', 'band-tools' ),
+		'title'          => _x( 'Content', 'layout-settings', 'band-tools' ),
 		'id'             => 'band_tools_layout_page_content',
 		'settings_pages' => ['band_tools_layout'],
 		'class'          => 'band-tools-layout band-tools-layout-content',
 		'fields'         => [
 			[
-				'name'              => __( 'Page content', 'band-tools' ),
+				'name'              => _x( 'Main content', 'layout-settings', 'band-tools' ),
 				'id'                => $prefix . 'page_content',
 				'type'              => 'checkbox_list',
-				'label_description' => __( 'Add details under the main content', 'band-tools' ),
+				'label_description' => _x( 'Add details under main content', 'layout-settings', 'band-tools' ),
 				'options'           => [
-					'bands' => __( 'Add Bands', 'band-tools' ),
-					'albums'         => __( 'Add Albums', 'band-tools' ),
-					'albums_songs'      => __( 'Add Albums and Tracks', 'band-tools' ),
-					'songs'        => __( 'Add Songs', 'band-tools' ),
+					'bands' => _x( 'Add Bands', 'layout-settings', 'band-tools' ),
+					'albums'         => _x( 'Add Albums', 'layout-settings', 'band-tools' ),
+					'albums_songs'      => _x( 'Add Albums and Tracks', 'layout-settings', 'band-tools' ),
+					'songs'        => _x( 'Add Songs', 'layout-settings', 'band-tools' ),
 				],
 				'std'               => ['true', 'true', 'true', 'true'],
 				'select_all_none'   => true,
 			],
+			// [
+			// 	'name'              => _x( 'Content Sidebar', 'layout-settings', 'band-tools' ),
+			// 	'id'                => $prefix . 'content_sidebar',
+			// 	'type'              => 'checkbox_list',
+			// 	'label_description' => _x( 'Not the same as the theme sidebar!', 'layout-settings', 'band-tools' ),
+			// 	'options'           => [
+			// 		'bands'					  	=> _x( 'Add Bands', 'layout-settings', 'band-tools' ),
+			// 		'albums'          	=> _x( 'Add Albums', 'layout-settings', 'band-tools' ),
+			// 		'albums_songs'    	=> _x( 'Add Albums and Tracks', 'layout-settings', 'band-tools' ),
+			// 		'songs'        			=> _x( 'Add Songs', 'layout-settings', 'band-tools' ),
+			// 	],
+			// 	'std'               => [ true, true, true, true ],
+			// 	'select_all_none'   => true,
+			// ],
 		],
 	];
 
