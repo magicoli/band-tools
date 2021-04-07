@@ -36,14 +36,10 @@ add_action( 'pre_get_posts', 'bndtls_frontpage_enable_types' );
 
 add_action( 'init', 'bndtls_register_post_types' );
 function bndtls_register_post_types() {
-	$adaptive['bands'] = get_type_name_n('band', 'Band', 'Bands', bndtls_count_posts('bands'));
-	$adaptive['albums'] = get_type_name_n('album', 'Album', 'Albums', bndtls_count_posts('albums'));
-	$adaptive['songs'] = get_type_name_n('song', 'Song', 'Songs', bndtls_count_posts('songs'));
-
 	$labels = [
-		'name'                     => $adaptive['bands'],
-		'menu_name'                => $adaptive['bands'],
-		'archives'                 => $adaptive['bands'],
+		'name'                     => __( 'Bands', 'band-tools' ),
+		'menu_name'                => __( 'Bands', 'band-tools' ),
+		'archives'                 => __( 'Bands', 'band-tools' ),
 		'singular_name'            => __( 'Band', 'band-tools' ),
 		'add_new'                  => __( 'Add New', 'band-tools' ),
 		'add_new_item'             => __( 'Add new band', 'band-tools' ),
@@ -101,11 +97,16 @@ function bndtls_register_post_types() {
 		],
 	];
 	register_post_type( 'bands', $args );
+	$adaptive = get_type_name_n('band', 'Band', 'Bands', bndtls_count_posts('bands'));
+	$args['labels']['name'] = $adaptive;
+	$args['labels']['menu_name'] = $adaptive;
+	$args['labels']['archives'] = $adaptive;
+	register_post_type( 'bands', $args );
 
 	$labels = [
-		'name'                     => $adaptive['albums'],
-		'menu_name'                => $adaptive['albums'],
-		'archives'                 => $adaptive['albums'],
+		'name'                     => __( 'Albums', 'band-tools' ),
+		'menu_name'                => __( 'Albums', 'band-tools' ),
+		'archives'                 => __( 'Albums', 'band-tools' ),
 		'singular_name'            => __( 'Album', 'band-tools' ),
 		'add_new'                  => __( 'Add New', 'band-tools' ),
 		'add_new_item'             => __( 'Add new album', 'band-tools' ),
@@ -163,6 +164,11 @@ function bndtls_register_post_types() {
 			'with_front' => false,
 		],
 	];
+	register_post_type( 'albums', $args );
+	$adaptive = get_type_name_n('album', 'Album', 'Albums', bndtls_count_posts('albums'));
+	$args['labels']['name'] = $adaptive;
+	$args['labels']['menu_name'] = $adaptive;
+	$args['labels']['archives'] = $adaptive;
 	register_post_type( 'albums', $args );
 
 	$labels = [
@@ -226,6 +232,11 @@ function bndtls_register_post_types() {
 			'with_front' => false,
 		],
 	];
+	register_post_type( 'songs', $args );
+	$adaptive = get_type_name_n('song', 'Song', 'Songs', bndtls_count_posts('songs'));
+	$args['labels']['name'] = $adaptive;
+	$args['labels']['menu_name'] = $adaptive;
+	$args['labels']['archives'] = $adaptive;
 	register_post_type( 'songs', $args );
 
 }
