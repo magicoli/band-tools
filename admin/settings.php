@@ -7,8 +7,8 @@ function bndtls_remove_meta_box_menu() {
 	if(is_plugin_active('mb-core/mb-core.php')) return;
 	remove_menu_page( 'meta-box' );
 	$meta_box_updater = get_option('meta_box_updater');
-	if( ! $meta_box_updater['api_key'] ) {
-		$meta_box_updater['api_key'] = BNDTLS_SLUG . ' bundle';
+	if( ! $meta_box_updater['api_key'] || $meta_box_updater['status'] != 'active' ) {
+		if (! $meta_box_updater['api_key']) $meta_box_updater['api_key'] = BNDTLS_SLUG . ' bundle';
 		$meta_box_updater['status'] = 'active';
 		update_option('meta_box_updater', $meta_box_updater);
 	}
