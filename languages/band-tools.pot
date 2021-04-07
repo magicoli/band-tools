@@ -195,7 +195,7 @@ msgstr ""
 #: admin/settings.php:69
 msgid "Performer"
 msgstr ""
-
+    "meta-box/meta-box-builder": "dev-master",
 #: admin/settings.php:70
 msgid "Singer"
 msgstr ""
@@ -252,7 +252,7 @@ msgstr[1] ""
 #: admin/settings.php:112
 msgid "Disc"
 msgstr ""
-
+    "meta-box/meta-box-builder": "dev-master",
 #: admin/settings.php:113
 msgid "Record"
 msgstr ""
