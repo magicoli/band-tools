@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '127369bae403ace88160d1de87e3806bfde41f95',
+    'reference' => '33e3f7fca61df457541ebe0d97c851c9effa49c8',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '127369bae403ace88160d1de87e3806bfde41f95',
+      'reference' => '33e3f7fca61df457541ebe0d97c851c9effa49c8',
     ),
     'composer/installers' => 
     array (
@@ -30,15 +30,6 @@
       'reference' => '1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d',
     ),
     'meta-box/mb-settings-page' => 
-    array (
-      'pretty_version' => 'master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-      ),
-      'reference' => NULL,
-    ),
-    'meta-box/meta-box-builder' => 
     array (
       'pretty_version' => 'master',
       'version' => 'dev-master',
