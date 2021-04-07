@@ -172,9 +172,9 @@ function bndtls_register_post_types() {
 	register_post_type( 'albums', $args );
 
 	$labels = [
-		'name'                     => $adaptive['songs'],
-		'menu_name'                => $adaptive['songs'],
-		'archives'                 => $adaptive['songs'],
+		'name'                     => __( 'Songs', 'band-tools' ),
+		'menu_name'                => __( 'Songs', 'band-tools' ),
+		'archives'                 => __( 'Songs', 'band-tools' ),
 		'singular_name'            => __( 'Song', 'band-tools' ),
 		'add_new'                  => __( 'Add New', 'band-tools' ),
 		'add_new_item'             => __( 'Add new song', 'band-tools' ),
