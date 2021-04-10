@@ -76,6 +76,17 @@ to show
 
 == Changelog ==
 
+= 0.7.14 =
+* added product relationship (fix issue #9)
+* added settings to toggle info under content
+* added options to display info under title
+* fix issue #5 title suffix added to breadcrumbs
+* fix meta-box license notice
+* fix singular form not detected before post type creation
+* fix meta-box license notice
+* fix multiple option returned as true when all of them are disabled
+* fix flex blocks only in band tools edit or settings pages
+
 = 0.7.13 =
 * fix permalinks and css refresh on activation, update and deactivation
 * fix show subtitle only under main page title
