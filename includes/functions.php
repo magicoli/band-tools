@@ -213,3 +213,12 @@ function bndtls_admin_notice($notice, $class='info', $dismissible=true ) {
     <?php
   } );
 }
+
+function bndtls_backtrace_match($needle)
+{
+	foreach (debug_backtrace() as $k => $v) {
+		if ($k < 2) continue; // ignore self & caller
+		if (preg_match("/$needle/", $v['function'])) return true;
+	}
+	return false;
+}

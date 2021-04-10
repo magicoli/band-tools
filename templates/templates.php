@@ -41,6 +41,8 @@ function bndtls_the_content ( $more_link_text = null, $strip_teaser = false ) {
 add_filter('the_title', 'bndtls_add_after_title', 10, 2);
 function bndtls_add_after_title($title, $post_id) {
   if ( is_single() && is_main_query() && ! is_admin() && ! is_null( $post_id ) ) {
+    if(bndtls_backtrace_match('breadcrumb')) return $title;
+
     $post = get_post( $post_id );
     $title_after = '';
     if ( $post instanceof WP_Post ) {
