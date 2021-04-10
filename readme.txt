@@ -40,6 +40,8 @@ I want something:
 * The album pages also display link to shop product page
 * Post types available for navigation menus
 
+== Roadmap ==
+
 = Next moves =
 
 * Better widgets: cleaner and more complete display (thumbnails for albums and bands, direct buy or link, player...)
@@ -60,7 +62,7 @@ I want something:
 1. Unzip `band-tools.zip` into the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Head to "Band Tools" admin menu and check settings
-4. Create at least one Band, then songs and albums at will
+4. Create at least one Band, then albums and songs at will
 5. Enjoy
 
 == Frequently Asked Questions ==
@@ -69,7 +71,7 @@ I want something:
 
 I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 
-== Screenshot ==
+== Screenshots ==
 
 1. This is not an actual screenshot, I'll add one when there is something cool
 to show
@@ -93,7 +95,7 @@ to show
 * added styling to infobox prefixes and suffixes
 
 = 0.7.12 =
-* fix numbered list stype
+* fix numbered list type
 
 = 0.7.10 =
 * added prefix and suffix for bndtls_get_meta and bndtls_get_relations
