@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-07T09:11:15-04:00\n"
+"POT-Creation-Date: 2021-04-10T15:38:06-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -86,23 +86,23 @@ msgstr "Ajouter des détails sous le titre"
 
 #: admin/layout.php:42
 msgctxt "layout-settings"
-msgid "Add band Members"
-msgstr "Ajouter les membres du groupe"
+msgid "Show band Members"
+msgstr "Afficher les membres du groupe"
 
 #: admin/layout.php:43
 msgctxt "layout-settings"
-msgid "Add album/song Band"
-msgstr "Ajouter le groupe de l'album / la chanson"
+msgid "Show album/song Band"
+msgstr "Afficher le groupe de l'album / la chanson"
 
 #: admin/layout.php:44
 msgctxt "layout-settings"
-msgid "Add album/song Release year"
-msgstr "Ajouter l'année de sortie de l'album / la chanson"
+msgid "Show album/song Release year"
+msgstr "Afficher l'année de sortie de l'album / la chanson"
 
 #: admin/layout.php:45
 msgctxt "layout-settings"
-msgid "Add Genre"
-msgstr "Ajouter le genre"
+msgid "Show Genre"
+msgstr "Afficher le genre"
 
 #: admin/layout.php:62
 msgctxt "layout-settings"
@@ -120,35 +120,41 @@ msgid "Add details under main content"
 msgstr "Ajouter des détails sous le contenu principal"
 
 #: admin/layout.php:73
-#: admin/layout.php:87
-msgctxt "layout-settings"
-msgid "Add Bands"
-msgstr "Ajouter les groupes"
-
-#: admin/layout.php:74
 #: admin/layout.php:88
 msgctxt "layout-settings"
-msgid "Add Albums"
-msgstr "Ajouter les albums"
+msgid "Show Bands"
+msgstr "Afficher les groupes"
 
-#: admin/layout.php:75
+#: admin/layout.php:74
 #: admin/layout.php:89
 msgctxt "layout-settings"
-msgid "Add Albums and Tracks"
-msgstr "Ajouter les albums et les pistes"
+msgid "Show Albums"
+msgstr "Afficher les albums"
 
-#: admin/layout.php:76
+#: admin/layout.php:75
 #: admin/layout.php:90
 msgctxt "layout-settings"
-msgid "Add Songs"
-msgstr "Ajouter les chansons"
+msgid "Show Albums and Tracks"
+msgstr "Afficher les albums et les pistes"
 
-#: admin/layout.php:82
+#: admin/layout.php:76
+#: admin/layout.php:91
+msgctxt "layout-settings"
+msgid "Show Songs"
+msgstr "Afficher les chansons"
+
+#: admin/layout.php:77
+#: admin/layout.php:92
+msgctxt "layout-settings"
+msgid "Show Products"
+msgstr "Afficher les produits"
+
+#: admin/layout.php:83
 msgctxt "layout-settings"
 msgid "Content Sidebar"
 msgstr "Barre latérale du contenu"
 
-#: admin/layout.php:85
+#: admin/layout.php:86
 msgctxt "layout-settings"
 msgid "(to be implemented)"
 msgstr "(à implémenter)"
@@ -304,6 +310,9 @@ msgstr "Morceau"
 #: admin/settings.php:163
 #: admin/settings.php:169
 #: admin/settings.php:261
+#: includes/post-types.php:175
+#: includes/post-types.php:176
+#: includes/post-types.php:177
 #: includes/post-types.php:208
 msgid "Songs"
 msgstr "Chansons"
@@ -838,9 +847,25 @@ msgstr "Vidéos"
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
 
-#: templates/templates.php:55
+#: templates/templates.php:57
 msgid "by"
 msgstr "par"
+
+#~ msgctxt "layout-settings"
+#~ msgid "Add Genre"
+#~ msgstr "Ajouter le genre"
+
+#~ msgctxt "layout-settings"
+#~ msgid "Add Bands"
+#~ msgstr "Ajouter les groupes"
+
+#~ msgctxt "layout-settings"
+#~ msgid "Add Albums"
+#~ msgstr "Ajouter les albums"
+
+#~ msgctxt "layout-settings"
+#~ msgid "Add Songs"
+#~ msgstr "Ajouter les chansons"
 
 #~ msgid "Page Title"
 #~ msgstr "Titre de la page"
