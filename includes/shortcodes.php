@@ -53,7 +53,7 @@ function bndtls_shortcodes_init()
 				break;
 
 				default:
-				$output .= "<code>been there " . basename(__DIR__) . "/" . basename(__FILE__) . " " . __METHOD__ . "() $tag $type for $post_type</code>";
+				// $output .= "<code>been there " . basename(__DIR__) . "/" . basename(__FILE__) . " " . __METHOD__ . "() $tag $type for $post_type</code>";
 			}
 		} else if($type) {
 			$output .= bndtls_get_relations($post, [ $tag ], $args );
