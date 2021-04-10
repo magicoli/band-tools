@@ -248,10 +248,12 @@ function bndtls_register_relationships() {
 	$singular['albums'] = __(bndtls_get_option( 'naming_' . 'album', 'Album', 'singular' ), 'band-tools');
 	$singular['songs'] = __(bndtls_get_option( 'naming_' . 'song', 'Song', 'singular' ), 'band-tools');
 	$singular['tracks'] = __(bndtls_get_option( 'naming_' . 'track', 'Track', 'singular' ), 'band-tools');
+	$singular['products'] = __(bndtls_get_option( 'naming_' . 'product', 'Product', 'singular' ), 'band-tools');
 	$adaptive['bands'] = get_type_name_n('band', 'Band', 'Bands', bndtls_count_posts('bands'));
 	$adaptive['albums'] = get_type_name_n('album', 'Album', 'Albums', bndtls_count_posts('albums'));
 	$adaptive['songs'] = get_type_name_n('song', 'Song', 'Songs', bndtls_count_posts('songs'));
 	$adaptive['tracks'] = get_type_name_n('track', 'Track', 'Tracks', bndtls_count_posts('songs'));
+	$adaptive['products'] = get_type_name_n('product', 'Product', 'Products', bndtls_count_posts('songs'));
 
 	MB_Relationships_API::register( [
 		'id'   => 'rel-bands-albums',
@@ -355,6 +357,53 @@ function bndtls_register_relationships() {
 				'title'   => $adaptive['albums'],
 				'singular'   => $singular['albums'],
 				'context' => 'normal',
+			],
+		],
+	] );
+
+	MB_Relationships_API::register( [
+		'id'         => 'rel-albums-products',
+		'reciprocal' => true,
+		'from'       => [
+			'object_type'  => 'post',
+			'post_type'    => 'albums',
+			'admin_column' => [
+				'position' => 'after title',
+				'title'    => $adaptive['products'],
+				'singular' => $singular['products'],
+				'link'     => 'view',
+			],
+			'meta_box'     => [
+				'title'   => $adaptive['products'],
+				'singular' => $singular['products'],
+				'context'  => 'normal',
+				'priority' => 'high',
+				'class'    => 'album-product',
+			],
+			'field'        => [
+				'name'  => 'Products',
+				'class' => 'album-product',
+			],
+		],
+		'to'         => [
+			'object_type'  => 'post',
+			'post_type'    => 'product',
+			'admin_column' => [
+				'position' => 'after title',
+				'link'     => 'view',
+			],
+			'admin_column' => [
+				'position' => 'after title',
+				'title'    => $adaptive['albums'],
+				'singular' => $singular['albums'],
+				'link'     => 'view',
+				'class' => 'album-product',
+			],
+			'meta_box'    => [
+				'title'   => $adaptive['albums'],
+				'singular'   => $singular['albums'],
+				'context' => 'normal',
+				'class' => 'album-product',
 			],
 		],
 	] );
