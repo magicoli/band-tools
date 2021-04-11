@@ -59,9 +59,20 @@ function bndtls_fields_records( $meta_boxes ) {
     'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-records',
     'fields'     => [
       [
-        'name' => __( 'Release', 'band-tools' ),
+        'name' => __( 'Initial Release', 'band-tools' ),
         'id'   => 'release',
         'type' => 'date',
+        'placeholder' => 'YYYY-MM-YY',
+        'desc' => 'Year, year-month or full date',
+      ],
+      [
+        'name'       => __( 'Release Type', 'band-tools' ),
+        'id'         => 'release_type',
+        'type'       => 'taxonomy',
+        'taxonomy'   => ['release_type'],
+        'field_type' => 'select',
+        'add_new'    => true,
+        // 'multiple'   => true,
       ],
       [
       'name'       => __( 'Genres', 'band-tools' ),
@@ -87,13 +98,29 @@ function bndtls_fields_songs( $meta_boxes ) {
     'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-songs',
     'fields'     => [
       [
-        'name'       => __( 'Genres', 'band-tools' ),
+        'name'       => __( 'Genre', 'band-tools' ),
         'id'         => 'tax_genre',
         'type'       => 'taxonomy',
         'taxonomy'   => ['genre'],
         'field_type' => 'select_advanced',
         'add_new'    => true,
         'multiple'   => true,
+      ],
+      [
+        'name'       => __( 'Authors', 'band-tools' ),
+        'id'         => 'authors',
+        'type'       => 'taxonomy',
+        'taxonomy'   => ['author'],
+        'field_type' => 'select_advanced',
+        'add_new'    => true,
+        'multiple'   => true,
+      ],
+      [
+        'name' => __( 'Initial Release', 'band-tools' ),
+        'id'   => 'release',
+        'type' => 'date',
+        'placeholder' => 'YYYY-MM-YY',
+        'desc' => 'Year, year-month or full date',
       ],
     ],
   ];

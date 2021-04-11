@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-11T15:50:20-04:00\n"
+"POT-Creation-Date: 2021-04-11T18:48:03-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -399,7 +399,7 @@ msgstr "Montrer le contenu complet quand l'élément est affiché comme page d'a
 
 #: includes/custom-fields.php:10
 #: includes/custom-fields.php:56
-#: includes/custom-fields.php:84
+#: includes/custom-fields.php:95
 msgid "Info"
 msgstr "Informations"
 
@@ -427,8 +427,7 @@ msgid "Members"
 msgstr "Membres"
 
 #: includes/custom-fields.php:39
-#: includes/custom-fields.php:67
-#: includes/custom-fields.php:90
+#: includes/custom-fields.php:78
 #: includes/taxonomies.php:7
 #: includes/taxonomies.php:9
 #: includes/taxonomies.php:32
@@ -436,8 +435,26 @@ msgid "Genres"
 msgstr "Genres"
 
 #: includes/custom-fields.php:62
-msgid "Release"
-msgstr "Date de sortie"
+#: includes/custom-fields.php:119
+msgid "Initial Release"
+msgstr "Date de sortie initiale"
+
+#: includes/custom-fields.php:69
+#: includes/taxonomies.php:108
+msgid "Release Type"
+msgstr "Type de parution"
+
+#: includes/custom-fields.php:101
+#: includes/taxonomies.php:8
+msgid "Genre"
+msgstr "Genre"
+
+#: includes/custom-fields.php:110
+#: includes/taxonomies.php:57
+#: includes/taxonomies.php:59
+#: includes/taxonomies.php:82
+msgid "Authors"
+msgstr "Auteurs"
 
 #. translators: %s is replaced by the name of the plugin, untranslated
 #: includes/init.php:47
@@ -573,6 +590,8 @@ msgstr "Groupe mis à jour"
 #: includes/post-types.php:137
 #: includes/post-types.php:205
 #: includes/taxonomies.php:29
+#: includes/taxonomies.php:79
+#: includes/taxonomies.php:129
 msgid "band-tools"
 msgstr "band-tools"
 
@@ -744,10 +763,6 @@ msgstr "Chanson programmée"
 msgid "Song updated"
 msgstr "Chanson mise à jour"
 
-#: includes/taxonomies.php:8
-msgid "Genre"
-msgstr "Genre"
-
 #: includes/taxonomies.php:10
 msgid "Search Genres"
 msgstr "Chercher les genres"
@@ -811,12 +826,189 @@ msgid "Genres list"
 msgstr "Liste des genres"
 
 #: includes/taxonomies.php:27
+#: includes/taxonomies.php:77
+#: includes/taxonomies.php:127
 msgid "Most Used"
 msgstr "Plus utilisés"
 
 #: includes/taxonomies.php:28
 msgid "Back to genres"
 msgstr "Retour aux genres"
+
+#: includes/taxonomies.php:58
+msgid "Author"
+msgstr "Auteur"
+
+#: includes/taxonomies.php:60
+msgid "Search Authors"
+msgstr "Chercher dans les auteurs"
+
+#: includes/taxonomies.php:61
+msgid "Popular Authors"
+msgstr "Auteurs populaires"
+
+#: includes/taxonomies.php:62
+msgid "All Authors"
+msgstr "Tous les auteurs"
+
+#: includes/taxonomies.php:63
+#: includes/taxonomies.php:64
+msgid "Parent Author"
+msgstr "Auteur parent"
+
+#: includes/taxonomies.php:65
+msgid "Edit Author"
+msgstr "Modifier l'auteur"
+
+#: includes/taxonomies.php:66
+msgid "View Author"
+msgstr "Voir l'auteur"
+
+#: includes/taxonomies.php:67
+msgid "Update Author"
+msgstr "Mettre à jour l'auteur"
+
+#: includes/taxonomies.php:68
+msgid "Create new author"
+msgstr "Créer un nouvel auteur"
+
+#: includes/taxonomies.php:69
+msgid "New author name"
+msgstr "Nom du nouvel auteur"
+
+#: includes/taxonomies.php:70
+msgid "Separate authors with commas"
+msgstr "Séparer les auteurs avec une virgule"
+
+#: includes/taxonomies.php:71
+msgid "Add or remove authors"
+msgstr "Ajouter ou supprimer des auteurs"
+
+#: includes/taxonomies.php:72
+msgid "Choose most used authors"
+msgstr "Choisir parmi les auteurs les plus utilisés"
+
+#: includes/taxonomies.php:73
+#: includes/taxonomies.php:74
+msgid "No authors found"
+msgstr "Aucun auteur trouvé"
+
+#: includes/taxonomies.php:75
+msgid "Authors list pagination"
+msgstr "Pagination liste d'auteurs"
+
+#: includes/taxonomies.php:76
+msgid "Authors list"
+msgstr "Liste des auteurs"
+
+#: includes/taxonomies.php:78
+msgid "Back to authors"
+msgstr "Retour aux auteurs"
+
+#: includes/taxonomies.php:107
+#: includes/taxonomies.php:109
+#: includes/taxonomies.php:132
+msgid "Release Types"
+msgstr "Types de parution"
+
+#: includes/taxonomies.php:110
+msgid "Search Release Types"
+msgstr "Chercher les types de parution"
+
+#: includes/taxonomies.php:111
+msgid "Popular Release Types"
+msgstr "Types de parution populaires"
+
+#: includes/taxonomies.php:112
+msgid "All Release Types"
+msgstr "Tous les types de parution"
+
+#: includes/taxonomies.php:113
+#: includes/taxonomies.php:114
+msgid "Parent Release Type"
+msgstr "Type de parution parent"
+
+#: includes/taxonomies.php:115
+msgid "Edit Release Type"
+msgstr "Modifier le type de parution"
+
+#: includes/taxonomies.php:116
+msgid "View Release Type"
+msgstr "Voir le type de parution"
+
+#: includes/taxonomies.php:117
+msgid "Update Release Type"
+msgstr "Mettre à jour le type de parution"
+
+#: includes/taxonomies.php:118
+msgid "Create new release type"
+msgstr "Créer un nouveau type de parution"
+
+#: includes/taxonomies.php:119
+msgid "New release type name"
+msgstr "Nom du nouveau type de parution"
+
+#: includes/taxonomies.php:120
+msgid "Separate release types with commas"
+msgstr "Séparer les types de parution avec une virgule"
+
+#: includes/taxonomies.php:121
+msgid "Add or remove release types"
+msgstr "Ajouter ou supprimer des types de parution"
+
+#: includes/taxonomies.php:122
+msgid "Choose most used release types"
+msgstr "Choisir parmi les types de parution les plus utilisées"
+
+#: includes/taxonomies.php:123
+#: includes/taxonomies.php:124
+msgid "No release types found"
+msgstr "Aucun type de parution trouvé"
+
+#: includes/taxonomies.php:125
+msgid "Release Types list pagination"
+msgstr "Pagination liste de types de parution"
+
+#: includes/taxonomies.php:126
+msgid "Release Types list"
+msgstr "Liste des types de parution"
+
+#: includes/taxonomies.php:128
+msgid "Back to release types"
+msgstr "Retour aux types de parution"
+
+#: includes/taxonomies.php:162
+msgid "Single"
+msgstr "Single"
+
+#: includes/taxonomies.php:166
+msgid "EP / Mini-album"
+msgstr "EP / Mini-album"
+
+#: includes/taxonomies.php:170
+msgid "Album"
+msgstr "Album"
+
+#: includes/taxonomies.php:174
+#: includes/taxonomies.php:178
+msgid "Compilation"
+msgstr "Compilation"
+
+#: includes/taxonomies.php:182
+msgid "Mixtape"
+msgstr "Mixtape"
+
+#: includes/taxonomies.php:186
+msgid "DJ Mix"
+msgstr "DJ Mix"
+
+#: includes/taxonomies.php:190
+msgid "Bootleg / Unauthorized"
+msgstr "Bootleg / Non autorisé"
+
+#: includes/taxonomies.php:203
+msgid "%s release types added"
+msgstr "%s types de parution ajouté(s)"
 
 #: includes/updates.php:35
 msgid "Update %s applied sucessfully"
@@ -1044,9 +1236,6 @@ msgstr "par"
 #~ msgid "View tag"
 #~ msgstr "Voir l'étiquette"
 
-#~ msgid "Update tag"
-#~ msgstr "Mettre à jour l'étiquette"
-
 #~ msgid "Add new Video tag"
 #~ msgstr "Ajouter une étiquette vidéo"
 
@@ -1058,12 +1247,6 @@ msgstr "par"
 
 #~ msgid "Parent tag:"
 #~ msgstr "Étiquette parente:"
-
-#~ msgid "Search tags"
-#~ msgstr "Chercher dans les étiquettes"
-
-#~ msgid "Popular tags"
-#~ msgstr "Étiquettes populaires"
 
 #~ msgid "No tags"
 #~ msgstr "Aucune étiquette"
@@ -1083,38 +1266,17 @@ msgstr "par"
 #~ msgid "Video category"
 #~ msgstr "Catégorie video"
 
-#~ msgid "All Categories"
-#~ msgstr "Toutes les catégories"
-
-#~ msgid "Edit Category"
-#~ msgstr "Modifier la catégorie"
-
-#~ msgid "View Category"
-#~ msgstr "Voir la catégorie"
-
 #~ msgid "Add new Video Category"
 #~ msgstr "Ajouter une catégorie vidéo"
 
 #~ msgid "New Video Category"
 #~ msgstr "Nouvelle catégorie vidéo"
 
-#~ msgid "Parent Category"
-#~ msgstr "Catégorie parente"
-
 #~ msgid "Parent Category:"
 #~ msgstr "Catégorie parente:"
 
-#~ msgid "Separate categories with commas"
-#~ msgstr "Séparer les catégories avec une virgule"
-
-#~ msgid "Add or remove Categories"
-#~ msgstr "Ajouter ou supprimer des catégories vidéo"
-
 #~ msgid "Choose from the most used categories"
 #~ msgstr "Choisir parmi les catégories les plus utilisées"
-
-#~ msgid "No Categories found"
-#~ msgstr "Aucune catégorie trouvée"
 
 #~ msgid "No Categories"
 #~ msgstr "Aucune catégorie"
@@ -1133,9 +1295,6 @@ msgstr "par"
 
 #~ msgid "Add new Category"
 #~ msgstr "Ajouter une catégorie"
-
-#~ msgid "New Category Name"
-#~ msgstr "Nom de la nouvelle catégorie"
 
 #~ msgid "Separate Categories with commas"
 #~ msgstr "Séparer les catégories avec une virgule"
