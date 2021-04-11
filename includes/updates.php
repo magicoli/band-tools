@@ -1,8 +1,5 @@
 <?php if ( ! defined( 'WPINC' ) ) die;
 
-// debug, force update
-update_option('bndtls_upated', 0);
-
 if ( ! defined( 'BNDTLS_UPDATES' ) ) define('BNDTLS_UPDATES', 1 );
 
 if(get_option('bndtls_upated') < BNDTLS_UPDATES ) {
@@ -68,16 +65,12 @@ function bndtls_update_1() {
     $i++;
   }
   if($i > 0) $results[] = "$i posts converted from 'albums' to 'records'";
-  $query = $wpdb->prepare("UPDATE {$wpdb->prefix}mb_relationships SET type = replace(type, '$from', '$to') WHERE type like '%$from%'");
-  $queryresult = $wpdb->query($query);
-  if($queryresult) $results[] = $wpdb->affected_rows . " relationships updated";
-  $query = $wpdb->prepare("UPDATE {$wpdb->prefix}postmeta SET meta_value = '${to}s' WHERE meta_key='_menu_item_object' AND meta_value = '{$from}s'");
-  $queryresult = $wpdb->query($query);
-  if($queryresult) $results[] = $wpdb->affected_rows . " menus updated";
-  // if($i > 0) {
-    update_option('bndtls_rewrite_rules', true);
-    // bndtls_admin_notice("$message");
+  if($wpdb->query($wpdb->prepare("UPDATE {$wpdb->prefix}mb_relationships SET type = replace(type, '$from', '$to') WHERE type like '%$from%'")))
+  $results[] = $wpdb->affected_rows . " Relationships updated";
+  if($wpdb->query($wpdb->prepare("UPDATE {$wpdb->prefix}postmeta SET meta_value = '${to}s' WHERE meta_key='_menu_item_object' AND meta_value = '{$from}s'")))
+  $results[] = $wpdb->affected_rows . " Menus updated";
+
+  update_option('bndtls_rewrite_rules', true);
   if(!empty($results)) return join("<br/>", $results);
-  // }
   return true;
 }
