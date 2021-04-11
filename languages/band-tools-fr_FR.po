@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-11T14:55:55-04:00\n"
+"POT-Creation-Date: 2021-04-11T15:11:57-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -104,57 +104,67 @@ msgctxt "layout-settings"
 msgid "Show Genre"
 msgstr "Afficher le genre"
 
-#: admin/layout.php:62
+#: admin/layout.php:46
+msgctxt "layout-settings"
+msgid "Show Official Website"
+msgstr "Afficher le site officiel"
+
+#: admin/layout.php:47
+msgctxt "layout-settings"
+msgid "Show Official Store"
+msgstr "Afficher la boutique officielle"
+
+#: admin/layout.php:64
 msgctxt "layout-settings"
 msgid "Content"
 msgstr "Contenu"
 
-#: admin/layout.php:68
+#: admin/layout.php:70
 msgctxt "layout-settings"
 msgid "Main content"
 msgstr "Contenu principal"
 
-#: admin/layout.php:71
+#: admin/layout.php:73
 msgctxt "layout-settings"
 msgid "Add details under main content"
 msgstr "Ajouter des détails sous le contenu principal"
 
-#: admin/layout.php:73
-#: admin/layout.php:88
+#: admin/layout.php:75
+#: admin/layout.php:90
 msgctxt "layout-settings"
 msgid "Show Bands"
 msgstr "Afficher les groupes"
 
-#: admin/layout.php:74
-#: admin/layout.php:89
+#: admin/layout.php:76
+#: admin/layout.php:91
 msgctxt "layout-settings"
 msgid "Show Records"
 msgstr "Afficher les records"
 
-#: admin/layout.php:75
-#: admin/layout.php:90
+#: admin/layout.php:77
+#: admin/layout.php:92
 msgctxt "layout-settings"
 msgid "Show Records and Tracks"
 msgstr "Afficher les records et les pistes"
 
-#: admin/layout.php:76
-#: admin/layout.php:91
+#: admin/layout.php:78
+#: admin/layout.php:93
 msgctxt "layout-settings"
 msgid "Show Songs"
 msgstr "Afficher les chansons"
 
-#: admin/layout.php:77
-#: admin/layout.php:92
+#: admin/layout.php:79
+#: admin/layout.php:94
 msgctxt "layout-settings"
 msgid "Show Products"
 msgstr "Afficher les produits"
 
-#: admin/layout.php:83
+#: admin/layout.php:85
 msgctxt "layout-settings"
 msgid "Content Sidebar"
 msgstr "Barre latérale du contenu"
 
-#: admin/layout.php:86
+#: admin/layout.php:88
 msgctxt "layout-settings"
 msgid "(to be implemented)"
 msgstr "(à implémenter)"
@@ -390,7 +400,7 @@ msgid "Creation"
 msgstr "Création"
 
 #: includes/custom-fields.php:21
-#: templates/templates.php:55
+#: templates/templates.php:56
 msgid "Official Website"
 msgstr "Site officiel"
 
@@ -400,7 +410,7 @@ msgid "Leave empty if the same as this website"
 msgstr "Laisser vide si identique à ce site"
 
 #: includes/custom-fields.php:27
-#: templates/templates.php:59
+#: templates/templates.php:62
 msgid "Official Store"
 msgstr "Boutique officielle"
 
@@ -862,7 +872,7 @@ msgstr "Vidéos"
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
 
-#: templates/templates.php:66
+#: templates/templates.php:70
 msgid "by"
 msgstr "par"
 

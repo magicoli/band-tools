@@ -43,6 +43,8 @@ function bndtls_settings_layout_title( $meta_boxes ) {
 					'band'         => _x( 'Show record/song Band', 'layout-settings', 'band-tools' ),
 					'release'      => _x( 'Show record/song Release year', 'layout-settings', 'band-tools' ),
 					'genre'        => _x( 'Show Genre', 'layout-settings', 'band-tools' ),
+					'official_website'        => _x( 'Show Official Website', 'layout-settings', 'band-tools' ),
+					'official_store'        => _x( 'Show Official Store', 'layout-settings', 'band-tools' ),
 				],
 				'std'               => ['true', 'true', 'true', 'true'],
 				'select_all_none'   => true,
