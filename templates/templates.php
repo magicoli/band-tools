@@ -68,7 +68,9 @@ function bndtls_add_after_title($title, $post_id) {
         case 'records':
         case 'songs':
         $title_after .= (bndtls_get_option('layout_page_title:band')) ? bndtls_get_relations($post, 'bands', [ 'direction' => 'to', 'title' => '', 'before' => __('by', 'band-tools') ] ) : '';
-        $title_after .= (bndtls_get_option('layout_page_title:release')) ? bndtls_get_meta([ 'release' ], $post_id ) : '';
+        $title_after .= (bndtls_get_option('layout_page_title:release_type')) ? bndtls_get_meta([ 'release_type' ], $post_id) : '';
+        $title_after .= (bndtls_get_option('layout_page_title:release')) ? bndtls_get_meta([ 'release' ], $post_id, [ 'before' => '&#x2117;' ]) : '';
+        $title_after .= (bndtls_get_option('layout_page_title:authors')) ? bndtls_get_meta([ 'authors' ], $post_id, [ 'before' => '&#169;' ] ) : '';
         $title_after .= (bndtls_get_option('layout_page_title:genre')) ? bndtls_get_meta([ 'tax_genres' ], $post_id) : '';
         break;
       }

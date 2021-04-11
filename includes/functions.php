@@ -195,8 +195,19 @@ function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
       default:
       $values = rwmb_meta( $meta, array(), $post_id );
     }
-    if(is_array($values)) $values = join(', ', $values);
-    if(!empty($values)) $output .= "<div class='$meta'>$before $values $after</div>";
+
+    if(empty($values)) return;
+    if(!is_array($values)) $values = [ $values ];
+
+    foreach ($values as $value) {
+      if(is_object($value)) {
+        $value = $value->name;
+        // $value = "<pre>" . print_r($value->name, true) . "</pre>";
+      }
+      $strings[] = $value;
+    }
+    $strings = join(', ', $strings);
+    if(!empty($values)) $output .= "<div class='$meta'>$before $strings $after</div>";
   }
   return $output;
 }
