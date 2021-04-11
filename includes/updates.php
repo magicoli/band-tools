@@ -1,5 +1,8 @@
 <?php if ( ! defined( 'WPINC' ) ) die;
 
+// debug, force update
+update_option('bndtls_upated', 0);
+
 if ( ! defined( 'BNDTLS_UPDATES' ) ) define('BNDTLS_UPDATES', 1 );
 
 if(get_option('bndtls_upated') < BNDTLS_UPDATES ) {
@@ -51,22 +54,30 @@ function bndls_updates() {
  * probably used only by the developer yet.
  */
 function bndtls_update_1() {
-  $post_ids = get_posts(array('post_per_page' => -1, 'post_type' => 'records'));
+  global $wpdb;
+  $from='album';
+  $to='record';
+  $post_ids = get_posts(array('post_per_page' => -1, 'post_type' => "${from}s"));
   $i = 0;
+  $results=array();
   foreach($post_ids as $p){
     $po = array();
     $po = get_post($p->ID,'ARRAY_A');
-    $po['post_type'] = "records";
-    // $debug .= $p->ID . " " . $p->post_title . ": " . print_r(get_post_meta($p->ID), true) . "\n";
-    // wp_update_post($po);
+    $po['post_type'] = "${to}s";
+    wp_update_post($po);
     $i++;
   }
-  global $wpdb;
-  $queryresult = $wpdb->query($wpdb->prepare("UPDATE {$wpdb->prefix}mb_relationships SET type = replace(type, 'album', 'record') WHERE type like '%album%'"));
-  if($i > 0) {
+  if($i > 0) $results[] = "$i posts converted from 'albums' to 'records'";
+  $query = $wpdb->prepare("UPDATE {$wpdb->prefix}mb_relationships SET type = replace(type, '$from', '$to') WHERE type like '%$from%'");
+  $queryresult = $wpdb->query($query);
+  if($queryresult) $results[] = $wpdb->affected_rows . " relationships updated";
+  $query = $wpdb->prepare("UPDATE {$wpdb->prefix}postmeta SET meta_value = '${to}s' WHERE meta_key='_menu_item_object' AND meta_value = '{$from}s'");
+  $queryresult = $wpdb->query($query);
+  if($queryresult) $results[] = $wpdb->affected_rows . " menus updated";
+  // if($i > 0) {
     update_option('bndtls_rewrite_rules', true);
     // bndtls_admin_notice("$message");
-    return "$i posts converted from 'albums' to 'records'";
-  }
+  if(!empty($results)) return join("<br/>", $results);
+  // }
   return true;
 }
