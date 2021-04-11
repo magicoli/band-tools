@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-11T13:07:01-04:00\n"
+"POT-Creation-Date: 2021-04-11T14:55:55-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -170,7 +170,7 @@ msgstr "Nomenclature"
 #: admin/settings.php:50
 #: admin/settings.php:59
 #: admin/settings.php:66
-#: includes/init.php:97
+#: includes/init.php:96
 #: includes/post-types.php:43
 msgid "Band"
 msgid_plural "Bands"
@@ -249,7 +249,7 @@ msgstr "Chanteurs"
 #: admin/settings.php:105
 #: admin/settings.php:111
 #: admin/settings.php:113
-#: includes/init.php:98
+#: includes/init.php:97
 msgid "Record"
 msgid_plural "Records"
 msgstr[0] "Disque"
@@ -282,7 +282,7 @@ msgstr "Sets"
 #: admin/settings.php:138
 #: admin/settings.php:147
 #: admin/settings.php:153
-#: includes/init.php:99
+#: includes/init.php:98
 #: includes/post-types.php:178
 msgid "Song"
 msgid_plural "Songs"
@@ -380,8 +380,8 @@ msgid "Show full content when item is selected as home page"
 msgstr "Montrer le contenu complet quand l'élément est affiché comme page d'accueil"
 
 #: includes/custom-fields.php:10
-#: includes/custom-fields.php:44
-#: includes/custom-fields.php:72
+#: includes/custom-fields.php:56
+#: includes/custom-fields.php:84
 msgid "Info"
 msgstr "Informations"
 
@@ -390,19 +390,34 @@ msgid "Creation"
 msgstr "Création"
 
 #: includes/custom-fields.php:21
+#: templates/templates.php:55
+msgid "Official Website"
+msgstr "Site officiel"
+
+#: includes/custom-fields.php:24
+#: includes/custom-fields.php:30
+msgid "Leave empty if the same as this website"
+msgstr "Laisser vide si identique à ce site"
+
+#: includes/custom-fields.php:27
+#: templates/templates.php:59
+msgid "Official Store"
+msgstr "Boutique officielle"
+
+#: includes/custom-fields.php:33
 msgid "Members"
 msgstr "Membres"
 
-#: includes/custom-fields.php:27
-#: includes/custom-fields.php:55
-#: includes/custom-fields.php:78
+#: includes/custom-fields.php:39
+#: includes/custom-fields.php:67
+#: includes/custom-fields.php:90
 #: includes/taxonomies.php:7
 #: includes/taxonomies.php:9
 #: includes/taxonomies.php:32
 msgid "Genres"
 msgstr "Genres"
 
-#: includes/custom-fields.php:50
+#: includes/custom-fields.php:62
 msgid "Release"
 msgstr "Date de sortie"
 
@@ -411,14 +426,14 @@ msgstr "Date de sortie"
 msgid "Get a license key on %s website"
 msgstr "Obtenir une clé de licence sur le site %s"
 
+#: includes/init.php:99
 #: includes/init.php:100
-#: includes/init.php:101
 msgid "Track"
 msgid_plural "Tracks"
 msgstr[0] "Piste"
 msgstr[1] "Pistes"
 
-#: includes/init.php:102
+#: includes/init.php:101
 msgid "Tracks"
 msgstr "Pistes"
 
@@ -847,7 +862,7 @@ msgstr "Vidéos"
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
 
-#: templates/templates.php:57
+#: templates/templates.php:66
 msgid "by"
 msgstr "par"
 

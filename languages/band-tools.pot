@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Band Tools plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Band Tools 0.7.14\n"
+"Project-Id-Version: Band Tools 0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/band-tools\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-11T13:07:01-04:00\n"
+"POT-Creation-Date: 2021-04-11T14:55:55-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 
@@ -170,7 +170,7 @@ msgstr ""
 #: admin/settings.php:50
 #: admin/settings.php:59
 #: admin/settings.php:66
-#: includes/init.php:97
+#: includes/init.php:96
 #: includes/post-types.php:43
 msgid "Band"
 msgid_plural "Bands"
@@ -249,7 +249,7 @@ msgstr ""
 #: admin/settings.php:105
 #: admin/settings.php:111
 #: admin/settings.php:113
-#: includes/init.php:98
+#: includes/init.php:97
 msgid "Record"
 msgid_plural "Records"
 msgstr[0] ""
@@ -282,7 +282,7 @@ msgstr ""
 #: admin/settings.php:138
 #: admin/settings.php:147
 #: admin/settings.php:153
-#: includes/init.php:99
+#: includes/init.php:98
 #: includes/post-types.php:178
 msgid "Song"
 msgid_plural "Songs"
@@ -380,8 +380,8 @@ msgid "Show full content when item is selected as home page"
 msgstr ""
 
 #: includes/custom-fields.php:10
-#: includes/custom-fields.php:44
-#: includes/custom-fields.php:72
+#: includes/custom-fields.php:56
+#: includes/custom-fields.php:84
 msgid "Info"
 msgstr ""
 
@@ -390,19 +390,34 @@ msgid "Creation"
 msgstr ""
 
 #: includes/custom-fields.php:21
-msgid "Members"
+#: templates/templates.php:55
+msgid "Official Website"
+msgstr ""
+
+#: includes/custom-fields.php:24
+#: includes/custom-fields.php:30
+msgid "Leave empty if the same as this website"
 msgstr ""
 
 #: includes/custom-fields.php:27
-#: includes/custom-fields.php:55
-#: includes/custom-fields.php:78
+#: templates/templates.php:59
+msgid "Official Store"
+msgstr ""
+
+#: includes/custom-fields.php:33
+msgid "Members"
+msgstr ""
+
+#: includes/custom-fields.php:39
+#: includes/custom-fields.php:67
+#: includes/custom-fields.php:90
 #: includes/taxonomies.php:7
 #: includes/taxonomies.php:9
 #: includes/taxonomies.php:32
 msgid "Genres"
 msgstr ""
 
-#: includes/custom-fields.php:50
+#: includes/custom-fields.php:62
 msgid "Release"
 msgstr ""
 
@@ -411,14 +426,14 @@ msgstr ""
 msgid "Get a license key on %s website"
 msgstr ""
 
+#: includes/init.php:99
 #: includes/init.php:100
-#: includes/init.php:101
 msgid "Track"
 msgid_plural "Tracks"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/init.php:102
+#: includes/init.php:101
 msgid "Tracks"
 msgstr ""
 
@@ -847,6 +862,6 @@ msgstr ""
 msgid "Display related videos"
 msgstr ""
 
-#: templates/templates.php:57
+#: templates/templates.php:66
 msgid "by"
 msgstr ""
