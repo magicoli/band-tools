@@ -78,6 +78,11 @@ to show
 
 == Changelog ==
 
+= 0.8 =
+* change: 'album' post type is changed to 'record'
+  Existing menus or customizations might require a manual update
+* added update process
+
 = 0.7.14 =
 * added product relationship (fix issue #9)
 * added settings to toggle info under content
