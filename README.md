@@ -78,6 +78,9 @@ to show
 
 ## Changelog
 
+### 0.8.1
+* added band official website and official store (implements #29)
+
 ### 0.8
 * change: 'album' post type is changed to 'record'
   Existing menus or customizations might require a manual update
