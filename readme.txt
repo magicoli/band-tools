@@ -78,6 +78,9 @@ to show
 
 == Changelog ==
 
+= 0.8.4 =
+* fix Fatal error introduced in a04e95512275b4007a43d3d159d6bed46a45faf0
+
 = 0.8.3 =
 * updated translations
 
