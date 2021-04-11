@@ -78,6 +78,9 @@ to show
 
 == Changelog ==
 
+= 0.8.2 =
+* added options to show official links or not
+
 = 0.8.1 =
 * added band official website and official store (implements #29)
 
