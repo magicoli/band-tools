@@ -1,5 +1,8 @@
 <?php if ( ! defined( 'WPINC' ) ) die;
 
+// // debug, force update
+// update_option('bndtls_upated', 0);
+
 if ( ! defined( 'BNDTLS_UPDATES' ) ) define('BNDTLS_UPDATES', 1 );
 
 if(get_option('bndtls_upated') < BNDTLS_UPDATES ) {
@@ -69,7 +72,23 @@ function bndtls_update_1() {
   $results[] = $wpdb->affected_rows . " Relationships updated";
   if($wpdb->query($wpdb->prepare("UPDATE {$wpdb->prefix}postmeta SET meta_value = '${to}s' WHERE meta_key='_menu_item_object' AND meta_value = '{$from}s'")))
   $results[] = $wpdb->affected_rows . " Menus updated";
-
+  $options=get_option('bndtls-settings');
+  $renames=array(
+    "naming_${from}" => "naming_${to}",
+    "naming_${from}s" => "naming_${to}s",
+  );
+  foreach($renames as $old => $new) {
+    if($options[$old] &! $options[$new]) {
+      $options[$new]=$options[$old];
+      unset($options[$old]);
+    }
+  }
+  $options['allow_front_page']=str_replace($from, $to, $options['allow_front_page']);
+  $options['layout_page_content']=str_replace($from, $to, $options['layout_page_content']);
+  if($options != get_option('bndtls-settings')) {
+    update_option('bndtls-settings', $options);
+    $results[] = "options updated";
+  }
   update_option('bndtls_rewrite_rules', true);
   if(!empty($results)) return join("<br/>", $results);
   return true;
