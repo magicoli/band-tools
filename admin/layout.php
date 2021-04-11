@@ -7,7 +7,7 @@ add_filter( 'mb_settings_pages', 'bndtls_settings_layout' );
 function bndtls_settings_layout( $settings_pages ) {
 	$settings_pages[] = [
 		'id' => 'band_tools_layout',
-		'menu_title'  => (is_customize_preview()) ? __( 'Band Tools Layout Settings', 'band-tools' ) : __( 'Layout', 'band-tools' );,
+		'menu_title'  => (is_customize_preview()) ? __( 'Band Tools Layout Settings', 'band-tools' ) : __( 'Layout', 'band-tools' ),
 		'option_name' => 'bndtls-settings',
 		'position'    => 2,
 		'parent'      => 'band-tools',
