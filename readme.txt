@@ -78,6 +78,9 @@ to show
 
 == Changelog ==
 
+= 0.8.3 =
+* updated translations
+
 = 0.8.2 =
 * added options to show official links or not
 
