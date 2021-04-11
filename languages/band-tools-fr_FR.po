@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-11T15:11:57-04:00\n"
+"POT-Creation-Date: 2021-04-11T15:18:23-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -92,12 +92,12 @@ msgstr "Afficher les membres du groupe"
 #: admin/layout.php:43
 msgctxt "layout-settings"
 msgid "Show record/song Band"
-msgstr "Afficher le groupe de l'record / la chanson"
+msgstr "Afficher le groupe du disque / la chanson"
 
 #: admin/layout.php:44
 msgctxt "layout-settings"
 msgid "Show record/song Release year"
-msgstr "Afficher l'année de sortie de l'record / la chanson"
+msgstr "Afficher l'année de sortie du disque / la chanson"
 
 #: admin/layout.php:45
 msgctxt "layout-settings"
@@ -139,13 +139,13 @@ msgstr "Afficher les groupes"
 #: admin/layout.php:91
 msgctxt "layout-settings"
 msgid "Show Records"
-msgstr "Afficher les records"
+msgstr "Afficher les disques"
 
 #: admin/layout.php:77
 #: admin/layout.php:92
 msgctxt "layout-settings"
 msgid "Show Records and Tracks"
-msgstr "Afficher les records et les pistes"
+msgstr "Afficher les disques et les pistes"
 
 #: admin/layout.php:78
 #: admin/layout.php:93
@@ -570,35 +570,35 @@ msgstr "band-tools"
 
 #: includes/post-types.php:112
 msgid "Add new record"
-msgstr "Ajouter un record"
+msgstr "Ajouter un disque"
 
 #: includes/post-types.php:113
 msgid "Edit Record"
-msgstr "Modifier l'record"
+msgstr "Modifier le disque"
 
 #: includes/post-types.php:114
 msgid "New Record"
-msgstr "Nouveau record"
+msgstr "Nouveau disque"
 
 #: includes/post-types.php:115
 msgid "View Record"
-msgstr "Voir l'record"
+msgstr "Voir le disque"
 
 #: includes/post-types.php:116
 msgid "View Records"
-msgstr "Voir les records"
+msgstr "Voir les disques"
 
 #: includes/post-types.php:117
 msgid "Search Records"
-msgstr "Rechercher dans les records"
+msgstr "Rechercher dans les disques"
 
 #: includes/post-types.php:118
 msgid "No records found"
-msgstr "Aucun record trouvé"
+msgstr "Aucun disque trouvé"
 
 #: includes/post-types.php:119
 msgid "No records found in Trash"
-msgstr "Aucun record trouvé dans la corbeille"
+msgstr "Aucun disque trouvé dans la corbeille"
 
 #: includes/post-types.php:120
 msgid "Parent Record:"
@@ -610,11 +610,11 @@ msgstr "Records"
 
 #: includes/post-types.php:122
 msgid "Record Attributes"
-msgstr "Attributs de l'record"
+msgstr "Attributs du disque"
 
 #: includes/post-types.php:123
 msgid "Insert into record"
-msgstr "Insérer dans l'record"
+msgstr "Insérer dans le disque"
 
 #: includes/post-types.php:124
 msgid "Uploaded to this record"
@@ -622,15 +622,15 @@ msgstr "Téléverser"
 
 #: includes/post-types.php:129
 msgid "Filter records list"
-msgstr "Filtrer la liste d'records"
+msgstr "Filtrer la liste des d"
 
 #: includes/post-types.php:130
 msgid "Records list navigation"
-msgstr "Navigation liste d'records"
+msgstr "Navigation liste de disques"
 
 #: includes/post-types.php:131
 msgid "Records list"
-msgstr "Liste des records"
+msgstr "Liste des disques"
 
 #: includes/post-types.php:132
 msgid "Record published"
@@ -849,7 +849,7 @@ msgstr "Affiche les groupes liés"
 
 #: includes/widgets.php:131
 msgid "Display related records"
-msgstr "Affiche les records liés"
+msgstr "Affiche les disques liés"
 
 #: includes/widgets.php:228
 msgid "WC Products"
@@ -886,7 +886,7 @@ msgstr "par"
 
 #~ msgctxt "layout-settings"
 #~ msgid "Add Records"
-#~ msgstr "Ajouter les records"
+#~ msgstr "Ajouter les disques"
 
 #~ msgid "Add Songs"
 #~ msgstr "Ajouter les chansons"
@@ -913,7 +913,7 @@ msgstr "par"
 #~ msgstr "Archives des groupes"
 
 #~ msgid "Record Archives"
-#~ msgstr "Archives des records"
+#~ msgstr "Archives des disques"
 
 #~ msgid "Song Archives"
 #~ msgstr "Archives des chansons"
@@ -938,7 +938,7 @@ msgstr "par"
 #~ msgstr "Catégories"
 
 #~ msgid "Record info"
-#~ msgstr "Informations de l'record"
+#~ msgstr "Informations du disque"
 
 #~ msgid "Band info"
 #~ msgstr "Informations du groupe"
@@ -1115,10 +1115,10 @@ msgstr "par"
 #~ msgstr "Retour aux catégories"
 
 #~ msgid "Record Categories"
-#~ msgstr "Catégories d'records"
+#~ msgstr "Catégories de disques"
 
 #~ msgid "Record Category"
-#~ msgstr "Catégorie d'record"
+#~ msgstr "Catégorie de disque"
 
 #~ msgid "Update Category Name"
 #~ msgstr "Mettre à jour la catégorie"
@@ -1136,7 +1136,7 @@ msgstr "par"
 #~ msgstr "Choisir parmi les catégories les plus utilisées"
 
 #~ msgid "Back to Record Categories"
-#~ msgstr "Retour aux catégories d'record"
+#~ msgstr "Retour aux catégories de disques"
 
 #~ msgid "Band Categories"
 #~ msgstr "Catégories de groupes"
