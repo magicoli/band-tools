@@ -76,11 +76,10 @@ $bndtls_updater = new WP_Package_Updater(
 	true
 );
 
-if ( ! defined( 'BNDTLS_DEBUG_CSS' ) ) define('BNDTLS_DEBUG_CSS', ''); # '.' . time() );
+// if ( ! defined( 'BNDTLS_DEBUG_CSS' ) ) define('BNDTLS_DEBUG_CSS', ''); // normal cache
+if ( ! defined( 'BNDTLS_DEBUG_CSS' ) ) define('BNDTLS_DEBUG_CSS', '.' . time() ); // force no cache
 
 add_action( 'wp_enqueue_scripts', function() {
-  // dev (force no cache)
-  // wp_enqueue_style( 'band-tools-main', plugin_dir_url( __FILE__ ) . 'css/main.css', array(), BNDTLS_VERSION . '.' . time() );
   wp_enqueue_style( BNDTLS_SLUG . '-main', plugin_dir_url( __FILE__ ) . 'css/main.css', array(), BNDTLS_VERSION . BNDTLS_DEBUG_CSS );
 } );
 

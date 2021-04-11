@@ -50,6 +50,15 @@ function bndtls_add_after_title($title, $post_id) {
         case 'bands':
         $title_after .= (bndtls_get_option('layout_page_title:genre')) ? bndtls_get_meta([ 'tax_genres' ], $post_id) : '';
         $title_after .= (bndtls_get_option('layout_page_title:band_members')) ? bndtls_get_meta([ 'members' ], $post_id) : '';
+        $url = rwmb_meta( 'official_website', array(), $post_id );
+        if($url) {
+          $links[] = sprintf("<li class=link><a href='%s'>%s</a></li>", $url, __('Official Website', 'band-tools'));
+        }
+        $url = rwmb_meta( 'official_store', array(), $post_id );
+        if($url) {
+          $links[] = sprintf("<li class=link><a href='%s'>%s</a></li>", $url, __('Official Store', 'band-tools'));
+        }
+        if(!empty($links)) $title_after .= "<ul class=links>" . join(' ', $links) . "</ul>";
         break;
 
         case 'records':

@@ -18,6 +18,18 @@ function bndtls_fields_bands( $meta_boxes ) {
         'type' => 'date',
       ],
       [
+          'name' => __( 'Official Website', 'band-tools' ),
+          'id'   => $prefix . 'official_website',
+          'type' => 'url',
+          'desc' => __( 'Leave empty if the same as this website', 'band-tools' ),
+      ],
+      [
+          'name' => __( 'Official Store', 'band-tools' ),
+          'id'   => $prefix . 'official_store',
+          'type' => 'url',
+          'desc' => __( 'Leave empty if the same as this website', 'band-tools' ),
+      ],
+      [
         'name'  => __( 'Members', 'band-tools' ),
         'id'    => 'members',
         'type'  => 'text',
