@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-11T15:18:23-04:00\n"
+"POT-Creation-Date: 2021-04-11T15:47:06-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -64,107 +64,115 @@ msgstr "Codes courts"
 msgid "or"
 msgstr "ou"
 
-#: admin/layout.php:17
+#: admin/layout.php:10
+msgid "Band Tools Layout Settings"
+msgstr "Réglages d'affichage Band Tools"
+
+#: admin/layout.php:10
+msgid "Layout"
+msgstr "Affichage"
+
+#: admin/layout.php:16
 msgctxt "layout-settings"
 msgid "Layout saved"
-msgstr "Agencement enregistré"
+msgstr "Affichage enregistré"
 
-#: admin/layout.php:31
+#: admin/layout.php:30
 msgctxt "layout-settings"
 msgid "Page Header"
 msgstr "Entête"
 
-#: admin/layout.php:37
+#: admin/layout.php:36
 msgctxt "layout-settings"
 msgid "Title"
 msgstr "Titre"
 
-#: admin/layout.php:40
+#: admin/layout.php:39
 msgctxt "layout-settings"
 msgid "Add details under the title"
 msgstr "Ajouter des détails sous le titre"
 
-#: admin/layout.php:42
+#: admin/layout.php:41
 msgctxt "layout-settings"
 msgid "Show band Members"
 msgstr "Afficher les membres du groupe"
 
-#: admin/layout.php:43
+#: admin/layout.php:42
 msgctxt "layout-settings"
 msgid "Show record/song Band"
-msgstr "Afficher le groupe du disque / la chanson"
+msgstr "Afficher le groupe du disque / de la chanson"
 
-#: admin/layout.php:44
+#: admin/layout.php:43
 msgctxt "layout-settings"
 msgid "Show record/song Release year"
-msgstr "Afficher l'année de sortie du disque / la chanson"
+msgstr "Afficher l'année de sortie du disque / de la chanson"
 
-#: admin/layout.php:45
+#: admin/layout.php:44
 msgctxt "layout-settings"
 msgid "Show Genre"
 msgstr "Afficher le genre"
 
-#: admin/layout.php:46
+#: admin/layout.php:45
 msgctxt "layout-settings"
 msgid "Show Official Website"
 msgstr "Afficher le site officiel"
 
-#: admin/layout.php:47
+#: admin/layout.php:46
 msgctxt "layout-settings"
 msgid "Show Official Store"
 msgstr "Afficher la boutique officielle"
 
-#: admin/layout.php:64
+#: admin/layout.php:63
 msgctxt "layout-settings"
 msgid "Content"
 msgstr "Contenu"
 
-#: admin/layout.php:70
+#: admin/layout.php:69
 msgctxt "layout-settings"
 msgid "Main content"
 msgstr "Contenu principal"
 
-#: admin/layout.php:73
+#: admin/layout.php:72
 msgctxt "layout-settings"
 msgid "Add details under main content"
 msgstr "Ajouter des détails sous le contenu principal"
 
-#: admin/layout.php:75
-#: admin/layout.php:90
+#: admin/layout.php:74
+#: admin/layout.php:89
 msgctxt "layout-settings"
 msgid "Show Bands"
 msgstr "Afficher les groupes"
 
-#: admin/layout.php:76
-#: admin/layout.php:91
+#: admin/layout.php:75
+#: admin/layout.php:90
 msgctxt "layout-settings"
 msgid "Show Records"
 msgstr "Afficher les disques"
 
-#: admin/layout.php:77
-#: admin/layout.php:92
+#: admin/layout.php:76
+#: admin/layout.php:91
 msgctxt "layout-settings"
 msgid "Show Records and Tracks"
 msgstr "Afficher les disques et les pistes"
 
-#: admin/layout.php:78
-#: admin/layout.php:93
+#: admin/layout.php:77
+#: admin/layout.php:92
 msgctxt "layout-settings"
 msgid "Show Songs"
 msgstr "Afficher les chansons"
 
-#: admin/layout.php:79
-#: admin/layout.php:94
+#: admin/layout.php:78
+#: admin/layout.php:93
 msgctxt "layout-settings"
 msgid "Show Products"
 msgstr "Afficher les produits"
 
-#: admin/layout.php:85
+#: admin/layout.php:84
 msgctxt "layout-settings"
 msgid "Content Sidebar"
 msgstr "Barre latérale du contenu"
 
-#: admin/layout.php:88
+#: admin/layout.php:87
 msgctxt "layout-settings"
 msgid "(to be implemented)"
 msgstr "(à implémenter)"

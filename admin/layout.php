@@ -5,10 +5,9 @@ if ( ! is_plugin_active('mb-core/mb-core.php' ) || ! bndtls_get_option( 'develop
 add_filter( 'mb_settings_pages', 'bndtls_settings_layout' );
 
 function bndtls_settings_layout( $settings_pages ) {
-	$title = (is_customize_preview()) ? 'Band Tools Layout' : 'Layout';
 	$settings_pages[] = [
 		'id' => 'band_tools_layout',
-		'menu_title'  => __( $title, 'band-tools' ),
+		'menu_title'  => (is_customize_preview()) ? __( 'Band Tools Layout Settings', 'band-tools' ) : __( 'Layout', 'band-tools' );,
 		'option_name' => 'bndtls-settings',
 		'position'    => 2,
 		'parent'      => 'band-tools',
