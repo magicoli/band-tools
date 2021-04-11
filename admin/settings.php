@@ -93,8 +93,8 @@ function bndtls_settings_naming( $meta_boxes ) {
         ],
       ],
       [
-        'name'   => __( 'Album', 'band-tools' ),
-        'id'     => $prefix . 'naming_album',
+        'name'   => __( 'Record', 'band-tools' ),
+        'id'     => $prefix . 'naming_record',
         'type'   => 'group',
         'class'  => 'inline',
         'fields' => [
@@ -102,13 +102,13 @@ function bndtls_settings_naming( $meta_boxes ) {
             'id'          => $prefix . 'singular',
             'type'        => 'text',
             'desc'        => __( 'Singular', 'band-tools' ),
-            'std'         => __( 'Album', 'band-tools' ),
+            'std'         => __( 'Record', 'band-tools' ),
             'placeholder' => __( 'Singular', 'band-tools' ),
             'class'       => 'inline',
             'datalist'    => [
               'id'      => '6060ef87d6b88',
               'options' => [
-                __('Album', 'band-tools'),
+                __('Record', 'band-tools'),
                 __('Disc', 'band-tools'),
                 __('Record', 'band-tools'),
                 __('Set', 'band-tools'),
@@ -119,13 +119,13 @@ function bndtls_settings_naming( $meta_boxes ) {
             'id'          => $prefix . 'plural',
             'type'        => 'text',
             'desc'        => __( 'Plural', 'band-tools' ),
-            'std'         => __( 'Albums', 'band-tools' ),
+            'std'         => __( 'Records', 'band-tools' ),
             'placeholder' => __( 'Plural', 'band-tools' ),
             'class'       => 'inline',
             'datalist'    => [
               'id'      => '6060ef87d6b9e',
               'options' => [
-                __('Albums', 'band-tools'),
+                __('Records', 'band-tools'),
                 __('Discs', 'band-tools'),
                 __('Records', 'band-tools'),
                 __('Sets', 'band-tools'),
@@ -257,7 +257,7 @@ function bndtls_settings_frontpage( $meta_boxes ) {
 				'desc'            => __( 'Allow to select these as front page in Appearance > Customize menu', 'band-tools' ),
 				'options'         => [
 					'bands'  => __( 'Bands', 'band-tools' ),
-					'albums' => __( 'Albums', 'band-tools' ),
+					'records' => __( 'Records', 'band-tools' ),
 					'songs'  => __( 'Songs', 'band-tools' ),
 				],
 				'std'             => ['bands'],

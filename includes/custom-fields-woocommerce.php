@@ -72,7 +72,7 @@ if (!defined('WPINC')) {die;}
 // 			array(
 // 				'param' => 'post_type',
 // 				'operator' => '==',
-// 				'value' => 'albums',
+// 				'value' => 'records',
 // 			),
 // 		),
 // 	),

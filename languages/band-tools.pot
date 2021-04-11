@@ -91,12 +91,12 @@ msgstr ""
 
 #: admin/layout.php:43
 msgctxt "layout-settings"
-msgid "Show album/song Band"
+msgid "Show record/song Band"
 msgstr ""
 
 #: admin/layout.php:44
 msgctxt "layout-settings"
-msgid "Show album/song Release year"
+msgid "Show record/song Release year"
 msgstr ""
 
 #: admin/layout.php:45
@@ -128,13 +128,13 @@ msgstr ""
 #: admin/layout.php:74
 #: admin/layout.php:89
 msgctxt "layout-settings"
-msgid "Show Albums"
+msgid "Show Records"
 msgstr ""
 
 #: admin/layout.php:75
 #: admin/layout.php:90
 msgctxt "layout-settings"
-msgid "Show Albums and Tracks"
+msgid "Show Records and Tracks"
 msgstr ""
 
 #: admin/layout.php:76
@@ -250,8 +250,8 @@ msgstr ""
 #: admin/settings.php:111
 #: includes/init.php:97
 #: includes/post-types.php:110
-msgid "Album"
-msgid_plural "Albums"
+msgid "Record"
+msgid_plural "Records"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -274,7 +274,7 @@ msgstr ""
 #: includes/post-types.php:108
 #: includes/post-types.php:109
 #: includes/post-types.php:140
-msgid "Albums"
+msgid "Records"
 msgstr ""
 
 #: admin/settings.php:129
@@ -554,87 +554,87 @@ msgid "band-tools"
 msgstr ""
 
 #: includes/post-types.php:112
-msgid "Add new album"
+msgid "Add new record"
 msgstr ""
 
 #: includes/post-types.php:113
-msgid "Edit Album"
+msgid "Edit Record"
 msgstr ""
 
 #: includes/post-types.php:114
-msgid "New Album"
+msgid "New Record"
 msgstr ""
 
 #: includes/post-types.php:115
-msgid "View Album"
+msgid "View Record"
 msgstr ""
 
 #: includes/post-types.php:116
-msgid "View Albums"
+msgid "View Records"
 msgstr ""
 
 #: includes/post-types.php:117
-msgid "Search Albums"
+msgid "Search Records"
 msgstr ""
 
 #: includes/post-types.php:118
-msgid "No albums found"
+msgid "No records found"
 msgstr ""
 
 #: includes/post-types.php:119
-msgid "No albums found in Trash"
+msgid "No records found in Trash"
 msgstr ""
 
 #: includes/post-types.php:120
-msgid "Parent Album:"
+msgid "Parent Record:"
 msgstr ""
 
 #: includes/post-types.php:121
-msgid "All Albums"
+msgid "All Records"
 msgstr ""
 
 #: includes/post-types.php:122
-msgid "Album Attributes"
+msgid "Record Attributes"
 msgstr ""
 
 #: includes/post-types.php:123
-msgid "Insert into album"
+msgid "Insert into record"
 msgstr ""
 
 #: includes/post-types.php:124
-msgid "Uploaded to this album"
+msgid "Uploaded to this record"
 msgstr ""
 
 #: includes/post-types.php:129
-msgid "Filter albums list"
+msgid "Filter records list"
 msgstr ""
 
 #: includes/post-types.php:130
-msgid "Albums list navigation"
+msgid "Records list navigation"
 msgstr ""
 
 #: includes/post-types.php:131
-msgid "Albums list"
+msgid "Records list"
 msgstr ""
 
 #: includes/post-types.php:132
-msgid "Album published"
+msgid "Record published"
 msgstr ""
 
 #: includes/post-types.php:133
-msgid "Album published privately"
+msgid "Record published privately"
 msgstr ""
 
 #: includes/post-types.php:134
-msgid "Album reverted to draft"
+msgid "Record reverted to draft"
 msgstr ""
 
 #: includes/post-types.php:135
-msgid "Album scheduled"
+msgid "Record scheduled"
 msgstr ""
 
 #: includes/post-types.php:136
-msgid "Album updated"
+msgid "Record updated"
 msgstr ""
 
 #: includes/post-types.php:180
@@ -823,7 +823,7 @@ msgid "Display related bands"
 msgstr ""
 
 #: includes/widgets.php:131
-msgid "Display related albums"
+msgid "Display related records"
 msgstr ""
 
 #: includes/widgets.php:228

@@ -52,7 +52,7 @@ function bndtls_add_after_title($title, $post_id) {
         $title_after .= (bndtls_get_option('layout_page_title:band_members')) ? bndtls_get_meta([ 'members' ], $post_id) : '';
         break;
 
-        case 'albums':
+        case 'records':
         case 'songs':
         $title_after .= (bndtls_get_option('layout_page_title:band')) ? bndtls_get_relations($post, 'bands', [ 'direction' => 'to', 'title' => '', 'before' => __('by', 'band-tools') ] ) : '';
         $title_after .= (bndtls_get_option('layout_page_title:release')) ? bndtls_get_meta([ 'release' ], $post_id ) : '';

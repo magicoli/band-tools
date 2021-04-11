@@ -95,7 +95,7 @@ add_action( 'enqueue_block_editor_assets', function() {
 // dirty fix to include singular/plural forms in .pot
 if(false) {
   $cache = _n('Band', 'Bands', $n, 'band-tools');
-  $cache = _n('Album', 'Albums', $n, 'band-tools');
+  $cache = _n('Record', 'Records', $n, 'band-tools');
   $cache = _n('Song', 'Songs', $n, 'band-tools');
   $cache = _n('Track', 'Tracks', $n, 'band-tools');
   $cache = __('Track', 'band-tools');

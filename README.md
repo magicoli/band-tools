@@ -14,7 +14,7 @@ Basic post types and tools for a simple band website.
 
 ## Description
 
-A basic post types and tools for bands. Allow publishing of albums with songs
+A basic post types and tools for bands. Allow publishing of records with songs
 list. Easy enough for a single band. Complete enough for several ones.
 
 ### Goals
@@ -25,26 +25,26 @@ lacking essential features for me.
 
 I want something:
 
-* very simple. Let's talk about bands, albums and songs and link them together
-* opened to my other needs: sell my albums
+* very simple. Let's talk about bands, records and songs and link them together
+* opened to my other needs: sell my records
 * theme-agnostic
 * e-commerce agnostic (although I focus first on WooCommerce integration)
 
 ### Features
 
-* Linked post types for bands, albums, themes and videos
+* Linked post types for bands, records, themes and videos
 * Links to WooCommerce products
-* Widget to show related items. On a song page, it display the band, the albums
-  it appears on, related videos. On the band page it displays the albums and the
+* Widget to show related items. On a song page, it display the band, the records
+  it appears on, related videos. On the band page it displays the records and the
   songs. Etc.
-* The album pages also display link to shop product page
+* The record pages also display link to shop product page
 * Post types available for navigation menus
 
 ## Roadmap
 
 ### Next moves
 
-* Better widgets: cleaner and more complete display (thumbnails for albums and bands, direct buy or link, player...)
+* Better widgets: cleaner and more complete display (thumbnails for records and bands, direct buy or link, player...)
 * Video player
 * Guttenberg Blocks
 * Shortcodes for integration anywhere
@@ -53,7 +53,7 @@ I want something:
 
 ### Future plans
 
-* Audio playlists for albums and songs, uploaded locally
+* Audio playlists for records and songs, uploaded locally
 * Video playlists for songs from YouTube, Vimeo etc.
 * Crowdfunding based on WC sales (might be in a separate plugin)
 
@@ -62,7 +62,7 @@ I want something:
 1. Unzip `band-tools.zip` into the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Head to "Band Tools" admin menu and check settings
-4. Create at least one Band, then albums and songs at will
+4. Create at least one Band, then records and songs at will
 5. Enjoy
 
 ## Frequently Asked Questions
@@ -102,8 +102,8 @@ to show
 * renamed build_relationships to bndtls_get_relations
 
 ### 0.7.9
-* added genre under title for bands, albums, songs
-* added band under title for albums and songs
+* added genre under title for bands, records, songs
+* added band under title for records and songs
 * added band info fields
 * show infoboxes as grid on frontend
 * show custom fields blocks as grid
@@ -113,7 +113,7 @@ to show
 * removed afragen libraries, including own deps (previously it was just disabled)
 
 ### 0.7.7
-* fix chatty error log when no bands, albums or songs exist yet
+* fix chatty error log when no bands, records or songs exist yet
 * removed afragen dependency installer, too resource hungry
 
 ### 0.7.6
@@ -141,13 +141,13 @@ to show
 * added front page settings
 * added template for band when selected as home page
 * fix current page display in infoboxes
-* fix regression singular/plural bands, albums, groups
+* fix regression singular/plural bands, records, groups
 * fix regression: preferences not read for clean titles, single-archive redirect, widget area
 * fix Dashboard submenu name
 
 ### 0.7
-* new custom content template: show parent and child related items band/albums, band/songs, albums/songs
-* new plugin templates: single-[slug].php content-single-[slug].php content-archive-[slug].php ([slug] is bands, albums or songs)
+* new custom content template: show parent and child related items band/records, band/songs, records/songs
+* new plugin templates: single-[slug].php content-single-[slug].php content-archive-[slug].php ([slug] is bands, records or songs)
 * added mb-custom-post-type and mb-relationships libraries
 * added relations in list view
 * enhancement css refresh after update (use plugin version for css enqueue)
@@ -182,7 +182,7 @@ to show
 * fix installRow and licenseRow inversion
 * fix add_option fired too early and causing crash
 * constants for common values
-* added songs per album view
+* added songs per record view
 
 ### 0.4.4
 * new automatic singular or plural post names for archives and menus
@@ -195,7 +195,7 @@ to show
 * added videos to singular/plural names
 
 ### 0.3 - 0.3.9
-* added band, album, song, video categories
+* added band, record, song, video categories
 * added standard tags to all types without custom tags
 * added post-formats support
 * added video post type
@@ -214,6 +214,6 @@ to show
 
 ### 0.2.0
 Basicly functional
-* Band, Album and Song post types
-* Relations between Bands, Albums and songs
+* Band, Record and Song post types
+* Relations between Bands, Records and songs
 * Widgets with links to related objects

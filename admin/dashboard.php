@@ -70,7 +70,7 @@ function bndtls_dashboard_plugin_info( $meta_boxes ) {
           'name' => sprintf('<code>[bt-all]</code> %s <nobr><code>[band-tools]</code></nobr>', __('or', 'band-tools')),
           'id'   => $prefix . 'bt-auto',
           'type' => 'custom_html',
-          'std'  => 'All bands, albums, songs',
+          'std'  => 'All bands, records, songs',
         ],
         [
           'name' => sprintf('<code>[bt-auto]</code>', __('or', 'band-tools')),
@@ -85,10 +85,10 @@ function bndtls_dashboard_plugin_info( $meta_boxes ) {
           'std'  => 'Bands of current post',
         ],
         [
-          'name' => '<code>[bt-albums]</code>',
-          'id'   => $prefix . 'bt-albums',
+          'name' => '<code>[bt-records]</code>',
+          'id'   => $prefix . 'bt-records',
           'type' => 'custom_html',
-          'std'  => 'Albums of current post',
+          'std'  => 'Records of current post',
         ],
         [
           'name' => '<code>[bt-songs]</code>',

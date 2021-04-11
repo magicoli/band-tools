@@ -51,5 +51,5 @@ function bndtls_tax_genres() {
 			'hierarchical' => false,
 		],
 	];
-	register_taxonomy( 'genre', ['albums', 'songs', 'bands'], $args );
+	register_taxonomy( 'genre', ['records', 'songs', 'bands'], $args );
 }

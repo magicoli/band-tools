@@ -8,7 +8,7 @@ Version: 0.6.1-1
     line-height: 1.5em;
 }
 /*
-#sidebar .widget_bndtls_widget_all ul:not(.albums-songs) li {
+#sidebar .widget_bndtls_widget_all ul:not(.records-songs) li {
     list-style: disc;
     margin-left: 1.2em;
 }
@@ -19,7 +19,7 @@ Version: 0.6.1-1
   background: lightgrey;
 }
 
-ul.list.childs-albums {
+ul.list.childs-records {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -32,7 +32,7 @@ ul.list.childs-albums {
   list-style: none;
   margin-left: 0;
 }
-li.child-album {
+li.child-record {
   list-style: none;
   padding: 0;
   flex: 1 0 auto;
@@ -41,16 +41,16 @@ li.child-album {
 li.child .childs-title {
   /* min-height: 2.5em; */
 }
-#sidebar .albums-songs li.child-song,
-ul.childs-songs.albums-songs,
-li.child-album ul.childs-songs {
+#sidebar .records-songs li.child-song,
+ul.childs-songs.records-songs,
+li.child-record ul.childs-songs {
   list-style: decimal;
   margin-left: 2em;
   /* padding: 0; */
   /* margin: 0; */
 }
-ul.childs-songs.albums-songs > li,
-li.child-album ul.childs-songs > li {
+ul.childs-songs.records-songs > li,
+li.child-record ul.childs-songs > li {
   list-style: decimal;
 }
 .childs.list > li.current-page {

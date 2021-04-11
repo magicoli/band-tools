@@ -28,40 +28,40 @@ function bndtls_block_relations_list($type='', $args) {
         if( $thistype=="songs" )
         $result=get_post_meta($queried_object->ID, 'band', true);
         else
-        $result=get_post_meta($queried_object->ID, 'album_band', true);
+        $result=get_post_meta($queried_object->ID, 'record_band', true);
         break;
 
-      case 'albums':
+      case 'records':
         if( $thistype == "bands" ) {
-          // $result=get_post_meta($queried_object->ID, 'album_band', true);
+          // $result=get_post_meta($queried_object->ID, 'record_band', true);
           $queryargs = array(
             // 'posts_per_page'   => -1,
-            'post_type'        => 'albums',
-            'meta_key'         => 'album_band',
+            'post_type'        => 'records',
+            'meta_key'         => 'record_band',
             'meta_value'       => $queried_object->ID
           );
           $query = new WP_Query($queryargs);
-          // echo "<pre>Albums: ";
-          foreach($query->posts as $album) {
-            $result[]=$album->ID;
-            // $albumout = ($args['before_widget']) ? $args['before_widget'] : '<div class="bnttls list flex">';
-            $albumout = '<div class="bnttls list flex">';
+          // echo "<pre>Records: ";
+          foreach($query->posts as $record) {
+            $result[]=$record->ID;
+            // $recordout = ($args['before_widget']) ? $args['before_widget'] : '<div class="bnttls list flex">';
+            $recordout = '<div class="bnttls list flex">';
 
-            // $albumout .= ($args['before_title']) ? $args['before_title'] : "<h3>";
-            $albumout .= "<ul class=album><li><h5>";
-            $albumout .= bndtls_rel_link($album->ID);
-            $albumout .= "</h5>";
-            // $albumout .= ($args['before_title']) ? $args['after_title'] : "</h3>";
+            // $recordout .= ($args['before_title']) ? $args['before_title'] : "<h3>";
+            $recordout .= "<ul class=record><li><h5>";
+            $recordout .= bndtls_rel_link($record->ID);
+            $recordout .= "</h5>";
+            // $recordout .= ($args['before_title']) ? $args['after_title'] : "</h3>";
 
-            $albumout .= "<ul>";
-            $songs=get_post_meta($album->ID, 'tracks', true);
-            foreach ($songs as $songid) $albumout .= "<li>" . bndtls_rel_link($songid) . "</li>";
-            $albumout .= "</ul>";
-            $albumout .= "</li></ul>";
+            $recordout .= "<ul>";
+            $songs=get_post_meta($record->ID, 'tracks', true);
+            foreach ($songs as $songid) $recordout .= "<li>" . bndtls_rel_link($songid) . "</li>";
+            $recordout .= "</ul>";
+            $recordout .= "</li></ul>";
 
-            $albumout .= '</div>';
-            // $albumout .= ($args['before_widget']) ? $args['after_widget'] : "</div>";
-            $out[] = $albumout;
+            $recordout .= '</div>';
+            // $recordout .= ($args['before_widget']) ? $args['after_widget'] : "</div>";
+            $out[] = $recordout;
           }
           // echo "\n";
           // echo print_r($query->posts, true) . " (end posts)</pre>"; die;

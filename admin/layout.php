@@ -40,8 +40,8 @@ function bndtls_settings_layout_title( $meta_boxes ) {
 				'label_description' => _x( 'Add details under the title', 'layout-settings', 'band-tools' ),
 				'options'           => [
 					'band_members' => _x( 'Show band Members', 'layout-settings', 'band-tools' ),
-					'band'         => _x( 'Show album/song Band', 'layout-settings', 'band-tools' ),
-					'release'      => _x( 'Show album/song Release year', 'layout-settings', 'band-tools' ),
+					'band'         => _x( 'Show record/song Band', 'layout-settings', 'band-tools' ),
+					'release'      => _x( 'Show record/song Release year', 'layout-settings', 'band-tools' ),
 					'genre'        => _x( 'Show Genre', 'layout-settings', 'band-tools' ),
 				],
 				'std'               => ['true', 'true', 'true', 'true'],
@@ -71,8 +71,8 @@ function bndtls_settings_layout_content( $meta_boxes ) {
 				'label_description' => _x( 'Add details under main content', 'layout-settings', 'band-tools' ),
 				'options'           => [
 					'bands' => _x( 'Show Bands', 'layout-settings', 'band-tools' ),
-					'albums'         => _x( 'Show Albums', 'layout-settings', 'band-tools' ),
-					'albums_songs'      => _x( 'Show Albums and Tracks', 'layout-settings', 'band-tools' ),
+					'records'         => _x( 'Show Records', 'layout-settings', 'band-tools' ),
+					'records_songs'      => _x( 'Show Records and Tracks', 'layout-settings', 'band-tools' ),
 					'songs'        => _x( 'Show Songs', 'layout-settings', 'band-tools' ),
 					'products'        			=> _x( 'Show Products', 'layout-settings', 'band-tools' ),
 				],
@@ -86,8 +86,8 @@ function bndtls_settings_layout_content( $meta_boxes ) {
 				'label_description' => _x( '(to be implemented)', 'layout-settings', 'band-tools' ),
 				'options'           => [
 					'bands'					  	=> _x( 'Show Bands', 'layout-settings', 'band-tools' ),
-					'albums'          	=> _x( 'Show Albums', 'layout-settings', 'band-tools' ),
-					'albums_songs'    	=> _x( 'Show Albums and Tracks', 'layout-settings', 'band-tools' ),
+					'records'          	=> _x( 'Show Records', 'layout-settings', 'band-tools' ),
+					'records_songs'    	=> _x( 'Show Records and Tracks', 'layout-settings', 'band-tools' ),
 					'songs'        			=> _x( 'Show Songs', 'layout-settings', 'band-tools' ),
 					'products'        			=> _x( 'Show Products', 'layout-settings', 'band-tools' ),
 				],

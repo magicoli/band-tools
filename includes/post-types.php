@@ -27,7 +27,7 @@ function bndtls_frontpage_enable_types( $query ){
 	$frontpage_id = get_option( 'page_on_front' );
 	$type = get_post_type($frontpage_id);
 	// $types = bndtls_get_option('front_page_allow');
-	// foreach([ 'albums' ] as $type) {
+	// foreach([ 'records' ] as $type) {
 		if(isset($query->query_vars['post_type']) && '' == $query->query_vars['post_type'] && 0 != $query->query_vars['page_id'])
 		$query->query_vars['post_type'] = array( 'page', $type );
 	// }
@@ -104,40 +104,40 @@ function bndtls_register_post_types() {
 	register_post_type( 'bands', $args );
 
 	$labels = [
-		'name'                     => __( 'Albums', 'band-tools' ),
-		'menu_name'                => __( 'Albums', 'band-tools' ),
-		'archives'                 => __( 'Albums', 'band-tools' ),
-		'singular_name'            => __( 'Album', 'band-tools' ),
+		'name'                     => __( 'Records', 'band-tools' ),
+		'menu_name'                => __( 'Records', 'band-tools' ),
+		'archives'                 => __( 'Records', 'band-tools' ),
+		'singular_name'            => __( 'Record', 'band-tools' ),
 		'add_new'                  => __( 'Add New', 'band-tools' ),
-		'add_new_item'             => __( 'Add new album', 'band-tools' ),
-		'edit_item'                => __( 'Edit Album', 'band-tools' ),
-		'new_item'                 => __( 'New Album', 'band-tools' ),
-		'view_item'                => __( 'View Album', 'band-tools' ),
-		'view_items'               => __( 'View Albums', 'band-tools' ),
-		'search_items'             => __( 'Search Albums', 'band-tools' ),
-		'not_found'                => __( 'No albums found', 'band-tools' ),
-		'not_found_in_trash'       => __( 'No albums found in Trash', 'band-tools' ),
-		'parent_item_colon'        => __( 'Parent Album:', 'band-tools' ),
-		'all_items'                => __( 'All Albums', 'band-tools' ),
-		'attributes'               => __( 'Album Attributes', 'band-tools' ),
-		'insert_into_item'         => __( 'Insert into album', 'band-tools' ),
-		'uploaded_to_this_item'    => __( 'Uploaded to this album', 'band-tools' ),
+		'add_new_item'             => __( 'Add new record', 'band-tools' ),
+		'edit_item'                => __( 'Edit Record', 'band-tools' ),
+		'new_item'                 => __( 'New Record', 'band-tools' ),
+		'view_item'                => __( 'View Record', 'band-tools' ),
+		'view_items'               => __( 'View Records', 'band-tools' ),
+		'search_items'             => __( 'Search Records', 'band-tools' ),
+		'not_found'                => __( 'No records found', 'band-tools' ),
+		'not_found_in_trash'       => __( 'No records found in Trash', 'band-tools' ),
+		'parent_item_colon'        => __( 'Parent Record:', 'band-tools' ),
+		'all_items'                => __( 'All Records', 'band-tools' ),
+		'attributes'               => __( 'Record Attributes', 'band-tools' ),
+		'insert_into_item'         => __( 'Insert into record', 'band-tools' ),
+		'uploaded_to_this_item'    => __( 'Uploaded to this record', 'band-tools' ),
 		'featured_image'           => __( 'Featured image', 'band-tools' ),
 		'set_featured_image'       => __( 'Set featured image', 'band-tools' ),
 		'remove_featured_image'    => __( 'Remove featured image', 'band-tools' ),
 		'use_featured_image'       => __( 'Use as featured image', 'band-tools' ),
-		'filter_items_list'        => __( 'Filter albums list', 'band-tools' ),
-		'items_list_navigation'    => __( 'Albums list navigation', 'band-tools' ),
-		'items_list'               => __( 'Albums list', 'band-tools' ),
-		'item_published'           => __( 'Album published', 'band-tools' ),
-		'item_published_privately' => __( 'Album published privately', 'band-tools' ),
-		'item_reverted_to_draft'   => __( 'Album reverted to draft', 'band-tools' ),
-		'item_scheduled'           => __( 'Album scheduled', 'band-tools' ),
-		'item_updated'             => __( 'Album updated', 'band-tools' ),
+		'filter_items_list'        => __( 'Filter records list', 'band-tools' ),
+		'items_list_navigation'    => __( 'Records list navigation', 'band-tools' ),
+		'items_list'               => __( 'Records list', 'band-tools' ),
+		'item_published'           => __( 'Record published', 'band-tools' ),
+		'item_published_privately' => __( 'Record published privately', 'band-tools' ),
+		'item_reverted_to_draft'   => __( 'Record reverted to draft', 'band-tools' ),
+		'item_scheduled'           => __( 'Record scheduled', 'band-tools' ),
+		'item_updated'             => __( 'Record updated', 'band-tools' ),
 		'text_domain'              => __( 'band-tools', 'band-tools' ),
 	];
 	$args = [
-		'label'               => __( 'Albums', 'band-tools' ),
+		'label'               => __( 'Records', 'band-tools' ),
 		'labels'              => $labels,
 		'description'         => '',
 		'public'              => true,
@@ -155,8 +155,8 @@ function bndtls_register_post_types() {
 		'has_archive'         => true,
 		'rest_base'           => '',
 		'show_in_menu'        => true,
-		'menu_icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-album-collection-20x20.svg',
-		// 'menu_icon'           => 'dashicons-album',
+		'menu_icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-record-collection-20x20.svg',
+		// 'menu_icon'           => 'dashicons-record',
 		'capability_type'     => 'post',
 		'supports'            => ['title', 'editor', 'thumbnail', 'excerpt', 'comments'],
 		'taxonomies'          => [],
@@ -164,12 +164,12 @@ function bndtls_register_post_types() {
 			'with_front' => false,
 		],
 	];
-	register_post_type( 'albums', $args );
-	$adaptive = get_type_name_n('album', 'Album', 'Albums', bndtls_count_posts('albums'));
+	register_post_type( 'records', $args );
+	$adaptive = get_type_name_n('record', 'Record', 'Records', bndtls_count_posts('records'));
 	$args['labels']['name'] = $adaptive;
 	$args['labels']['menu_name'] = $adaptive;
 	$args['labels']['archives'] = $adaptive;
-	register_post_type( 'albums', $args );
+	register_post_type( 'records', $args );
 
 	$labels = [
 		'name'                     => __( 'Songs', 'band-tools' ),
@@ -245,37 +245,37 @@ add_action( 'mb_relationships_init', 'bndtls_register_relationships' );
 
 function bndtls_register_relationships() {
 	$singular['bands'] = __(bndtls_get_option( 'naming_' . 'band', 'Band', 'singular' ), 'band-tools');
-	$singular['albums'] = __(bndtls_get_option( 'naming_' . 'album', 'Album', 'singular' ), 'band-tools');
+	$singular['records'] = __(bndtls_get_option( 'naming_' . 'record', 'Record', 'singular' ), 'band-tools');
 	$singular['songs'] = __(bndtls_get_option( 'naming_' . 'song', 'Song', 'singular' ), 'band-tools');
 	$singular['tracks'] = __(bndtls_get_option( 'naming_' . 'track', 'Track', 'singular' ), 'band-tools');
 	$singular['products'] = __(bndtls_get_option( 'naming_' . 'product', 'Product', 'singular' ), 'band-tools');
 	$adaptive['bands'] = get_type_name_n('band', 'Band', 'Bands', bndtls_count_posts('bands'));
-	$adaptive['albums'] = get_type_name_n('album', 'Album', 'Albums', bndtls_count_posts('albums'));
+	$adaptive['records'] = get_type_name_n('record', 'Record', 'Records', bndtls_count_posts('records'));
 	$adaptive['songs'] = get_type_name_n('song', 'Song', 'Songs', bndtls_count_posts('songs'));
 	$adaptive['tracks'] = get_type_name_n('track', 'Track', 'Tracks', bndtls_count_posts('songs'));
 	$adaptive['products'] = get_type_name_n('product', 'Product', 'Products', bndtls_count_posts('songs'));
 
 	MB_Relationships_API::register( [
-		'id'   => 'rel-bands-albums',
+		'id'   => 'rel-bands-records',
 		'from' => [
 			'object_type' => 'post',
 			'post_type'   => 'bands',
 			'admin_column' => [
 				'position' => 'after title',
-				'title'    => $adaptive['albums'],
-				'singular' => $singular['albums'],
+				'title'    => $adaptive['records'],
+				'singular' => $singular['records'],
 				'link'     => 'view',
 			],
 			'meta_box'    => [
-				'title'    => $adaptive['albums'],
-				'singular' => $singular['albums'],
+				'title'    => $adaptive['records'],
+				'singular' => $singular['records'],
 				'context'  => 'normal',
 				'priority' => 'high',
 			],
 		],
 		'to'   => [
 			'object_type' => 'post',
-			'post_type'   => 'albums',
+			'post_type'   => 'records',
 			'admin_column' => [
 				'position' => 'after title',
 				'title'    => $adaptive['bands'],
@@ -328,10 +328,10 @@ function bndtls_register_relationships() {
 	] );
 
 	MB_Relationships_API::register( [
-		'id'   => 'rel-albums-songs',
+		'id'   => 'rel-records-songs',
 		'from' => [
 			'object_type'  => 'post',
-			'post_type'    => 'albums',
+			'post_type'    => 'records',
 			'admin_column' => [
 				'position' => 'after title',
 				'title'    => $adaptive['tracks'],
@@ -349,24 +349,24 @@ function bndtls_register_relationships() {
 			'post_type'   => 'songs',
 			'admin_column' => [
 				'position' => 'after title',
-				'title'    => $adaptive['albums'],
-				'singular' => $singular['albums'],
+				'title'    => $adaptive['records'],
+				'singular' => $singular['records'],
 				'link'     => 'view',
 			],
 			'meta_box'    => [
-				'title'   => $adaptive['albums'],
-				'singular'   => $singular['albums'],
+				'title'   => $adaptive['records'],
+				'singular'   => $singular['records'],
 				'context' => 'normal',
 			],
 		],
 	] );
 
 	MB_Relationships_API::register( [
-		'id'         => 'rel-albums-products',
+		'id'         => 'rel-records-products',
 		'reciprocal' => true,
 		'from'       => [
 			'object_type'  => 'post',
-			'post_type'    => 'albums',
+			'post_type'    => 'records',
 			'admin_column' => [
 				'position' => 'after title',
 				'title'    => $adaptive['products'],
@@ -378,11 +378,11 @@ function bndtls_register_relationships() {
 				'singular' => $singular['products'],
 				'context'  => 'normal',
 				'priority' => 'high',
-				'class'    => 'album-product',
+				'class'    => 'record-product',
 			],
 			'field'        => [
 				'name'  => 'Products',
-				'class' => 'album-product',
+				'class' => 'record-product',
 			],
 		],
 		'to'         => [
@@ -394,16 +394,16 @@ function bndtls_register_relationships() {
 			],
 			'admin_column' => [
 				'position' => 'after title',
-				'title'    => $adaptive['albums'],
-				'singular' => $singular['albums'],
+				'title'    => $adaptive['records'],
+				'singular' => $singular['records'],
 				'link'     => 'view',
-				'class' => 'album-product',
+				'class' => 'record-product',
 			],
 			'meta_box'    => [
-				'title'   => $adaptive['albums'],
-				'singular'   => $singular['albums'],
+				'title'   => $adaptive['records'],
+				'singular'   => $singular['records'],
 				'context' => 'normal',
-				'class' => 'album-product',
+				'class' => 'record-product',
 			],
 		],
 	] );

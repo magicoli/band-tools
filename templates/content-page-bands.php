@@ -1,7 +1,7 @@
 <?php
 /**
  * Single band show, but when it's the front page
- * Nearly the same except other album view
+ * Nearly the same except other record view
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -10,8 +10,8 @@
  * @since Twenty Nineteen 1.0
  */
 $content = get_the_content( $more_link_text, $strip_teaser );
-// $albums = MB_Relationships_API::get_connected( [
-//     'id'   => 'rel-band-album',
+// $records = MB_Relationships_API::get_connected( [
+//     'id'   => 'rel-band-record',
 //     'from' => get_the_ID(),
 // ] );
 // $songs = MB_Relationships_API::get_connected( [
@@ -24,5 +24,5 @@ $content = get_the_content( $more_link_text, $strip_teaser );
 </div>
 <?php
 if(bndtls_get_option('frontpage_full_content')) :
-  echo bndtls_get_relations(get_post(), [ 'albums' ] );
+  echo bndtls_get_relations(get_post(), [ 'records' ] );
 endif;

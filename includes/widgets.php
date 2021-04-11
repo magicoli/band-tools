@@ -29,7 +29,7 @@ class bndtls_widget_all extends WP_Widget {
 
   // Widget front-end
   public function widget( $args, $instance ) {
-    // foreach(['videos','bands','albums','songs','products'] as $type) {
+    // foreach(['videos','bands','records','songs','products'] as $type) {
       $content = do_shortcode("[bt-auto]") ;
       if (!empty($content)) {
         $before_widget='';
@@ -121,20 +121,20 @@ class bndtls_widget_bands extends WP_Widget {
   }
 }
 
-// albums widget
-class bndtls_widget_albums extends WP_Widget {
+// records widget
+class bndtls_widget_records extends WP_Widget {
 
   function __construct() {
     parent::__construct(
-      'bndtls_widget_albums',
-      sprintf('Band Tools (%s)', __(bndtls_get_option( 'naming_album', 'Albums', 'plural' ), 'band-tools')),
-      array( 'description' => __( 'Display related albums', 'band-tools' ), )
+      'bndtls_widget_records',
+      sprintf('Band Tools (%s)', __(bndtls_get_option( 'naming_record', 'Records', 'plural' ), 'band-tools')),
+      array( 'description' => __( 'Display related records', 'band-tools' ), )
     );
   }
 
   // Widget front-end
   public function widget( $args, $instance ) {
-    $type='albums';
+    $type='records';
     $shortcode="[bt-$type]";
     $content = do_shortcode($shortcode) ;
     if (!empty($content)) {
@@ -151,7 +151,7 @@ class bndtls_widget_albums extends WP_Widget {
       $title = $instance[ 'title' ];
     }
     else {
-      $title = __( bndtls_get_option( 'naming_album', 'Albums', 'plural' ), 'band-tools' );
+      $title = __( bndtls_get_option( 'naming_record', 'Records', 'plural' ), 'band-tools' );
     }
     // Widget admin form
     ?>
@@ -323,7 +323,7 @@ class bndtls_widget_video_posts extends WP_Widget {
 function bndtls_load_widgets() {
   register_widget( 'bndtls_widget_all' );
   register_widget( 'bndtls_widget_bands' );
-  register_widget( 'bndtls_widget_albums' );
+  register_widget( 'bndtls_widget_records' );
   register_widget( 'bndtls_widget_songs' );
   register_widget( 'bndtls_widget_video_posts' );
 }

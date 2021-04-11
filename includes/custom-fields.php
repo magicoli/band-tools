@@ -38,13 +38,13 @@ function bndtls_fields_bands( $meta_boxes ) {
   return $meta_boxes;
 }
 
-add_filter( 'rwmb_meta_boxes', 'bndtls_fields_albums' );
-function bndtls_fields_albums( $meta_boxes ) {
+add_filter( 'rwmb_meta_boxes', 'bndtls_fields_records' );
+function bndtls_fields_records( $meta_boxes ) {
   $meta_boxes[] = [
     'title'      => __( 'Info', 'band-tools' ),
-    'id'         => 'fields-album-info',
-    'post_types' => ['albums'],
-    'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-albums',
+    'id'         => 'fields-record-info',
+    'post_types' => ['records'],
+    'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-records',
     'fields'     => [
       [
         'name' => __( 'Release', 'band-tools' ),

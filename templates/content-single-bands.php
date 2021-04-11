@@ -11,10 +11,10 @@
 $content = get_the_content( $more_link_text, $strip_teaser );
 
 $content_after = '';
-if(bndtls_get_option('layout_page_content:albums_songs')) {
-  $content_after .= bndtls_get_relations(get_post(), [ 'albums', 'songs' ] );
-} else if(bndtls_get_option('layout_page_content:albums')) {
-  $content_after .= bndtls_get_relations(get_post(), [ 'albums' ] );
+if(bndtls_get_option('layout_page_content:records_songs')) {
+  $content_after .= bndtls_get_relations(get_post(), [ 'records', 'songs' ] );
+} else if(bndtls_get_option('layout_page_content:records')) {
+  $content_after .= bndtls_get_relations(get_post(), [ 'records' ] );
 }
 
 ?>

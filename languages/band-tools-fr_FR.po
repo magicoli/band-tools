@@ -91,13 +91,13 @@ msgstr "Afficher les membres du groupe"
 
 #: admin/layout.php:43
 msgctxt "layout-settings"
-msgid "Show album/song Band"
-msgstr "Afficher le groupe de l'album / la chanson"
+msgid "Show record/song Band"
+msgstr "Afficher le groupe de l'record / la chanson"
 
 #: admin/layout.php:44
 msgctxt "layout-settings"
-msgid "Show album/song Release year"
-msgstr "Afficher l'année de sortie de l'album / la chanson"
+msgid "Show record/song Release year"
+msgstr "Afficher l'année de sortie de l'record / la chanson"
 
 #: admin/layout.php:45
 msgctxt "layout-settings"
@@ -128,14 +128,14 @@ msgstr "Afficher les groupes"
 #: admin/layout.php:74
 #: admin/layout.php:89
 msgctxt "layout-settings"
-msgid "Show Albums"
-msgstr "Afficher les albums"
+msgid "Show Records"
+msgstr "Afficher les records"
 
 #: admin/layout.php:75
 #: admin/layout.php:90
 msgctxt "layout-settings"
-msgid "Show Albums and Tracks"
-msgstr "Afficher les albums et les pistes"
+msgid "Show Records and Tracks"
+msgstr "Afficher les records et les pistes"
 
 #: admin/layout.php:76
 #: admin/layout.php:91
@@ -250,10 +250,10 @@ msgstr "Chanteurs"
 #: admin/settings.php:111
 #: includes/init.php:97
 #: includes/post-types.php:110
-msgid "Album"
-msgid_plural "Albums"
-msgstr[0] "Album"
-msgstr[1] "Album"
+msgid "Record"
+msgid_plural "Records"
+msgstr[0] "Record"
+msgstr[1] "Record"
 
 #: admin/settings.php:112
 msgid "Disc"
@@ -274,8 +274,8 @@ msgstr "Set"
 #: includes/post-types.php:108
 #: includes/post-types.php:109
 #: includes/post-types.php:140
-msgid "Albums"
-msgstr "Albums"
+msgid "Records"
+msgstr "Records"
 
 #: admin/settings.php:129
 msgid "Discs"
@@ -554,88 +554,88 @@ msgid "band-tools"
 msgstr "band-tools"
 
 #: includes/post-types.php:112
-msgid "Add new album"
-msgstr "Ajouter un album"
+msgid "Add new record"
+msgstr "Ajouter un record"
 
 #: includes/post-types.php:113
-msgid "Edit Album"
-msgstr "Modifier l'album"
+msgid "Edit Record"
+msgstr "Modifier l'record"
 
 #: includes/post-types.php:114
-msgid "New Album"
-msgstr "Nouveau album"
+msgid "New Record"
+msgstr "Nouveau record"
 
 #: includes/post-types.php:115
-msgid "View Album"
-msgstr "Voir l'album"
+msgid "View Record"
+msgstr "Voir l'record"
 
 #: includes/post-types.php:116
-msgid "View Albums"
-msgstr "Voir les albums"
+msgid "View Records"
+msgstr "Voir les records"
 
 #: includes/post-types.php:117
-msgid "Search Albums"
-msgstr "Rechercher dans les albums"
+msgid "Search Records"
+msgstr "Rechercher dans les records"
 
 #: includes/post-types.php:118
-msgid "No albums found"
-msgstr "Aucun album trouvé"
+msgid "No records found"
+msgstr "Aucun record trouvé"
 
 #: includes/post-types.php:119
-msgid "No albums found in Trash"
-msgstr "Aucun album trouvé dans la corbeille"
+msgid "No records found in Trash"
+msgstr "Aucun record trouvé dans la corbeille"
 
 #: includes/post-types.php:120
-msgid "Parent Album:"
-msgstr "Album parent:"
+msgid "Parent Record:"
+msgstr "Record parent:"
 
 #: includes/post-types.php:121
-msgid "All Albums"
-msgstr "Albums"
+msgid "All Records"
+msgstr "Records"
 
 #: includes/post-types.php:122
-msgid "Album Attributes"
-msgstr "Attributs de l'album"
+msgid "Record Attributes"
+msgstr "Attributs de l'record"
 
 #: includes/post-types.php:123
-msgid "Insert into album"
-msgstr "Insérer dans l'album"
+msgid "Insert into record"
+msgstr "Insérer dans l'record"
 
 #: includes/post-types.php:124
-msgid "Uploaded to this album"
+msgid "Uploaded to this record"
 msgstr "Téléverser"
 
 #: includes/post-types.php:129
-msgid "Filter albums list"
-msgstr "Filtrer la liste d'albums"
+msgid "Filter records list"
+msgstr "Filtrer la liste d'records"
 
 #: includes/post-types.php:130
-msgid "Albums list navigation"
-msgstr "Navigation liste d'albums"
+msgid "Records list navigation"
+msgstr "Navigation liste d'records"
 
 #: includes/post-types.php:131
-msgid "Albums list"
-msgstr "Liste des albums"
+msgid "Records list"
+msgstr "Liste des records"
 
 #: includes/post-types.php:132
-msgid "Album published"
-msgstr "Album publié"
+msgid "Record published"
+msgstr "Record publié"
 
 #: includes/post-types.php:133
-msgid "Album published privately"
-msgstr "Album publié en privé"
+msgid "Record published privately"
+msgstr "Record publié en privé"
 
 #: includes/post-types.php:134
-msgid "Album reverted to draft"
-msgstr "Album remis en brouillon"
+msgid "Record reverted to draft"
+msgstr "Record remis en brouillon"
 
 #: includes/post-types.php:135
-msgid "Album scheduled"
-msgstr "Album programmé"
+msgid "Record scheduled"
+msgstr "Record programmé"
 
 #: includes/post-types.php:136
-msgid "Album updated"
-msgstr "Album mis à jour"
+msgid "Record updated"
+msgstr "Record mis à jour"
 
 #: includes/post-types.php:180
 msgid "Add new song"
@@ -823,8 +823,8 @@ msgid "Display related bands"
 msgstr "Affiche les groupes liés"
 
 #: includes/widgets.php:131
-msgid "Display related albums"
-msgstr "Affiche les albums liés"
+msgid "Display related records"
+msgstr "Affiche les records liés"
 
 #: includes/widgets.php:228
 msgid "WC Products"
@@ -860,8 +860,8 @@ msgstr "par"
 #~ msgstr "Ajouter les groupes"
 
 #~ msgctxt "layout-settings"
-#~ msgid "Add Albums"
-#~ msgstr "Ajouter les albums"
+#~ msgid "Add Records"
+#~ msgstr "Ajouter les records"
 
 #~ msgctxt "layout-settings"
 #~ msgid "Add Songs"
@@ -888,8 +888,8 @@ msgstr "par"
 #~ msgid "Band Archives"
 #~ msgstr "Archives des groupes"
 
-#~ msgid "Album Archives"
-#~ msgstr "Archives des albums"
+#~ msgid "Record Archives"
+#~ msgstr "Archives des records"
 
 #~ msgid "Song Archives"
 #~ msgstr "Archives des chansons"
@@ -913,8 +913,8 @@ msgstr "par"
 #~ msgid "Categories"
 #~ msgstr "Catégories"
 
-#~ msgid "Album info"
-#~ msgstr "Informations de l'album"
+#~ msgid "Record info"
+#~ msgstr "Informations de l'record"
 
 #~ msgid "Band info"
 #~ msgstr "Informations du groupe"
@@ -1090,11 +1090,11 @@ msgstr "par"
 #~ msgid "Back to Video Categories"
 #~ msgstr "Retour aux catégories"
 
-#~ msgid "Album Categories"
-#~ msgstr "Catégories d'albums"
+#~ msgid "Record Categories"
+#~ msgstr "Catégories d'records"
 
-#~ msgid "Album Category"
-#~ msgstr "Catégorie d'album"
+#~ msgid "Record Category"
+#~ msgstr "Catégorie d'record"
 
 #~ msgid "Update Category Name"
 #~ msgstr "Mettre à jour la catégorie"
@@ -1111,8 +1111,8 @@ msgstr "par"
 #~ msgid "Choose from the most used Categories"
 #~ msgstr "Choisir parmi les catégories les plus utilisées"
 
-#~ msgid "Back to Album Categories"
-#~ msgstr "Retour aux catégories d'album"
+#~ msgid "Back to Record Categories"
+#~ msgstr "Retour aux catégories d'record"
 
 #~ msgid "Band Categories"
 #~ msgstr "Catégories de groupes"

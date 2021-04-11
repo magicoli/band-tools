@@ -39,17 +39,17 @@ function bndtls_shortcodes_init()
 		if($type == "band-tools" || $type == "bndtls" || $type=="auto" ) {
 			switch($post->post_type) {
 				case 'bands':
-				$output = bndtls_get_relations($post, [ 'albums', 'songs' ] );
+				$output = bndtls_get_relations($post, [ 'records', 'songs' ] );
 				break;
 
-				case 'albums':
+				case 'records':
 				$output = bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'to', 'mode' => 'inline' ] )
 				 . bndtls_get_relations($post, [ 'songs' ], [ 'mode' => 'ol' ] );
 				break;
 
 				case 'songs':
 				$output = bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'to', 'mode' => 'inline' ] )
-				. bndtls_get_relations($post, [ 'albums', 'songs' ], [ 'direction' => 'to', 'mode' => 'inline' ] );
+				. bndtls_get_relations($post, [ 'records', 'songs' ], [ 'direction' => 'to', 'mode' => 'inline' ] );
 				break;
 
 				default:
@@ -69,12 +69,12 @@ function bndtls_shortcodes_init()
 	}
 	add_shortcode('bt-auto', 'bndtls_shortcode_list');
 	add_shortcode('bt-bands', 'bndtls_shortcode_list');
-	add_shortcode('bt-albums', 'bndtls_shortcode_list');
+	add_shortcode('bt-records', 'bndtls_shortcode_list');
 	add_shortcode('bt-songs', 'bndtls_shortcode_list');
 	add_shortcode('band-tools', 'bndtls_shortcode_list');
 	add_shortcode('bndtls', 'bndtls_shortcode_list'); // deprecated, backward compatibility
 	add_shortcode('bands', 'bndtls_shortcode_list'); // deprecated, backward compatibility
-	add_shortcode('albums', 'bndtls_shortcode_list'); // deprecated, backward compatibility
+	add_shortcode('records', 'bndtls_shortcode_list'); // deprecated, backward compatibility
 	add_shortcode('songs', 'bndtls_shortcode_list'); // deprecated, backward compatibility
 	add_shortcode('videos', 'bndtls_shortcode_list'); // deprecated, backward compatibility
 
