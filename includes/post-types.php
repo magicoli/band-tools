@@ -104,10 +104,10 @@ function bndtls_register_post_types() {
 	register_post_type( 'bands', $args );
 
 	$labels = [
-		'name'                     => __( 'Records', 'band-tools' ),
-		'menu_name'                => __( 'Records', 'band-tools' ),
-		'archives'                 => __( 'Records', 'band-tools' ),
-		'singular_name'            => __( 'Record', 'band-tools' ),
+		'name'                     => get_type_name_n('record', 'Record', 'Records' ),
+		'menu_name'                => get_type_name_n('record', 'Record', 'Records' ),
+		'archives'                 => get_type_name_n('record', 'Record', 'Records' ),
+		'singular_name'            => get_type_name_n('record', 'Record', 'Records', 1),
 		'add_new'                  => __( 'Add New', 'band-tools' ),
 		'add_new_item'             => __( 'Add new record', 'band-tools' ),
 		'edit_item'                => __( 'Edit Record', 'band-tools' ),
@@ -155,7 +155,7 @@ function bndtls_register_post_types() {
 		'has_archive'         => true,
 		'rest_base'           => '',
 		'show_in_menu'        => true,
-		'menu_icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-record-collection-20x20.svg',
+		'menu_icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-album-collection-20x20.svg',
 		// 'menu_icon'           => 'dashicons-record',
 		'capability_type'     => 'post',
 		'supports'            => ['title', 'editor', 'thumbnail', 'excerpt', 'comments'],
