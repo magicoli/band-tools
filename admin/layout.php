@@ -40,9 +40,9 @@ function bndtls_settings_layout_title( $meta_boxes ) {
 				'options'           => [
 					'band_members' => _x( 'Show band Members', 'layout-settings', 'band-tools' ),
 					'band'         => _x( 'Show record/song Band', 'layout-settings', 'band-tools' ),
-					'authors'      => _x( 'Show song authors', 'layout-settings', 'band-tools' ),
 					'release_type'      => _x( 'Show record Release Type', 'layout-settings', 'band-tools' ),
 					'release'      => _x( 'Show record/song Release year', 'layout-settings', 'band-tools' ),
+					'authors'      => _x( 'Show song authors', 'layout-settings', 'band-tools' ),
 					'genre'        => _x( 'Show Genre', 'layout-settings', 'band-tools' ),
 					'official_website'        => _x( 'Show Official Website', 'layout-settings', 'band-tools' ),
 					'official_store'        => _x( 'Show Official Store', 'layout-settings', 'band-tools' ),
