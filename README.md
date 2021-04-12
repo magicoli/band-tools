@@ -78,6 +78,11 @@ to show
 
 ## Changelog
 
+### 0.8.5
+* added record release type
+* added song authors
+* fix authors list not displayed
+
 ### 0.8.4
 * fix Fatal error introduced in a04e95512275b4007a43d3d159d6bed46a45faf0
 
