@@ -101,7 +101,7 @@ function bndtls_register_taxonomies() {
 	    'hierarchical' => false,
 	  ],
 	];
-	register_taxonomy( 'author', ['songs'], $args );
+	register_taxonomy( 'authors', ['songs'], $args );
 
 	$labels = [
 	  'name'                       => esc_html__( 'Release Types', 'band-tools' ),

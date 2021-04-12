@@ -110,7 +110,7 @@ function bndtls_fields_songs( $meta_boxes ) {
         'name'       => __( 'Authors', 'band-tools' ),
         'id'         => 'authors',
         'type'       => 'taxonomy',
-        'taxonomy'   => ['author'],
+        'taxonomy'   => ['authors'],
         'field_type' => 'select_advanced',
         'add_new'    => true,
         'multiple'   => true,
