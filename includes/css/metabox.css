@@ -1,15 +1,17 @@
  /* * div:has('#fields-song-info', '#rel-bands-songs_relationships_from', '#rel-records-songs_relationships_from') */
-:is(.toplevel_page_band-tools, .band-tools_page_band-tools-settings, .post-type-records, .post-type-songs, .post-type-bands) #poststuff .postbox-container > * {
+ /* :is(.toplevel_page_band-tools, .band-tools_page_band-tools-settings, .post-type-records, .post-type-songs, .post-type-bands) #poststuff .postbox-container > * { */
+:is(.band-tools_page_band-tools-settings, .band-tools_page_band_tools_layout) #poststuff .postbox-container > * {
   display: flex;
   column-gap: 20px;
   flex-direction: row;
   flex-wrap: wrap;
 }
-:is(.post-type-records, .post-type-songs, .post-type-bands) #poststuff .postbox-container > * {
+/* :is(.post-type-records, .post-type-songs, .post-type-bands) #poststuff .postbox-container > * {
   gap: 10px;
-}
+} */
 /* :is(.post-type-records, .post-type-songs, .post-type-bands) #poststuff .postbox-container > * { */
-:is(.toplevel_page_band-tools, .band-tools_page_band-tools-settings, .post-type-records, .post-type-songs, .post-type-bands) #poststuff .postbox-container > * > * {
+/* :is(.toplevel_page_band-tools, .band-tools_page_band-tools-settings, .post-type-records, .post-type-songs, .post-type-bands) #poststuff .postbox-container > * > * { */
+:is(.band-tools_page_band-tools-settings, .band-tools_page_band_tools_layout) #poststuff .postbox-container > * > * {
   flex: 1 1 auto;
   flex-basis: 30%;
   /* min-width: 40ch; */
