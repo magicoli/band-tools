@@ -27,6 +27,10 @@ if(is_admin()) {
 	require_once __DIR__ . '/admin/admin-init.php';
 	// require_once __DIR__ . '/admin/wp-dependencies.php';
 }
+if(is_admin() || isset( $_REQUEST['wp_customize'] ) ) {
+	require_once __DIR__ . '/admin/layout.php';
+}
+
 if(!bndtls_get_option('disable_templates'))
 require_once __DIR__ . '/templates/templates.php';
 
