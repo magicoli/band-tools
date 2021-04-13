@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-11T20:26:45-04:00\n"
+"POT-Creation-Date: 2021-04-13T12:37:24-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -15,6 +15,7 @@ msgstr ""
 
 #. Plugin Name of the plugin
 #: admin/dashboard.php:29
+#: includes/shortcodes.php:84
 msgid "Band Tools"
 msgstr "Band Tools"
 
@@ -250,6 +251,8 @@ msgstr "Pluriel"
 #: includes/post-types.php:41
 #: includes/post-types.php:42
 #: includes/post-types.php:73
+#: includes/shortcodes.php:96
+#: includes/shortcodes.php:110
 msgid "Bands"
 msgstr "Groupes"
 
@@ -296,6 +299,8 @@ msgstr "Set"
 #: admin/settings.php:130
 #: admin/settings.php:260
 #: includes/post-types.php:140
+#: includes/shortcodes.php:97
+#: includes/shortcodes.php:125
 msgid "Records"
 msgstr "Disques"
 
@@ -332,6 +337,8 @@ msgstr "Morceau"
 #: includes/post-types.php:176
 #: includes/post-types.php:177
 #: includes/post-types.php:208
+#: includes/shortcodes.php:98
+#: includes/shortcodes.php:140
 msgid "Songs"
 msgstr "Chansons"
 
@@ -408,58 +415,58 @@ msgid "Show full content when item is selected as home page"
 msgstr "Montrer le contenu complet quand l'élément est affiché comme page d'accueil"
 
 #: includes/custom-fields.php:10
-#: includes/custom-fields.php:56
-#: includes/custom-fields.php:95
+#: includes/custom-fields.php:58
+#: includes/custom-fields.php:97
 msgid "Info"
 msgstr "Informations"
 
 #: includes/custom-fields.php:16
-msgid "Creation"
-msgstr "Création"
+#: includes/custom-fields.php:103
+#: includes/taxonomies.php:8
+msgid "Genre"
+msgstr "Genre"
 
-#: includes/custom-fields.php:21
+#: includes/custom-fields.php:25
 #: templates/templates.php:56
 msgid "Official Website"
 msgstr "Site officiel"
 
-#: includes/custom-fields.php:24
-#: includes/custom-fields.php:30
+#: includes/custom-fields.php:28
+#: includes/custom-fields.php:34
 msgid "Leave empty if the same as this website"
 msgstr "Laisser vide si identique à ce site"
 
-#: includes/custom-fields.php:27
+#: includes/custom-fields.php:31
 #: templates/templates.php:62
 msgid "Official Store"
 msgstr "Boutique officielle"
 
-#: includes/custom-fields.php:33
+#: includes/custom-fields.php:37
+msgid "Band Creation Date"
+msgstr "Création du groupe"
+
+#: includes/custom-fields.php:44
 msgid "Members"
 msgstr "Membres"
 
-#: includes/custom-fields.php:39
-#: includes/custom-fields.php:78
+#: includes/custom-fields.php:64
+#: includes/custom-fields.php:121
+msgid "Initial Release"
+msgstr "Date de sortie initiale"
+
+#: includes/custom-fields.php:71
+#: includes/taxonomies.php:108
+msgid "Release Type"
+msgstr "Type de parution"
+
+#: includes/custom-fields.php:80
 #: includes/taxonomies.php:7
 #: includes/taxonomies.php:9
 #: includes/taxonomies.php:32
 msgid "Genres"
 msgstr "Genres"
 
-#: includes/custom-fields.php:62
-#: includes/custom-fields.php:119
-msgid "Initial Release"
-msgstr "Date de sortie initiale"
-
-#: includes/custom-fields.php:69
-#: includes/taxonomies.php:108
-msgid "Release Type"
-msgstr "Type de parution"
-
-#: includes/custom-fields.php:101
-#: includes/taxonomies.php:8
-msgid "Genre"
-msgstr "Genre"
-
-#: includes/custom-fields.php:110
+#: includes/custom-fields.php:112
 #: includes/taxonomies.php:57
 #: includes/taxonomies.php:59
 #: includes/taxonomies.php:82
@@ -772,6 +779,38 @@ msgstr "Chanson programmée"
 #: includes/post-types.php:204
 msgid "Song updated"
 msgstr "Chanson mise à jour"
+
+#: includes/shortcodes.php:86
+msgid "Show relevant items"
+msgstr "Affiché les éléments pertinents"
+
+#: includes/shortcodes.php:92
+msgctxt "WPBakery Block"
+msgid "Type"
+msgstr "Type"
+
+#: includes/shortcodes.php:95
+msgid "Auto"
+msgstr "Automatique"
+
+#: includes/shortcodes.php:103
+#: includes/shortcodes.php:118
+#: includes/shortcodes.php:133
+#: includes/shortcodes.php:148
+msgid "Block Title"
+msgstr "Titre du bloc"
+
+#: includes/shortcodes.php:112
+msgid "Show related bands"
+msgstr "Affiche les groupes associés"
+
+#: includes/shortcodes.php:127
+msgid "Show related records"
+msgstr "Affiche les disques associés"
+
+#: includes/shortcodes.php:142
+msgid "Show related songs"
+msgstr "Affiche les chansons associées"
 
 #: includes/taxonomies.php:10
 msgid "Search Genres"
