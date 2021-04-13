@@ -82,6 +82,9 @@ to show
 
 ## Changelog
 
+### 0.9.1
+* added customizer panel (fix #47)
+
 ### 0.9
 * new wpbakery blocs
 * fix #8 flex causing mess in edit pages
