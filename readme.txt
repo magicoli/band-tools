@@ -82,6 +82,11 @@ to show
 
 == Changelog ==
 
+= 0.9 =
+* new wpbakery blocs
+* fix #8 flex causing mess in edit pages
+* changed icons colors
+
 = 0.8.5 =
 * added record release type
 * added song authors

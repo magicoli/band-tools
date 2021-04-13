@@ -7,7 +7,7 @@
  * Author URI:      https://magiiic.com/
  * Text Domain:     band-tools
  * Domain Path:     /languages
- * Version:         0.8.5
+ * Version:         0.9
  *
  * @package         Band_Tools
  *

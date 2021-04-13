@@ -10,11 +10,11 @@
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Disclaimer: This plugin is in an early stage. Although you can get it for free if you search a little bit, buying it will fund development and help providing future features.
 
-Basic post types and tools for a simple band website.
+Post types and tools for bands websites.
 
 ## Description
 
-A basic post types and tools for bands. Allow publishing of records with songs
+Post types and tools for bands. Allow publishing of records with songs
 list. Easy enough for a single band. Complete enough for several ones.
 
 ### Goals
@@ -23,7 +23,7 @@ I am a singer, and a web designer. There are many plugins and themes for bands
 out there, but I found none suiting my needs. Either way too complicate, either
 lacking essential features for me.
 
-I want something:
+I wanted something:
 
 * very simple. Let's talk about bands, records and songs and link them together
 * opened to my other needs: sell my records
@@ -32,30 +32,34 @@ I want something:
 
 ### Features
 
-* Linked post types for bands, records, themes and videos
+* Linked post types for bands, records and songs
 * Links to WooCommerce products
-* Widget to show related items. On a song page, it display the band, the records
-  it appears on, related videos. On the band page it displays the records and the
-  songs. Etc.
-* The record pages also display link to shop product page
-* Post types available for navigation menus
+* Customizable layouts for bands, records and songs
+* Widgets, shortcodes and WPBakery blocks to display related items. Adaptive
+  depending of the post type (band, record, song) or specific.
+* Bands, Records and Songs available for navigation menus
+* Bands available as home page by default. Records and Songs can be enabled too.
 
 ## Roadmap
 
 ### Next moves
 
 * Better widgets: cleaner and more complete display (thumbnails for records and bands, direct buy or link, player...)
+* Audio player
 * Video player
-* Guttenberg Blocks
-* Shortcodes for integration anywhere
-* Specific post-types templates
 * Extended WooCommerce integration (add to cart buttons)
+* External product links (to specific online store and common distribution platforms)
+* Guttenberg Blocks
+* Automatic submenus for bands, records and songs
 
 ### Future plans
 
 * Audio playlists for records and songs, uploaded locally
 * Video playlists for songs from YouTube, Vimeo etc.
 * Crowdfunding based on WC sales (might be in a separate plugin)
+* Links between different Band Tools enabled websites
+* Events
+* Network / Multisite integration
 
 ## Installation
 
@@ -77,6 +81,11 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 to show
 
 ## Changelog
+
+### 0.9
+* new wpbakery blocs
+* fix #8 flex causing mess in edit pages
+* changed icons colors
 
 ### 0.8.5
 * added record release type
