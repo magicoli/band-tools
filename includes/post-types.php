@@ -224,7 +224,7 @@ function bndtls_register_post_types() {
 		'rest_base'           => '',
 		'show_in_menu'        => true,
 		// 'menu_icon'           => 'dashicons-format-audio',
-		'menu_icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-comment-music-16x16.svg',
+		'menu_icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-comment-music-20x20.svg',
 		'capability_type'     => 'post',
 		'supports'            => ['title', 'editor', 'thumbnail', 'excerpt', 'comments'],
 		'taxonomies'          => [],

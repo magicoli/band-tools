@@ -28,7 +28,7 @@ function bndtls_shortcodes_init()
 	function bndtls_shortcode_list($atts, $content = null, $tag = '' )
 	{
 		$output = '';
-		$type=preg_replace('/^bt-/', '', $tag);
+		$type=(isset($atts['type'])) ? $atts['type'] : preg_replace('/^bt-/', '', $tag);
 		$post=get_post();
 		// $post_type=$post->post_type;
 		$args = array(
@@ -56,7 +56,8 @@ function bndtls_shortcodes_init()
 				// $output .= "<code>been there " . basename(__DIR__) . "/" . basename(__FILE__) . " " . __METHOD__ . "() $tag $type for $post_type</code>";
 			}
 		} else if($type) {
-			$output .= bndtls_get_relations($post, [ $tag ], $args );
+			$output .= bndtls_get_relations($post, [ $type ], $args );
+			// $output .= "<code>been there " . basename(__DIR__) . "/" . basename(__FILE__) . " " . __METHOD__ . "() $tag $type for $post_type</code>";
 		} else {
 			$output .= "no tag (should not happen, should it?)";
 		}
@@ -78,5 +79,78 @@ function bndtls_shortcodes_init()
 	add_shortcode('songs', 'bndtls_shortcode_list'); // deprecated, backward compatibility
 	add_shortcode('videos', 'bndtls_shortcode_list'); // deprecated, backward compatibility
 
+	if(function_exists('vc_map')) {
+		vc_map(array(
+			'name'				=> __('Band Tools', 'band-tools'),
+			'base'				=> 'band-tools',
+			'description'	=> __('Show relevant items', 'band-tools'),
+			'category'		=> 'Band Tools',
+			'icon'				=>     plugin_dir_url(__DIR__) . 'assets/svg-microphone-stand-20x20.svg',
+			'params'			=> [
+				[
+					'param_name'	=> 'type',
+					'heading' 		=> _x( 'Type', 'WPBakery Block', 'band-tools' ),
+					'type'				=> 'dropdown',
+					'value'			=> [
+						__('Auto', 'band-tools')		=> 'auto',
+						__('Bands', 'band-tools')		=> 'bands',
+						__('Records', 'band-tools')	=> 'records',
+						__('Songs', 'band-tools')		=> 'songs',
+						],
+				],
+				[
+					'param_name'	=> 'title',
+					'heading' 		=> __( 'Block Title', 'band-tools' ),
+					'type'				=> 'textfield',
+					'holder'			=> 'div',
+				],
+			],
+		));
+		vc_map(array(
+			'name'				=> __('Bands', 'band-tools'),
+			'base'				=> 'bt-bands',
+			'description'	=> __('Show related bands', 'band-tools'),
+			'category'		=> 'Band Tools',
+			'icon'				=> dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-user-music-20x20.svg',
+			'params'			=> [
+				[
+					'param_name'	=> 'title',
+					'heading' 		=> __( 'Block Title', 'band-tools' ),
+					'type'				=> 'textfield',
+					'holder'			=> 'div',
+				],
+			],
+		));
+		vc_map(array(
+			'name'				=> __('Records', 'band-tools'),
+			'base'				=> 'bt-records',
+			'description'	=> __('Show related records', 'band-tools'),
+			'category'		=> 'Band Tools',
+			'icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-album-collection-20x20.svg',
+			'params'			=> [
+				[
+					'param_name'	=> 'title',
+					'heading' 		=> __( 'Block Title', 'band-tools' ),
+					'type'				=> 'textfield',
+					'holder'			=> 'div',
+				],
+			],
+		));
+		vc_map(array(
+			'name'				=> __('Songs', 'band-tools'),
+			'base'				=> 'bt-songs',
+			'description'	=> __('Show related songs', 'band-tools'),
+			'category'		=> 'Band Tools',
+			'icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-comment-music-20x20.svg',
+			'params'			=> [
+				[
+					'param_name'	=> 'title',
+					'heading' 		=> __( 'Block Title', 'band-tools' ),
+					'type'				=> 'textfield',
+					'holder'			=> 'div',
+				],
+			],
+		));
+	}
 }
 add_action('init', 'bndtls_shortcodes_init');

@@ -13,9 +13,13 @@ function bndtls_fields_bands( $meta_boxes ) {
     'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-bands',
     'fields'     => [
       [
-        'name' => __( 'Creation', 'band-tools' ),
-        'id'   => 'creation',
-        'type' => 'date',
+        'name'       => __( 'Genre', 'band-tools' ),
+        'id'         => 'tax_genre',
+        'type'       => 'taxonomy',
+        'taxonomy'   => ['genre'],
+        'field_type' => 'select_advanced',
+        'add_new'    => true,
+        'multiple'   => true,
       ],
       [
           'name' => __( 'Official Website', 'band-tools' ),
@@ -30,19 +34,17 @@ function bndtls_fields_bands( $meta_boxes ) {
           'desc' => __( 'Leave empty if the same as this website', 'band-tools' ),
       ],
       [
+        'name' => __( 'Band Creation Date', 'band-tools' ),
+        'id'   => 'creation',
+        'type' => 'date',
+        'placeholder' => 'YYYY-MM-YY',
+        'desc' => 'Year, year-month or full date',
+      ],
+      [
         'name'  => __( 'Members', 'band-tools' ),
         'id'    => 'members',
         'type'  => 'text',
         'clone' => true,
-      ],
-      [
-        'name'       => __( 'Genres', 'band-tools' ),
-        'id'         => 'tax_genre',
-        'type'       => 'taxonomy',
-        'taxonomy'   => ['genre'],
-        'field_type' => 'select_advanced',
-        'add_new'    => true,
-        'multiple'   => true,
       ],
     ],
   ];
