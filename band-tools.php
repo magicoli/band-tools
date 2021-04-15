@@ -34,24 +34,15 @@ if(is_admin() || isset( $_REQUEST['wp_customize'] ) ) {
 if(!bndtls_get_option('disable_templates'))
 require_once __DIR__ . '/templates/templates.php';
 
-/**
- * The code that runs during plugin activation.
- */
 register_activation_hook( __FILE__, 'activate_band_tools' );
 function activate_band_tools() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-activate.php';
-	Band_Tools_Activate::activate();
+	update_option('bndtls_rewrite_rules', true);
 }
 
-/**
- * The code that runs during plugin deactivation.
- */
 register_deactivation_hook( __FILE__, 'deactivate_band_tools' );
 function deactivate_band_tools() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-deactivate.php';
-	Band_Tools_Deactivate::deactivate();
+	update_option('bndtls_rewrite_rules', true);
 }
-
 
 if(bndtls_get_option('clean_titles')) {
 	function bndtls__prefix_category_title( $title ) {

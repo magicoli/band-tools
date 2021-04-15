@@ -7,7 +7,7 @@
 
 /**
  * Initialize bndtls shortcodes
- * @return [type] [description]
+ * @return void
  */
 function bndtls_shortcodes_init()
 {
