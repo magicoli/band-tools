@@ -58,8 +58,8 @@ if ( is_plugin_active( 'woocommerce/woocommerce.php') ) {
 	require_once __DIR__ . '/woocommerce.php';
 }
 
-require_once __DIR__ . '/updates.php';
 if(get_option('bndtls_rewrite_rules') || get_option('bndtls_rewrite_version') != BNDTLS_VERSION) {
+  require_once __DIR__ . '/updates.php';
   wp_cache_flush();
   add_action('init', 'flush_rewrite_rules');
 	update_option('bndtls_rewrite_rules', false);

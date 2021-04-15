@@ -1,8 +1,5 @@
 <?php if ( ! defined( 'WPINC' ) ) die;
 
-// // debug, force update
-// update_option('bndtls_upated', 0);
-
 if ( ! defined( 'BNDTLS_UPDATES' ) ) define('BNDTLS_UPDATES', 1 );
 
 if(get_option('bndtls_upated') < BNDTLS_UPDATES ) {
