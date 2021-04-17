@@ -6,6 +6,7 @@ if ( ! is_plugin_active('mb-core/mb-core.php' ) || ! bndtls_get_option( 'develop
 
 add_filter( 'rwmb_meta_boxes', 'bndtls_fields_bands' );
 function bndtls_fields_bands( $meta_boxes ) {
+  $prefix = '';
   $meta_boxes[] = [
     'title'      => __( 'Info', 'band-tools' ),
     'id'         => 'fields-band-info',
