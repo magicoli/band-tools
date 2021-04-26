@@ -363,7 +363,7 @@ function bndtls_register_relationships() {
 
 	MB_Relationships_API::register( [
 		'id'         => 'rel-records-products',
-		'reciprocal' => true,
+		// 'reciprocal' => true,
 		'from'       => [
 			'object_type'  => 'post',
 			'post_type'    => 'records',
