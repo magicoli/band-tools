@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Band Tools plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Band Tools 0.9\n"
+"Project-Id-Version: Band Tools 0.9.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/band-tools\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-13T19:09:20-04:00\n"
+"POT-Creation-Date: 2021-04-26T09:00:30-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 
@@ -402,59 +402,59 @@ msgstr ""
 msgid "Show full content when item is selected as home page"
 msgstr ""
 
-#: includes/custom-fields.php:10
-#: includes/custom-fields.php:58
-#: includes/custom-fields.php:97
+#: includes/custom-fields.php:11
+#: includes/custom-fields.php:59
+#: includes/custom-fields.php:98
 msgid "Info"
 msgstr ""
 
-#: includes/custom-fields.php:16
-#: includes/custom-fields.php:103
+#: includes/custom-fields.php:17
+#: includes/custom-fields.php:104
 #: includes/taxonomies.php:8
 msgid "Genre"
 msgstr ""
 
-#: includes/custom-fields.php:25
+#: includes/custom-fields.php:26
 #: templates/templates.php:56
 msgid "Official Website"
 msgstr ""
 
-#: includes/custom-fields.php:28
-#: includes/custom-fields.php:34
+#: includes/custom-fields.php:29
+#: includes/custom-fields.php:35
 msgid "Leave empty if the same as this website"
 msgstr ""
 
-#: includes/custom-fields.php:31
+#: includes/custom-fields.php:32
 #: templates/templates.php:62
 msgid "Official Store"
 msgstr ""
 
-#: includes/custom-fields.php:37
+#: includes/custom-fields.php:38
 msgid "Band Creation Date"
 msgstr ""
 
-#: includes/custom-fields.php:44
+#: includes/custom-fields.php:45
 msgid "Members"
 msgstr ""
 
-#: includes/custom-fields.php:64
-#: includes/custom-fields.php:121
+#: includes/custom-fields.php:65
+#: includes/custom-fields.php:122
 msgid "Initial Release"
 msgstr ""
 
-#: includes/custom-fields.php:71
+#: includes/custom-fields.php:72
 #: includes/taxonomies.php:108
 msgid "Release Type"
 msgstr ""
 
-#: includes/custom-fields.php:80
+#: includes/custom-fields.php:81
 #: includes/taxonomies.php:7
 #: includes/taxonomies.php:9
 #: includes/taxonomies.php:32
 msgid "Genres"
 msgstr ""
 
-#: includes/custom-fields.php:112
+#: includes/custom-fields.php:113
 #: includes/taxonomies.php:57
 #: includes/taxonomies.php:59
 #: includes/taxonomies.php:82
@@ -1047,13 +1047,13 @@ msgstr ""
 msgid "%s release types added"
 msgstr ""
 
-#: includes/updates.php:35
+#: includes/updates.php:32
 msgid "Update %s applied sucessfully"
 msgid_plural "Updates %s applied sucessfully"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/updates.php:41
+#: includes/updates.php:38
 msgid "Error processing update %s"
 msgstr ""
 
