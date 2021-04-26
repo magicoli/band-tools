@@ -82,6 +82,9 @@ to show
 
 == Changelog ==
 
+= 0.9.2 =
+* allow edit records relations in products
+
 = 0.9.1 =
 * added customizer panel (fix #47)
 
