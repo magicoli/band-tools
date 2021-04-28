@@ -82,6 +82,9 @@ to show
 
 == Changelog ==
 
+= 0.9.3 =
+* fix #50 video shown as url instead of embed (content was not processed)
+
 = 0.9.2 =
 * allow edit records relations in products
 
