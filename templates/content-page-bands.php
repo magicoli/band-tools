@@ -9,7 +9,7 @@
  * @subpackage Twenty_Nineteen
  * @since Twenty Nineteen 1.0
  */
-$content = get_the_content( $more_link_text, $strip_teaser );
+// $content = get_the_content( $more_link_text, $strip_teaser );
 // $records = MB_Relationships_API::get_connected( [
 //     'id'   => 'rel-band-record',
 //     'from' => get_the_ID(),

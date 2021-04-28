@@ -8,7 +8,6 @@
  * @subpackage Twenty_Nineteen
  * @since Twenty Nineteen 1.0
  */
-$content = get_the_content( $more_link_text, $strip_teaser );
 
 $content_after = '';
 if(bndtls_get_option('layout_page_content:records_songs')) {
