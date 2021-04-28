@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-26T09:00:30-04:00\n"
+"POT-Creation-Date: 2021-04-28T12:31:45-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -415,7 +415,7 @@ msgid "Genre"
 msgstr "Genre"
 
 #: includes/custom-fields.php:26
-#: templates/templates.php:56
+#: templates/templates.php:46
 msgid "Official Website"
 msgstr "Site officiel"
 
@@ -425,7 +425,7 @@ msgid "Leave empty if the same as this website"
 msgstr "Laisser vide si identique à ce site"
 
 #: includes/custom-fields.php:32
-#: templates/templates.php:62
+#: templates/templates.php:52
 msgid "Official Store"
 msgstr "Boutique officielle"
 
@@ -1109,7 +1109,7 @@ msgstr "Vidéos"
 msgid "Display related videos"
 msgstr "Affiche les vidéos liées"
 
-#: templates/templates.php:70
+#: templates/templates.php:60
 msgid "by"
 msgstr "par"
 

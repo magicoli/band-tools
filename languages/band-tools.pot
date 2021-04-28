@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Band Tools plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Band Tools 0.9.1\n"
+"Project-Id-Version: Band Tools 0.9.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/band-tools\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-26T09:00:30-04:00\n"
+"POT-Creation-Date: 2021-04-28T12:31:45-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 
@@ -415,7 +415,7 @@ msgid "Genre"
 msgstr ""
 
 #: includes/custom-fields.php:26
-#: templates/templates.php:56
+#: templates/templates.php:46
 msgid "Official Website"
 msgstr ""
 
@@ -425,7 +425,7 @@ msgid "Leave empty if the same as this website"
 msgstr ""
 
 #: includes/custom-fields.php:32
-#: templates/templates.php:62
+#: templates/templates.php:52
 msgid "Official Store"
 msgstr ""
 
@@ -1109,6 +1109,6 @@ msgstr ""
 msgid "Display related videos"
 msgstr ""
 
-#: templates/templates.php:70
+#: templates/templates.php:60
 msgid "by"
 msgstr ""
