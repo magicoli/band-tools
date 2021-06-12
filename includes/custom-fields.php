@@ -126,6 +126,33 @@ function bndtls_fields_songs( $meta_boxes ) {
         'desc' => 'Year, year-month or full date',
       ],
     ],
+    'title'      => __( 'Files', 'band-tools' ),
+    'id'         => 'fields-song-files',
+    'post_types' => ['songs'],
+    'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-files',
+    'fields'     => [
+      [
+        'name'          => __( 'Audio sample', 'band-tools' ),
+        'id'            => 'audio_sample',
+        'desc'          => __('30 seconds samples for use in player, on songs and records pages. Add both mp3 and ogg formats for maximum compatibility. Wav format is supported but not recommended.', 'band-tools' ),
+        'type'          => 'file_advanced',
+        'mime_type'     => 'audio',
+        'upload_dir'    => WP_CONTENT_DIR . '/band-tools/audio-sample',
+        'max_file_uploads' => 3,
+        'multiple'      => true,
+        'force_delete'  => true,
+      ],
+      // [
+      //   'name'          => __( 'Full audio', 'band-tools' ),
+      //   'desc'   => __('Full length audio, will be trimmed to sample default length for song and album player. Only use if no sample available.'),
+      //   'id'            => 'audio_full',
+      //   'type'          => 'file_advanced',
+      //   'mime_type'     => 'audio',
+      //   'upload_dir'    => WP_CONTENT_DIR . '/band-tools/audio-full',
+      //   'multiple'      => true,
+      //   'force_delete'  => true,
+      // ],
+    ],
   ];
 
   return $meta_boxes;
