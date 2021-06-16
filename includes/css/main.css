@@ -52,6 +52,7 @@ ul.childs-songs.records-songs,
 li.child-record ul.childs-songs {
   list-style: decimal;
   margin-left: 2em;
+  margin-bottom: 0;
   /* padding: 0; */
   /* margin: 0; */
 }

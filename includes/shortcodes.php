@@ -29,7 +29,8 @@ function bndtls_shortcodes_init()
 	{
 		$output = '';
 		$type=(isset($atts['type'])) ? $atts['type'] : preg_replace('/^bt-/', '', $tag);
-		$post=get_post();
+		if($atts['id']) $post=get_post($atts['id']);
+		else $post=get_post();
 		// $post_type=$post->post_type;
 		$args = array(
 			'before_title' => '<h3 class=bndtls-block>',
@@ -101,6 +102,12 @@ function bndtls_shortcodes_init()
 				[
 					'param_name'	=> 'title',
 					'heading' 		=> __( 'Block Title', 'band-tools' ),
+					'type'				=> 'textfield',
+					'holder'			=> 'div',
+				],
+				[
+					'param_name'	=> 'id',
+					'heading' 		=> __( 'Specific Post ID', 'band-tools' ),
 					'type'				=> 'textfield',
 					'holder'			=> 'div',
 				],
