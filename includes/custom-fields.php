@@ -138,7 +138,7 @@ function bndtls_fields_songs( $meta_boxes ) {
         'type'          => 'file_advanced',
         'mime_type'     => 'audio',
         'upload_dir'    => WP_CONTENT_DIR . '/band-tools/audio-sample',
-        'max_file_uploads' => 3,
+        // 'max_file_uploads' => 3,
         'multiple'      => true,
         'force_delete'  => true,
       ],
