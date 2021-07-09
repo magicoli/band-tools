@@ -21,14 +21,15 @@ list. Easy enough for a single band. Complete enough for several ones.
 
 I am a singer, and a web designer. There are many plugins and themes for bands
 out there, but I found none suiting my needs. Either way too complicate, either
-lacking essential features for me.
+lacking features that seem essential to me.
 
 I wanted something:
 
 * very simple. Let's talk about bands, records and songs and link them together
 * opened to my other needs: sell my records
 * theme-agnostic
-* e-commerce agnostic (although I focus first on WooCommerce integration)
+* e-commerce agnostic (although I focus first on WooCommerce integration,
+  Easy Digital Downloads might follow)
 
 ### Features
 
@@ -81,6 +82,10 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 to show
 
 ## Changelog
+
+### 0.9.4
+* added shorcode "id" attribute to display info of a specific item
+* added audio sample field
 
 ### 0.9.3
 * fix #50 video shown as url instead of embed (content was not processed)
