@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the Band Tools plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Band Tools 0.9.2\n"
+"Project-Id-Version: Band Tools 0.9.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/band-tools\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-28T12:31:45-04:00\n"
+"POT-Creation-Date: 2021-07-09T14:21:20-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 
 #. Plugin Name of the plugin
 #: admin/dashboard.php:29
 #: admin/layout.php:96
-#: includes/shortcodes.php:84
+#: includes/shortcodes.php:85
 msgid "Band Tools"
 msgstr ""
 
@@ -239,8 +239,8 @@ msgstr ""
 #: includes/post-types.php:41
 #: includes/post-types.php:42
 #: includes/post-types.php:73
-#: includes/shortcodes.php:96
-#: includes/shortcodes.php:110
+#: includes/shortcodes.php:97
+#: includes/shortcodes.php:117
 msgid "Bands"
 msgstr ""
 
@@ -287,8 +287,8 @@ msgstr ""
 #: admin/settings.php:130
 #: admin/settings.php:260
 #: includes/post-types.php:140
-#: includes/shortcodes.php:97
-#: includes/shortcodes.php:125
+#: includes/shortcodes.php:98
+#: includes/shortcodes.php:132
 msgid "Records"
 msgstr ""
 
@@ -325,8 +325,8 @@ msgstr ""
 #: includes/post-types.php:176
 #: includes/post-types.php:177
 #: includes/post-types.php:208
-#: includes/shortcodes.php:98
-#: includes/shortcodes.php:140
+#: includes/shortcodes.php:99
+#: includes/shortcodes.php:147
 msgid "Songs"
 msgstr ""
 
@@ -459,6 +459,18 @@ msgstr ""
 #: includes/taxonomies.php:59
 #: includes/taxonomies.php:82
 msgid "Authors"
+msgstr ""
+
+#: includes/custom-fields.php:129
+msgid "Files"
+msgstr ""
+
+#: includes/custom-fields.php:135
+msgid "Audio sample"
+msgstr ""
+
+#: includes/custom-fields.php:137
+msgid "30 seconds samples for use in player, on songs and records pages. Add both mp3 and ogg formats for maximum compatibility. Wav format is supported but not recommended."
 msgstr ""
 
 #. translators: %s is replaced by the name of the plugin, untranslated
@@ -768,35 +780,39 @@ msgstr ""
 msgid "Song updated"
 msgstr ""
 
-#: includes/shortcodes.php:86
+#: includes/shortcodes.php:87
 msgid "Show relevant items"
 msgstr ""
 
-#: includes/shortcodes.php:92
+#: includes/shortcodes.php:93
 msgctxt "WPBakery Block"
 msgid "Type"
 msgstr ""
 
-#: includes/shortcodes.php:95
+#: includes/shortcodes.php:96
 msgid "Auto"
 msgstr ""
 
-#: includes/shortcodes.php:103
-#: includes/shortcodes.php:118
-#: includes/shortcodes.php:133
-#: includes/shortcodes.php:148
+#: includes/shortcodes.php:104
+#: includes/shortcodes.php:125
+#: includes/shortcodes.php:140
+#: includes/shortcodes.php:155
 msgid "Block Title"
 msgstr ""
 
-#: includes/shortcodes.php:112
+#: includes/shortcodes.php:110
+msgid "Specific Post ID"
+msgstr ""
+
+#: includes/shortcodes.php:119
 msgid "Show related bands"
 msgstr ""
 
-#: includes/shortcodes.php:127
+#: includes/shortcodes.php:134
 msgid "Show related records"
 msgstr ""
 
-#: includes/shortcodes.php:142
+#: includes/shortcodes.php:149
 msgid "Show related songs"
 msgstr ""
 

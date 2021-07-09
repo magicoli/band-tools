@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-04-28T12:31:45-04:00\n"
+"POT-Creation-Date: 2021-07-09T14:21:20-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -16,7 +16,7 @@ msgstr ""
 #. Plugin Name of the plugin
 #: admin/dashboard.php:29
 #: admin/layout.php:96
-#: includes/shortcodes.php:84
+#: includes/shortcodes.php:85
 msgid "Band Tools"
 msgstr "Band Tools"
 
@@ -239,8 +239,8 @@ msgstr "Pluriel"
 #: includes/post-types.php:41
 #: includes/post-types.php:42
 #: includes/post-types.php:73
-#: includes/shortcodes.php:96
-#: includes/shortcodes.php:110
+#: includes/shortcodes.php:97
+#: includes/shortcodes.php:117
 msgid "Bands"
 msgstr "Groupes"
 
@@ -287,8 +287,8 @@ msgstr "Set"
 #: admin/settings.php:130
 #: admin/settings.php:260
 #: includes/post-types.php:140
-#: includes/shortcodes.php:97
-#: includes/shortcodes.php:125
+#: includes/shortcodes.php:98
+#: includes/shortcodes.php:132
 msgid "Records"
 msgstr "Disques"
 
@@ -325,8 +325,8 @@ msgstr "Morceau"
 #: includes/post-types.php:176
 #: includes/post-types.php:177
 #: includes/post-types.php:208
-#: includes/shortcodes.php:98
-#: includes/shortcodes.php:140
+#: includes/shortcodes.php:99
+#: includes/shortcodes.php:147
 msgid "Songs"
 msgstr "Chansons"
 
@@ -460,6 +460,18 @@ msgstr "Genres"
 #: includes/taxonomies.php:82
 msgid "Authors"
 msgstr "Auteurs"
+
+#: includes/custom-fields.php:129
+msgid "Files"
+msgstr "Fichiers"
+
+#: includes/custom-fields.php:135
+msgid "Audio sample"
+msgstr "Extrait audio"
+
+#: includes/custom-fields.php:137
+msgid "30 seconds samples for use in player, on songs and records pages. Add both mp3 and ogg formats for maximum compatibility. Wav format is supported but not recommended."
+msgstr "Extrait de 30 seconds à utiliser dans le lecteur, sur les pages des chansons ou des disques. Ajouter les formats mp3 et ogg pour optimiser la compatibilité. Le format wav est supporté mais pas recommandé."
 
 #. translators: %s is replaced by the name of the plugin, untranslated
 #: includes/init.php:47
@@ -768,35 +780,39 @@ msgstr "Chanson programmée"
 msgid "Song updated"
 msgstr "Chanson mise à jour"
 
-#: includes/shortcodes.php:86
+#: includes/shortcodes.php:87
 msgid "Show relevant items"
 msgstr "Affiché les éléments pertinents"
 
-#: includes/shortcodes.php:92
+#: includes/shortcodes.php:93
 msgctxt "WPBakery Block"
 msgid "Type"
 msgstr "Type"
 
-#: includes/shortcodes.php:95
+#: includes/shortcodes.php:96
 msgid "Auto"
 msgstr "Automatique"
 
-#: includes/shortcodes.php:103
-#: includes/shortcodes.php:118
-#: includes/shortcodes.php:133
-#: includes/shortcodes.php:148
+#: includes/shortcodes.php:104
+#: includes/shortcodes.php:125
+#: includes/shortcodes.php:140
+#: includes/shortcodes.php:155
 msgid "Block Title"
 msgstr "Titre du bloc"
 
-#: includes/shortcodes.php:112
+#: includes/shortcodes.php:110
+msgid "Specific Post ID"
+msgstr "Identifiant d'article spécifique"
+
+#: includes/shortcodes.php:119
 msgid "Show related bands"
 msgstr "Affiche les groupes associés"
 
-#: includes/shortcodes.php:127
+#: includes/shortcodes.php:134
 msgid "Show related records"
 msgstr "Affiche les disques associés"
 
-#: includes/shortcodes.php:142
+#: includes/shortcodes.php:149
 msgid "Show related songs"
 msgstr "Affiche les chansons associées"
 
