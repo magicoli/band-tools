@@ -134,7 +134,7 @@ function bndtls_fields_songs( $meta_boxes ) {
       [
         'name'          => __( 'Audio sample', 'band-tools' ),
         'id'            => 'audio_sample',
-        'desc'          => __('30 seconds samples for use in player, on songs and records pages. Add both mp3 and ogg formats for maximum compatibility. Wav format is supported but not recommended.', 'band-tools' ),
+        'desc'          => __('Short sample or full song, for the player (different from the downloadable file, which set in the product).', 'band-tools' ),
         'type'          => 'file_advanced',
         'mime_type'     => 'audio',
         'upload_dir'    => WP_CONTENT_DIR . '/band-tools/audio-sample',
