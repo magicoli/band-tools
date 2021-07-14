@@ -361,52 +361,52 @@ function bndtls_register_relationships() {
 		],
 	] );
 
-	MB_Relationships_API::register( [
-		'id'         => 'rel-records-products',
-		// 'reciprocal' => true,
-		'from'       => [
-			'object_type'  => 'post',
-			'post_type'    => 'records',
-			'admin_column' => [
-				'position' => 'after title',
-				'title'    => $adaptive['products'],
-				'singular' => $singular['products'],
-				'link'     => 'view',
-			],
-			'meta_box'     => [
-				'title'   => $adaptive['products'],
-				'singular' => $singular['products'],
-				'context'  => 'normal',
-				'priority' => 'high',
-				'class'    => 'record-product',
-			],
-			'field'        => [
-				'name'  => 'Products',
-				'class' => 'record-product',
-			],
-		],
-		'to'         => [
-			'object_type'  => 'post',
-			'post_type'    => 'product',
-			'admin_column' => [
-				'position' => 'after title',
-				'link'     => 'view',
-			],
-			'admin_column' => [
-				'position' => 'after title',
-				'title'    => $adaptive['records'],
-				'singular' => $singular['records'],
-				'link'     => 'view',
-				'class' => 'record-product',
-			],
-			'meta_box'    => [
-				'title'   => $adaptive['records'],
-				'singular'   => $singular['records'],
-				'context' => 'normal',
-				'class' => 'record-product',
-			],
-		],
-	] );
+	// MB_Relationships_API::register( [
+	// 	'id'         => 'rel-records-products',
+	// 	// 'reciprocal' => true,
+	// 	'from'       => [
+	// 		'object_type'  => 'post',
+	// 		'post_type'    => 'records',
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'title'    => $adaptive['products'],
+	// 			'singular' => $singular['products'],
+	// 			'link'     => 'view',
+	// 		],
+	// 		'meta_box'     => [
+	// 			'title'   => $adaptive['products'],
+	// 			'singular' => $singular['products'],
+	// 			'context'  => 'normal',
+	// 			'priority' => 'high',
+	// 			'class'    => 'record-product',
+	// 		],
+	// 		'field'        => [
+	// 			'name'  => 'Products',
+	// 			'class' => 'record-product',
+	// 		],
+	// 	],
+	// 	'to'         => [
+	// 		'object_type'  => 'post',
+	// 		'post_type'    => 'product',
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'link'     => 'view',
+	// 		],
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'title'    => $adaptive['records'],
+	// 			'singular' => $singular['records'],
+	// 			'link'     => 'view',
+	// 			'class' => 'record-product',
+	// 		],
+	// 		'meta_box'    => [
+	// 			'title'   => $adaptive['records'],
+	// 			'singular'   => $singular['records'],
+	// 			'context' => 'normal',
+	// 			'class' => 'record-product',
+	// 		],
+	// 	],
+	// ] );
 }
 
 endif;
