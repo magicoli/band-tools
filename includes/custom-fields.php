@@ -126,33 +126,42 @@ function bndtls_fields_songs( $meta_boxes ) {
         'desc' => 'Year, year-month or full date',
       ],
     ],
-    'title'      => __( 'Files', 'band-tools' ),
-    'id'         => 'fields-song-files',
-    'post_types' => ['songs'],
-    'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-files',
-    'fields'     => [
-      [
-        'name'          => __( 'Audio sample', 'band-tools' ),
-        'id'            => 'audio_sample',
-        'desc'          => __('Short sample or full song, for the player (different from the downloadable file, which set in the product).', 'band-tools' ),
-        'type'          => 'file_advanced',
-        'mime_type'     => 'audio',
-        'upload_dir'    => WP_CONTENT_DIR . '/band-tools/audio-sample',
-        // 'max_file_uploads' => 3,
-        'multiple'      => true,
-        'force_delete'  => true,
+  ];
+  $meta_boxes[] = [
+      'title'      => __( 'Files', 'band-tools' ),
+      'id'         => 'fields-song-files',
+      'post_types' => ['songs'],
+      'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-files',
+      'fields'     => [
+        [
+          'name'          => __( 'Audio sample', 'band-tools' ),
+          'id'            => 'audio_sample',
+          'desc'          => __('Short sample or full song, for the player (different from the downloadable file, which set in the product).', 'band-tools' ),
+          'type'          => 'file_advanced',
+          'mime_type'     => 'audio',
+          'upload_dir'    => WP_CONTENT_DIR . '/band-tools/audio-sample',
+          // 'max_file_uploads' => 3,
+          'multiple'      => true,
+          'force_delete'  => true,
+        ],
+        [
+          'name'          => __( 'Downloadable audio', 'band-tools' ),
+          'desc'   => __('Full length audio available for download.'),
+          'id'            => 'audio_full',
+          'type'          => 'file_advanced',
+          'mime_type'     => 'audio',
+          'upload_dir'    => WP_CONTENT_DIR . '/band-tools/audio-full',
+          'multiple'      => true,
+          'force_delete'  => true,
+        ],
+        // [
+        //   'name' => __( 'Price', 'band-tools' ),
+        //   'id'   => '_price',
+        //   'type' => 'number',
+        //   'placeholder' => '##',
+        //   'desc' => 'Price to download/buy this song',
+        // ],
       ],
-      // [
-      //   'name'          => __( 'Full audio', 'band-tools' ),
-      //   'desc'   => __('Full length audio, will be trimmed to sample default length for song and album player. Only use if no sample available.'),
-      //   'id'            => 'audio_full',
-      //   'type'          => 'file_advanced',
-      //   'mime_type'     => 'audio',
-      //   'upload_dir'    => WP_CONTENT_DIR . '/band-tools/audio-full',
-      //   'multiple'      => true,
-      //   'force_delete'  => true,
-      // ],
-    ],
   ];
 
   return $meta_boxes;
