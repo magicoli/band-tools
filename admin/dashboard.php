@@ -12,7 +12,7 @@ function bndtls_register_settings_pages() {
     '', // callable function
   //   // plugin_dir_path(__FILE__) . 'options.php', // slug
   //   // null,	// callable function
-    plugin_dir_url(__DIR__) . 'assets/svg-microphone-stand-20x20.svg', // plugin_dir_url(__FILE__) . '../assets/icon-24x24.jpg', // icon url
+    plugin_dir_url(__DIR__) . 'assets/svg-microphone-stand-20x20-turquoise.svg', // plugin_dir_url(__FILE__) . '../assets/icon-24x24.jpg', // icon url
     2 // position
   );
 }
@@ -30,7 +30,7 @@ function bndtls_dashboard( $settings_pages ) {
     'submenu_title' => __( 'Dashboard', 'band-tools' ),
     // translators: '%s' is replaced by the plugin name, it should not be localized
     'page_title'  => sprintf(__( '%s Dashboard', 'band-tools' ), 'Band Tools'),
-    'icon_url'    => plugin_dir_url(__DIR__) . 'assets/svg-microphone-stand-20x20.svg',
+    'icon_url'    => plugin_dir_url(__DIR__) . 'assets/svg-microphone-stand-20x20-turquoise.svg',
     // 'style'       => 'no-boxes',
     'position'    => 2,
     // 'capability'  => 'manage_options',

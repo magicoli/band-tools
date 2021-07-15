@@ -73,6 +73,7 @@ function bndtls_shortcodes_init()
 	add_shortcode('bt-bands', 'bndtls_shortcode_list');
 	add_shortcode('bt-records', 'bndtls_shortcode_list');
 	add_shortcode('bt-songs', 'bndtls_shortcode_list');
+	add_shortcode('bt-player', 'bndtls_shortcode_list');
 	add_shortcode('band-tools', 'bndtls_shortcode_list');
 	add_shortcode('bndtls', 'bndtls_shortcode_list'); // deprecated, backward compatibility
 	add_shortcode('bands', 'bndtls_shortcode_list'); // deprecated, backward compatibility
@@ -86,7 +87,7 @@ function bndtls_shortcodes_init()
 			'base'				=> 'band-tools',
 			'description'	=> __('Show relevant items', 'band-tools'),
 			'category'		=> 'Band Tools',
-			'icon'				=>     plugin_dir_url(__DIR__) . 'assets/svg-microphone-stand-20x20.svg',
+			'icon'				=>     plugin_dir_url(__DIR__) . 'assets/svg-microphone-stand-20x20-turquoise.svg',
 			'params'			=> [
 				[
 					'param_name'	=> 'type',
@@ -97,6 +98,7 @@ function bndtls_shortcodes_init()
 						__('Bands', 'band-tools')		=> 'bands',
 						__('Records', 'band-tools')	=> 'records',
 						__('Songs', 'band-tools')		=> 'songs',
+						__('Player', 'band-tools')		=> 'songs',
 						],
 				],
 				[
@@ -118,7 +120,7 @@ function bndtls_shortcodes_init()
 			'base'				=> 'bt-bands',
 			'description'	=> __('Show related bands', 'band-tools'),
 			'category'		=> 'Band Tools',
-			'icon'				=> dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-user-music-20x20.svg',
+			'icon'				=> dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-user-music-20x20-turquoise.svg',
 			'params'			=> [
 				[
 					'param_name'	=> 'title',
@@ -133,7 +135,7 @@ function bndtls_shortcodes_init()
 			'base'				=> 'bt-records',
 			'description'	=> __('Show related records', 'band-tools'),
 			'category'		=> 'Band Tools',
-			'icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-album-collection-20x20.svg',
+			'icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-album-collection-20x20-turquoise.svg',
 			'params'			=> [
 				[
 					'param_name'	=> 'title',
@@ -148,7 +150,22 @@ function bndtls_shortcodes_init()
 			'base'				=> 'bt-songs',
 			'description'	=> __('Show related songs', 'band-tools'),
 			'category'		=> 'Band Tools',
-			'icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-comment-music-20x20.svg',
+			'icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-comment-music-20x20-turquoise.svg',
+			'params'			=> [
+				[
+					'param_name'	=> 'title',
+					'heading' 		=> __( 'Block Title', 'band-tools' ),
+					'type'				=> 'textfield',
+					'holder'			=> 'div',
+				],
+			],
+		));
+		vc_map(array(
+			'name'				=> __('Player', 'band-tools'),
+			'base'				=> 'bt-player',
+			'description'	=> __('Player for songs or albums', 'band-tools'),
+			'category'		=> 'Band Tools',
+			'icon'           => dirname(plugin_dir_url( __FILE__ )) . '/assets/svg-player-20x20-turquoise.svg',
 			'params'			=> [
 				[
 					'param_name'	=> 'title',
