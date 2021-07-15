@@ -28,6 +28,18 @@ ul.list.childs-records {
   padding: 0;
   gap: 20px;
 }
+ul.list li {
+  position: relative;
+}
+ul.list .actions {
+  position: absolute;
+  right: 0;
+}
+ul.list .action {
+  text-transform: none;
+  font-style: normal;
+  margin-left: 0.5em;
+}
 .subtitle :is(ul, ul li, li) {
   list-style: none;
   margin-left: 0;

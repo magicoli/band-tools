@@ -90,6 +90,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   $output .= "<ul class='childs $rel childs-$childs_slug list'>";
   $child_slug=preg_replace('/s$/', '', $childs_slug);
   foreach($childs as $child) {
+    $actions=array();
     $li_classes=array("child-$child_slug", $child->post_type);
     if(get_queried_object_id() == $child->ID) {
       $li_classes[]='current-page';
@@ -109,7 +110,23 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
     if(!empty($grand_child_slug)) {
       $output .= bndtls_get_relations($child, $grand_child_slug, [ 'title' => '' ] );
     }
-    //
+
+    $child_products = MB_Relationships_API::get_connected( [
+        'id'   => "rel-$child->post_type-products",
+        $direction => $child->ID,
+    ] );
+    if(!empty($child_products)) {
+      // echo "<pre>"; print_r($child_products); echo "</pre>";
+      $product = $child_products[0];
+      $product_count=count($child_products);
+      $actions[] = "<a class=action buy buy-song href='?add-to-cart=$product->ID'>" . __("Buy", 'band-tools') . " ($product_count)</a>";
+    }
+    if(!empty($actions)) {
+      $output .= "<span class=actions>";
+      $output .= join('', $actions);
+      $output .= "</span>";
+    }
+
     // $output .= "<p>Link: " . get_permalink($child) . "</p>";
     // $output .= "<pre>" . print_r($child, true) . "</pre>";
     $output .= '</li>';
