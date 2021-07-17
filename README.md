@@ -34,7 +34,7 @@ I wanted something:
 ### Features
 
 * Linked post types for bands, records and songs
-* Links to WooCommerce products
+* Links to WooCommerce products or external shop page
 * Customizable layouts for bands, records and songs
 * Widgets, shortcodes and WPBakery blocks to display related items. Adaptive
   depending of the post type (band, record, song) or specific.
@@ -82,6 +82,12 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 to show
 
 ## Changelog
+
+### 0.9.5
+* added "buy" link to songs and records lists
+* added 'Buy' link in songs lists (fix #59)
+* added song-product relationship
+* fix missing song info metaboxes
 
 ### 0.9.4
 * added shorcode "id" attribute to display info of a specific item

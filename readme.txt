@@ -83,6 +83,12 @@ to show
 
 == Changelog ==
 
+= 0.9.5 =
+* added "buy" link to songs and records lists
+* added 'Buy' link in songs lists (fix #59)
+* added song-product relationship
+* fix missing song info metaboxes
+
 = 0.9.4 =
 * added shorcode "id" attribute to display info of a specific item
 * added audio sample field
