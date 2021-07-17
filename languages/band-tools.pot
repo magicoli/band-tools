@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the Band Tools plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Band Tools 0.9.3\n"
+"Project-Id-Version: Band Tools 0.9.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/band-tools\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-09T14:21:20-04:00\n"
+"POT-Creation-Date: 2021-07-17T17:44:58-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 
 #. Plugin Name of the plugin
 #: admin/dashboard.php:29
 #: admin/layout.php:96
-#: includes/shortcodes.php:85
+#: includes/shortcodes.php:86
 msgid "Band Tools"
 msgstr ""
 
@@ -239,8 +239,8 @@ msgstr ""
 #: includes/post-types.php:41
 #: includes/post-types.php:42
 #: includes/post-types.php:73
-#: includes/shortcodes.php:97
-#: includes/shortcodes.php:117
+#: includes/shortcodes.php:98
+#: includes/shortcodes.php:119
 msgid "Bands"
 msgstr ""
 
@@ -286,9 +286,9 @@ msgstr ""
 #: admin/settings.php:128
 #: admin/settings.php:130
 #: admin/settings.php:260
-#: includes/post-types.php:140
-#: includes/shortcodes.php:98
-#: includes/shortcodes.php:132
+#: includes/post-types.php:142
+#: includes/shortcodes.php:99
+#: includes/shortcodes.php:134
 msgid "Records"
 msgstr ""
 
@@ -304,7 +304,7 @@ msgstr ""
 #: admin/settings.php:147
 #: admin/settings.php:153
 #: includes/init.php:98
-#: includes/post-types.php:178
+#: includes/post-types.php:180
 msgid "Song"
 msgid_plural "Songs"
 msgstr[0] ""
@@ -321,12 +321,12 @@ msgstr ""
 #: admin/settings.php:163
 #: admin/settings.php:169
 #: admin/settings.php:261
-#: includes/post-types.php:175
-#: includes/post-types.php:176
 #: includes/post-types.php:177
-#: includes/post-types.php:208
-#: includes/shortcodes.php:99
-#: includes/shortcodes.php:147
+#: includes/post-types.php:178
+#: includes/post-types.php:179
+#: includes/post-types.php:212
+#: includes/shortcodes.php:100
+#: includes/shortcodes.php:149
 msgid "Songs"
 msgstr ""
 
@@ -415,7 +415,7 @@ msgid "Genre"
 msgstr ""
 
 #: includes/custom-fields.php:26
-#: templates/templates.php:46
+#: templates/templates.php:47
 msgid "Official Website"
 msgstr ""
 
@@ -425,7 +425,7 @@ msgid "Leave empty if the same as this website"
 msgstr ""
 
 #: includes/custom-fields.php:32
-#: templates/templates.php:52
+#: templates/templates.php:53
 msgid "Official Store"
 msgstr ""
 
@@ -461,16 +461,32 @@ msgstr ""
 msgid "Authors"
 msgstr ""
 
-#: includes/custom-fields.php:129
+#: includes/custom-fields.php:131
 msgid "Files"
 msgstr ""
 
-#: includes/custom-fields.php:135
+#: includes/custom-fields.php:137
 msgid "Audio sample"
 msgstr ""
 
-#: includes/custom-fields.php:137
-msgid "30 seconds samples for use in player, on songs and records pages. Add both mp3 and ogg formats for maximum compatibility. Wav format is supported but not recommended."
+#: includes/custom-fields.php:139
+msgid "Short sample or full song, for the player (different from the downloadable file, which set in the product)."
+msgstr ""
+
+#: includes/custom-fields.php:148
+msgid "Downloadable audio"
+msgstr ""
+
+#: includes/custom-fields.php:149
+msgid "Full length audio available for download."
+msgstr ""
+
+#: includes/functions.php:43
+msgid "Play"
+msgstr ""
+
+#: includes/functions.php:44
+msgid "Buy"
 msgstr ""
 
 #. translators: %s is replaced by the name of the plugin, untranslated
@@ -491,7 +507,7 @@ msgstr ""
 
 #: includes/post-types.php:44
 #: includes/post-types.php:111
-#: includes/post-types.php:179
+#: includes/post-types.php:181
 msgid "Add New"
 msgstr ""
 
@@ -549,25 +565,25 @@ msgstr ""
 
 #: includes/post-types.php:58
 #: includes/post-types.php:125
-#: includes/post-types.php:193
+#: includes/post-types.php:195
 msgid "Featured image"
 msgstr ""
 
 #: includes/post-types.php:59
 #: includes/post-types.php:126
-#: includes/post-types.php:194
+#: includes/post-types.php:196
 msgid "Set featured image"
 msgstr ""
 
 #: includes/post-types.php:60
 #: includes/post-types.php:127
-#: includes/post-types.php:195
+#: includes/post-types.php:197
 msgid "Remove featured image"
 msgstr ""
 
 #: includes/post-types.php:61
 #: includes/post-types.php:128
-#: includes/post-types.php:196
+#: includes/post-types.php:198
 msgid "Use as featured image"
 msgstr ""
 
@@ -605,7 +621,7 @@ msgstr ""
 
 #: includes/post-types.php:70
 #: includes/post-types.php:137
-#: includes/post-types.php:205
+#: includes/post-types.php:207
 #: includes/taxonomies.php:29
 #: includes/taxonomies.php:79
 #: includes/taxonomies.php:129
@@ -696,124 +712,150 @@ msgstr ""
 msgid "Record updated"
 msgstr ""
 
-#: includes/post-types.php:180
-msgid "Add new song"
+#: includes/post-types.php:138
+msgid "Buy record"
 msgstr ""
 
-#: includes/post-types.php:181
-msgid "Edit Song"
+#: includes/post-types.php:139
+msgid "Play record"
 msgstr ""
 
 #: includes/post-types.php:182
-msgid "New Song"
+msgid "Add new song"
 msgstr ""
 
 #: includes/post-types.php:183
-msgid "View Song"
+msgid "Edit Song"
 msgstr ""
 
 #: includes/post-types.php:184
-msgid "View Songs"
+msgid "New Song"
 msgstr ""
 
 #: includes/post-types.php:185
-msgid "Search Songs"
+msgid "View Song"
 msgstr ""
 
 #: includes/post-types.php:186
-msgid "No songs found"
+msgid "View Songs"
 msgstr ""
 
 #: includes/post-types.php:187
-msgid "No songs found in Trash"
+msgid "Search Songs"
 msgstr ""
 
 #: includes/post-types.php:188
-msgid "Parent Song:"
+msgid "No songs found"
 msgstr ""
 
 #: includes/post-types.php:189
-msgid "All Songs"
+msgid "No songs found in Trash"
 msgstr ""
 
 #: includes/post-types.php:190
-msgid "Song Attributes"
+msgid "Parent Song:"
 msgstr ""
 
 #: includes/post-types.php:191
-msgid "Insert into song"
+msgid "All Songs"
 msgstr ""
 
 #: includes/post-types.php:192
+msgid "Song Attributes"
+msgstr ""
+
+#: includes/post-types.php:193
+msgid "Insert into song"
+msgstr ""
+
+#: includes/post-types.php:194
 msgid "Uploaded to this song"
 msgstr ""
 
-#: includes/post-types.php:197
+#: includes/post-types.php:199
 msgid "Filter songs list"
 msgstr ""
 
-#: includes/post-types.php:198
+#: includes/post-types.php:200
 msgid "Songs list navigation"
 msgstr ""
 
-#: includes/post-types.php:199
+#: includes/post-types.php:201
 msgid "Songs list"
 msgstr ""
 
-#: includes/post-types.php:200
+#: includes/post-types.php:202
 msgid "Song published"
 msgstr ""
 
-#: includes/post-types.php:201
+#: includes/post-types.php:203
 msgid "Song published privately"
 msgstr ""
 
-#: includes/post-types.php:202
+#: includes/post-types.php:204
 msgid "Song reverted to draft"
 msgstr ""
 
-#: includes/post-types.php:203
+#: includes/post-types.php:205
 msgid "Song scheduled"
 msgstr ""
 
-#: includes/post-types.php:204
+#: includes/post-types.php:206
 msgid "Song updated"
 msgstr ""
 
-#: includes/shortcodes.php:87
+#: includes/post-types.php:208
+msgid "Buy song"
+msgstr ""
+
+#: includes/post-types.php:209
+msgid "Play song"
+msgstr ""
+
+#: includes/shortcodes.php:88
 msgid "Show relevant items"
 msgstr ""
 
-#: includes/shortcodes.php:93
+#: includes/shortcodes.php:94
 msgctxt "WPBakery Block"
 msgid "Type"
 msgstr ""
 
-#: includes/shortcodes.php:96
+#: includes/shortcodes.php:97
 msgid "Auto"
 msgstr ""
 
-#: includes/shortcodes.php:104
-#: includes/shortcodes.php:125
-#: includes/shortcodes.php:140
-#: includes/shortcodes.php:155
+#: includes/shortcodes.php:101
+#: includes/shortcodes.php:164
+msgid "Player"
+msgstr ""
+
+#: includes/shortcodes.php:106
+#: includes/shortcodes.php:127
+#: includes/shortcodes.php:142
+#: includes/shortcodes.php:157
+#: includes/shortcodes.php:172
 msgid "Block Title"
 msgstr ""
 
-#: includes/shortcodes.php:110
+#: includes/shortcodes.php:112
 msgid "Specific Post ID"
 msgstr ""
 
-#: includes/shortcodes.php:119
+#: includes/shortcodes.php:121
 msgid "Show related bands"
 msgstr ""
 
-#: includes/shortcodes.php:134
+#: includes/shortcodes.php:136
 msgid "Show related records"
 msgstr ""
 
-#: includes/shortcodes.php:149
+#: includes/shortcodes.php:151
 msgid "Show related songs"
+msgstr ""
+
+#: includes/shortcodes.php:166
+msgid "Player for songs or albums"
 msgstr ""
 
 #: includes/taxonomies.php:10
@@ -1125,6 +1167,6 @@ msgstr ""
 msgid "Display related videos"
 msgstr ""
 
-#: templates/templates.php:60
+#: templates/templates.php:61
 msgid "by"
 msgstr ""
