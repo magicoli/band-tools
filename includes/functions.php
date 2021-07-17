@@ -36,11 +36,64 @@ function bndtls_license_key($string = '') {
   return get_option('license_key_band-tools');
 }
 
+function child_title($child, $args = array()) {
+  if(empty($child)) return;
+  $post_type_obj = get_post_type_object( $child->post_type );
+  $label = $post_type_obj->labels->singular_name; //Ice Cream.
+  $label_play = ($post_type_obj->labels->play_item) ? $post_type_obj->labels->play_item : __('Play', 'band-tools');
+  $label_buy = ($post_type_obj->labels->buy_item) ? $post_type_obj->labels->buy_item : __('Buy', 'band-tools');
+
+  $before = $args['before'];
+  $after = $args['after'];
+  if(empty($before)) {
+    $before = "<span>";
+    $after .= "</span>";
+  }
+
+  if(get_queried_object_id() == $child->ID) {
+    $li_classes[]='current-page';
+    // $before = $args['before'] . "<span>";
+    // $after  = "</span>";
+  } else {
+    unset($current_page);
+    $before = "$before<a href='" . get_permalink($child) . "'>";
+    $after  = "</a>$after";
+  }
+  $title = $before . $child->post_title . $after;
+
+  // if($child->post_type == 'songs') {
+    $actions=array();
+    $sample = rwmb_meta( 'audio_sample', array(), $child->ID );
+    // if(!empty($sample)) $actions[] = "<a class='action play play-song'>$label_play</a>";
+
+    $child_products = MB_Relationships_API::get_connected( [
+      'id'   => "rel-$child->post_type-products",
+      'from' => $child->ID,
+      ]
+    );
+    if(!empty($child_products)) {
+      $product_count=count($child_products);
+      // if($product_count > 1) echo $child->ID . "<pre>"; print_r($child_products); echo "</pre>";
+      $product = $child_products[0];
+      // $actions[] = "<a class=action buy buy-song href='?add-to-cart=$product->ID'>$label_buy</a>";
+      $actions[] = "<a class=action buy buy-song href='[add_to_cart_url id=$product->ID]'>$label_buy</a>";
+      // $actions[] = do_shortcode( '[add_to_cart id='.$product->ID.']' );
+    }
+    if(!empty($actions)) {
+      $title .= " <span class='actions child-actions'>";
+      $title .= join(' ', $actions);
+      $title .= "</span>";
+    }
+  // }
+  return "<div class=child-title>$title</div>";
+}
+
 function bndtls_get_relations($post, $slugs, $args = array() ) {
   $output='';
   $block_before='';
   $block_after='';
   if(is_array($args)) {
+    if(isset($args['parent'])) $parent=$args['parent'];
     if(isset($args['title'])) $title=$args['title'];
     if(isset($args['class'])) $class=$args['class'];
     if(isset($args['before'])) $block_before=$args['before'];
@@ -62,7 +115,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   }
   $parent_slug = $post->post_type;
   if($direction == 'to') {
-    if(isset($args['parent'])) $parent=$args['parent'];
+    // if(isset($args['parent'])) $parent=$args['parent'];
     $rel="$childs_slug-$parent_slug";
   } else {
     $rel="$parent_slug-$childs_slug";
@@ -90,72 +143,30 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   $output .= "<ul class='childs $rel childs-$childs_slug list'>";
   $child_slug=preg_replace('/s$/', '', $childs_slug);
   foreach($childs as $child) {
-    $actions=array();
     $li_classes=array("child-$child_slug", $child->post_type);
     if(get_queried_object_id() == $child->ID) {
       $li_classes[]='current-page';
-      $before = "<span>";
-      $after  = "</span>";
-    } else {
-      unset($current_page);
-      $before = "<a href='" . get_permalink($child) . "'>";
-      $after  = "</a>";
     }
     if(!empty($grand_child_slug)) {
-      $before="<h" . ($l + 1) . ">$before";
-      $after="</h" . ($l + 1) . ">$after";
+      $child_args = array(
+        'before' => "<h" . ($l + 1) . ">",
+        'after' => "</h" . ($l + 1) . ">",
+        'parent' => 'p' . print_r($args['parent'], true),
+      );
     }
     $output .= "<li class='" . join(' ', $li_classes) . "'>";
-    $output .= $before . $child->post_title . $after;
+    $output .= child_title($child, $child_args);
+
     if(!empty($grand_child_slug)) {
-      $output .= bndtls_get_relations($child, $grand_child_slug, [ 'title' => '' ] );
+      $output .= bndtls_get_relations($child, $grand_child_slug, [ 'title' => '', 'parent_id' => $post->ID ] );
     }
-
-    $child_products = MB_Relationships_API::get_connected( [
-        'id'   => "rel-$child->post_type-products",
-        $direction => $child->ID,
-    ] );
-    if(!empty($child_products)) {
-      // echo "<pre>"; print_r($child_products); echo "</pre>";
-      $product = $child_products[0];
-      $product_count=count($child_products);
-      $actions[] = "<a class=action buy buy-song href='?add-to-cart=$product->ID'>" . __("Buy", 'band-tools') . " ($product_count)</a>";
-    }
-    if(!empty($actions)) {
-      $output .= "<span class=actions>";
-      $output .= join('', $actions);
-      $output .= "</span>";
-    }
-
-    // $output .= "<p>Link: " . get_permalink($child) . "</p>";
-    // $output .= "<pre>" . print_r($child, true) . "</pre>";
     $output .= '</li>';
   }
+
   $output .= '</ul>';
   $output .= $block_after;
   $output .= "</div>";
   return $output;
-
-  // ## For future reference
-  // $title="Boo";
-  // ## Query method
-  //
-  // $connected = new WP_Query( [
-  //     'relationship' => [
-  //         'id'   => "rel-$rel",
-  //         'from' => get_the_ID(), // You can pass object ID or full object
-  //     ],
-  //     'nopaging'     => true,
-  // ] );
-  // if(! $connected->have_posts() ) return;
-  // while ( $connected->have_posts() ) : $connected->the_post();
-  // echo "<a href='". the_permalink() . "'>". the_title() . "</a>
-  // endwhile;
-  // wp_reset_postdata();
-  //
-  // ## /QueryMethod
-
-
 }
 
 function bndtls_count_posts( $type = 'post', $perm = '', $status='publish' ) {

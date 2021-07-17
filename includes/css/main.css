@@ -28,17 +28,19 @@ ul.list.childs-records {
   padding: 0;
   gap: 20px;
 }
-ul.list li {
-  position: relative;
+ul.list li > div {
+  width: 100%;
+}
+ul.list .child-title {
+  display: flex;
 }
 ul.list .actions {
-  position: absolute;
-  right: 0;
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: normal;
+  white-space: nowrap;
 }
 ul.list .action {
-  text-transform: none;
-  font-style: normal;
-  margin-left: 0.5em;
 }
 .subtitle :is(ul, ul li, li) {
   list-style: none;

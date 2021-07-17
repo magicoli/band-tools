@@ -7,12 +7,12 @@ require_once __DIR__ . '/taxonomies.php';
 
 if ( ! is_plugin_active('mb-core/mb-core.php' ) || ! bndtls_get_option( 'developer_mode') ):
 
-add_filter( 'the_content', 'bndtls_wc_print_notices');
-function bndtls_wc_print_notices ( $content ) {
-  // global $template;
-  // $plugindir = dirname( __DIR__ );
-  if( get_post_type() === "songs") wc_print_notices();
-}
+// add_filter( 'the_content', 'bndtls_wc_print_notices');
+// function bndtls_wc_print_notices ( $content ) {
+//   // global $template;
+//   // $plugindir = dirname( __DIR__ );
+//   if( get_post_type() === "songs") wc_print_notices();
+// }
 
 add_action( 'mb_relationships_init', 'bndtls_register_relationships_woocommerce' );
 function bndtls_register_relationships_woocommerce() {

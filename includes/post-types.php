@@ -135,6 +135,8 @@ function bndtls_register_post_types() {
 		'item_scheduled'           => __( 'Record scheduled', 'band-tools' ),
 		'item_updated'             => __( 'Record updated', 'band-tools' ),
 		'text_domain'              => __( 'band-tools', 'band-tools' ),
+		'buy_item'              	 => __( 'Buy record', 'band-tools' ),
+		'play_item'              	 => __( 'Play record', 'band-tools' ),
 	];
 	$args = [
 		'label'               => __( 'Records', 'band-tools' ),
@@ -203,6 +205,8 @@ function bndtls_register_post_types() {
 		'item_scheduled'           => __( 'Song scheduled', 'band-tools' ),
 		'item_updated'             => __( 'Song updated', 'band-tools' ),
 		'text_domain'              => __( 'band-tools', 'band-tools' ),
+		'buy_item'              => __( 'Buy song', 'band-tools' ),
+		'play_item'              => __( 'Play song', 'band-tools' ),
 	];
 	$args = [
 		'label'               => __( 'Songs', 'band-tools' ),
