@@ -83,6 +83,9 @@ to show
 
 == Changelog ==
 
+= 0.9.6 =
+* fix #67 add to cart short code not rendered
+
 = 0.9.5 =
 * added "buy" link to songs and records lists
 * added 'Buy' link in songs lists (fix #59)
