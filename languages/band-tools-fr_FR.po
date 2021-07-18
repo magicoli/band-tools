@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-17T17:44:58-04:00\n"
+"POT-Creation-Date: 2021-07-18T14:22:20-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -481,13 +481,21 @@ msgstr "Audio à télécharger"
 msgid "Full length audio available for download."
 msgstr "Audio complet disponible au téléchargement."
 
-#: includes/functions.php:43
+#: includes/functions.php:45
+msgid "Read"
+msgstr "Lire"
+
+#: includes/functions.php:46
 msgid "Play"
 msgstr "Écouter"
 
-#: includes/functions.php:44
+#: includes/functions.php:47
 msgid "Buy"
 msgstr "Acheter"
+
+#: includes/functions.php:82
+msgid "View cart"
+msgstr "Voir le panier"
 
 #. translators: %s is replaced by the name of the plugin, untranslated
 #: includes/init.php:47
@@ -1170,287 +1178,3 @@ msgstr "Affiche les vidéos liées"
 #: templates/templates.php:61
 msgid "by"
 msgstr "par"
-
-#~ msgid ""
-"\n"
-"seconds samples for use in player, on songs and records pages. Add \"\n"
-"mp3 and ogg formats for maximum compatibility. Wav format is \"\n"
-"but not recommended.\""
-#~ msgstr ""
-"\n"
-"de 30 seconds à utiliser dans le lecteur, sur les pages des \"\n"
-"ou des disques. Ajouter les formats mp3 et ogg pour optimiser la \"\n"
-"Le format wav est supporté mais pas recommandé.\""
-
-#~ msgid "Band Tools Layout Settings"
-#~ msgstr "Réglages d'affichage Band Tools"
-
-#~ msgctxt "layout-settings"
-#~ msgid "Page Header"
-#~ msgstr "Entête"
-
-#~ msgctxt "layout-settings"
-#~ msgid "Content"
-#~ msgstr "Contenu"
-
-#~ msgctxt "layout-settings"
-#~ msgid "Add Genre"
-#~ msgstr "Ajouter le genre"
-
-#~ msgctxt "layout-settings"
-#~ msgid "Add Bands"
-#~ msgstr "Ajouter les groupes"
-
-#~ msgctxt "layout-settings"
-#~ msgid "Add Records"
-#~ msgstr "Ajouter les disques"
-
-#~ msgid "Add Songs"
-#~ msgstr "Ajouter les chansons"
-
-#~ msgid "Page Title"
-#~ msgstr "Titre de la page"
-
-#~ msgid "Page title"
-#~ msgstr "Titre de la page"
-
-#~ msgid "Add details under the title in page header"
-#~ msgstr "Ajouter des détails dans l'entête, sous le titre"
-
-#~ msgid "Naming"
-#~ msgstr "Nommage"
-
-#~ msgid "by %s"
-#~ msgstr "par %s"
-
-#~ msgid "Order online"
-#~ msgstr "Commander en ligne"
-
-#~ msgid "Band Archives"
-#~ msgstr "Archives des groupes"
-
-#~ msgid "Record Archives"
-#~ msgstr "Archives des disques"
-
-#~ msgid "Song Archives"
-#~ msgstr "Archives des chansons"
-
-#~ msgctxt "post"
-#~ msgid "%s settings"
-#~ msgstr "Réglages %s"
-
-#~ msgid "Recommended plugins"
-#~ msgstr "Extensions recommandées"
-
-#~ msgid "Featured"
-#~ msgstr "Mis en avant"
-
-#~ msgid "Pages:"
-#~ msgstr "Pages :"
-
-#~ msgid "Product"
-#~ msgstr "Produit"
-
-#~ msgid "Categories"
-#~ msgstr "Catégories"
-
-#~ msgid "Record info"
-#~ msgstr "Informations du disque"
-
-#~ msgid "Band info"
-#~ msgstr "Informations du groupe"
-
-#~ msgid "Song info"
-#~ msgstr "Informations sur la chanson"
-
-#~ msgid "Video info"
-#~ msgstr "Informations de la vidéo"
-
-#~ msgid "Related posts"
-#~ msgstr "Articles liés"
-
-#~ msgid "All"
-#~ msgstr "Tous"
-
-#~ msgid "Video"
-#~ msgstr "Vidéo"
-
-#~ msgid "Add new Video"
-#~ msgstr "Ajouter une vidéo"
-
-#~ msgid "Edit Video"
-#~ msgstr "Modifier la vidéo"
-
-#~ msgid "New Video"
-#~ msgstr "Nouvelle vidéo"
-
-#~ msgid "View Video"
-#~ msgstr "Voir la vidéo"
-
-#~ msgid "View Videos"
-#~ msgstr "Voir les vidéos"
-
-#~ msgid "Search Videos"
-#~ msgstr "Rechercher dans les vidéos"
-
-#~ msgid "No Videos found"
-#~ msgstr "Aucune vidéo trouvée"
-
-#~ msgid "No Videos found in trash"
-#~ msgstr "Aucune vidéo trouvée dans la corbeille"
-
-#~ msgid "Parent Video:"
-#~ msgstr "Vidéo parente:"
-
-#~ msgid "Insert into Video"
-#~ msgstr "Insérer dans la vidéo"
-
-#~ msgid "Upload to this Video"
-#~ msgstr "Téléverser dans la vidéo"
-
-#~ msgid "Filter Videos list"
-#~ msgstr "Filtrer la liste des vidéos"
-
-#~ msgid "Videos list navigation"
-#~ msgstr "Navigation liste de vidéos"
-
-#~ msgid "Videos list"
-#~ msgstr "Liste des vidéos"
-
-#~ msgid "Video attributes"
-#~ msgstr "Attributs de la vidéo"
-
-#~ msgid "Video published"
-#~ msgstr "Vidéo publiée"
-
-#~ msgid "Video published privately."
-#~ msgstr "Vidéo publiée en privé."
-
-#~ msgid "Video reverted to draft."
-#~ msgstr "Vidéo remise en brouillon."
-
-#~ msgid "Video scheduled"
-#~ msgstr "Vidéo programmée"
-
-#~ msgid "Video updated."
-#~ msgstr "Vidéo mise à jour."
-
-#~ msgid "Video tags"
-#~ msgstr "Étiquettes vidéo"
-
-#~ msgid "Video tag"
-#~ msgstr "Étiquette vidéo"
-
-#~ msgid "Tags"
-#~ msgstr "Étiquettes"
-
-#~ msgid "All tags"
-#~ msgstr "Toutes les étiquettes"
-
-#~ msgid "Edit tag"
-#~ msgstr "Modifier l'étiquette"
-
-#~ msgid "View tag"
-#~ msgstr "Voir l'étiquette"
-
-#~ msgid "Add new Video tag"
-#~ msgstr "Ajouter une étiquette vidéo"
-
-#~ msgid "New Video tag"
-#~ msgstr "Nouvelle étiquette vidéo"
-
-#~ msgid "Parent tag"
-#~ msgstr "Étiquette parente"
-
-#~ msgid "Parent tag:"
-#~ msgstr "Étiquette parente:"
-
-#~ msgid "No tags"
-#~ msgstr "Aucune étiquette"
-
-#~ msgid "Video tags list navigation"
-#~ msgstr "Navigation liste des étiquettes vidéo"
-
-#~ msgid "Video tags list"
-#~ msgstr "Liste des étiquettes vidéo"
-
-#~ msgid "Back to Video tags"
-#~ msgstr "Retour aux étiquettes"
-
-#~ msgid "Video categories"
-#~ msgstr "Catégories vidéo"
-
-#~ msgid "Video category"
-#~ msgstr "Catégorie video"
-
-#~ msgid "Add new Video Category"
-#~ msgstr "Ajouter une catégorie vidéo"
-
-#~ msgid "New Video Category"
-#~ msgstr "Nouvelle catégorie vidéo"
-
-#~ msgid "Parent Category:"
-#~ msgstr "Catégorie parente:"
-
-#~ msgid "Choose from the most used categories"
-#~ msgstr "Choisir parmi les catégories les plus utilisées"
-
-#~ msgid "No Categories"
-#~ msgstr "Aucune catégorie"
-
-#~ msgid "Back to Video Categories"
-#~ msgstr "Retour aux catégories"
-
-#~ msgid "Record Categories"
-#~ msgstr "Catégories de disques"
-
-#~ msgid "Record Category"
-#~ msgstr "Catégorie de disque"
-
-#~ msgid "Update Category Name"
-#~ msgstr "Mettre à jour la catégorie"
-
-#~ msgid "Add new Category"
-#~ msgstr "Ajouter une catégorie"
-
-#~ msgid "Separate Categories with commas"
-#~ msgstr "Séparer les catégories avec une virgule"
-
-#~ msgid "Choose from the most used Categories"
-#~ msgstr "Choisir parmi les catégories les plus utilisées"
-
-#~ msgid "Back to Record Categories"
-#~ msgstr "Retour aux catégories de disques"
-
-#~ msgid "Band Categories"
-#~ msgstr "Catégories de groupes"
-
-#~ msgid "Band Category"
-#~ msgstr "Catégorie parente"
-
-#~ msgid "Update Category name"
-#~ msgstr "Mettre à jour le nom de la catégorie"
-
-#~ msgid "Back to Band Categories"
-#~ msgstr "Retour aux catégories de groupe"
-
-#~ msgid "Song Categories"
-#~ msgstr "Catégories de chanson"
-
-#~ msgid "Song Category"
-#~ msgstr "Catégorie de chanson"
-
-#~ msgid "Activate"
-#~ msgstr "Activer"
-
-#~ msgid "Install"
-#~ msgstr "Installer"
-
-#~ msgid "recommended"
-#~ msgstr "recommandé"
-
-#~ msgid "required"
-#~ msgstr "requis"
-
-#~ msgid "%s requires these plugins:"
-#~ msgstr "%s requiert ces extensions:"
