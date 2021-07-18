@@ -13,13 +13,13 @@ function bndtls_template_include( $template ) {
 add_filter( 'the_content', 'bndtls_the_content');
 function bndtls_the_content ( $content ) {
   global $template;
+  if(function_exists('wc_print_notices')) wc_print_notices();
   $plugindir = dirname( __DIR__ );
   $post_type_slug=get_post_type();
   $template_slug=str_replace('.php', '', basename($template));
   $custom_slug = "content-$template_slug-$post_type_slug";
   $custom = "$plugindir/templates/$custom_slug.php";
   if(file_exists($custom)) {
-    if(function_exists('wc_print_notices')) wc_print_notices();
     ob_start();
     include $custom;
     $custom_content = ob_get_clean();
