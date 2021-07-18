@@ -83,6 +83,10 @@ to show
 
 ## Changelog
 
+### 0.9.7
+* fixed #68 disable buy link if already in cart
+* fix wc notices not displayed on standard pages
+
 ### 0.9.6
 * fix #67 add to cart short code not rendered
 
