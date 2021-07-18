@@ -75,9 +75,7 @@ function child_title($child, $args = array()) {
       $product_count=count($child_products);
       // if($product_count > 1) echo $child->ID . "<pre>"; print_r($child_products); echo "</pre>";
       $product = $child_products[0];
-      // $actions[] = "<a class=action buy buy-song href='?add-to-cart=$product->ID'>$label_buy</a>";
-      $actions[] = "<a class=action buy buy-song href='[add_to_cart_url id=$product->ID]'>$label_buy</a>";
-      // $actions[] = do_shortcode( '[add_to_cart id='.$product->ID.']' );
+      $actions[] = "<a class=action buy buy-song href='" . do_shortcode( '[add_to_cart_url id='.$product->ID.']' ) . "'>$label_buy</a>";
     }
     if(!empty($actions)) {
       $title .= " <span class='actions child-actions'>";
