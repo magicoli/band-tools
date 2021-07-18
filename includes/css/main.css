@@ -42,6 +42,9 @@ ul.list .actions {
 }
 ul.list .action {
 }
+ul.list .action.added {
+  opacity: 0.5;
+}
 .subtitle :is(ul, ul li, li) {
   list-style: none;
   margin-left: 0;

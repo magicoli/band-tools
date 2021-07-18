@@ -78,7 +78,11 @@ function child_title($child, $args = array()) {
       $product_count=count($child_products);
       // if($product_count > 1) echo $child->ID . "<pre>"; print_r($child_products); echo "</pre>";
       $product = $child_products[0];
-      $actions[] = "<a class=action buy buy-song href='" . do_shortcode( '[add_to_cart_url id='.$product->ID.']' ) . "'>$label_buy</a>";
+      if(woo_in_cart($product->ID)) {
+          $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("Cart", "band-tools") . "</a>";
+      } else {
+        $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product->ID.']' ) . "'>$label_buy</a>";
+      }
     }
     if(!empty($actions)) {
       $title .= " <span class='actions child-actions'>";
@@ -239,6 +243,18 @@ function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
     if(!empty($values)) $output .= "<div class='$meta'>$before $strings $after</div>";
   }
   return $output;
+}
+
+function woo_in_cart($product_id) {
+  global $woocommerce;
+  foreach($woocommerce->cart->get_cart() as $key => $val ) {
+    $_product = $val['data'];
+
+    if($product_id == $_product->id ) {
+      return true;
+    }
+  }
+  return false;
 }
 
 function bndtls_admin_notice($notice, $class='info', $dismissible=true ) {
