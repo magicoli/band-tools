@@ -40,8 +40,11 @@ function child_title($child, $args = array()) {
   if(empty($child)) return;
   $post_type_obj = get_post_type_object( $child->post_type );
   $label = $post_type_obj->labels->singular_name; //Ice Cream.
-  $label_play = ($post_type_obj->labels->play_item) ? $post_type_obj->labels->play_item : __('Play', 'band-tools');
-  $label_buy = ($post_type_obj->labels->buy_item) ? $post_type_obj->labels->buy_item : __('Buy', 'band-tools');
+  // $label_play = ($post_type_obj->labels->play_item) ? $post_type_obj->labels->play_item : __('Play', 'band-tools');
+  // $label_buy = ($post_type_obj->labels->buy_item) ? $post_type_obj->labels->buy_item : __('Buy', 'band-tools');
+  $label_read = __('Read', 'band-tools');
+  $label_play = __('Play', 'band-tools');
+  $label_buy = __('Buy', 'band-tools');
 
   $before = $args['before'];
   $after = $args['after'];
