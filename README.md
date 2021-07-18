@@ -84,6 +84,7 @@ to show
 ## Changelog
 
 ### 0.9.8
+* changed "Cart" to "View cart" for already purchased items
 
 ### 0.9.7
 * fixed #68 disable buy link if already in cart
