@@ -66,8 +66,8 @@ function child_title($child, $args = array()) {
 
   // if($child->post_type == 'songs') {
     $actions=array();
-    $sample = rwmb_meta( 'audio_sample', array(), $child->ID );
-    // if(!empty($sample)) $actions[] = "<a class='action play play-song'>$label_play</a>";
+    // $sample = rwmb_meta( 'audio_sample', array(), $child->ID );
+    if(!empty($args['track_nr'])) $actions[] = "<a class='playlist-track action play play-song' href='#' data-play-track='" . $args['track_nr'] . "'>$label_play</a>";
 
     $child_products = MB_Relationships_API::get_connected( [
       'id'   => "rel-$child->post_type-products",
@@ -145,8 +145,9 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   $output .= $block_before;
   if($title) $output.="<h$l>$title</h$l>";
   // $output .= "[mb_relationships id='rel-$rel' direction='$direction' mode='ul']";
-  $output .= "<ul class='childs $rel childs-$childs_slug list'>";
+  $output_childs .= "<ul class='childs $rel childs-$childs_slug list'>";
   $child_slug=preg_replace('/s$/', '', $childs_slug);
+  $t = 0;
   foreach($childs as $child) {
     $li_classes=array("child-$child_slug", $child->post_type);
     if(get_queried_object_id() == $child->ID) {
@@ -159,17 +160,56 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
         'parent' => 'p' . print_r($args['parent'], true),
       );
     }
-    $output .= "<li class='" . join(' ', $li_classes) . "'>";
-    $output .= child_title($child, $child_args);
+    $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
+    if(!empty($samples)) {
+      $sample = array_shift($samples);
+      $t++;
+      $sample_url = wp_get_attachment_url($sample['url']);
+      // str_replace(
+      //   wp_normalize_path( untrailingslashit( ABSPATH ) ),
+      //   site_url(),
+      //   wp_normalize_path( $sample['path'] )
+      // );
+      $child_args['track_nr'] = $t;
+      $child_args['track_url'] = $sample_url;
+      // echo "<pre>" . $child->post_title . "\n" . $sample_url . "\n" . print_r($sample, true) . "</pre>"; die();
+      $tracks[] = array(
+        'nr' => $t,
+        'url' => $sample_url,
+        'name' => $child->post_title,
+      );
+      $li_classes[] .= 'play-list-row';
+    }
+
+    $output_childs .= "<li class='" . join(' ', $li_classes) . "'>";
+    $output_childs .= child_title($child, $child_args);
 
     if(!empty($grand_child_slug)) {
-      $output .= bndtls_get_relations($child, $grand_child_slug, [ 'title' => '', 'parent_id' => $post->ID ] );
+      $output_childs .= bndtls_get_relations($child, $grand_child_slug, [ 'title' => '', 'parent_id' => $post->ID ] );
     }
-    $output .= '</li>';
+    $output_childs .= '</li>';
   }
-
-  $output .= '</ul>';
-  $output .= $block_after;
+  $output_childs .= '</ul>';
+  if(!empty($tracks)) {
+    $output .= '<div class=audioplayer>';
+    $output .= '<audio id="audio" preload="none" tabindex="0">';
+    foreach($tracks as $track) {
+      $output .= '<source src="' . $track['url'] . '" data-track-number="' . $track['nr'] . '" />';
+    }
+    $output .= 'Your browser does not support HTML5 audio.</audio>';
+    ob_start();
+    include "audioplayer-controls.php";
+    $output .= ob_get_clean();
+    // $output .= "css " . plugin_dir_url(__FILE__) . 'css/audioplayer.css' . "</br>";
+    // $output .= "js " . plugin_dir_url(__FILE__) . 'js/audioplayer.js' . "</br>";
+    // $output .= "playlist " . count($tracks);
+    // add_action( 'wp_enqueue_scripts', function() {
+      wp_enqueue_style( 'audioplayer-js', plugin_dir_url(__FILE__) . 'css/audioplayer.css', array(), BNDTLS_VERSION . "-" . time() );
+      wp_enqueue_script( 'audioplayer-css', plugin_dir_url(__FILE__) . 'js/audioplayer.js', array(), BNDTLS_VERSION . "-" . time() );
+    // } );
+    $output .= "</div>";
+  }
+  $output .= $output_childs . $block_after;
   $output .= "</div>";
   return $output;
 }
