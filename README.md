@@ -3,7 +3,7 @@
 * Donate link: https://paypal.me/magicoli
 * Tags: comments, spam
 * Requires at least: 4.5
-* Tested up to: 5.7
+* Tested up to: 5.8
 * Requires PHP: 5.6
 * Requires PHP: 0.1.0
 * License: GPLv2 or later
@@ -82,6 +82,9 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 to show
 
 ## Changelog
+
+### 0.9.9
+* tested up to wp 5.8
 
 ### 0.9.8
 * changed "Cart" to "View cart" for already purchased items
