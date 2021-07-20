@@ -160,7 +160,8 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
         'parent' => 'p' . print_r($args['parent'], true),
       );
     }
-    $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
+    // $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
+    $samples = array();
     if(!empty($samples)) {
       $sample = array_shift($samples);
       $t++;
