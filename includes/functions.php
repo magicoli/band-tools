@@ -67,7 +67,14 @@ function child_title($child, $args = array()) {
   // if($child->post_type == 'songs') {
     $actions=array();
     // $sample = rwmb_meta( 'audio_sample', array(), $child->ID );
-    if(!empty($args['track_nr'])) $actions[] = "<a class='playlist-track action play play-song' href='#' data-play-track='" . $args['track_nr'] . "'>$label_play</a>";
+    if(!empty($args['track_nr'])) {
+      // $actions[] = '<span class="small-toggle-btn"><i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i></span>'
+      $actions[] =       sprintf(
+              '<a class="playlist-track action play play-song small-toggle-btn small-play-btn" href="#" data-play-track=%1$d data-play-list=%2$d>%3$s</a>',
+              $args['track_nr'], $args['playlist'], $label_play
+            );
+ // "<a class='playlist-track action play play-song small-toggle-btn small-play-btn' href='#' data-play-track='" . $args['track_nr'] . "'>$label_play</a>";
+    }
 
     $child_products = MB_Relationships_API::get_connected( [
       'id'   => "rel-$child->post_type-products",
@@ -160,8 +167,8 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
         'parent' => 'p' . print_r($args['parent'], true),
       );
     }
-    // $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
-    $samples = array();
+    $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
+    // $samples = array();
     if(!empty($samples)) {
       $sample = array_shift($samples);
       $t++;
@@ -173,13 +180,14 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
       // );
       $child_args['track_nr'] = $t;
       $child_args['track_url'] = $sample_url;
+      $child_args['playlist'] = $post->ID;
       // echo "<pre>" . $child->post_title . "\n" . $sample_url . "\n" . print_r($sample, true) . "</pre>"; die();
       $tracks[] = array(
         'nr' => $t,
         'url' => $sample_url,
         'name' => $child->post_title,
       );
-      $li_classes[] .= 'play-list-row';
+      $li_classes[] .= 'playlist-row classtest';
     }
 
     $output_childs .= "<li class='" . join(' ', $li_classes) . "'>";
@@ -192,10 +200,10 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   }
   $output_childs .= '</ul>';
   if(!empty($tracks)) {
-    $output .= '<div class=audioplayer>';
-    $output .= '<audio id="audio" preload="none" tabindex="0">';
+    $output .= '<figure class=audioplayer>';
+    $output .= sprintf('<audio  id="audio" controls=controls preload=auto>', $post->ID);
     foreach($tracks as $track) {
-      $output .= '<source src="' . $track['url'] . '" data-track-number="' . $track['nr'] . '" />';
+      $output .= '<source title="Hello" src="' . $track['url'] . '" data-track-number="' . $track['nr'] . '" />';
     }
     $output .= 'Your browser does not support HTML5 audio.</audio>';
     ob_start();
@@ -208,7 +216,8 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
       wp_enqueue_style( 'audioplayer-js', plugin_dir_url(__FILE__) . 'css/audioplayer.css', array(), BNDTLS_VERSION . "-" . time() );
       wp_enqueue_script( 'audioplayer-css', plugin_dir_url(__FILE__) . 'js/audioplayer.js', array(), BNDTLS_VERSION . "-" . time() );
     // } );
-    $output .= "</div>";
+    $output .= "<figcaption></figcaption>";
+    $output .= "</figure>";
   }
   $output .= $output_childs . $block_after;
   $output .= "</div>";

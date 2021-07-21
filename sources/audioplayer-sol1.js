@@ -86,12 +86,13 @@ var audioPlayer = function() {
     //Adding event listeners to playlist clickable elements.
     for (var i = 0; i < _elements.playListRows.length; i++) {
       var smallToggleBtn = _elements.playerButtons.smallToggleBtn[i];
-      var playListLink = _elements.playListRows[i].children[2].children[0];
+      // var playListLink = _elements.playListRows[i].children[2].children[0];
+      var playListLink = _elements.playListRows[i].querySelector('.playlist-track');
 
       //Playlist link clicked.
       playListLink.addEventListener("click", function(e) {
         e.preventDefault();
-        var selectedTrack = parseInt(this.parentNode.parentNode.getAttribute("data-track-row"));
+        var selectedTrack = parseInt(this.getAttribute("data-play-track"));
 
         if (selectedTrack !== _currentTrack) {
           _resetPlayStatus();
@@ -110,7 +111,7 @@ var audioPlayer = function() {
       //Small toggle button clicked.
       smallToggleBtn.addEventListener("click", function(e) {
         e.preventDefault();
-        var selectedTrack = parseInt(this.parentNode.getAttribute("data-track-row"));
+        var selectedTrack = parseInt(this.getAttribute("data-play-track"));
 
         if (selectedTrack !== _currentTrack) {
           _resetPlayStatus();
