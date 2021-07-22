@@ -171,7 +171,7 @@ var _setTrackTitle = function(currentTrack, playListRows) {
 };
 
 var _setActiveItem = function(currentTrack, playListRows) {
-  // console.log('Track ' + currentTrack + ' active - row ' + (currentTrack - 1));
+  console.log('Track ' + currentTrack + ' active - list ' + _currentListClass);
 
   for (var i = 0; i < playListRows.length; i++) {
     // console.log('Deactivate track ' + currentTrack + ' active - row ' + i);
@@ -200,10 +200,14 @@ var _resetPlayStatus = function() {
 //
 
 for (var i = 0; i < _elements.players.length; i++) {
-  // console.log('Adding listener for ' + _elements.players[i].id);
   // var audio_info = document.getElementById('audio' + players[i].id);
   // var player = document.getElementById('audio' + _elements.players[i].id);
   _elements.players[i].addEventListener('playing', function(e){
+    var parentDiv = e.target.closest('div');
+    _currentListClass = parentDiv.getElementsByClassName("playlist")[0].id;
+    // _currentListClass = e.target.closest('ul').id;
+    console.log('Events on ' + e.target.id + ' in ' + _currentListClass);
+
     if(_currentPlayerClass !== e.target.id) {
       _elements.audio = document.getElementById(_currentPlayerClass);
       if(_elements.audio) {
