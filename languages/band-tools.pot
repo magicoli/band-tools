@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Band Tools plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Band Tools 0.9.6\n"
+"Project-Id-Version: Band Tools 0.9.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/band-tools\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-18T14:22:20-04:00\n"
+"POT-Creation-Date: 2021-07-22T15:11:35-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 
@@ -493,7 +493,7 @@ msgstr ""
 msgid "Buy"
 msgstr ""
 
-#: includes/functions.php:82
+#: includes/functions.php:89
 msgid "View cart"
 msgstr ""
 
