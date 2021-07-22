@@ -200,6 +200,9 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   }
   $output_childs .= '</ul>';
   if(!empty($tracks)) {
+    $output_childs = "<ul id='playlist-$post->ID' class='childs $rel childs-$childs_slug list playlist'>$output_childs";
+    wp_enqueue_style( 'audioplayer-js', plugin_dir_url(__FILE__) . 'css/audioplayer.css', array(), BNDTLS_VERSION . "-" . time() );
+    wp_enqueue_script( 'audioplayer-css', plugin_dir_url(__FILE__) . 'js/audioplayer.js', array(), BNDTLS_VERSION . "-" . time() );
     $output .= '<figure class=audioplayer>';
     $output .= sprintf('<audio id="audio-%d" controls=controls preload=auto>', $post->ID);
     foreach($tracks as $track) {
@@ -213,11 +216,11 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
     // $output .= "js " . plugin_dir_url(__FILE__) . 'js/audioplayer.js' . "</br>";
     // $output .= "playlist " . count($tracks);
     // add_action( 'wp_enqueue_scripts', function() {
-      wp_enqueue_style( 'audioplayer-js', plugin_dir_url(__FILE__) . 'css/audioplayer.css', array(), BNDTLS_VERSION . "-" . time() );
-      wp_enqueue_script( 'audioplayer-css', plugin_dir_url(__FILE__) . 'js/audioplayer.js', array(), BNDTLS_VERSION . "-" . time() );
     // } );
     $output .= "<figcaption></figcaption>";
     $output .= "</figure>";
+  } else {
+    $output_childs = "<ul class='childs $rel childs-$childs_slug list'>$output_childs";
   }
   $output .= $output_childs . $block_after;
   $output .= "</div>";

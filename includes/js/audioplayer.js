@@ -1,9 +1,10 @@
 // https://www.codeproject.com/Articles/5164334/Create-Music-Playlist-with-HTML5-and-JavaScript
 //
 
-var _currentList = null;
+var _currentPlayerClass = null;
+var _currentListClass = null;
 var _currentTrack = 1;
-var _currentAudio = document.getElementById("audio");
+// var _currentAudio = document.getElementById("audio");
 var _trackLoaded = false;
 
 var _elements = {
@@ -16,10 +17,12 @@ var _elements = {
     smallToggleBtn: document.getElementsByClassName("small-toggle-btn")
   },
   // progressBar: document.querySelector(".progress-box"),
+  playLists: document.getElementsByClassName("playlist"),
   playListRows: document.getElementsByClassName("playlist-row"),
   // playListRows: document.querySelector(".playlist-row"),
   trackInfoBox: document.querySelector(".track-info-box")
 };
+var _currentList = _elements.playLists[0];
 
 for (var i = 0; i < _elements.playListRows.length; i++) {
   var smallToggleBtn = _elements.playerButtons.smallToggleBtn[i];
@@ -30,19 +33,26 @@ for (var i = 0; i < _elements.playListRows.length; i++) {
   playListLink.addEventListener("click", function(e) {
     e.preventDefault();
     var selectedTrack = parseInt(this.getAttribute("data-play-track"));
-    var selectedList = 'audio-' + this.getAttribute("data-play-list");
+    var selectedPlayerClass = 'audio-' + this.getAttribute("data-play-list");
+    var selectedListClass = 'playlist-' + this.getAttribute("data-play-list");
+    console.log('found list ' + selectedPlayerClass + ' track ' + selectedTrack + ' id ' + this.getAttribute("data-play-list"));
 
-    if (selectedTrack !== _currentTrack || selectedList !== _currentList) {
+    if (selectedTrack !== _currentTrack || selectedPlayerClass !== _currentPlayerClass) {
       _resetPlayStatus();
 
       _currentTrack = null;
-      _currentList = null;
+      _currentPlayerClass = null;
+      _currentListClass = null;
+      // _currentList = null;
       _trackLoaded = false;
     }
 
     if (_trackLoaded === false) {
       _currentTrack = parseInt(selectedTrack);
-      _currentList = selectedList;
+      _currentPlayerClass = selectedPlayerClass;
+      _currentListClass = selectedListClass;
+      _currentList = document.getElementById(_currentListClass);
+
       _setTrack();
     } else {
       _playBack(this);
@@ -53,9 +63,9 @@ for (var i = 0; i < _elements.playListRows.length; i++) {
   smallToggleBtn.addEventListener("click", function(e) {
     e.preventDefault();
     var selectedTrack = parseInt(this.getAttribute("data-play-track"));
-    var selectedList = 'audio-' + this.getAttribute("data-play-list");
+    var selectedPlayerClass = 'audio-' + this.getAttribute("data-play-list");
 
-    if (selectedTrack !== _currentTrack || selectedList !== _currentList) {
+    if (selectedTrack !== _currentTrack || selectedPlayerClass !== _currentPlayerClass) {
       _resetPlayStatus();
       _currentTrack = null;
       _trackLoaded = false;
@@ -63,7 +73,7 @@ for (var i = 0; i < _elements.playListRows.length; i++) {
 
     if (_trackLoaded === false) {
       _currentTrack = parseInt(selectedTrack);
-      _currentList = selectedList;
+      _currentPlayerClass = selectedPlayerClass;
       _setTrack();
     } else {
       _playBack(this);
@@ -128,9 +138,10 @@ _elements.audio.addEventListener("ended", function(e) {
 }, false);
 
 var _setTrack = function() {
-  // console.log('_currentList is now : '+ _currentList);
-  // _elements.audio = document.getElementById("audio" + _currentList);
-  _elements.audio = document.getElementById(_currentList);
+  // console.log('_currentPlayerClass is now : '+ _currentPlayerClass);
+  // _elements.audio = document.getElementById("audio" + _currentPlayerClass);
+  _elements.audio = document.getElementById(_currentPlayerClass);
+
   var songURL = _elements.audio.children[_currentTrack - 1].src;
 
   _elements.audio.setAttribute("src", songURL);
@@ -168,8 +179,10 @@ var _setActiveItem = function(currentTrack, playListRows) {
   }
 
   // playListRows[currentTrack - 1].className = "track-title active-track";
-  // console.log('Activate track ' + currentTrack + ' active - row ' + (currentTrack - 1));
-  _elements.playListRows[currentTrack - 1].classList.add("active-track");
+  console.log('Activate track ' + currentTrack + ' on ' + _currentListClass);
+  _currentList = document.getElementById(_currentListClass);
+  var currentRows = _currentList.getElementsByClassName("playlist-row");
+  currentRows[currentTrack - 1].classList.add("active-track");
 };
 
 
@@ -191,14 +204,14 @@ for (var i = 0; i < _elements.players.length; i++) {
   // var audio_info = document.getElementById('audio' + players[i].id);
   // var player = document.getElementById('audio' + _elements.players[i].id);
   _elements.players[i].addEventListener('playing', function(e){
-    if(_currentList !== e.target.id) {
-      _elements.audio = document.getElementById(_currentList);
+    if(_currentPlayerClass !== e.target.id) {
+      _elements.audio = document.getElementById(_currentPlayerClass);
       if(_elements.audio) {
         _elements.audio.pause();
       }
       _resetPlayStatus();
-      _currentList = e.target.id;
-      _elements.audio = document.getElementById(_currentList);
+      _currentPlayerClass = e.target.id;
+      _elements.audio = document.getElementById(_currentPlayerClass);
     }
 
     // console.log('Audio playback has started ...');
