@@ -73,6 +73,8 @@ for (var i = 0; i < _elements.playListRows.length; i++) {
 }
 
 var _playBack = function() {
+  // var sounds = document.getElementsByTagName('audio');
+  for(i=0; i<_elements.players.length; i++) _elements.players[i].pause();
   _elements.audio.load();
   if (_elements.audio.paused) {
     _elements.audio.play();
@@ -126,7 +128,7 @@ _elements.audio.addEventListener("ended", function(e) {
 }, false);
 
 var _setTrack = function() {
-  console.log('_currentList is now : '+ _currentList);
+  // console.log('_currentList is now : '+ _currentList);
   // _elements.audio = document.getElementById("audio" + _currentList);
   _elements.audio = document.getElementById(_currentList);
   var songURL = _elements.audio.children[_currentTrack - 1].src;
@@ -185,21 +187,17 @@ var _resetPlayStatus = function() {
 //
 
 for (var i = 0; i < _elements.players.length; i++) {
-  console.log('Adding listener for ' + _elements.players[i].id);
+  // console.log('Adding listener for ' + _elements.players[i].id);
   // var audio_info = document.getElementById('audio' + players[i].id);
   // var player = document.getElementById('audio' + _elements.players[i].id);
   _elements.players[i].addEventListener('playing', function(e){
-    console.log('Playback started in '+ e.target.id + ' _currentList ' + _currentList);
-
     if(_currentList !== e.target.id) {
       _elements.audio = document.getElementById(_currentList);
       if(_elements.audio) {
-        console.log('Stopping current : '+ _currentList);
         _elements.audio.pause();
       }
       _resetPlayStatus();
       _currentList = e.target.id;
-      console.log('_currentList is now : '+ _currentList);
       _elements.audio = document.getElementById(_currentList);
     }
 
