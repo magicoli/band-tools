@@ -201,7 +201,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   $output_childs .= '</ul>';
   if(!empty($tracks)) {
     $output .= '<figure class=audioplayer>';
-    $output .= sprintf('<audio  id="audio" controls=controls preload=auto>', $post->ID);
+    $output .= sprintf('<audio id="audio%d" controls=controls preload=auto>', $post->ID);
     foreach($tracks as $track) {
       $output .= '<source title="Hello" src="' . $track['url'] . '" data-track-number="' . $track['nr'] . '" />';
     }

@@ -3,11 +3,12 @@
 
 var _currentList = null;
 var _currentTrack = 1;
+var _currentAudio = document.getElementById("audio");
 var _trackLoaded = false;
 
 var _elements = {
-  audio: document.getElementById("audio"),
-  players: document.querySelector("audio"),
+  audio: document.querySelector("audio").children[0],
+  players: document.getElementsByTagName("audio"),
   playerButtons: {
     // largeToggleBtn: document.querySelector(".large-toggle-btn"),
     // nextTrackBtn: document.querySelector(".next-track-btn"),
@@ -31,7 +32,7 @@ for (var i = 0; i < _elements.playListRows.length; i++) {
     var selectedTrack = parseInt(this.getAttribute("data-play-track"));
     var selectedList = parseInt(this.getAttribute("data-play-list"));
 
-    if (selectedTrack !== _currentTrack) {
+    if (selectedTrack !== _currentTrack || selectedList !== _currentList) {
       _resetPlayStatus();
       _currentTrack = null;
       _currentList = null;
@@ -124,6 +125,7 @@ _elements.audio.addEventListener("ended", function(e) {
 var _setTrack = function() {
   var songURL = _elements.audio.children[_currentTrack - 1].src;
 
+  _elements.audio = document.getElementById("audio" + _currentList);
   _elements.audio.setAttribute("src", songURL);
   _elements.audio.load();
 
@@ -176,14 +178,34 @@ var _resetPlayStatus = function() {
   }
 };
 //
-var audio_info = document.getElementById('audio');
-audio_info.addEventListener('playing', function(e){
+
+for (var i = 0; i < _elements.players.length; i++) {
+  console.log('Adding listener for ' + _elements.players[i].id);
+  // var audio_info = document.getElementById('audio' + players[i].id);
+  // var player = document.getElementById('audio' + _elements.players[i].id);
+  _elements.players[i].addEventListener('playing', function(e){
+    console.log('Playback started at : '+ e.target.id);
+
+    if(_currentList !== e.target.id) {
+      _elements.audio = document.getElementById(_currentList);
+      if(_elements.audio) {
+        console.log('Stopping current : '+ "audio" + _currentList);
+        _elements.audio.pause();
+      }
+      _resetPlayStatus();
+      _currentList = e.target.id;
+      console.log('_currentList is now : '+ _currentList);
+      _elements.audio = document.getElementById(_currentList);
+    }
+
     // console.log('Audio playback has started ...');
-    console.log('Playback started at : '+ e.target.currentTime +" seconds");
     // _resetPlayStatus();
+    // _setTrackTitle(_currentTrack, _elements.playListRows);
     _setTrackTitle(_currentTrack, _elements.playListRows);
     _setActiveItem(_currentTrack, _elements.playListRows);
-}, false);
+  }, false);
+}
+
 // audio_info.addEventListener('pause', function(e){
 //     // console.log('Audio playback has been paused ...');
 //     console.log('Playback paused at : '+ e.target.currentTime +" seconds");
