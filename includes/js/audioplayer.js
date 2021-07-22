@@ -30,10 +30,11 @@ for (var i = 0; i < _elements.playListRows.length; i++) {
   playListLink.addEventListener("click", function(e) {
     e.preventDefault();
     var selectedTrack = parseInt(this.getAttribute("data-play-track"));
-    var selectedList = parseInt(this.getAttribute("data-play-list"));
+    var selectedList = 'audio-' + this.getAttribute("data-play-list");
 
     if (selectedTrack !== _currentTrack || selectedList !== _currentList) {
       _resetPlayStatus();
+
       _currentTrack = null;
       _currentList = null;
       _trackLoaded = false;
@@ -41,7 +42,7 @@ for (var i = 0; i < _elements.playListRows.length; i++) {
 
     if (_trackLoaded === false) {
       _currentTrack = parseInt(selectedTrack);
-      _currentList = parseInt(selectedList);
+      _currentList = selectedList;
       _setTrack();
     } else {
       _playBack(this);
@@ -52,8 +53,9 @@ for (var i = 0; i < _elements.playListRows.length; i++) {
   smallToggleBtn.addEventListener("click", function(e) {
     e.preventDefault();
     var selectedTrack = parseInt(this.getAttribute("data-play-track"));
+    var selectedList = 'audio-' + this.getAttribute("data-play-list");
 
-    if (selectedTrack !== _currentTrack) {
+    if (selectedTrack !== _currentTrack || selectedList !== _currentList) {
       _resetPlayStatus();
       _currentTrack = null;
       _trackLoaded = false;
@@ -61,6 +63,7 @@ for (var i = 0; i < _elements.playListRows.length; i++) {
 
     if (_trackLoaded === false) {
       _currentTrack = parseInt(selectedTrack);
+      _currentList = selectedList;
       _setTrack();
     } else {
       _playBack(this);
@@ -123,9 +126,11 @@ _elements.audio.addEventListener("ended", function(e) {
 }, false);
 
 var _setTrack = function() {
+  console.log('_currentList is now : '+ _currentList);
+  // _elements.audio = document.getElementById("audio" + _currentList);
+  _elements.audio = document.getElementById(_currentList);
   var songURL = _elements.audio.children[_currentTrack - 1].src;
 
-  _elements.audio = document.getElementById("audio" + _currentList);
   _elements.audio.setAttribute("src", songURL);
   _elements.audio.load();
 
@@ -184,12 +189,12 @@ for (var i = 0; i < _elements.players.length; i++) {
   // var audio_info = document.getElementById('audio' + players[i].id);
   // var player = document.getElementById('audio' + _elements.players[i].id);
   _elements.players[i].addEventListener('playing', function(e){
-    console.log('Playback started at : '+ e.target.id);
+    console.log('Playback started in '+ e.target.id + ' _currentList ' + _currentList);
 
     if(_currentList !== e.target.id) {
       _elements.audio = document.getElementById(_currentList);
       if(_elements.audio) {
-        console.log('Stopping current : '+ "audio" + _currentList);
+        console.log('Stopping current : '+ _currentList);
         _elements.audio.pause();
       }
       _resetPlayStatus();
