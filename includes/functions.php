@@ -300,11 +300,13 @@ function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
 
 function woo_in_cart($product_id) {
   global $woocommerce;
-  foreach($woocommerce->cart->get_cart() as $key => $val ) {
-    $_product = $val['data'];
+  if($woocommerce->cart) {
+    foreach($woocommerce->cart->get_cart() as $key => $val ) {
+      $_product = $val['data'];
 
-    if($product_id == $_product->id ) {
-      return true;
+      if($product_id == $_product->id ) {
+        return true;
+      }
     }
   }
   return false;
