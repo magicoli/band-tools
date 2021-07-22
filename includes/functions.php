@@ -152,10 +152,10 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   $output .= $block_before;
   if($title) $output.="<h$l>$title</h$l>";
   // $output .= "[mb_relationships id='rel-$rel' direction='$direction' mode='ul']";
-  $output_childs .= "<ul class='childs $rel childs-$childs_slug list'>";
   $child_slug=preg_replace('/s$/', '', $childs_slug);
   $t = 0;
   foreach($childs as $child) {
+    $child_args=array();
     $li_classes=array("child-$child_slug", $child->post_type);
     if(get_queried_object_id() == $child->ID) {
       $li_classes[]='current-page';
