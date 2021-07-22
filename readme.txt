@@ -83,6 +83,9 @@ to show
 
 == Changelog ==
 
+= 0.10 =
+* added player in songs lists and play link for each song
+
 = 0.9.9 =
 * tested up to wp 5.8
 
