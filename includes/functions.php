@@ -85,7 +85,7 @@ function child_title($child, $args = array()) {
       $product_count=count($child_products);
       // if($product_count > 1) echo $child->ID . "<pre>"; print_r($child_products); echo "</pre>";
       $product = $child_products[0];
-      if(woo_in_cart($product->ID)) {
+      if(is_in_cart($product->ID)) {
           $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
       } else {
         $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product->ID.']' ) . "'>$label_buy</a>";
@@ -305,7 +305,7 @@ if (!function_exists('is_woocommerce_active')) {
   }
 }
 
-function woo_in_cart($product_id) {
+function is_in_cart($product_id) {
   global $woocommerce;
   if($woocommerce->cart) {
     foreach($woocommerce->cart->get_cart() as $key => $val ) {
