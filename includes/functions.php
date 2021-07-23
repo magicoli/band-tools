@@ -202,10 +202,10 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
     }
     $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
     // $samples = array();
-    if(!empty($samples)) {
-      $sample = array_shift($samples);
+    if(!empty($child->track_audio_sample_url)) {
+      // $sample = array_shift($samples);
       $t++;
-      $sample_url = wp_get_attachment_url($sample['url']);
+      // $sample_url = wp_get_attachment_url($sample['url']);
       // str_replace(
       //   wp_normalize_path( untrailingslashit( ABSPATH ) ),
       //   site_url(),
