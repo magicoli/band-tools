@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '33e3f7fca61df457541ebe0d97c851c9effa49c8',
+    'reference' => '89cf26d12a3736b553425893b63d847cf69b2226',
     'name' => '__root__',
   ),
   'versions' => 
@@ -42,16 +42,25 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '33e3f7fca61df457541ebe0d97c851c9effa49c8',
+      'reference' => '89cf26d12a3736b553425893b63d847cf69b2226',
     ),
     'composer/installers' => 
     array (
-      'pretty_version' => 'v1.10.0',
-      'version' => '1.10.0.0',
+      'pretty_version' => 'v1.11.0',
+      'version' => '1.11.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d',
+      'reference' => 'ae03311f45dfe194412081526be2e003960df74b',
+    ),
+    'meta-box/mb-admin-columns' => 
+    array (
+      'pretty_version' => 'master',
+      'version' => 'dev-master',
+      'aliases' => 
+      array (
+      ),
+      'reference' => NULL,
     ),
     'meta-box/mb-settings-page' => 
     array (
@@ -123,12 +132,12 @@ private static $installed = array (
     ),
     'wpackagist-plugin/mb-relationships' => 
     array (
-      'pretty_version' => '1.10.5',
-      'version' => '1.10.5.0',
+      'pretty_version' => '1.10.6',
+      'version' => '1.10.6.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'tags/1.10.5',
+      'reference' => 'tags/1.10.6',
     ),
     'wpackagist-plugin/meta-box' => 
     array (
