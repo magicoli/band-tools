@@ -27,99 +27,99 @@ function bndtls_register_relationships_woocommerce() {
 	$adaptive['tracks'] = get_type_name_n('track', 'Track', 'Tracks', bndtls_count_posts('songs'));
 	$adaptive['products'] = get_type_name_n('product', 'Product', 'Products', bndtls_count_posts('songs'));
 
-	MB_Relationships_API::register( [
-		'id'         => 'rel-records-products',
-		// 'reciprocal' => true,
-		'from'       => [
-			'object_type'  => 'post',
-			'post_type'    => 'records',
-			'admin_column' => [
-				'position' => 'after title',
-				'title'    => $adaptive['products'],
-				'singular' => $singular['products'],
-				'link'     => 'view',
-			],
-			'meta_box'     => [
-				'title'   => $adaptive['products'],
-				'singular' => $singular['products'],
-				'context'  => 'normal',
-				'priority' => 'high',
-				'class'    => 'record-product',
-			],
-			'field'        => [
-				'name'  => 'Products',
-				'class' => 'record-product',
-			],
-		],
-		'to'         => [
-			'object_type'  => 'post',
-			'post_type'    => 'product',
-			'admin_column' => [
-				'position' => 'after title',
-				'link'     => 'view',
-			],
-			'admin_column' => [
-				'position' => 'after title',
-				'title'    => $adaptive['records'],
-				'singular' => $singular['records'],
-				'link'     => 'view',
-				'class' => 'record-product',
-			],
-			'meta_box'    => [
-				'title'   => $adaptive['records'],
-				'singular'   => $singular['records'],
-				'context' => 'normal',
-				'class' => 'record-product',
-			],
-		],
-	] );
-
-  MB_Relationships_API::register( [
-		'id'         => 'rel-songs-products',
-		// 'reciprocal' => true,
-		'from'       => [
-			'object_type'  => 'post',
-			'post_type'    => 'songs',
-			'admin_column' => [
-				'position' => 'after title',
-				'title'    => $adaptive['products'],
-				'singular' => $singular['products'],
-				'link'     => 'view',
-			],
-			'meta_box'     => [
-				'title'   => $adaptive['products'],
-				'singular' => $singular['products'],
-				'context'  => 'normal',
-				'priority' => 'high',
-				'class'    => 'song-product',
-			],
-			'field'        => [
-				'name'  => 'Products',
-				'class' => 'song-product',
-			],
-		],
-		'to'         => [
-			'object_type'  => 'post',
-			'post_type'    => 'product',
-			'admin_column' => [
-				'position' => 'after title',
-				'link'     => 'view',
-			],
-			'admin_column' => [
-				'position' => 'after title',
-				'title'    => $adaptive['songs'],
-				'singular' => $singular['songs'],
-				'link'     => 'view',
-				'class' => 'song-product',
-			],
-			'meta_box'    => [
-				'title'   => $adaptive['songs'],
-				'singular'   => $singular['songs'],
-				'context' => 'normal',
-				'class' => 'song-product',
-			],
-		],
-	] );
+	// MB_Relationships_API::register( [
+	// 	'id'         => 'rel-records-products',
+	// 	// 'reciprocal' => true,
+	// 	'from'       => [
+	// 		'object_type'  => 'post',
+	// 		'post_type'    => 'records',
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'title'    => $adaptive['products'],
+	// 			'singular' => $singular['products'],
+	// 			'link'     => 'view',
+	// 		],
+	// 		'meta_box'     => [
+	// 			'title'   => $adaptive['products'],
+	// 			'singular' => $singular['products'],
+	// 			'context'  => 'normal',
+	// 			'priority' => 'high',
+	// 			'class'    => 'record-product',
+	// 		],
+	// 		'field'        => [
+	// 			'name'  => 'Products',
+	// 			'class' => 'record-product',
+	// 		],
+	// 	],
+	// 	'to'         => [
+	// 		'object_type'  => 'post',
+	// 		'post_type'    => 'product',
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'link'     => 'view',
+	// 		],
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'title'    => $adaptive['records'],
+	// 			'singular' => $singular['records'],
+	// 			'link'     => 'view',
+	// 			'class' => 'record-product',
+	// 		],
+	// 		'meta_box'    => [
+	// 			'title'   => $adaptive['records'],
+	// 			'singular'   => $singular['records'],
+	// 			'context' => 'normal',
+	// 			'class' => 'record-product',
+	// 		],
+	// 	],
+	// ] );
+	//
+  // MB_Relationships_API::register( [
+	// 	'id'         => 'rel-songs-products',
+	// 	// 'reciprocal' => true,
+	// 	'from'       => [
+	// 		'object_type'  => 'post',
+	// 		'post_type'    => 'songs',
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'title'    => $adaptive['products'],
+	// 			'singular' => $singular['products'],
+	// 			'link'     => 'view',
+	// 		],
+	// 		'meta_box'     => [
+	// 			'title'   => $adaptive['products'],
+	// 			'singular' => $singular['products'],
+	// 			'context'  => 'normal',
+	// 			'priority' => 'high',
+	// 			'class'    => 'song-product',
+	// 		],
+	// 		'field'        => [
+	// 			'name'  => 'Products',
+	// 			'class' => 'song-product',
+	// 		],
+	// 	],
+	// 	'to'         => [
+	// 		'object_type'  => 'post',
+	// 		'post_type'    => 'product',
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'link'     => 'view',
+	// 		],
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'title'    => $adaptive['songs'],
+	// 			'singular' => $singular['songs'],
+	// 			'link'     => 'view',
+	// 			'class' => 'song-product',
+	// 		],
+	// 		'meta_box'    => [
+	// 			'title'   => $adaptive['songs'],
+	// 			'singular'   => $singular['songs'],
+	// 			'context' => 'normal',
+	// 			'class' => 'song-product',
+	// 		],
+	// 	],
+	// ] );
 }
 
 endif;
