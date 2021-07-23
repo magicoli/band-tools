@@ -100,6 +100,38 @@ function child_title($child, $args = array()) {
   return "<div class=child-title>$title</div>";
 }
 
+function bndtls_get_childs($post, $slugs, $args = array() ) {
+  if(!is_object($post)) return; // Should never happen
+  switch ($post->post_type) {
+    case 'records':
+      $tracks = array_shift(get_post_meta($post->ID, 'tracks'));
+      $i=0;
+      if(is_array($tracks))
+      foreach($tracks as $track) {
+        $i++;
+        $child=$track;
+        $song = get_post($track['track_song']);
+        // // $child['ID'] = $track;
+        $track['track_nr'] = $i;
+        $track['title'] = $song->post_title;
+        $song->track_audio_sample_url = $track['track_audio_sample_url'];
+        #get_the_title($track->song);
+        // $track['song'] = $song;
+        // $song_id = $track->song;
+        $childs[] = $song;
+      }
+      break;
+
+    default:
+      // We only make specific queries here, so return empty if not defined
+      return;
+  }
+
+  // echo "<pre>"; print_r($childs); die();
+
+  return $childs;
+}
+
 function bndtls_get_relations($post, $slugs, $args = array() ) {
   $output='';
   $block_before='';
@@ -115,7 +147,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
     if(isset($args['level'])) $l=$args['level'];
     else $l='4';
   }
-  if(!is_object($post)) return "not a post";
+  if(!is_object($post)) return "not a post"; // Should never happen
   if(is_array($slugs)) {
     $childs_slug = array_shift($slugs);
     $grand_child_slug = $slugs;
@@ -138,6 +170,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
       'id'   => "rel-$rel",
       $direction => $post->ID,
   ] );
+  if(empty($childs)) $childs = bndtls_get_childs($post, $slugs, $args);
   if(empty($childs)) return;
 
   if(! isset($args['title'])) {
@@ -179,12 +212,12 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
       //   wp_normalize_path( $sample['path'] )
       // );
       $child_args['track_nr'] = $t;
-      $child_args['track_url'] = $sample_url;
+      $child_args['track_url'] = $child->track_audio_sample_url;
       $child_args['playlist'] = $post->ID;
       // echo "<pre>" . $child->post_title . "\n" . $sample_url . "\n" . print_r($sample, true) . "</pre>"; die();
       $tracks[] = array(
         'nr' => $t,
-        'url' => $sample_url,
+        'url' => $child->track_audio_sample_url,
         'name' => $child->post_title,
       );
       $li_classes[] .= 'playlist-row classtest';

@@ -125,12 +125,14 @@ function bndtls_fields_records( $meta_boxes ) {
       [
         'id'          => $prefix . 'track_audio_sample_url',
         'type'        => 'file_input',
+        'mime_type'     => 'audio',
         'placeholder' => __( 'Audio Sample URL', 'band-tools' ),
         'columns'     => 4,
       ],
       // [
       //   'id'          => $prefix . 'track_audio_downloadable_url',
       //   'type'        => 'file_input',
+      // 'mime_type'     => 'audio',
       //   'placeholder' => __( 'Downloadable Audio URL', 'band-tools' ),
       //   'columns'     => 4,
       // ],
