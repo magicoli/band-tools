@@ -298,6 +298,13 @@ function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
   return $output;
 }
 
+if (!function_exists('is_woocommerce_active')) {
+  function is_woocommerce_active() {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    return is_plugin_active( 'woocommerce/woocommerce.php');
+  }
+}
+
 function woo_in_cart($product_id) {
   global $woocommerce;
   if($woocommerce->cart) {

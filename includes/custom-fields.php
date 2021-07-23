@@ -144,8 +144,7 @@ function bndtls_fields_records( $meta_boxes ) {
     ],
   ];
 
-  include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-  if ( is_plugin_active( 'woocommerce/woocommerce.php') ) {
+  if (is_woocommerce_active()) {
     $meta_box['fields'][] = [
       'id'          => $prefix . 'record_product',
       'name'        => __( 'Record Product', 'band-tools' ),
