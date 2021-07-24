@@ -103,6 +103,44 @@ function child_title($child, $args = array()) {
 function bndtls_get_childs($post, $slugs, $args = array() ) {
   if(!is_object($post)) return; // Should never happen
   switch ($post->post_type) {
+    case 'songs':
+      $lgth = strlen($post->ID);
+      $query_args = array(
+        'post_type' => 'records',
+        'orderby'          => 'post_date',
+        'order'            => 'DESC',
+        'post_type' => 'records',
+        // 'meta_query' => array(
+          // 'key'     => 'tracks',
+          // 'value'   => '%:"track_song";s:' . $lgth . ':"' . $post->ID . '"%',
+          // 'compare' => 'LIKE',
+        // ),
+      );
+      // $query_args = array(
+      //   'meta_query' => $query_args,
+      // $meta_query = new WP_Query( $query_args );
+      $meta_query = new WP_Query( $query_args );
+      $records = $meta_query->posts;
+      foreach($records as $record) {
+        $tracks = array_shift(get_post_meta($record->ID, 'tracks'));
+        foreach($tracks as $track_key => $track) {
+          if($track['track_song'] == $post->ID) {
+            // $record = get_post($track_key);
+            $childs[] = $record;
+          }
+
+        }
+      }
+      // foreach($childs as $child) {}
+      // while ( $meta_query->have_posts() ) {
+      //   $meta_query->the_post();
+      //   $post_id = get_the_ID();
+      //   echo "post id " . $post->ID;
+      // }
+      // WP_reset_postdata();
+      // echo "<pre>"; print_r($childs); die();
+      break;
+
     case 'records':
       $tracks = array_shift(get_post_meta($post->ID, 'tracks'));
       $i=0;
