@@ -76,21 +76,21 @@ function child_title($child, $args = array()) {
  // "<a class='playlist-track action play play-song small-toggle-btn small-play-btn' href='#' data-play-track='" . $args['track_nr'] . "'>$label_play</a>";
     }
 
-    $child_products = MB_Relationships_API::get_connected( [
-      'id'   => "rel-$child->post_type-products",
-      'from' => $child->ID,
-      ]
-    );
-    if(!empty($child_products)) {
-      $product_count=count($child_products);
-      // if($product_count > 1) echo $child->ID . "<pre>"; print_r($child_products); echo "</pre>";
-      $product = $child_products[0];
+    $product_id = rwmb_meta( 'record_product', array(), $child->ID );
+    if(empty($product_id)) {
+      // echo "<pre>"; print_r($childs); die();
+
+      $product_id = $child->track_product;
+    }
+
+    if (!empty($product_id)) {
       if(is_in_cart($product->ID)) {
-          $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
+        $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
       } else {
         $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product->ID.']' ) . "'>$label_buy</a>";
       }
     }
+
     if(!empty($actions)) {
       $title .= " <span class='actions child-actions'>";
       $title .= join(' ', $actions);
@@ -138,7 +138,6 @@ function bndtls_get_childs($post, $slugs, $args = array() ) {
       //   echo "post id " . $post->ID;
       // }
       // WP_reset_postdata();
-      // echo "<pre>"; print_r($childs); die();
       break;
 
     case 'records':
@@ -150,9 +149,10 @@ function bndtls_get_childs($post, $slugs, $args = array() ) {
         $child=$track;
         $song = get_post($track['track_song']);
         // // $child['ID'] = $track;
-        $track['track_nr'] = $i;
-        $track['title'] = $song->post_title;
+        // $track['track_nr'] = $i;
+        // $track['title'] = $song->post_title;
         $song->track_audio_sample_url = $track['track_audio_sample_url'];
+        $song->track_product = $track['track_product'];
         #get_the_title($track->song);
         // $track['song'] = $song;
         // $song_id = $track->song;
