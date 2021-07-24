@@ -77,11 +77,16 @@ function child_title($child, $args = array()) {
     }
 
     $product_id = rwmb_meta( 'record_product', array(), $child->ID );
-    if(empty($product_id)) {
-      // echo "<pre>"; print_r($childs); die();
-
-      $product_id = $child->track_product;
-    }
+    if(empty($product_id)) $product_id = $child->track_product;
+    // if(empty($product_id)) {
+    //   $products = MB_Relationships_API::get_connected( [
+    //       'id'   => "rel-$child->post_type-products",
+    //       'from' => $child->ID,
+    //   ] );
+    //   if($products) {
+    //     echo "<pre>"; print_r($products); die();
+    //   }
+    // }
 
     if (!empty($product_id)) {
       if(is_in_cart($product->ID)) {
