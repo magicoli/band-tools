@@ -238,7 +238,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
         'parent' => 'p' . print_r($args['parent'], true),
       );
     }
-    $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
+    // $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
     // $samples = array();
     if(!empty($child->track_audio_sample_url)) {
       // $sample = array_shift($samples);
@@ -263,7 +263,6 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
 
     $output_childs .= "<li class='" . join(' ', $li_classes) . "'>";
     $output_childs .= child_title($child, $child_args);
-
     if(!empty($grand_child_slug)) {
       $output_childs .= bndtls_get_relations($child, $grand_child_slug, [ 'title' => '', 'parent_id' => $post->ID ] );
     }
