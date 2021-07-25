@@ -114,12 +114,6 @@ function bndtls_get_childs($post, $slugs, $args = array() ) {
         'post_type' => 'records',
         'orderby'          => 'post_date',
         'order'            => 'DESC',
-        'post_type' => 'records',
-        // 'meta_query' => array(
-          // 'key'     => 'tracks',
-          // 'value'   => '%:"track_song";s:' . $lgth . ':"' . $post->ID . '"%',
-          // 'compare' => 'LIKE',
-        // ),
       );
       // $query_args = array(
       //   'meta_query' => $query_args,

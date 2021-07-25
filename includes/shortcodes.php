@@ -29,7 +29,7 @@ function bndtls_shortcodes_init()
 	{
 		$output = '';
 		$type=(isset($atts['type'])) ? $atts['type'] : preg_replace('/^bt-/', '', $tag);
-		if($atts['id']) $post=get_post($atts['id']);
+		if(isset($atts['id'])) $post=get_post($atts['id']);
 		else $post=get_post();
 		// $post_type=$post->post_type;
 		$args = array(
