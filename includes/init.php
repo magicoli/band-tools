@@ -52,7 +52,11 @@ require_once __DIR__ . '/post-types.php';
 require_once __DIR__ . '/blocks.php';
 require_once __DIR__ . '/shortcodes.php';
 require_once __DIR__ . '/widgets.php';
-if (is_woocommerce_active()) require_once __DIR__ . '/woocommerce.php';
+
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if ( is_plugin_active( 'woocommerce/woocommerce.php') ) {
+	require_once __DIR__ . '/woocommerce.php';
+}
 
 if(get_option('bndtls_rewrite_rules') || get_option('bndtls_rewrite_version') != BNDTLS_VERSION) {
   require_once __DIR__ . '/updates.php';

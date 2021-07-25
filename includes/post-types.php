@@ -331,39 +331,39 @@ function bndtls_register_relationships() {
 		],
 	] );
 
-	// MB_Relationships_API::register( [
-	// 	'id'   => 'rel-records-songs',
-	// 	'from' => [
-	// 		'object_type'  => 'post',
-	// 		'post_type'    => 'records',
-	// 		'admin_column' => [
-	// 			'position' => 'after title',
-	// 			'title'    => $adaptive['tracks'],
-	// 			'singular' => $singular['tracks'],
-	// 			'link'     => 'view',
-	// 		],
-	// 		'meta_box'     => [
-	// 			'title'   => $adaptive['tracks'],
-	// 			'singular' => $singular['tracks'],
-	// 			'context' => 'normal',
-	// 		],
-	// 	],
-	// 	'to'   => [
-	// 		'object_type' => 'post',
-	// 		'post_type'   => 'songs',
-	// 		'admin_column' => [
-	// 			'position' => 'after title',
-	// 			'title'    => $adaptive['records'],
-	// 			'singular' => $singular['records'],
-	// 			'link'     => 'view',
-	// 		],
-	// 		'meta_box'    => [
-	// 			'title'   => $adaptive['records'],
-	// 			'singular'   => $singular['records'],
-	// 			'context' => 'normal',
-	// 		],
-	// 	],
-	// ] );
+	MB_Relationships_API::register( [
+		'id'   => 'rel-records-songs',
+		'from' => [
+			'object_type'  => 'post',
+			'post_type'    => 'records',
+			'admin_column' => [
+				'position' => 'after title',
+				'title'    => $adaptive['tracks'],
+				'singular' => $singular['tracks'],
+				'link'     => 'view',
+			],
+			'meta_box'     => [
+				'title'   => $adaptive['tracks'],
+				'singular' => $singular['tracks'],
+				'context' => 'normal',
+			],
+		],
+		'to'   => [
+			'object_type' => 'post',
+			'post_type'   => 'songs',
+			'admin_column' => [
+				'position' => 'after title',
+				'title'    => $adaptive['records'],
+				'singular' => $singular['records'],
+				'link'     => 'view',
+			],
+			'meta_box'    => [
+				'title'   => $adaptive['records'],
+				'singular'   => $singular['records'],
+				'context' => 'normal',
+			],
+		],
+	] );
 
 	// MB_Relationships_API::register( [
 	// 	'id'         => 'rel-records-products',

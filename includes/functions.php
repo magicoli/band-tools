@@ -76,26 +76,21 @@ function child_title($child, $args = array()) {
  // "<a class='playlist-track action play play-song small-toggle-btn small-play-btn' href='#' data-play-track='" . $args['track_nr'] . "'>$label_play</a>";
     }
 
-    $product_id = rwmb_meta( 'record_product', array(), $child->ID );
-    if(empty($product_id)) $product_id = $child->track_product;
-    // if(empty($product_id)) {
-    //   $products = MB_Relationships_API::get_connected( [
-    //       'id'   => "rel-$child->post_type-products",
-    //       'from' => $child->ID,
-    //   ] );
-    //   if($products) {
-    //     echo "<pre>"; print_r($products); die();
-    //   }
-    // }
-
-    if (!empty($product_id)) {
-      if(is_in_cart($product->ID)) {
-        $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
+    $child_products = MB_Relationships_API::get_connected( [
+      'id'   => "rel-$child->post_type-products",
+      'from' => $child->ID,
+      ]
+    );
+    if(!empty($child_products)) {
+      $product_count=count($child_products);
+      // if($product_count > 1) echo $child->ID . "<pre>"; print_r($child_products); echo "</pre>";
+      $product = $child_products[0];
+      if(woo_in_cart($product->ID)) {
+          $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
       } else {
         $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product->ID.']' ) . "'>$label_buy</a>";
       }
     }
-
     if(!empty($actions)) {
       $title .= " <span class='actions child-actions'>";
       $title .= join(' ', $actions);
@@ -103,76 +98,6 @@ function child_title($child, $args = array()) {
     }
   // }
   return "<div class=child-title>$title</div>";
-}
-
-function bndtls_get_childs($post, $slugs, $args = array() ) {
-  if(!is_object($post)) return; // Should never happen
-  switch ($post->post_type) {
-    case 'songs':
-      $lgth = strlen($post->ID);
-      $query_args = array(
-        'post_type' => 'records',
-        'orderby'          => 'post_date',
-        'order'            => 'DESC',
-        'post_type' => 'records',
-        // 'meta_query' => array(
-          // 'key'     => 'tracks',
-          // 'value'   => '%:"track_song";s:' . $lgth . ':"' . $post->ID . '"%',
-          // 'compare' => 'LIKE',
-        // ),
-      );
-      // $query_args = array(
-      //   'meta_query' => $query_args,
-      // $meta_query = new WP_Query( $query_args );
-      $meta_query = new WP_Query( $query_args );
-      $records = $meta_query->posts;
-      foreach($records as $record) {
-        $tracks = array_shift(get_post_meta($record->ID, 'tracks'));
-        foreach($tracks as $track_key => $track) {
-          if($track['track_song'] == $post->ID) {
-            // $record = get_post($track_key);
-            $childs[] = $record;
-          }
-
-        }
-      }
-      // foreach($childs as $child) {}
-      // while ( $meta_query->have_posts() ) {
-      //   $meta_query->the_post();
-      //   $post_id = get_the_ID();
-      //   echo "post id " . $post->ID;
-      // }
-      // WP_reset_postdata();
-      break;
-
-    case 'records':
-      $tracks = array_shift(get_post_meta($post->ID, 'tracks'));
-      $i=0;
-      if(is_array($tracks))
-      foreach($tracks as $track) {
-        $i++;
-        $child=$track;
-        $song = get_post($track['track_song']);
-        // // $child['ID'] = $track;
-        // $track['track_nr'] = $i;
-        // $track['title'] = $song->post_title;
-        $song->track_audio_sample_url = $track['track_audio_sample_url'];
-        $song->track_product = $track['track_product'];
-        #get_the_title($track->song);
-        // $track['song'] = $song;
-        // $song_id = $track->song;
-        $childs[] = $song;
-      }
-      break;
-
-    default:
-      // We only make specific queries here, so return empty if not defined
-      return;
-  }
-
-  // echo "<pre>"; print_r($childs); die();
-
-  return $childs;
 }
 
 function bndtls_get_relations($post, $slugs, $args = array() ) {
@@ -190,7 +115,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
     if(isset($args['level'])) $l=$args['level'];
     else $l='4';
   }
-  if(!is_object($post)) return "not a post"; // Should never happen
+  if(!is_object($post)) return "not a post";
   if(is_array($slugs)) {
     $childs_slug = array_shift($slugs);
     $grand_child_slug = $slugs;
@@ -213,7 +138,6 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
       'id'   => "rel-$rel",
       $direction => $post->ID,
   ] );
-  if(empty($childs)) $childs = bndtls_get_childs($post, $slugs, $args);
   if(empty($childs)) return;
 
   if(! isset($args['title'])) {
@@ -243,24 +167,24 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
         'parent' => 'p' . print_r($args['parent'], true),
       );
     }
-    // $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
+    $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
     // $samples = array();
-    if(!empty($child->track_audio_sample_url)) {
-      // $sample = array_shift($samples);
+    if(!empty($samples)) {
+      $sample = array_shift($samples);
       $t++;
-      // $sample_url = wp_get_attachment_url($sample['url']);
+      $sample_url = wp_get_attachment_url($sample['url']);
       // str_replace(
       //   wp_normalize_path( untrailingslashit( ABSPATH ) ),
       //   site_url(),
       //   wp_normalize_path( $sample['path'] )
       // );
       $child_args['track_nr'] = $t;
-      $child_args['track_url'] = $child->track_audio_sample_url;
+      $child_args['track_url'] = $sample_url;
       $child_args['playlist'] = $post->ID;
       // echo "<pre>" . $child->post_title . "\n" . $sample_url . "\n" . print_r($sample, true) . "</pre>"; die();
       $tracks[] = array(
         'nr' => $t,
-        'url' => $child->track_audio_sample_url,
+        'url' => $sample_url,
         'name' => $child->post_title,
       );
       $li_classes[] .= 'playlist-row classtest';
@@ -268,6 +192,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
 
     $output_childs .= "<li class='" . join(' ', $li_classes) . "'>";
     $output_childs .= child_title($child, $child_args);
+
     if(!empty($grand_child_slug)) {
       $output_childs .= bndtls_get_relations($child, $grand_child_slug, [ 'title' => '', 'parent_id' => $post->ID ] );
     }
@@ -373,14 +298,7 @@ function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
   return $output;
 }
 
-if (!function_exists('is_woocommerce_active')) {
-  function is_woocommerce_active() {
-    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-    return is_plugin_active( 'woocommerce/woocommerce.php');
-  }
-}
-
-function is_in_cart($product_id) {
+function woo_in_cart($product_id) {
   global $woocommerce;
   if($woocommerce->cart) {
     foreach($woocommerce->cart->get_cart() as $key => $val ) {
