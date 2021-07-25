@@ -149,7 +149,9 @@ function bndtls_get_childs($post, $slugs, $args = array() ) {
       $tracks = array_shift(get_post_meta($post->ID, 'tracks'));
       $i=0;
       if(is_array($tracks))
+      // echo "<pre>"; print_r($tracks); die();
       foreach($tracks as $track) {
+        if(!is_array($strack)) continue;
         $i++;
         $child=$track;
         $song = get_post($track['track_song']);
