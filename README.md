@@ -83,6 +83,12 @@ to show
 
 ## Changelog
 
+### 0.10.2
+* regression: revert dev changes breaking functionalties
+
+### 0.10.1
+* fix get_cart() crash when saving song
+
 ### 0.10
 * added player in songs lists and play link for each song
 
