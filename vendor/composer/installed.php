@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '89cf26d12a3736b553425893b63d847cf69b2226',
+    'reference' => '6f2ae011aa0a0272bb049b00aa8dd74f6fee8e43',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '89cf26d12a3736b553425893b63d847cf69b2226',
+      'reference' => '6f2ae011aa0a0272bb049b00aa8dd74f6fee8e43',
     ),
     'composer/installers' => 
     array (
@@ -105,15 +105,6 @@
       array (
       ),
       'reference' => 'trunk',
-    ),
-    'wpackagist-plugin/mb-relationships' => 
-    array (
-      'pretty_version' => '1.10.6',
-      'version' => '1.10.6.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'tags/1.10.6',
     ),
     'wpackagist-plugin/meta-box' => 
     array (

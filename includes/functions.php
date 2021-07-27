@@ -110,7 +110,7 @@ function bndtls_get_childs($post, $slugs, $args = array() ) {
       $records = $meta_query->posts;
       $childs = $records;
       break;
-      
+
     case 'songs':
       $lgth = strlen($post->ID);
       $query_args = array(
@@ -190,20 +190,9 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   }
   if(isset($parent)) $rel_slug="rel-$childs_slug-$parent_slug";
   else $rel_slug="rel-$rel";
-  $childs = MB_Relationships_API::get_connected( [
-      'id'   => "rel-$rel",
-      $direction => $post->ID,
-  ] );
-  if(empty($childs)) $childs = bndtls_get_childs($post, $slugs, $args);
-  if(empty($childs)) return;
 
-  if(! isset($args['title'])) {
-    $relation = MB_Relationships_API::get_relationship( "rel-$rel" );
-    if(count($childs)==1)
-    $title=$relation->$direction['meta_box']['singular'];
-    else
-    $title = $relation->$direction['meta_box']['title'];
-  }
+  $childs = bndtls_get_childs($post, $slugs, $args);
+  if(empty($childs)) return;
 
   $output .= "<div class='$rel'>";
   $output .= $block_before;

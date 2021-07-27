@@ -13,6 +13,5 @@ return array(
     'a521c3c4410fc3d21079d895e98eac55' => $vendorDir . '/meta-box/meta-box-show-hide/meta-box-show-hide.php',
     '121f85de7b49929ef885fabc302737f9' => $vendorDir . '/meta-box/mb-admin-columns/mb-admin-columns.php',
     '0216681714809d61e27be74991f05bef' => $vendorDir . '/meta-box/mb-custom-post-type/mb-custom-post-type.php',
-    '7ac91bf81f57110551ebe8edde3cbe26' => $vendorDir . '/meta-box/mb-relationships/mb-relationships.php',
     '8f06d35e329fad24db0fe1eb28e40e20' => $vendorDir . '/meta-box/mb-settings-page/mb-settings-page.php',
 );
