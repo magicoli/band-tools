@@ -295,41 +295,41 @@ function bndtls_register_relationships() {
 	// 	],
 	// ] );
 
-	MB_Relationships_API::register( [
-		'id'   => 'rel-bands-songs',
-		'from' => [
-			'object_type'  => 'post',
-			'post_type'    => 'bands',
-			'admin_column' => [
-				'position' => 'after title',
-				'title'    => $adaptive['songs'],
-				'singular' => $singular['songs'],
-				'link'     => 'view',
-			],
-			'meta_box'     => [
-				'title'    => $adaptive['songs'],
-				'singular' => $singular['songs'],
-				'context'  => 'normal',
-				'priority' => 'high',
-			],
-		],
-		'to'   => [
-			'object_type'  => 'post',
-			'post_type'    => 'songs',
-			'admin_column' => [
-				'position' => 'after title',
-				'title'    => $adaptive['bands'],
-				'singular' => $singular['bands'],
-				'link'     => 'view',
-			],
-			'meta_box'     => [
-				'title'    => $adaptive['bands'],
-				'singular' => $singular['bands'],
-				'context'  => 'normal',
-				'priority' => 'high',
-			],
-		],
-	] );
+	// MB_Relationships_API::register( [
+	// 	'id'   => 'rel-bands-songs',
+	// 	'from' => [
+	// 		'object_type'  => 'post',
+	// 		'post_type'    => 'bands',
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'title'    => $adaptive['songs'],
+	// 			'singular' => $singular['songs'],
+	// 			'link'     => 'view',
+	// 		],
+	// 		'meta_box'     => [
+	// 			'title'    => $adaptive['songs'],
+	// 			'singular' => $singular['songs'],
+	// 			'context'  => 'normal',
+	// 			'priority' => 'high',
+	// 		],
+	// 	],
+	// 	'to'   => [
+	// 		'object_type'  => 'post',
+	// 		'post_type'    => 'songs',
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'title'    => $adaptive['bands'],
+	// 			'singular' => $singular['bands'],
+	// 			'link'     => 'view',
+	// 		],
+	// 		'meta_box'     => [
+	// 			'title'    => $adaptive['bands'],
+	// 			'singular' => $singular['bands'],
+	// 			'context'  => 'normal',
+	// 			'priority' => 'high',
+	// 		],
+	// 	],
+	// ] );
 
 	// MB_Relationships_API::register( [
 	// 	'id'   => 'rel-records-songs',

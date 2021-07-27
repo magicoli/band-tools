@@ -160,6 +160,13 @@ function bndtls_update_2_init() {
     // echo "record $record->ID product $product_ID <pre>"; print_r($record); die;
   }
 
+  $rel_records_bands = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}mb_relationships WHERE `type`='rel-bands-songs' ORDER BY `from`, `order_from`, `order_to`");
+  foreach ($rel_records_bands as $rel) {
+    $song = get_post($rel->to);
+    $band_ID = $rel->from;
+    rwmb_set_meta( $song->ID, 'band', $band_ID );
+  }
+
   if($debug) bndtls_admin_notice('<br/>' . join('<br/>', $debug), 'info');
 
   // echo "</pre>";
