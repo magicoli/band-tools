@@ -86,6 +86,7 @@ function child_title($child, $args = array()) {
         $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product_id.']' ) . "'>$label_buy</a>";
       }
     }
+
     if(!empty($actions)) {
       $title .= " <span class='actions child-actions'>";
       $title .= join(' ', $actions);
@@ -170,7 +171,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
     if(isset($args['level'])) $l=$args['level'];
     else $l='4';
   }
-  if(!is_object($post)) return "not a post";
+  if(!is_object($post)) return "not a post"; // Should never happen
   if(is_array($slugs)) {
     $childs_slug = array_shift($slugs);
     $grand_child_slug = $slugs;
@@ -212,24 +213,24 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
         'parent' => 'p' . print_r($args['parent'], true),
       );
     }
-    $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
+    // $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
     // $samples = array();
-    if(!empty($samples)) {
-      $sample = array_shift($samples);
+    if(!empty($child->track_audio_sample_url)) {
+      // $sample = array_shift($samples);
       $t++;
-      $sample_url = wp_get_attachment_url($sample['url']);
+      // $sample_url = wp_get_attachment_url($sample['url']);
       // str_replace(
       //   wp_normalize_path( untrailingslashit( ABSPATH ) ),
       //   site_url(),
       //   wp_normalize_path( $sample['path'] )
       // );
       $child_args['track_nr'] = $t;
-      $child_args['track_url'] = $sample_url;
+      $child_args['track_url'] = $child->track_audio_sample_url;
       $child_args['playlist'] = $post->ID;
       // echo "<pre>" . $child->post_title . "\n" . $sample_url . "\n" . print_r($sample, true) . "</pre>"; die();
       $tracks[] = array(
         'nr' => $t,
-        'url' => $sample_url,
+        'url' => $child->track_audio_sample_url,
         'name' => $child->post_title,
       );
       $li_classes[] .= 'playlist-row classtest';
@@ -237,7 +238,6 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
 
     $output_childs .= "<li class='" . join(' ', $li_classes) . "'>";
     $output_childs .= child_title($child, $child_args);
-
     if(!empty($grand_child_slug)) {
       $output_childs .= bndtls_get_relations($child, $grand_child_slug, [ 'title' => '', 'parent_id' => $post->ID ] );
     }
@@ -343,7 +343,14 @@ function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
   return $output;
 }
 
-function woo_in_cart($product_id) {
+if (!function_exists('is_woocommerce_active')) {
+  function is_woocommerce_active() {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+    return is_plugin_active( 'woocommerce/woocommerce.php');
+  }
+}
+
+function is_in_cart($product_id) {
   global $woocommerce;
   if($woocommerce->cart) {
     foreach($woocommerce->cart->get_cart() as $key => $val ) {
