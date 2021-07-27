@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the Band Tools plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Band Tools 0.9.9\n"
+"Project-Id-Version: Band Tools 0.10.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/band-tools\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-22T15:11:35-04:00\n"
+"POT-Creation-Date: 2021-07-27T18:20:24-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 
@@ -187,7 +187,8 @@ msgstr ""
 #: admin/settings.php:50
 #: admin/settings.php:59
 #: admin/settings.php:66
-#: includes/init.php:96
+#: includes/custom-fields.php:105
+#: includes/init.php:92
 #: includes/post-types.php:43
 msgid "Band"
 msgid_plural "Bands"
@@ -268,7 +269,7 @@ msgstr ""
 #: admin/settings.php:105
 #: admin/settings.php:111
 #: admin/settings.php:113
-#: includes/init.php:97
+#: includes/init.php:93
 msgid "Record"
 msgid_plural "Records"
 msgstr[0] ""
@@ -303,7 +304,7 @@ msgstr ""
 #: admin/settings.php:138
 #: admin/settings.php:147
 #: admin/settings.php:153
-#: includes/init.php:98
+#: includes/init.php:94
 #: includes/post-types.php:180
 msgid "Song"
 msgid_plural "Songs"
@@ -409,7 +410,7 @@ msgid "Info"
 msgstr ""
 
 #: includes/custom-fields.php:17
-#: includes/custom-fields.php:104
+#: includes/custom-fields.php:123
 #: includes/taxonomies.php:8
 msgid "Genre"
 msgstr ""
@@ -438,7 +439,7 @@ msgid "Members"
 msgstr ""
 
 #: includes/custom-fields.php:65
-#: includes/custom-fields.php:122
+#: includes/custom-fields.php:133
 msgid "Initial Release"
 msgstr ""
 
@@ -454,6 +455,10 @@ msgstr ""
 msgid "Genres"
 msgstr ""
 
+#: includes/custom-fields.php:109
+msgid "Select Band"
+msgstr ""
+
 #: includes/custom-fields.php:113
 #: includes/taxonomies.php:57
 #: includes/taxonomies.php:59
@@ -461,23 +466,23 @@ msgstr ""
 msgid "Authors"
 msgstr ""
 
-#: includes/custom-fields.php:131
+#: includes/custom-fields.php:143
 msgid "Files"
 msgstr ""
 
-#: includes/custom-fields.php:137
+#: includes/custom-fields.php:149
 msgid "Audio sample"
 msgstr ""
 
-#: includes/custom-fields.php:139
+#: includes/custom-fields.php:151
 msgid "Short sample or full song, for the player (different from the downloadable file, which set in the product)."
 msgstr ""
 
-#: includes/custom-fields.php:148
+#: includes/custom-fields.php:160
 msgid "Downloadable audio"
 msgstr ""
 
-#: includes/custom-fields.php:149
+#: includes/custom-fields.php:161
 msgid "Full length audio available for download."
 msgstr ""
 
@@ -493,7 +498,7 @@ msgstr ""
 msgid "Buy"
 msgstr ""
 
-#: includes/functions.php:89
+#: includes/functions.php:84
 msgid "View cart"
 msgstr ""
 
@@ -502,14 +507,14 @@ msgstr ""
 msgid "Get a license key on %s website"
 msgstr ""
 
-#: includes/init.php:99
-#: includes/init.php:100
+#: includes/init.php:95
+#: includes/init.php:96
 msgid "Track"
 msgid_plural "Tracks"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/init.php:101
+#: includes/init.php:97
 msgid "Tracks"
 msgstr ""
 
@@ -1113,14 +1118,22 @@ msgstr ""
 msgid "%s release types added"
 msgstr ""
 
-#: includes/updates.php:32
+#: includes/updates.php:24
+msgid "Update %s applied"
+msgstr ""
+
+#: includes/updates.php:34
 msgid "Update %s applied sucessfully"
 msgid_plural "Updates %s applied sucessfully"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/updates.php:38
+#: includes/updates.php:40
 msgid "Error processing update %s"
+msgstr ""
+
+#: includes/updates.php:178
+msgid "database updated, %s rows affected"
 msgstr ""
 
 #. translators: %s is replaced by the name of the plugin, untranslated
@@ -1175,6 +1188,6 @@ msgstr ""
 msgid "Display related videos"
 msgstr ""
 
-#: templates/templates.php:61
-msgid "by"
+#: templates/templates.php:65
+msgid "by <a href=\"%s\">%s</a>"
 msgstr ""
