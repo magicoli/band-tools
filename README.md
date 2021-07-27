@@ -83,6 +83,9 @@ to show
 
 ## Changelog
 
+### 0.11.1
+* fix errors in previous merge
+
 ### 0.11
 * add play link in list when an audio sample is available
 * add buy link to record if a product is linked
