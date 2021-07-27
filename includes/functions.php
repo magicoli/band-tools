@@ -76,14 +76,16 @@ function child_title($child, $args = array()) {
  // "<a class='playlist-track action play play-song small-toggle-btn small-play-btn' href='#' data-play-track='" . $args['track_nr'] . "'>$label_play</a>";
     }
 
-    $product_id = rwmb_meta( 'record_product', array(), $child->ID );
-    if(empty($product_id)) $product_id = $child->track_product;
+    if(is_woocommerce_active()) {
+      $product_id = rwmb_meta( 'record_product', array(), $child->ID );
+      if(empty($product_id)) $product_id = $child->track_product;
 
-    if (!empty($product_id) && get_post_status($product_id) ==  'publish' ) {
-      if(is_in_cart($product_id)) {
-        $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
-      } else {
-        $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product_id.']' ) . "'>$label_buy</a>";
+      if (!empty($product_id) && get_post_status($product_id) ==  'publish' ) {
+        if(is_in_cart($product_id)) {
+          $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
+        } else {
+          $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product_id.']' ) . "'>$label_buy</a>";
+        }
       }
     }
 
