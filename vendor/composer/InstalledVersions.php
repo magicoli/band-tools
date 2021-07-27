@@ -23,118 +23,109 @@ use Composer\Semver\VersionParser;
 class InstalledVersions
 {
 private static $installed = array (
-  'root' => 
+  'root' =>
   array (
     'pretty_version' => 'dev-master',
     'version' => 'dev-master',
-    'aliases' => 
+    'aliases' =>
     array (
     ),
-    'reference' => '33e3f7fca61df457541ebe0d97c851c9effa49c8',
+    'reference' => '6f2ae011aa0a0272bb049b00aa8dd74f6fee8e43',
     'name' => '__root__',
   ),
-  'versions' => 
+  'versions' =>
   array (
-    '__root__' => 
+    '__root__' =>
     array (
       'pretty_version' => 'dev-master',
       'version' => 'dev-master',
-      'aliases' => 
+      'aliases' =>
       array (
       ),
-      'reference' => '33e3f7fca61df457541ebe0d97c851c9effa49c8',
+      'reference' => '6f2ae011aa0a0272bb049b00aa8dd74f6fee8e43',
     ),
-    'composer/installers' => 
+    'composer/installers' =>
     array (
       'pretty_version' => 'v1.10.0',
       'version' => '1.10.0.0',
-      'aliases' => 
+      'aliases' =>
       array (
       ),
       'reference' => '1a0357fccad9d1cc1ea0c9a05b8847fbccccb78d',
     ),
-    'meta-box/mb-settings-page' => 
+    'meta-box/mb-settings-page' =>
     array (
       'pretty_version' => 'master',
       'version' => 'dev-master',
-      'aliases' => 
+      'aliases' =>
       array (
       ),
       'reference' => NULL,
     ),
-    'meta-box/meta-box-columns' => 
+    'meta-box/meta-box-columns' =>
     array (
       'pretty_version' => 'master',
       'version' => 'dev-master',
-      'aliases' => 
+      'aliases' =>
       array (
       ),
       'reference' => NULL,
     ),
-    'meta-box/meta-box-conditional-logic' => 
+    'meta-box/meta-box-conditional-logic' =>
     array (
       'pretty_version' => 'master',
       'version' => 'dev-master',
-      'aliases' => 
+      'aliases' =>
       array (
       ),
       'reference' => NULL,
     ),
-    'meta-box/meta-box-group' => 
+    'meta-box/meta-box-group' =>
     array (
       'pretty_version' => 'master',
       'version' => 'dev-master',
-      'aliases' => 
+      'aliases' =>
       array (
       ),
       'reference' => NULL,
     ),
-    'meta-box/meta-box-show-hide' => 
+    'meta-box/meta-box-show-hide' =>
     array (
       'pretty_version' => 'master',
       'version' => 'dev-master',
-      'aliases' => 
+      'aliases' =>
       array (
       ),
       'reference' => NULL,
     ),
-    'roundcube/plugin-installer' => 
+    'roundcube/plugin-installer' =>
     array (
-      'replaced' => 
+      'replaced' =>
       array (
         0 => '*',
       ),
     ),
-    'shama/baton' => 
+    'shama/baton' =>
     array (
-      'replaced' => 
+      'replaced' =>
       array (
         0 => '*',
       ),
     ),
-    'wpackagist-plugin/mb-custom-post-type' => 
+    'wpackagist-plugin/mb-custom-post-type' =>
     array (
       'pretty_version' => 'dev-trunk',
       'version' => 'dev-trunk',
-      'aliases' => 
+      'aliases' =>
       array (
       ),
       'reference' => 'trunk',
     ),
-    'wpackagist-plugin/mb-relationships' => 
-    array (
-      'pretty_version' => '1.10.5',
-      'version' => '1.10.5.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'tags/1.10.5',
-    ),
-    'wpackagist-plugin/meta-box' => 
+    'wpackagist-plugin/meta-box' =>
     array (
       'pretty_version' => 'dev-trunk',
       'version' => 'dev-trunk',
-      'aliases' => 
+      'aliases' =>
       array (
       ),
       'reference' => 'trunk',

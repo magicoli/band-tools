@@ -101,13 +101,13 @@ function bndtls_fields_songs( $meta_boxes ) {
     'class'      => 'bndtls-fields bndtls-fields-info bndtls-fields-info-songs',
     'fields'     => [
       [
-        'name'       => __( 'Genre', 'band-tools' ),
-        'id'         => 'tax_genre',
-        'type'       => 'taxonomy',
-        'taxonomy'   => ['genre'],
-        'field_type' => 'select_advanced',
-        'add_new'    => true,
-        'multiple'   => true,
+        'id'          => $prefix . 'band',
+        'name'          => __( 'Band', 'band-tools' ),
+        'type'        => 'post',
+        'post_type'   => ['bands'],
+        'field_type'  => 'select_advanced',
+        'placeholder' => __( 'Select Band', 'band-tools' ),
+        'columns'     => 3,
       ],
       [
         'name'       => __( 'Authors', 'band-tools' ),
@@ -117,6 +117,17 @@ function bndtls_fields_songs( $meta_boxes ) {
         'field_type' => 'select_advanced',
         'add_new'    => true,
         'multiple'   => true,
+        'columns'     => 3,
+      ],
+      [
+        'name'       => __( 'Genre', 'band-tools' ),
+        'id'         => 'tax_genre',
+        'type'       => 'taxonomy',
+        'taxonomy'   => ['genre'],
+        'field_type' => 'select_advanced',
+        'add_new'    => true,
+        'multiple'   => true,
+        'columns'     => 3,
       ],
       [
         'name' => __( 'Initial Release', 'band-tools' ),
@@ -124,6 +135,7 @@ function bndtls_fields_songs( $meta_boxes ) {
         'type' => 'date',
         'placeholder' => 'YYYY-MM-YY',
         'desc' => 'Year, year-month or full date',
+        'columns'     => 3,
       ],
     ],
   ];

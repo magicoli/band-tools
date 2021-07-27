@@ -30,25 +30,25 @@ function bndtls_the_content ( $content ) {
 
 ### Interesting 1
 add_filter('the_title', 'bndtls_add_after_title', 10, 2);
-function bndtls_add_after_title($title, $post_id) {
-  if ( is_single() && is_main_query() && ! is_admin() && ! is_null( $post_id ) ) {
+function bndtls_add_after_title($title, $post_ID) {
+  if ( is_single() && is_main_query() && ! is_admin() && ! is_null( $post_ID ) ) {
     if(bndtls_backtrace_match('breadcrumb')) return $title;
 
-    $post = get_post( $post_id );
+    $post = get_post( $post_ID );
     $title_after = '';
     if ( $post instanceof WP_Post ) {
       switch($post->post_type) {
         case 'bands':
-        $title_after .= (bndtls_get_option('layout_page_title:genre')) ? bndtls_get_meta([ 'tax_genres' ], $post_id) : '';
-        $title_after .= (bndtls_get_option('layout_page_title:band_members')) ? bndtls_get_meta([ 'members' ], $post_id) : '';
+        $title_after .= (bndtls_get_option('layout_page_title:genre')) ? bndtls_get_meta([ 'tax_genres' ], $post_ID) : '';
+        $title_after .= (bndtls_get_option('layout_page_title:band_members')) ? bndtls_get_meta([ 'members' ], $post_ID) : '';
         if(bndtls_get_option('layout_page_title:official_website')) {
-          $url = rwmb_meta( 'official_website', array(), $post_id );
+          $url = rwmb_meta( 'official_website', array(), $post_ID );
           if($url) {
             $links[] = sprintf("<li class=link><a href='%s'>%s</a></li>", $url, __('Official Website', 'band-tools'));
           }
         }
         if(bndtls_get_option('layout_page_title:official_store')) {
-          $url = rwmb_meta( 'official_store', array(), $post_id );
+          $url = rwmb_meta( 'official_store', array(), $post_ID );
           if($url) {
             $links[] = sprintf("<li class=link><a href='%s'>%s</a></li>", $url, __('Official Store', 'band-tools'));
           }
@@ -58,11 +58,17 @@ function bndtls_add_after_title($title, $post_id) {
 
         case 'records':
         case 'songs':
-        $title_after .= (bndtls_get_option('layout_page_title:band')) ? bndtls_get_relations($post, 'bands', [ 'direction' => 'to', 'title' => '', 'before' => __('by', 'band-tools') ] ) : '';
-        $title_after .= (bndtls_get_option('layout_page_title:release_type')) ? bndtls_get_meta([ 'release_type' ], $post_id) : '';
-        $title_after .= (bndtls_get_option('layout_page_title:release')) ? bndtls_get_meta([ 'release' ], $post_id, [ 'before' => '&#x2117;' ]) : '';
-        $title_after .= (bndtls_get_option('layout_page_title:authors')) ? bndtls_get_meta([ 'authors' ], $post_id, [ 'before' => '&#169;' ] ) : '';
-        $title_after .= (bndtls_get_option('layout_page_title:genre')) ? bndtls_get_meta([ 'tax_genres' ], $post_id) : '';
+        if(bndtls_get_option('layout_page_title:band')) {
+          $band_ID = rwmb_meta( 'band', array(), $post_ID );
+          $band = get_post($band_ID);
+          // echo "<pre>"; print_r($band); die;
+          $title_after .= sprintf(__('by <a href="%s">%s</a>', 'band-tools'), get_permalink($band), $band->post_title);
+        }
+
+        $title_after .= (bndtls_get_option('layout_page_title:release_type')) ? bndtls_get_meta([ 'release_type' ], $post_ID) : '';
+        $title_after .= (bndtls_get_option('layout_page_title:release')) ? bndtls_get_meta([ 'release' ], $post_ID, [ 'before' => '&#x2117;' ]) : '';
+        $title_after .= (bndtls_get_option('layout_page_title:authors')) ? bndtls_get_meta([ 'authors' ], $post_ID, [ 'before' => '&#169;' ] ) : '';
+        $title_after .= (bndtls_get_option('layout_page_title:genre')) ? bndtls_get_meta([ 'tax_genres' ], $post_ID) : '';
         break;
       }
     }

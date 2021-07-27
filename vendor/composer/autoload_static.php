@@ -13,7 +13,6 @@ class ComposerStaticInit434d04b486e83c37897daad953df1be9
         'efcccce94091def99574319633dff18c' => __DIR__ . '/..' . '/meta-box/meta-box-group/meta-box-group.php',
         'a521c3c4410fc3d21079d895e98eac55' => __DIR__ . '/..' . '/meta-box/meta-box-show-hide/meta-box-show-hide.php',
         '0216681714809d61e27be74991f05bef' => __DIR__ . '/..' . '/meta-box/mb-custom-post-type/mb-custom-post-type.php',
-        '7ac91bf81f57110551ebe8edde3cbe26' => __DIR__ . '/..' . '/meta-box/mb-relationships/mb-relationships.php',
         '8f06d35e329fad24db0fe1eb28e40e20' => __DIR__ . '/..' . '/meta-box/mb-settings-page/mb-settings-page.php',
     );
 

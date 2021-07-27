@@ -76,19 +76,14 @@ function child_title($child, $args = array()) {
  // "<a class='playlist-track action play play-song small-toggle-btn small-play-btn' href='#' data-play-track='" . $args['track_nr'] . "'>$label_play</a>";
     }
 
-    $child_products = MB_Relationships_API::get_connected( [
-      'id'   => "rel-$child->post_type-products",
-      'from' => $child->ID,
-      ]
-    );
-    if(!empty($child_products)) {
-      $product_count=count($child_products);
-      // if($product_count > 1) echo $child->ID . "<pre>"; print_r($child_products); echo "</pre>";
-      $product = $child_products[0];
-      if(woo_in_cart($product->ID)) {
-          $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
+    $product_id = rwmb_meta( 'record_product', array(), $child->ID );
+    if(empty($product_id)) $product_id = $child->track_product;
+
+    if (!empty($product_id) && get_post_status($product_id) ==  'publish' ) {
+      if(is_in_cart($product_id)) {
+        $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
       } else {
-        $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product->ID.']' ) . "'>$label_buy</a>";
+        $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product_id.']' ) . "'>$label_buy</a>";
       }
     }
     if(!empty($actions)) {
@@ -98,6 +93,66 @@ function child_title($child, $args = array()) {
     }
   // }
   return "<div class=child-title>$title</div>";
+}
+
+function bndtls_get_childs($post, $slugs, $args = array() ) {
+  if(!is_object($post)) return; // Should never happen
+  switch ($post->post_type) {
+    case 'bands':
+      $lgth = strlen($post->ID);
+      $query_args = array(
+        'post_type' => 'records',
+        'orderby'          => 'post_date',
+        'order'            => 'DESC',
+      );
+      $meta_query = new WP_Query( $query_args );
+      $records = $meta_query->posts;
+      $childs = $records;
+      break;
+
+    case 'songs':
+      $lgth = strlen($post->ID);
+      $query_args = array(
+        'post_type' => 'records',
+        'orderby'          => 'post_date',
+        'order'            => 'DESC',
+      );
+      $meta_query = new WP_Query( $query_args );
+      $records = $meta_query->posts;
+      foreach($records as $record) {
+        $tracks = array_shift(get_post_meta($record->ID, 'tracks'));
+        foreach($tracks as $track_key => $track) {
+          if($track['track_song'] == $post->ID) {
+            // $record = get_post($track_key);
+            $childs[] = $record;
+          }
+
+        }
+      }
+      break;
+
+    case 'records':
+      $tracks = array_shift(get_post_meta($post->ID, 'tracks'));
+      $i=0;
+      if(is_array($tracks)) {
+        foreach($tracks as $track) {
+          if(!is_array($track)) continue;
+          $i++;
+          $child=$track;
+          $song = get_post($track['track_song']);
+          $song->track_audio_sample_url = $track['track_audio_sample_url'];
+          $song->track_product = $track['track_product'];
+          $childs[] = $song;
+        }
+      }
+      break;
+
+    default:
+      // We only make specific queries here, so return empty if not defined
+      return;
+  }
+
+  return $childs;
 }
 
 function bndtls_get_relations($post, $slugs, $args = array() ) {
@@ -134,19 +189,9 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   }
   if(isset($parent)) $rel_slug="rel-$childs_slug-$parent_slug";
   else $rel_slug="rel-$rel";
-  $childs = MB_Relationships_API::get_connected( [
-      'id'   => "rel-$rel",
-      $direction => $post->ID,
-  ] );
-  if(empty($childs)) return;
 
-  if(! isset($args['title'])) {
-    $relation = MB_Relationships_API::get_relationship( "rel-$rel" );
-    if(count($childs)==1)
-    $title=$relation->$direction['meta_box']['singular'];
-    else
-    $title = $relation->$direction['meta_box']['title'];
-  }
+  $childs = bndtls_get_childs($post, $slugs, $args);
+  if(empty($childs)) return;
 
   $output .= "<div class='$rel'>";
   $output .= $block_before;
