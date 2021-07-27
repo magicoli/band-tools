@@ -83,6 +83,12 @@ to show
 
 ## Changelog
 
+### 0.11
+* add play link in list when an audio sample is available
+* add buy link to record if a product is linked
+* add buy links in lists if a product is linked
+* show player for each record
+
 ### 0.10.2
 * regression: revert dev changes breaking functionalties
 
