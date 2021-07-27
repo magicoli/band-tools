@@ -55,10 +55,10 @@ function bndtls_update_1() {
   global $wpdb;
   $from='album';
   $to='record';
-  $post_ids = get_posts(array('post_per_page' => -1, 'post_type' => "${from}s"));
+  $post_IDs = get_posts(array('post_per_page' => -1, 'post_type' => "${from}s"));
   $i = 0;
   $results=array();
-  foreach($post_ids as $p){
+  foreach($post_IDs as $p){
     $po = array();
     $po = get_post($p->ID,'ARRAY_A');
     $po['post_type'] = "${to}s";
@@ -108,14 +108,14 @@ function bndtls_update_2_init() {
     $track_nr = $rel->to;
     $current_tracks = rwmb_meta('tracks', array(), $record->ID);
     // $debug[] = "Current tracks: <pre>" . print_r($current_tracks, true) . "</pre>";
-    $sample_id ="";
+    $sample_ID ="";
     $sample_info = rwmb_meta('audio_sample', array(), $song->ID);
     if(is_array($sample_info)) {
-      $sample_id = array_key_first($sample_info);
+      $sample_ID = array_key_first($sample_info);
     } else if (is_numeric($sample_info)) {
-      $sample_id = $sample_info;
+      $sample_ID = $sample_info;
     }
-    if(!empty($sample_id)) $sample = get_post($sample_id)->guid;
+    if(!empty($sample_ID)) $sample = get_post($sample_ID)->guid;
 
     $new_track = array(
       'track_song' => $song->ID,
@@ -131,31 +131,35 @@ function bndtls_update_2_init() {
     $records_updates[] = $record;
     // break;
     // $debug[] = "new_track " . print_r($new_track, true)  . "";
-    // // $current_record = get_post_meta( $band_id, 'fredningszone_data', true );
+    // // $current_record = get_post_meta( $band_ID, 'fredningszone_data', true );
     // //         $meta = get_post_meta( $post["id"], 'fredningszone_data', true );
   }
   // $debug[] = "New tracks: <pre>" . print_r($new_tracks, true) . "</pre>";
-  foreach($new_tracks as $record_id => $tracks) {
-    // $debug[] = "<pre>rwmb_set_meta( $record_id, 'tracks', " . print_r($new_tracks[$record_id], true) . " );</pre>";
-    rwmb_set_meta( $record_id, 'tracks', $new_tracks[$record_id] );
-    // update_post_meta( $record_id, 'tracks', serialize($new_tracks[$record_id]) );
-    $current_tracks = rwmb_meta('tracks', array(), $record_id);
-    // $current_tracks = get_post_meta('tracks', $record_id);
-    // $debug[] = "$record_id after update: <pre>" . print_r($current_tracks, true) . "</pre>";
+  foreach($new_tracks as $record_ID => $tracks) {
+    // $debug[] = "<pre>rwmb_set_meta( $record_ID, 'tracks', " . print_r($new_tracks[$record_ID], true) . " );</pre>";
+    rwmb_set_meta( $record_ID, 'tracks', $new_tracks[$record_ID] );
+    // update_post_meta( $record_ID, 'tracks', serialize($new_tracks[$record_ID]) );
+    // $current_tracks = rwmb_meta('tracks', array(), $record_ID);
+    // $current_tracks = get_post_meta('tracks', $record_ID);
+    // $debug[] = "$record_ID after update: <pre>" . print_r($current_tracks, true) . "</pre>";
 
   }
 
   $rel_records_bands = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}mb_relationships WHERE `type`='rel-bands-records' ORDER BY `to`, `order_to`, `from`");
   foreach ($rel_records_bands as $rel) {
     $record = get_post($rel->to);
-    $band_id = $rel->from;
-    rwmb_set_meta( $record->ID, 'band', $band_id );
+    $band_ID = $rel->from;
+    rwmb_set_meta( $record->ID, 'band', $band_ID );
   }
-  // foreach($rel_records_bands as $record) {
-  //   // rel-bands-records_from
-  //
-    // $debug[] = "rel_records_bands " . "<pre>" . print_r($rel_records_bands, true) . "</pre>";
-  // }*
+  $rel_records_products = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}mb_relationships WHERE `type`='rel-records-products' ORDER BY `from`, `order_from`");
+  foreach ($rel_records_products as $rel) {
+    $record = get_post($rel->from);
+    // $record_ID = $rel->from;
+    $product_ID = $rel->to;
+    rwmb_set_meta( $record->ID, 'record_product', $product_ID );
+    // echo "record $record->ID product $product_ID <pre>"; print_r($record); die;
+  }
+
   if($debug) bndtls_admin_notice('<br/>' . join('<br/>', $debug), 'info');
 
   // echo "</pre>";
