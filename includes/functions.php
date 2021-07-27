@@ -78,17 +78,8 @@ function child_title($child, $args = array()) {
 
     $product_id = rwmb_meta( 'record_product', array(), $child->ID );
     if(empty($product_id)) $product_id = $child->track_product;
-    // if(empty($product_id)) {
-    //   $products = MB_Relationships_API::get_connected( [
-    //       'id'   => "rel-$child->post_type-products",
-    //       'from' => $child->ID,
-    //   ] );
-    //   if($products) {
-    //     echo "<pre>"; print_r($products); die();
-    //   }
-    // }
 
-    if (!empty($product_id)) {
+    if (!empty($product_id) && get_post_status($product_id) ==  'publish' ) {
       if(is_in_cart($product_id)) {
         $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
       } else {
