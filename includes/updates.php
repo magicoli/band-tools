@@ -95,6 +95,7 @@ function bndtls_update_1() {
 function bndtls_update_2() {
   global $wpdb;
   add_action( 'init', 'bndtls_update_2_init', 30 );
+  return 'wait';
 }
 function bndtls_update_2_init() {
   global $wpdb;
@@ -107,14 +108,21 @@ function bndtls_update_2_init() {
     $track_nr = $rel->to;
     $current_tracks = rwmb_meta('tracks', array(), $record->ID);
     // $debug[] = "Current tracks: <pre>" . print_r($current_tracks, true) . "</pre>";
-    $sample_id = rwmb_meta('audio_sample', array(), $song->ID);
-    if($sample_id) $sample = get_post($sample_id)->guid;
+    $sample_id ="";
+    $sample_info = rwmb_meta('audio_sample', array(), $song->ID);
+    if(is_array($sample_info)) {
+      $sample_id = array_key_first($sample_info);
+    } else if (is_numeric($sample_info)) {
+      $sample_id = $sample_info;
+    }
+    if(!empty($sample_id)) $sample = get_post($sample_id)->guid;
+
     $new_track = array(
       'track_song' => $song->ID,
       'track_audio_sample_url' => $sample,
       // 'track_isrc' => '',
-      // 'track_product' => $song_product_id,
     );
+
     $song_products = $wpdb->get_results( "SELECT `to` FROM {$wpdb->prefix}mb_relationships
       WHERE `from`= $song->ID AND `type`='rel-songs-products'
       ORDER BY `from`, `order_from`" );
