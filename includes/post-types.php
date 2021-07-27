@@ -259,41 +259,41 @@ function bndtls_register_relationships() {
 	$adaptive['tracks'] = get_type_name_n('track', 'Track', 'Tracks', bndtls_count_posts('songs'));
 	$adaptive['products'] = get_type_name_n('product', 'Product', 'Products', bndtls_count_posts('songs'));
 
-	MB_Relationships_API::register( [
-		'id'   => 'rel-bands-records',
-		'from' => [
-			'object_type' => 'post',
-			'post_type'   => 'bands',
-			'admin_column' => [
-				'position' => 'after title',
-				'title'    => $adaptive['records'],
-				'singular' => $singular['records'],
-				'link'     => 'view',
-			],
-			'meta_box'    => [
-				'title'    => $adaptive['records'],
-				'singular' => $singular['records'],
-				'context'  => 'normal',
-				'priority' => 'high',
-			],
-		],
-		'to'   => [
-			'object_type' => 'post',
-			'post_type'   => 'records',
-			'admin_column' => [
-				'position' => 'after title',
-				'title'    => $adaptive['bands'],
-				'singular' => $singular['bands'],
-				'link'     => 'view',
-			],
-			'meta_box'    => [
-				'title'    => $adaptive['bands'],
-				'singular' => $singular['bands'],
-				'context'  => 'normal',
-				'priority' => 'high',
-			],
-		],
-	] );
+	// MB_Relationships_API::register( [
+	// 	'id'   => 'rel-bands-records',
+	// 	'from' => [
+	// 		'object_type' => 'post',
+	// 		'post_type'   => 'bands',
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'title'    => $adaptive['records'],
+	// 			'singular' => $singular['records'],
+	// 			'link'     => 'view',
+	// 		],
+	// 		'meta_box'    => [
+	// 			'title'    => $adaptive['records'],
+	// 			'singular' => $singular['records'],
+	// 			'context'  => 'normal',
+	// 			'priority' => 'high',
+	// 		],
+	// 	],
+	// 	'to'   => [
+	// 		'object_type' => 'post',
+	// 		'post_type'   => 'records',
+	// 		'admin_column' => [
+	// 			'position' => 'after title',
+	// 			'title'    => $adaptive['bands'],
+	// 			'singular' => $singular['bands'],
+	// 			'link'     => 'view',
+	// 		],
+	// 		'meta_box'    => [
+	// 			'title'    => $adaptive['bands'],
+	// 			'singular' => $singular['bands'],
+	// 			'context'  => 'normal',
+	// 			'priority' => 'high',
+	// 		],
+	// 	],
+	// ] );
 
 	MB_Relationships_API::register( [
 		'id'   => 'rel-bands-songs',
@@ -380,7 +380,7 @@ function bndtls_register_relationships() {
 	// 		'meta_box'     => [
 	// 			'title'   => $adaptive['products'],
 	// 			'singular' => $singular['products'],
-	// 			'context'  => 'normal',
+	// 			'context'  => 'normal',product
 	// 			'priority' => 'high',
 	// 			'class'    => 'record-product',
 	// 		],
