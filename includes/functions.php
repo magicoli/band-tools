@@ -142,22 +142,16 @@ function bndtls_get_childs($post, $slugs, $args = array() ) {
     case 'records':
       $tracks = array_shift(get_post_meta($post->ID, 'tracks'));
       $i=0;
-      if(is_array($tracks))
-      // echo "<pre>"; print_r($tracks); die();
-      foreach($tracks as $track) {
-        if(!is_array($strack)) continue;
-        $i++;
-        $child=$track;
-        $song = get_post($track['track_song']);
-        // // $child['ID'] = $track;
-        // $track['track_nr'] = $i;
-        // $track['title'] = $song->post_title;
-        $song->track_audio_sample_url = $track['track_audio_sample_url'];
-        $song->track_product = $track['track_product'];
-        #get_the_title($track->song);
-        // $track['song'] = $song;
-        // $song_id = $track->song;
-        $childs[] = $song;
+      if(is_array($tracks)) {
+        foreach($tracks as $track) {
+          if(!is_array($track)) continue;
+          $i++;
+          $child=$track;
+          $song = get_post($track['track_song']);
+          $song->track_audio_sample_url = $track['track_audio_sample_url'];
+          $song->track_product = $track['track_product'];
+          $childs[] = $song;
+        }
       }
       break;
 
@@ -165,8 +159,6 @@ function bndtls_get_childs($post, $slugs, $args = array() ) {
       // We only make specific queries here, so return empty if not defined
       return;
   }
-
-  // echo "<pre>"; print_r($childs); die();
 
   return $childs;
 }
