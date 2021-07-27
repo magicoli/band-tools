@@ -68,9 +68,10 @@ function bndtls_settings_layout_title( $meta_boxes ) {
 				'records'         => _x( 'Show Records', 'layout-settings', 'band-tools' ),
 				'records_songs'      => _x( 'Show Records and Tracks', 'layout-settings', 'band-tools' ),
 				'songs'        => _x( 'Show Songs', 'layout-settings', 'band-tools' ),
+				'player'      => _x( 'Show player in tracks list', 'layout-settings', 'band-tools' ),
 				'products'        			=> _x( 'Show Products', 'layout-settings', 'band-tools' ),
 			],
-			'std'               => [ true, true, true, true, true ],
+			'std'               => [ true, true, true, true, true, true ],
 			'select_all_none'   => true,
 		],
 		[

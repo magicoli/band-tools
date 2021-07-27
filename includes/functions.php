@@ -64,37 +64,36 @@ function child_title($child, $args = array()) {
   }
   $title = $before . $child->post_title . $after;
 
-  // if($child->post_type == 'songs') {
-    $actions=array();
-    // $sample = rwmb_meta( 'audio_sample', array(), $child->ID );
+  $actions=array();
+
+  if(bndtls_get_option('layout_page_content:player')) {
     if(!empty($args['track_nr'])) {
-      // $actions[] = '<span class="small-toggle-btn"><i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i></span>'
-      $actions[] =       sprintf(
-              '<a class="playlist-track action play play-song small-toggle-btn small-play-btn" href="#" data-play-track=%1$d data-play-list=%2$d>%3$s</a>',
-              $args['track_nr'], $args['playlist'], $label_play
-            );
- // "<a class='playlist-track action play play-song small-toggle-btn small-play-btn' href='#' data-play-track='" . $args['track_nr'] . "'>$label_play</a>";
+      $actions[] = sprintf(
+        '<a class="playlist-track action play play-song small-toggle-btn small-play-btn" href="#" data-play-track=%1$d data-play-list=%2$d>%3$s</a>',
+        $args['track_nr'], $args['playlist'], $label_play
+      );
     }
+  }
 
-    if(is_woocommerce_active()) {
-      $product_id = rwmb_meta( 'record_product', array(), $child->ID );
-      $playlist_product_id = rwmb_meta( 'record_product', array(), $args['playlist'] );
-      if(empty($product_id)) $product_id = $child->track_product;
+  if(is_woocommerce_active()) {
+    $product_id = rwmb_meta( 'record_product', array(), $child->ID );
+    $playlist_product_id = rwmb_meta( 'record_product', array(), $args['playlist'] );
+    if(empty($product_id)) $product_id = $child->track_product;
 
-      if (!empty($product_id) && get_post_status($product_id) ==  'publish' ) {
-        if(is_in_cart($product_id) || is_in_cart($playlist_product_id)) {
-          $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
-        } else {
-          $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product_id.']' ) . "'>$label_buy</a>";
-        }
+    if (!empty($product_id) && get_post_status($product_id) ==  'publish' ) {
+      if(is_in_cart($product_id) || is_in_cart($playlist_product_id)) {
+        $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
+      } else {
+        $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product_id.']' ) . "'>$label_buy</a>";
       }
     }
+  }
 
-    if(!empty($actions)) {
-      $title .= " <span class='actions child-actions'>";
-      $title .= join(' ', $actions);
-      $title .= "</span>";
-    }
+  if(!empty($actions)) {
+    $title .= " <span class='actions child-actions'>";
+    $title .= join(' ', $actions);
+    $title .= "</span>";
+  }
   // }
   return "<div class=child-title>$title</div>";
 }
@@ -249,24 +248,26 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   $output_childs .= '</ul>';
   if(!empty($tracks)) {
     $output_childs = "<ul id='playlist-$post->ID' class='childs $rel childs-$childs_slug list playlist'>$output_childs";
-    wp_enqueue_style( 'audioplayer-js', plugin_dir_url(__FILE__) . 'css/audioplayer.css', array(), BNDTLS_VERSION . "-" . time() );
-    wp_enqueue_script( 'audioplayer-css', plugin_dir_url(__FILE__) . 'js/audioplayer.js', array(), BNDTLS_VERSION . "-" . time() );
-    $output .= '<figure class=audioplayer>';
-    $output .= sprintf('<audio id="audio-%d" controls=controls preload=auto>', $post->ID);
-    foreach($tracks as $track) {
-      $output .= '<source title="Hello" src="' . $track['url'] . '" data-track-number="' . $track['nr'] . '" />';
+    if(bndtls_get_option('layout_page_content:player')) {
+      wp_enqueue_style( 'audioplayer-js', plugin_dir_url(__FILE__) . 'css/audioplayer.css', array(), BNDTLS_VERSION . "-" . time() );
+      wp_enqueue_script( 'audioplayer-css', plugin_dir_url(__FILE__) . 'js/audioplayer.js', array(), BNDTLS_VERSION . "-" . time() );
+      $output .= '<figure class=audioplayer>';
+      $output .= sprintf('<audio id="audio-%d" controls=controls preload=auto>', $post->ID);
+      foreach($tracks as $track) {
+        $output .= '<source title="Hello" src="' . $track['url'] . '" data-track-number="' . $track['nr'] . '" />';
+      }
+      $output .= 'Your browser does not support HTML5 audio.</audio>';
+      ob_start();
+      include "audioplayer-controls.php";
+      $output .= ob_get_clean();
+      // $output .= "css " . plugin_dir_url(__FILE__) . 'css/audioplayer.css' . "</br>";
+      // $output .= "js " . plugin_dir_url(__FILE__) . 'js/audioplayer.js' . "</br>";
+      // $output .= "playlist " . count($tracks);
+      // add_action( 'wp_enqueue_scripts', function() {
+      // } );
+      $output .= "<figcaption></figcaption>";
+      $output .= "</figure>";
     }
-    $output .= 'Your browser does not support HTML5 audio.</audio>';
-    ob_start();
-    include "audioplayer-controls.php";
-    $output .= ob_get_clean();
-    // $output .= "css " . plugin_dir_url(__FILE__) . 'css/audioplayer.css' . "</br>";
-    // $output .= "js " . plugin_dir_url(__FILE__) . 'js/audioplayer.js' . "</br>";
-    // $output .= "playlist " . count($tracks);
-    // add_action( 'wp_enqueue_scripts', function() {
-    // } );
-    $output .= "<figcaption></figcaption>";
-    $output .= "</figure>";
   } else {
     $output_childs = "<ul class='childs $rel childs-$childs_slug list'>$output_childs";
   }
