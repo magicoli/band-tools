@@ -6,11 +6,11 @@ if(get_option('bndtls_upated') < BNDTLS_UPDATES ) {
   bndls_updates();
 }
 
-function bndls_updates() {
+function bndls_updates($args = array()) {
   $u = get_option('bndtls_upated') + 1;
   $messages = array();
+  if($args['message']) $messages[] = $args['message'];
   while ($u <= BNDTLS_UPDATES) {
-    $messages[] = sprintf(__('applying update %s', 'band-tools'), $u );
     $update="bndtls_update_$u";
     if(function_exists($update)) {
       $result=$update();
@@ -21,6 +21,7 @@ function bndls_updates() {
         $success[]=$u;
         if($result != 1)
         $messages[] = $result;
+        else $messages[] = sprintf(__('Update %s applied', 'band-tools'), $u );
         update_option('bndtls_upated', $u);
       } else {
         $errors[]=$u;
@@ -99,6 +100,7 @@ function bndtls_update_2() {
 }
 function bndtls_update_2_init() {
   global $wpdb;
+  $rows_updated = 0;
   // echo "<pre>"; $n = "\n"; $br = "<br/>";
   $relations_tracks = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}mb_relationships WHERE `type`='rel-records-songs' ORDER BY `from`, `order_from`" );
   foreach ($relations_tracks as $rel) {
@@ -129,20 +131,21 @@ function bndtls_update_2_init() {
       if($song_products) $new_track['track_product'] = array_shift($song_products)->to;
     $new_tracks[$record->ID][] = $new_track;
     $records_updates[] = $record;
+    $rows_updated++;
     // break;
     // $debug[] = "new_track " . print_r($new_track, true)  . "";
     // // $current_record = get_post_meta( $band_ID, 'fredningszone_data', true );
     // //         $meta = get_post_meta( $post["id"], 'fredningszone_data', true );
   }
   // $debug[] = "New tracks: <pre>" . print_r($new_tracks, true) . "</pre>";
-  foreach($new_tracks as $record_ID => $tracks) {
+  if($new_tracks) foreach($new_tracks as $record_ID => $tracks) {
     // $debug[] = "<pre>rwmb_set_meta( $record_ID, 'tracks', " . print_r($new_tracks[$record_ID], true) . " );</pre>";
     rwmb_set_meta( $record_ID, 'tracks', $new_tracks[$record_ID] );
     // update_post_meta( $record_ID, 'tracks', serialize($new_tracks[$record_ID]) );
     // $current_tracks = rwmb_meta('tracks', array(), $record_ID);
     // $current_tracks = get_post_meta('tracks', $record_ID);
     // $debug[] = "$record_ID after update: <pre>" . print_r($current_tracks, true) . "</pre>";
-
+    $rows_updated++;
   }
 
   $rel_records_bands = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}mb_relationships WHERE `type`='rel-bands-records' ORDER BY `to`, `order_to`, `from`");
@@ -150,6 +153,7 @@ function bndtls_update_2_init() {
     $record = get_post($rel->to);
     $band_ID = $rel->from;
     rwmb_set_meta( $record->ID, 'band', $band_ID );
+    $rows_updated++;
   }
   $rel_records_products = $wpdb->get_results( "SELECT * FROM {$wpdb->prefix}mb_relationships WHERE `type`='rel-records-products' ORDER BY `from`, `order_from`");
   foreach ($rel_records_products as $rel) {
@@ -157,6 +161,7 @@ function bndtls_update_2_init() {
     // $record_ID = $rel->from;
     $product_ID = $rel->to;
     rwmb_set_meta( $record->ID, 'record_product', $product_ID );
+    $rows_updated++;
     // echo "record $record->ID product $product_ID <pre>"; print_r($record); die;
   }
 
@@ -165,15 +170,13 @@ function bndtls_update_2_init() {
     $song = get_post($rel->to);
     $band_ID = $rel->from;
     rwmb_set_meta( $song->ID, 'band', $band_ID );
+    $rows_updated++;
   }
 
-  if($debug) bndtls_admin_notice('<br/>' . join('<br/>', $debug), 'info');
-
-  // echo "</pre>";
-  // die();
-  // if($wpdb->query($wpdb->prepare("UPDATE {$wpdb->prefix}mb_relationships SET type = replace(type, '$from', '$to') WHERE type like '%$from%'")))
-
-  // update_option('bndtls_rewrite_rules', true);
-  // if(!empty($results)) return join("<br/>", $results);
-  return false;
+  $wpdb->query( "DELETE FROM {$wpdb->prefix}mb_relationships WHERE `type`='rel-bands-records' OR `type`='rel-records-products' OR `type`='rel-bands-songs' OR `type`='rel-records-songs'" );
+  // if($debug) bndtls_admin_notice('<br/>' . join('<br/>', $debug), 'info');
+  $messages[] = sprintf(__('database updated, %s rows affected', 'band-tools'), $u, $rows_updated );
+  if($messages)
+  bndtls_admin_notice(join('<br/>', $messages), 'success');
+  update_option('bndtls_upated', 2);
 }
