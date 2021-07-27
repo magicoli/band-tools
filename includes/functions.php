@@ -89,10 +89,10 @@ function child_title($child, $args = array()) {
     // }
 
     if (!empty($product_id)) {
-      if(is_in_cart($product->ID)) {
+      if(is_in_cart($product_id)) {
         $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
       } else {
-        $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product->ID.']' ) . "'>$label_buy</a>";
+        $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product_id.']' ) . "'>$label_buy</a>";
       }
     }
 
