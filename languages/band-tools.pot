@@ -2,20 +2,20 @@
 # This file is distributed under the same license as the Band Tools plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: Band Tools 0.10.2\n"
+"Project-Id-Version: Band Tools 0.11.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/band-tools\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-27T18:20:24-04:00\n"
+"POT-Creation-Date: 2021-07-27T20:04:08-04:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.5.0-alpha-3f4c34b\n"
 
 #. Plugin Name of the plugin
 #: admin/dashboard.php:29
-#: admin/layout.php:96
+#: admin/layout.php:97
 #: includes/shortcodes.php:86
 msgid "Band Tools"
 msgstr ""
@@ -67,7 +67,7 @@ msgid "or"
 msgstr ""
 
 #: admin/layout.php:10
-#: admin/layout.php:107
+#: admin/layout.php:108
 msgid "Layout"
 msgstr ""
 
@@ -137,41 +137,46 @@ msgid "Add details under main content"
 msgstr ""
 
 #: admin/layout.php:67
-#: admin/layout.php:82
+#: admin/layout.php:83
 msgctxt "layout-settings"
 msgid "Show Bands"
 msgstr ""
 
 #: admin/layout.php:68
-#: admin/layout.php:83
+#: admin/layout.php:84
 msgctxt "layout-settings"
 msgid "Show Records"
 msgstr ""
 
 #: admin/layout.php:69
-#: admin/layout.php:84
+#: admin/layout.php:85
 msgctxt "layout-settings"
 msgid "Show Records and Tracks"
 msgstr ""
 
 #: admin/layout.php:70
-#: admin/layout.php:85
+#: admin/layout.php:86
 msgctxt "layout-settings"
 msgid "Show Songs"
 msgstr ""
 
 #: admin/layout.php:71
-#: admin/layout.php:86
+msgctxt "layout-settings"
+msgid "Show player in tracks list"
+msgstr ""
+
+#: admin/layout.php:72
+#: admin/layout.php:87
 msgctxt "layout-settings"
 msgid "Show Products"
 msgstr ""
 
-#: admin/layout.php:77
+#: admin/layout.php:78
 msgctxt "layout-settings"
 msgid "Content Sidebar"
 msgstr ""
 
-#: admin/layout.php:80
+#: admin/layout.php:81
 msgctxt "layout-settings"
 msgid "(not implemented)"
 msgstr ""
@@ -187,7 +192,8 @@ msgstr ""
 #: admin/settings.php:50
 #: admin/settings.php:59
 #: admin/settings.php:66
-#: includes/custom-fields.php:105
+#: includes/custom-fields.php:66
+#: includes/custom-fields.php:189
 #: includes/init.php:92
 #: includes/post-types.php:43
 msgid "Band"
@@ -405,12 +411,12 @@ msgstr ""
 
 #: includes/custom-fields.php:11
 #: includes/custom-fields.php:59
-#: includes/custom-fields.php:98
+#: includes/custom-fields.php:182
 msgid "Info"
 msgstr ""
 
 #: includes/custom-fields.php:17
-#: includes/custom-fields.php:123
+#: includes/custom-fields.php:207
 #: includes/taxonomies.php:8
 msgid "Genre"
 msgstr ""
@@ -438,51 +444,81 @@ msgstr ""
 msgid "Members"
 msgstr ""
 
-#: includes/custom-fields.php:65
-#: includes/custom-fields.php:133
+#: includes/custom-fields.php:70
+#: includes/custom-fields.php:193
+msgid "Select Band"
+msgstr ""
+
+#: includes/custom-fields.php:74
+#: includes/custom-fields.php:217
 msgid "Initial Release"
 msgstr ""
 
-#: includes/custom-fields.php:72
+#: includes/custom-fields.php:82
 #: includes/taxonomies.php:108
 msgid "Release Type"
 msgstr ""
 
-#: includes/custom-fields.php:81
+#: includes/custom-fields.php:92
 #: includes/taxonomies.php:7
 #: includes/taxonomies.php:9
 #: includes/taxonomies.php:32
 msgid "Genres"
 msgstr ""
 
-#: includes/custom-fields.php:109
-msgid "Select Band"
+#: includes/custom-fields.php:105
+#: includes/init.php:97
+msgid "Tracks"
 msgstr ""
 
-#: includes/custom-fields.php:113
+#: includes/custom-fields.php:122
+msgid "Song (required)"
+msgstr ""
+
+#: includes/custom-fields.php:129
+msgid "Audio Sample URL"
+msgstr ""
+
+#: includes/custom-fields.php:142
+msgid "ISRC"
+msgstr ""
+
+#: includes/custom-fields.php:152
+msgid "Record Product"
+msgstr ""
+
+#: includes/custom-fields.php:156
+msgid "Select Product"
+msgstr ""
+
+#: includes/custom-fields.php:164
+msgid "Song Product"
+msgstr ""
+
+#: includes/custom-fields.php:197
 #: includes/taxonomies.php:57
 #: includes/taxonomies.php:59
 #: includes/taxonomies.php:82
 msgid "Authors"
 msgstr ""
 
-#: includes/custom-fields.php:143
+#: includes/custom-fields.php:227
 msgid "Files"
 msgstr ""
 
-#: includes/custom-fields.php:149
+#: includes/custom-fields.php:233
 msgid "Audio sample"
 msgstr ""
 
-#: includes/custom-fields.php:151
+#: includes/custom-fields.php:235
 msgid "Short sample or full song, for the player (different from the downloadable file, which set in the product)."
 msgstr ""
 
-#: includes/custom-fields.php:160
+#: includes/custom-fields.php:244
 msgid "Downloadable audio"
 msgstr ""
 
-#: includes/custom-fields.php:161
+#: includes/custom-fields.php:245
 msgid "Full length audio available for download."
 msgstr ""
 
@@ -498,7 +534,7 @@ msgstr ""
 msgid "Buy"
 msgstr ""
 
-#: includes/functions.php:84
+#: includes/functions.php:85
 msgid "View cart"
 msgstr ""
 
@@ -513,10 +549,6 @@ msgid "Track"
 msgid_plural "Tracks"
 msgstr[0] ""
 msgstr[1] ""
-
-#: includes/init.php:97
-msgid "Tracks"
-msgstr ""
 
 #: includes/post-types.php:44
 #: includes/post-types.php:111
