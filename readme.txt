@@ -83,6 +83,9 @@ to show
 
 == Changelog ==
 
+= 0.11.3 =
+* added option to show player in tracks list (issue #83)
+
 = 0.11.2 =
 * fix #64: disallow buy song if album already in cart
 * fix: don't show buy link if woocommerce is not active
