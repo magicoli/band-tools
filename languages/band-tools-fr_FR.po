@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-27T20:04:08-04:00\n"
+"POT-Creation-Date: 2021-07-29T12:08:39-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -194,7 +194,7 @@ msgstr "Nomenclature"
 #: admin/settings.php:66
 #: includes/custom-fields.php:66
 #: includes/custom-fields.php:189
-#: includes/init.php:92
+#: includes/init.php:100
 #: includes/post-types.php:43
 msgid "Band"
 msgid_plural "Bands"
@@ -275,7 +275,7 @@ msgstr "Chanteurs"
 #: admin/settings.php:105
 #: admin/settings.php:111
 #: admin/settings.php:113
-#: includes/init.php:93
+#: includes/init.php:101
 msgid "Record"
 msgid_plural "Records"
 msgstr[0] "Disque"
@@ -310,7 +310,7 @@ msgstr "Sets"
 #: admin/settings.php:138
 #: admin/settings.php:147
 #: admin/settings.php:153
-#: includes/init.php:94
+#: includes/init.php:102
 #: includes/post-types.php:180
 msgid "Song"
 msgid_plural "Songs"
@@ -467,7 +467,7 @@ msgid "Genres"
 msgstr "Genres"
 
 #: includes/custom-fields.php:105
-#: includes/init.php:97
+#: includes/init.php:105
 msgid "Tracks"
 msgstr "Pistes"
 
@@ -543,8 +543,12 @@ msgstr "Voir le panier"
 msgid "Get a license key on %s website"
 msgstr "Obtenir une clé de licence sur le site %s"
 
-#: includes/init.php:95
-#: includes/init.php:96
+#: includes/init.php:93
+msgid "Added"
+msgstr "Ajouté"
+
+#: includes/init.php:103
+#: includes/init.php:104
 msgid "Track"
 msgid_plural "Tracks"
 msgstr[0] "Piste"
