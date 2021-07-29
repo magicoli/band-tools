@@ -83,6 +83,9 @@ to show
 
 == Changelog ==
 
+= 0.11.4 =
+* use ajax to stay in page on add to cart
+
 = 0.11.3 =
 * added option to show player in tracks list (issue #83)
 
