@@ -45,6 +45,19 @@ ul.list .action {
 ul.list .actions .added {
   opacity: 0.5;
 }
+.loading::after {
+  content: '';
+  box-sizing: border-box;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-left: 0.5em;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  border-top-color: #000;
+  animation: spinner .6s linear infinite;
+}
+
 .subtitle :is(ul, ul li, li) {
   list-style: none;
   margin-left: 0;
