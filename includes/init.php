@@ -87,6 +87,14 @@ add_action( 'enqueue_block_editor_assets', function() {
   wp_enqueue_style( BNDTLS_SLUG . '-metabox', plugin_dir_url( __FILE__ ) . 'css/metabox.css', array(), BNDTLS_VERSION . BNDTLS_DEBUG_CSS );
 } );
 
+add_action('wp_head', 'bndtls_localized_css');
+function bndtls_localized_css() {
+  $localized_css = 'ul.list .actions .added::after {
+    content: "' . __("Added", 'band-tools') . '";
+  }';
+  echo "<style id=bndtls_localized_css>$localized_css</style>";
+}
+
 // dirty fix to include singular/plural forms in .pot
 if(false) {
   $cache = _n('Band', 'Bands', $n, 'band-tools');

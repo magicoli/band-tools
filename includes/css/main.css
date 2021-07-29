@@ -58,6 +58,14 @@ ul.list .actions .added {
   animation: spinner .6s linear infinite;
 }
 
+ul.list .actions .added {
+  font-size: 0;
+}
+ul.list .actions .added::after {
+  font-size: 12px;
+  content: "Added";
+}
+
 .subtitle :is(ul, ul li, li) {
   list-style: none;
   margin-left: 0;
