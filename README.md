@@ -83,6 +83,9 @@ to show
 
 ## Changelog
 
+### 0.11.5
+* fix #74 regression: next song in playlist not played
+
 ### 0.11.4
 * use ajax to stay in page on add to cart
 
