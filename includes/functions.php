@@ -82,9 +82,15 @@ function child_title($child, $args = array()) {
 
     if (!empty($product_id) && get_post_status($product_id) ==  'publish' ) {
       if(is_in_cart($product_id) || is_in_cart($playlist_product_id)) {
-        $actions[] = "<a class='action added buy buy-song' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
+        $actions[] = "<a class='action added buy buy-song single_add_to_cart_button' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
       } else {
-        $actions[] = "<a class='action buy buy-song' href='" . do_shortcode( '[add_to_cart_url id='.$product_id.']' ) . "'>$label_buy</a>";
+        $actions[] = sprintf(
+          '<a rel="nofollow" href="%1s" data-quantity="1" data-product_id="%2d" data-product_sku="" class="action add_to_cart_button ajax_add_to_cart">%3s</a>',
+          do_shortcode( '[add_to_cart_url id='.$product_id.']'),
+          $product_id,
+          $label_buy
+        );
+        // $actions[] = "<a class='action buy buy-song single_add_to_cart_button' href='" . do_shortcode( '[add_to_cart_url id='.$product_id.']' ) . "'>$label_buy</a>";
       }
     }
   }

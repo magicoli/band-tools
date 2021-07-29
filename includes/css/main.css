@@ -42,7 +42,7 @@ ul.list .actions {
 }
 ul.list .action {
 }
-ul.list .action.added {
+ul.list .actions .added {
   opacity: 0.5;
 }
 .subtitle :is(ul, ul li, li) {
