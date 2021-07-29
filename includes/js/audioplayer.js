@@ -133,10 +133,6 @@ var _trackHasEnded = function() {
   if(! stopPlaying) _setTrack();
 };
 
-_elements.audio.addEventListener("ended", function(e) {
-  _trackHasEnded();
-}, false);
-
 var _setTrack = function() {
   // console.log('_currentPlayerClass is now : '+ _currentPlayerClass);
   // _elements.audio = document.getElementById("audio" + _currentPlayerClass);
@@ -223,6 +219,10 @@ for (var i = 0; i < _elements.players.length; i++) {
     // _setTrackTitle(_currentTrack, _elements.playListRows);
     _setTrackTitle(_currentTrack, _elements.playListRows);
     _setActiveItem(_currentTrack, _elements.playListRows);
+  }, false);
+
+  _elements.players[i].addEventListener("ended", function(e) {
+    _trackHasEnded();
   }, false);
 }
 
