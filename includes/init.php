@@ -91,6 +91,9 @@ add_action('wp_head', 'bndtls_localized_css');
 function bndtls_localized_css() {
   $localized_css = 'ul.list .actions .added::after {
     content: "' . __("Added", 'band-tools') . '";
+  }
+  ul.list .actions .included::after {
+    content: "' . __("Included", 'band-tools') . '";
   }';
   echo "<style id=bndtls_localized_css>$localized_css</style>";
 }
