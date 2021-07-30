@@ -106,7 +106,7 @@ function child_title($child, $args = array()) {
   return "<div class=child-title>$title</div>";
 }
 
-function bndtls_get_childs($post, $slugs, $args = array() ) {
+function bndtls_get_childs($post, $slugs = '', $args = array() ) {
   if(!is_object($post)) return; // Should never happen
   switch ($post->post_type) {
     case 'bands':
