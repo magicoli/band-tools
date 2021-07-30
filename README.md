@@ -83,6 +83,9 @@ to show
 
 ## Changelog
 
+### 0.11.6
+* fix #65 remove songs already in cart when their album is added
+
 ### 0.11.5
 * fix #74 regression: next song in playlist not played
 
