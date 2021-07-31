@@ -83,6 +83,10 @@ to show
 
 == Changelog ==
 
+= 0.11.7 =
+* fix #89 add to cart cancelled if track product is same as record product (for singles)
+* fix #86 update tracks buy link when their record is added to cart with ajax
+
 = 0.11.6 =
 * fix #65 remove songs already in cart when their album is added
 
