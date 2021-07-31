@@ -87,6 +87,10 @@ function child_title($child, $args = array()) {
         $link_text = __("View cart", "band-tools");
         $link_classes[] = "added";
         if (is_in_cart($playlist_product_id)) $link_classes[] = "included";
+      } else if($product_id == $playlist_product_id){
+        $link_url = '#';
+        $link_text = '';
+        $link_classes[] = "record_$playlist_product_id";
       } else {
         wp_enqueue_script( 'woocommerce-ajax-add-to-cart-js', plugin_dir_url(__FILE__) . 'js/woocommerce-ajax-add-to-cart.js', array(), BNDTLS_VERSION . "-" . time() );
         $link_url = do_shortcode( '[add_to_cart_url id='.$product_id.']');
