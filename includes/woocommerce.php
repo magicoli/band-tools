@@ -5,20 +5,6 @@ add_action( 'woocommerce_add_to_cart', 'action_woocommerce_add_to_cart', 10, 6 )
 function action_woocommerce_add_to_cart( $cart_item_key,  $product_id,  $quantity,  $variation_id = 0,  $variation = array(),  $cart_item_data = array() ) {
   $query_args = array(
     'post_type' => 'records',
-    // 'orderby'          => 'post_date',
-    // 'order'            => 'DESC',
-    // 'posts_per_page'  => -1,
-    // 'meta_key' => 'record_product',
-    // 'meta_value' => $product_id,
-    // 'meta_compare' => 'IN',
-    // 'meta_query' => array(
-    //   array(
-    //     'key' => 'record_product',
-    //     'value' => $product_id,
-    //     'compare' => '=',
-    //     'type' => 'NUMERIC'
-    //   ),
-    // )
   );
   $meta_query = new WP_Query( $query_args );
   $records = $meta_query->posts;

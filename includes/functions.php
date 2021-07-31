@@ -39,9 +39,7 @@ function bndtls_license_key($string = '') {
 function child_title($child, $args = array()) {
   if(empty($child)) return;
   $post_type_obj = get_post_type_object( $child->post_type );
-  $label = $post_type_obj->labels->singular_name; //Ice Cream.
-  // $label_play = ($post_type_obj->labels->play_item) ? $post_type_obj->labels->play_item : __('Play', 'band-tools');
-  // $label_buy = ($post_type_obj->labels->buy_item) ? $post_type_obj->labels->buy_item : __('Buy', 'band-tools');
+  $label = $post_type_obj->labels->singular_name;
   $label_read = __('Read', 'band-tools');
   $label_play = __('Play', 'band-tools');
   $label_buy = __('Buy', 'band-tools');
@@ -55,8 +53,6 @@ function child_title($child, $args = array()) {
 
   if(get_queried_object_id() == $child->ID) {
     $li_classes[]='current-page';
-    // $before = $args['before'] . "<span>";
-    // $after  = "</span>";
   } else {
     unset($current_page);
     $before = "$before<a href='" . get_permalink($child) . "'>";
@@ -228,21 +224,12 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
         'parent' => 'p' . print_r($args['parent'], true),
       );
     }
-    // $samples = rwmb_meta( 'audio_sample', array(), $child->ID );
-    // $samples = array();
+
     if(!empty($child->track_audio_sample_url)) {
-      // $sample = array_shift($samples);
       $t++;
-      // $sample_url = wp_get_attachment_url($sample['url']);
-      // str_replace(
-      //   wp_normalize_path( untrailingslashit( ABSPATH ) ),
-      //   site_url(),
-      //   wp_normalize_path( $sample['path'] )
-      // );
       $child_args['track_nr'] = $t;
       $child_args['track_url'] = $child->track_audio_sample_url;
       $child_args['playlist'] = $post->ID;
-      // echo "<pre>" . $child->post_title . "\n" . $sample_url . "\n" . print_r($sample, true) . "</pre>"; die();
       $tracks[] = array(
         'nr' => $t,
         'url' => $child->track_audio_sample_url,
@@ -273,11 +260,6 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
       ob_start();
       include "audioplayer-controls.php";
       $output .= ob_get_clean();
-      // $output .= "css " . plugin_dir_url(__FILE__) . 'css/audioplayer.css' . "</br>";
-      // $output .= "js " . plugin_dir_url(__FILE__) . 'js/audioplayer.js' . "</br>";
-      // $output .= "playlist " . count($tracks);
-      // add_action( 'wp_enqueue_scripts', function() {
-      // } );
       $output .= "<figcaption></figcaption>";
       $output .= "</figure>";
     }
@@ -292,18 +274,6 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
 function bndtls_count_posts( $type = 'post', $perm = '', $status='publish' ) {
 	return (isset(wp_count_posts($type)->$status)) ? wp_count_posts($type)->$status : 0;
 }
-
-// function bndtls_genres_names($genre_ids, $separator = ', ') {
-//   if(empty($genre_ids)) return;
-//   $bndtls_id3_genres=bndtls_id3_genres();
-//
-//   if(!is_array($genre_ids)) $genre_ids = [ $genre_ids ];
-//   // $genres = array_fill_keys($genre_ids, $bndtls_id3_genres);
-//   $genres = array_intersect_key($bndtls_id3_genres, array_flip($genre_ids));
-//
-//   if($separator) return join($separator, $genres);
-//   return $genres;
-// }
 
 function bndtls_date_format($format, $date_string) {
   $dateTime = DateTime::createFromFormat("Y-m-d", $date_string );
