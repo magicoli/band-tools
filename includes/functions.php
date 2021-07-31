@@ -81,19 +81,19 @@ function child_title($child, $args = array()) {
     if(empty($product_id)) $product_id = $child->track_product;
 
     if (!empty($product_id) && get_post_status($product_id) ==  'publish' ) {
-      if(is_in_cart($product_id)) {
-        $actions[] = "<a class='action added buy buy-song single_add_to_cart_button' href='" . wc_get_cart_url() . "'>" . __("View cart", "band-tools") . "</a>";
-      } else if (is_in_cart($playlist_product_id)) {
-        $actions[] = "<a class='action added included buy buy-song single_add_to_cart_button' href='" . wc_get_cart_url() . "'>" . __("Included", "band-tools") . "</a>";
+      $link_classes=array("action" );
+      if(is_in_cart($product_id) || is_in_cart($playlist_product_id)) {
+        $link_url = wc_get_cart_url();
+        $link_text = __("View cart", "band-tools");
+        $link_classes[] = "added";
+        if (is_in_cart($playlist_product_id)) $link_classes[] = "included";
       } else {
-        $actions[] = sprintf(
-          '<a rel="nofollow" href="%1s" data-quantity="1" data-product_id="%2d" data-product_sku="" class="action add_to_cart_button ajax_add_to_cart">%3s</a>',
-          do_shortcode( '[add_to_cart_url id='.$product_id.']'),
-          $product_id,
-          $label_buy
-        );
-        // $actions[] = "<a class='action buy buy-song single_add_to_cart_button' href='" . do_shortcode( '[add_to_cart_url id='.$product_id.']' ) . "'>$label_buy</a>";
+        $link_url = do_shortcode( '[add_to_cart_url id='.$product_id.']');
+        $link_text = $label_buy;
+        $link_classes = array_merge($link_classes, [ "add_to_cart_button", "ajax_add_to_cart", "record_$playlist_product_id" ]);
+        $link_data = 'data-quantity="1" data-product_id="' . $product_id . '" data-product_sku=""';
       }
+      $actions[] = "<a class='" . join(' ', $link_classes) . "' href='" . $link_url . "' " . $link_data . ">" . $link_text . "</a>";
     }
   }
 
