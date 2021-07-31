@@ -88,12 +88,13 @@ function child_title($child, $args = array()) {
         $link_classes[] = "added";
         if (is_in_cart($playlist_product_id)) $link_classes[] = "included";
       } else {
+        wp_enqueue_script( 'woocommerce-ajax-add-to-cart-js', plugin_dir_url(__FILE__) . 'js/woocommerce-ajax-add-to-cart.js', array(), BNDTLS_VERSION . "-" . time() );
         $link_url = do_shortcode( '[add_to_cart_url id='.$product_id.']');
         $link_text = $label_buy;
         $link_classes = array_merge($link_classes, [ "add_to_cart_button", "ajax_add_to_cart", "record_$playlist_product_id" ]);
         $link_data = 'data-quantity="1" data-product_id="' . $product_id . '" data-product_sku=""';
       }
-      $actions[] = "<a class='" . join(' ', $link_classes) . "' href='" . $link_url . "' " . $link_data . ">" . $link_text . "</a>";
+      $actions[] = "<a id='buy-" . $product_id . "' class='" . join(' ', $link_classes) . "' href='" . $link_url . "' " . $link_data . ">" . $link_text . "</a>";
     }
   }
 
@@ -257,8 +258,8 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   if(!empty($tracks)) {
     $output_childs = "<ul id='playlist-$post->ID' class='childs $rel childs-$childs_slug list playlist'>$output_childs";
     if(bndtls_get_option('layout_page_content:player')) {
-      wp_enqueue_style( 'audioplayer-js', plugin_dir_url(__FILE__) . 'css/audioplayer.css', array(), BNDTLS_VERSION . "-" . time() );
-      wp_enqueue_script( 'audioplayer-css', plugin_dir_url(__FILE__) . 'js/audioplayer.js', array(), BNDTLS_VERSION . "-" . time() );
+      wp_enqueue_style( 'audioplayer-css', plugin_dir_url(__FILE__) . 'css/audioplayer.css', array(), BNDTLS_VERSION . "-" . time() );
+      wp_enqueue_script( 'audioplayer-js', plugin_dir_url(__FILE__) . 'js/audioplayer.js', array(), BNDTLS_VERSION . "-" . time() );
       $output .= '<figure class=audioplayer>';
       $output .= sprintf('<audio id="audio-%d" controls=controls preload=auto>', $post->ID);
       foreach($tracks as $track) {
