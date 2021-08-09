@@ -40,9 +40,9 @@ function child_title($child, $args = array()) {
   if(empty($child)) return;
   $post_type_obj = get_post_type_object( $child->post_type );
   $label = $post_type_obj->labels->singular_name;
-  $label_read = __('Read', 'band-tools');
-  $label_play = __('Play', 'band-tools');
-  $label_buy = __('Buy', 'band-tools');
+  $label_read = __( bndtls_get_option( 'naming_actions:details', 'Details' ), 'band-tools' );
+  $label_play = __( bndtls_get_option( 'naming_actions:play', 'Play' ), 'band-tools' );
+  $label_buy = __( bndtls_get_option( 'naming_actions:buy', 'Buy' ), 'band-tools' );
 
   $before = $args['before'];
   $after = $args['after'];
@@ -99,6 +99,10 @@ function child_title($child, $args = array()) {
   }
 
   if(!empty($actions)) {
+    if( bndtls_get_option( 'naming_actions:show_details_link' ) ) {
+      $readlink = sprintf( "<a class='action read' href='%s'>%s</a>", get_permalink($child), $label_read );
+      $actions = array_merge([ $readlink ], $actions);
+    }
     $title .= " <span class='actions child-actions'>";
     $title .= join(' ', $actions);
     $title .= "</span>";

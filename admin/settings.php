@@ -134,7 +134,7 @@ function bndtls_settings_naming( $meta_boxes ) {
           ],
         ],
       ],
-      [
+			[
         'name'   => __( 'Song', 'band-tools' ),
         'id'     => $prefix . 'naming_song',
         'type'   => 'group',
@@ -174,6 +174,50 @@ function bndtls_settings_naming( $meta_boxes ) {
           ],
         ],
       ],
+			[
+        'name'   => __( 'Action links', 'band-tools' ),
+				'id'     => $prefix . 'naming_actions',
+        'type'   => 'group',
+        'class'  => 'inline',
+				'fields' => [
+					[
+						'id'     => $prefix . 'show_details_link',
+						'type'        => 'checkbox',
+						'desc'        => __( 'Add details action link', 'band-tools' ),
+						'std'         => __( 'Yes', 'band-tools' ),
+						// 'placeholder' => __( 'Show details link', 'band-tools' ),
+						'class'       => 'inline',
+					],
+					[
+						'id'     => $prefix . 'details',
+						'type'        => 'text',
+						'std'         => __( 'Details', 'band-tools' ),
+						'placeholder' => __( 'Details', 'band-tools' ),
+						'class'       => 'inline',
+					],
+					[
+						'id'     => $prefix . 'play',
+						'type'        => 'text',
+						'std'         => __( 'Play', 'band-tools' ),
+						'placeholder' => __( 'Play', 'band-tools' ),
+						'class'       => 'inline',
+					],
+					[
+						'id'     => $prefix . 'add',
+						'type'        => 'text',
+						'std'         => _x( 'Add', 'Add to cart', 'band-tools' ),
+						'placeholder' => _x( 'Add', 'Add to cart', 'band-tools' ),
+						'class'       => 'inline',
+					],
+					[
+						'id'     => $prefix . 'buy',
+						'type'        => 'text',
+						'std'         => __( 'Buy', 'band-tools' ),
+						'placeholder' => __( 'Buy', 'band-tools' ),
+						'class'       => 'inline',
+					],
+				],
+			],
     ],
   ];
 
