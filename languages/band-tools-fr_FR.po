@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-07-30T18:13:47-04:00\n"
+"POT-Creation-Date: 2021-08-12T09:16:05-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -241,7 +241,7 @@ msgstr "Pluriel"
 
 #: admin/settings.php:78
 #: admin/settings.php:85
-#: admin/settings.php:259
+#: admin/settings.php:303
 #: includes/post-types.php:40
 #: includes/post-types.php:41
 #: includes/post-types.php:42
@@ -292,7 +292,7 @@ msgstr "Set"
 #: admin/settings.php:122
 #: admin/settings.php:128
 #: admin/settings.php:130
-#: admin/settings.php:260
+#: admin/settings.php:304
 #: includes/post-types.php:142
 #: includes/shortcodes.php:99
 #: includes/shortcodes.php:134
@@ -327,7 +327,7 @@ msgstr "Morceau"
 
 #: admin/settings.php:163
 #: admin/settings.php:169
-#: admin/settings.php:261
+#: admin/settings.php:305
 #: includes/post-types.php:177
 #: includes/post-types.php:178
 #: includes/post-types.php:179
@@ -345,67 +345,100 @@ msgstr "Mixes"
 msgid "Pieces"
 msgstr "Morceaux"
 
-#: admin/settings.php:189
+#: admin/settings.php:178
+msgid "Action links"
+msgstr "Liens d'actions"
+
+#: admin/settings.php:186
+msgid "Add details action link"
+msgstr "Ajouter un lien Détails aux actions"
+
+#: admin/settings.php:187
+msgid "Yes"
+msgstr "Oui"
+
+#: admin/settings.php:194
+#: admin/settings.php:195
+msgid "Details"
+msgstr "Détails"
+
+#: admin/settings.php:201
+#: admin/settings.php:202
+msgid "Play"
+msgstr "Écouter"
+
+#: admin/settings.php:208
+#: admin/settings.php:209
+msgctxt "Add to cart"
+msgid "Add"
+msgstr "Ajouter"
+
+#: admin/settings.php:215
+#: admin/settings.php:216
+msgid "Buy"
+msgstr "Acheter"
+
+#: admin/settings.php:233
 msgid "Tweaks"
 msgstr "Ajustements"
 
-#: admin/settings.php:198
+#: admin/settings.php:242
 msgid "Disable plugin templates"
 msgstr "Désactiver les modèles (\"templates\")"
 
-#: admin/settings.php:201
+#: admin/settings.php:245
 msgid "Customize with theme, widgets and shortcodes"
 msgstr "Personnaliser avec le thème, les widgets et les codes courts"
 
-#: admin/settings.php:205
+#: admin/settings.php:249
 msgid "Redirect single post archives"
 msgstr "Rediriger les archives d'un seul élément"
 
-#: admin/settings.php:208
+#: admin/settings.php:252
 msgid "Redirect archives containing only one post"
 msgstr "Rediriger les pages d'archives contenant un seul élément"
 
-#: admin/settings.php:212
+#: admin/settings.php:256
 msgid "Clean titles"
 msgstr "Nettoyer les titres"
 
-#: admin/settings.php:215
+#: admin/settings.php:259
 msgid "Remove prefixes from titles for Categories, Taxonomies, Archives, Authors"
 msgstr "Supprimer les préfixes des titres pour les catégories, taxonomies, archives, auteurs"
 
-#: admin/settings.php:219
+#: admin/settings.php:263
 msgid "Widget Area"
 msgstr "Zone de widgets"
 
-#: admin/settings.php:222
+#: admin/settings.php:266
 msgid "Add a custom widget area (must be activated in your theme)"
 msgstr "Ajouter un widget (doit être activé dans votre thème)"
 
-#: admin/settings.php:225
+#: admin/settings.php:269
 msgid "Make coffee after boot"
 msgstr "Faire le café après le démarrage"
 
-#: admin/settings.php:232
+#: admin/settings.php:276
 msgid "Developer mode"
 msgstr "Mode développeur"
 
-#: admin/settings.php:249
+#: admin/settings.php:293
 msgid "Front page"
 msgstr "Page d'accueil"
 
-#: admin/settings.php:254
+#: admin/settings.php:298
 msgid "Allow as Front Page"
 msgstr "Autoriser comme page d'accueil"
 
-#: admin/settings.php:257
+#: admin/settings.php:301
 msgid "Allow to select these as front page in Appearance > Customize menu"
 msgstr "Autoriser à sélectionner ces types comme page d'accueil dans Apparence > Personnaliser"
 
-#: admin/settings.php:268
+#: admin/settings.php:312
 msgid "Show full content"
 msgstr "Montrer le contenu complet"
 
-#: admin/settings.php:271
+#: admin/settings.php:315
 msgid "Show full content when item is selected as home page"
 msgstr "Montrer le contenu complet quand l'élément est affiché comme page d'accueil"
 
@@ -522,26 +555,9 @@ msgstr "Audio à télécharger"
 msgid "Full length audio available for download."
 msgstr "Audio complet disponible au téléchargement."
 
-#: includes/functions.php:45
-msgid "Read"
-msgstr "Lire"
-
-#: includes/functions.php:46
-msgid "Play"
-msgstr "Écouter"
-
-#: includes/functions.php:47
-msgid "Buy"
-msgstr "Acheter"
-
-#: includes/functions.php:85
+#: includes/functions.php:83
 msgid "View cart"
 msgstr "Voir le panier"
-
-#: includes/functions.php:87
-#: includes/init.php:96
-msgid "Included"
-msgstr "Inclus"
 
 #. translators: %s is replaced by the name of the plugin, untranslated
 #: includes/init.php:47
@@ -551,6 +567,10 @@ msgstr "Obtenir une clé de licence sur le site %s"
 #: includes/init.php:93
 msgid "Added"
 msgstr "Ajouté"
+
+#: includes/init.php:96
+msgid "Included"
+msgstr "Inclus"
 
 #: includes/init.php:106
 #: includes/init.php:107
@@ -1232,6 +1252,9 @@ msgstr "Affiche les vidéos liées"
 #: templates/templates.php:65
 msgid "by <a href=\"%s\">%s</a>"
 msgstr "par <a href=\"%s\">%s</a>"
+
+#~ msgid "Read"
+#~ msgstr "Lire"
 
 #~ msgid "by"
 #~ msgstr "par"
