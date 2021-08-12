@@ -7,7 +7,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-08-12T09:16:05-04:00\n"
+"POT-Creation-Date: 2021-08-12T09:59:57-04:00\n"
 "PO-Revision-Date: \n"
 "Language: fr\n"
 "X-Generator: Poedit 2.3\n"
@@ -241,7 +241,7 @@ msgstr "Pluriel"
 
 #: admin/settings.php:78
 #: admin/settings.php:85
-#: admin/settings.php:303
+#: admin/settings.php:301
 #: includes/post-types.php:40
 #: includes/post-types.php:41
 #: includes/post-types.php:42
@@ -292,7 +292,7 @@ msgstr "Set"
 #: admin/settings.php:122
 #: admin/settings.php:128
 #: admin/settings.php:130
-#: admin/settings.php:304
+#: admin/settings.php:302
 #: includes/post-types.php:142
 #: includes/shortcodes.php:99
 #: includes/shortcodes.php:134
@@ -327,7 +327,7 @@ msgstr "Morceau"
 
 #: admin/settings.php:163
 #: admin/settings.php:169
-#: admin/settings.php:305
+#: admin/settings.php:303
 #: includes/post-types.php:177
 #: includes/post-types.php:178
 #: includes/post-types.php:179
@@ -353,92 +353,88 @@ msgstr "Liens d'actions"
 msgid "Add details action link"
 msgstr "Ajouter un lien Détails aux actions"
 
-#: admin/settings.php:187
-msgid "Yes"
-msgstr "Oui"
-
-#: admin/settings.php:194
-#: admin/settings.php:195
+#: admin/settings.php:192
+#: admin/settings.php:193
 msgid "Details"
 msgstr "Détails"
 
-#: admin/settings.php:201
-#: admin/settings.php:202
+#: admin/settings.php:199
+#: admin/settings.php:200
 msgid "Play"
 msgstr "Écouter"
 
-#: admin/settings.php:208
-#: admin/settings.php:209
+#: admin/settings.php:206
+#: admin/settings.php:207
 msgctxt "Add to cart"
 msgid "Add"
 msgstr "Ajouter"
 
-#: admin/settings.php:215
-#: admin/settings.php:216
+#: admin/settings.php:213
+#: admin/settings.php:214
 msgid "Buy"
 msgstr "Acheter"
 
-#: admin/settings.php:233
+#: admin/settings.php:231
 msgid "Tweaks"
 msgstr "Ajustements"
 
-#: admin/settings.php:242
+#: admin/settings.php:240
 msgid "Disable plugin templates"
 msgstr "Désactiver les modèles (\"templates\")"
 
-#: admin/settings.php:245
+#: admin/settings.php:243
 msgid "Customize with theme, widgets and shortcodes"
 msgstr "Personnaliser avec le thème, les widgets et les codes courts"
 
-#: admin/settings.php:249
+#: admin/settings.php:247
 msgid "Redirect single post archives"
 msgstr "Rediriger les archives d'un seul élément"
 
-#: admin/settings.php:252
+#: admin/settings.php:250
 msgid "Redirect archives containing only one post"
 msgstr "Rediriger les pages d'archives contenant un seul élément"
 
-#: admin/settings.php:256
+#: admin/settings.php:254
 msgid "Clean titles"
 msgstr "Nettoyer les titres"
 
-#: admin/settings.php:259
+#: admin/settings.php:257
 msgid "Remove prefixes from titles for Categories, Taxonomies, Archives, Authors"
 msgstr "Supprimer les préfixes des titres pour les catégories, taxonomies, archives, auteurs"
 
-#: admin/settings.php:263
+#: admin/settings.php:261
 msgid "Widget Area"
 msgstr "Zone de widgets"
 
-#: admin/settings.php:266
+#: admin/settings.php:264
 msgid "Add a custom widget area (must be activated in your theme)"
 msgstr "Ajouter un widget (doit être activé dans votre thème)"
 
-#: admin/settings.php:269
+#: admin/settings.php:267
 msgid "Make coffee after boot"
 msgstr "Faire le café après le démarrage"
 
-#: admin/settings.php:276
+#: admin/settings.php:274
 msgid "Developer mode"
 msgstr "Mode développeur"
 
-#: admin/settings.php:293
+#: admin/settings.php:291
 msgid "Front page"
 msgstr "Page d'accueil"
 
-#: admin/settings.php:298
+#: admin/settings.php:296
 msgid "Allow as Front Page"
 msgstr "Autoriser comme page d'accueil"
 
-#: admin/settings.php:301
+#: admin/settings.php:299
 msgid "Allow to select these as front page in Appearance > Customize menu"
 msgstr "Autoriser à sélectionner ces types comme page d'accueil dans Apparence > Personnaliser"
 
-#: admin/settings.php:312
+#: admin/settings.php:310
 msgid "Show full content"
 msgstr "Montrer le contenu complet"
 
-#: admin/settings.php:315
+#: admin/settings.php:313
 msgid "Show full content when item is selected as home page"
 msgstr "Montrer le contenu complet quand l'élément est affiché comme page d'accueil"
 
@@ -1252,6 +1248,9 @@ msgstr "Affiche les vidéos liées"
 #: templates/templates.php:65
 msgid "by <a href=\"%s\">%s</a>"
 msgstr "par <a href=\"%s\">%s</a>"
+
+#~ msgid "Yes"
+#~ msgstr "Oui"
 
 #~ msgid "Read"
 #~ msgstr "Lire"
