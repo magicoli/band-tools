@@ -11,9 +11,9 @@ function bndtls_get_option( $param, $default = false, $sub_option='' ) {
       if (is_array($settings[$option]) && in_array($sub_option, $settings[$option]))
       return true;
     }
-    if(isset($settings[$option]) && is_array($settings[$option]) &! empty ($settings[$option]))
+    if(isset($settings[$option]) && is_array($settings[$option]) &! empty ($settings[$option][$sub_option]))
     return $settings[$option][$sub_option];
-
+    else
     return $default;
   }
   else if ( $settings[$option] ) return $settings[$option];

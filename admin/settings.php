@@ -184,8 +184,6 @@ function bndtls_settings_naming( $meta_boxes ) {
 						'id'     => $prefix . 'show_details_link',
 						'type'        => 'checkbox',
 						'desc'        => __( 'Add details action link', 'band-tools' ),
-						'std'         => __( 'Yes', 'band-tools' ),
-						// 'placeholder' => __( 'Show details link', 'band-tools' ),
 						'class'       => 'inline',
 					],
 					[
