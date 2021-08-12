@@ -33,29 +33,32 @@ I wanted something:
 
 ### Features
 
-* Linked post types for bands, records and songs
-* Links to WooCommerce products or external shop page
-* Customizable layouts for bands, records and songs
-* Widgets, shortcodes and WPBakery blocks to display related items. Adaptive
-  depending of the post type (band, record, song) or specific.
+* "band", "record" and "songs" post types, with relationships
 * Bands, Records and Songs available for navigation menus
-* Bands available as home page by default. Records and Songs can be enabled too.
+* Bands, Records and Songs can be used as home page (bands are allowed by default, others are activable in settings)
+* Customizable layouts for bands, records and songs
+* Audio player for albums
+  - Playlist for albums
+  - Play button for each song in album
+* Widgets, shortcodes and WPBakery blocks to display
+  - album list with songs, buy link, player
+  - related items (songs in displayed album, albums of displayed band...)
+* WooCommerce integration
+  - Links to products or external shop page
+  - Buy link, per album or per song
 
 ## Roadmap
 
 ### Next moves
 
 * Better widgets: cleaner and more complete display (thumbnails for records and bands, direct buy or link, player...)
-* Audio player
 * Video player
-* Extended WooCommerce integration (add to cart buttons)
 * External product links (to specific online store and common distribution platforms)
 * Guttenberg Blocks
 * Automatic submenus for bands, records and songs
 
 ### Future plans
 
-* Audio playlists for records and songs, uploaded locally
 * Video playlists for songs from YouTube, Vimeo etc.
 * Crowdfunding based on WC sales (might be in a separate plugin)
 * Links between different Band Tools enabled websites
@@ -83,102 +86,56 @@ to show
 
 ## Changelog
 
-### 0.11.7
+### 0.12
+* new details action link in lists
+* new option to show player in tracks list
+* use ajax to stay in page on add to cart
+* fix: don't show buy link if woocommerce is not active
+* fix errors in previous merge
 * fix #89 add to cart cancelled if track product is same as record product (for singles)
 * fix #86 update tracks buy link when their record is added to cart with ajax
-
-### 0.11.6
 * fix #65 remove songs already in cart when their album is added
-
-### 0.11.5
 * fix #74 regression: next song in playlist not played
-
-### 0.11.4
-* use ajax to stay in page on add to cart
-
-### 0.11.3
-* added option to show player in tracks list (issue #83)
-
-### 0.11.2
 * fix #64: disallow buy song if album already in cart
-* fix: don't show buy link if woocommerce is not active
-
-### 0.11.1
-* fix errors in previous merge
 
 ### 0.11
 * add play link in list when an audio sample is available
 * add buy link to record if a product is linked
 * add buy links in lists if a product is linked
+* added player in songs lists and play link for each song
 * show player for each record
-
-### 0.10.2
+* fix get_cart() crash when saving song
 * regression: revert dev changes breaking functionalties
 
-### 0.10.1
-* fix get_cart() crash when saving song
-
-### 0.10
-* added player in songs lists and play link for each song
-
 ### 0.9.9
-* tested up to wp 5.8
-
-### 0.9.8
-* changed "Cart" to "View cart" for already purchased items
-
-### 0.9.7
-* fixed #68 disable buy link if already in cart
-* fix wc notices not displayed on standard pages
-
-### 0.9.6
-* fix #67 add to cart short code not rendered
-
-### 0.9.5
+* new wpbakery blocs
+* added customizer panel (fix #47)
+* added audio sample field
+* added shorcode "id" attribute to display info of a specific item
 * added "buy" link to songs and records lists
 * added 'Buy' link in songs lists (fix #59)
 * added song-product relationship
-* fix missing song info metaboxes
-
-### 0.9.4
-* added shorcode "id" attribute to display info of a specific item
-* added audio sample field
-
-### 0.9.3
-* fix #50 video shown as url instead of embed (content was not processed)
-
-### 0.9.2
-* allow edit records relations in products
-
-### 0.9.1
-* added customizer panel (fix #47)
-
-### 0.9
-* new wpbakery blocs
-* fix #8 flex causing mess in edit pages
 * changed icons colors
+* changed "Cart" to "View cart" for already purchased items
+* allow edit records relations in products
+* tested up to wp 5.8
+* fixed #68 disable buy link if already in cart
+* fix wc notices not displayed on standard pages
+* fix #67 add to cart short code not rendered
+* fix missing song info metaboxes
+* fix #50 video shown as url instead of embed (content was not processed)
+* fix #8 flex causing mess in edit pages
 
 ### 0.8.5
+* added update process
+* added band official website and official store (implements #29)
 * added record release type
 * added song authors
-* fix authors list not displayed
-
-### 0.8.4
-* fix Fatal error introduced in a04e95512275b4007a43d3d159d6bed46a45faf0
-
-### 0.8.3
-* updated translations
-
-### 0.8.2
 * added options to show official links or not
-
-### 0.8.1
-* added band official website and official store (implements #29)
-
-### 0.8
+* fix authors list not displayed
+* fix Fatal error introduced in a04e95512275b4007a43d3d159d6bed46a45faf0
 * change: 'album' post type is changed to 'record'
   Existing menus or customizations might require a manual update
-* added update process
 
 ### 0.7.14
 * added product relationship (fix issue #9)
