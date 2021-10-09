@@ -38,6 +38,9 @@ function bndtls_license_key($string = '') {
 
 function child_title($child, $args = array()) {
   if(empty($child)) return;
+
+  $show_title = ( isset($args[ 'show_title' ]) ) ? $args[ 'show_title' ] : true;
+
   $post_type_obj = get_post_type_object( $child->post_type );
   $label = $post_type_obj->labels->singular_name;
   $label_read = __( bndtls_get_option( 'naming_actions:details', 'Details' ), 'band-tools' );
@@ -58,11 +61,25 @@ function child_title($child, $args = array()) {
     $before = "$before<a href='" . get_permalink($child) . "'>";
     $after  = "</a>$after";
   }
-  $title = $before . $child->post_title . $after;
+
+  if($child->post_type == 'records') {
+    $show_record_poster = bndtls_get_option('layout_record_default:poster');
+    $show_record_title = bndtls_get_option('layout_record_default:title');
+    $show_record_band = bndtls_get_option('layout_record_default:band');
+    $show_record_info = bndtls_get_option('layout_record_default:info');
+    $show_record_tracks = bndtls_get_option('layout_record_default:tracks');
+
+    $title = (($show_record_title) ? $before . $child->post_title . $after : $before . $after );
+    $before_title = (($show_record_poster) ? sprintf('<a href="%s">%s</a>', get_permalink($child), get_the_post_thumbnail($child) ) : '' );
+    $after_title = (($show_record_band) && get_post_type() != 'bands' ? bndtls_get_relations($child, [ 'bands' ], [ 'direction' => 'from', 'mode' => 'inline' ] ) : '' )
+    . (($show_record_info) ? bndtls_get_meta( [ 'release_type', 'release', 'tax_genres' ], $child->ID ) : '' );
+  } else {
+    $title = $before . $child->post_title . $after;
+  }
 
   $actions=array();
 
-  if(bndtls_get_option('layout_page_content:player')) {
+  if(bndtls_get_option('layout_record_default:player')) {
     if(!empty($args['track_nr'])) {
       $actions[] = sprintf(
         '<a class="playlist-track action play play-song small-toggle-btn small-play-btn" href="#" data-play-track=%1$d data-play-list=%2$d>%3$s</a>',
@@ -108,7 +125,7 @@ function child_title($child, $args = array()) {
     $title .= "</span>";
   }
   // }
-  return "<div class=child-title>$title</div>";
+  return "$before_title<div class=child-title>$title</div>$after_title";
 }
 
 function bndtls_get_childs($post, $slug = '', $args = array() ) {
@@ -206,6 +223,9 @@ function bndtls_get_relations($post, $slugs = array(), $args = array() ) {
   } else {
     $childs_slug = $slugs;
   }
+  if($childs_slug == 'records') {
+
+  }
   $parent_slug = $post->post_type;
   if($direction == 'to') {
     // if(isset($args['parent'])) $parent=$args['parent'];
@@ -225,6 +245,10 @@ function bndtls_get_relations($post, $slugs = array(), $args = array() ) {
   if($title) $output.="<h$l>$title</h$l>";
   // $output .= "[mb_relationships id='rel-$rel' direction='$direction' mode='ul']";
   $child_slug=preg_replace('/s$/', '', $childs_slug);
+
+  $show_record_poster = bndtls_get_option('layout_record_default:poster');
+  $show_record_title = bndtls_get_option('layout_record_default:title');
+
   $t = 0;
   foreach($childs as $child) {
     $child_args=array();
@@ -238,6 +262,12 @@ function bndtls_get_relations($post, $slugs = array(), $args = array() ) {
         'after' => "</h" . ($l + 1) . ">",
         'parent' => 'p' . print_r($args['parent'], true),
       );
+      // if($child_slug == 'record') {
+      //   $child_args['before'] .= (($show_record_poster) ? get_the_post_thumbnail($child) : '' );
+      //   $child_args['show_title'] = $show_record_title;
+      // } else {
+      //   $child_args['before'] .= "$child_slug ";
+      // }
     }
 
     if(!empty($child->track_audio_sample_url)) {
@@ -263,7 +293,7 @@ function bndtls_get_relations($post, $slugs = array(), $args = array() ) {
   $output_childs .= '</ul>';
   if(!empty($tracks)) {
     $output_childs = "<ul id='playlist-$post->ID' class='childs $rel childs-$childs_slug list playlist'>$output_childs";
-    if(bndtls_get_option('layout_page_content:player')) {
+    if(bndtls_get_option('layout_record_default:player')) {
       wp_enqueue_style( 'audioplayer-css', plugin_dir_url(__FILE__) . 'css/audioplayer.css', array(), BNDTLS_VERSION . "-" . time() );
       wp_enqueue_script( 'audioplayer-js', plugin_dir_url(__FILE__) . 'js/audioplayer.js', array(), BNDTLS_VERSION . "-" . time() );
       $output .= '<figure class=audioplayer>';

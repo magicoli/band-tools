@@ -30,9 +30,9 @@ function bndtls_shortcodes_init()
 		/*
 		 * TODO: allow passed parameters from shortcode
 		 */
-		$show_record_band = bndtls_get_option('layout_record_default:band');
 		$show_record_poster = bndtls_get_option('layout_record_default:poster');
 		$show_record_title = bndtls_get_option('layout_record_default:title');
+		$show_record_band = bndtls_get_option('layout_record_default:band');
 		$show_record_info = bndtls_get_option('layout_record_default:info');
 		$show_record_tracks = bndtls_get_option('layout_record_default:tracks');
 		// $show_record_player = bndtls_get_option('layout_record_default:player');
@@ -54,7 +54,8 @@ function bndtls_shortcodes_init()
 				break;
 
 				case 'records':
-				$output = (($show_record_poster) ? get_the_post_thumbnail($post) : '' )
+				// $output = (($show_record_poster) ? get_the_post_thumbnail($post) : '' )
+				$output = (($show_record_poster) ? sprintf('<a href="%s">%s</a>', get_permalink($post), get_the_post_thumbnail($post) ) : '' )
 				. (($show_record_title) ? sprintf('<h4><a href="%s">%s</a></h4>', get_permalink($post), get_the_title($post)) : '' )
 				. (($show_record_band) ? bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'from', 'mode' => 'inline' ] ) : '' )
 				. (($show_record_info) ? bndtls_get_meta( [ 'release_type', 'release', 'tax_genres' ], $post->ID ) : '' )
