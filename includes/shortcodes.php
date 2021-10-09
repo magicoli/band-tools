@@ -44,13 +44,17 @@ function bndtls_shortcodes_init()
 				break;
 
 				case 'records':
-				$output = bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'to', 'mode' => 'inline' ] )
-				 . bndtls_get_relations($post, [ 'songs' ], [ 'mode' => 'ol' ] );
+				$output = get_the_post_thumbnail($post)
+				// . get_the_title($post)
+				. bndtls_get_meta( [ 'release_type', 'release', 'tax_genres' ], $post->ID )
+				// . bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'from', 'mode' => 'inline' ] )
+				. bndtls_get_relations($post, [ 'songs' ], [ 'mode' => 'ol' ] );
 				break;
 
 				case 'songs':
-				$output = bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'to', 'mode' => 'inline' ] )
-				. bndtls_get_relations($post, [ 'records', 'songs' ], [ 'direction' => 'to', 'mode' => 'inline' ] );
+				$output =
+				bndtls_get_relations($post, [ 'records', 'songs' ], [ 'direction' => 'to', 'mode' => 'inline' ] );
+				// bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'to', 'mode' => 'inline' ] )
 				break;
 
 				default:

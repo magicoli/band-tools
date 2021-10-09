@@ -111,7 +111,7 @@ function child_title($child, $args = array()) {
   return "<div class=child-title>$title</div>";
 }
 
-function bndtls_get_childs($post, $slugs = '', $args = array() ) {
+function bndtls_get_childs($post, $slug = '', $args = array() ) {
   if(!is_object($post)) return; // Should never happen
   switch ($post->post_type) {
     case 'bands':
@@ -148,18 +148,27 @@ function bndtls_get_childs($post, $slugs = '', $args = array() ) {
       break;
 
     case 'records':
-      $tracks = array_shift(get_post_meta($post->ID, 'tracks'));
-      $i=0;
-      if(is_array($tracks)) {
-        foreach($tracks as $track) {
-          if(!is_array($track)) continue;
-          $i++;
-          $child=$track;
-          $song = get_post($track['track_song']);
-          $song->track_audio_sample_url = $track['track_audio_sample_url'];
-          $song->track_product = $track['track_product'];
-          $childs[] = $song;
-        }
+      switch($slug) {
+        case 'bands':
+          $result=get_post_meta($post->ID, 'band', true);
+          return array(get_post($result));
+          break;
+
+        case 'songs':
+          $tracks = array_shift(get_post_meta($post->ID, 'tracks'));
+          $i=0;
+          if(is_array($tracks)) {
+            foreach($tracks as $track) {
+              if(!is_array($track)) continue;
+              $i++;
+              $child=$track;
+              $song = get_post($track['track_song']);
+              $song->track_audio_sample_url = $track['track_audio_sample_url'];
+              $song->track_product = $track['track_product'];
+              $childs[] = $song;
+            }
+          }
+          break;
       }
       break;
 
@@ -171,7 +180,7 @@ function bndtls_get_childs($post, $slugs = '', $args = array() ) {
   return $childs;
 }
 
-function bndtls_get_relations($post, $slugs, $args = array() ) {
+function bndtls_get_relations($post, $slugs = array(), $args = array() ) {
   $output='';
   $block_before='';
   $block_after='';
@@ -189,6 +198,7 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   if(!is_object($post)) return "not a post"; // Should never happen
   if(is_array($slugs)) {
     $childs_slug = array_shift($slugs);
+    // $childs_slug = array_values($slugs)[0];
     $grand_child_slug = $slugs;
     // $grand_child_args = $args;
     $grand_child_args['level']=$l + 1;
@@ -205,8 +215,9 @@ function bndtls_get_relations($post, $slugs, $args = array() ) {
   }
   if(isset($parent)) $rel_slug="rel-$childs_slug-$parent_slug";
   else $rel_slug="rel-$rel";
+  // return "<p>$rel<br>$rel_slug<br>$childs_slug</p>";
 
-  $childs = bndtls_get_childs($post, $slugs, $args);
+  $childs = bndtls_get_childs($post, $childs_slug, $args);
   if(empty($childs)) return;
 
   $output .= "<div class='$rel'>";
@@ -288,6 +299,8 @@ function bndtls_date_format($format, $date_string) {
 function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
   if(empty($metas)) return;
   $output = '';
+  $post = get_post($post_id);
+  if(!$post) return;
 
   if(is_array($args)) {
     $link = (isset($args['link'])) ? $args['link'] : false;
@@ -296,9 +309,10 @@ function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
   }
   if(!$post_id) $post_id = get_post()->ID;
   if(!is_array($metas)) $metas = [ $meta ];
+  $values = array();
+  $strings = array();
   foreach ( $metas as $meta ) {
     if(is_array($meta)) continue; // should not happen
-    $values = array();
     switch($meta) {
       case 'tax_genres':
       $terms = get_the_terms( $post_id, 'genre' );
@@ -311,26 +325,27 @@ function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
 
       case 'release':
       // $date = DateTime::createFromFormat("Y-m-d", );
-      $values = bndtls_date_format('Y', rwmb_meta( $meta, array(), $post_id ) );
+      $values[] = bndtls_date_format('Y', rwmb_meta( $meta, array(), $post_id ) );
       break;
 
       default:
-      $values = rwmb_meta( $meta, array(), $post_id );
+      $values[] = rwmb_meta( $meta, array(), $post_id );
     }
 
-    if(empty($values)) return;
-    if(!is_array($values)) $values = [ $values ];
-
-    foreach ($values as $value) {
-      if(is_object($value)) {
-        $value = $value->name;
-        // $value = "<pre>" . print_r($value->name, true) . "</pre>";
-      }
-      $strings[] = $value;
-    }
-    $strings = join(', ', $strings);
-    if(!empty($values)) $output .= "<div class='$meta'>$before $strings $after</div>";
   }
+  if(empty($values)) return;
+  if(!is_array($values)) $values = [ $values ];
+  $values = array_filter($values);
+  foreach ($values as $value) {
+    if(is_object($value)) {
+      $value = $value->name;
+    } else if (is_array($value)) {
+      $value = join(" ", $value);
+    }
+    $strings[] = $value;
+  }
+  $strings = join(', ', $strings);
+  if(!empty($values)) $output .= "<div class='$meta'>$before $strings $after</div>";
   return $output;
 }
 
