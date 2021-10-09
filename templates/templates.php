@@ -59,10 +59,11 @@ function bndtls_add_after_title($title, $post_ID) {
         case 'records':
         case 'songs':
         if(bndtls_get_option('layout_page_title:band')) {
-          $band_ID = rwmb_meta( 'band', array(), $post_ID );
-          $band = get_post($band_ID);
-          // echo "<pre>"; print_r($band); die;
-          $title_after .= sprintf(__('by <a href="%s">%s</a>', 'band-tools'), get_permalink($band), $band->post_title);
+          if($band_ID = rwmb_meta( 'band', array(), $post_ID )) {
+            $band = get_post($band_ID);
+            // echo "<pre>"; print_r($band); die;
+            $title_after .= sprintf(__('by <a href="%s">%s</a>', 'band-tools'), get_permalink($band), $band->post_title);
+          }
         }
 
         $title_after .= (bndtls_get_option('layout_page_title:release_type')) ? bndtls_get_meta([ 'release_type' ], $post_ID) : '';
