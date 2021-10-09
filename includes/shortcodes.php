@@ -27,6 +27,16 @@ function bndtls_shortcodes_init()
 
 	function bndtls_shortcode_list($atts, $content = null, $tag = '' )
 	{
+		/*
+		 * TODO: allow passed parameters from shortcode
+		 */
+		$show_record_band = bndtls_get_option('layout_record_default:band');
+		$show_record_poster = bndtls_get_option('layout_record_default:poster');
+		$show_record_title = bndtls_get_option('layout_record_default:title');
+		$show_record_info = bndtls_get_option('layout_record_default:info');
+		$show_record_tracks = bndtls_get_option('layout_record_default:tracks');
+		// $show_record_player = bndtls_get_option('layout_record_default:player');
+
 		$output = '';
 		$type=(isset($atts['type'])) ? $atts['type'] : preg_replace('/^bt-/', '', $tag);
 		if(isset($atts['id'])) $post=get_post($atts['id']);
@@ -44,11 +54,11 @@ function bndtls_shortcodes_init()
 				break;
 
 				case 'records':
-				$output = get_the_post_thumbnail($post)
-				// . get_the_title($post)
-				. bndtls_get_meta( [ 'release_type', 'release', 'tax_genres' ], $post->ID )
-				// . bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'from', 'mode' => 'inline' ] )
-				. bndtls_get_relations($post, [ 'songs' ], [ 'mode' => 'ol' ] );
+				$output = (($show_record_poster) ? get_the_post_thumbnail($post) : '' )
+				. (($show_record_title) ? sprintf('<h4><a href="%s">%s</a></h4>', get_permalink($post), get_the_title($post)) : '' )
+				. (($show_record_band) ? bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'from', 'mode' => 'inline' ] ) : '' )
+				. (($show_record_info) ? bndtls_get_meta( [ 'release_type', 'release', 'tax_genres' ], $post->ID ) : '' )
+				. (($show_record_tracks) ? bndtls_get_relations($post, [ 'songs' ], [ 'mode' => 'ol' ] ) : '' );
 				break;
 
 				case 'songs':
