@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:     Band Tools
- * Plugin URI:      https://magiiic.com/wordpress/band-tools/
+ * Plugin URI:      https://magiiic.com/wordpress/plugins/band-tools/
  * Description:     Tools for artists, bands, musicians, ...
  * Author:          Magiiic
  * Author URI:      https://magiiic.com/
