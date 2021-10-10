@@ -30,7 +30,7 @@ I wanted something:
 
 = Features =
 
-* "band", "record" and "songs" post types, with relationships
+* "band", "record" and "song" post types, with relationships
 * Bands, Records and Songs available for navigation menus
 * Bands, Records and Songs can be used as home page (bands are allowed by default, others are activable in settings)
 * Customizable layouts for bands, records and songs
@@ -85,6 +85,13 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 1. My mic, not a screenshot but the origin of all these needs.
 
 == Changelog ==
+
+= 0.13 =
+* added settings to toggle record list elements
+* added thumbnail to record list
+* added support link to readme (fix issue #41)
+* fix song page: when band is not set, the song title is displayed instead
+* fix song list duplicated instead of showing record title + list
 
 = 0.12 =
 * new details action link in lists
