@@ -5,7 +5,7 @@
 * Requires at least: 4.5
 * Tested up to: 5.8
 * Requires PHP: 5.6
-* Stable tag: 0.13
+* Stable tag: 0.13.1
 * License: GPLv2 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,25 +30,32 @@ I wanted something:
 
 ### Features
 
-* "band", "record" and "songs" post types, with relationships
+* "band", "record" and "song" post types, with relationships
 * Bands, Records and Songs available for navigation menus
 * Bands, Records and Songs can be used as home page (bands are allowed by default, others are activable in settings)
-* Customizable layouts for bands, records and songs
-* Audio player for albums
-  - Playlist for albums
-  - Play button for each song in album
 * Widgets, shortcodes and WPBakery blocks to display
   - album list with songs, buy link, player
   - related items (songs in displayed album, albums of displayed band...)
+* Audio player for albums
+  - Playlist for albums
+  - Play button for each song in album
+* Customizable layouts for bands, records and songs
 * WooCommerce integration
   - Links to products or external shop page
   - Buy link, per album or per song
+
+### Artists using this plugin
+
+* [Olivier van Helden](https://van-helden.net/)
+* [Cendryn](https://cendryn.fr/)
+* [Thierry Hodiamont](https://thierryhodiamont.be/)
+* [Thierry Hercod](https://thierryhercod.com/)
 
 ## Roadmap
 
 ### Next moves
 
-* Better widgets: cleaner and more complete display (thumbnails for records and bands, direct buy or link, player...)
+* Better widgets: cleaner and more complete display (thumbnails for bands, direct buy or link, ...)
 * Video player
 * External product links (to specific online store and common distribution platforms)
 * Guttenberg Blocks
@@ -85,6 +92,8 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 1. My mic, not a screenshot but the origin of all these needs.
 
 ## Changelog
+
+### 0.13.1
 
 ### 0.13
 * added settings to toggle record list elements
