@@ -1,6 +1,6 @@
 <?php if ( ! defined( 'WPINC' ) ) die;
 
-if ( ! defined( 'BNDTLS_UPDATES' ) ) define('BNDTLS_UPDATES', 2 );
+if ( ! defined( 'BNDTLS_UPDATES' ) ) define('BNDTLS_UPDATES', 3 );
 
 if(get_option('bndtls_upated') < BNDTLS_UPDATES ) {
   bndls_updates();
@@ -179,4 +179,15 @@ function bndtls_update_2_init() {
   if($messages)
   bndtls_admin_notice(join('<br/>', $messages), 'success');
   update_option('bndtls_upated', 2);
+}
+
+/*
+ * Added settings to toggle elements in records list
+ * Set the default to previous behaviour for continuity
+ */
+function bndtls_update_3() {
+  $settings=get_option('bndtls-settings');
+  $settings['layout_record_default'] = [ 'tracks', 'player' ];
+  update_option('bndtls-settings', $settings);
+  update_option('bndtls_upated', 3);
 }
