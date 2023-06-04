@@ -27,3 +27,17 @@ function action_woocommerce_add_to_cart( $cart_item_key,  $product_id,  $quantit
     }
   }
 };
+
+add_filter( 'rwmb_meta_boxes', 'bndtls_settings_layout_woocommerce', 20 );
+
+function bndtls_settings_layout_woocommerce( $meta_boxes ) {
+  if(isset($meta_boxes['band_tools_customizer']['fields']['record_default']['options'])) {
+    $meta_boxes['band_tools_customizer']['fields']['record_default']['options'] = array_merge(
+      array(
+        'addtocart'							=> _x( 'Show add to cart button', 'layout-settings', 'band-tools' ),
+      ),
+      $meta_boxes['band_tools_customizer']['fields']['record_default']['options'],
+    );
+  }
+  return $meta_boxes;
+}

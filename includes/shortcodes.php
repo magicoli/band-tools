@@ -30,6 +30,7 @@ function bndtls_shortcodes_init()
 		/*
 		 * TODO: allow passed parameters from shortcode
 		 */
+		$show_record_addtocart = bndtls_get_option('layout_record_default:addtocart');
 		$show_record_poster = bndtls_get_option('layout_record_default:poster');
 		$show_record_title = bndtls_get_option('layout_record_default:title');
 		$show_record_band = bndtls_get_option('layout_record_default:band');
@@ -38,6 +39,7 @@ function bndtls_shortcodes_init()
 		// $show_record_player = bndtls_get_option('layout_record_default:player');
 
 		$output = '';
+
 		$type=(isset($atts['type'])) ? $atts['type'] : preg_replace('/^bt-/', '', $tag);
 		if(isset($atts['id'])) $post=get_post($atts['id']);
 		else $post=get_post();
@@ -77,6 +79,11 @@ function bndtls_shortcodes_init()
 		} else {
 			$output .= "no tag (should not happen, should it?)";
 		}
+
+		// if($show_record_addtocart) {
+			$output .= '<p>Add to cart</p>' . $output;
+		// }
+
 		// $output = bndtls_block_relations_list($tag, $args );
 		// $output = "<pre>" . print_r($tag, true) . "</pre>";
 		// $output = bndtls_get_relations($post, [ $tag ] );
