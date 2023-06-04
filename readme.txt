@@ -3,9 +3,9 @@ Contributors: magicoli69
 Donate link: https://paypal.me/magicoli
 Tags: music, bands, singers, albums, records, songs
 Requires at least: 4.5
-Tested up to: 5.8
+Tested up to: 6.2.2
 Requires PHP: 5.6
-Stable tag: 0.13.1
+Stable tag: 0.13.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -93,7 +93,11 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 
 == Changelog ==
 
+= 0.13.2 =
+* fix undefined variable $prefix warning
+
 = 0.13.1 =
+* added examples to readme
 
 = 0.13 =
 * added settings to toggle record list elements
