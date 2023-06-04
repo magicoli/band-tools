@@ -47,12 +47,8 @@ function child_title($child, $args = array()) {
   $label_play = __( bndtls_get_option( 'naming_actions:play', 'Play' ), 'band-tools' );
   $label_buy = __( bndtls_get_option( 'naming_actions:buy', 'Buy' ), 'band-tools' );
 
-  $before = $args['before'];
-  $after = $args['after'];
-  if(empty($before)) {
-    $before = "<span>";
-    $after .= "</span>";
-  }
+  $before = isset($args['before']) ? $args['before'] : '<span>';
+  $after = isset($args['after']) ? $args['after'] : '</span>';
 
   if(get_queried_object_id() == $child->ID) {
     $li_classes[]='current-page';
@@ -61,6 +57,9 @@ function child_title($child, $args = array()) {
     $before = "$before<a href='" . get_permalink($child) . "'>";
     $after  = "</a>$after";
   }
+
+  $before_title = '';
+  $after_title = '';
 
   if($child->post_type == 'records') {
     $show_record_poster = bndtls_get_option('layout_record_default:poster');
@@ -181,7 +180,7 @@ function bndtls_get_childs($post, $slug = '', $args = array() ) {
               $child=$track;
               $song = get_post($track['track_song']);
               $song->track_audio_sample_url = $track['track_audio_sample_url'];
-              $song->track_product = $track['track_product'];
+              $song->track_product = isset($track['track_product']) ? $track['track_product'] : null;
               $childs[] = $song;
             }
           }
@@ -242,7 +241,7 @@ function bndtls_get_relations($post, $slugs = array(), $args = array() ) {
 
   $output .= "<div class='$rel'>";
   $output .= $block_before;
-  if($title) $output.="<h$l>$title</h$l>";
+  if(! empty($title )) $output.="<h$l>$title</h$l>";
   // $output .= "[mb_relationships id='rel-$rel' direction='$direction' mode='ul']";
   $child_slug=preg_replace('/s$/', '', $childs_slug);
 
@@ -250,6 +249,7 @@ function bndtls_get_relations($post, $slugs = array(), $args = array() ) {
   $show_record_title = bndtls_get_option('layout_record_default:title');
 
   $t = 0;
+  $output_childs = '';
   foreach($childs as $child) {
     $child_args=array();
     $li_classes=array("child-$child_slug", $child->post_type);
@@ -335,7 +335,7 @@ function bndtls_get_meta($metas, $post_id = NULL, $args = array() ) {
   if(is_array($args)) {
     $link = (isset($args['link'])) ? $args['link'] : false;
     $before = (isset($args['before'])) ? $args['before'] : false;
-    $after = (isset($args['before'])) ? $args['after'] : false;
+    $after = (isset($args['before'])) ? ( isset($args['after']) ? $args['after'] : '') : false;
   }
   if(!$post_id) $post_id = get_post()->ID;
   if(!is_array($metas)) $metas = [ $meta ];
