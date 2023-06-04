@@ -37,13 +37,13 @@ function custom_add_to_cart_on_page() {
 
                 return $output;
             } else {
-                return 'Product not found.';
+                return; // 'Product not found.';
             }
         } else {
-            return 'Product ID not found.';
+            return; // 'Product ID not found.';
         }
     } else {
-        return 'WooCommerce plugin is not active.';
+        return; // 'WooCommerce plugin is not active.';
     }
 }
 add_shortcode('display_add_to_cart', 'custom_add_to_cart_on_page');
