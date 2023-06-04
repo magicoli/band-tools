@@ -55,6 +55,8 @@ function bndtls_fields_bands( $meta_boxes ) {
 
 add_filter( 'rwmb_meta_boxes', 'bndtls_fields_records' );
 function bndtls_fields_records( $meta_boxes ) {
+  $prefix = "";
+
   $meta_box = [
     'title'      => __( 'Info', 'band-tools' ),
     'id'         => 'fields-record-info',
@@ -178,6 +180,8 @@ function bndtls_fields_records( $meta_boxes ) {
 
 add_filter( 'rwmb_meta_boxes', 'bndtls_fields_songs' );
 function bndtls_fields_songs( $meta_boxes ) {
+  $prefix = "";
+  
   $meta_boxes[] = [
     'title'      => __( 'Info', 'band-tools' ),
     'id'         => 'fields-song-info',
