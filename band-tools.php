@@ -64,11 +64,13 @@ if(bndtls_get_option('clean_titles')) {
 
 if(bndtls_get_option('redirect_single_post_archives')) {
 	function bndtls_redirect_cpt_archive() {
-		$type=get_queried_object()->name;
-		if(isset(wp_count_posts($type)->publish) && wp_count_posts($type)->publish == 1) {
-			$post=get_posts(array('post_type' => $type))[0];
-			wp_redirect( get_permalink($post), 301 );
-			exit();
+		if(get_queried_object()) {
+			$type=get_queried_object()->name;
+			if(isset(wp_count_posts($type)->publish) && wp_count_posts($type)->publish == 1) {
+				$post=get_posts(array('post_type' => $type))[0];
+				wp_redirect( get_permalink($post), 301 );
+				exit();
+			}
 		}
 	}
 	add_action( 'template_redirect', 'bndtls_redirect_cpt_archive' );

@@ -40,7 +40,7 @@ function bndtls_settings_layout_title( $meta_boxes ) {
 	$prefix = 'layout_';
 
 	$fields = [
-		[
+		'page_title' => [
 			'name'              => _x( 'Title', 'layout-settings', 'band-tools' ),
 			'id'                => $prefix . 'page_title',
 			'type'              => 'checkbox_list',
@@ -58,7 +58,7 @@ function bndtls_settings_layout_title( $meta_boxes ) {
 			'std'               => ['true', 'true', 'true', 'true'],
 			'select_all_none'   => true,
 		],
-		[
+		'page_content' => [
 			'name'              => _x( 'Main content', 'layout-settings', 'band-tools' ),
 			'id'                => $prefix . 'page_content',
 			'type'              => 'checkbox_list',
@@ -73,7 +73,7 @@ function bndtls_settings_layout_title( $meta_boxes ) {
 			'std'               => [ true, true, true, true, true, true ],
 			'select_all_none'   => true,
 		],
-		[
+		'record_default' => [
 			'name'              => _x( 'Records', 'layout-settings', 'band-tools' ),
 			'id'                => $prefix . 'record_default',
 			'type'              => 'checkbox_list',
@@ -93,7 +93,7 @@ function bndtls_settings_layout_title( $meta_boxes ) {
 		],
 	];
 
-	$meta_boxes[] = [
+	$meta_boxes['band_tools_customizer'] = [
 		'title'          => __( 'Band Tools', 'band-tools' ),
 		'id'             => 'band_tools_customizer',
 		'settings_pages' => ['band_tools_customizer'],

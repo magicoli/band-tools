@@ -5,6 +5,49 @@
  * @package	band-tools
  */
 
+//
+function custom_add_to_cart_on_page() {
+    global $post;
+
+    // Check if WooCommerce is active
+    if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+
+        $product_id = get_post_meta($post->ID, 'record_product', true);
+
+        if (!empty($product_id)) {
+            $product = wc_get_product($product_id);
+
+            if ($product) {
+                ob_start();
+
+                // Set up necessary global variables for the template
+                global $product;
+                $original_post = $post;
+                $post = get_post($product_id);
+                setup_postdata($post);
+
+                // Display the add to cart button and related elements
+                woocommerce_template_single_add_to_cart();
+
+                $output = ob_get_clean();
+
+                // Restore the original post
+                $post = $original_post;
+                setup_postdata($post);
+
+                return $output;
+            } else {
+                return 'Product not found.';
+            }
+        } else {
+            return 'Product ID not found.';
+        }
+    } else {
+        return 'WooCommerce plugin is not active.';
+    }
+}
+add_shortcode('display_add_to_cart', 'custom_add_to_cart_on_page');
+
 /**
  * Initialize bndtls shortcodes
  * @return void
@@ -30,6 +73,7 @@ function bndtls_shortcodes_init()
 		/*
 		 * TODO: allow passed parameters from shortcode
 		 */
+		$show_record_addtocart = bndtls_get_option('layout_record_default:addtocart');
 		$show_record_poster = bndtls_get_option('layout_record_default:poster');
 		$show_record_title = bndtls_get_option('layout_record_default:title');
 		$show_record_band = bndtls_get_option('layout_record_default:band');
@@ -38,6 +82,7 @@ function bndtls_shortcodes_init()
 		// $show_record_player = bndtls_get_option('layout_record_default:player');
 
 		$output = '';
+
 		$type=(isset($atts['type'])) ? $atts['type'] : preg_replace('/^bt-/', '', $tag);
 		if(isset($atts['id'])) $post=get_post($atts['id']);
 		else $post=get_post();
@@ -54,8 +99,12 @@ function bndtls_shortcodes_init()
 				break;
 
 				case 'records':
+
+				// $output = ;
+
 				// $output = (($show_record_poster) ? get_the_post_thumbnail($post) : '' )
-				$output = (($show_record_poster) ? sprintf('<a href="%s">%s</a>', get_permalink($post), get_the_post_thumbnail($post) ) : '' )
+				$output .= (($show_record_addtocart) ? custom_add_to_cart_on_page() : '' )
+				. (($show_record_poster) ? sprintf('<a href="%s">%s</a>', get_permalink($post), get_the_post_thumbnail($post) ) : '' )
 				. (($show_record_title) ? sprintf('<h4><a href="%s">%s</a></h4>', get_permalink($post), get_the_title($post)) : '' )
 				. (($show_record_band) ? bndtls_get_relations($post, [ 'bands' ], [ 'direction' => 'from', 'mode' => 'inline' ] ) : '' )
 				. (($show_record_info) ? bndtls_get_meta( [ 'release_type', 'release', 'tax_genres' ], $post->ID ) : '' )
@@ -77,6 +126,11 @@ function bndtls_shortcodes_init()
 		} else {
 			$output .= "no tag (should not happen, should it?)";
 		}
+
+		// if($show_record_addtocart) {
+			// $output .= '<p>Add to cart</p>' . $output;
+		// }
+
 		// $output = bndtls_block_relations_list($tag, $args );
 		// $output = "<pre>" . print_r($tag, true) . "</pre>";
 		// $output = bndtls_get_relations($post, [ $tag ] );
