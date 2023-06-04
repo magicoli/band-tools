@@ -1,57 +1,61 @@
 # Band Tools
 * Contributors: magicoli69
 * Donate link: https://paypal.me/magicoli
-* Tags: comments, spam
+* Tags: music, bands, singers, albums, records, songs
 * Requires at least: 4.5
 * Tested up to: 5.8
 * Requires PHP: 5.6
-* Requires PHP: 0.1.0
+* Stable tag: 0.13.1
 * License: GPLv2 or later
 * License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Disclaimer: This plugin is in an early stage. Although you can get it for free if you search a little bit, buying it will fund development and help providing future features.
 
 Post types and tools for bands websites.
 
 ## Description
 
-Post types and tools for bands. Allow publishing of records with songs
-list. Easy enough for a single band. Complete enough for several ones.
+Post types and tools for bands. Allow publishing of records with songs list. Easy enough for a single band. Complete enough for several ones.
+
+Although you can get this plugin for free, buying it will fund development and help providing future features.
 
 ### Goals
 
-I am a singer, and a web designer. There are many plugins and themes for bands
-out there, but I found none suiting my needs. Either way too complicate, either
-lacking features that seem essential to me.
+I am a singer, and a web designer. There are many plugins and themes for bands out there, but I found none suiting my needs. Either way too complicate, either lacking features that seem essential to me.
 
 I wanted something:
 
 * very simple. Let's talk about bands, records and songs and link them together
 * opened to my other needs: sell my records
 * theme-agnostic
-* e-commerce agnostic (although I focus first on WooCommerce integration,
-  Easy Digital Downloads might follow)
+* e-commerce agnostic (although I focus first on WooCommerce integration, Easy Digital Downloads might follow)
 
 ### Features
 
-* "band", "record" and "songs" post types, with relationships
+* "band", "record" and "song" post types, with relationships
 * Bands, Records and Songs available for navigation menus
 * Bands, Records and Songs can be used as home page (bands are allowed by default, others are activable in settings)
-* Customizable layouts for bands, records and songs
-* Audio player for albums
-  - Playlist for albums
-  - Play button for each song in album
 * Widgets, shortcodes and WPBakery blocks to display
   - album list with songs, buy link, player
   - related items (songs in displayed album, albums of displayed band...)
+* Audio player for albums
+  - Playlist for albums
+  - Play button for each song in album
+* Customizable layouts for bands, records and songs
 * WooCommerce integration
   - Links to products or external shop page
   - Buy link, per album or per song
+
+### Artists using this plugin
+
+* [Olivier van Helden](https://van-helden.net/)
+* [Cendryn](https://cendryn.fr/)
+* [Thierry Hodiamont](https://thierryhodiamont.be/)
+* [Thierry Hercod](https://thierryhercod.com/)
 
 ## Roadmap
 
 ### Next moves
 
-* Better widgets: cleaner and more complete display (thumbnails for records and bands, direct buy or link, player...)
+* Better widgets: cleaner and more complete display (thumbnails for bands, direct buy or link, ...)
 * Video player
 * External product links (to specific online store and common distribution platforms)
 * Guttenberg Blocks
@@ -67,13 +71,17 @@ I wanted something:
 
 ## Installation
 
-1. Unzip `band-tools.zip` into the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Head to "Band Tools" admin menu and check settings
-4. Create at least one Band, then records and songs at will
-5. Enjoy
+1. Get latest stable release from [magiiic.com](https://magiiic.com/updates/?action=download&slug=band-tools)
+   or install from command-line `wp plugin install 'https://magiiic.com/updates/?action=download&slug=band-tools'`
+2. Head to "Band Tools" admin menu and check settings
+3. Create at least one Band, then records and then songs at will
+4. Enjoy
 
 ## Frequently Asked Questions
+
+### Where can I find support/help?
+
+You can submit bugs, feature requests, questions and suggestions in the "Issues" section of [GitHub repository](https://github.com/magicoli/band-tools).
 
 ### Who are you?
 
@@ -81,10 +89,18 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 
 ## Screenshots
 
-1. This is not an actual screenshot, I'll add one when there is something cool
-to show
+1. My mic, not a screenshot but the origin of all these needs.
 
 ## Changelog
+
+### 0.13.1
+
+### 0.13
+* added settings to toggle record list elements
+* added thumbnail to record list
+* added support link to readme (fix issue #41)
+* fix song page: when band is not set, the song title is displayed instead
+* fix song list duplicated instead of showing record title + list
 
 ### 0.12
 * new details action link in lists

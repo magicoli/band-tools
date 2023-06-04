@@ -189,5 +189,5 @@ function bndtls_update_3() {
   $settings=get_option('bndtls-settings');
   $settings['layout_record_default'] = [ 'tracks', 'player' ];
   update_option('bndtls-settings', $settings);
-  update_option('bndtls_upated', 3);
+  return true;
 }
