@@ -1,5 +1,8 @@
 ## Changelog
 
+### 0.14
+- added option to display Add To Cart box on pages with related product
+
 ### 0.13.2
 - fix undefined variable $prefix warning
 
