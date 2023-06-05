@@ -1,5 +1,8 @@
 ## Changelog
 
+### 0.14.1
+- clean up debug code
+
 ### 0.14
 - added option to display Add To Cart box on pages with related product
 

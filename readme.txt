@@ -5,7 +5,7 @@ Tags: music, bands, singers, albums, records, songs
 Requires at least: 4.5
 Tested up to: 6.2.2
 Requires PHP: 5.6
-Stable tag: 0.14
+Stable tag: 0.14.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -92,6 +92,9 @@ I'm a singer, I'm a grinner, I'm a joker, I'm a midnight coder.
 1. My mic, not a screenshot but the origin of all these needs.
 
 == Changelog ==
+
+= 0.14.1 =
+* clean up debug code
 
 = 0.14 =
 * added option to display Add To Cart box on pages with related product

@@ -1,6 +1,6 @@
 # Band Tools
 
-![Stable 0.13.2](https://badgen.net/badge/Stable/0.13.2/00aa00)
+![Stable 0.14](https://badgen.net/badge/Stable/0.14/00aa00)
 ![WordPress 4.5 - 6.2.2](https://badgen.net/badge/WordPress/4.5%20-%206.2.2/3858e9)
 ![Requires PHP 5.6](https://badgen.net/badge/PHP/5.6/7884bf)
 ![License GPLv2 or later](https://badgen.net/badge/License/GPLv2%20or%20later/aa0000)
