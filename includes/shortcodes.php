@@ -132,14 +132,6 @@ function bndtls_shortcodes_init()
 			$output .= "no tag (should not happen, should it?)";
 		}
 
-		// if($show_record_addtocart) {
-			// $output .= '<p>Add to cart</p>' . $output;
-		// }
-
-		// $output = bndtls_block_relations_list($tag, $args );
-		// $output = "<pre>" . print_r($tag, true) . "</pre>";
-		// $output = bndtls_get_relations($post, [ $tag ] );
-
     if(!empty($output))
     return "<div class='bndtls-relations bndtls-relations-$tag'>$output</div>";
 	}
