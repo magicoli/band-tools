@@ -15,16 +15,21 @@ function custom_add_to_cart_on_page() {
         $product_id = get_post_meta($post->ID, 'record_product', true);
 
         if (!empty($product_id)) {
-            $product = wc_get_product($product_id);
+            // $product = wc_get_product($product_id);
+            $product = new WC_Product($product_id);
 
             if ($product) {
                 ob_start();
 
                 // Set up necessary global variables for the template
-                global $product;
                 $original_post = $post;
                 $post = get_post($product_id);
                 setup_postdata($post);
+
+                // Retrieve and display the price
+                $price = $product->get_price();
+                $price_html = $product->get_price_html();
+                echo empty($price) ? '' : '<p class=price>' . $price_html . '</p>';
 
                 // Display the add to cart button and related elements
                 woocommerce_template_single_add_to_cart();
@@ -34,7 +39,7 @@ function custom_add_to_cart_on_page() {
                 // Restore the original post
                 $post = $original_post;
                 setup_postdata($post);
-
+                $output = empty($output) ? '' : '<div class="product bndtls">' . $output . '</div>';
                 return $output;
             } else {
                 return; // 'Product not found.';
